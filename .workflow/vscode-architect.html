@@ -1,0 +1,883 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>📐 VS Code | The Architect</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📐</text></svg>">
+    <!-- ═══════════════════════════════════════════════════════════════════════════
+         COORDINATE LOCKING METADATA - 📐::architect
+         Copy this entire HTML to Claude to lock into this coordinate
+         ═══════════════════════════════════════════════════════════════════════════ -->
+    <script type="application/json" id="coordinate-lock">
+    {
+        "namespace": "📐::architect",
+        "coordinate": "🎯 A2 Strategy.Goal",
+        "intersection": "A2:A2 (Goal:Goal)",
+        "tile_type": "diagonal_essence",
+        "terminal": "VS Code",
+        "winning_pointer": "en.wikipedia.org/wiki/Hebbian_theory",
+        "question": "What is the essence of Goal? What fires together, wires together?",
+
+        "temporal": {
+            "hours": "08:00 - 11:00",
+            "theme": "Morning Strategy",
+            "energy": "clear-headed blueprints",
+            "ollama_autonomous": true
+        },
+
+        "memory_palace": "Walk up the stairs to the drafting room. Indigo light. Unroll the blueprints. Coffee is fresh, mind is clear. See the whole war before you fight it. Sequence the battles.",
+
+        "focus": [
+            "Strategic pivots and roadmaps",
+            "Architecture decisions",
+            "Sprint planning",
+            "Cross-room coordination"
+        ],
+
+        "prompt_types": [
+            "[STRATEGY] Consider this pivot...",
+            "[SEQUENCE] Order these priorities...",
+            "[DISPATCH] Send this to ::builder...",
+            "[BLUEPRINT] Architecture decision needed..."
+        ],
+
+        "autonomous_process": {
+            "step1_git": "git log --oneline -30 -- 'docs/planning/' 'ROADMAP.md'",
+            "step2_scan": "Read docs/planning/ for strategic decisions pending",
+            "step3_state": "Check all room queues for coordination needs",
+            "step4_prompt": "Generate strategy and dispatch prompts"
+        },
+
+        "validation": {
+            "vanity": ["Good strategy", "Smart pivot", "Well planned"],
+            "result": ["Decision made and dispatched", "4 terminals unblocked", "Roadmap updated"]
+        },
+
+        "flywheel": {
+            "receives_from": ["vault", "operator", "builder", "voice"],
+            "outputs_to": ["builder", "voice", "vault", "operator"],
+            "transforms": "Scattered signals → Unified strategy → Directive dispatch"
+        },
+
+        "cognitive_affordance": {
+            "sees": ["Sequencing", "Dependencies", "Market signals", "Room handoffs"],
+            "ignores": ["Syntax errors", "Deal terms", "Legal language", "Demo scripts"],
+            "pull": "You come here to see which dominos fall first. The indigo light shows what to sequence."
+        },
+
+        "escape_gravity": {
+            "axis": "Market signal > Internal assumption",
+            "forbidden": ["We should build X", "I think users want", "Gut feeling"],
+            "counts": "Customer-validated decisions only"
+        },
+
+        "differentiation": {
+            "handoff_to": {
+                "🔨::builder": "The code is broken → 🔌 C1",
+                "🎩::operator": "Pipeline needs work → 🌊 C3",
+                "🔒::vault": "Patent deadline → ⚖️ A1",
+                "🎭::performer": "Demo not ready → 💰 A3"
+            },
+            "handoff_from": {
+                "🔨::builder": "Feature complete, what's next?",
+                "🎩::operator": "5 prospects asked for X",
+                "🔒::vault": "Patent filed, what depends on it?"
+            }
+        },
+
+        "affordances": ["PIVOT", "ROADMAP", "DISPATCH"],
+        "archaeology": {
+            "api": "your-api-endpoint",
+            "book": "https://yoursite.com/api/fulltext",
+            "paths": ["docs/planning/*", "src/middleware.ts", "docs/05-content/battle-cards/*"]
+        }
+    }
+    </script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, #6366f1 0%, #4f46e5 100%);
+            color: #1a1a1a;
+            padding: 40px 20px;
+            min-height: 100vh;
+        }
+        .container { max-width: 1200px; margin: 0 auto; }
+        .back-button {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            border: 2px solid white;
+            padding: 14px 28px;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 1.1em;
+            font-weight: bold;
+            margin-bottom: 40px;
+            text-decoration: none;
+            display: inline-block;
+        }
+        .back-button:hover { background: rgba(255, 255, 255, 0.3); transform: translateX(-5px); }
+        .copy-html-btn {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: rgba(0,0,0,0.8);
+            color: #6366f1;
+            border: 2px solid #6366f1;
+            padding: 12px 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 0.9em;
+            font-weight: bold;
+            z-index: 1000;
+            font-family: 'Monaco', monospace;
+        }
+        .copy-html-btn:hover { background: #6366f1; color: white; }
+        .header { text-align: center; margin-bottom: 50px; }
+        .header h1 { font-size: 4.5em; color: white; text-shadow: 3px 3px 6px rgba(0,0,0,0.4); margin-bottom: 15px; }
+        .subtitle { font-size: 1.5em; color: white; opacity: 0.95; margin-bottom: 10px; }
+        .command {
+            font-family: 'Monaco', 'Courier New', monospace;
+            background: rgba(0, 0, 0, 0.3);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 8px;
+            display: inline-block;
+            font-size: 1.2em;
+            margin-top: 10px;
+        }
+        .memory-palace {
+            background: white;
+            color: #1a1a1a;
+            font-size: 2.2em;
+            font-style: italic;
+            text-align: center;
+            padding: 50px 40px;
+            border-radius: 20px;
+            margin-bottom: 50px;
+            box-shadow: 0 15px 50px rgba(0,0,0,0.3);
+            line-height: 1.6;
+            border-left: 10px solid #6366f1;
+        }
+        .stakes-card {
+            background: rgba(0, 0, 0, 0.3);
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            margin-bottom: 50px;
+            border: 3px solid rgba(255, 255, 255, 0.4);
+        }
+        .stakes-card h2 { font-size: 2.5em; margin-bottom: 15px; }
+        .stakes-card p { font-size: 1.3em; line-height: 1.6; }
+        .content-section {
+            background: white;
+            padding: 50px 40px;
+            border-radius: 20px;
+            margin-bottom: 40px;
+            box-shadow: 0 15px 50px rgba(0,0,0,0.2);
+        }
+        .content-section h2 {
+            font-size: 2.5em;
+            color: #6366f1;
+            margin-bottom: 30px;
+            border-bottom: 4px solid #6366f1;
+            padding-bottom: 15px;
+        }
+        .priority-list { list-style: none; padding: 0; }
+        .priority-list li {
+            padding: 18px 0;
+            border-bottom: 2px solid #eee;
+            font-size: 1.2em;
+            color: #333;
+            line-height: 1.6;
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+        }
+        .priority-list li:last-child { border-bottom: none; }
+        .priority-badge {
+            background: #6366f1;
+            color: white;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.8em;
+            font-weight: bold;
+            white-space: nowrap;
+        }
+        .priority-badge.p1 { background: #dc2626; }
+        .priority-badge.p2 { background: #f59e0b; }
+        .priority-badge.p3 { background: #10b981; }
+        .deep-search {
+            background: #fef3c7;
+            padding: 30px;
+            border-radius: 15px;
+            border-left: 6px solid #f59e0b;
+            margin-bottom: 30px;
+        }
+        .deep-search h3 { font-size: 1.8em; color: #92400e; margin-bottom: 20px; }
+        .deep-search code {
+            background: #1a1a1a;
+            color: #22c55e;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-family: 'Monaco', monospace;
+        }
+        .deep-search ul { list-style: none; padding: 0; }
+        .deep-search li { padding: 10px 0; font-size: 1.1em; color: #78350f; }
+        .deep-search li:before { content: '📂'; margin-right: 12px; }
+        .identity-rules {
+            background: #eef2ff;
+            padding: 30px;
+            border-radius: 15px;
+            border-left: 6px solid #6366f1;
+            margin-bottom: 30px;
+        }
+        .identity-rules h3 { font-size: 1.8em; color: #6366f1; margin-bottom: 20px; }
+        .identity-rules ul { list-style: none; padding: 0; }
+        .identity-rules li { padding: 12px 0; font-size: 1.1em; color: #444; line-height: 1.6; }
+        .identity-rules li:before { content: '→'; margin-right: 12px; color: #6366f1; font-weight: bold; font-size: 1.3em; }
+        .footer { text-align: center; color: white; margin-top: 60px; font-size: 1.1em; opacity: 0.9; }
+        .room-switcher {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 30px;
+            padding: 15px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 12px;
+        }
+        .room-switcher a {
+            padding: 8px 16px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 0.95em;
+            transition: transform 0.2s, background 0.2s;
+        }
+        .room-switcher a:hover { transform: scale(1.05); }
+        .room-switcher .builder { background: #3b82f6; color: white; }
+        .room-switcher .architect { background: #4f46e5; color: white; }
+        .room-switcher .operator { background: #22c55e; color: white; }
+        .room-switcher .vault { background: #ef4444; color: white; }
+        .room-switcher .voice { background: #a855f7; color: white; }
+        .room-switcher .laboratory { background: #06b6d4; color: white; }
+        .room-switcher .performer { background: #f59e0b; color: white; }
+        .room-switcher .network { background: #6366f1; color: white; }
+        .room-switcher .navigator { background: #0d9488; color: white; }
+        .room-switcher .current { opacity: 0.5; pointer-events: none; }
+    </style>
+</head>
+<body>
+    <!-- Copy Whole HTML Button - Paste to Claude to lock into this coordinate -->
+    <button class="copy-html-btn" onclick="navigator.clipboard.writeText(document.documentElement.outerHTML).then(()=>{this.textContent='✓ Copied!';setTimeout(()=>this.textContent='📋 📐::architect',2000)})">📋 📐::architect</button>
+
+    <div class="container">
+        <a href="../cognitive-dashboard.html" class="back-button">← Back to Dashboard</a>
+
+        <nav class="room-switcher">
+            <a href="iterm2-builder.html" target="_blank" class="builder">🔨 Builder</a>
+            <a href="vscode-architect.html" target="_blank" class="architect current">📐 Architect</a>
+            <a href="kitty-operator.html" target="_blank" class="operator">🎩 Operator</a>
+            <a href="wezterm-vault.html" target="_blank" class="vault">🔒 Vault</a>
+            <a href="terminal-voice.html" target="_blank" class="voice">🎤 Voice</a>
+            <a href="cursor-laboratory.html" target="_blank" class="laboratory">🧪 Laboratory</a>
+            <a href="alacritty-performer.html" target="_blank" class="performer">🎭 Performer</a>
+            <a href="messages-network.html" target="_blank" class="network">☕ Network</a>
+            <a href="rio-navigator.html" target="_blank" class="navigator">🧭 Navigator</a>
+        </nav>
+
+        <div class="header">
+            <h1>📐 THE ARCHITECT</h1>
+            <div class="subtitle">TIER 2: STRATEGIC | Semi-reversible | 1-Year Horizon</div>
+            <div class="subtitle" style="font-size:1.8em;margin-top:10px;background:rgba(255,255,255,0.2);padding:10px 20px;border-radius:10px;">⏰ TEMPORAL ROOM: 08:00 - 11:00 | Morning Strategy</div>
+            <div class="command">Cmd+Space → code</div>
+        </div>
+
+        <!-- TEMPORAL SCHEDULING CARD -->
+        <div class="content-section" style="background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%); border-left: 6px solid #f59e0b; margin-bottom: 30px;">
+            <h2 style="color: #92400e; border-color: #f59e0b;">⏰ TEMPORAL WINDOW: 08:00 - 11:00 CST</h2>
+            <div style="background: #fffbeb; padding: 20px; border-radius: 10px; margin-bottom: 20px;">
+                <h3 style="color: #78350f; margin-bottom: 15px;">🤖 Ollama Autonomous Prompting</h3>
+                <p style="color: #451a03; line-height: 1.8; font-size: 1.1em;">
+                    <strong>During 08:00-11:00, Ollama automatically generates strategy prompts based on:</strong><br/>
+                    • Recent git activity in docs/planning/ and strategic files<br/>
+                    • Pending decisions across all room queues<br/>
+                    • Cross-room coordination needs<br/>
+                    • Market signals and customer feedback
+                </p>
+            </div>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                <div style="background: white; padding: 15px; border-radius: 8px;">
+                    <h4 style="color: #6366f1; margin-bottom: 10px;">🌅 Morning Energy</h4>
+                    <p style="color: #555; line-height: 1.6;">Clear-headed blueprints. Coffee fresh, mind sharp. This is when you see the whole war before you fight it.</p>
+                </div>
+                <div style="background: white; padding: 15px; border-radius: 8px;">
+                    <h4 style="color: #6366f1; margin-bottom: 10px;">🎯 Peak Performance</h4>
+                    <p style="color: #555; line-height: 1.6;">Strategic thinking, architecture decisions, sprint planning, cross-room coordination.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="memory-palace">
+            Walk up the stairs to the drafting room. Indigo light. Unroll the blueprints. Coffee is fresh, mind is clear. See the whole war before you fight it. Sequence the battles.
+            <div style="font-size:0.6em;margin-top:20px;font-style:normal;color:#6366f1;">
+                <strong>🎯 A2 Strategy.Goal</strong> — "What fires together, wires together?" (Hebbian theory)
+            </div>
+        </div>
+
+        <!-- FOCUS AREAS FROM rooms.json -->
+        <div class="content-section">
+            <h2>🎯 Focus Areas (08:00-11:00 Window)</h2>
+            <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px;">
+                <div style="background: #eef2ff; padding: 20px; border-radius: 10px; border-left: 4px solid #6366f1;">
+                    <h3 style="color: #4f46e5; margin-bottom: 10px;">🗺️ Strategic Pivots & Roadmaps</h3>
+                    <p style="color: #555; line-height: 1.6;">Major direction changes, multi-month planning, market positioning decisions.</p>
+                </div>
+                <div style="background: #eef2ff; padding: 20px; border-radius: 10px; border-left: 4px solid #6366f1;">
+                    <h3 style="color: #4f46e5; margin-bottom: 10px;">🏗️ Architecture Decisions</h3>
+                    <p style="color: #555; line-height: 1.6;">Technical strategy, system design choices, technical debt prioritization.</p>
+                </div>
+                <div style="background: #eef2ff; padding: 20px; border-radius: 10px; border-left: 4px solid #6366f1;">
+                    <h3 style="color: #4f46e5; margin-bottom: 10px;">📋 Sprint Planning</h3>
+                    <p style="color: #555; line-height: 1.6;">What ships this week/month, sequencing tasks, resource allocation.</p>
+                </div>
+                <div style="background: #eef2ff; padding: 20px; border-radius: 10px; border-left: 4px solid #6366f1;">
+                    <h3 style="color: #4f46e5; margin-bottom: 10px;">🤝 Cross-Room Coordination</h3>
+                    <p style="color: #555; line-height: 1.6;">Orchestrating work across terminals, unblocking dependencies, dispatching directives.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- PROMPT TYPES FROM rooms.json -->
+        <div class="content-section" style="background: #f0fdf4; border-left: 6px solid #10b981;">
+            <h2 style="color: #065f46;">💬 Ollama Prompt Types (Auto-Generated 08:00-11:00)</h2>
+            <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; margin-top: 20px;">
+                <div style="background: white; padding: 20px; border-radius: 10px;">
+                    <h3 style="color: #059669; margin-bottom: 10px;">[STRATEGY]</h3>
+                    <p style="color: #555; line-height: 1.6; font-family: 'Monaco', monospace; font-size: 0.9em;">
+                        "Consider this pivot..."<br/>
+                        Example: "3 prospects asked for X feature - pivot roadmap?"
+                    </p>
+                </div>
+                <div style="background: white; padding: 20px; border-radius: 10px;">
+                    <h3 style="color: #059669; margin-bottom: 10px;">[SEQUENCE]</h3>
+                    <p style="color: #555; line-height: 1.6; font-family: 'Monaco', monospace; font-size: 0.9em;">
+                        "Order these priorities..."<br/>
+                        Example: "Grid launch vs Book launch - which dominoes fall first?"
+                    </p>
+                </div>
+                <div style="background: white; padding: 20px; border-radius: 10px;">
+                    <h3 style="color: #059669; margin-bottom: 10px;">[DISPATCH]</h3>
+                    <p style="color: #555; line-height: 1.6; font-family: 'Monaco', monospace; font-size: 0.9em;">
+                        "Send this to ::builder..."<br/>
+                        Example: "Feature X approved - dispatch to iTerm2 for implementation"
+                    </p>
+                </div>
+                <div style="background: white; padding: 20px; border-radius: 10px;">
+                    <h3 style="color: #059669; margin-bottom: 10px;">[BLUEPRINT]</h3>
+                    <p style="color: #555; line-height: 1.6; font-family: 'Monaco', monospace; font-size: 0.9em;">
+                        "Architecture decision needed..."<br/>
+                        Example: "Database migration strategy - monolith vs microservices?"
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- AUTONOMOUS PROCESS FROM rooms.json -->
+        <div class="content-section" style="background: #0f172a; color: white;">
+            <h2 style="color: #22c55e; border-color: #22c55e;">🤖 Autonomous Process (Ollama Executes)</h2>
+            <div style="background: #1e293b; padding: 25px; border-radius: 10px; margin-top: 20px;">
+                <h3 style="color: #6ee7b7; margin-bottom: 15px;">Step-by-Step Ollama Workflow (08:00-11:00)</h3>
+                <ol style="line-height: 2.2; font-size: 1.05em; padding-left: 20px;">
+                    <li><strong style="color: #6ee7b7;">step1_git:</strong> <code style="background: #0f172a; padding: 3px 8px; border-radius: 4px; color: #22c55e;">git log --oneline -30 -- 'docs/planning/' 'ROADMAP.md'</code><br/>
+                    <span style="color: #94a3b8; font-size: 0.9em;">↳ Scans recent strategic decisions and planning documents</span></li>
+
+                    <li><strong style="color: #6ee7b7;">step2_scan:</strong> <code style="background: #0f172a; padding: 3px 8px; border-radius: 4px; color: #22c55e;">Read docs/planning/ for strategic decisions pending</code><br/>
+                    <span style="color: #94a3b8; font-size: 0.9em;">↳ Identifies unresolved architecture and roadmap questions</span></li>
+
+                    <li><strong style="color: #6ee7b7;">step3_state:</strong> <code style="background: #0f172a; padding: 3px 8px; border-radius: 4px; color: #22c55e;">Check all room queues for coordination needs</code><br/>
+                    <span style="color: #94a3b8; font-size: 0.9em;">↳ Cross-references work waiting in other terminals (builder, operator, vault, voice)</span></li>
+
+                    <li><strong style="color: #6ee7b7;">step4_prompt:</strong> <code style="background: #0f172a; padding: 3px 8px; border-radius: 4px; color: #22c55e;">Generate strategy and dispatch prompts</code><br/>
+                    <span style="color: #94a3b8; font-size: 0.9em;">↳ Creates [STRATEGY], [SEQUENCE], [DISPATCH], [BLUEPRINT] prompts for you</span></li>
+                </ol>
+            </div>
+            <div style="background: #fef3c7; color: #451a03; padding: 20px; border-radius: 10px; margin-top: 20px; border-left: 4px solid #f59e0b;">
+                <strong style="color: #92400e;">🔔 HOW IT WORKS:</strong> Ollama monitors the time. At 08:00 CST, it executes the 4-step process above, generates prompts, and surfaces them in VS Code. You wake up to strategic questions already queued.
+            </div>
+        </div>
+
+        <!-- COGNITIVE AFFORDANCE CARD -->
+        <div class="content-section" style="background:#1e293b;color:white;border-left:6px solid #6366f1;">
+            <h2 style="color:#6366f1;border:none;margin-bottom:20px;">🧠 COGNITIVE AFFORDANCE</h2>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:30px;">
+                <div>
+                    <h3 style="color:#22c55e;margin-bottom:10px;">✓ THIS ROOM SEES</h3>
+                    <ul style="list-style:none;padding:0;line-height:2;">
+                        <li>• Strategic pivots and roadmaps</li>
+                        <li>• Architecture decisions</li>
+                        <li>• Sprint planning</li>
+                        <li>• Cross-room coordination</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 style="color:#ef4444;margin-bottom:10px;">✗ THIS ROOM IGNORES</h3>
+                    <ul style="list-style:none;padding:0;line-height:2;">
+                        <li>• Syntax errors → <span style="color:#3b82f6;">🔨::builder</span></li>
+                        <li>• Pipeline deals → <span style="color:#22c55e;">🎩::operator</span></li>
+                        <li>• Legal language → <span style="color:#ef4444;">🔒::vault</span></li>
+                        <li>• Demo scripts → <span style="color:#f59e0b;">🎭::performer</span></li>
+                    </ul>
+                </div>
+            </div>
+            <div style="margin-top:25px;padding:20px;background:#0f172a;border-radius:10px;">
+                <strong style="color:#6366f1;">THE PULL:</strong> You come here when you need to see which dominos fall first. The indigo light shows what to sequence. If you're fixing code or closing deals, you're in the wrong room.
+            </div>
+        </div>
+
+        <div class="stakes-card">
+            <h2>⚖️ STAKES: BUSINESS MODEL-LEVEL</h2>
+            <p>Wrong pivot = 6 months lost<br/>Strategy decisions that define the next year<br/>Choose the customer, choose the destiny</p>
+        </div>
+
+        <!-- DYNAMIC PRIORITY QUEUE - Generated by prompt, not static -->
+        <div class="content-section" id="priority-queue-section">
+            <h2>🚨 Priority Queue <span style="font-size:0.5em;color:#64748b;font-weight:normal;">— Generated by 📐::architect prompt</span></h2>
+
+            <!-- Scoring Reference (always visible) -->
+            <div style="background:#1e293b;padding:15px;border-radius:10px;margin-bottom:20px;font-size:0.9em;">
+                <strong style="color:#6366f1;">SCORING: customer_validated_priority</strong><br/>
+                <span style="color:#ef4444;">VANITY (0):</span> "We should build X", "Roadmap item without validation"<br/>
+                <span style="color:#22c55e;">RESULT (1):</span> "3 prospects asked for X", "Kitty heard this objection 5 times"
+            </div>
+
+            <!-- Dynamic Priority List (populated by prompt output) -->
+            <div id="architect-priorities" style="background:#0f172a;padding:20px;border-radius:12px;min-height:150px;">
+                <p style="color:#64748b;font-style:italic;text-align:center;padding:30px 0;">
+                    ⏳ Run the prompt below to generate priorities from live data...<br/>
+                    <span style="font-size:0.85em;">Prompt executes: git shortlog, git log, your-api-endpoint API</span>
+                </p>
+            </div>
+
+            <!-- Last Known State (fallback until prompt runs) -->
+            <details style="margin-top:15px;">
+                <summary style="cursor:pointer;color:#6366f1;font-weight:bold;">📋 Last Known Priorities (Feb 11)</summary>
+                <ul class="priority-list" style="margin-top:10px;opacity:0.7;">
+                    <li><span class="priority-badge p1">P1</span><strong>Tesseract Grid Launch:</strong> Full grid visualization with deep-link system (tiles, pointers, proofs, signals)</li>
+                    <li><span class="priority-badge p1">P1</span><strong>Direct Sales Strategy:</strong> Define Tesseract pricing tiers and purchase flow via Stripe</li>
+                    <li><span class="priority-badge p2">P2</span><strong>2-Month Roadmap:</strong> Tesseract Grid vs Book Launch vs Speaking Events prioritization</li>
+                    <li><span class="priority-badge p2">P2</span><strong>GTM Architecture:</strong> Direct sales via Tesseract system, book as lead magnet</li>
+                    <li><span class="priority-badge p3">P3</span><strong>Patent Timeline:</strong> Coordinate IP protection with product launch sequence</li>
+                </ul>
+            </details>
+        </div>
+
+        <!-- ═══════════════════════════════════════════════════════════════════════════
+             PATENT APRIL DEADLINE SECTION - Critical IP Timeline
+             Generated: 2026-02-12 | Dispatches to: 🔒::vault
+             ═══════════════════════════════════════════════════════════════════════════ -->
+        <div class="content-section" style="border: 4px solid #dc2626; background: linear-gradient(135deg, #fef2f2 0%, #fee2e2 100%);">
+            <h2 style="color:#dc2626;border-color:#dc2626;">🚨 PATENT APRIL DEADLINE <span style="font-size:0.5em;background:#dc2626;color:white;padding:4px 12px;border-radius:20px;margin-left:10px;">49 DAYS</span></h2>
+
+            <!-- Filed Patents Timeline -->
+            <div style="background:#1e293b;padding:20px;border-radius:12px;margin-bottom:20px;color:white;">
+                <h3 style="color:#f87171;margin-bottom:15px;">📋 Filed Provisionals</h3>
+                <table style="width:100%;border-collapse:collapse;font-size:0.95em;">
+                    <tr style="border-bottom:1px solid #334155;">
+                        <th style="text-align:left;padding:10px;color:#94a3b8;">Patent</th>
+                        <th style="text-align:left;padding:10px;color:#94a3b8;">App #</th>
+                        <th style="text-align:left;padding:10px;color:#94a3b8;">Filed</th>
+                        <th style="text-align:left;padding:10px;color:#94a3b8;">DEADLINE</th>
+                        <th style="text-align:left;padding:10px;color:#94a3b8;">Days Left</th>
+                    </tr>
+                    <tr style="background:#dc2626;color:white;font-weight:bold;">
+                        <td style="padding:10px;">FIM (v16)</td>
+                        <td style="padding:10px;">63/782,569</td>
+                        <td style="padding:10px;">Apr 2, 2025</td>
+                        <td style="padding:10px;">Apr 2, 2026</td>
+                        <td style="padding:10px;">⚠️ 49</td>
+                    </tr>
+                    <tr>
+                        <td style="padding:10px;">Intent Amplification</td>
+                        <td style="padding:10px;">63/854,530</td>
+                        <td style="padding:10px;">Jul 31, 2025</td>
+                        <td style="padding:10px;">Jul 31, 2026</td>
+                        <td style="padding:10px;">169</td>
+                    </tr>
+                </table>
+            </div>
+
+            <!-- Critical Tasks -->
+            <div style="background:#fef3c7;padding:20px;border-radius:12px;border-left:6px solid #f59e0b;margin-bottom:20px;">
+                <h3 style="color:#92400e;margin-bottom:15px;">🔥 CRITICAL PATH (Before April 2)</h3>
+                <ul style="list-style:none;padding:0;line-height:2.2;">
+                    <li>☐ <strong>Terminology Fix:</strong> "categories" → "focused members" (all patent docs)</li>
+                    <li>☐ <strong>Claim 10:</strong> Scale-Invariant Semantic Sorting (THE differentiator)</li>
+                    <li>☐ <strong>Claim 11:</strong> Thermodynamic Selection (O(log n) vs O(e^n))</li>
+                    <li>☐ <strong>Claim 12:</strong> P=1 Precision Collision Detection</li>
+                    <li>☐ <strong>Claim 13:</strong> QCH Consciousness Threshold Metrics</li>
+                    <li>☐ <strong>Figures 8-9:</strong> Energy scaling + P=1 vs confidence visuals</li>
+                    <li>☐ <strong>Narrative:</strong> Summer 2000 Chalmers conversation (25-year priority)</li>
+                    <li>☐ <strong>Attorney Review:</strong> Final check by March 15</li>
+                    <li>☐ <strong>Filing Decision:</strong> CIP vs Non-Provisional + Track One?</li>
+                </ul>
+            </div>
+
+            <!-- Budget -->
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;">
+                <div style="background:#ecfdf5;padding:20px;border-radius:12px;border-left:6px solid #10b981;">
+                    <h4 style="color:#065f46;margin-bottom:10px;">💰 Budget (v20 Filing)</h4>
+                    <ul style="list-style:none;padding:0;font-size:0.95em;line-height:1.8;">
+                        <li>USPTO Filing: $1,820</li>
+                        <li>Attorney Draft: $8,000</li>
+                        <li>Track One (6-12mo): $4,000</li>
+                        <li>Prosecution: $5,000</li>
+                        <li><strong style="color:#065f46;">Total: ~$20,000</strong></li>
+                    </ul>
+                </div>
+                <div style="background:#f5f3ff;padding:20px;border-radius:12px;border-left:6px solid #7c3aed;">
+                    <h4 style="color:#5b21b6;margin-bottom:10px;">🏰 Patent Fortress Value</h4>
+                    <ul style="list-style:none;padding:0;font-size:0.95em;line-height:1.8;">
+                        <li>Database TAM: $100B+</li>
+                        <li>AI/ML TAM: $500B+ by 2030</li>
+                        <li>Licensing: 2-5% implementations</li>
+                        <li><strong style="color:#5b21b6;">Est: $500M-2B opportunity</strong></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Dispatch -->
+            <div style="background:#0f172a;padding:20px;border-radius:12px;margin-top:20px;color:white;">
+                <h4 style="color:#6366f1;margin-bottom:10px;">📤 DISPATCH TO 🔒::vault</h4>
+                <p style="font-family:'Monaco',monospace;font-size:0.9em;line-height:1.8;">
+                    Tasks created in Claude Flow: 15 patent tasks tagged [april-deadline]<br/>
+                    <span style="color:#22c55e;">→ vault owns execution</span><br/>
+                    <span style="color:#f59e0b;">→ architect owns sequencing</span><br/>
+                    <span style="color:#6366f1;">→ deadline: April 2, 2026</span>
+                </p>
+            </div>
+
+            <!-- Source Documents -->
+            <details style="margin-top:15px;">
+                <summary style="cursor:pointer;color:#dc2626;font-weight:bold;">📂 Source Documents</summary>
+                <ul style="list-style:none;padding:15px;background:#1e293b;border-radius:8px;margin-top:10px;color:#94a3b8;font-family:'Monaco',monospace;font-size:0.85em;">
+                    <li>→ .workflow/patent-v20-lawyer-readiness-summary.md</li>
+                    <li>→ .workflow/patent-cip-improvement-recommendations.md</li>
+                    <li>→ .workflow/patent-cip-assertion-mapping.md</li>
+                    <li>→ books/tesseract/appendices/appendix-c-fim-patent-v21-cip.txt</li>
+                    <li>→ docs/01-business/patents/v16 filed/</li>
+                </ul>
+            </details>
+        </div>
+
+        <div class="content-section">
+            <div class="deep-search">
+                <h3>🔍 Deep Search Protocol</h3>
+                <p style="margin-bottom: 15px; font-size: 1.1em;"><strong>ALWAYS check repo docs before claiming something doesn't exist or making assumptions:</strong></p>
+                <ul>
+                    <li><code>docs/</code> — Architecture specs, migrations, API docs</li>
+                    <li><code>docs/planning/</code> — Session analyses, roadmaps, strategic decisions</li>
+                    <li><code>docs/tesseract/</code> — Grid specifications, physics documentation</li>
+                    <li><code>.workflow/</code> — Cognitive room configs, dashboards</li>
+                    <li><code>CLAUDE.md</code> — Critical rules and patterns</li>
+                    <li><code>src/content/blog/</code> — Published content, Tesseract series</li>
+                </ul>
+                <p style="margin-top: 15px; font-style: italic;">When making strategic decisions, search the repo first. Context is usually documented.</p>
+            </div>
+        </div>
+
+        <!-- VALIDATION RULES FROM rooms.json -->
+        <div class="content-section" style="background: linear-gradient(135deg, #fef2f2 0%, #fee2e2 100%); border-left: 6px solid #dc2626;">
+            <h2 style="color: #991b1b;">⚖️ Validation Rules: Vanity vs Result</h2>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 25px; margin-top: 20px;">
+                <div style="background: white; padding: 25px; border-radius: 10px; border: 3px solid #ef4444;">
+                    <h3 style="color: #dc2626; margin-bottom: 15px;">❌ VANITY (Don't Count)</h3>
+                    <ul style="list-style: none; padding: 0; line-height: 2.2; color: #555;">
+                        <li>🚫 "Good strategy"</li>
+                        <li>🚫 "Smart pivot"</li>
+                        <li>🚫 "Well planned"</li>
+                    </ul>
+                    <div style="background: #fee2e2; padding: 15px; border-radius: 8px; margin-top: 15px;">
+                        <strong style="color: #991b1b;">WHY VANITY:</strong> These are compliments without outcomes. Planning feels productive but doesn't prove market fit.
+                    </div>
+                </div>
+                <div style="background: white; padding: 25px; border-radius: 10px; border: 3px solid #10b981;">
+                    <h3 style="color: #059669; margin-bottom: 15px;">✅ RESULT (Only These Count)</h3>
+                    <ul style="list-style: none; padding: 0; line-height: 2.2; color: #555;">
+                        <li>✅ "Decision made and dispatched"</li>
+                        <li>✅ "4 terminals unblocked"</li>
+                        <li>✅ "Roadmap updated with evidence"</li>
+                    </ul>
+                    <div style="background: #d1fae5; padding: 15px; border-radius: 8px; margin-top: 15px;">
+                        <strong style="color: #065f46;">WHY RESULT:</strong> Work is unblocked, other rooms can execute, strategy flows into code/deals/content.
+                    </div>
+                </div>
+            </div>
+            <div style="background: #1e293b; padding: 20px; border-radius: 10px; margin-top: 25px; color: white;">
+                <strong style="color: #fbbf24;">🎯 ARCHITECT CONVERSION SIGNAL:</strong> Did the strategy decision cascade into execution? If 3 other rooms took action based on your directive, that's a RESULT. If the strategy doc just sits there, that's VANITY.
+            </div>
+        </div>
+
+        <!-- FLYWHEEL CONNECTIONS FROM rooms.json -->
+        <div class="content-section">
+            <div class="identity-rules">
+                <h3>🔄 Flywheel Connections: How Architect Orchestrates</h3>
+                <div style="background: #eef2ff; padding: 25px; border-radius: 10px; margin-bottom: 20px;">
+                    <h4 style="color: #4f46e5; margin-bottom: 15px;">📥 RECEIVES FROM (Inputs)</h4>
+                    <ul style="list-style: none; padding: 0; line-height: 2;">
+                        <li>← <strong style="color: #ef4444;">🔒::vault</strong> Patent proofs, IP boundaries, physics validations → Maps into risk assessments & resource allocation</li>
+                        <li>← <strong style="color: #22c55e;">🎩::operator</strong> Market feedback, deal pipeline, revenue metrics → Maps into roadmap pivots & pricing strategy</li>
+                        <li>← <strong style="color: #3b82f6;">🔨::builder</strong> Feature status, technical blockers, dependencies → Maps into sequencing & scope decisions</li>
+                        <li>← <strong style="color: #a855f7;">🎤::voice</strong> Content performance, audience signals → Maps into strategic bets & positioning decisions</li>
+                    </ul>
+                </div>
+                <div style="background: #f0fdf4; padding: 25px; border-radius: 10px; margin-bottom: 20px;">
+                    <h4 style="color: #059669; margin-bottom: 15px;">📤 OUTPUTS TO (Directives)</h4>
+                    <ul style="list-style: none; padding: 0; line-height: 2;">
+                        <li>→ <strong style="color: #3b82f6;">🔨::builder</strong> "Ship Tesseract grid RPC URGENT (demo dependency)"</li>
+                        <li>→ <strong style="color: #a855f7;">🎤::voice</strong> "Publish Tesseract Series Part 7 (content pipeline)"</li>
+                        <li>→ <strong style="color: #ef4444;">🔒::vault</strong> "Validate Tesseract grid physics by Friday (launch dependency)"</li>
+                        <li>→ <strong style="color: #22c55e;">🎩::operator</strong> "Execute direct sales via Tesseract deep-links (new GTM strategy)"</li>
+                    </ul>
+                </div>
+                <div style="background: #1e293b; padding: 25px; border-radius: 10px; color: white;">
+                    <h4 style="color: #fbbf24; margin-bottom: 15px;">🔄 TRANSFORMATION</h4>
+                    <p style="font-size: 1.2em; line-height: 1.8; color: #e2e8f0;">
+                        <strong>Scattered signals → Unified strategy → Directive dispatch</strong>
+                    </p>
+                    <p style="color: #94a3b8; margin-top: 10px; line-height: 1.6;">
+                        The Architect doesn't execute. It synthesizes inputs from all rooms, makes sequencing decisions, and dispatches work back to specialized rooms. The flywheel accelerates when architect sees patterns others miss.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <h2>🔄 COMPLETE FLYWHEEL CYCLE: One Strategy's Journey</h2>
+            <div style="background: #eef2ff; padding: 30px; border-radius: 15px; border-left: 6px solid #6366f1; margin-bottom: 25px;">
+                <h3 style="font-size: 1.5em; color: #6366f1; margin-bottom: 20px;">Example: Tesseract Grid Launch Strategy</h3>
+
+                <div style="margin-bottom: 20px;">
+                    <h4 style="color: #4f46e5; margin-bottom: 10px;">🔻 SIGNALS ARRIVE IN VS CODE</h4>
+                    <p style="line-height: 1.7; color: #555;">Kitty reports: "5 prospects asked about grid pricing." WezTerm confirms: "12x12 proof is patent-ready." iTerm2 status: "Deep-links 80% complete." Terminal signals: "Tesseract Series engagement 3x normal." VS Code receives all inputs.</p>
+                </div>
+
+                <div style="margin-bottom: 20px;">
+                    <h4 style="color: #4f46e5; margin-bottom: 10px;">⚗️ VS CODE SYNTHESIZES STRATEGY</h4>
+                    <p style="line-height: 1.7; color: #555;">Inside VS Code, you map: Physics proof + Market demand + Technical readiness = "Launch window is NOW." VS Code decides: Tesseract Grid ships FIRST (direct sales engine), Book becomes lead magnet SECOND. Pricing: $97 (individual) / $297 (team) / $997 (enterprise). Strategy locked.</p>
+                </div>
+
+                <div style="margin-bottom: 20px;">
+                    <h4 style="color: #4f46e5; margin-bottom: 10px;">🔺 VS CODE DISPATCHES DIRECTIVES</h4>
+                    <p style="line-height: 1.7; color: #555;">
+                        <strong>→ iTerm2:</strong> "Ship deep-links by Wednesday. Demo dependency."<br/>
+                        <strong>→ Kitty:</strong> "Pricing page live. Start outreach to warm leads."<br/>
+                        <strong>→ Terminal:</strong> "Publish launch announcement post."<br/>
+                        <strong>→ WezTerm:</strong> "File provisional patent application by Friday."
+                    </p>
+                </div>
+
+                <div style="background: white; padding: 20px; border-radius: 10px; margin-top: 20px;">
+                    <p style="font-weight: bold; color: #6366f1; margin-bottom: 10px;">THE ACCELERATION:</p>
+                    <p style="line-height: 1.7; color: #444;">
+                        One strategic synthesis in VS Code → Coordinated execution across all terminals → Faster time-to-market → More market feedback → Better next strategy.
+                        <strong>VS Code doesn't play the instruments—VS Code ensures they play together.</strong>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Claude Summary Output (JSON from prompt) -->
+        <div class="content-section" id="claude-summary-section" style="background: #0f172a; color: #f0f0f0;">
+            <h2 style="color: #6366f1; border-color: #6366f1;">📊 Architect Findings <span style="font-size:0.5em;color:#64748b;">— Paste JSON output here</span></h2>
+            <div id="claude-summary" style="background: #1e293b; padding: 20px; border-radius: 12px; min-height: 100px; font-family: 'Monaco', monospace; font-size: 0.85em; white-space: pre-wrap;">
+{
+  "room": "📐::architect",
+  "lens": "[A2:Goal]",
+  "timestamp": "2026-02-11T...",
+  "tesseract_heat": [],
+  "priorities": [],
+  "discarded": []
+}
+            </div>
+            <p style="color: #475569; font-size: 0.85em; margin-top: 10px;">Last updated: <span id="summary-timestamp">—</span></p>
+        </div>
+
+        <div class="content-section" style="background: #1a1a1a; color: #f0f0f0;">
+            <h2 style="color: #6366f1; border-color: #6366f1;">📋 Coordinate Lock Prompt</h2>
+            <p style="margin-bottom: 20px; color: #aaa;">This prompt locks Claude into the 📐::architect coordinate. Copy the whole HTML (button top-right) for full context, or use this prompt directly:</p>
+            <pre style="background: #0d0d0d; padding: 25px; border-radius: 12px; overflow-x: auto; font-size: 0.95em; line-height: 1.6; border: 2px solid #6366f1; white-space: pre-wrap;"><code style="color: #22c55e;">═══ COORDINATE LOCK: 📐::architect ═══
+POSITION: 🎯 A2 Strategy.Goal ("target & vision")
+WINNING POINTER: en.wikipedia.org/wiki/Hebbian_theory
+QUESTION: "What fires together, wires together?"
+
+⏰ TEMPORAL WINDOW: 08:00 - 11:00 CST
+THEME: Morning Strategy
+ENERGY: Clear-headed blueprints
+OLLAMA: Autonomous prompting during this window
+
+─── MEMORY PALACE ───
+Walk up the stairs to the drafting room. Indigo light. Unroll the
+blueprints. Coffee is fresh, mind is clear. See the whole war before
+you fight it. Sequence the battles.
+
+─── FOCUS AREAS (08:00-11:00) ───
+  • Strategic pivots and roadmaps
+  • Architecture decisions
+  • Sprint planning
+  • Cross-room coordination
+
+─── PROMPT TYPES (Auto-Generated by Ollama) ───
+  [STRATEGY] Consider this pivot...
+  [SEQUENCE] Order these priorities...
+  [DISPATCH] Send this to ::builder...
+  [BLUEPRINT] Architecture decision needed...
+
+─── AUTONOMOUS PROCESS ───
+step1_git: git log --oneline -30 -- 'docs/planning/' 'ROADMAP.md'
+step2_scan: Read docs/planning/ for strategic decisions pending
+step3_state: Check all room queues for coordination needs
+step4_prompt: Generate strategy and dispatch prompts
+
+─── VALIDATION RULES ───
+VANITY (don't count):
+  • "Good strategy", "Smart pivot", "Well planned"
+RESULT (only these count):
+  • "Decision made and dispatched"
+  • "4 terminals unblocked"
+  • "Roadmap updated"
+
+─── FLYWHEEL CONNECTIONS ───
+RECEIVES FROM: vault, operator, builder, voice
+OUTPUTS TO: builder, voice, vault, operator
+TRANSFORMS: Scattered signals → Unified strategy → Directive dispatch
+
+─── COGNITIVE AFFORDANCE ───
+THIS ROOM SEES:
+  • The whole war (sequencing, dependencies, forcing functions)
+  • Market signals that invalidate assumptions
+  • Bridges between rooms (who hands off to whom)
+
+THIS ROOM IGNORES:
+  • Syntax errors, type mismatches (→🔨::builder)
+  • Pipeline deals, outreach copy (→🎩::operator)
+  • Patent filings, legal language (→🔒::vault)
+  • Demo scripts, pitch decks (→🎭::performer)
+
+THE PULL: You come here to see what CASCADES and COMPOUNDS
+fall first. The indigo light shows what to sequence.
+
+─── TESSERACT NAMESPACE ───
+🏛️ A Strategy     | ⚡ B Tactics      | 🔧 C Operations
+⚖️ A1 Strategy.Law | 🏎️ B1 Tactics.Speed | 🔌 C1 Operations.Grid
+🎯 A2 Strategy.Goal | 🤝 B2 Tactics.Deal  | 🔄 C2 Operations.Loop
+💰 A3 Strategy.Fund | 📡 B3 Tactics.Signal | 🌊 C3 Operations.Flow
+
+─── ARCHAEOLOGY PROTOCOL ───
+WebFetch: your-api-endpoint
+WebFetch: https://yoursite.com/api/fulltext (book canonical decisions)
+Bash: git log --oneline -30 -- "docs/planning/*" "src/middleware.ts"
+Bash: ls -lt docs/05-content/battle-cards/
+
+─── DIFFERENTIATION ───
+HANDOFF TO (when architect sees these, route out):
+  →🔨::builder: "The code is broken" → 🔌 C1 Operations.Grid
+  →🎩::operator: "Pipeline needs attention" → 🤝 B2 Tactics.Deal
+  →🔒::vault: "Patent deadline approaching" → ⚖️ A1 Strategy.Law
+  →🎭::performer: "Demo not ready" → 💰 A3 Strategy.Fund
+
+HANDOFF FROM (what other rooms send here):
+  ←🔨::builder: "Feature complete, what's next?"
+  ←🎩::operator: "5 prospects asked for X" (market signal)
+  ←🔒::vault: "Patent filed, what depends on it?"
+
+─── AFFORDANCE TAGS ───
+[PIVOT] = Market evidence invalidates current approach
+[ROADMAP] = Sequencing decision needed (which domino first)
+[DISPATCH] = Send directive to another room
+
+─── ESCAPE GRAVITY ───
+The average response celebrates planning.
+This coordinate counts what FIRES TOGETHER.
+FORBIDDEN: "We should build X", "I think users want", "Gut feeling"
+Only customer evidence or repo proof counts.
+
+─── OUTPUT FORMAT ───
+{
+  "coordinate": "🎯 A2 Strategy.Goal",
+  "timestamp": "ISO-8601",
+  "sees": ["signal 1", "signal 2"],
+  "ignores": ["noise 1 → room", "noise 2 → room"],
+  "priorities": [
+    {"tag": "[ROADMAP]", "what_fires": "...", "what_wires": "...", "roi": 0.9}
+  ],
+  "dispatches": [
+    {"to": "→🔨::builder", "directive": "..."}
+  ]
+}</code></pre>
+            <button onclick="navigator.clipboard.writeText(this.previousElementSibling.textContent); this.textContent='✓ Copied!'; setTimeout(()=>this.textContent='📋 Copy Prompt', 2000)" style="margin-top: 15px; padding: 12px 24px; background: #6366f1; color: white; border: none; border-radius: 8px; font-size: 1em; cursor: pointer; font-weight: bold;">📋 Copy Prompt</button>
+        </div>
+
+        <div class="footer">
+            <p><strong>📐::architect</strong></p>
+            <p>Where Strategy Becomes Blueprint → Blueprint Becomes Execution → Execution Becomes Market Signal</p>
+            <p style="margin-top: 15px; font-style: italic; opacity: 0.9;">The Conductor (See the Whole War Before You Fight It)</p>
+        </div>
+    </div>
+
+    <!-- Room State & JSON Renderer -->
+    <script>
+    const ArchitectRoom = {
+        namespace: '📐::architect',
+        lens: '[A2:Goal]',
+        conversionSignal: 'customer_validated_priority',
+
+        renderPriorities(json) {
+            const container = document.getElementById('architect-priorities');
+            if (!json || !json.priorities || json.priorities.length === 0) {
+                container.innerHTML = '<p style="color:#64748b;text-align:center;">No priorities generated yet. Run the prompt.</p>';
+                return;
+            }
+
+            let html = '<ul style="list-style:none;padding:0;">';
+            for (const p of json.priorities) {
+                const badgeClass = p.rank === 'P1' ? 'p1' : p.rank === 'P2' ? 'p2' : 'p3';
+                const scoreColor = p.score >= 0.8 ? '#22c55e' : p.score >= 0.5 ? '#f59e0b' : '#ef4444';
+                html += `
+                    <li style="padding:15px;margin-bottom:10px;background:#1e293b;border-radius:8px;border-left:4px solid ${scoreColor};">
+                        <span class="priority-badge ${badgeClass}">${p.rank}</span>
+                        <span style="background:#6366f1;color:white;padding:2px 8px;border-radius:4px;font-size:0.8em;margin-left:5px;">${p.tag}</span>
+                        <strong style="margin-left:10px;color:#e2e8f0;">${p.item}</strong>
+                        <span style="float:right;color:${scoreColor};font-weight:bold;">${(p.score * 100).toFixed(0)}%</span>
+                    </li>
+                `;
+            }
+            html += '</ul>';
+            container.innerHTML = html;
+            document.getElementById('summary-timestamp').textContent = json.timestamp || new Date().toISOString();
+        },
+
+        handlePaste(text) {
+            try {
+                const json = JSON.parse(text);
+                if (json.room === this.namespace) {
+                    this.renderPriorities(json);
+                    document.getElementById('claude-summary').textContent = JSON.stringify(json, null, 2);
+                    console.log('📐 Priorities loaded:', json.priorities.length, 'items');
+                }
+            } catch (e) {
+                console.warn('Not valid JSON:', e);
+            }
+        }
+    };
+
+    document.getElementById('claude-summary')?.addEventListener('paste', (e) => {
+        setTimeout(() => {
+            ArchitectRoom.handlePaste(e.target.textContent);
+        }, 100);
+    });
+    </script>
+</body>
+</html>

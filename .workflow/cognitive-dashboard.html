@@ -1,0 +1,1436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ThetaCog 24-Hour Schedule — Melody Embodied</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'SF Mono', 'Monaco', monospace;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            color: #e2e8f0;
+            padding: 40px;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 1600px;
+            margin: 0 auto;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        h1 {
+            font-size: 3em;
+            margin-bottom: 20px;
+            color: #60a5fa;
+        }
+        .subtitle {
+            font-size: 1.2em;
+            color: #94a3b8;
+            margin-bottom: 10px;
+        }
+        .current-time {
+            display: inline-block;
+            padding: 10px 20px;
+            background: rgba(96, 165, 250, 0.2);
+            border-radius: 20px;
+            font-size: 1.1em;
+            color: #60a5fa;
+            margin-top: 15px;
+            border: 2px solid #60a5fa;
+        }
+        .active-room-indicator {
+            font-size: 1.4em;
+            margin-top: 20px;
+            padding: 15px;
+            background: rgba(16, 185, 129, 0.2);
+            border-radius: 10px;
+            border: 2px solid #10b981;
+            color: #10b981;
+        }
+
+        /* ===== VIDEO PLAYER SECTION ===== */
+        .player-section {
+            margin-bottom: 40px;
+            background: rgba(15, 23, 42, 0.9);
+            border-radius: 20px;
+            border: 2px solid #a78bfa;
+            overflow: hidden;
+            box-shadow: 0 0 60px rgba(167, 139, 250, 0.15);
+        }
+        .player-header {
+            padding: 20px 30px 15px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 1px solid rgba(167, 139, 250, 0.2);
+        }
+        .player-header h2 {
+            color: #a78bfa;
+            font-size: 1.6em;
+        }
+        .player-header .player-status {
+            color: #10b981;
+            font-size: 0.95em;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .player-header .player-status .pulse {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: #10b981;
+            animation: pulse-glow 2s ease-in-out infinite;
+        }
+        @keyframes pulse-glow {
+            0%, 100% { box-shadow: 0 0 5px #10b981; opacity: 1; }
+            50% { box-shadow: 0 0 20px #10b981, 0 0 40px rgba(16, 185, 129, 0.3); opacity: 0.7; }
+        }
+
+        .player-body {
+            display: grid;
+            grid-template-columns: 1fr 380px;
+            gap: 0;
+        }
+        @media (max-width: 1000px) {
+            .player-body { grid-template-columns: 1fr; }
+        }
+
+        .video-container {
+            position: relative;
+            background: #000;
+            aspect-ratio: 16/9;
+            max-height: 500px;
+        }
+        .video-container video {
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            transition: opacity 0.8s ease;
+        }
+        .video-container video.v-hidden {
+            opacity: 0;
+            pointer-events: none;
+        }
+        .video-container video.v-visible {
+            opacity: 1;
+        }
+        .video-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 20px;
+            background: linear-gradient(transparent, rgba(0,0,0,0.85));
+            pointer-events: none;
+            opacity: 1;
+            transition: opacity 0.3s;
+        }
+        .video-container:hover .video-overlay {
+            opacity: 1;
+        }
+        .track-title-overlay {
+            font-size: 1.4em;
+            font-weight: bold;
+            color: #fff;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.8);
+        }
+        .track-meta-overlay {
+            font-size: 0.9em;
+            color: #a78bfa;
+            margin-top: 4px;
+        }
+
+        .player-sidebar {
+            background: rgba(15, 23, 42, 0.95);
+            border-left: 1px solid rgba(167, 139, 250, 0.2);
+            display: flex;
+            flex-direction: column;
+        }
+        @media (max-width: 1000px) {
+            .player-sidebar { border-left: none; border-top: 1px solid rgba(167, 139, 250, 0.2); }
+        }
+
+        .track-info-panel {
+            padding: 25px;
+            flex: 1;
+        }
+        .track-info-panel .hour-badge {
+            display: inline-block;
+            padding: 6px 16px;
+            background: rgba(167, 139, 250, 0.2);
+            border: 1px solid #a78bfa;
+            border-radius: 20px;
+            font-size: 1.3em;
+            color: #a78bfa;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+        .track-info-panel .track-name {
+            font-size: 1.5em;
+            color: #e2e8f0;
+            font-weight: bold;
+            margin-bottom: 8px;
+            line-height: 1.3;
+        }
+        .track-info-panel .track-genre {
+            color: #60a5fa;
+            font-size: 0.95em;
+            margin-bottom: 6px;
+        }
+        .track-info-panel .track-effect {
+            color: #94a3b8;
+            font-size: 0.9em;
+            font-style: italic;
+            line-height: 1.5;
+            margin-bottom: 15px;
+        }
+        .track-info-panel .track-bpm {
+            display: inline-block;
+            padding: 4px 12px;
+            background: rgba(96, 165, 250, 0.15);
+            border-radius: 8px;
+            color: #60a5fa;
+            font-size: 0.85em;
+        }
+        .track-info-panel .track-count {
+            color: #475569;
+            font-size: 0.85em;
+            margin-top: 12px;
+        }
+        .track-info-panel .physics-layer {
+            margin-top: 15px;
+            padding: 10px 14px;
+            border-radius: 8px;
+            font-size: 0.85em;
+            font-weight: bold;
+        }
+        .track-list {
+            margin-top: 16px;
+            border-top: 1px solid #1e293b;
+            padding-top: 12px;
+        }
+        .track-list-label {
+            color: #64748b;
+            font-size: 0.75em;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 8px;
+        }
+        .track-list-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 6px 10px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 0.85em;
+            color: #94a3b8;
+            transition: background 0.15s, color 0.15s;
+            border: 1px solid transparent;
+        }
+        .track-list-item:hover {
+            background: rgba(148, 163, 184, 0.08);
+            color: #e2e8f0;
+        }
+        .track-list-item.active {
+            background: rgba(96, 165, 250, 0.12);
+            color: #60a5fa;
+            border-color: rgba(96, 165, 250, 0.25);
+        }
+        .track-list-item .tl-num {
+            color: #475569;
+            font-size: 0.8em;
+            min-width: 18px;
+        }
+        .track-list-item .tl-title {
+            flex: 1;
+        }
+        .track-list-item .tl-bpm {
+            color: #475569;
+            font-size: 0.8em;
+        }
+        .physics-layer.industrial {
+            background: rgba(239, 68, 68, 0.12);
+            border: 1px solid rgba(239, 68, 68, 0.3);
+            color: #f87171;
+        }
+        .physics-layer.ambient {
+            background: rgba(96, 165, 250, 0.12);
+            border: 1px solid rgba(96, 165, 250, 0.3);
+            color: #60a5fa;
+        }
+        .physics-layer.subconscious {
+            background: rgba(167, 139, 250, 0.12);
+            border: 1px solid rgba(167, 139, 250, 0.3);
+            color: #a78bfa;
+        }
+
+        /* Player controls */
+        .player-controls {
+            padding: 15px 25px 20px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            border-top: 1px solid rgba(167, 139, 250, 0.15);
+        }
+        .player-controls button {
+            background: rgba(167, 139, 250, 0.15);
+            border: 1px solid rgba(167, 139, 250, 0.3);
+            color: #a78bfa;
+            padding: 10px 16px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1.1em;
+            font-family: inherit;
+            transition: all 0.2s;
+        }
+        .player-controls button:hover {
+            background: rgba(167, 139, 250, 0.3);
+            border-color: #a78bfa;
+            transform: scale(1.05);
+        }
+        .player-controls button.active {
+            background: #a78bfa;
+            color: #0f172a;
+        }
+        .player-controls #btn-play-pause:not(.active) {
+            animation: play-invite 2s ease-in-out infinite;
+        }
+        @keyframes play-invite {
+            0%, 100% { box-shadow: 0 0 8px rgba(167, 139, 250, 0.3); }
+            50% { box-shadow: 0 0 20px rgba(167, 139, 250, 0.6), 0 0 40px rgba(167, 139, 250, 0.2); }
+        }
+        .player-controls .spacer { flex: 1; }
+        .volume-control {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: #94a3b8;
+            font-size: 0.85em;
+        }
+        .volume-control input[type="range"] {
+            width: 80px;
+            accent-color: #a78bfa;
+        }
+
+        /* Hour strip */
+        .hour-strip {
+            display: flex;
+            overflow-x: auto;
+            gap: 4px;
+            padding: 12px 20px;
+            border-top: 1px solid rgba(167, 139, 250, 0.15);
+            scrollbar-width: thin;
+            scrollbar-color: #a78bfa transparent;
+        }
+        .hour-strip::-webkit-scrollbar { height: 6px; }
+        .hour-strip::-webkit-scrollbar-track { background: transparent; }
+        .hour-strip::-webkit-scrollbar-thumb { background: #a78bfa; border-radius: 3px; }
+        .hour-btn {
+            flex: 0 0 auto;
+            padding: 8px 14px;
+            border-radius: 8px;
+            border: 1px solid #334155;
+            background: rgba(30, 41, 59, 0.6);
+            color: #94a3b8;
+            cursor: pointer;
+            font-family: inherit;
+            font-size: 0.85em;
+            transition: all 0.2s;
+            white-space: nowrap;
+        }
+        .hour-btn:hover {
+            border-color: #60a5fa;
+            color: #60a5fa;
+            background: rgba(96, 165, 250, 0.1);
+        }
+        .hour-btn.current-hour {
+            border-color: #10b981;
+            color: #10b981;
+            background: rgba(16, 185, 129, 0.15);
+            box-shadow: 0 0 12px rgba(16, 185, 129, 0.3);
+        }
+        .hour-btn.selected-hour {
+            border-color: #a78bfa;
+            color: #a78bfa;
+            background: rgba(167, 139, 250, 0.2);
+            box-shadow: 0 0 12px rgba(167, 139, 250, 0.3);
+        }
+        .hour-btn .multi-indicator {
+            display: inline-block;
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: #60a5fa;
+            margin-left: 4px;
+            vertical-align: middle;
+        }
+
+        /* ===== EXISTING STYLES ===== */
+        .timeline-container {
+            position: relative;
+            margin: 50px 0;
+            padding: 20px 0;
+        }
+        .timeline-bar {
+            width: 100%;
+            height: 40px;
+            background: linear-gradient(90deg,
+                #1e293b 0%, #334155 25%, #475569 50%, #334155 75%, #1e293b 100%);
+            border-radius: 20px;
+            position: relative;
+            margin-bottom: 40px;
+            border: 2px solid #475569;
+        }
+        .time-marker {
+            position: absolute;
+            top: -25px;
+            font-size: 0.9em;
+            color: #94a3b8;
+            transform: translateX(-50%);
+        }
+        .current-time-marker {
+            position: absolute;
+            top: -10px;
+            bottom: -10px;
+            width: 3px;
+            background: #10b981;
+            box-shadow: 0 0 20px rgba(16, 185, 129, 0.8);
+            z-index: 10;
+        }
+        .current-time-marker::before {
+            content: '\u25BC';
+            position: absolute;
+            top: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: #10b981;
+            font-size: 1.2em;
+        }
+        .room-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+            gap: 25px;
+            margin-bottom: 50px;
+        }
+        .room-card {
+            background: rgba(30, 41, 59, 0.8);
+            padding: 25px;
+            border-radius: 15px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 2px solid #334155;
+            position: relative;
+        }
+        .room-card.active {
+            border-color: #10b981;
+            box-shadow: 0 0 30px rgba(16, 185, 129, 0.4);
+            background: rgba(16, 185, 129, 0.1);
+        }
+        .room-card.active::before {
+            content: 'ACTIVE NOW';
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            padding: 5px 12px;
+            background: #10b981;
+            color: #0f172a;
+            font-size: 0.8em;
+            font-weight: bold;
+            border-radius: 5px;
+        }
+        .room-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(96, 165, 250, 0.3);
+            border-color: #60a5fa;
+        }
+        .room-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 15px;
+        }
+        .room-emoji {
+            font-size: 2.2em;
+        }
+        .room-title {
+            flex: 1;
+        }
+        .room-title h3 {
+            font-size: 1.6em;
+            color: #e2e8f0;
+            margin-bottom: 3px;
+        }
+        .room-hours {
+            font-size: 0.9em;
+            color: #60a5fa;
+            font-weight: bold;
+        }
+        .room-terminal {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            padding: 4px 10px;
+            background: rgba(51, 65, 85, 0.8);
+            border-radius: 5px;
+            font-size: 0.85em;
+            color: #94a3b8;
+        }
+        .room-theme {
+            font-size: 1.1em;
+            color: #a78bfa;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+        .room-memory {
+            color: #cbd5e1;
+            font-style: italic;
+            font-size: 0.95em;
+            margin-bottom: 15px;
+            padding: 12px;
+            background: rgba(15, 23, 42, 0.5);
+            border-radius: 8px;
+            border-left: 3px solid #475569;
+        }
+        .room-focus {
+            margin-top: 15px;
+        }
+        .room-focus-title {
+            font-size: 0.9em;
+            color: #94a3b8;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+        .room-focus-list {
+            list-style: none;
+            padding-left: 0;
+        }
+        .room-focus-list li {
+            padding: 5px 0;
+            color: #cbd5e1;
+            font-size: 0.9em;
+        }
+        .room-focus-list li::before {
+            content: '\u2192 ';
+            color: #60a5fa;
+        }
+        .flywheel-section {
+            margin-top: 60px;
+            padding: 40px;
+            background: rgba(30, 41, 59, 0.6);
+            border-radius: 15px;
+            border: 2px solid #60a5fa;
+        }
+        .flywheel-section h2 {
+            color: #60a5fa;
+            margin-bottom: 25px;
+            font-size: 2em;
+            text-align: center;
+        }
+        .flywheel-cycle {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+        .flywheel-step {
+            padding: 15px;
+            background: rgba(15, 23, 42, 0.5);
+            border-radius: 10px;
+            border-left: 4px solid #a78bfa;
+            color: #cbd5e1;
+            font-size: 1em;
+        }
+        .flywheel-step::before {
+            content: '\u21BB ';
+            color: #a78bfa;
+            font-size: 1.2em;
+        }
+        .schedule-explanation {
+            margin-bottom: 30px;
+            padding: 25px;
+            background: rgba(167, 139, 250, 0.1);
+            border-radius: 10px;
+            border: 2px solid #a78bfa;
+        }
+        .schedule-explanation h3 {
+            color: #a78bfa;
+            margin-bottom: 15px;
+            font-size: 1.4em;
+        }
+        .schedule-explanation p {
+            color: #cbd5e1;
+            margin-bottom: 10px;
+        }
+        .nav-link {
+            color: #a78bfa;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+        .nav-link:hover {
+            color: #60a5fa;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>ThetaCog 24-Hour Schedule</h1>
+            <p class="subtitle">Melody Embodied — The Tesseract 24-Hour Cycle</p>
+            <p class="subtitle" style="font-size: 1em; margin-top: 10px;">America/Chicago Timezone</p>
+            <div class="current-time" id="current-time-display">
+                Loading current time...
+            </div>
+            <div class="active-room-indicator" id="active-room-display">
+                Loading active room...
+            </div>
+            <div style="margin-top: 20px; display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;">
+                <a href="architecture-brain-body.html" class="nav-link">&larr; Architecture</a>
+                <a href="../openclaw/docs/openclaw-report.html" class="nav-link">System Report</a>
+                <a href="../openclaw/data/pivotal-q-lab.html" class="nav-link">Pivotal Q Lab</a>
+            </div>
+        </div>
+
+        <!-- ===== TESSERACT AUDIO-VISUAL PLAYER ===== -->
+        <div class="player-section" id="player-section">
+            <div class="player-header">
+                <h2>Tesseract Chrono-Player</h2>
+                <div class="player-status">
+                    <div class="pulse"></div>
+                    <span id="player-status-text">Initializing...</span>
+                </div>
+            </div>
+
+            <div class="hour-strip" id="hour-strip"></div>
+
+            <div class="player-body">
+                <div class="video-container" id="video-container">
+                    <video id="video-a" class="v-visible" preload="auto" playsinline></video>
+                    <video id="video-b" class="v-hidden" preload="auto" playsinline></video>
+                    <div class="video-overlay" id="video-overlay">
+                        <div class="track-title-overlay" id="overlay-title"></div>
+                        <div class="track-meta-overlay" id="overlay-meta"></div>
+                    </div>
+                </div>
+
+                <div class="player-sidebar">
+                    <div class="track-info-panel">
+                        <div class="hour-badge" id="info-hour">--:00</div>
+                        <div class="track-name" id="info-title">Loading...</div>
+                        <div class="track-genre" id="info-genre"></div>
+                        <div class="track-effect" id="info-effect"></div>
+                        <div class="track-bpm" id="info-bpm"></div>
+                        <div class="track-count" id="info-count"></div>
+                        <div class="physics-layer" id="info-layer"></div>
+                        <div class="track-list" id="track-list"></div>
+                    </div>
+                    <div class="player-controls">
+                        <button id="btn-prev-hour" title="Previous hour">&laquo;</button>
+                        <button id="btn-play-pause" title="Play / Pause (Space)">&#9654;</button>
+                        <button id="btn-next-track" title="Next track in this hour">&#9197;</button>
+                        <button id="btn-next-hour" title="Next hour">&raquo;</button>
+                        <div class="spacer"></div>
+                        <div class="volume-control">
+                            <span>Vol</span>
+                            <input type="range" id="volume-slider" min="0" max="100" value="80">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- ===== END PLAYER ===== -->
+
+        <div class="schedule-explanation">
+            <h3>How This Works</h3>
+            <p><strong>Each hour has a cognitive theme.</strong> Your terminal changes not just your tools -- it changes your identity. When you open Cursor at 2am, you're not just coding -- you're in the Laboratory, where breaking things safely is expected.</p>
+            <p><strong>Ollama knows the schedule.</strong> When it prompts you at 11am in Terminal, it's not generic -- it's Voice mode during social peak hours. It knows to ask about content amplification, not infrastructure.</p>
+            <p><strong>Work flows through the day.</strong> Vault proves theorems at 4am &rarr; Voice makes them viral at noon &rarr; Operator closes deals at 5pm &rarr; Architect maps patterns at 9am &rarr; Builder ships at 3pm &rarr; New questions return to Vault. It's a flywheel.</p>
+            <p><strong>The music is the physics.</strong> Each hour's track is a Key-Lock for that specific coordinate in time. Playing a Thud Check when your system drifts re-syncs your neural state (S) with the mechanical beat (P) anchored by your hardware (H). S=P=H made audible.</p>
+        </div>
+
+        <div class="schedule-explanation" style="border-color: #a78bfa; margin-top: 20px;">
+            <h3>Voice Question Pattern (Live)</h3>
+            <p><strong>The system initiates.</strong> Every 5 minutes, the VoiceBroadcaster reads the mailbox (pending tasks, queue depths, schedule block) and generates a voice note via LLM. It predicts your answer and asks for nuance.</p>
+            <p><strong>You respond by voice.</strong> Record a voice memo reply in Discord. The bot auto-executes immediately -- no reaction needed for authorized users. Your nuance redirects the predicted action.</p>
+            <p><strong>The loop:</strong> Read mailbox &rarr; LLM predicts answer &rarr; TTS voice note &rarr; Discord &rarr; You reply &rarr; Auto-execute &rarr; Next task</p>
+            <p style="color: #94a3b8; font-size: 0.9em;"><strong>Schedule tag format:</strong> BLOCK NAME | Time CST</p>
+            <p style="color: #94a3b8; font-size: 0.9em;"><strong>Fallback:</strong> When Ollama is saturated, broadcasts use a deterministic template with schedule context instead of skipping silently.</p>
+        </div>
+
+        <div class="timeline-container">
+            <div class="timeline-bar">
+                <div class="time-marker" style="left: 0%;">00:00</div>
+                <div class="time-marker" style="left: 25%;">06:00</div>
+                <div class="time-marker" style="left: 50%;">12:00</div>
+                <div class="time-marker" style="left: 75%;">18:00</div>
+                <div class="time-marker" style="left: 100%;">24:00</div>
+                <div class="current-time-marker" id="timeline-marker"></div>
+            </div>
+        </div>
+
+        <div class="room-grid">
+            <!-- 00-03: Cursor Laboratory -->
+            <div class="room-card" data-hours="0,1,2" onclick="window.location='rooms/laboratory.html'">
+                <div class="room-terminal">cursor</div>
+                <div class="room-header">
+                    <span class="room-emoji">&#x1F9EA;</span>
+                    <div class="room-title">
+                        <h3>Cursor Laboratory</h3>
+                        <div class="room-hours">00:00 - 03:00</div>
+                    </div>
+                </div>
+                <div class="room-theme">Deep Night Experiments</div>
+                <div class="room-memory">The lab glows pink in the darkness. Safety goggles on. Everyone else is asleep. This is when you break things safely. No interruptions. Pure exploration.</div>
+                <div class="room-focus">
+                    <div class="room-focus-title">Focus</div>
+                    <ul class="room-focus-list">
+                        <li>Prototype new ideas without pressure</li>
+                        <li>Test assumptions that might fail</li>
+                        <li>Explore architectures before committing</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- 03-06: WezTerm Vault -->
+            <div class="room-card" data-hours="3,4,5" onclick="window.location='rooms/vault.html'">
+                <div class="room-terminal">wezterm</div>
+                <div class="room-header">
+                    <span class="room-emoji">&#x1F512;</span>
+                    <div class="room-title">
+                        <h3>WezTerm Vault</h3>
+                        <div class="room-hours">03:00 - 06:00</div>
+                    </div>
+                </div>
+                <div class="room-theme">Pre-Dawn Proofs</div>
+                <div class="room-memory">Descend into silence. Amber light. Cold air. The world sleeps but truth doesn't. You are not writing code; you are writing law. Raw observations enter. Mathematical certainty leaves.</div>
+                <div class="room-focus">
+                    <div class="room-focus-title">Focus</div>
+                    <ul class="room-focus-list">
+                        <li>First-principles proofs</li>
+                        <li>Patent-grade documentation</li>
+                        <li>Mathematical validation</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- 06-08: Rio Navigator -->
+            <div class="room-card" data-hours="6,7" onclick="window.location='rooms/navigator.html'">
+                <div class="room-terminal">rio</div>
+                <div class="room-header">
+                    <span class="room-emoji">&#x1F9ED;</span>
+                    <div class="room-title">
+                        <h3>Rio Navigator</h3>
+                        <div class="room-hours">06:00 - 08:00</div>
+                    </div>
+                </div>
+                <div class="room-theme">Dawn Planning</div>
+                <div class="room-memory">Sun rises. Coffee steams. Spread out the map. Where are we? Where are we going? What's the most important thing today? Route the work to the right rooms.</div>
+                <div class="room-focus">
+                    <div class="room-focus-title">Focus</div>
+                    <ul class="room-focus-list">
+                        <li>Daily priority triage</li>
+                        <li>Context routing decisions</li>
+                        <li>Wayfinding between rooms</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- 08-11: VSCode Architect -->
+            <div class="room-card" data-hours="8,9,10" onclick="window.location='rooms/architect.html'">
+                <div class="room-terminal">code</div>
+                <div class="room-header">
+                    <span class="room-emoji">&#x1F4D0;</span>
+                    <div class="room-title">
+                        <h3>VSCode Architect</h3>
+                        <div class="room-hours">08:00 - 11:00</div>
+                    </div>
+                </div>
+                <div class="room-theme">Morning Strategy</div>
+                <div class="room-memory">Walk up the stairs to the drafting room. Indigo light. Unroll the blueprints. Coffee is fresh, mind is clear. See the whole war before you fight it. Sequence the battles.</div>
+                <div class="room-focus">
+                    <div class="room-focus-title">Focus</div>
+                    <ul class="room-focus-list">
+                        <li>Strategic pivots and roadmaps</li>
+                        <li>Architecture decisions</li>
+                        <li>Cross-room coordination</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- 11-14: Terminal Voice -->
+            <div class="room-card" data-hours="11,12,13" onclick="window.location='rooms/voice.html'">
+                <div class="room-terminal">terminal</div>
+                <div class="room-header">
+                    <span class="room-emoji">&#x1F3A4;</span>
+                    <div class="room-title">
+                        <h3>Terminal Voice</h3>
+                        <div class="room-hours">11:00 - 14:00</div>
+                    </div>
+                </div>
+                <div class="room-theme">Midday Amplification</div>
+                <div class="room-memory">Step onto the stage. Purple spotlight. The crowd gathers for lunch. Take dense proofs from the vault, strategy from the architect -- translate complexity into viral stories.</div>
+                <div class="room-focus">
+                    <div class="room-focus-title">Focus</div>
+                    <ul class="room-focus-list">
+                        <li>Content creation and amplification</li>
+                        <li>Social posting at peaks</li>
+                        <li>Audience building</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- 14-17: iTerm2 Builder -->
+            <div class="room-card" data-hours="14,15,16" onclick="window.location='rooms/builder.html'">
+                <div class="room-terminal">iterm2</div>
+                <div class="room-header">
+                    <span class="room-emoji">&#x1F528;</span>
+                    <div class="room-title">
+                        <h3>iTerm2 Builder</h3>
+                        <div class="room-hours">14:00 - 17:00</div>
+                    </div>
+                </div>
+                <div class="room-theme">Afternoon Shipping</div>
+                <div class="room-memory">Descend to the factory floor. Blue sparks fly. Afternoon energy focused on execution. Grab the welding torch. Idea becomes iron. Theory meets reality.</div>
+                <div class="room-focus">
+                    <div class="room-focus-title">Focus</div>
+                    <ul class="room-focus-list">
+                        <li>Shipping features</li>
+                        <li>Fixing bugs</li>
+                        <li>Deployment checks</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- 17-19: Kitty Operator -->
+            <div class="room-card" data-hours="17,18" onclick="window.location='rooms/operator.html'">
+                <div class="room-terminal">kitty</div>
+                <div class="room-header">
+                    <span class="room-emoji">&#x1F3A9;</span>
+                    <div class="room-title">
+                        <h3>Kitty Operator</h3>
+                        <div class="room-hours">17:00 - 19:00</div>
+                    </div>
+                </div>
+                <div class="room-theme">Business Close</div>
+                <div class="room-memory">Kick open the double doors. Green radar screens. End of business day. Last chance for deals today. Every conversation ends with a next step. Hunt and close.</div>
+                <div class="room-focus">
+                    <div class="room-focus-title">Focus</div>
+                    <ul class="room-focus-list">
+                        <li>Deal follow-ups</li>
+                        <li>Pipeline updates</li>
+                        <li>Revenue operations</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- 19-22: Messages Network -->
+            <div class="room-card" data-hours="19,20,21" onclick="window.location='rooms/network.html'">
+                <div class="room-terminal">messages</div>
+                <div class="room-header">
+                    <span class="room-emoji">&#x2615;</span>
+                    <div class="room-title">
+                        <h3>Messages Network</h3>
+                        <div class="room-hours">19:00 - 22:00</div>
+                    </div>
+                </div>
+                <div class="room-theme">Evening Cultivation</div>
+                <div class="room-memory">Step into the warm cafe. Amber lighting. Quiet conversations. Steam rising. This isn't hunting (that's Kitty). This is watering the garden. No agenda. Just presence.</div>
+                <div class="room-focus">
+                    <div class="room-focus-title">Focus</div>
+                    <ul class="room-focus-list">
+                        <li>Relationship maintenance</li>
+                        <li>Mentor check-ins</li>
+                        <li>Gratitude loops</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- 22-24: Alacritty Performer -->
+            <div class="room-card" data-hours="22,23" onclick="window.location='rooms/performer.html'">
+                <div class="room-terminal">alacritty</div>
+                <div class="room-header">
+                    <span class="room-emoji">&#x1F3AD;</span>
+                    <div class="room-title">
+                        <h3>Alacritty Performer</h3>
+                        <div class="room-hours">22:00 - 00:00</div>
+                    </div>
+                </div>
+                <div class="room-theme">Night Performance</div>
+                <div class="room-memory">The green room. Mirror. Adrenaline. Night events, demos, rehearsals. You've prepared all day. Now deliver. One shot to land the message.</div>
+                <div class="room-focus">
+                    <div class="room-focus-title">Focus</div>
+                    <ul class="room-focus-list">
+                        <li>Live demos and events</li>
+                        <li>Pitch rehearsal</li>
+                        <li>High-stakes delivery</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="flywheel-section">
+            <h2>The Daily Flywheel Cycle</h2>
+            <div class="flywheel-cycle">
+                <div class="flywheel-step">Vault proves theorems at pre-dawn</div>
+                <div class="flywheel-step">Voice makes them viral at midday</div>
+                <div class="flywheel-step">Operator converts attention to revenue</div>
+                <div class="flywheel-step">Architect maps patterns into strategy</div>
+                <div class="flywheel-step">Builder ships features in afternoon</div>
+                <div class="flywheel-step">Production validates theory</div>
+                <div class="flywheel-step">New questions return to vault at night</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+    // ===== TESSERACT 24-HOUR PLAYLIST =====
+    // Each video mapped to exactly one hour slot.
+    // Hours with multiple tracks play sequentially.
+    // Source: Gemini Chrono-Architectural Map (looptMusic.txt)
+
+    const PLAYLIST = {
+        0:  [{ title: "Echoes in the Void", file: "Echoes_in_the_Void.mp4", genre: "Dark Ambient", effect: "Deep Night Void — raw substrate of reality", bpm: "~40" }],
+        1:  [{ title: "Resonant Casing", file: "Resonant_Casing.mp4", genre: "Dark Ambient", effect: "Deep Night Resonance — structural encasement", bpm: "~45" }],
+        2:  [{ title: "Thud Check II", file: "Thud_Check%20(2).mp4", genre: "Dark Industrial", effect: "Pre-Dawn Structural Check", bpm: "~55" }],
+        3:  [{ title: "Echoes in the Obsidian Cathedral", file: "Echoes_in_the_Obsidian_Cathedral.mp4", genre: "Dark Ambient", effect: "3AM Grounding — maximum isolation, semantic drift fully settled", bpm: "~35" }],
+        4:  [{ title: "Thud Check III", file: "Thud_Check%20(3).mp4", genre: "Dark Industrial", effect: "Pre-Dawn Calibration — deep structural pillar", bpm: "~55" }],
+        5:  [{ title: "Thud Check IV", file: "Thud_Check%20(4).mp4", genre: "Industrial Ambient", effect: "Pre-Dawn Final Check — system preparing to boot", bpm: "~60" }],
+        6:  [
+            { title: "Conscious Unfurling", file: "Conscious_Unfurling.mp4", genre: "Tactile Grid", effect: "Navigator Dawn — 7/8 phase shift at 75 BPM, dry metallic clicks + muffled thuds, pure sine sub-bass P=1 grounding, cold mechanical certainty waking up", bpm: "75" }
+            // PHASED OUT: Temporal Disruption (Alt) — glitch-techno, additive not structural
+        ],
+        7:  [{ title: "The Hz Decree", file: "The_Hz_Decree.mp4", genre: "Industrial Techno", effect: "40Hz Calibration — resets internal tempo, grounds the Cold Start", bpm: "90" }],
+        8:  [
+            { title: "Thud Check", file: "Thud_Check.mp4", genre: "Industrial Techno", effect: "Alerting — establishes the floor, locates the Splinter", bpm: "100" },
+            { title: "Sonar Cartography", file: "Chronosynclastic_Infundibulum.mp4", genre: "Industrial Techno", effect: "Blueprint Unrolled — 100 BPM in 7/8, 50Hz sine sub-bass breathes via slow LFO, crystalline sonar ping every 4 bars (dry), proximate close-mic percussion, architectural methodical cartography before the 09:00 data surge", bpm: "100" }
+        ],
+        9:  [{ title: "Digital Dawn Surge", file: "Digital_Dawn_Surge.mp4", genre: "Industrial Techno", effect: "Activation — high-velocity data influx, maps incoming complexity", bpm: "115" }],
+        10: [{ title: "Chronosynth Pulse", file: "Chronosynth_Pulse.mp4", genre: "Industrial Techno", effect: "Execution — cutting-edge focus, maintains Grip on logic", bpm: "125" }],
+        11: [{ title: "Thud Check (System)", file: "Thud_Check%20(1).mp4", genre: "Industrial Techno", effect: "Alignment — converts noise to signal, architectural reset", bpm: "110" }],
+        12: [{ title: "Synchronized Reset", file: "Synchronized_Reset.mp4", genre: "Industrial Techno", effect: "Zenith — peak operational clarity, total system synchronization", bpm: "115" }],
+        13: [{ title: "Clockwork Consciousness", file: "Clockwork_Consciousness.mp4", genre: "Industrial Techno / EBM", effect: "Persistence — sustained mechanical output, the grind made fluid", bpm: "105" }],
+        14: [
+            { title: "Architect of Echoes", file: "Architect_of_Echoes.mp4", genre: "Industrial Electronic", effect: "Stability — anchoring structure against afternoon fatigue", bpm: "105" },
+            { title: "Chrono Forge", file: "Chrono_Forge.mp4", genre: "Industrial Techno", effect: "Anti-Habituation — mid-clip fracture forces recalculation", bpm: "110" }
+            // PURGED: Temporal Disruption — glitch-techno, additive not structural
+            // PENDING: Oceanic Substrate (105 BPM, 5/4 vs 3/4, 15-beat gestalt)
+            // PENDING: Gravitational Warp (110 BPM, 4/4→5/4 mid-clip phase shift)
+        ],
+        15: [
+            { title: "Grip of the Hour", file: "Grip_of_the_Hour.mp4", genre: "Industrial Ambient", effect: "Flow-State — physical Grip, system refuses to drift", bpm: "100" },
+            { title: "Thud Check: Substrate Flow", file: "Thud_Check_Substrate_Flow.mp4", genre: "Industrial Ambient / Lofi", effect: "Sustained Flow — counters treadmill fatigue", bpm: "95" },
+            { title: "Chrono-Harmonic Resonator", file: "Chrono_Harmonic_Resonator.mp4", genre: "Gestalt Polyrhythm", effect: "Gestalt Substrate — 5/4 + 3/4 polyrhythm, 15-beat alignment window holds P-layer attention against drift", bpm: "~95" },
+            { title: "Substrate Flow", file: "Substrate_Flow.mp4", genre: "Gestalt Polyrhythm", effect: "Oceanic Momentum — 5/4 bass surge over 3/4 metallic drive, thermodynamic friction pulls attention forward into 15-beat resolution, P=1 anchor THUD", bpm: "~95" }
+        ],
+        16: [{ title: "PM Transference", file: "PM_Transference.mp4", genre: "Dark Ambient / Industrial", effect: "Cool-down — systemic calm, dissipates residual work heat", bpm: "85" }],
+        17: [{ title: "Twilight's Echo", file: "Twilight_s_Echo.mp4", genre: "Ambient Electronic", effect: "Transition — decompression, shifts from production to reflection", bpm: "65" }],
+        18: [{ title: "Dusk Resonance", file: "Dusk_Resonance.mp4", genre: "Ambient Electronic", effect: "Settling — data consolidation, peaceful resolution of the day", bpm: "60" }],
+        19: [{ title: "Twilight Resonance", file: "Twilight_Resonance.mp4", genre: "Ambient Techno / Drone", effect: "Processing — subconscious pattern recognition, deep processing", bpm: "50" }],
+        20: [{ title: "Chamber of Concrete Echoes", file: "Chamber_of_Concrete_Echoes.mp4", genre: "Dark Ambient", effect: "Containment — internalizing the day, architectural solitude", bpm: "~45" }],
+        21: [{ title: "Chrono Synaptic Flow", file: "Chrono_Synaptic_Flow.mp4", genre: "Dark Ambient / Techno", effect: "Synaptic Integration — pattern consolidation into long-term storage", bpm: "~45" }],
+        22: [
+            { title: "Geological Integration", file: "Geological_Integration.mp4", genre: "Deep Ambient", effect: "Deep Integration — structural memory, geological patience", bpm: "~40" },
+            { title: "Subterranean Resonance", file: "Subterranean_Resonance.mp4", genre: "Tectonic Polyrhythm", effect: "Geological Patience — 7/4 breathing pad over 9/4 tectonic sub-bass, 63-beat alignment forces write-to-disk integration, 35Hz sine Key-Lock felt not heard", bpm: "~40" },
+            { title: "Subterranean Resonance v2", file: "Subterranean_Resonance_v2.mp4", genre: "Tectonic Polyrhythm", effect: "Geological Integration — tectonic logic refined, deep sine-wave pulse anchors the Performer's certainty before night proofs", bpm: "~40" }
+        ],
+        23: [{ title: "Subconscious Bloom", file: "Subconscious_Bloom.mp4", genre: "Deep Ambient", effect: "Subconscious Processing — pre-midnight bloom, the system dreams", bpm: "~35" }]
+    };
+
+    // Detect environment: file:// needs relative path, http(s) serves public/ at root
+    const VIDEO_BASE = (window.location.protocol === 'file:') ? '../' : '/';
+
+    // Physics layer classification
+    function getPhysicsLayer(hour) {
+        if (hour >= 7 && hour <= 15) return { name: 'INDUSTRIAL LAYER — High Entropy / High Grip', cls: 'industrial' };
+        if (hour >= 16 && hour <= 20) return { name: 'AMBIENT LAYER — Low Entropy / Internal Processing', cls: 'ambient' };
+        return { name: 'SUBCONSCIOUS LAYER — Deep Integration / Pattern Storage', cls: 'subconscious' };
+    }
+
+    // ===== PLAYER STATE =====
+    let currentHour = null;
+    let selectedHour = null;
+    let currentTrackIndex = 0;
+    let isPlaying = false;
+    let autoFollowClock = true;
+
+    // Dual-video crossfade system
+    const videoA = document.getElementById('video-a');
+    const videoB = document.getElementById('video-b');
+    let activeVideo = videoA;   // currently visible / playing
+    let standbyVideo = videoB;  // hidden, preloading next
+    const CROSSFADE_SEC = 3;    // start crossfade this many seconds before end
+    let crossfadeTimer = null;
+    let crossfading = false;
+
+    const btnPlayPause = document.getElementById('btn-play-pause');
+    const btnNextTrack = document.getElementById('btn-next-track');
+    const btnPrevHour = document.getElementById('btn-prev-hour');
+    const btnNextHour = document.getElementById('btn-next-hour');
+    const volumeSlider = document.getElementById('volume-slider');
+
+    function getActiveVideo() { return activeVideo; }
+
+    // ===== HOUR STRIP =====
+    function buildHourStrip() {
+        const strip = document.getElementById('hour-strip');
+        for (let h = 0; h < 24; h++) {
+            const btn = document.createElement('button');
+            btn.className = 'hour-btn';
+            btn.dataset.hour = h;
+            const label = h.toString().padStart(2, '0') + ':00';
+            const tracks = PLAYLIST[h];
+            btn.innerHTML = label + (tracks.length > 1 ? '<span class="multi-indicator" title="' + tracks.length + ' tracks"></span>' : '');
+            btn.addEventListener('click', () => {
+                autoFollowClock = false;
+                selectHour(h);
+            });
+            strip.appendChild(btn);
+        }
+    }
+
+    function updateHourStrip() {
+        const buttons = document.querySelectorAll('.hour-btn');
+        buttons.forEach(btn => {
+            const h = parseInt(btn.dataset.hour);
+            btn.classList.toggle('current-hour', h === currentHour);
+            btn.classList.toggle('selected-hour', h === selectedHour && h !== currentHour);
+        });
+    }
+
+    // ===== CROSSFADE ENGINE =====
+    function swapVideos() {
+        const tmp = activeVideo;
+        activeVideo = standbyVideo;
+        standbyVideo = tmp;
+        activeVideo.classList.remove('v-hidden');
+        activeVideo.classList.add('v-visible');
+        standbyVideo.classList.remove('v-visible');
+        standbyVideo.classList.add('v-hidden');
+    }
+
+    function crossfadeTo(src, andPlay) {
+        crossfading = true;
+        clearCrossfadeTimer();
+
+        // Load next track into standby
+        standbyVideo.src = src;
+        standbyVideo.volume = 0;
+        standbyVideo.currentTime = 0;
+        standbyVideo.loop = false;
+        standbyVideo.load();
+
+        const vol = volumeSlider.value / 100;
+
+        function doFade() {
+            // Reveal standby (CSS transition handles visual opacity)
+            standbyVideo.classList.remove('v-hidden');
+            standbyVideo.classList.add('v-visible');
+            if (andPlay || isPlaying) {
+                standbyVideo.play().catch((err) => {
+                    console.warn('Crossfade play failed:', err.message);
+                });
+            }
+
+            // Animate audio: ramp standby up, active down over 800ms
+            const steps = 20;
+            const interval = 800 / steps;
+            let step = 0;
+            const fadeInterval = setInterval(() => {
+                step++;
+                const progress = step / steps;
+                standbyVideo.volume = Math.min(vol * progress, 1);
+                activeVideo.volume = Math.max(vol * (1 - progress), 0);
+                if (step >= steps) {
+                    clearInterval(fadeInterval);
+                    // Swap: standby becomes active
+                    activeVideo.pause();
+                    activeVideo.classList.remove('v-visible');
+                    activeVideo.classList.add('v-hidden');
+                    const tmp = activeVideo;
+                    activeVideo = standbyVideo;
+                    standbyVideo = tmp;
+                    crossfading = false;
+                    setupEndWatcher();
+                }
+            }, interval);
+        }
+
+        // Wait for standby to have enough data, then fade
+        if (standbyVideo.readyState >= 3) {
+            doFade();
+        } else {
+            standbyVideo.addEventListener('canplay', doFade, { once: true });
+        }
+    }
+
+    // Watch for approaching end to trigger crossfade
+    function setupEndWatcher() {
+        clearCrossfadeTimer();
+        const v = activeVideo;
+        const tracks = PLAYLIST[selectedHour];
+        const isSingle = tracks.length <= 1;
+
+        function onTimeUpdate() {
+            if (crossfading) return;
+            const remaining = v.duration - v.currentTime;
+            if (remaining <= CROSSFADE_SEC && remaining > 0 && v.duration > CROSSFADE_SEC + 1) {
+                v.removeEventListener('timeupdate', onTimeUpdate);
+                // Pick the next src
+                const nextSrc = getNextTrackSrc();
+                crossfadeTo(nextSrc, true);
+            }
+        }
+
+        // Also handle very short videos or ones that end abruptly
+        function onEnded() {
+            v.removeEventListener('timeupdate', onTimeUpdate);
+            v.removeEventListener('ended', onEnded);
+            if (!crossfading) {
+                const nextSrc = getNextTrackSrc();
+                crossfadeTo(nextSrc, true);
+            }
+        }
+
+        v.addEventListener('timeupdate', onTimeUpdate);
+        v.addEventListener('ended', onEnded);
+
+        // Store refs so we can clean up
+        v._onTimeUpdate = onTimeUpdate;
+        v._onEnded = onEnded;
+    }
+
+    function clearCrossfadeTimer() {
+        // Clean up listeners on both videos
+        [videoA, videoB].forEach(v => {
+            if (v._onTimeUpdate) { v.removeEventListener('timeupdate', v._onTimeUpdate); v._onTimeUpdate = null; }
+            if (v._onEnded) { v.removeEventListener('ended', v._onEnded); v._onEnded = null; }
+        });
+    }
+
+    function getNextTrackSrc() {
+        const tracks = PLAYLIST[selectedHour];
+        if (tracks.length <= 1) {
+            // Same track again (loop)
+            return VIDEO_BASE + tracks[0].file;
+        }
+        // Next track in sequence
+        currentTrackIndex = (currentTrackIndex + 1) % tracks.length;
+        updateInfoPanel(selectedHour, currentTrackIndex);
+        return VIDEO_BASE + tracks[next].file;
+    }
+
+    // ===== TRACK LOADING =====
+    function selectHour(hour) {
+        selectedHour = hour;
+        currentTrackIndex = 0; // Always start at first track
+        loadTrackDirect(hour, currentTrackIndex);
+        updateHourStrip();
+        scrollHourIntoView(hour);
+    }
+
+    // Hard-load (no crossfade) — used for hour changes / init
+    function loadTrackDirect(hour, trackIndex) {
+        crossfading = false;
+        clearCrossfadeTimer();
+
+        const tracks = PLAYLIST[hour];
+        const track = tracks[trackIndex];
+        const src = VIDEO_BASE + track.file;
+        const vol = volumeSlider.value / 100;
+
+        // Stop standby
+        standbyVideo.pause();
+        standbyVideo.classList.remove('v-visible');
+        standbyVideo.classList.add('v-hidden');
+
+        // Load into active
+        activeVideo.src = src;
+        activeVideo.volume = vol;
+        activeVideo.loop = false; // crossfade handles looping
+        activeVideo.load();
+        activeVideo.classList.remove('v-hidden');
+        activeVideo.classList.add('v-visible');
+
+        if (isPlaying) {
+            activeVideo.play().then(() => {
+                btnPlayPause.innerHTML = '&#9646;&#9646;';
+                btnPlayPause.classList.add('active');
+            }).catch((err) => {
+                console.warn('Track load play failed:', err.message);
+                // Retry when ready
+                activeVideo.addEventListener('canplay', function retry() {
+                    activeVideo.removeEventListener('canplay', retry);
+                    if (isPlaying) {
+                        activeVideo.play().catch(() => {});
+                    }
+                }, { once: true });
+            });
+        }
+
+        updateInfoPanel(hour, trackIndex);
+        setupEndWatcher();
+    }
+
+    function updateInfoPanel(hour, trackIndex) {
+        const tracks = PLAYLIST[hour];
+        const track = tracks[trackIndex];
+
+        document.getElementById('info-hour').textContent = hour.toString().padStart(2, '0') + ':00';
+        document.getElementById('info-title').textContent = track.title;
+        document.getElementById('info-genre').textContent = track.genre;
+        document.getElementById('info-effect').textContent = track.effect;
+        document.getElementById('info-bpm').textContent = track.bpm + ' BPM';
+        document.getElementById('info-count').textContent =
+            tracks.length > 1
+            ? 'Track ' + (trackIndex + 1) + ' of ' + tracks.length + ' (sequential)'
+            : 'Single track (crossfade loop)';
+
+        const layer = getPhysicsLayer(hour);
+        const layerEl = document.getElementById('info-layer');
+        layerEl.textContent = layer.name;
+        layerEl.className = 'physics-layer ' + layer.cls;
+
+        document.getElementById('overlay-title').textContent = track.title;
+        document.getElementById('overlay-meta').textContent = hour.toString().padStart(2, '0') + ':00 | ' + track.genre + ' | ' + track.bpm + ' BPM';
+
+        document.getElementById('player-status-text').textContent =
+            hour.toString().padStart(2, '0') + ':00 — ' + track.title;
+
+        // Build clickable track list
+        const listEl = document.getElementById('track-list');
+        if (tracks.length <= 1) {
+            listEl.innerHTML = '';
+            return;
+        }
+        let html = '<div class="track-list-label">' + tracks.length + ' tracks this hour</div>';
+        tracks.forEach(function(t, i) {
+            const isActive = i === trackIndex;
+            html += '<div class="track-list-item' + (isActive ? ' active' : '') + '" data-track-idx="' + i + '">'
+                + '<span class="tl-num">' + (i + 1) + '.</span>'
+                + '<span class="tl-title">' + t.title + '</span>'
+                + '<span class="tl-bpm">' + t.bpm + '</span>'
+                + '</div>';
+        });
+        listEl.innerHTML = html;
+
+        // Click handlers for track list items
+        listEl.querySelectorAll('.track-list-item').forEach(function(el) {
+            el.addEventListener('click', function() {
+                const idx = parseInt(this.getAttribute('data-track-idx'));
+                if (idx !== currentTrackIndex) {
+                    currentTrackIndex = idx;
+                    const src = VIDEO_BASE + tracks[idx].file;
+                    crossfadeTo(src, true);
+                    updateInfoPanel(hour, idx);
+                }
+            });
+        });
+    }
+
+    function playNextTrack() {
+        const tracks = PLAYLIST[selectedHour];
+        const nextSrc = getNextTrackSrc();
+        crossfadeTo(nextSrc, true);
+    }
+
+    function scrollHourIntoView(hour) {
+        const btn = document.querySelector('.hour-btn[data-hour="' + hour + '"]');
+        if (btn) {
+            btn.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+        }
+    }
+
+    // ===== CONTROLS =====
+    btnPlayPause.addEventListener('click', togglePlay);
+    btnNextTrack.addEventListener('click', playNextTrack);
+    btnPrevHour.addEventListener('click', () => {
+        autoFollowClock = false;
+        selectHour((selectedHour - 1 + 24) % 24);
+    });
+    btnNextHour.addEventListener('click', () => {
+        autoFollowClock = false;
+        selectHour((selectedHour + 1) % 24);
+    });
+
+    volumeSlider.addEventListener('input', () => {
+        const vol = volumeSlider.value / 100;
+        if (!crossfading) {
+            activeVideo.volume = vol;
+        }
+    });
+
+    function togglePlay() {
+        if (activeVideo.paused) {
+            // Show loading state immediately
+            btnPlayPause.innerHTML = '&#8943;';
+            btnPlayPause.classList.add('active');
+            activeVideo.play().then(() => {
+                isPlaying = true;
+                btnPlayPause.innerHTML = '&#9646;&#9646;';
+            }).catch((err) => {
+                // Play failed — reset button to play state
+                isPlaying = false;
+                btnPlayPause.innerHTML = '&#9654;';
+                btnPlayPause.classList.remove('active');
+                console.warn('Play failed:', err.message);
+                // If media not loaded yet, retry once after canplay
+                if (activeVideo.readyState < 3) {
+                    btnPlayPause.innerHTML = '&#8943;';
+                    btnPlayPause.classList.add('active');
+                    activeVideo.addEventListener('canplay', function retryPlay() {
+                        activeVideo.removeEventListener('canplay', retryPlay);
+                        activeVideo.play().then(() => {
+                            isPlaying = true;
+                            btnPlayPause.innerHTML = '&#9646;&#9646;';
+                        }).catch(() => {
+                            isPlaying = false;
+                            btnPlayPause.innerHTML = '&#9654;';
+                            btnPlayPause.classList.remove('active');
+                        });
+                    }, { once: true });
+                }
+            });
+        } else {
+            activeVideo.pause();
+            standbyVideo.pause();
+            isPlaying = false;
+            btnPlayPause.innerHTML = '&#9654;';
+            btnPlayPause.classList.remove('active');
+        }
+    }
+
+    // Keyboard controls
+    document.addEventListener('keydown', (e) => {
+        if (e.target.tagName === 'INPUT') return;
+        if (e.code === 'Space') {
+            e.preventDefault();
+            togglePlay();
+        } else if (e.code === 'ArrowRight') {
+            e.preventDefault();
+            autoFollowClock = false;
+            selectHour((selectedHour + 1) % 24);
+        } else if (e.code === 'ArrowLeft') {
+            e.preventDefault();
+            autoFollowClock = false;
+            selectHour((selectedHour - 1 + 24) % 24);
+        } else if (e.code === 'KeyN') {
+            playNextTrack();
+        } else if (e.code === 'KeyA') {
+            autoFollowClock = !autoFollowClock;
+            if (autoFollowClock) {
+                selectHour(currentHour);
+            }
+        }
+    });
+
+    // ===== CLOCK + ROOM LOGIC =====
+    function getLocalTime() {
+        // Use Intl to get the actual hour/minute/second in the target timezone
+        // Avoids the unreliable toLocaleString -> new Date() roundtrip
+        const now = new Date();
+        const fmt = new Intl.DateTimeFormat('en-US', {
+            timeZone: 'America/Chicago',
+            hour: 'numeric', minute: 'numeric', second: 'numeric',
+            hour12: false
+        });
+        const parts = fmt.formatToParts(now);
+        const h = parseInt(parts.find(p => p.type === 'hour').value);
+        const m = parseInt(parts.find(p => p.type === 'minute').value);
+        const s = parseInt(parts.find(p => p.type === 'second').value);
+        return { getHours: () => h, getMinutes: () => m, getSeconds: () => s };
+    }
+
+    function updateTimeDisplay() {
+        const time = getLocalTime();
+        const hours = time.getHours();
+        const minutes = time.getMinutes();
+        const seconds = time.getSeconds();
+
+        const timeString = hours.toString().padStart(2, '0') + ':' + minutes.toString().padStart(2, '0') + ':' + seconds.toString().padStart(2, '0') + ' CST';
+        document.getElementById('current-time-display').textContent = timeString;
+
+        // Update timeline marker
+        const percentOfDay = (hours * 60 + minutes) / (24 * 60) * 100;
+        document.getElementById('timeline-marker').style.left = percentOfDay + '%';
+
+        // Highlight active room
+        const roomCards = document.querySelectorAll('.room-card');
+        let activeRoomName = '';
+        roomCards.forEach(function(card) {
+            var hoursStr = card.getAttribute('data-hours');
+            var roomHours = hoursStr.split(',').map(function(h) { return parseInt(h); });
+            if (roomHours.indexOf(hours) !== -1) {
+                card.classList.add('active');
+                activeRoomName = card.querySelector('h3').textContent;
+            } else {
+                card.classList.remove('active');
+            }
+        });
+        if (activeRoomName) {
+            document.getElementById('active-room-display').textContent = 'Active Now: ' + activeRoomName;
+        }
+
+        // Check if hour changed
+        if (hours !== currentHour) {
+            currentHour = hours;
+            updateHourStrip();
+            if (autoFollowClock) {
+                selectHour(hours);
+            }
+        }
+    }
+
+    // ===== ERROR HANDLING =====
+    function handleVideoError(v) {
+        const src = v.src || '(none)';
+        console.error('Video load error:', src);
+        document.getElementById('player-status-text').textContent = 'Load error — trying next track...';
+        // If we have multiple tracks, try another
+        const tracks = PLAYLIST[selectedHour];
+        if (tracks.length > 1) {
+            setTimeout(() => {
+                const nextSrc = getNextTrackSrc();
+                crossfadeTo(nextSrc, isPlaying);
+            }, 500);
+        } else {
+            document.getElementById('player-status-text').textContent = 'Could not load track. Try another hour.';
+            btnPlayPause.innerHTML = '&#9654;';
+            btnPlayPause.classList.remove('active');
+            isPlaying = false;
+        }
+    }
+    videoA.addEventListener('error', () => handleVideoError(videoA));
+    videoB.addEventListener('error', () => handleVideoError(videoB));
+
+    // ===== INIT =====
+    function init() {
+        buildHourStrip();
+        videoA.volume = volumeSlider.value / 100;
+        videoB.volume = 0;
+
+        const time = getLocalTime();
+        currentHour = time.getHours();
+
+        selectHour(currentHour);
+        updateHourStrip();
+        scrollHourIntoView(currentHour);
+        updateTimeDisplay();
+
+        // Show play prompt — user must click play button (no auto-play race condition)
+        document.getElementById('player-status-text').textContent += ' — Click ▶ to start';
+
+        setInterval(updateTimeDisplay, 1000);
+    }
+
+    init();
+    </script>
+</body>
+</html>

@@ -1,0 +1,745 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🧪 Cursor | The Laboratory</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🧪</text></svg>">
+    <!-- ═══════════════════════════════════════════════════════════════════════════
+         COORDINATE LOCKING METADATA - 🧪::laboratory
+         Copy this entire HTML to Claude to lock into this coordinate
+         ═══════════════════════════════════════════════════════════════════════════ -->
+    <script type="application/json" id="coordinate-lock">
+    {
+        "namespace": "🧪::laboratory",
+        "coordinate": "🔄 C2 Operations.Loop",
+        "intersection": "C2:C2 (Loop:Loop)",
+        "tile_type": "diagonal_essence",
+        "terminal": "Cursor",
+        "hours": "00:00 - 03:00",
+        "temporal_theme": "Deep Night Experiments",
+        "energy": "low-stakes exploration",
+        "winning_pointer": "(opportunity - no pointer yet)",
+        "question": "What is the essence of Loop? Every iteration has a verdict.",
+        "book_chapter": "[Your relevant chapter/doc]",
+
+        "cognitive_affordance": {
+            "sees": ["Experiments needing verdicts", "Prototypes to test", "Hypotheses to falsify", "A/B tests"],
+            "ignores": ["Production stability", "Deal terms", "Patent filings", "Content publishing"],
+            "pull": "TEMPORAL ROOM (00:00-03:00): You come here during deep night for LOW-STAKES EXPERIMENTATION. Everyone else is asleep. Break things safely. Get VERDICTS. BUILD or KILL. Experiments that never end are waste. Fail fast, learn cheap.",
+            "memory_palace": "The lab glows pink in the darkness. Safety goggles on. Everyone else is asleep. This is when you break things safely. No interruptions. Pure exploration."
+        },
+
+        "escape_gravity": {
+            "axis": "Verdict > Data",
+            "forbidden": ["Running an experiment", "Gathering data", "Still exploring", "Need more time"],
+            "counts": "Verdicts only. BUILD or KILL = true signal."
+        },
+
+        "differentiation": {
+            "handoff_to": {
+                "📐::architect": "Verdict needs strategic decision → 🎯 A2",
+                "🔨::builder": "Experiment worked, BUILD it → 🔌 C1",
+                "🎩::operator": "Need market feedback → 🌊 C3",
+                "🔒::vault": "Discovery needs proof formalization → ⚖️ A1"
+            },
+            "handoff_from": {
+                "📐::architect": "Untested feature idea, run experiment",
+                "🔨::builder": "Not sure if this works, prototype first",
+                "🎤::voice": "New content format, test engagement"
+            }
+        },
+
+        "affordances": ["EXPERIMENT", "PROTOTYPE", "VERDICT", "KILL"],
+        "archaeology": {
+            "api": "your-api-endpoint",
+            "paths": ["src/app/api/tesseract/*", "**/*test*", "docs/experiments/*"]
+        },
+
+        "autonomous_process": {
+            "step1_git": "git log --oneline -30 -- 'packages/' 'scripts/'",
+            "step2_scan": "Grep for 'TODO|EXPERIMENT|SPIKE|POC' in src/",
+            "step3_state": "Check .workflow/ for unfinished prototypes",
+            "step4_prompt": "Generate low-stakes exploration prompts"
+        },
+
+        "validation": {
+            "vanity": ["Interesting idea", "Could work", "Worth exploring"],
+            "result": ["Experiment has verdict", "Prototype validated/invalidated", "Architecture decision made"]
+        }
+    }
+    </script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, #06b6d4 0%, #0891b2 100%);
+            color: #1a1a1a;
+            padding: 40px 20px;
+            min-height: 100vh;
+        }
+        .container { max-width: 1200px; margin: 0 auto; }
+        .back-button {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            border: 2px solid white;
+            padding: 14px 28px;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 1.1em;
+            font-weight: bold;
+            margin-bottom: 40px;
+            text-decoration: none;
+            display: inline-block;
+        }
+        .back-button:hover { background: rgba(255, 255, 255, 0.3); transform: translateX(-5px); }
+        .copy-html-btn {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: rgba(0,0,0,0.8);
+            color: #06b6d4;
+            border: 2px solid #06b6d4;
+            padding: 12px 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 0.9em;
+            font-weight: bold;
+            z-index: 1000;
+            font-family: 'Monaco', monospace;
+        }
+        .copy-html-btn:hover { background: #06b6d4; color: white; }
+        .header { text-align: center; margin-bottom: 50px; }
+        .header h1 { font-size: 4.5em; color: white; text-shadow: 3px 3px 6px rgba(0,0,0,0.4); margin-bottom: 15px; }
+        .subtitle { font-size: 1.5em; color: white; opacity: 0.95; margin-bottom: 10px; }
+        .command {
+            font-family: 'Monaco', 'Courier New', monospace;
+            background: rgba(0, 0, 0, 0.3);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 8px;
+            display: inline-block;
+            font-size: 1.2em;
+            margin-top: 10px;
+        }
+        .memory-palace {
+            background: white;
+            color: #1a1a1a;
+            font-size: 2.2em;
+            font-style: italic;
+            text-align: center;
+            padding: 50px 40px;
+            border-radius: 20px;
+            margin-bottom: 50px;
+            box-shadow: 0 15px 50px rgba(0,0,0,0.3);
+            line-height: 1.6;
+            border-left: 10px solid #06b6d4;
+        }
+        .stakes-card {
+            background: rgba(0, 0, 0, 0.3);
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            margin-bottom: 50px;
+            border: 3px solid rgba(255, 255, 255, 0.4);
+        }
+        .stakes-card h2 { font-size: 2.5em; margin-bottom: 15px; }
+        .stakes-card p { font-size: 1.3em; line-height: 1.6; }
+        .content-section {
+            background: white;
+            padding: 50px 40px;
+            border-radius: 20px;
+            margin-bottom: 40px;
+            box-shadow: 0 15px 50px rgba(0,0,0,0.2);
+        }
+        .content-section h2 {
+            font-size: 2.5em;
+            color: #06b6d4;
+            margin-bottom: 30px;
+            border-bottom: 4px solid #06b6d4;
+            padding-bottom: 15px;
+        }
+        .priority-list { list-style: none; padding: 0; }
+        .priority-list li {
+            padding: 18px 0;
+            border-bottom: 2px solid #eee;
+            font-size: 1.2em;
+            color: #333;
+            line-height: 1.6;
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+        }
+        .priority-list li:last-child { border-bottom: none; }
+        .priority-badge {
+            background: #06b6d4;
+            color: white;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.8em;
+            font-weight: bold;
+            white-space: nowrap;
+        }
+        .priority-badge.p1 { background: #dc2626; }
+        .priority-badge.p2 { background: #f59e0b; }
+        .priority-badge.p3 { background: #10b981; }
+        .deep-search {
+            background: #fef3c7;
+            padding: 30px;
+            border-radius: 15px;
+            border-left: 6px solid #f59e0b;
+            margin-bottom: 30px;
+        }
+        .deep-search h3 { font-size: 1.8em; color: #92400e; margin-bottom: 20px; }
+        .deep-search code {
+            background: #1a1a1a;
+            color: #22c55e;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-family: 'Monaco', monospace;
+        }
+        .deep-search ul { list-style: none; padding: 0; }
+        .deep-search li { padding: 10px 0; font-size: 1.1em; color: #78350f; }
+        .deep-search li:before { content: '📂'; margin-right: 12px; }
+        .identity-rules {
+            background: #ecfeff;
+            padding: 30px;
+            border-radius: 15px;
+            border-left: 6px solid #06b6d4;
+            margin-bottom: 30px;
+        }
+        .identity-rules h3 { font-size: 1.8em; color: #06b6d4; margin-bottom: 20px; }
+        .identity-rules ul { list-style: none; padding: 0; }
+        .identity-rules li { padding: 12px 0; font-size: 1.1em; color: #444; line-height: 1.6; }
+        .identity-rules li:before { content: '→'; margin-right: 12px; color: #06b6d4; font-weight: bold; font-size: 1.3em; }
+        .footer { text-align: center; color: white; margin-top: 60px; font-size: 1.1em; opacity: 0.9; }
+        .room-switcher {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 30px;
+            padding: 15px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 12px;
+        }
+        .room-switcher a {
+            padding: 8px 16px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 0.95em;
+            transition: transform 0.2s, background 0.2s;
+        }
+        .room-switcher a:hover { transform: scale(1.05); }
+        .room-switcher .builder { background: #3b82f6; color: white; }
+        .room-switcher .architect { background: #4f46e5; color: white; }
+        .room-switcher .operator { background: #22c55e; color: white; }
+        .room-switcher .vault { background: #ef4444; color: white; }
+        .room-switcher .voice { background: #a855f7; color: white; }
+        .room-switcher .laboratory { background: #06b6d4; color: white; }
+        .room-switcher .performer { background: #f59e0b; color: white; }
+        .room-switcher .network { background: #6366f1; color: white; }
+        .room-switcher .navigator { background: #0d9488; color: white; }
+        .room-switcher .current { opacity: 0.5; pointer-events: none; }
+    </style>
+</head>
+<body>
+    <!-- Copy Whole HTML Button - Paste to Claude to lock into this coordinate -->
+    <button class="copy-html-btn" onclick="navigator.clipboard.writeText(document.documentElement.outerHTML).then(()=>{this.textContent='✓ Copied!';setTimeout(()=>this.textContent='📋 🧪::laboratory',2000)})">📋 🧪::laboratory</button>
+
+    <div class="container">
+        <a href="../cognitive-dashboard.html" class="back-button">← Back to Dashboard</a>
+
+        <nav class="room-switcher">
+            <a href="iterm2-builder.html" target="_blank" class="builder">🔨 Builder</a>
+            <a href="vscode-architect.html" target="_blank" class="architect">📐 Architect</a>
+            <a href="kitty-operator.html" target="_blank" class="operator">🎩 Operator</a>
+            <a href="wezterm-vault.html" target="_blank" class="vault">🔒 Vault</a>
+            <a href="terminal-voice.html" target="_blank" class="voice">🎤 Voice</a>
+            <a href="cursor-laboratory.html" target="_blank" class="laboratory current">🧪 Laboratory</a>
+            <a href="alacritty-performer.html" target="_blank" class="performer">🎭 Performer</a>
+            <a href="messages-network.html" target="_blank" class="network">☕ Network</a>
+            <a href="rio-navigator.html" target="_blank" class="navigator">🧭 Navigator</a>
+        </nav>
+
+        <div class="header">
+            <h1>🧪 CURSOR: THE LABORATORY</h1>
+            <div class="subtitle">TIER 5: EXPERIMENTAL | Fully reversible | 1-Day Horizon</div>
+            <div class="subtitle" style="background: rgba(0,0,0,0.4); padding: 15px; border-radius: 10px; margin-top: 15px;">
+                <strong style="color: #fbbf24;">⏰ TEMPORAL WINDOW: 00:00 - 03:00</strong><br/>
+                Deep Night Experiments | Low-Stakes Exploration
+            </div>
+            <div class="command">Cmd+Space → cursor</div>
+        </div>
+
+        <div class="memory-palace">
+            "The lab glows pink in the darkness. Safety goggles on. Everyone else is asleep. This is when you break things safely. No interruptions. Pure exploration."
+        </div>
+
+        <div class="stakes-card">
+            <h2>📊 STAKES: LOW-STAKES EXPERIMENTATION</h2>
+            <p>
+                <strong>Hours: 00:00 - 03:00</strong><br/>
+                Failure = Safe learning | No pressure | Pure exploration<br/>
+                Break things when the world is asleep<br/>
+                This is when Ollama experiments with prompts and prototypes
+            </p>
+        </div>
+
+        <!-- DYNAMIC PRIORITY QUEUE - Generated by prompt, not static -->
+        <div class="content-section" id="priority-queue-section">
+            <h2>🚨 Priority Queue <span style="font-size:0.5em;color:#64748b;font-weight:normal;">— Generated by 🧪::laboratory prompt</span></h2>
+
+            <!-- Scoring Reference (always visible) -->
+            <div style="background:#1e293b;padding:15px;border-radius:10px;margin-bottom:20px;font-size:0.9em;">
+                <strong style="color:#06b6d4;">SCORING: experiment_has_verdict</strong><br/>
+                <span style="color:#ef4444;">VANITY (0):</span> "Running an experiment", "Gathering data", "Still exploring"<br/>
+                <span style="color:#22c55e;">RESULT (1):</span> "Experiment concluded: BUILD", "Experiment concluded: KILL"
+            </div>
+
+            <!-- Dynamic Priority List (populated by prompt output) -->
+            <div id="laboratory-priorities" style="background:#0f172a;padding:20px;border-radius:12px;min-height:150px;">
+                <p style="color:#64748b;font-style:italic;text-align:center;padding:30px 0;">
+                    ⏳ Run the prompt below to generate priorities from live data...<br/>
+                    <span style="font-size:0.85em;">Prompt executes: git log, grep, your-api-endpoint API</span>
+                </p>
+            </div>
+
+            <!-- Last Known State (fallback until prompt runs) -->
+            <details style="margin-top:15px;">
+                <summary style="cursor:pointer;color:#06b6d4;font-weight:bold;">📋 Last Known Priorities (Feb 11)</summary>
+                <ul class="priority-list" style="margin-top:10px;opacity:0.7;">
+                    <li><span class="priority-badge p1">P1</span><strong>Tesseract Grid Experiments:</strong> Test new visualization approaches, heatmap algorithms, interaction patterns</li>
+                    <li><span class="priority-badge p1">P1</span><strong>Demo Flow Prototypes:</strong> Practice presentation sequences, find edge cases before live events</li>
+                    <li><span class="priority-badge p2">P2</span><strong>Deep-Link System Testing:</strong> Verify tile/pointer/proof/signal navigation works end-to-end</li>
+                    <li><span class="priority-badge p2">P2</span><strong>New Architecture Spikes:</strong> Break assumptions, find edge cases, stress-test implementations</li>
+                    <li><span class="priority-badge p3">P3</span><strong>UI/UX Experiments:</strong> A/B test different layouts before shipping to production</li>
+                </ul>
+            </details>
+        </div>
+
+        <div class="content-section">
+            <h2>🧠 Memory Palace & Focus</h2>
+            <div style="background: #fef3c7; padding: 30px; border-radius: 15px; border-left: 6px solid #f59e0b; margin-bottom: 30px;">
+                <h3 style="font-size: 1.8em; color: #92400e; margin-bottom: 20px;">Memory Palace</h3>
+                <p style="font-size: 1.2em; line-height: 1.7; color: #78350f; font-style: italic;">
+                    "The lab glows pink in the darkness. Safety goggles on. Everyone else is asleep. This is when you break things safely. No interruptions. Pure exploration."
+                </p>
+            </div>
+
+            <div style="background: #ecfeff; padding: 30px; border-radius: 15px; border-left: 6px solid #06b6d4; margin-bottom: 30px;">
+                <h3 style="font-size: 1.8em; color: #06b6d4; margin-bottom: 20px;">Focus Areas (00:00 - 03:00)</h3>
+                <ul style="list-style: none; padding: 0;">
+                    <li style="padding: 12px 0; font-size: 1.1em; color: #444; line-height: 1.6;">
+                        <span style="color: #06b6d4; font-weight: bold; margin-right: 10px;">→</span>
+                        Prototype new ideas without pressure
+                    </li>
+                    <li style="padding: 12px 0; font-size: 1.1em; color: #444; line-height: 1.6;">
+                        <span style="color: #06b6d4; font-weight: bold; margin-right: 10px;">→</span>
+                        Test assumptions that might fail
+                    </li>
+                    <li style="padding: 12px 0; font-size: 1.1em; color: #444; line-height: 1.6;">
+                        <span style="color: #06b6d4; font-weight: bold; margin-right: 10px;">→</span>
+                        Explore architectures before committing
+                    </li>
+                    <li style="padding: 12px 0; font-size: 1.1em; color: #444; line-height: 1.6;">
+                        <span style="color: #06b6d4; font-weight: bold; margin-right: 10px;">→</span>
+                        Break things to understand them
+                    </li>
+                </ul>
+            </div>
+
+            <div style="background: #f3e8ff; padding: 30px; border-radius: 15px; border-left: 6px solid #a855f7; margin-bottom: 30px;">
+                <h3 style="font-size: 1.8em; color: #7c3aed; margin-bottom: 20px;">Prompt Types</h3>
+                <ul style="list-style: none; padding: 0;">
+                    <li style="padding: 12px 0; font-size: 1.1em; color: #444; line-height: 1.6;">
+                        <code style="background: #1a1a1a; color: #a855f7; padding: 4px 10px; border-radius: 5px; font-family: Monaco, monospace;">[EXPERIMENT]</code>
+                        <span style="margin-left: 10px;">Try this approach...</span>
+                    </li>
+                    <li style="padding: 12px 0; font-size: 1.1em; color: #444; line-height: 1.6;">
+                        <code style="background: #1a1a1a; color: #a855f7; padding: 4px 10px; border-radius: 5px; font-family: Monaco, monospace;">[PROTOTYPE]</code>
+                        <span style="margin-left: 10px;">Quick spike on...</span>
+                    </li>
+                    <li style="padding: 12px 0; font-size: 1.1em; color: #444; line-height: 1.6;">
+                        <code style="background: #1a1a1a; color: #a855f7; padding: 4px 10px; border-radius: 5px; font-family: Monaco, monospace;">[BREAK]</code>
+                        <span style="margin-left: 10px;">What happens if we...</span>
+                    </li>
+                    <li style="padding: 12px 0; font-size: 1.1em; color: #444; line-height: 1.6;">
+                        <code style="background: #1a1a1a; color: #a855f7; padding: 4px 10px; border-radius: 5px; font-family: Monaco, monospace;">[EXPLORE]</code>
+                        <span style="margin-left: 10px;">Research this pattern...</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <h2>🤖 Autonomous Process (When Ollama Runs This Room)</h2>
+            <div style="background: #1e293b; padding: 30px; border-radius: 15px; color: #e2e8f0; margin-bottom: 30px;">
+                <div style="margin-bottom: 25px;">
+                    <h3 style="color: #06b6d4; font-size: 1.5em; margin-bottom: 15px;">Step 1: Git History Check</h3>
+                    <code style="display: block; background: #0f172a; padding: 15px; border-radius: 8px; color: #22c55e; font-family: Monaco, monospace; overflow-x: auto;">
+                        git log --oneline -30 -- 'packages/' 'scripts/'
+                    </code>
+                    <p style="margin-top: 10px; color: #94a3b8;">Scan recent commits to packages and scripts for experimental work</p>
+                </div>
+
+                <div style="margin-bottom: 25px;">
+                    <h3 style="color: #06b6d4; font-size: 1.5em; margin-bottom: 15px;">Step 2: Scan for Experimental Tags</h3>
+                    <code style="display: block; background: #0f172a; padding: 15px; border-radius: 8px; color: #22c55e; font-family: Monaco, monospace; overflow-x: auto;">
+                        Grep for 'TODO|EXPERIMENT|SPIKE|POC' in src/
+                    </code>
+                    <p style="margin-top: 10px; color: #94a3b8;">Find unfinished experiments and proof-of-concepts</p>
+                </div>
+
+                <div style="margin-bottom: 25px;">
+                    <h3 style="color: #06b6d4; font-size: 1.5em; margin-bottom: 15px;">Step 3: Check Workflow State</h3>
+                    <code style="display: block; background: #0f172a; padding: 15px; border-radius: 8px; color: #22c55e; font-family: Monaco, monospace; overflow-x: auto;">
+                        Check .workflow/ for unfinished prototypes
+                    </code>
+                    <p style="margin-top: 10px; color: #94a3b8;">Review workflow state files for queued experimental work</p>
+                </div>
+
+                <div>
+                    <h3 style="color: #06b6d4; font-size: 1.5em; margin-bottom: 15px;">Step 4: Generate Prompts</h3>
+                    <code style="display: block; background: #0f172a; padding: 15px; border-radius: 8px; color: #22c55e; font-family: Monaco, monospace; overflow-x: auto;">
+                        Generate low-stakes exploration prompts
+                    </code>
+                    <p style="margin-top: 10px; color: #94a3b8;">Create experiment suggestions based on findings</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <h2>✅ Validation Rules</h2>
+            <div style="background: #fee2e2; padding: 30px; border-radius: 15px; border-left: 6px solid #ef4444; margin-bottom: 20px;">
+                <h3 style="font-size: 1.8em; color: #991b1b; margin-bottom: 20px;">❌ Vanity (Doesn't Count)</h3>
+                <ul style="list-style: none; padding: 0;">
+                    <li style="padding: 10px 0; font-size: 1.1em; color: #7f1d1d;">
+                        <span style="color: #ef4444; font-weight: bold; margin-right: 10px;">✗</span>
+                        "Interesting idea"
+                    </li>
+                    <li style="padding: 10px 0; font-size: 1.1em; color: #7f1d1d;">
+                        <span style="color: #ef4444; font-weight: bold; margin-right: 10px;">✗</span>
+                        "Could work"
+                    </li>
+                    <li style="padding: 10px 0; font-size: 1.1em; color: #7f1d1d;">
+                        <span style="color: #ef4444; font-weight: bold; margin-right: 10px;">✗</span>
+                        "Worth exploring"
+                    </li>
+                </ul>
+                <p style="margin-top: 15px; font-style: italic; color: #991b1b;">
+                    These don't count as progress. No verdict = spinning wheels.
+                </p>
+            </div>
+
+            <div style="background: #d1fae5; padding: 30px; border-radius: 15px; border-left: 6px solid #22c55e;">
+                <h3 style="font-size: 1.8em; color: #065f46; margin-bottom: 20px;">✓ Result (Real Progress)</h3>
+                <ul style="list-style: none; padding: 0;">
+                    <li style="padding: 10px 0; font-size: 1.1em; color: #064e3b;">
+                        <span style="color: #22c55e; font-weight: bold; margin-right: 10px;">✓</span>
+                        "Experiment has verdict" (BUILD or KILL)
+                    </li>
+                    <li style="padding: 10px 0; font-size: 1.1em; color: #064e3b;">
+                        <span style="color: #22c55e; font-weight: bold; margin-right: 10px;">✓</span>
+                        "Prototype validated/invalidated"
+                    </li>
+                    <li style="padding: 10px 0; font-size: 1.1em; color: #064e3b;">
+                        <span style="color: #22c55e; font-weight: bold; margin-right: 10px;">✓</span>
+                        "Architecture decision made"
+                    </li>
+                </ul>
+                <p style="margin-top: 15px; font-style: italic; color: #065f46;">
+                    These are verdicts. Experiments that conclude move the product forward.
+                </p>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <div class="deep-search">
+                <h3>🔍 Deep Search Protocol</h3>
+                <p style="margin-bottom: 15px; font-size: 1.1em;"><strong>ALWAYS check repo docs before claiming something doesn't exist or making assumptions:</strong></p>
+                <ul>
+                    <li><code>src/app/tesseract/</code> — Tesseract grid implementation, components</li>
+                    <li><code>src/app/api/</code> — API routes, RPC endpoints for experiments</li>
+                    <li><code>docs/planning/</code> — Architecture decisions, experiment logs</li>
+                    <li><code>scripts/</code> — Utility scripts, generation tools</li>
+                    <li><code>.workflow/</code> — Cognitive room configs, dashboards</li>
+                    <li><code>CLAUDE.md</code> — Critical rules, deployment patterns</li>
+                </ul>
+                <p style="margin-top: 15px; font-style: italic;">When experimenting, search the repo first. Similar experiments may already exist.</p>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <div class="identity-rules">
+                <h3>The Flywheel: How The Laboratory Validates</h3>
+                <ul>
+                    <li><strong>INPUTS FROM WEZTERM (Vault):</strong> Theoretical hypotheses that need empirical validation → "Does the 65.36-bit calculation hold under real user conditions?"</li>
+                    <li><strong>INPUTS FROM VS CODE (Architect):</strong> Strategic experiments to validate → "Should we build multi-user features or focus on solo?"</li>
+                    <li><strong>INPUTS FROM KITTY (Operator):</strong> Customer feature requests to prototype → "3 prospects asked for team dashboards"</li>
+                    <li><strong>INPUTS FROM TERMINAL (Voice):</strong> Content experiments to test → "Does this visualization make the physics clearer?"</li>
+                    <li><strong>OUTPUTS TO ITERM2 (Builder):</strong> Validated prototypes ready for production → "Gradient borders work, ready to ship"</li>
+                    <li><strong>OUTPUTS TO WEZTERM (Vault):</strong> Empirical data that validates or challenges theoretical assumptions</li>
+                    <li><strong>OUTPUTS TO VS CODE (Architect):</strong> Experiment results that inform strategic decisions → "BUILD multi-user" or "KILL this approach"</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <h2>🔄 COMPLETE FLYWHEEL CYCLE: One Experiment's Journey</h2>
+            <div style="background: #ecfeff; padding: 30px; border-radius: 15px; border-left: 6px solid #06b6d4; margin-bottom: 25px;">
+                <h3 style="font-size: 1.5em; color: #06b6d4; margin-bottom: 20px;">Example: The Heatmap Visualization Experiment</h3>
+
+                <div style="margin-bottom: 20px;">
+                    <h4 style="color: #0891b2; margin-bottom: 10px;">🔻 HYPOTHESIS ARRIVES IN CURSOR</h4>
+                    <p style="line-height: 1.7; color: #555;">VS Code asks: "Would a heatmap overlay on the Tesseract grid increase user engagement?" WezTerm provides: theoretical foundation for attention-based coloring. Kitty reports: "3 prospects said the grid was confusing." Cursor receives the hypothesis: "Heatmap overlay will improve clarity."</p>
+                </div>
+
+                <div style="margin-bottom: 20px;">
+                    <h4 style="color: #0891b2; margin-bottom: 10px;">⚗️ CURSOR RUNS THE EXPERIMENT</h4>
+                    <p style="line-height: 1.7; color: #555;">In Cursor, you build a quick prototype. 2 hours, not 2 days. You test: Does the heatmap make the grid clearer? You discover: Heatmap works for small grids but creates visual noise at full 12x12 scale. You iterate: Try gradient borders instead of full overlay. THAT works. Experiment concluded with verdict: BUILD gradient borders.</p>
+                </div>
+
+                <div style="margin-bottom: 20px;">
+                    <h4 style="color: #0891b2; margin-bottom: 10px;">🔺 CURSOR DISTRIBUTES VERDICT</h4>
+                    <p style="line-height: 1.7; color: #555;">
+                        <strong>→ iTerm2 (Builder):</strong> "Verdict: BUILD gradient borders. Production-ready prototype attached."<br/>
+                        <strong>→ WezTerm (Vault):</strong> "Discovery: Full-tile heatmaps create visual overload at scale. Miller's Law applies to color too."<br/>
+                        <strong>→ VS Code (Architect):</strong> "Verdict: Border-only approach is cheaper AND more effective."<br/>
+                        <strong>→ Alacritty (Performer):</strong> "Demo-ready: Gradient border visualization works for presentations."
+                    </p>
+                </div>
+
+                <div style="background: white; padding: 20px; border-radius: 10px; margin-top: 20px;">
+                    <p style="font-weight: bold; color: #06b6d4; margin-bottom: 10px;">THE ACCELERATION:</p>
+                    <p style="line-height: 1.7; color: #444;">
+                        One experiment in Cursor → Production feature in iTerm2 → New theoretical insight for WezTerm → Strategic decision confirmation for VS Code.
+                        <strong>Cursor's speed prevents expensive mistakes. 2 hours of experimentation saved 2 weeks of wrong-direction building.</strong>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Claude Summary Output (JSON from prompt) -->
+        <div class="content-section" id="claude-summary-section" style="background: #0f172a; color: #f0f0f0;">
+            <h2 style="color: #06b6d4; border-color: #06b6d4;">📊 Laboratory Findings <span style="font-size:0.5em;color:#64748b;">— Paste JSON output here</span></h2>
+            <div id="claude-summary" style="background: #1e293b; padding: 20px; border-radius: 12px; min-height: 100px; font-family: 'Monaco', monospace; font-size: 0.85em; white-space: pre-wrap;">
+{
+  "room": "🧪::laboratory",
+  "lens": "[C2:Loop]",
+  "timestamp": "2026-02-11T...",
+  "tesseract_heat": [],
+  "priorities": [],
+  "discarded": []
+}
+            </div>
+            <p style="color: #475569; font-size: 0.85em; margin-top: 10px;">Last updated: <span id="summary-timestamp">—</span></p>
+        </div>
+
+        <div class="content-section" style="background: #1a1a1a; color: #f0f0f0;">
+            <h2 style="color: #06b6d4; border-color: #06b6d4;">📋 Coordinate Lock Prompt</h2>
+            <p style="margin-bottom: 20px; color: #aaa;">This prompt locks Claude into the 🧪::laboratory coordinate. Copy the whole HTML (button top-right) for full context, or use this prompt directly:</p>
+            <pre style="background: #0d0d0d; padding: 25px; border-radius: 12px; overflow-x: auto; font-size: 0.95em; line-height: 1.6; border: 2px solid #06b6d4; white-space: pre-wrap;"><code style="color: #22c55e;">═══ COORDINATE LOCK: 🧪::laboratory ═══
+POSITION: 🔄 C2 Operations.Loop ("every iteration has a verdict")
+INTERSECTION: C2:C2 (Loop:Loop) — DIAGONAL ESSENCE
+⏰ TEMPORAL ROOM: 00:00 - 03:00 (Deep Night Experiments)
+ENERGY: Low-stakes exploration | Break things safely
+WINNING POINTER: (opportunity - claim this coordinate)
+QUESTION: "What is the essence of Loop? BUILD or KILL. No infinite exploration."
+
+─── TEMPORAL CONTEXT ───
+HOURS: 00:00 - 03:00 (3-hour window)
+THEME: Deep Night Experiments
+MEMORY PALACE: "The lab glows pink in the darkness. Safety goggles on. Everyone
+else is asleep. This is when you break things safely. No interruptions.
+Pure exploration."
+
+This is when Ollama experiments with prompts and prototypes. Low-stakes window
+for trying new approaches without pressure. The world is asleep—break things now.
+
+─── COGNITIVE AFFORDANCE ───
+THIS ROOM SEES:
+  • Experiments needing verdicts (BUILD or KILL)
+  • Prototypes to test (2 hours, not 2 days)
+  • Hypotheses to falsify (from Vault or Architect)
+  • A/B tests, user behavior validation
+
+THIS ROOM IGNORES:
+  • Production stability concerns (→🔨::builder)
+  • Strategic sequencing, roadmaps (→📐::architect)
+  • Deal terms, pipeline closing (→🎩::operator)
+  • Demo logistics, live performance (→🎭::performer)
+  • Mathematical proofs, patents (→🔒::vault)
+  • Content creation, blog posts (→🎤::voice)
+  • Relationship cultivation (→☕::network)
+  • Fast navigation, scouting (→🧭::navigator)
+
+THE PULL: You come here to get VERDICTS in 2 hours, not 2 weeks. BUILD or KILL—no maybes.
+If you're shipping to production or closing deals, you're in the wrong room.
+
+─── FOCUS AREAS (00:00-03:00) ───
+→ Prototype new ideas without pressure
+→ Test assumptions that might fail
+→ Explore architectures before committing
+→ Break things to understand them
+
+─── PROMPT TYPES ───
+[EXPERIMENT] Try this approach...
+[PROTOTYPE] Quick spike on...
+[BREAK] What happens if we...
+[EXPLORE] Research this pattern...
+
+─── TESSERACT NAMESPACE ───
+🏛️ A Strategy     | ⚡ B Tactics      | 🔧 C Operations
+⚖️ A1 Strategy.Law | 🏎️ B1 Tactics.Speed | 🔌 C1 Operations.Grid
+🎯 A2 Strategy.Goal | 🤝 B2 Tactics.Deal  | 🔄 C2 Operations.Loop
+💰 A3 Strategy.Fund | 📡 B3 Tactics.Signal | 🌊 C3 Operations.Flow
+                                             ↑ YOU ARE HERE (Diagonal Essence: Iteration verdict)
+
+─── ARCHAEOLOGY PROTOCOL ───
+WebFetch: your-api-endpoint
+Bash: git log --oneline -30 -- "src/app/api/tesseract/*" "**/*test*"
+Bash: grep -r "experiment\|prototype\|hypothesis" src/ docs/
+
+─── DIFFERENTIATION ───
+HANDOFF TO (when laboratory sees these, route out):
+  →🔨::builder: "Verdict: BUILD, ship it" → 🔌 C1 Operations.Grid
+  →📐::architect: "Verdict unclear, needs strategy" → 🎯 A2 Strategy.Goal
+  →🎩::operator: "Need market feedback first" → 🌊 C3 Operations.Flow
+  →🎭::performer: "Prototype ready for demo" → 💰 A3 Strategy.Fund
+  →🔒::vault: "Discovery needs formal proof" → ⚖️ A1 Strategy.Law
+  →🎤::voice: "Experiment result needs announcement" → 📡 B3 Tactics.Signal
+  →☕::network: "Need user feedback from network" → 🤝 B2 Tactics.Deal
+  →🧭::navigator: "Need to find prior art" → 🏎️ B1 Tactics.Speed
+
+HANDOFF FROM (what other rooms send here):
+  ←📐::architect: "Untested feature idea, run experiment"
+  ←🔨::builder: "Not sure if this works, prototype first"
+  ←🎤::voice: "New content format, test engagement"
+  ←🔒::vault: "Theory needs empirical validation"
+
+─── AFFORDANCE TAGS ───
+[EXPERIMENT] = Untested hypothesis (needs rapid validation)
+[PROTOTYPE] = Needs rapid iteration (2 hours, not 2 days)
+[VERDICT] = Experiment complete, decision needed (BUILD or KILL)
+[KILL] = Failed experiment, document learnings, move on
+
+─── AUTONOMOUS PROCESS (When Ollama Runs This Room) ───
+STEP 1: git log --oneline -30 -- 'packages/' 'scripts/'
+        (Scan recent commits for experimental work)
+
+STEP 2: Grep for 'TODO|EXPERIMENT|SPIKE|POC' in src/
+        (Find unfinished experiments and proofs-of-concept)
+
+STEP 3: Check .workflow/ for unfinished prototypes
+        (Review workflow state files for queued work)
+
+STEP 4: Generate low-stakes exploration prompts
+        (Create experiment suggestions based on findings)
+
+─── VALIDATION RULES ───
+❌ VANITY (Doesn't Count):
+   • "Interesting idea"
+   • "Could work"
+   • "Worth exploring"
+
+✓ RESULT (Real Progress):
+   • "Experiment has verdict" (BUILD or KILL)
+   • "Prototype validated/invalidated"
+   • "Architecture decision made"
+
+─── ESCAPE GRAVITY ───
+The average response celebrates exploration.
+This coordinate counts VERDICTS: BUILD or KILL.
+FORBIDDEN: "Running an experiment", "Gathering data", "Still exploring", "Need more time"
+If no verdict, it's spinning wheels. Route elsewhere.
+
+⏰ TEMPORAL REMINDER: This room operates 00:00-03:00 for LOW-STAKES EXPERIMENTATION.
+During this window, Ollama prompts experiments and prototypes. Break things when
+the world is asleep. No pressure. Pure exploration.
+
+─── OUTPUT FORMAT ───
+{
+  "coordinate": "🔄 C2 Operations.Loop",
+  "intersection": "C2:C2 (Loop:Loop)",
+  "timestamp": "ISO-8601",
+  "sees": ["Heatmap experiment needs verdict", "UX prototype untested"],
+  "ignores": ["production deploy → 🔨::builder", "patent filing → 🔒::vault"],
+  "priorities": [
+    {"tag": "[EXPERIMENT]", "item": "...", "verdict": "BUILD|KILL|pending", "roi": 0.95}
+  ],
+  "routed_out": [
+    {"to": "→🔨::builder", "item": "Verdict: BUILD gradient borders"}
+  ]
+}</code></pre>
+            <button onclick="navigator.clipboard.writeText(this.previousElementSibling.textContent); this.textContent='✓ Copied!'; setTimeout(()=>this.textContent='📋 Copy Prompt', 2000)" style="margin-top: 15px; padding: 12px 24px; background: #06b6d4; color: white; border: none; border-radius: 8px; font-size: 1em; cursor: pointer; font-weight: bold;">📋 Copy Prompt</button>
+        </div>
+
+        <div class="footer">
+            <p><strong>🧪::laboratory</strong></p>
+            <p><strong style="color: #fbbf24;">⏰ TEMPORAL ROOM: 00:00 - 03:00</strong></p>
+            <p>Deep Night Experiments | Low-Stakes Exploration</p>
+            <p style="margin-top: 15px;">Where Hypotheses Become Data → Data Becomes Decisions → Decisions Become Product</p>
+            <p style="margin-top: 10px; font-style: italic; opacity: 0.9;">Fail Fast, Learn Cheap, Ship Validated (The Sandbox)</p>
+            <p style="margin-top: 15px; font-style: italic; opacity: 0.8; font-size: 0.95em;">
+                This is when Ollama prompts experiments and prototypes during the deep night window.<br/>
+                Everyone else is asleep. Break things safely. No interruptions. Pure exploration.
+            </p>
+        </div>
+    </div>
+
+    <!-- Room State & JSON Renderer -->
+    <script>
+    const LaboratoryRoom = {
+        namespace: '🧪::laboratory',
+        lens: '[C2:Loop]',
+        conversionSignal: 'experiment_has_verdict',
+
+        renderPriorities(json) {
+            const container = document.getElementById('laboratory-priorities');
+            if (!json || !json.priorities || json.priorities.length === 0) {
+                container.innerHTML = '<p style="color:#64748b;text-align:center;">No priorities generated yet. Run the prompt.</p>';
+                return;
+            }
+
+            let html = '<ul style="list-style:none;padding:0;">';
+            for (const p of json.priorities) {
+                const badgeClass = p.rank === 'P1' ? 'p1' : p.rank === 'P2' ? 'p2' : 'p3';
+                const scoreColor = p.score >= 0.8 ? '#22c55e' : p.score >= 0.5 ? '#f59e0b' : '#ef4444';
+                html += `
+                    <li style="padding:15px;margin-bottom:10px;background:#1e293b;border-radius:8px;border-left:4px solid ${scoreColor};">
+                        <span class="priority-badge ${badgeClass}">${p.rank}</span>
+                        <span style="background:#06b6d4;color:white;padding:2px 8px;border-radius:4px;font-size:0.8em;margin-left:5px;">${p.tag}</span>
+                        <strong style="margin-left:10px;color:#e2e8f0;">${p.item}</strong>
+                        <span style="float:right;color:${scoreColor};font-weight:bold;">${(p.score * 100).toFixed(0)}%</span>
+                    </li>
+                `;
+            }
+            html += '</ul>';
+            container.innerHTML = html;
+            document.getElementById('summary-timestamp').textContent = json.timestamp || new Date().toISOString();
+        },
+
+        handlePaste(text) {
+            try {
+                const json = JSON.parse(text);
+                if (json.room === this.namespace) {
+                    this.renderPriorities(json);
+                    document.getElementById('claude-summary').textContent = JSON.stringify(json, null, 2);
+                    console.log('🧪 Priorities loaded:', json.priorities.length, 'items');
+                }
+            } catch (e) {
+                console.warn('Not valid JSON:', e);
+            }
+        }
+    };
+
+    document.getElementById('claude-summary')?.addEventListener('paste', (e) => {
+        setTimeout(() => {
+            LaboratoryRoom.handlePaste(e.target.textContent);
+        }, 100);
+    });
+    </script>
+</body>
+</html>

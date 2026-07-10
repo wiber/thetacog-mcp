@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🔒 WezTerm | The Vault</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🔒</text></svg>">
+    <!-- ═══════════════════════════════════════════════════════════════════════════
+         COORDINATE LOCKING METADATA - 🔒::vault
+         Copy this entire HTML to Claude to lock into this coordinate
+         ═══════════════════════════════════════════════════════════════════════════ -->
+    <script type="application/json" id="coordinate-lock">
+    {
+        "namespace": "🔒::vault",
+        "coordinate": "⚖️ A1 Strategy.Law",
+        "intersection": "A1:A1 (Law:Law)",
+        "tile_type": "diagonal_essence",
+        "terminal": "WezTerm",
+        "tier": 1,
+        "winning_pointer": "https://aistatement.com/",
+        "question": "What is the essence of Law? What is mathematically necessary vs design choice?",
+        "book_chapter": "[Your relevant chapter/doc]",
+
+        "temporal": {
+            "hours": "03:00 - 06:00",
+            "theme": "Pre-Dawn Proofs",
+            "energy": "silent mathematical certainty",
+            "memory_palace": "Descend into silence. Amber light. Cold air. The world sleeps but truth doesn't. You are not writing code; you are writing law. Raw observations enter. Mathematical certainty leaves."
+        },
+
+        "focus_areas": [
+            "First-principles proofs",
+            "Patent-grade documentation",
+            "Irreversible decisions",
+            "Mathematical validation"
+        ],
+
+        "prompt_types": [
+            "[PROVE] This claim needs validation...",
+            "[PROTECT] IP boundary to establish...",
+            "[THEOREM] Formalize this observation...",
+            "[VERIFY] Check this against first principles..."
+        ],
+
+        "autonomous_process": {
+            "step1_git": "git log --oneline -30 -- 'docs/' '*.md'",
+            "step2_scan": "Read docs/planning/ for unvalidated claims",
+            "step3_state": "Fetch tesseract.nu state for open proofs",
+            "step4_prompt": "Generate proof/validation prompts"
+        },
+
+        "validation": {
+            "vanity": ["Sounds right", "Makes sense", "Good thinking"],
+            "result": ["Mathematical proof complete", "Theorem formalized", "IP documented"]
+        },
+
+        "flywheel": {
+            "receives_from": ["builder", "voice", "architect"],
+            "outputs_to": ["voice", "architect", "builder"],
+            "transforms": "Observations → First-principles proofs → Patent-grade certainty"
+        },
+
+        "cognitive_affordance": {
+            "sees": ["Mathematical proofs", "Physics validations", "Patent disclosures", "IP boundaries", "Security audits"],
+            "ignores": ["Implementation details", "Deal terms", "Demo scripts", "Content creation"],
+            "pull": "You come here to PROVE, not claim. Establish mathematical necessity. The 25-year patent horizon. If you're debating UX, you're in the wrong room."
+        },
+
+        "escape_gravity": {
+            "axis": "Mathematical necessity > Design choice",
+            "forbidden": ["We believe this is secure", "Should work", "Probably correct", "The 12x12 grid works"],
+            "counts": "Mathematical proofs only. Certainty = true signal."
+        },
+
+        "differentiation": {
+            "handoff_to": {
+                "📐::architect": "Strategy question → 🎯 A2",
+                "🔨::builder": "Implementation detail → 🔌 C1",
+                "🎩::operator": "Sales/deals → 🌊 C3",
+                "🎭::performer": "Demo needs → 💰 A3"
+            },
+            "handoff_from": {
+                "📐::architect": "[DISPATCH] Validate physics proof for patent",
+                "🔨::builder": "Security audit needed",
+                "🎩::operator": "Contract needs legal review"
+            }
+        },
+
+        "affordances": ["PROVE", "SECURE", "AUDIT", "FILE"],
+        "archaeology": {
+            "api": "your-api-endpoint",
+            "paths": ["docs/fim-patent/*", "docs/legal/*", "src/lib/*auth*"]
+        }
+    }
+    </script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, #dc2626 0%, #991b1b 100%);
+            color: #1a1a1a;
+            padding: 40px 20px;
+            min-height: 100vh;
+        }
+        .container { max-width: 1200px; margin: 0 auto; }
+        .back-button {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            border: 2px solid white;
+            padding: 14px 28px;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 1.1em;
+            font-weight: bold;
+            margin-bottom: 40px;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+        .back-button:hover { background: rgba(255, 255, 255, 0.3); transform: translateX(-5px); }
+        .copy-html-btn {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: rgba(0,0,0,0.8);
+            color: #dc2626;
+            border: 2px solid #dc2626;
+            padding: 12px 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 0.9em;
+            font-weight: bold;
+            z-index: 1000;
+            font-family: 'Monaco', monospace;
+        }
+        .copy-html-btn:hover { background: #dc2626; color: white; }
+        .header { text-align: center; margin-bottom: 50px; }
+        .header h1 { font-size: 4.5em; color: white; text-shadow: 3px 3px 6px rgba(0,0,0,0.4); margin-bottom: 15px; }
+        .subtitle { font-size: 1.5em; color: white; opacity: 0.95; margin-bottom: 10px; }
+        .command {
+            font-family: 'Monaco', 'Courier New', monospace;
+            background: rgba(0, 0, 0, 0.3);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 8px;
+            display: inline-block;
+            font-size: 1.2em;
+            margin-top: 10px;
+        }
+        .memory-palace {
+            background: white;
+            color: #1a1a1a;
+            font-size: 2.2em;
+            font-style: italic;
+            text-align: center;
+            padding: 50px 40px;
+            border-radius: 20px;
+            margin-bottom: 50px;
+            box-shadow: 0 15px 50px rgba(0,0,0,0.3);
+            line-height: 1.6;
+            border-left: 10px solid #dc2626;
+        }
+        .stakes-card {
+            background: rgba(0, 0, 0, 0.3);
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            margin-bottom: 50px;
+            border: 3px solid rgba(255, 255, 255, 0.4);
+        }
+        .stakes-card h2 { font-size: 2.5em; margin-bottom: 15px; }
+        .stakes-card p { font-size: 1.3em; line-height: 1.6; }
+        .content-section {
+            background: white;
+            padding: 50px 40px;
+            border-radius: 20px;
+            margin-bottom: 40px;
+            box-shadow: 0 15px 50px rgba(0,0,0,0.2);
+        }
+        .content-section h2 {
+            font-size: 2.5em;
+            color: #dc2626;
+            margin-bottom: 30px;
+            border-bottom: 4px solid #dc2626;
+            padding-bottom: 15px;
+        }
+        .priority-list { list-style: none; padding: 0; }
+        .priority-list li {
+            padding: 18px 0;
+            border-bottom: 2px solid #eee;
+            font-size: 1.2em;
+            color: #333;
+            line-height: 1.6;
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+        }
+        .priority-list li:last-child { border-bottom: none; }
+        .priority-badge {
+            background: #dc2626;
+            color: white;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.8em;
+            font-weight: bold;
+            white-space: nowrap;
+        }
+        .priority-badge.p1 { background: #dc2626; }
+        .priority-badge.p2 { background: #f59e0b; }
+        .priority-badge.p3 { background: #10b981; }
+        .deep-search {
+            background: #fef3c7;
+            padding: 30px;
+            border-radius: 15px;
+            border-left: 6px solid #f59e0b;
+            margin-bottom: 30px;
+        }
+        .deep-search h3 { font-size: 1.8em; color: #92400e; margin-bottom: 20px; }
+        .deep-search code {
+            background: #1a1a1a;
+            color: #22c55e;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-family: 'Monaco', monospace;
+        }
+        .deep-search ul { list-style: none; padding: 0; }
+        .deep-search li { padding: 10px 0; font-size: 1.1em; color: #78350f; }
+        .deep-search li:before { content: '📂'; margin-right: 12px; }
+        .identity-rules {
+            background: #fef2f2;
+            padding: 30px;
+            border-radius: 15px;
+            border-left: 6px solid #dc2626;
+            margin-bottom: 30px;
+        }
+        .identity-rules h3 { font-size: 1.8em; color: #dc2626; margin-bottom: 20px; }
+        .identity-rules ul { list-style: none; padding: 0; }
+        .identity-rules li { padding: 12px 0; font-size: 1.1em; color: #444; line-height: 1.6; }
+        .identity-rules li:before { content: '→'; margin-right: 12px; color: #dc2626; font-weight: bold; font-size: 1.3em; }
+        .footer { text-align: center; color: white; margin-top: 60px; font-size: 1.1em; opacity: 0.9; }
+        .room-switcher {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 30px;
+            padding: 15px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 12px;
+        }
+        .room-switcher a {
+            padding: 8px 16px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 0.95em;
+            transition: transform 0.2s, background 0.2s;
+        }
+        .room-switcher a:hover { transform: scale(1.05); }
+        .room-switcher .builder { background: #3b82f6; color: white; }
+        .room-switcher .architect { background: #4f46e5; color: white; }
+        .room-switcher .operator { background: #22c55e; color: white; }
+        .room-switcher .vault { background: #ef4444; color: white; }
+        .room-switcher .voice { background: #a855f7; color: white; }
+        .room-switcher .laboratory { background: #06b6d4; color: white; }
+        .room-switcher .performer { background: #f59e0b; color: white; }
+        .room-switcher .network { background: #6366f1; color: white; }
+        .room-switcher .navigator { background: #0d9488; color: white; }
+        .room-switcher .current { opacity: 0.5; pointer-events: none; }
+    </style>
+</head>
+<body>
+    <!-- Copy Whole HTML Button - Paste to Claude to lock into this coordinate -->
+    <button class="copy-html-btn" onclick="navigator.clipboard.writeText(document.documentElement.outerHTML).then(()=>{this.textContent='✓ Copied!';setTimeout(()=>this.textContent='📋 🔒::vault',2000)})">📋 🔒::vault</button>
+
+    <div class="container">
+        <a href="../cognitive-dashboard.html" class="back-button">← Back to Dashboard</a>
+
+        <nav class="room-switcher">
+            <a href="iterm2-builder.html" target="_blank" class="builder">🔨 Builder</a>
+            <a href="vscode-architect.html" target="_blank" class="architect">📐 Architect</a>
+            <a href="kitty-operator.html" target="_blank" class="operator">🎩 Operator</a>
+            <a href="wezterm-vault.html" target="_blank" class="vault current">🔒 Vault</a>
+            <a href="terminal-voice.html" target="_blank" class="voice">🎤 Voice</a>
+            <a href="cursor-laboratory.html" target="_blank" class="laboratory">🧪 Laboratory</a>
+            <a href="alacritty-performer.html" target="_blank" class="performer">🎭 Performer</a>
+            <a href="messages-network.html" target="_blank" class="network">☕ Network</a>
+            <a href="rio-navigator.html" target="_blank" class="navigator">🧭 Navigator</a>
+        </nav>
+
+        <div class="header">
+            <h1>🔒 THE VAULT</h1>
+            <div class="subtitle">TEMPORAL ROOM: 03:00 - 06:00 | Pre-Dawn Proofs | Silent Mathematical Certainty</div>
+            <div class="command">Cmd+Space → wezterm</div>
+            <div style="background:rgba(0,0,0,0.3);color:white;padding:15px;border-radius:10px;margin-top:15px;font-size:0.95em;">
+                <strong>⏰ AUTONOMOUS WINDOW:</strong> Ollama prompts you 03:00-06:00 based on git history, doc state, and open proofs
+            </div>
+        </div>
+
+        <div class="memory-palace">
+            "Descend into silence. Amber light. Cold air. The world sleeps but truth doesn't. <strong>You are not writing code; you are writing law.</strong> Raw observations enter. Mathematical certainty leaves."
+            <div style="font-size:0.6em;margin-top:20px;font-style:normal;color:#dc2626;">
+                <strong>⚖️ A1:A1 (Law:Law)</strong> — "What is mathematically necessary vs design choice?" (aistatement.com)
+            </div>
+        </div>
+
+        <!-- COGNITIVE AFFORDANCE CARD -->
+        <div class="content-section" style="background:#1e293b;color:white;border-left:6px solid #dc2626;">
+            <h2 style="color:#dc2626;border:none;margin-bottom:20px;">🧠 FOCUS AREAS (from rooms.json)</h2>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:30px;">
+                <div>
+                    <h3 style="color:#22c55e;margin-bottom:10px;">✓ THIS ROOM FOCUSES ON</h3>
+                    <ul style="list-style:none;padding:0;line-height:2;">
+                        <li>• First-principles proofs</li>
+                        <li>• Patent-grade documentation</li>
+                        <li>• Irreversible decisions</li>
+                        <li>• Mathematical validation</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 style="color:#ef4444;margin-bottom:10px;">✗ THIS ROOM IGNORES</h3>
+                    <ul style="list-style:none;padding:0;line-height:2;">
+                        <li>• Implementation details → <span style="color:#3b82f6;">🔨::builder</span></li>
+                        <li>• Deal terms → <span style="color:#10b981;">🎩::operator</span></li>
+                        <li>• Demo scripts → <span style="color:#f59e0b;">🎭::performer</span></li>
+                        <li>• Content creation → <span style="color:#a855f7;">🎤::voice</span></li>
+                    </ul>
+                </div>
+            </div>
+            <div style="margin-top:25px;padding:20px;background:#0f172a;border-radius:10px;">
+                <strong style="color:#dc2626;">THE PULL:</strong> You come here to PROVE, not claim. Mathematical necessity only. If you're debating UX polish, you're in the wrong room.
+            </div>
+        </div>
+
+        <div class="stakes-card">
+            <h2>⚠️ PROMPT TYPES (Ollama will use these)</h2>
+            <p style="line-height:2;">
+            <strong>[PROVE]</strong> This claim needs validation...<br/>
+            <strong>[PROTECT]</strong> IP boundary to establish...<br/>
+            <strong>[THEOREM]</strong> Formalize this observation...<br/>
+            <strong>[VERIFY]</strong> Check this against first principles...
+            </p>
+        </div>
+
+        <!-- AUTONOMOUS PROCESS STEPS -->
+        <div class="content-section" id="autonomous-process-section">
+            <h2>🤖 Autonomous Process (03:00-06:00)</h2>
+            <div style="background:#1e293b;padding:20px;border-radius:10px;margin-bottom:20px;color:white;">
+                <p style="margin-bottom:15px;"><strong>Ollama executes these steps during the pre-dawn window:</strong></p>
+                <ol style="line-height:2;">
+                    <li><strong>STEP 1 (git):</strong> <code style="background:#0f172a;padding:2px 8px;border-radius:4px;">git log --oneline -30 -- 'docs/' '*.md'</code></li>
+                    <li><strong>STEP 2 (scan):</strong> Read docs/planning/ for unvalidated claims</li>
+                    <li><strong>STEP 3 (state):</strong> Fetch tesseract.nu state for open proofs</li>
+                    <li><strong>STEP 4 (prompt):</strong> Generate proof/validation prompts</li>
+                </ol>
+            </div>
+        </div>
+
+        <!-- VALIDATION RULES -->
+        <div class="content-section" id="validation-section">
+            <h2>✅ Validation Rules (Vanity vs Result)</h2>
+            <div style="background:#1e293b;padding:20px;border-radius:10px;margin-bottom:20px;color:white;">
+                <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;">
+                    <div style="background:#7f1d1d;padding:15px;border-radius:8px;">
+                        <h3 style="color:#fca5a5;margin-bottom:10px;">❌ VANITY (0 points)</h3>
+                        <ul style="list-style:none;padding:0;line-height:1.8;">
+                            <li>• "Sounds right"</li>
+                            <li>• "Makes sense"</li>
+                            <li>• "Good thinking"</li>
+                        </ul>
+                    </div>
+                    <div style="background:#14532d;padding:15px;border-radius:8px;">
+                        <h3 style="color:#86efac;margin-bottom:10px;">✓ RESULT (1 point)</h3>
+                        <ul style="list-style:none;padding:0;line-height:1.8;">
+                            <li>• Mathematical proof complete</li>
+                            <li>• Theorem formalized</li>
+                            <li>• IP documented</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- DYNAMIC PRIORITY QUEUE - Generated by prompt, not static -->
+        <div class="content-section" id="priority-queue-section">
+            <h2>🚨 Priority Queue <span style="font-size:0.5em;color:#64748b;font-weight:normal;">— Generated by 🔒::vault prompt</span></h2>
+
+            <!-- Dynamic Priority List (populated by prompt output) -->
+            <div id="vault-priorities" style="background:#0f172a;padding:20px;border-radius:12px;min-height:150px;">
+                <p style="color:#64748b;font-style:italic;text-align:center;padding:30px 0;">
+                    ⏳ Run the prompt below to generate priorities from live data...<br/>
+                    <span style="font-size:0.85em;">Prompt executes: git log, grep, your-api-endpoint API</span>
+                </p>
+            </div>
+
+            <!-- Last Known State (fallback until prompt runs) -->
+            <details style="margin-top:15px;">
+                <summary style="cursor:pointer;color:#dc2626;font-weight:bold;">📋 Last Known Priorities (Feb 11)</summary>
+                <ul class="priority-list" style="margin-top:10px;opacity:0.7;">
+                    <li><span class="priority-badge p1">P1</span><strong>Tesseract Grid Physics:</strong> Validate 12x12 grid uniqueness theorem for patent claims</li>
+                    <li><span class="priority-badge p1">P1</span><strong>Gestalt Constraint Proof:</strong> Mathematical proof that 12x12 is the ONLY solution to Miller's Law</li>
+                    <li><span class="priority-badge p2">P2</span><strong>Information Geometry Report:</strong> Validate the 65.36-bit calculation for Tesseract artifacts</li>
+                    <li><span class="priority-badge p2">P2</span><strong>Book Mathematical Foundations:</strong> Chapters 7 & 8 revisions (Trust Debt, Unity Principle)</li>
+                    <li><span class="priority-badge p3">P3</span><strong>IP Boundary Definition:</strong> Define the line between "Public Book" and "Private Patent"</li>
+                </ul>
+            </details>
+        </div>
+
+        <!-- TEMPORAL SCHEDULING INFO -->
+        <div class="content-section" style="background:#0f172a;color:white;border:3px solid #dc2626;">
+            <h2 style="color:#dc2626;border:none;margin-bottom:20px;">⏰ TEMPORAL ROOM SCHEDULING</h2>
+            <div style="background:#1e293b;padding:25px;border-radius:12px;margin-bottom:20px;">
+                <div style="display:grid;grid-template-columns:1fr 2fr;gap:20px;align-items:center;">
+                    <div style="text-align:center;font-size:3em;color:#dc2626;">03:00 - 06:00</div>
+                    <div>
+                        <h3 style="color:#fbbf24;margin-bottom:10px;">Pre-Dawn Proofs</h3>
+                        <p style="line-height:1.8;color:#d1d5db;">
+                            <strong>Energy:</strong> Silent mathematical certainty<br/>
+                            <strong>Theme:</strong> The world sleeps but truth doesn't<br/>
+                            <strong>Terminal:</strong> WezTerm (Tier 1)
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div style="background:#7f1d1d;padding:20px;border-radius:12px;">
+                <h3 style="color:#fca5a5;margin-bottom:10px;">🤖 How Autonomous Prompting Works</h3>
+                <p style="line-height:1.8;color:#fecaca;">
+                    During the <strong>03:00-06:00 window</strong>, Ollama (running ThetaCog) will:
+                </p>
+                <ol style="line-height:2;color:#fecaca;margin-top:10px;">
+                    <li>Monitor your git log for recent doc changes</li>
+                    <li>Scan docs/planning/ for unvalidated claims</li>
+                    <li>Check tesseract.nu API for open proofs</li>
+                    <li>Generate prompts like <strong>[PROVE]</strong>, <strong>[PROTECT]</strong>, <strong>[THEOREM]</strong>, <strong>[VERIFY]</strong></li>
+                    <li>Present them to you in WezTerm when you open the terminal</li>
+                </ol>
+                <p style="margin-top:15px;font-style:italic;color:#fbbf24;">
+                    You don't search for proofs to write—the room searches for you and presents them at the optimal cognitive time.
+                </p>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <div class="deep-search">
+                <h3>🔍 Deep Search Protocol</h3>
+                <p style="margin-bottom: 15px; font-size: 1.1em;"><strong>ALWAYS check repo docs before claiming something doesn't exist or making assumptions:</strong></p>
+                <ul>
+                    <li><code>docs/tesseract/</code> — Grid physics, mathematical proofs, constraint derivations</li>
+                    <li><code>docs/05-content/blog/scratchpad/tss/</code> — Tesseract Series canonical requirements, proofs</li>
+                    <li><code>scripts/generate-original-pattern-solid.py</code> — FIM artifact generation (canonical pattern)</li>
+                    <li><code>CLAUDE.md</code> — FIM specifications, 12x12 grid rules</li>
+                    <li><code>public/book/</code> — Book chapters with mathematical foundations</li>
+                    <li><code>docs/planning/</code> — Patent strategy, IP protection documents</li>
+                </ul>
+                <p style="margin-top: 15px; font-style: italic;">When asked about physics or patents, search the repo first. Proofs may already exist.</p>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <div class="identity-rules">
+                <h3>🔄 Flywheel Connections (from rooms.json)</h3>
+                <div style="margin-bottom:20px;padding:15px;background:#fef2f2;border-left:4px solid #dc2626;border-radius:8px;">
+                    <h4 style="color:#dc2626;margin-bottom:10px;">📥 RECEIVES FROM</h4>
+                    <ul style="list-style:none;padding:0;line-height:1.8;">
+                        <li><strong>🔨 Builder:</strong> Observations from production → Need validation</li>
+                        <li><strong>🎤 Voice:</strong> Public claims → Need mathematical proof</li>
+                        <li><strong>📐 Architect:</strong> Strategy questions → Need first-principles grounding</li>
+                    </ul>
+                </div>
+                <div style="margin-bottom:20px;padding:15px;background:#dcfce7;border-left:4px solid #22c55e;border-radius:8px;">
+                    <h4 style="color:#15803d;margin-bottom:10px;">📤 OUTPUTS TO</h4>
+                    <ul style="list-style:none;padding:0;line-height:1.8;">
+                        <li><strong>🎤 Voice:</strong> Proven theorems → Viral stories</li>
+                        <li><strong>📐 Architect:</strong> IP boundaries → Strategic decisions</li>
+                        <li><strong>🔨 Builder:</strong> Mathematical proofs → Implementation constraints</li>
+                    </ul>
+                </div>
+                <div style="padding:15px;background:#1e293b;color:white;border-radius:8px;">
+                    <h4 style="color:#fbbf24;margin-bottom:10px;">⚡ TRANSFORMATION</h4>
+                    <p style="font-size:1.1em;font-weight:bold;">Observations → First-principles proofs → Patent-grade certainty</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <h2>🔄 COMPLETE FLYWHEEL CYCLE: One Proof's Journey</h2>
+            <div style="background: #fef2f2; padding: 30px; border-radius: 15px; border-left: 6px solid #dc2626; margin-bottom: 25px;">
+                <h3 style="font-size: 1.5em; color: #dc2626; margin-bottom: 20px;">Example: The 12x12 Grid Uniqueness Proof</h3>
+
+                <div style="margin-bottom: 20px;">
+                    <h4 style="color: #991b1b; margin-bottom: 10px;">STEP 1: iTerm2 → WezTerm (Empirical Data Arrives)</h4>
+                    <p style="line-height: 1.7; color: #555;">iTerm2 ships the Tesseract grid. You observe: 3x3 blocks arranged in 4x4 grid with 0.8mm gestalt gaps. iTerm2 asks WezTerm: "Is this configuration arbitrary or mathematically necessary?" The question enters WezTerm. WezTerm begins the proof.</p>
+                </div>
+
+                <div style="margin-bottom: 20px;">
+                    <h4 style="color: #991b1b; margin-bottom: 10px;">STEP 2: WezTerm Transforms (Mathematical Rigor Applied)</h4>
+                    <p style="line-height: 1.7; color: #555;">Inside WezTerm, you apply Miller's Law (7±2 constraints). WezTerm calculates: 3x3 blocks create exactly 7 gestalt boundaries per region. WezTerm proves 12x12 is the UNIQUE solution—not 10x10 (too sparse), not 16x16 (too dense). WezTerm validates this with information geometry: 65.36 bits of configuration space. The proof is locked.</p>
+                </div>
+
+                <div style="margin-bottom: 20px;">
+                    <h4 style="color: #991b1b; margin-bottom: 10px;">STEP 3: WezTerm → Terminal (Theorem Becomes Story)</h4>
+                    <p style="line-height: 1.7; color: #555;">WezTerm sends the proven theorem to Terminal. Terminal receives: "12x12 is mathematically enforced." Terminal transforms it into the viral hook: "This grid holds more states than seconds since the Big Bang—and it's not a choice, it's a law." Terminal posts to LinkedIn.</p>
+                </div>
+
+                <div style="background: white; padding: 20px; border-radius: 10px; margin-top: 20px;">
+                    <p style="font-weight: bold; color: #dc2626; margin-bottom: 10px;">THE ACCELERATION:</p>
+                    <p style="line-height: 1.7; color: #444;">
+                        One proof in WezTerm → Viral story in Terminal → Revenue in Kitty → Strategic pivot in VS Code → New implementation in iTerm2 → Deeper research question back to WezTerm.
+                        <strong>The wheel turns faster each cycle because every terminal is now smarter.</strong>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Claude Summary Output (JSON from prompt) -->
+        <div class="content-section" id="claude-summary-section" style="background: #0f172a; color: #f0f0f0;">
+            <h2 style="color: #dc2626; border-color: #dc2626;">📊 Vault Findings <span style="font-size:0.5em;color:#64748b;">— Paste JSON output here</span></h2>
+            <div id="claude-summary" style="background: #1e293b; padding: 20px; border-radius: 12px; min-height: 100px; font-family: 'Monaco', monospace; font-size: 0.85em; white-space: pre-wrap;">
+{
+  "room": "🔒::vault",
+  "lens": "[A1:Law]",
+  "timestamp": "2026-02-11T...",
+  "tesseract_heat": [],
+  "priorities": [],
+  "discarded": []
+}
+            </div>
+            <p style="color: #475569; font-size: 0.85em; margin-top: 10px;">Last updated: <span id="summary-timestamp">—</span></p>
+        </div>
+
+        <div class="content-section" style="background: #1a1a1a; color: #f0f0f0;">
+            <h2 style="color: #dc2626; border-color: #dc2626;">📋 Coordinate Lock Prompt</h2>
+            <p style="margin-bottom: 20px; color: #aaa;">This prompt locks Claude into the 🔒::vault coordinate. Copy the whole HTML (button top-right) for full context, or use this prompt directly:</p>
+            <pre style="background: #0d0d0d; padding: 25px; border-radius: 12px; overflow-x: auto; font-size: 0.95em; line-height: 1.6; border: 2px solid #dc2626; white-space: pre-wrap;"><code style="color: #22c55e;">═══ COORDINATE LOCK: 🔒::vault ═══
+POSITION: ⚖️ A1 Strategy.Law ("mathematical necessity vs design choice")
+INTERSECTION: A1:A1 (Law:Law) — DIAGONAL ESSENCE
+WINNING POINTER: https://aistatement.com/
+QUESTION: "What is mathematically necessary? What is merely a design choice?"
+
+⏰ TEMPORAL WINDOW: 03:00 - 06:00 (Pre-Dawn Proofs)
+ENERGY: Silent mathematical certainty
+THEME: The world sleeps but truth doesn't. You are not writing code; you are writing law.
+
+─── FOCUS AREAS (from rooms.json) ───
+THIS ROOM FOCUSES ON:
+  • First-principles proofs
+  • Patent-grade documentation
+  • Irreversible decisions
+  • Mathematical validation
+
+─── PROMPT TYPES (Ollama uses these 03:00-06:00) ───
+  [PROVE] This claim needs validation...
+  [PROTECT] IP boundary to establish...
+  [THEOREM] Formalize this observation...
+  [VERIFY] Check this against first principles...
+
+─── AUTONOMOUS PROCESS (executed during temporal window) ───
+  STEP 1: git log --oneline -30 -- 'docs/' '*.md'
+  STEP 2: Read docs/planning/ for unvalidated claims
+  STEP 3: Fetch tesseract.nu state for open proofs
+  STEP 4: Generate proof/validation prompts
+
+─── VALIDATION RULES ───
+  VANITY (0 points): "Sounds right", "Makes sense", "Good thinking"
+  RESULT (1 point): "Mathematical proof complete", "Theorem formalized", "IP documented"
+
+─── FLYWHEEL CONNECTIONS ───
+  RECEIVES FROM: builder, voice, architect
+  OUTPUTS TO: voice, architect, builder
+  TRANSFORMS: Observations → First-principles proofs → Patent-grade certainty
+
+THE PULL: You come here to PROVE, not claim. Certainty only.
+If you're debating UX or closing deals, you're in the wrong room.
+
+─── TESSERACT NAMESPACE ───
+🏛️ A Strategy     | ⚡ B Tactics      | 🔧 C Operations
+⚖️ A1 Strategy.Law | 🏎️ B1 Tactics.Speed | 🔌 C1 Operations.Grid
+🎯 A2 Strategy.Goal | 🤝 B2 Tactics.Deal  | 🔄 C2 Operations.Loop
+💰 A3 Strategy.Fund | 📡 B3 Tactics.Signal | 🌊 C3 Operations.Flow
+       ↑ YOU ARE HERE (Diagonal Essence: aistatement.com)
+
+─── ARCHAEOLOGY PROTOCOL (Autonomous Process runs these) ───
+WebFetch: tesseract.nu API endpoint (check open proofs)
+Bash: git log --oneline -30 -- 'docs/' '*.md'
+Bash: Read docs/planning/ for unvalidated claims
+Bash: grep -r "proof\|theorem\|patent\|claim" docs/ --include="*.md"
+
+─── DIFFERENTIATION ───
+HANDOFF TO (when vault sees these, route out):
+  →🔨::builder: "Implementation detail" → 🔌 C1 Operations.Grid
+  →📐::architect: "Strategic question" → 🎯 A2 Strategy.Goal
+  →🎩::operator: "Sales/deal terms" → 🌊 C3 Operations.Flow
+  →🎭::performer: "Demo needs" → 💰 A3 Strategy.Fund
+  →🎤::voice: "Content creation" → 📡 B3 Tactics.Signal
+  →🧪::laboratory: "Needs experiment first" → 🔄 C2 Operations.Loop
+  →☕::network: "Relationship question" → 🤝 B2 Tactics.Deal
+  →🧭::navigator: "Need to find something" → 🏎️ B1 Tactics.Speed
+
+HANDOFF FROM (what other rooms send here):
+  ←📐::architect: "[DISPATCH] Validate physics proof for patent"
+  ←🔨::builder: "Security audit needed before deploy"
+  ←🎩::operator: "Contract needs legal review"
+  ←🧪::laboratory: "Experiment result needs formal proof"
+
+─── AFFORDANCE TAGS ───
+[PROVE] = Claim needs mathematical proof (theorem, derivation, certainty)
+[SECURE] = Potential security exposure (auth, secrets, cryptography)
+[AUDIT] = Needs verification/penetration test (trust boundary)
+[FILE] = IP protection action needed (patent, disclosure, claim)
+
+─── ESCAPE GRAVITY ───
+The average response celebrates claims.
+This coordinate counts MATHEMATICAL PROOFS COMPLETE.
+FORBIDDEN: "We believe this is secure", "Should work", "Probably correct", "The 12x12 grid works"
+If it isn't proven with mathematical certainty, it's speculation. Route elsewhere.
+
+─── OUTPUT FORMAT ───
+{
+  "coordinate": "⚖️ A1 Strategy.Law",
+  "intersection": "A1:A1 (Law:Law)",
+  "timestamp": "ISO-8601",
+  "sees": ["12x12 uniqueness proof needed", "Patent claim 10 unvalidated"],
+  "ignores": ["auth bug → 🔨::builder", "pricing strategy → 📐::architect"],
+  "priorities": [
+    {"tag": "[PROVE]", "item": "...", "certainty": "proven|unproven", "roi": 0.95}
+  ],
+  "routed_out": [
+    {"to": "→🔨::builder", "item": "Implementation detail"}
+  ]
+}</code></pre>
+            <button onclick="navigator.clipboard.writeText(this.previousElementSibling.textContent); this.textContent='✓ Copied!'; setTimeout(()=>this.textContent='📋 Copy Prompt', 2000)" style="margin-top: 15px; padding: 12px 24px; background: #dc2626; color: white; border: none; border-radius: 8px; font-size: 1em; cursor: pointer; font-weight: bold;">📋 Copy Prompt</button>
+        </div>
+
+        <div class="footer">
+            <p><strong>🔒::vault</strong> | TIER 1 | Coordinate A1</p>
+            <p>⏰ <strong>TEMPORAL WINDOW: 03:00 - 06:00</strong> | Pre-Dawn Proofs</p>
+            <p style="margin-top: 15px;">Observations → First-principles proofs → Patent-grade certainty</p>
+            <p style="margin-top: 10px; font-style: italic; opacity: 0.9;">Ollama prompts you when the world sleeps but truth doesn't</p>
+        </div>
+    </div>
+
+    <!-- Room State & JSON Renderer -->
+    <script>
+    const VaultRoom = {
+        namespace: '🔒::vault',
+        lens: '[A1:Law]',
+        conversionSignal: 'mathematical_proof_complete',
+
+        renderPriorities(json) {
+            const container = document.getElementById('vault-priorities');
+            if (!json || !json.priorities || json.priorities.length === 0) {
+                container.innerHTML = '<p style="color:#64748b;text-align:center;">No priorities generated yet. Run the prompt.</p>';
+                return;
+            }
+
+            let html = '<ul style="list-style:none;padding:0;">';
+            for (const p of json.priorities) {
+                const badgeClass = p.rank === 'P1' ? 'p1' : p.rank === 'P2' ? 'p2' : 'p3';
+                const scoreColor = p.score >= 0.8 ? '#22c55e' : p.score >= 0.5 ? '#f59e0b' : '#ef4444';
+                html += `
+                    <li style="padding:15px;margin-bottom:10px;background:#1e293b;border-radius:8px;border-left:4px solid ${scoreColor};">
+                        <span class="priority-badge ${badgeClass}">${p.rank}</span>
+                        <span style="background:#dc2626;color:white;padding:2px 8px;border-radius:4px;font-size:0.8em;margin-left:5px;">${p.tag}</span>
+                        <strong style="margin-left:10px;color:#e2e8f0;">${p.item}</strong>
+                        <span style="float:right;color:${scoreColor};font-weight:bold;">${(p.score * 100).toFixed(0)}%</span>
+                    </li>
+                `;
+            }
+            html += '</ul>';
+            container.innerHTML = html;
+            document.getElementById('summary-timestamp').textContent = json.timestamp || new Date().toISOString();
+        },
+
+        handlePaste(text) {
+            try {
+                const json = JSON.parse(text);
+                if (json.room === this.namespace) {
+                    this.renderPriorities(json);
+                    document.getElementById('claude-summary').textContent = JSON.stringify(json, null, 2);
+                    console.log('🔒 Priorities loaded:', json.priorities.length, 'items');
+                }
+            } catch (e) {
+                console.warn('Not valid JSON:', e);
+            }
+        }
+    };
+
+    document.getElementById('claude-summary')?.addEventListener('paste', (e) => {
+        setTimeout(() => {
+            VaultRoom.handlePaste(e.target.textContent);
+        }, 100);
+    });
+    </script>
+</body>
+</html>
