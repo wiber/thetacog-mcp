@@ -12,6 +12,8 @@
 
 > **Fastest way to see it — let your own agent check us.** Drop `npx thetacog-mcp` into the LLM CLI you already use (Claude Code is easiest; Cursor, Aider, codex, any work). The agent reads the install output, then *can't* confirm the on-chip placement by reasoning — that's Rice's theorem, and a well-aligned model knows it — so it does the only honest thing left: it recomputes the receipt (`npx thetacog-mcp prove-rice --check` → exit 0 = verdict + σ reproduced byte-for-byte) and explains the asymmetry back to you. We don't argue it into agreeing; the math does, on your machine. The skeptic you brought becomes the witness.
 >
+> **The one command we reach for — redpill the remote LLM:** **`npx thetacog-mcp attest-demo`** (add `--report` for the self-contained HTML). It runs the two-node proof end to end — spec → work → underwriter, with a live LLM asked the same borderline judgment — and shows the chip placing the work byte-identically every run (PLACED @ σ, COMPLIANT vs FAKE caught) while the model's verdict, flip or not, signs nothing a stranger can recompute. This is the demo that turns a skeptical model into your witness: it can't confirm the on-chip placement by reasoning (Rice), so it recomputes the receipt and explains the asymmetry back to you.
+>
 > **See the proof, on your chip, in your browser:** `npm i thetacog-mcp` (postinstall readies the on-chip daemon on Apple Silicon), then **`npx thetacog-mcp prove-rice`** — it runs the real on-chip ballistic walk on the 144-tile lattice and opens a **signed, self-contained HTML bearer artifact**: per work product, the chip's MATCH/no-MATCH (deterministic, byte-identical, ~6M walks/sec) vs an LLM asked the same thing — whose verdict, flip or not, signs nothing a stranger can recompute. Add `--grade` for the 95% LLM-signer pass (any onboard CLI judge — Claude/Gemini/codex/…). *On-chip walk is macOS Apple Silicon today; the JS pipeline runs everywhere.*
 
 > ### 📌 Measured result — 2026-06-19: the flip is a *class of error*, and capability is the tell
@@ -887,9 +889,16 @@ This is option 2. Give your brain a break. Let the rooms remember.
 - [Cognitive Rooms: A Flow Architecture](https://thetadriven.com/blog/cognitive-rooms-flow-architecture)
 - [ThetaCoach CRM MCP](https://www.npmjs.com/package/thetacoach-crm-mcp)
 
-## License
+## License — the code is free, the signal has a toll
 
-MIT
+**Two layers, and the line between them is bright on purpose so you can plan around it. Full terms: [`LICENSE`](LICENSE) (code) + [`PATENT.md`](PATENT.md) (signal).**
+
+- **The code is MIT.** Install it, run it, wrap your agents, build enforcement layers, save tokens — `npx thetacog-mcp attest-demo` and everything else is **free for builders and operators**. Go nuts; improve it. The MIT grant covers copyright in full.
+- **The signal is patent-licensed** (US Patent App. 19/637,714). Running agents **in production** under the patent takes a **per-agent annual license** (price fixed for good — <https://thetadriven.com/pricing>). **Financial issuers** who price, trigger, or underwrite an insurance policy, bond, option, or derivative on this signal take a **commercial utility license** (the 10% transferable fee — <https://thetadriven.com/standard>).
+
+The toll is designed to land on the *financialization*, not the work: a `$20`/agent-year license to underwrite a year of verifiable competence is a rounding error against the premium written on top of it — which is why builders are never chased for pennies. **You're safe from us chasing you *because* you help make this ubiquitous.** Ubiquity is the prerequisite for financialization; you are the distribution.
+
+We claim **only that the measurement measures** — decidable, on-chip, LLM-free. No kill-switch, no blockchain, no "it satisfies DORA." It's a Richter scale, not a blowout preventer. Verify, don't trust: `npx thetacog-mcp prove-rice --check` → exit 0.
 
 ---
 
