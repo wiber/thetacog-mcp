@@ -1,0 +1,71 @@
+{
+  "sha": "8be18612859e5d964fa575c3d1bdf7400b0603eb",
+  "measured_at": "2026-06-18T21:49:11.951Z",
+  "platform": "darwin",
+  "arch": "arm64",
+  "tiers": {
+    "L1": {
+      "kib": 16,
+      "ns_per_access": 1.78
+    },
+    "L2": {
+      "kib": 256,
+      "ns_per_access": 5.7
+    },
+    "SLC": {
+      "kib": 8192,
+      "ns_per_access": 44.35
+    },
+    "DRAM": {
+      "kib": 131072,
+      "ns_per_access": 166.52
+    }
+  },
+  "gate_ns_per_comparison": 0.7167,
+  "walk_ns_12x12": 206.4,
+  "walk_xor_cycles": 288,
+  "miss_penalty_dram_l1": 93.5,
+  "touched_files": [
+    ".thetacog/email-sent.ndjson",
+    ".thetacog/punch-list.json",
+    ".thetacog/sigma-panel-trend.ndjson",
+    ".workflow/rooms/alacritty-performer.html",
+    ".workflow/rooms/cursor-laboratory.html",
+    ".workflow/rooms/iterm2-builder.html",
+    ".workflow/rooms/kitty-operator.html",
+    ".workflow/rooms/messages-network.html",
+    ".workflow/rooms/rio-navigator.html",
+    ".workflow/rooms/terminal-voice.html",
+    ".workflow/rooms/vscode-architect.html",
+    ".workflow/rooms/wezterm-vault.html",
+    "data/leverage-actions.json",
+    "data/pmu/measure-history.ndjson",
+    "data/pmu/pipeline/stages/run-2026-06-18T21-37-09-209Z-b875b160.json",
+    "data/pmu/pipeline/stages/run-2026-06-18T21-37-24-513Z-8c586296.json",
+    "data/pmu/pipeline/stages/run-2026-06-18T21-39-15-941Z-a36d9323.json",
+    "data/pmu/pipeline/stages/run-2026-06-18T21-39-42-378Z-ac79de1e.json",
+    "data/pmu/pipeline/stages/run-2026-06-18T21-39-43-930Z-0e045493.json",
+    "data/pmu/pipeline/stages/run-2026-06-18T21-39-57-836Z-d39bebb2.json",
+    "data/pmu/pipeline/stages/run-2026-06-18T21-39-59-180Z-97282aa4.json",
+    "data/pmu/pipeline/stages/run-2026-06-18T21-40-12-250Z-15c3191f.json",
+    "data/pmu/pipeline/stages/run-2026-06-18T21-42-06-614Z-8e274ced.json",
+    "data/pmu/pipeline/stages/run-2026-06-18T21-47-19-976Z-46ac7003.json",
+    "data/pmu/pipeline/stages/run-2026-06-18T21-47-37-691Z-20cdcaa9.json",
+    "data/pmu/pipeline/state.json",
+    "data/rooms-people.json",
+    "data/rooms-posts.json",
+    "data/rooms-tasks.json",
+    "data/thetacoach.db",
+    "docs/05-content/blog/scratchpad/r4.txt",
+    "docs/commit-triptych-0e51e61f7.html",
+    "docs/commit-triptych-2cd8353f7.html",
+    "docs/ops/burned-openers.txt",
+    "docs/pmu/attest-demo-artifacts/price.json",
+    "docs/pmu/attest-demo-artifacts/receipt.json",
+    "docs/pmu/attest-demo-report.html",
+    "docs/reports/ghost-read/abb81d072-src-content-blog-2026-05-25-the-rices-theorem-checkmate-gemini.html",
+    "docs/reports/ghost-read/abb81d072-src-content-blog-2026-05-25-the-rices-theorem-checkmate-gemini.sidecar.json"
+  ],
+  "daemon_path": ".thetacog/pmu/target/release/pmu-onchip",
+  "raw_stdout_tail": "\nraw PMU counters [macos]: not yet wired\n  raw counters are behind kperf (private framework); pointer-chase is the unprivileged on-chip measurement\n"
+}

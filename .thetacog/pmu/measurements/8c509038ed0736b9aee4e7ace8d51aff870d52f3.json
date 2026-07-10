@@ -1,0 +1,35 @@
+{
+  "sha": "8c509038ed0736b9aee4e7ace8d51aff870d52f3",
+  "measured_at": "2026-06-20T12:48:07.861Z",
+  "platform": "darwin",
+  "arch": "arm64",
+  "tiers": {
+    "L1": {
+      "kib": 16,
+      "ns_per_access": 1.81
+    },
+    "L2": {
+      "kib": 256,
+      "ns_per_access": 4.08
+    },
+    "SLC": {
+      "kib": 8192,
+      "ns_per_access": 67.11
+    },
+    "DRAM": {
+      "kib": 131072,
+      "ns_per_access": 130.53
+    }
+  },
+  "gate_ns_per_comparison": 0.5444,
+  "walk_ns_12x12": 156.8,
+  "walk_xor_cycles": 288,
+  "miss_penalty_dram_l1": 72.3,
+  "touched_files": [
+    "docs/architecture/actor-patient-pixel-onchip-walk-research.html",
+    "src/lib/pmu/compress.mjs",
+    "tests/pmu-simulator/pixel-placement-faithful.test.mjs"
+  ],
+  "daemon_path": ".thetacog/pmu/target/release/pmu-onchip",
+  "raw_stdout_tail": "\nraw PMU counters [macos]: not yet wired\n  raw counters are behind kperf (private framework); pointer-chase is the unprivileged on-chip measurement\n"
+}

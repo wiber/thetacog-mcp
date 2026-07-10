@@ -1,0 +1,82 @@
+{
+  "sha": "9f45d7658d8fef63d60eb57820001f455b7abdbb",
+  "measured_at": "2026-06-21T00:22:56.425Z",
+  "platform": "darwin",
+  "arch": "arm64",
+  "tiers": {
+    "L1": {
+      "kib": 16,
+      "ns_per_access": 1.83
+    },
+    "L2": {
+      "kib": 256,
+      "ns_per_access": 4.31
+    },
+    "SLC": {
+      "kib": 8192,
+      "ns_per_access": 22.09
+    },
+    "DRAM": {
+      "kib": 131072,
+      "ns_per_access": 113.83
+    }
+  },
+  "gate_ns_per_comparison": 0.5578,
+  "walk_ns_12x12": 160.6,
+  "walk_xor_cycles": 288,
+  "miss_penalty_dram_l1": 62.3,
+  "touched_files": [
+    "scripts/pmu/attest-demo.mjs",
+    "scripts/pmu/block-stats.mjs",
+    "scripts/pmu/campaign-144-novel.mjs",
+    "scripts/pmu/claims-check.mjs",
+    "scripts/pmu/context-bundler.mjs",
+    "scripts/pmu/dd-proof.mjs",
+    "scripts/pmu/drift-surfacer.mjs",
+    "scripts/pmu/fold-cache-refresh.mjs",
+    "scripts/pmu/fold-tripwires-propose.mjs",
+    "scripts/pmu/fresh-pair.mjs",
+    "scripts/pmu/lens-on-gitlog.mjs",
+    "scripts/pmu/localize-watch.mjs",
+    "scripts/pmu/paraphrase-probe.mjs",
+    "scripts/pmu/perturbation-probe.mjs",
+    "scripts/pmu/pmu-action-fingerprint.mjs",
+    "scripts/pmu/pmu-baseline-refresh.mjs",
+    "scripts/pmu/pmu-cloud-send.mjs",
+    "scripts/pmu/pmu-differentiation.mjs",
+    "scripts/pmu/pmu-doc-heatmap.mjs",
+    "scripts/pmu/pmu-drift-commit.mjs",
+    "scripts/pmu/pmu-drift-delta.mjs",
+    "scripts/pmu/pmu-dual-witness.mjs",
+    "scripts/pmu/pmu-external-corpus.mjs",
+    "scripts/pmu/pmu-historical-audit.mjs",
+    "scripts/pmu/pmu-measure-commit.mjs",
+    "scripts/pmu/pmu-mistake-reef.mjs",
+    "scripts/pmu/pmu-option-price.mjs",
+    "scripts/pmu/pmu-oracle-generate.mjs",
+    "scripts/pmu/pmu-outreach-coverage.mjs",
+    "scripts/pmu/pmu-scale-demo.mjs",
+    "scripts/pmu/pmu-scaling-curve.mjs",
+    "scripts/pmu/pmu-spec-attest.mjs",
+    "scripts/pmu/pmu-spec-battery.mjs",
+    "scripts/pmu/pmu-stability-run.mjs",
+    "scripts/pmu/pmu-study-harness.mjs",
+    "scripts/pmu/pmu-throughput-sweep.mjs",
+    "scripts/pmu/reef-converge-all.mjs",
+    "scripts/pmu/reef-enrich.mjs",
+    "scripts/pmu/reef-global-resort.mjs",
+    "scripts/pmu/reef-grade.mjs",
+    "scripts/pmu/reef-loop.mjs",
+    "scripts/pmu/reef-measure.mjs",
+    "scripts/pmu/reef-shape-sigma.mjs",
+    "scripts/pmu/reef-visual.mjs",
+    "scripts/pmu/repo-root.mjs",
+    "scripts/pmu/response-drift-gate.mjs",
+    "scripts/pmu/sigma-localize.mjs",
+    "scripts/pmu/sigma-onchip.mjs",
+    "scripts/pmu/transcript-ingest.mjs",
+    "tests/pmu-simulator/no-git-leak-outside-repo.test.mjs"
+  ],
+  "daemon_path": ".thetacog/pmu/target/release/pmu-onchip",
+  "raw_stdout_tail": "\nraw PMU counters [macos]: not yet wired\n  raw counters are behind kperf (private framework); pointer-chase is the unprivileged on-chip measurement\n"
+}

@@ -1,0 +1,36 @@
+{
+  "sha": "77e48b18d513f6975d3cb89ca3c95697e92d0345",
+  "measured_at": "2026-06-26T23:49:54.714Z",
+  "platform": "darwin",
+  "arch": "arm64",
+  "tiers": {
+    "L1": {
+      "kib": 16,
+      "ns_per_access": 1.99
+    },
+    "L2": {
+      "kib": 256,
+      "ns_per_access": 22.27
+    },
+    "SLC": {
+      "kib": 8192,
+      "ns_per_access": 326.42
+    },
+    "DRAM": {
+      "kib": 131072,
+      "ns_per_access": 399.47
+    }
+  },
+  "gate_ns_per_comparison": 0.9052,
+  "walk_ns_12x12": 260.7,
+  "walk_xor_cycles": 288,
+  "miss_penalty_dram_l1": 200.3,
+  "touched_files": [
+    "docs/pmu/commit-panels/a320423d2.png",
+    "public/blog/post-panels/2026-06-26-decidability-is-meaning/a320423d2d7c540cab2fc99aebee5b82a64308af.png",
+    "public/blog/post-panels/2026-06-26-decidability-is-meaning/manifest.json",
+    "src/content/blog/2026-06-26-decidability-is-meaning.mdx"
+  ],
+  "daemon_path": ".thetacog/pmu/target/release/pmu-onchip",
+  "raw_stdout_tail": "\nraw PMU counters [macos]: not yet wired\n  raw counters are behind kperf (private framework); pointer-chase is the unprivileged on-chip measurement\n"
+}

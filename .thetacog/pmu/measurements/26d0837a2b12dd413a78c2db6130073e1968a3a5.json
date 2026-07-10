@@ -1,0 +1,34 @@
+{
+  "sha": "26d0837a2b12dd413a78c2db6130073e1968a3a5",
+  "measured_at": "2026-06-20T17:47:15.409Z",
+  "platform": "darwin",
+  "arch": "arm64",
+  "tiers": {
+    "L1": {
+      "kib": 16,
+      "ns_per_access": 1.75
+    },
+    "L2": {
+      "kib": 256,
+      "ns_per_access": 4.93
+    },
+    "SLC": {
+      "kib": 8192,
+      "ns_per_access": 44.96
+    },
+    "DRAM": {
+      "kib": 131072,
+      "ns_per_access": 122.88
+    }
+  },
+  "gate_ns_per_comparison": 0.9423,
+  "walk_ns_12x12": 271.4,
+  "walk_xor_cycles": 288,
+  "miss_penalty_dram_l1": 70.2,
+  "touched_files": [
+    "public/manifesto.html",
+    "src/content/blog/2026-06-20-skin-in-the-game-is-the-container.mdx"
+  ],
+  "daemon_path": ".thetacog/pmu/target/release/pmu-onchip",
+  "raw_stdout_tail": "\nraw PMU counters [macos]: not yet wired\n  raw counters are behind kperf (private framework); pointer-chase is the unprivileged on-chip measurement\n"
+}

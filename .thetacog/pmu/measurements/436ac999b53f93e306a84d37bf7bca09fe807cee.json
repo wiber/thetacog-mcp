@@ -1,0 +1,38 @@
+{
+  "sha": "436ac999b53f93e306a84d37bf7bca09fe807cee",
+  "measured_at": "2026-07-07T18:37:28.592Z",
+  "platform": "darwin",
+  "arch": "arm64",
+  "tiers": {
+    "L1": {
+      "kib": 16,
+      "ns_per_access": 2.26
+    },
+    "L2": {
+      "kib": 256,
+      "ns_per_access": 6.93
+    },
+    "SLC": {
+      "kib": 8192,
+      "ns_per_access": 148.71
+    },
+    "DRAM": {
+      "kib": 131072,
+      "ns_per_access": 431.65
+    }
+  },
+  "gate_ns_per_comparison": 2.8245,
+  "walk_ns_12x12": 813.5,
+  "walk_xor_cycles": 288,
+  "miss_penalty_dram_l1": 191.4,
+  "touched_files": [
+    "books/tesseract/COMPLETE-BOOK.txt",
+    "books/tesseract/exports/tesseract-complete-book.txt",
+    "books/tesseract/exports/tesseract-physics.epub",
+    "docs/book/COMPLETE-BOOK.txt",
+    "docs/book/tesseract-physics.epub",
+    "scripts/build-book-html.sh"
+  ],
+  "daemon_path": ".thetacog/pmu/target/release/pmu-onchip",
+  "raw_stdout_tail": "\nraw PMU counters [macos]: not yet wired\n  raw counters are behind kperf (private framework); pointer-chase is the unprivileged on-chip measurement\n"
+}

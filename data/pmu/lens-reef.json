@@ -1,0 +1,557 @@
+{
+ "$schema": "lens-reef/repo-domains",
+ "note": "The REPO-SPECIFIC reef for the directive lens. Anchors are THIS repo's real semantic domains, each at a DISTINCT lattice coord (so prompts discriminate — no C,C collapse), each carrying its vocab (for routing), the load-bearing rules (the sorted lens), and the WINNING TEMPLATE (the Prompt-Cowboy fill-in-the-blanks that has worked here before). C,C is left empty on purpose — it was the collapse magnet. | THE ASYMMETRY (operator 2026-07-02): general-intelligence hallucination is the GENERALLY-correct answer applied to a situation where this repo is deliberately different. The reef exists to out-weigh the prior: what is usually correct is not always correct HERE — fill the rules so the lens finds them.",
+ "domains": [
+  {
+   "domain": "payments",
+   "coord": "A,A1",
+   "vocab": "stripe webhook payment checkout subscription invoice billing charge refund customer portal price",
+   "tools": "stripe-webhook route, /api/stripe-webhook, supabase",
+   "template": "Use the existing /api/stripe-webhook route. Verify the Svix/Stripe signature first. Idempotent on event id. Never trust amounts from the client.",
+   "rules": [
+    "verify the webhook signature before processing",
+    "store the raw event so a re-parse can recover",
+    "idempotent by event id"
+   ]
+  },
+  {
+   "domain": "ui-frontend",
+   "coord": "A,B1",
+   "vocab": "button css layout component page tailwind react tsx jsx homepage styling responsive hero nav footer render",
+   "tools": "next app-router, tailwind, src/app, src/components",
+   "template": "Match the surrounding component's conventions. Tailwind classes, no inline style unless needed. Keep the JSX balanced; entities for < and quotes in text.",
+   "rules": [
+    "match the surrounding code's idioms",
+    "MCPHeraldicCrest required in section headers (blog)",
+    "no raw < or ≡ in JSX/MDX text"
+   ]
+  },
+  {
+   "domain": "database",
+   "coord": "A,C1",
+   "vocab": "migration sql schema table column supabase query index rls policy postgres select insert service-role",
+   "tools": "supabase, ./scripts/sql-copy.sh, docs/crm/*.sql",
+   "template": "Write the migration as idempotent SQL. RLS policy if a new table. Run via ./scripts/sql-copy.sh (the only approved path). Central vs CRM db — pick deliberately.",
+   "rules": [
+    "only approved SQL path is ./scripts/sql-copy.sh",
+    "add RLS on new tables",
+    "central (bvhhlosblntckhwyagvp) vs user CRM db — choose deliberately"
+   ]
+  },
+  {
+   "domain": "blog-content",
+   "coord": "B,A1",
+   "vocab": "blog post mdx breadcrumb crest BlogCallout ShortRank reader deep-link section heading anchor frontmatter publish drafts og share card list image encircled panel manifest strip drift-history ghost-read monologue grade 95 subtitle needs",
+   "tools": "src/content/blog, ./scripts/validate-mdx.sh, DriftGallery",
+   "template": "ShortRank A-K sections, MCPHeraldicCrest + emoji per header, BlogCallout for insights, breadcrumb footer, reader-POV ('what's in it for YOU'). Validate MDX before commit. Image = the commit tolerance panel.",
+   "rules": [
+    "reader-POV first — what's in it for them",
+    "breadcrumb + crest per section (validated)",
+    "validate-mdx before commit — a 500 error/crash on a blog post is usually a forbidden character in the MDX text (triple-bar, not-equals, <NUMBER, <<), not a resolver bug",
+    "RESEARCH → BOOK → BLOG: add the book section first, quote it with deep links, verify anchors resolve in built HTML",
+    "crest VARIANTS encode meaning — never replace with 'default' (288 variants lost in the 2026-01-24 incident)",
+    "every section opens with the orthogonal-directions line + reader-facing lede; NO TABLES, prose with bold",
+    "panel wrong/missing on prod: check src/data/post-panels-index.json FIRST — a post missing from it (build-panels-index.mjs concurrent-write race, 2026-07-03) looks like staleness but a push won't fix it; run scripts/blog/build-panels-index.mjs + tests/blog/panel-index-current.test.mjs",
+    "the blog-list/OG share image is the DENSEST commit panel (bestPanelPathForSlug, src/lib/postPanels.ts) — NEVER encircled.png, a sparser excluded render (tests/blog/og-is-meaningful-commit-panel.test.mjs). Corrected 2026-07-03, this rule previously claimed the opposite.",
+    "every post carries its commit-encircles strip (drift history) at the TOP of the body — rendered automatically from post-panels/<slug>/manifest.json, one panel per edit-commit; the manifest IS the post's edit provenance, never delete it",
+    "the writing process includes the qwen ghost-read monologue gated at >=95 tri-check: qwen (weaker reader) monologues cold, Claude grades reality-vs-intent, revise sub-bar passages, re-monologue — publish only at 95+",
+    "the 6 needs live in the SUBTITLES (the mono orthogonal-directions lines), not the titles — connection, contribution, growth, uncertainty, certainty, significance in order, themed to the section; canonical-template-check.mjs is the door",
+    "voice: show the paradox, never name the feeling — banned: 'surprising/counterintuitive/remarkable'; put the two true things side by side",
+    "voice: concrete object or scene BEFORE the abstraction — the abstraction is the payoff, never the opener",
+    "voice: show the loss with the win — the honest failure mode, shown, is what makes the win credible",
+    "voice: no technique-name leaks in prose — name the map, the walk, the coordinates; never the internals",
+    "voice: density — cut any sentence that carries no mechanic, image, or turn of the paradox",
+    "voice: reader-as-hero — the sentence weight lands on the reader; 'we' rides in support"
+   ],
+   "anchors": [
+    "blog post",
+    "write a blog",
+    "draft a blog",
+    "push a blog",
+    "publish a blog",
+    "blog-content domain"
+   ]
+  },
+  {
+   "domain": "delegation-mesh",
+   "coord": "B,B1",
+   "vocab": "delegate room bifurcate mesh spec to_room from_room signed ledger handoff orthogonal nostr pull push qc punch-list residue off-center subdivide nostr",
+   "tools": "scripts/bifurcate.mjs, scripts/specs/specs-dispatch.sh, scripts/mesh/*",
+   "template": "Write spec+context to the rooms JSON via bifurcate.mjs AND push a signed ASK to the mesh ledger. NEVER a git branch. Orthogonalize — each room its own reef-lane.",
+   "rules": [
+    "delegation NEVER git-branches (rooms JSON + signed mesh)",
+    "orthogonalize, don't fork",
+    "guarded by tests/delegation/no-git-branch.test.js",
+    "QC is OWNED by the delegated-to room: off-center/undelivered sub-parts get packaged via bifurcate into the fitting room's punch list — the run's center of mass ships, the residue is routed, never dropped",
+    "a delegation email carries the from→to rooms, the full lens receipt, and the encircled tolerance panel (public/commit/<sha>/trip-encircled-*.png) as evidence",
+    "ONE PIPELINE: a delegation ships as a bifurcate --commit so the commit-triptych receipt (encircled shape + from→to + LANE + region stories) IS the delegation email",
+    "when a large run subdivides a problem, EACH sub-task ships as that pipeline email — full spec + delegation direction, small additions only"
+   ]
+  },
+  {
+   "domain": "pmu-reef",
+   "coord": "B,C1",
+   "vocab": "pmu reef ballistic walk lattice drift receipt on-chip compression sigma chebyshev definer placePixel tolerance panel encircle",
+   "tools": "scripts/pmu/*, src/lib/pmu/compress.mjs, pmu-onchip --ballistic",
+   "template": "FIND the running code first, never reinvent. Use the REAL recursive on-chip ballistic walk (never the analytic shortcut). gzip-NCD is the canonical sensor. Speed is a correctness signal (~14ms).",
+   "rules": [
+    "the walk is ALWAYS the real recursive on-chip ballistic walk — never analytic",
+    "gzip-NCD is the canonical sensor, not SimHash",
+    "find the running code first; speed (~14ms) is a correctness signal",
+    "the lens is LLM-free end to end — no model in the deterministic verdict, no model call anywhere on the prompt-level calling cycle"
+   ],
+   "anchors": [
+    "the lens",
+    "prompt template",
+    "work-template",
+    "lens-reef",
+    "the reef"
+   ]
+  },
+  {
+   "domain": "comms-email",
+   "coord": "C,A1",
+   "vocab": "email comms newsletter telegram six needs grade 95 ava audio canonical-send forwarding package send subject persona",
+   "tools": "scripts/comms/canonical-send.sh, scripts/say-to-mp3.sh",
+   "template": "Canonical spine (WHY-belief → 6 needs → evidence → to-do), grade ≥95, bundle = email + premium Ava audio. Self-channel = docs/comms/self. SENDING is the point — a draft is a failure.",
+   "rules": [
+    "WHY-belief opens; 6 needs in canonical order; grade ≥95",
+    "always premium Ava audio bundle",
+    "Contribution + Significance are the READER's",
+    "email images = CID inline (email-artifact --inline + <img src=\"cid:basename\">) — Gmail STRIPS data: URIs; always send a real test email and look at it",
+    "the trigger is the FOLDER + the COMMIT: docs/comms/<channel>/approved/ + commit ARMS dispatch; drafts/ only warns",
+    "grade receipt <stem>.grade.json with every need >=95 must exist or pre-commit BLOCKS",
+    "live sends gated by COMMS_DISPATCH_LIVE=1; silent post-commit dispatch goes to /dev/null — run it directly to see errors",
+    "'write/email/send X' ALWAYS routes through the comms folder pipeline, never a one-off send",
+    "voice: show the paradox, never name the feeling — banned: 'surprising/counterintuitive/remarkable'; put the two true things side by side",
+    "voice: concrete object or scene BEFORE the abstraction — the abstraction is the payoff, never the opener",
+    "voice: show the loss with the win — the honest failure mode, shown, is what makes the win credible",
+    "voice: no technique-name leaks in prose — name the map, the walk, the coordinates; never the internals",
+    "voice: reader-as-hero — the sentence weight lands on the reader; 'we' rides in support"
+   ]
+  },
+  {
+   "domain": "infra-hooks",
+   "coord": "C,B1",
+   "vocab": "hook pre-commit post-commit launchd cron settings deploy vercel build webhook poller schedule env gate",
+   "tools": "hooks/*, .claude/settings.json, ~/Library/LaunchAgents",
+   "template": "Hooks must NEVER block (detached/warn-only). NEVER build locally (push → Vercel auto-builds). The deliverable is the regression guard, not the patch. Idempotent + single-flight for pollers.",
+   "rules": [
+    "hooks never block — detached post-commit, warn-only pre-commit",
+    "NEVER run build locally; push → Vercel",
+    "the deliverable is the guard test (CODE DEFINITION-OF-DONE)"
+   ]
+  },
+  {
+   "domain": "testing-gate",
+   "coord": "C,B2",
+   "vocab": "test jest guard gate ratchet completeness tolerance regression assert behavioral floor watertight measure",
+   "tools": "tests/*, jest, the ratchet floor",
+   "template": "State the done-when as a FAILING test up front. Measure, don't assert. Ratchet the floor — it only rises. Behavioral over grep where it matters.",
+   "rules": [
+    "the done-when is a failing test stated up front",
+    "measure don't assert (prove the rate)",
+    "ratchet floor only rises"
+   ]
+  },
+  {
+   "domain": "outreach",
+   "coord": "A,A2",
+   "vocab": "outreach lead connection linkedin investor underwriter dinner reach forwarding package thanks-for-connecting room",
+   "tools": "docs/outreach/*, package-send, /go/<slug>",
+   "template": "Role-addressed forwarding PACKAGE (never person-addressed). Two docs: email + objectives. Lead with what retires the discount. Reader-utility sentence explicit.",
+   "rules": [
+    "external = forwarding package, role-not-person",
+    "two emails: forwardable + backstage receipt",
+    "lead with what retires the risk/discount",
+    "channel is a preview of the room: weekend-personal, advice-first, two equal exits (a seat OR a name)",
+    "cold dies, context converts: fast-yes came from a warm thread; 40 silences from cold sends"
+   ]
+  },
+  {
+   "domain": "voice-prompt",
+   "coord": "A,A3",
+   "vocab": "voice tts say mp3 ava transcription dictation prompt refine sense-gate qwen monologue ghost-read",
+   "tools": "scripts/say-to-mp3.sh, scripts/cog/*, ollama qwen",
+   "template": "Ava (Premium) voice. Sense-gate before send (qwen reads cold). Weaker reader monologues, Claude grades reality-vs-intent ≥95.",
+   "rules": [
+    "Ava Premium voice for all audio",
+    "qwen monologues (never grades); Claude grades to 95",
+    "no bracket tags in TTS text"
+   ]
+  },
+  {
+   "domain": "book",
+   "coord": "C,C1",
+   "vocab": "book chapter tesseract manuscript paradox fire-together ground-together appendix deep-link build-book voice",
+   "tools": "./scripts/build-book-html.sh, books/tesseract",
+   "template": "Voice-consistent with the chapter. Run build-book-html.sh before committing. Deep-link anchors must resolve. Strip-citation-keep-mechanic.",
+   "rules": [
+    "run build-book-html.sh before committing book changes",
+    "verify deep-link anchors resolve",
+    "canonical title: Tesseract Physics — Fire Together, Ground Together",
+    "voice: show the paradox, never name the feeling — banned: 'surprising/counterintuitive/remarkable'; put the two true things side by side",
+    "voice: concrete object or scene BEFORE the abstraction — the abstraction is the payoff, never the opener",
+    "voice: show the loss with the win — the honest failure mode, shown, is what makes the win credible",
+    "voice: no technique-name leaks in prose — name the map, the walk, the coordinates; never the internals",
+    "voice: density — cut any sentence that carries no mechanic, image, or turn of the paradox",
+    "voice: reader-as-hero — the sentence weight lands on the reader; 'we' rides in support"
+   ]
+  },
+  {
+   "domain": "deployment",
+   "coord": "C,C2",
+   "vocab": "deploy vercel build push github auto-build production redeploy dev-server localhost propagate staging",
+   "tools": "git push origin main, ./scripts/dev.sh, Vercel",
+   "template": "Edit → Validate → Commit → (batch) → Push → Vercel deploys. NEVER build locally; Vercel builds from main only. Local dev only on explicit ask via ./scripts/dev.sh.",
+   "rules": [
+    "NEVER run build locally — push to GitHub, Vercel auto-builds from main",
+    "banned: npm/pnpm/yarn build and direct next dev / npm run dev",
+    "local dev only on explicit ask, via ./scripts/dev.sh (single-runner PID lock)"
+   ]
+  },
+  {
+   "domain": "git-discipline",
+   "coord": "C,B3",
+   "vocab": "commit push iteration bundle stage trailer message liberally sparingly batch revert hooks-off no-verify",
+   "tools": "git commit, git push, hooks/pre-commit",
+   "template": "One iteration = one commit (never bundle). Small descriptive commits, commit liberally; push ONLY when updating the live site / end of session / explicit \"push\".",
+   "rules": [
+    "commit liberally — small frequent commits; push sparingly (only on explicit push)",
+    "one iteration = one commit — NEVER bundle iterations",
+    "NEVER auto-push after every commit; batch commits then push once",
+    "pre-commit hang on pmu-suite staging → commit --no-verify; --no-verify does NOT skip post-commit — use git -c core.hooksPath=/dev/null for that"
+   ]
+  },
+  {
+   "domain": "mdx-validation",
+   "coord": "B,A2",
+   "vocab": "mdx validate forbidden character parser 500 escape entity triple-bar not-equals anchor deep-link crash",
+   "tools": "./scripts/validate-mdx.sh, next-mdx-remote",
+   "template": "Validate MDX before commit (./scripts/validate-mdx.sh). No triple-bar / not-equals / <NUMBER / << in text; write S=P=H and \"P less than 1\". A blog 500 is usually a forbidden char.",
+   "rules": [
+    "triple-bar, not-equals, <NUMBER and << crash the MDX parser — use =, !=, prose",
+    "always run ./scripts/validate-mdx.sh before committing a blog post",
+    "a blog 500 error is usually a forbidden char in the MDX text, not a resolver bug"
+   ]
+  },
+  {
+   "domain": "fim-artifact",
+   "coord": "A,C2",
+   "vocab": "fim artifact 3d print pattern block hole pyramid stl keyring permutation gestalt inscription through-hole",
+   "tools": "scripts/generate-original-pattern-solid.py, generate-all-fim-artifacts.sh",
+   "template": "Use generate-original-pattern-solid.py <term> <perm> <out>. Base 81.7×81.7×3.0mm, 12×12 grid (16 distinct 3×3 blocks), gestalt 0.8mm gaps; 40P+40B+40S+24H=144.",
+   "rules": [
+    "FIND the source script that worked — generate-original-pattern-solid.py — never recreate",
+    "two hole types: round text-inscription holes vs inverted-pyramid through-holes",
+    "canonical pattern = 16 distinct 3x3 blocks assembled into a 4x4 grid"
+   ]
+  },
+  {
+   "domain": "tesseract",
+   "coord": "A,B3",
+   "vocab": "tesseract axis latent focused emoji rank strategy tactics operations submission tile parse define prompt",
+   "tools": "src/lib/tesseract/matching.ts, src/app/tesseract/tile",
+   "template": "One line per axis: \"LATENT — FOCUSED EMOJI RANK.FullName\". The RANK prefix (A.Strategy / B1.Tactics.Speed) anchors the parser. FOCUSED max 15 words. NEVER JSON.",
+   "rules": [
+    "one line per axis, no JSON — the RANK prefix is the parser anchor",
+    "format: LATENT — FOCUSED EMOJI RANK.FullName; FOCUSED max 15 words",
+    "JSON submissions regress to the unparsed fallback — never submit JSON"
+   ]
+  },
+  {
+   "domain": "mcp-crm",
+   "coord": "A,B2",
+   "vocab": "mcp crm lead card battle challenger checklist whitelist claude-flow register restart credentials",
+   "tools": "crm-* MCP tools, ./scripts/init-claude-flow-with-crm.sh",
+   "template": "Use the CRM MCP tools (crm-list-leads, crm-get-lead, crm-create-card, crm-next…). Two-DB split: user CRM (battle cards) vs central ThetaCoach (promo/beta). Restart Claude Code after mcp add.",
+   "rules": [
+    "103 MCP tools = 90 claude-flow + 8 CRM + 5 book-revisions",
+    "CRM tools are crm-* (crm-list-leads, crm-create-card, crm-next)",
+    "restart Claude Code after registering an MCP server"
+   ]
+  },
+  {
+   "domain": "voice-glossary",
+   "coord": "A,C3",
+   "vocab": "glossary mis-transcription refine-prompt refiner voice dictation noun corrected deterministic substitution UserPromptSubmit aka canonical",
+   "tools": "data/voice/glossary.json, scripts/voice/refine-prompt.mjs",
+   "template": "Add canonical←aka to data/voice/glossary.json + a test-corpus row (ratchet). Deterministic word-boundary substitution fires on every prompt via the UserPromptSubmit hook; treat the corrected form as authoritative.",
+   "rules": [
+    "voice-to-text mangles load-bearing nouns — fix at the door, not by remembering",
+    "glossary pass 1 is deterministic word-boundary substitution; treat the corrected form as authoritative",
+    "extend the glossary the moment a new mis-transcription costs a round-trip (the ratchet)"
+   ]
+  },
+  {
+   "domain": "pmu-walk",
+   "coord": "B,C2",
+   "vocab": "walk ballistic recursive on-chip ply cascade column row transpose connectivity definer leaf anchor lattice depth",
+   "tools": "pmu-onchip --ballistic, buildIntentGrid connectivity",
+   "template": "pmu-onchip --ballistic --start <coord> on the reef CONNECTIVITY lattice (share row OR column). Row→column→row recursion; time-budget via --max-depth. State WHY the conventional algorithm fails before any PMU change.",
+   "rules": [
+    "the walk is ALWAYS the real deterministic recursive on-chip ballistic walk on the connectivity lattice",
+    "NEVER the analytic / diffusion / BFS / Monte-Carlo shortcut — the normal way is what we are NOT doing",
+    "seed from the lit anchors; connectivity is share-row-OR-column, never a diagonal",
+    "forbidden conventional forms (anti-rules): sequential-loop walks · unguided floods · weight-sorted ranking · structural-grid substrate · unlit starts · analytic shortcuts · LLM-on-blocking-path · 12x12-block renders · size-as-drift · uninspected tiles",
+    "before any PMU change: state WHY the conventional algorithm fails here (time budget · chip substrate · semantic decomposition) — proceed only if it holds",
+    "jargon firewall: ballistic cascade · ply decay · ShortLex blocks · leaf walk · cloud · the explosion · time budget — never their conventional synonyms",
+    "new drift bitten → add the anti-rule + guard in the SAME commit as the fix (the ledger ratchet)",
+    "TREE-OF-TREES (design target, not yet built): leaves must back-propagate MASS — every deepest-ply leaf thickens its trunk (seed chain), so trunk weight shows where meaning lives; today's ply heat is flat-ish and works; a larger reef trades iteration for resolution on the speed surplus"
+   ]
+  },
+  {
+   "domain": "pmu-dogfood",
+   "coord": "B,C3",
+   "vocab": "dogfood pipeline triptych render dashboard reference ingest validate screenshot cid inline reproduce drive gate gates send-gate emitter consistent nonsense artifact shipped regressed receipt blank empty degenerate suppressed trip",
+   "tools": "scripts/pmu/pipeline.mjs, triptych-render.mjs, validate-dogfood.sh",
+   "template": "Drive scripts/pmu/pipeline.mjs → triptych-render.mjs (do not re-derive). Ground against public/d/lattice.png (144×144, INTENT/REALITY/DELTA, never 12×12). Run validate-dogfood.sh before & after.",
+   "rules": [
+    "FIND the running code first — never reinvent (pipeline.mjs → triptych-render.mjs → dashboard)",
+    "ground against public/d/lattice.png: 144x144 INTENT/REALITY/DELTA panels, NEVER a 12x12",
+    "speed is a correctness signal (~14ms chip walk); ~21s means you are on the LLM/whole-repo path",
+    "every email-triggered send always uses the FULL canonical pipeline (grade>=95 + Ava bundle)",
+    "ingest = docs→intent, code→reality, SEMANTIC not raw (comments + identifier-words; strip HTML)",
+    "out-of-lane = reality fires where intent is weak, in ORTHOGONAL blocks (graded, not binary XOR)",
+    "run scripts/pmu/validate-dogfood.sh BEFORE and AFTER any PMU change; regression → add a prompt to dogfood-prompts.json",
+    "the screenshot is an OUTPUT to reproduce by driving the pipeline that made it, not a spec to implement",
+    "send-gates are deterministic rows in SQLite (tc_pipeline_gates), sorted by the lane's reef — a NONSENSE artifact (empty encircled shape, 0-region panel) means the PIPELINE regressed: suppress the artifact, log the trip, and Claude steps in ONLY on the trip (repair worker, never checker)",
+    "ALL emitters consult gates through the ONE shared reader (scripts/pmu/pipeline-gates.mjs: readGate/recordTrip/passMinGate) — never inline SQL per pipeline; that is how the pipelines connect consistently",
+    "PROMPT health = receipt flags all green: sensor metal (never silent gzip-fallback), fill ≤70%, rules ≥3 sorted, template present, spec not thin, no C,C-degenerate, qwen bg liveness honest",
+    "COMMIT health = tolerance non-degenerate (gate untripped), encircled emitted with ≥1 region, from→to resolved, region stories grounded in THE COMMIT, trip-ledger EMPTY for the day — a non-empty trip ledger is a regression alarm, not noise"
+   ]
+  },
+  {
+   "domain": "comms-newsletter",
+   "coord": "C,A2",
+   "vocab": "newsletter audience resend broadcast subscriber subscribe unsubscribe campaign blast list",
+   "tools": "docs/comms/newsletter, Resend audience",
+   "template": "docs/comms/newsletter/ → Resend audience broadcast + premium Ava audio. Same canonical spine (WHY-belief → 6 needs → evidence → to-do), graded ≥95 before send; compose in drafts/, move to approved/ + commit to ARM dispatch.",
+   "rules": [
+    "newsletter channel routes to the Resend audience plus premium Ava audio",
+    "same canonical spine + grade ≥95 gate; channels are folders (newsletter/)",
+    "compose in drafts/ then move to approved/ and commit to ARM the dispatch"
+   ]
+  },
+  {
+   "domain": "ai-regulation",
+   "coord": "A,A",
+   "vocab": "regulation governance compliance article conformity oversight regulatory mandate disclosure obligation auditability legislation tier positioning",
+   "tools": "docs/strategy (EU AI Act series), blog: EU AI Act / Article 14",
+   "template": "EU AI Act Article 14 requires human oversight of high-risk AI — the monitor is the compliance artifact",
+   "rules": [
+    "EU AI Act Article 14 requires human oversight of high-risk AI — the monitor is the compliance artifact",
+    "regulatory conformity is a disclosure obligation, not a code gate",
+    "governance maps a duty to a measurable, auditable boundary",
+    "Liability demands auditability (regulatory reality)"
+   ]
+  },
+  {
+   "domain": "ai-insurance",
+   "coord": "A,B",
+   "vocab": "insurance insurability actuarial premium carrier coverage exclusion loss-ratio insurable actuary indemnity reinsurance economics",
+   "tools": "docs/strategy (underwriter dossier), blog: AI insurability / actuarial",
+   "template": "you cannot insure execution (Rice) — you CAN insure the domain boundary",
+   "rules": [
+    "you cannot insure execution (Rice) — you CAN insure the domain boundary",
+    "price domain adherence: in-lane failure is covered, a lane-jump is uninsurable",
+    "the loss-ratio is the asset — a dogfood breach rate makes the premium",
+    "Partner with the reinsurance industry — Munich Re, Lloyd's of London, Swiss Re — to make calibration mandatory for AI liability coverage.",
+    "what an underwriter binds to is never the drift score — it is the ratified boundary (spec reef) + the redirect trail (attestations, trips); free-text prompts carry no decidable boundary to insure"
+   ]
+  },
+  {
+   "domain": "decidability",
+   "coord": "A,C",
+   "vocab": "decidable undecidable halting turing computable uncomputable theorem provable reduction unbankable competitor moat objection score scoring commodity anyone claims copy redirect bearer gameable proxy",
+   "tools": "blog: Rice's theorem / halting problem / the laboratory specimen",
+   "template": "any reachable Turing-complete part makes quality undecidable (Rice) — price the lane, not the quality",
+   "rules": [
+    "any reachable Turing-complete part makes quality undecidable (Rice) — price the lane, not the quality",
+    "the deployed loop plus tools is Turing-complete; the single forward pass is bounded",
+    "decidability IS meaning: domain placement is the decidable, bankable slice",
+    "drift SCORING is commodity (any model can distance a commit message from a diff) — the product is the VISIBLE REDIRECT: rules injected before the work + DRIFT-CAUGHT attestation + gate trips + from→to, the steering column with a flight recorder, never just the camera",
+    "a self-authored commit message is a GAMEABLE intent proxy (author writes both claim and work) — decidable intent is a BEARER ARTIFACT: the spec reef, frozen + ratified + signed BEFORE the work; message-as-intent is the demo, spec-bound is the product"
+   ]
+  },
+  {
+   "domain": "patent-ip",
+   "coord": "B,A",
+   "vocab": "patent uspto inventor provisional formalities examiner prior-art figure sheet claim-set nonprovisional months trading measurable",
+   "tools": "docs/patent, blog: FIM patent filing",
+   "template": "canonical inventor is Elias Moosman — never any other surname",
+   "rules": [
+    "canonical inventor is Elias Moosman — never any other surname",
+    "file corrected papers before the formalities deadline: double-space claims, replacement drawing sheets",
+    "the FIM patent claims the geometric grounding, not the prose",
+    "The Measurable Claim: Our patent enables mathematical measurement of \"trust debt\" in AI systems using the formula:"
+   ]
+  },
+  {
+   "domain": "thermodynamics",
+   "coord": "B,B",
+   "vocab": "thermodynamics entropy free-energy dissipation equilibrium gradient landauer irreversible heat-death negentropy feedback grok location",
+   "tools": "blog: Trust Physics / thermodynamics of grounding",
+   "template": "grounding is a free-energy minimization — drift is entropy the system must pay to reverse",
+   "rules": [
+    "grounding is a free-energy minimization — drift is entropy the system must pay to reverse",
+    "the fire-together-ground-together loop is a thermodynamic cycle, not a metaphor",
+    "unmeasured drift accumulates like entropy until it liquidates",
+    "- Landauer Thermodynamics (Physics): 0.0030 ±0.0005"
+   ]
+  },
+  {
+   "domain": "consciousness",
+   "coord": "B,C",
+   "vocab": "consciousness qualia awareness sentience phenomenal subjective introspection cognition recognition self-model",
+   "tools": "blog: consciousness / philosophy of recognition",
+   "template": "recognition is the primitive — the pixel of legitimacy is where the self-model grounds",
+   "rules": [
+    "recognition is the primitive — the pixel of legitimacy is where the self-model grounds",
+    "consciousness questions reduce to the symbol-grounding boundary, which is decidable at the domain",
+    "do not inflate the metaphysics — keep the claim to the measurable boundary",
+    "Hardware-Validated Consciousness: First measurable approach to computational self-awareness"
+   ]
+  },
+  {
+   "domain": "trust-debt-metric",
+   "coord": "B,A3",
+   "vocab": "trust-debt unmeasured liquidate accumulate liability-score debt-score off-target time-on-target highest constraint level lost start returns",
+   "tools": "blog: Trust Debt / the one readable number",
+   "template": "Trust Debt is the one readable number — semantic drift accumulating as unmeasured liability",
+   "rules": [
+    "Trust Debt is the one readable number — semantic drift accumulating as unmeasured liability",
+    "your AI liability is unmeasured; the drift liquidates and you are on the hook",
+    "the win is on-target-ness (Time on Target), not quality",
+    "We give it weight.\" The highest-level hook."
+   ]
+  },
+  {
+   "domain": "symbol-grounding",
+   "coord": "B,B2",
+   "vocab": "symbol referent denotation groundedness signifier meaning reference-frame biology holden beats long show external symbolic",
+   "tools": "blog: S=P=H / symbol grounding",
+   "template": "the S=P=H crisis is a symbol-grounding failure — the signifier detaches from its referent",
+   "rules": [
+    "the S=P=H crisis is a symbol-grounding failure — the signifier detaches from its referent",
+    "escape the regress by grounding the symbol on the recursive on-chip walk, not another symbol",
+    "a grounded referent is one whose domain placement is decidable",
+    "The collision happened - in the substrate that exists (the neural map), even though the external referent (the hand) is gone."
+   ]
+  },
+  {
+   "domain": "autocoincidence",
+   "coord": "B,B3",
+   "vocab": "autocoincidence unity-principle self-similar scale-invariant coincidence recursion-depth nesting memory synthesis qwerty parallel momentum concepts",
+   "tools": "blog: Unity Principle / autocoincidence at every scale",
+   "template": "auto-coincidence at every scale: labels live in the scaffolding, stripped from the published prose",
+   "rules": [
+    "auto-coincidence at every scale: labels live in the scaffolding, stripped from the published prose",
+    "the unity principle is the same shape recurring self-similar across scales",
+    "scale-invariance is the tell that the grounding is real, not decorated",
+    "Semantic meaning becomes physical address - Important concepts literally live at lower memory addresses"
+   ]
+  },
+  {
+   "domain": "scheduled-jobs",
+   "coord": "C,A3",
+   "vocab": "cron launchd schedule scheduled poller daemon tick controller batch batched dedupe dedup token cost burn budget opus model pin pinned worker clock sqlite ledger exactly-once idle plist bootout bootstrap interval headless",
+   "template": "launchd is the clock, sh is the controller, SQLite is the queue + exactly-once ledger, claude is a model-pinned WORKER fired only after SQL proves work. One clock: scripts/controller/tick.sh (300s). New scheduled work = a stage: PULL (sh, $0) → MATCH (SQL dedup) → FIRE (ALL matches batched into ONE pinned worker) → MARK (SQL). Add the script to SCHEDULED_CLAUDE_SCRIPTS in the guard test.",
+   "tools": "scripts/controller/tick.sh scripts/spec-reply-execute.sh scripts/gcal-agent/poll-execute.sh tests/ops/launchd-claude-cost-guard.test.js",
+   "rules": [
+    "a scheduled claude -p MUST pin --model — inheriting the saved interactive default is the flagship-pricing foot-gun (the $665 incident)",
+    "the 'anything new?' check belongs in bash/SQLite ($0) — never spend an LLM session to discover there is no work",
+    "batch all matched commands into ONE worker dispatch — one context load amortized across N commands",
+    "exactly-once lives in SQL (state + ledger), never in the model's judgment",
+    "guarded by tests/ops/launchd-claude-cost-guard.test.js — add new scheduled claude scripts to its list (the ratchet)",
+    "cost numbers from transcripts are API-LIST-PRICE ESTIMATES, never charges — label them so (subscription pays the bill)",
+    "one clock: new periodic work is a STAGE in scripts/controller/tick.sh with its own stamp, never a new launchd plist",
+    "every emitter consults tc_pipeline_gates before sending; missing table falls back to builtin defaults so a gate can never silently disable",
+    "controller health = every tick logs all stages rc=0, $0 when idle; daily burn email arrives labeled as estimate; a missing daily email means stage 3 regressed"
+   ],
+   "template2": "Daily/periodic report job: sh+python stage, stamp-gated (.thetacog/cache/<name>.stamp), compute deterministically, email via email-artifact --no-attach, label estimates as estimates. $0 LLM."
+  }
+ ],
+ "standing": [
+  "NEVER auto-push; commit liberally, push only on explicit 'push' or live-site update",
+  "delegation NEVER git-branches — bifurcate (rooms JSON + signed mesh) is the only door",
+  "the deliverable is the GUARD (test/gate/rule) shipped in the SAME commit as the fix"
+ ],
+ "templates": [
+  {
+   "name": "incident-forensics",
+   "when": "burned cost tokens runaway broke regression forensics logs ledger what happened",
+   "skeleton": "Pull the ledgers (transcripts/ndjson) → dedup by id → rank by cost/impact → name the mechanism (not the symptom) → fix + guard in the SAME commit → report with honest numbers + estimate labels."
+  },
+  {
+   "name": "ratchet-bugfix",
+   "when": "fix bug fails error broken test guard",
+   "skeleton": "State the done-when as a FAILING test first → find the running code (never reinvent) → minimal fix → guard ships in the same commit → prove via the pipeline's own receipt."
+  },
+  {
+   "name": "canonical-content",
+   "when": "blog post write publish book chapter canonical piece",
+   "skeleton": "RESEARCH → BOOK section → BLOG quoting it (deep links verified) → 8-part spine in subtitles → crests/breadcrumbs → validate-mdx → qwen ghost-read ≥95 tri-check → own encircled panel as OG."
+  },
+  {
+   "name": "delegation-package",
+   "when": "delegate room subdivide mesh bifurcate assign outside window",
+   "skeleton": "Author spec+context → bifurcate --from <room> --to <fitting room> --commit (NEVER a branch) → the commit-triptych receipt IS the delegation email → residue QC-routed, never dropped."
+  },
+  {
+   "name": "controller-stage",
+   "when": "cron schedule poller daemon periodic daily tick automation",
+   "skeleton": "New periodic work = a STAGE in scripts/controller/tick.sh: PULL(sh $0) → MATCH(SQL exactly-once, stamp) → FIRE(batched, model-pinned worker) → MARK(SQL). Add to the cost-guard test list."
+  },
+  {
+   "name": "reef-densify",
+   "when": "rules template lens reef routing sort misroute densify vocab",
+   "skeleton": "Harvest the lesson into per-domain rules (symptom vocabulary — readers arrive with the 500, not the tool name) → verify routing (routeToDomain score) + sort (fixtures rel@1) → guard the fixture."
+  },
+  {
+   "name": "lab-experiment",
+   "when": "experiment measure baseline denominator ab arm battery prove",
+   "skeleton": "One-bit arms → deterministic metrics only (LLM reads the report, never grades the run) → quality and cost must CO-MOVE → append the ndjson keyed by reef version → the envelope is the ratchet."
+  },
+  {
+   "name": "outreach-forwardable",
+   "when": "outreach lead investor carrier email pitch external send",
+   "skeleton": "Role-addressed forwarding PACKAGE to self (never person-addressed direct) → two docs (email + objectives) → lead with what retires the risk/discount → canonical door, grade ≥95, Ava bundle."
+  },
+  {
+   "name": "receipt-evidence",
+   "when": "prove receipt evidence encircled panel verify show demo",
+   "skeleton": "The fix proves itself through the ONE pipeline: hooks-ON commit → the emailed receipt (encircled shape + from→to + LANE + stories) is the evidence — dogfood is the demo, never a mock."
+  },
+  {
+   "name": "hindsight-audit",
+   "when": "backtest history retroactive hindsight replay past commits optimize",
+   "skeleton": "Replay git history through the deterministic router (~1s/120 commits, non-LLM) → ground truth = the commit's own diff paths → misses bake AUDITABLE sha-lists into rule meta → LLM only reads the report."
+  },
+  {
+   "name": "trace-session",
+   "when": "trace decisions justify chat session retrospective explain choices happened reasoning recap",
+   "skeleton": "Retrospective, NOT a task: reconstruct from receipts (transcript · decisions-ledger · lens-receipts · git log) — every claim cites its receipt; decisions numbered, each with its why + evidence; NO repo edits."
+  },
+  {
+   "name": "continuation",
+   "when": "task notification background completed status output exit code finished watcher summary daemon returned",
+   "skeleton": "A background task finished: read its output file FIRST, verify the receipt/exit state matches the claim, report the delta in ONE line, then advance the pipeline exactly one step or stop — never re-launch blindly."
+  },
+  {
+   "name": "refine-artifact",
+   "when": "refine revise extend rework improve polish existing blogpost draft argue against tradeoff pros cons parts extended tighten",
+   "skeleton": "REVISE, not create: read the CURRENT artifact end-to-end first; preserve its invariants (crest variants · anchors · frontmatter · voice); argue for/against any restructure BEFORE doing it; one refinement pass = one commit."
+  },
+  {
+   "name": "ratify-decision",
+   "when": "good enough perfect options confirm keep decided sure works great awesome fair agreed settled",
+   "skeleton": "The user is CHOOSING, not tasking: restate the decision in ONE line, record it where it governs (spec · ledger · rule), apply only the minimal delta it implies, confirm — no scope creep, no re-opening settled options."
+  },
+  {
+   "name": "park-idea",
+   "when": "maybe half mind idea park later someday nothing change something could hmm ponder",
+   "skeleton": "A maybe/someday thought: do NOT execute it now. Capture it revivable-cold (self-prompt --due, or bifurcate to its room) with enough context to stand alone; confirm exactly where it is parked."
+  }
+ ]
+}

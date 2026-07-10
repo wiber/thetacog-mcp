@@ -1,0 +1,38 @@
+{
+  "sha": "abb81d072859b407841e5bf6c4a233e73b675f89",
+  "measured_at": "2026-06-18T19:49:06.641Z",
+  "platform": "darwin",
+  "arch": "arm64",
+  "tiers": {
+    "L1": {
+      "kib": 16,
+      "ns_per_access": 1.88
+    },
+    "L2": {
+      "kib": 256,
+      "ns_per_access": 5.59
+    },
+    "SLC": {
+      "kib": 8192,
+      "ns_per_access": 44.18
+    },
+    "DRAM": {
+      "kib": 131072,
+      "ns_per_access": 229.79
+    }
+  },
+  "gate_ns_per_comparison": 0.7983,
+  "walk_ns_12x12": 229.9,
+  "walk_xor_cycles": 288,
+  "miss_penalty_dram_l1": 122.5,
+  "touched_files": [
+    "public/air-receipt.html",
+    "public/docs/strategy/pmu-leave-behind-2026-05-23.html",
+    "public/docs/strategy/pmu-pricing-2026-05-23.html",
+    "public/verify-receipt.html",
+    "src/app/d/page.tsx",
+    "src/content/blog/2026-05-25-the-rices-theorem-checkmate.mdx"
+  ],
+  "daemon_path": ".thetacog/pmu/target/release/pmu-onchip",
+  "raw_stdout_tail": "\nraw PMU counters [macos]: not yet wired\n  raw counters are behind kperf (private framework); pointer-chase is the unprivileged on-chip measurement\n"
+}

@@ -1,0 +1,46 @@
+{
+  "sha": "aad13127569acf22b800c41753f1b7695fa0097e",
+  "measured_at": "2026-07-10T20:30:40.652Z",
+  "platform": "darwin",
+  "arch": "arm64",
+  "tiers": {
+    "L1": {
+      "kib": 16,
+      "ns_per_access": 1.54
+    },
+    "L2": {
+      "kib": 256,
+      "ns_per_access": 11.54
+    },
+    "SLC": {
+      "kib": 8192,
+      "ns_per_access": 319.03
+    },
+    "DRAM": {
+      "kib": 131072,
+      "ns_per_access": 429.25
+    }
+  },
+  "gate_ns_per_comparison": 1.727,
+  "walk_ns_12x12": 497.4,
+  "walk_xor_cycles": 288,
+  "miss_penalty_dram_l1": 278.4,
+  "touched_files": [
+    ".thetacog/email-sent.ndjson",
+    ".thetacog/lens-signals/sig_92c0e5f78a018d1b4add56fd897b5191.json",
+    ".thetacog/panel-repairs.ndjson",
+    ".thetacog/punch-list.json",
+    ".thetacog/sigma-panel-trend.ndjson",
+    "data/pmu/measure-history.ndjson",
+    "data/pmu/pipeline/state.json",
+    "docs/commit-triptych-61409b1b0.html",
+    "docs/commit-triptych-d0fe46a09.html",
+    "docs/crm/newsletter-subscribers-migrate-repo.sql",
+    "docs/digests/sent/2026-07-10T20-28-22Z-117commits.html",
+    "docs/digests/sent/2026-07-10T20-28-55Z-117commits.html",
+    "docs/digests/sent/2026-07-10T20-29-24Z-118commits.html",
+    "src/data/commit-greeks-index.json"
+  ],
+  "daemon_path": ".thetacog/pmu/target/release/pmu-onchip",
+  "raw_stdout_tail": "\nraw PMU counters [macos]: not yet wired\n  raw counters are behind kperf (private framework); pointer-chase is the unprivileged on-chip measurement\n"
+}

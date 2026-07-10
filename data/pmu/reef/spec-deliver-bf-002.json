@@ -1,0 +1,13 @@
+{
+  "room": "builder",
+  "note": "Dogfood deliverables for bf-002 — builder's delivered work, stated as SEMANTIC claims (code→reality, not raw source), one per requirement, attested against spec-reef-npx-underwriter-package.json.",
+  "items": {
+    "R1": { "text": "The receipt carries a named incumbent_variance field: the measured run-to-run flip-rate of a sampling LLM judge on the same test, printed as a number beside the verdict, while the oracle stays byte-identical at zero variance. The judge flip-rate per requirement is a measured statistic, not prose, and it rises on borderline placements where a sampling judge would change its mind." },
+    "R2": { "text": "Inputs are a declared reef (intent vocabulary, the requirements as full prose) and a deliverables payload (the work), each named, timestamped, and hash-verified with sha256. The synthetic spec-plus-reef case leads and needs no git-infrastructure knowledge; ambiguous input with fewer than two anchors is rejected rather than guessed." },
+    "R3": { "text": "A single ed25519 signed receipt carries three readable layers in one artifact: the verdict with coherence and drift sigma and cell placement, the measured incumbent judge variance, and one advisory loss-ratio number flagged pre-calibration. The three layers are never split across separate files." },
+    "R4": { "text": "Recompute is the ballgame: running the check command on a different machine reproduces the receipt byte for byte and exits zero, verifying the ed25519 signature and the sha256 body and re-deriving the attestation root, with identical sigma." },
+    "R5": { "text": "One pre-baked synthetic reef and payload case runs cold in well under five minutes for someone who has never seen the architecture; the measured cold run completes in about one hundred milliseconds. Bring your own payload is the follow-on, not the first run." },
+    "R6": { "text": "The package accepts an arbitrary spec document as the reef and intent: feeding the spec file builds a reef from the full requirement prose of every requirement, sealed as the author room, giving the intent half against which delivered work is walked." },
+    "R7": { "text": "Honest fences are baked into the output: the price is stated advisory and pre-calibration, the attestation is layer one only meaning your own machine and your own cache hierarchy sealed locally and never a claim of reading hardware performance counters, the paraphrase invariance is named at zero point three zero, and no language model sits in the trust path. A test guard asserts none of the banned claims appear." }
+  }
+}

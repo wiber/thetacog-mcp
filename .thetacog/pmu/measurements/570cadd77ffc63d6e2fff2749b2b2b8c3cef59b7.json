@@ -1,0 +1,46 @@
+{
+  "sha": "570cadd77ffc63d6e2fff2749b2b2b8c3cef59b7",
+  "measured_at": "2026-06-20T02:53:42.701Z",
+  "platform": "darwin",
+  "arch": "arm64",
+  "tiers": {
+    "L1": {
+      "kib": 16,
+      "ns_per_access": 1.81
+    },
+    "L2": {
+      "kib": 256,
+      "ns_per_access": 4.95
+    },
+    "SLC": {
+      "kib": 8192,
+      "ns_per_access": 19.75
+    },
+    "DRAM": {
+      "kib": 131072,
+      "ns_per_access": 211.48
+    }
+  },
+  "gate_ns_per_comparison": 1.2262,
+  "walk_ns_12x12": 353.1,
+  "walk_xor_cycles": 288,
+  "miss_penalty_dram_l1": 116.9,
+  "touched_files": [
+    "public/blog/post-panels/2026-05-25-the-rices-theorem-checkmate/3fc190d48dfe58f69f89de1496c64748e1ca92d5.png",
+    "public/blog/post-panels/2026-05-25-the-rices-theorem-checkmate/4e36d4697a327879188f3217dc103882392ede31.png",
+    "public/blog/post-panels/2026-05-25-the-rices-theorem-checkmate/6732b9ecb78cb9eaac389742b2a24df4aa93d7f1.png",
+    "public/blog/post-panels/2026-05-25-the-rices-theorem-checkmate/8877413000653fddac0f5a86f66e8e830a2912b8.png",
+    "public/blog/post-panels/2026-05-25-the-rices-theorem-checkmate/919d489ff37e70f0a1ca58175138df6ab17db97e.png",
+    "public/blog/post-panels/2026-05-25-the-rices-theorem-checkmate/abb81d072859b407841e5bf6c4a233e73b675f89.png",
+    "public/blog/post-panels/2026-05-25-the-rices-theorem-checkmate/da2bf4df9c1ee370e2c73a4e71b0aed886941322.png",
+    "public/blog/post-panels/2026-05-25-the-rices-theorem-checkmate/dc9fc236652caf625ae32744594ca28f5b3f15a0.png",
+    "public/blog/post-panels/2026-05-25-the-rices-theorem-checkmate/f5339aae8944bce80e6198839c9fe5a7b83c45dc.png",
+    "public/blog/post-panels/2026-05-25-the-rices-theorem-checkmate/f7109a633dc0a43003302c2f9c46dd07ff982a20.png",
+    "public/blog/post-panels/2026-05-25-the-rices-theorem-checkmate/manifest.json",
+    "scripts/pmu/post-drift-history.sh",
+    "scripts/pmu/walk-story.mjs",
+    "src/content/blog/2026-05-25-the-rices-theorem-checkmate.mdx"
+  ],
+  "daemon_path": ".thetacog/pmu/target/release/pmu-onchip",
+  "raw_stdout_tail": "\nraw PMU counters [macos]: not yet wired\n  raw counters are behind kperf (private framework); pointer-chase is the unprivileged on-chip measurement\n"
+}

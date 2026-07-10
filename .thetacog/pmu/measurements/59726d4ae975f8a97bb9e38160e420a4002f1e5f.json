@@ -1,0 +1,36 @@
+{
+  "sha": "59726d4ae975f8a97bb9e38160e420a4002f1e5f",
+  "measured_at": "2026-06-21T12:33:10.858Z",
+  "platform": "darwin",
+  "arch": "arm64",
+  "tiers": {
+    "L1": {
+      "kib": 16,
+      "ns_per_access": 6.24
+    },
+    "L2": {
+      "kib": 256,
+      "ns_per_access": 6.86
+    },
+    "SLC": {
+      "kib": 8192,
+      "ns_per_access": 38.26
+    },
+    "DRAM": {
+      "kib": 131072,
+      "ns_per_access": 119.34
+    }
+  },
+  "gate_ns_per_comparison": 0.6319,
+  "walk_ns_12x12": 182,
+  "walk_xor_cycles": 288,
+  "miss_penalty_dram_l1": 19.1,
+  "touched_files": [
+    "docs/pmu/conclusion-redpill.txt",
+    "docs/pmu/investment-analysis-redpill.txt",
+    "docs/pmu/redpill-progression.md",
+    "docs/pmu/what-it-leads-to.txt"
+  ],
+  "daemon_path": ".thetacog/pmu/target/release/pmu-onchip",
+  "raw_stdout_tail": "\nraw PMU counters [macos]: not yet wired\n  raw counters are behind kperf (private framework); pointer-chase is the unprivileged on-chip measurement\n"
+}

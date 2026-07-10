@@ -1,0 +1,36 @@
+{
+  "sha": "6ff11aefae6a1d9a8c73c6ffb9ca66d2b03c88bb",
+  "measured_at": "2026-06-18T13:34:00.217Z",
+  "platform": "darwin",
+  "arch": "arm64",
+  "tiers": {
+    "L1": {
+      "kib": 16,
+      "ns_per_access": 1.82
+    },
+    "L2": {
+      "kib": 256,
+      "ns_per_access": 4.3
+    },
+    "SLC": {
+      "kib": 8192,
+      "ns_per_access": 60.43
+    },
+    "DRAM": {
+      "kib": 131072,
+      "ns_per_access": 134.37
+    }
+  },
+  "gate_ns_per_comparison": 1.0864,
+  "walk_ns_12x12": 312.9,
+  "walk_xor_cycles": 288,
+  "miss_penalty_dram_l1": 73.7,
+  "touched_files": [
+    "data/pmu/rice-proof-fixture.json",
+    "docs/pmu/prove-rice-report.html",
+    "packages/thetacog-mcp/scripts/bundle-pmu.mjs",
+    "scripts/pmu/prove-rice.mjs"
+  ],
+  "daemon_path": ".thetacog/pmu/target/release/pmu-onchip",
+  "raw_stdout_tail": "\nraw PMU counters [macos]: not yet wired\n  raw counters are behind kperf (private framework); pointer-chase is the unprivileged on-chip measurement\n"
+}

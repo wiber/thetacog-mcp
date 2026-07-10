@@ -1,0 +1,33 @@
+{
+  "sha": "91d6fb43b4b492fc5da7efff9fdb261d865aba51",
+  "measured_at": "2026-06-20T23:45:34.031Z",
+  "platform": "darwin",
+  "arch": "arm64",
+  "tiers": {
+    "L1": {
+      "kib": 16,
+      "ns_per_access": 1.7
+    },
+    "L2": {
+      "kib": 256,
+      "ns_per_access": 4.89
+    },
+    "SLC": {
+      "kib": 8192,
+      "ns_per_access": 24.24
+    },
+    "DRAM": {
+      "kib": 131072,
+      "ns_per_access": 179.31
+    }
+  },
+  "gate_ns_per_comparison": 0.5898,
+  "walk_ns_12x12": 169.8,
+  "walk_xor_cycles": 288,
+  "miss_penalty_dram_l1": 105.7,
+  "touched_files": [
+    "packages/thetacog-mcp/next-engine.mjs"
+  ],
+  "daemon_path": ".thetacog/pmu/target/release/pmu-onchip",
+  "raw_stdout_tail": "\nraw PMU counters [macos]: not yet wired\n  raw counters are behind kperf (private framework); pointer-chase is the unprivileged on-chip measurement\n"
+}

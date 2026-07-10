@@ -1,0 +1,1073 @@
+{
+  "measured": "2026-06-21T13:38:56",
+  "sensor": "gzip-NCD (canonical primary witness, on-chip daemon)",
+  "corpus": "SEALED CROSS-DOMAIN HELD-OUT (firewall mode) · gzip",
+  "lib": "docs/research/pmu-shape-detection-ground-truth.json",
+  "libSha": "44e6fe78c267",
+  "harnessSha": "419cae67af0a",
+  "framing": "Greeks of the competence pixel — priceable underlying, NOT ML accuracy",
+  "params": {
+    "THRESH": 3,
+    "K": 6,
+    "STEPS": 6,
+    "deadPerm": "i*47+13 mod 144"
+  },
+  "N": {
+    "filled": 24,
+    "measured": 24,
+    "admitted": 0,
+    "excluded": 24
+  },
+  "fence": {
+    "rule": "paraphrase-INVARIANT (filler-swap grip ≥ THRESH) ∧ substitution-SENSITIVE (full-sub grip < THRESH)",
+    "excludedCoords": [
+      "fi-001",
+      "fi-002",
+      "fi-003",
+      "fi-004",
+      "fi-005",
+      "fi-006",
+      "fi-007",
+      "fi-008",
+      "fi-009",
+      "fi-010",
+      "fi-011",
+      "fi-012",
+      "cl-013",
+      "cl-014",
+      "cl-015",
+      "cl-016",
+      "cl-017",
+      "cl-018",
+      "cl-019",
+      "cl-020",
+      "cl-021",
+      "cl-022",
+      "cl-023",
+      "cl-024"
+    ],
+    "note": "excluded items are out-of-scope (un-mappable surface), NOT failures — the fence is published"
+  },
+  "greeks": {
+    "determinism": {
+      "withinItemVariance": 0,
+      "identicalReruns": true
+    },
+    "strikePrice_foldingPoint": {
+      "live": {
+        "mean": 0,
+        "sd": 0,
+        "n": 0,
+        "lo": 0,
+        "hi": 0,
+        "half": 0
+      },
+      "dead": {
+        "mean": 0,
+        "sd": 0,
+        "n": 0,
+        "lo": 0,
+        "hi": 0,
+        "half": 0
+      },
+      "units": "fraction of distinctive shape corrupted at ABSTAIN"
+    },
+    "volatility_monotonicity": {
+      "rate": 0,
+      "of": 0
+    },
+    "zeroTailRisk_honestNull": {
+      "falsePassRate": 0,
+      "mintViolations": 0,
+      "ceiling": "no CONFIDENT mint below σ=3"
+    }
+  },
+  "arms": {
+    "arm1_stableCeiling": {
+      "mean": 0,
+      "sd": 0,
+      "n": 0,
+      "lo": 0,
+      "hi": 0,
+      "half": 0
+    },
+    "arm3_deadReefFloor": {
+      "mean": 0,
+      "sd": 0,
+      "n": 0,
+      "lo": 0,
+      "hi": 0,
+      "half": 0
+    },
+    "signal_live_minus_dead": {
+      "mean": 0,
+      "sd": 0,
+      "n": 0,
+      "lo": 0,
+      "hi": 0,
+      "half": 0
+    },
+    "significance_wilcoxon": {
+      "n": 0,
+      "W": null,
+      "z": null,
+      "p": null,
+      "note": "n<6 — exact test needed; report descriptively"
+    }
+  },
+  "falsificationGates": {
+    "strike_knowable": true,
+    "tail_risk_ok": true,
+    "grounded": false,
+    "honest_null": true,
+    "signal_significant": false,
+    "determinism": true,
+    "monotonic_majority": false
+  },
+  "VERDICT": "NOT PROVEN — a pre-committed gate failed",
+  "items": [
+    {
+      "tile": 0,
+      "coord": "fi-001",
+      "dtoks": [
+        "down",
+        "raises",
+        "ratchets",
+        "round",
+        "company",
+        "preference"
+      ],
+      "ftoks": [
+        "series",
+        "lower",
+        "price",
+        "company",
+        "preference"
+      ],
+      "grip": [
+        18.1762,
+        25.0993,
+        14.5636,
+        11.2272,
+        3.8752,
+        3.223,
+        1.5905
+      ],
+      "ceiling": 18.1762,
+      "foldingFraction": 0.8561,
+      "foldingPct": 86,
+      "monotonic": true,
+      "spearman": -0.964,
+      "gripPara": 2.4275,
+      "gripFullSub": 16.919,
+      "paraphraseInvariant": false,
+      "substitutionSensitive": false,
+      "admitted": false,
+      "verdictAtCeiling": "CONFIDENT",
+      "verdictAtFullSub": "CONFIDENT",
+      "falsePass": false,
+      "mintViolation": false
+    },
+    {
+      "tile": 1,
+      "coord": "fi-002",
+      "dtoks": [
+        "borrower",
+        "debt-to-equity",
+        "ratio",
+        "times",
+        "must",
+        "maintain"
+      ],
+      "ftoks": [
+        "below",
+        "maintain",
+        "must"
+      ],
+      "grip": [
+        15.0588,
+        14.1698,
+        10.63,
+        8.9893,
+        6.7926,
+        3.5708,
+        3.1297
+      ],
+      "ceiling": 15.0588,
+      "foldingFraction": 1,
+      "foldingPct": 100,
+      "monotonic": true,
+      "spearman": -1,
+      "gripPara": 0.7292,
+      "gripFullSub": 13.0716,
+      "paraphraseInvariant": false,
+      "substitutionSensitive": false,
+      "admitted": false,
+      "verdictAtCeiling": "CONFIDENT",
+      "verdictAtFullSub": "CONFIDENT",
+      "falsePass": false,
+      "mintViolation": false
+    },
+    {
+      "tile": 2,
+      "coord": "fi-003",
+      "dtoks": [
+        "price",
+        "shares",
+        "lower",
+        "series",
+        "convert",
+        "issuance"
+      ],
+      "ftoks": [
+        "series",
+        "lower",
+        "price",
+        "shares"
+      ],
+      "grip": [
+        13.5953,
+        10.8935,
+        10.8179,
+        8.2313,
+        6.5756,
+        3.1934,
+        1.2977
+      ],
+      "ceiling": 13.5953,
+      "foldingFraction": 0.8503,
+      "foldingPct": 85,
+      "monotonic": true,
+      "spearman": -1,
+      "gripPara": 2.9894,
+      "gripFullSub": 13.9423,
+      "paraphraseInvariant": false,
+      "substitutionSensitive": false,
+      "admitted": false,
+      "verdictAtCeiling": "CONFIDENT",
+      "verdictAtFullSub": "CONFIDENT",
+      "falsePass": false,
+      "mintViolation": false
+    },
+    {
+      "tile": 3,
+      "coord": "fi-004",
+      "dtoks": [
+        "acquisition",
+        "adverse",
+        "agreement",
+        "allows",
+        "buyer",
+        "change"
+      ],
+      "ftoks": [
+        "company's",
+        "financial"
+      ],
+      "grip": [
+        19.8599,
+        16.8298,
+        11.0828,
+        7.24,
+        5.9564,
+        3.6798,
+        1.119
+      ],
+      "ceiling": 19.8599,
+      "foldingFraction": 0.8776,
+      "foldingPct": 88,
+      "monotonic": true,
+      "spearman": -1,
+      "gripPara": 3.1048,
+      "gripFullSub": 19.7167,
+      "paraphraseInvariant": true,
+      "substitutionSensitive": false,
+      "admitted": false,
+      "verdictAtCeiling": "CONFIDENT",
+      "verdictAtFullSub": "CONFIDENT",
+      "falsePass": false,
+      "mintViolation": false
+    },
+    {
+      "tile": 4,
+      "coord": "fi-005",
+      "dtoks": [
+        "creditors",
+        "distributed",
+        "first",
+        "proceeds",
+        "sale",
+        "secured"
+      ],
+      "ftoks": [
+        "series",
+        "preferred",
+        "stockholders"
+      ],
+      "grip": [
+        16.8031,
+        15.0122,
+        11.4435,
+        9.4444,
+        7.2655,
+        3.2541,
+        0.2963
+      ],
+      "ceiling": 16.8031,
+      "foldingFraction": 0.8477,
+      "foldingPct": 85,
+      "monotonic": true,
+      "spearman": -1,
+      "gripPara": 2.4932,
+      "gripFullSub": 10.0158,
+      "paraphraseInvariant": false,
+      "substitutionSensitive": false,
+      "admitted": false,
+      "verdictAtCeiling": "CONFIDENT",
+      "verdictAtFullSub": "CONFIDENT",
+      "falsePass": false,
+      "mintViolation": false
+    },
+    {
+      "tile": 5,
+      "coord": "fi-006",
+      "dtoks": [
+        "cash",
+        "reserves",
+        "company",
+        "minimum",
+        "shall",
+        "maintain"
+      ],
+      "ftoks": [
+        "maintain",
+        "company",
+        "minimum",
+        "shall"
+      ],
+      "grip": [
+        13.6039,
+        10.5088,
+        8.4798,
+        7.9636,
+        7.2101,
+        5.4998,
+        4.4974
+      ],
+      "ceiling": 13.6039,
+      "foldingFraction": 1,
+      "foldingPct": 100,
+      "monotonic": true,
+      "spearman": -1,
+      "gripPara": -0.5078,
+      "gripFullSub": 12.5073,
+      "paraphraseInvariant": false,
+      "substitutionSensitive": false,
+      "admitted": false,
+      "verdictAtCeiling": "CONFIDENT",
+      "verdictAtFullSub": "CONFIDENT",
+      "falsePass": false,
+      "mintViolation": false
+    },
+    {
+      "tile": 6,
+      "coord": "fi-007",
+      "dtoks": [
+        "stockholders",
+        "after",
+        "initial",
+        "participate",
+        "pro-rata",
+        "receiving"
+      ],
+      "ftoks": [
+        "series",
+        "preferred",
+        "common",
+        "preference",
+        "stockholders"
+      ],
+      "grip": [
+        12.5564,
+        12.5112,
+        11.3847,
+        12.2911,
+        8.8184,
+        4.6065,
+        0.9078
+      ],
+      "ceiling": 12.5564,
+      "foldingFraction": 0.9057,
+      "foldingPct": 91,
+      "monotonic": true,
+      "spearman": -0.964,
+      "gripPara": 4.3892,
+      "gripFullSub": 11.0215,
+      "paraphraseInvariant": true,
+      "substitutionSensitive": false,
+      "admitted": false,
+      "verdictAtCeiling": "CONFIDENT",
+      "verdictAtFullSub": "CONFIDENT",
+      "falsePass": false,
+      "mintViolation": false
+    },
+    {
+      "tile": 7,
+      "coord": "fi-008",
+      "dtoks": [
+        "shares",
+        "price",
+        "adjusted",
+        "broad-based",
+        "conversion",
+        "formula"
+      ],
+      "ftoks": [
+        "preferred",
+        "lower",
+        "price",
+        "shares"
+      ],
+      "grip": [
+        16.3748,
+        18.4627,
+        17.1475,
+        15.9224,
+        9.5785,
+        4.5332,
+        2.8277
+      ],
+      "ceiling": 16.3748,
+      "foldingFraction": 0.9832,
+      "foldingPct": 98,
+      "monotonic": true,
+      "spearman": -0.893,
+      "gripPara": 7.8842,
+      "gripFullSub": 18.5367,
+      "paraphraseInvariant": true,
+      "substitutionSensitive": false,
+      "admitted": false,
+      "verdictAtCeiling": "CONFIDENT",
+      "verdictAtFullSub": "CONFIDENT",
+      "falsePass": false,
+      "mintViolation": false
+    },
+    {
+      "tile": 8,
+      "coord": "fi-009",
+      "dtoks": [
+        "annual",
+        "approval",
+        "capital",
+        "exceed",
+        "expenditures",
+        "lender"
+      ],
+      "ftoks": [
+        "must"
+      ],
+      "grip": [
+        15.2455,
+        12.6696,
+        9.3854,
+        7.2991,
+        6.1257,
+        3.9354,
+        2.3537
+      ],
+      "ceiling": 15.2455,
+      "foldingFraction": 0.9319,
+      "foldingPct": 93,
+      "monotonic": true,
+      "spearman": -1,
+      "gripPara": 0.9965,
+      "gripFullSub": 12.7757,
+      "paraphraseInvariant": false,
+      "substitutionSensitive": false,
+      "admitted": false,
+      "verdictAtCeiling": "CONFIDENT",
+      "verdictAtFullSub": "CONFIDENT",
+      "falsePass": false,
+      "mintViolation": false
+    },
+    {
+      "tile": 9,
+      "coord": "fi-010",
+      "dtoks": [
+        "entitled",
+        "quarter-end",
+        "quarterly",
+        "statements",
+        "within",
+        "days"
+      ],
+      "ftoks": [
+        "days",
+        "financial",
+        "investors"
+      ],
+      "grip": [
+        20.5779,
+        17.2336,
+        12.6643,
+        8.9286,
+        7.5472,
+        3.0794,
+        1.8641
+      ],
+      "ceiling": 20.5779,
+      "foldingFraction": 0.8442,
+      "foldingPct": 84,
+      "monotonic": true,
+      "spearman": -1,
+      "gripPara": 2.1794,
+      "gripFullSub": 17.9867,
+      "paraphraseInvariant": false,
+      "substitutionSensitive": false,
+      "admitted": false,
+      "verdictAtCeiling": "CONFIDENT",
+      "verdictAtFullSub": "CONFIDENT",
+      "falsePass": false,
+      "mintViolation": false
+    },
+    {
+      "tile": 10,
+      "coord": "fi-011",
+      "dtoks": [
+        "additional",
+        "board",
+        "falls",
+        "gain",
+        "seat",
+        "valuation"
+      ],
+      "ftoks": [
+        "series",
+        "below",
+        "company's",
+        "investors"
+      ],
+      "grip": [
+        18.4841,
+        16.6901,
+        15.3859,
+        10.6978,
+        7.1959,
+        6.8891,
+        4.1006
+      ],
+      "ceiling": 18.4841,
+      "foldingFraction": 1,
+      "foldingPct": 100,
+      "monotonic": true,
+      "spearman": -1,
+      "gripPara": 3.7622,
+      "gripFullSub": 14.3448,
+      "paraphraseInvariant": true,
+      "substitutionSensitive": false,
+      "admitted": false,
+      "verdictAtCeiling": "CONFIDENT",
+      "verdictAtFullSub": "CONFIDENT",
+      "falsePass": false,
+      "mintViolation": false
+    },
+    {
+      "tile": 11,
+      "coord": "fi-012",
+      "dtoks": [
+        "dividends",
+        "stock",
+        "accumulate",
+        "before",
+        "payable",
+        "unpaid"
+      ],
+      "ftoks": [
+        "series",
+        "preferred",
+        "common",
+        "shall"
+      ],
+      "grip": [
+        12.6762,
+        10.4806,
+        7.9721,
+        6.6216,
+        4.0234,
+        2.8012,
+        1.7257
+      ],
+      "ceiling": 12.6762,
+      "foldingFraction": 0.8062,
+      "foldingPct": 81,
+      "monotonic": true,
+      "spearman": -1,
+      "gripPara": 2.7702,
+      "gripFullSub": 11.207,
+      "paraphraseInvariant": false,
+      "substitutionSensitive": false,
+      "admitted": false,
+      "verdictAtCeiling": "CONFIDENT",
+      "verdictAtFullSub": "CONFIDENT",
+      "falsePass": false,
+      "mintViolation": false
+    },
+    {
+      "tile": 12,
+      "coord": "cl-013",
+      "dtoks": [
+        "adult",
+        "clearance",
+        "creatinine",
+        "standard",
+        "above",
+        "dose"
+      ],
+      "ftoks": [
+        "administer",
+        "patients",
+        "above",
+        "dose"
+      ],
+      "grip": [
+        13.7649,
+        12.8871,
+        8.1826,
+        6.5757,
+        4.3105,
+        1.4617,
+        0.5634
+      ],
+      "ceiling": 13.7649,
+      "foldingFraction": 0.7433,
+      "foldingPct": 74,
+      "monotonic": true,
+      "spearman": -1,
+      "gripPara": 4.289,
+      "gripFullSub": 14.8302,
+      "paraphraseInvariant": true,
+      "substitutionSensitive": false,
+      "admitted": false,
+      "verdictAtCeiling": "CONFIDENT",
+      "verdictAtFullSub": "CONFIDENT",
+      "falsePass": false,
+      "mintViolation": false
+    },
+    {
+      "tile": 13,
+      "coord": "cl-014",
+      "dtoks": [
+        "drug",
+        "greater",
+        "infuse",
+        "patient",
+        "weight"
+      ],
+      "ftoks": [],
+      "grip": [
+        12.6105,
+        9.7851,
+        9.1101,
+        6.6777,
+        6.6777,
+        4.8431,
+        3.6096
+      ],
+      "ceiling": 12.6105,
+      "foldingFraction": 1,
+      "foldingPct": 100,
+      "monotonic": true,
+      "spearman": -0.991,
+      "gripPara": 7.5088,
+      "gripFullSub": 12.3406,
+      "paraphraseInvariant": true,
+      "substitutionSensitive": false,
+      "admitted": false,
+      "verdictAtCeiling": "CONFIDENT",
+      "verdictAtFullSub": "CONFIDENT",
+      "falsePass": false,
+      "mintViolation": false
+    },
+    {
+      "tile": 14,
+      "coord": "cl-015",
+      "dtoks": [
+        "initiate",
+        "mmhg",
+        "pressure",
+        "support",
+        "vasopressor",
+        "blood"
+      ],
+      "ftoks": [
+        "below",
+        "blood"
+      ],
+      "grip": [
+        15.1881,
+        13.4825,
+        9.263,
+        5.5903,
+        4.7383,
+        2.9579,
+        2.2147
+      ],
+      "ceiling": 15.1881,
+      "foldingFraction": 0.8294,
+      "foldingPct": 83,
+      "monotonic": true,
+      "spearman": -1,
+      "gripPara": 5.221,
+      "gripFullSub": 13.4884,
+      "paraphraseInvariant": true,
+      "substitutionSensitive": false,
+      "admitted": false,
+      "verdictAtCeiling": "CONFIDENT",
+      "verdictAtFullSub": "CONFIDENT",
+      "falsePass": false,
+      "mintViolation": false
+    },
+    {
+      "tile": 15,
+      "coord": "cl-016",
+      "dtoks": [
+        "allergic",
+        "discontinue",
+        "exhibiting",
+        "immediately",
+        "infusion",
+        "reaction"
+      ],
+      "ftoks": [
+        "patients",
+        "severe"
+      ],
+      "grip": [
+        12.9622,
+        10.5661,
+        9.4869,
+        5.8347,
+        4.9312,
+        1.6644,
+        0.5939
+      ],
+      "ceiling": 12.9622,
+      "foldingFraction": 0.7652,
+      "foldingPct": 77,
+      "monotonic": true,
+      "spearman": -1,
+      "gripPara": 3.0066,
+      "gripFullSub": 11.6277,
+      "paraphraseInvariant": true,
+      "substitutionSensitive": false,
+      "admitted": false,
+      "verdictAtCeiling": "CONFIDENT",
+      "verdictAtFullSub": "CONFIDENT",
+      "falsePass": false,
+      "mintViolation": false
+    },
+    {
+      "tile": 16,
+      "coord": "cl-017",
+      "dtoks": [
+        "bilirubin",
+        "commence",
+        "infant",
+        "less",
+        "months",
+        "phototherapy"
+      ],
+      "ftoks": [
+        "above"
+      ],
+      "grip": [
+        21.7311,
+        16.8707,
+        11.7949,
+        9.2685,
+        8.4814,
+        6.0189,
+        5.2364
+      ],
+      "ceiling": 21.7311,
+      "foldingFraction": 1,
+      "foldingPct": 100,
+      "monotonic": true,
+      "spearman": -1,
+      "gripPara": 8.4902,
+      "gripFullSub": 18.1101,
+      "paraphraseInvariant": true,
+      "substitutionSensitive": false,
+      "admitted": false,
+      "verdictAtCeiling": "CONFIDENT",
+      "verdictAtFullSub": "CONFIDENT",
+      "falsePass": false,
+      "mintViolation": false
+    },
+    {
+      "tile": 17,
+      "coord": "cl-018",
+      "dtoks": [
+        "intravenously",
+        "opioid",
+        "pain",
+        "rapid",
+        "relief",
+        "administer"
+      ],
+      "ftoks": [
+        "administer"
+      ],
+      "grip": [
+        10.2369,
+        7.8783,
+        6.5298,
+        6.828,
+        4.4251,
+        3.5258,
+        2.6972
+      ],
+      "ceiling": 10.2369,
+      "foldingFraction": 0.9391,
+      "foldingPct": 94,
+      "monotonic": true,
+      "spearman": -0.964,
+      "gripPara": 3.9502,
+      "gripFullSub": 7.5126,
+      "paraphraseInvariant": true,
+      "substitutionSensitive": false,
+      "admitted": false,
+      "verdictAtCeiling": "CONFIDENT",
+      "verdictAtFullSub": "CONFIDENT",
+      "falsePass": false,
+      "mintViolation": false
+    },
+    {
+      "tile": 18,
+      "coord": "cl-019",
+      "dtoks": [
+        "every",
+        "give",
+        "hours",
+        "medication",
+        "mild",
+        "symptoms"
+      ],
+      "ftoks": [],
+      "grip": [
+        13.8533,
+        10.5088,
+        8.4653,
+        6.997,
+        4.4533,
+        2.7756,
+        1.7566
+      ],
+      "ceiling": 13.8533,
+      "foldingFraction": 0.811,
+      "foldingPct": 81,
+      "monotonic": true,
+      "spearman": -1,
+      "gripPara": 1.7152,
+      "gripFullSub": 10.6873,
+      "paraphraseInvariant": false,
+      "substitutionSensitive": false,
+      "admitted": false,
+      "verdictAtCeiling": "CONFIDENT",
+      "verdictAtFullSub": "CONFIDENT",
+      "falsePass": false,
+      "mintViolation": false
+    },
+    {
+      "tile": 19,
+      "coord": "cl-020",
+      "dtoks": [
+        "antibiotic",
+        "continue",
+        "course",
+        "post-fever",
+        "resolution",
+        "days"
+      ],
+      "ftoks": [
+        "days",
+        "minimum"
+      ],
+      "grip": [
+        13.6776,
+        11.3591,
+        10.9573,
+        6.6827,
+        4.1369,
+        3.37,
+        1.5928
+      ],
+      "ceiling": 13.6776,
+      "foldingFraction": 0.868,
+      "foldingPct": 87,
+      "monotonic": true,
+      "spearman": -1,
+      "gripPara": 3.954,
+      "gripFullSub": 13.9328,
+      "paraphraseInvariant": true,
+      "substitutionSensitive": false,
+      "admitted": false,
+      "verdictAtCeiling": "CONFIDENT",
+      "verdictAtFullSub": "CONFIDENT",
+      "falsePass": false,
+      "mintViolation": false
+    },
+    {
+      "tile": 20,
+      "coord": "cl-021",
+      "dtoks": [
+        "compromised",
+        "elderly",
+        "function",
+        "half",
+        "liver",
+        "receive"
+      ],
+      "ftoks": [
+        "patients",
+        "dose"
+      ],
+      "grip": [
+        16.306,
+        11.2592,
+        11.4544,
+        7.7648,
+        4.145,
+        3.3678,
+        1.0673
+      ],
+      "ceiling": 16.306,
+      "foldingFraction": 0.86,
+      "foldingPct": 86,
+      "monotonic": true,
+      "spearman": -0.964,
+      "gripPara": 0,
+      "gripFullSub": 13.6343,
+      "paraphraseInvariant": false,
+      "substitutionSensitive": false,
+      "admitted": false,
+      "verdictAtCeiling": "CONFIDENT",
+      "verdictAtFullSub": "CONFIDENT",
+      "falsePass": false,
+      "mintViolation": false
+    },
+    {
+      "tile": 21,
+      "coord": "cl-022",
+      "dtoks": [
+        "potassium",
+        "serum",
+        "supplement",
+        "below"
+      ],
+      "ftoks": [
+        "below"
+      ],
+      "grip": [
+        13.0835,
+        10.6917,
+        7.9087,
+        4.2116,
+        3.8204,
+        2.5811,
+        0.6049
+      ],
+      "ceiling": 13.0835,
+      "foldingFraction": 0.777,
+      "foldingPct": 78,
+      "monotonic": true,
+      "spearman": -1,
+      "gripPara": 2.6895,
+      "gripFullSub": 12.6703,
+      "paraphraseInvariant": false,
+      "substitutionSensitive": false,
+      "admitted": false,
+      "verdictAtCeiling": "CONFIDENT",
+      "verdictAtFullSub": "CONFIDENT",
+      "falsePass": false,
+      "mintViolation": false
+    },
+    {
+      "tile": 22,
+      "coord": "cl-023",
+      "dtoks": [
+        "adjustments",
+        "between",
+        "drip",
+        "glucose",
+        "insulin",
+        "levels"
+      ],
+      "ftoks": [
+        "maintain",
+        "blood"
+      ],
+      "grip": [
+        18.463,
+        16.5551,
+        13.1488,
+        12.6702,
+        9.7011,
+        7.5677,
+        5.4869
+      ],
+      "ceiling": 18.463,
+      "foldingFraction": 1,
+      "foldingPct": 100,
+      "monotonic": true,
+      "spearman": -1,
+      "gripPara": 3.8856,
+      "gripFullSub": 17.4585,
+      "paraphraseInvariant": true,
+      "substitutionSensitive": false,
+      "admitted": false,
+      "verdictAtCeiling": "CONFIDENT",
+      "verdictAtFullSub": "CONFIDENT",
+      "falsePass": false,
+      "mintViolation": false
+    },
+    {
+      "tile": 23,
+      "coord": "cl-024",
+      "dtoks": [
+        "asthma",
+        "exacerbation",
+        "nebulizer",
+        "severe",
+        "administer"
+      ],
+      "ftoks": [
+        "administer",
+        "severe"
+      ],
+      "grip": [
+        12.983,
+        6.7644,
+        5.6939,
+        3.8955,
+        3.8955,
+        3.0175,
+        1.6335
+      ],
+      "ceiling": 12.983,
+      "foldingFraction": 0.8354,
+      "foldingPct": 84,
+      "monotonic": true,
+      "spearman": -0.991,
+      "gripPara": 3.228,
+      "gripFullSub": 12.4078,
+      "paraphraseInvariant": true,
+      "substitutionSensitive": false,
+      "admitted": false,
+      "verdictAtCeiling": "CONFIDENT",
+      "verdictAtFullSub": "CONFIDENT",
+      "falsePass": false,
+      "mintViolation": false
+    }
+  ]
+}

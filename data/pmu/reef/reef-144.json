@@ -1,0 +1,749 @@
+{
+  "built": "2026-06-08",
+  "version": "v2-semantic",
+  "axes": [
+    "A",
+    "B",
+    "C",
+    "A1",
+    "A2",
+    "A3",
+    "B1",
+    "B2",
+    "B3",
+    "C1",
+    "C2",
+    "C3"
+  ],
+  "count": 144,
+  "cells": [
+    {
+      "coord": "A,A",
+      "seed": "Strategy A governs Strategy A. horizon mandate sovereignty doctrine azimuth over horizon mandate sovereignty doctrine azimuth.",
+      "sig": "8117396289455491998"
+    },
+    {
+      "coord": "A,B",
+      "seed": "Strategy A governs Tactics B. horizon mandate sovereignty doctrine azimuth over maneuver gambit flanking wedge beachhead.",
+      "sig": "5814904589435111326"
+    },
+    {
+      "coord": "A,C",
+      "seed": "Strategy A governs Operations C. Blueprint catalyst paradigm archetype dictates apparatus fulcrum mechanism conduit transmission infrastructure kinetic velocity.",
+      "sig": "15094470193903860958"
+    },
+    {
+      "coord": "A,A1",
+      "seed": "Strategy A governs Law A1. horizon mandate sovereignty doctrine azimuth over patent statute verdict jurisprudence affidavit.",
+      "sig": "1203281242969410334"
+    },
+    {
+      "coord": "A,A2",
+      "seed": "Strategy A governs Goal A2. horizon mandate sovereignty doctrine azimuth over blueprint milestone northstar deliverable checkpoint.",
+      "sig": "5809794059221603102"
+    },
+    {
+      "coord": "A,A3",
+      "seed": "Strategy A governs Fund A3. horizon mandate sovereignty doctrine azimuth over runway valuation termsheet dividend endowment.",
+      "sig": "8409603596983798667"
+    },
+    {
+      "coord": "A,B1",
+      "seed": "Strategy A governs Speed B1. charter theater grand-design ambition north-star decree set the throttle gearing flywheel metronome cadence tempo release-train sprint-budget pacing sequencing prioritization rhythm.",
+      "sig": "5776718010042896407"
+    },
+    {
+      "coord": "A,B2",
+      "seed": "Strategy A governs Deal B2. horizon mandate sovereignty doctrine azimuth over handshake rapport goodwill camaraderie courtship.",
+      "sig": "6063790043478166418"
+    },
+    {
+      "coord": "A,B3",
+      "seed": "Strategy A governs Signal B3. horizon mandate sovereignty doctrine azimuth over narrative megaphone spotlight keynote manifesto.",
+      "sig": "8121394113734346520"
+    },
+    {
+      "coord": "A,C1",
+      "seed": "Strategy A governs Grid C1. charter edict statute blueprint treaty appropriation zoning easement apportion the ward precinct parcel feeder busbar substation breaker relay across a tessellated voltage plat.",
+      "sig": "1534707582721142430"
+    },
+    {
+      "coord": "A,C2",
+      "seed": "Strategy A governs Loop C2. horizon mandate sovereignty doctrine azimuth over hypothesis replicate ablation holdout baseline.",
+      "sig": "1198741361907541918"
+    },
+    {
+      "coord": "A,C3",
+      "seed": "Strategy A governs Flow C3. horizon mandate sovereignty doctrine azimuth over invoicing fulfillment payout clearing remittance.",
+      "sig": "6099748469706138398"
+    },
+    {
+      "coord": "B,A",
+      "seed": "Tactics B governs Strategy A. maneuver gambit flanking wedge beachhead over horizon mandate sovereignty doctrine azimuth.",
+      "sig": "1203302133958541718"
+    },
+    {
+      "coord": "B,B",
+      "seed": "Tactics B governs Tactics B. recursive calibration diagnostic vector convergence alignment threshold signature resolution density variance drift coherence intensity amplitude focus.",
+      "sig": "1205615506222056900"
+    },
+    {
+      "coord": "B,C",
+      "seed": "Tactics B governs Operations C. maneuver gambit flanking wedge beachhead over throughput cadence runbook provisioning logistics.",
+      "sig": "3527361869472941382"
+    },
+    {
+      "coord": "B,A1",
+      "seed": "Tactics B governs Law A1. maneuver gambit flanking wedge beachhead over patent statute verdict jurisprudence affidavit.",
+      "sig": "1205536358430475556"
+    },
+    {
+      "coord": "B,A2",
+      "seed": "Tactics B governs Goal A2. maneuver gambit flanking wedge beachhead over blueprint milestone northstar deliverable checkpoint.",
+      "sig": "5814873802941793557"
+    },
+    {
+      "coord": "B,A3",
+      "seed": "Tactics B governs Fund A3. tempo feint ambush pincer salient sortie dictate the capital-call tranche drawdown burn-rate milestone-gate escrow-release war-chest bridge-note allocation cadence.",
+      "sig": "3618867326494968156"
+    },
+    {
+      "coord": "B,B1",
+      "seed": "Tactics B governs Speed B1. maneuver gambit flanking wedge beachhead over triage latency queueing velocity bottleneck.",
+      "sig": "3527256315751163157"
+    },
+    {
+      "coord": "B,B2",
+      "seed": "Tactics B governs Deal B2. maneuver gambit flanking wedge beachhead over handshake rapport goodwill camaraderie courtship.",
+      "sig": "6693181285844716947"
+    },
+    {
+      "coord": "B,B3",
+      "seed": "Tactics B governs Signal B3. maneuver gambit flanking wedge beachhead over narrative megaphone spotlight keynote manifesto.",
+      "sig": "8120822382652851524"
+    },
+    {
+      "coord": "B,C1",
+      "seed": "Tactics B governs Grid C1. maneuver gambit flanking wedge beachhead over silicon cacheline transistor firmware heatsink.",
+      "sig": "1205413198901134598"
+    },
+    {
+      "coord": "B,C2",
+      "seed": "Tactics B governs Loop C2. maneuver gambit flanking wedge beachhead over hypothesis replicate ablation holdout baseline.",
+      "sig": "1205650692941817750"
+    },
+    {
+      "coord": "B,C3",
+      "seed": "Tactics B governs Flow C3. maneuver gambit flanking wedge beachhead over invoicing fulfillment payout clearing remittance.",
+      "sig": "6104276275709419870"
+    },
+    {
+      "coord": "C,A",
+      "seed": "Operations C governs Strategy A. throughput cadence runbook provisioning logistics over horizon mandate sovereignty doctrine azimuth.",
+      "sig": "3504795475709595926"
+    },
+    {
+      "coord": "C,B",
+      "seed": "Operations C governs Tactics B. throughput cadence runbook provisioning logistics over maneuver gambit flanking wedge beachhead.",
+      "sig": "3529472931664068998"
+    },
+    {
+      "coord": "C,C",
+      "seed": "Operations C governs Operations C. throughput cadence runbook provisioning logistics over throughput cadence runbook provisioning logistics.",
+      "sig": "3666966852337226054"
+    },
+    {
+      "coord": "C,A1",
+      "seed": "Operations C governs Law A1. throughput cadence runbook provisioning logistics over patent statute verdict jurisprudence affidavit.",
+      "sig": "3527420135066370854"
+    },
+    {
+      "coord": "C,A2",
+      "seed": "Operations C governs Goal A2. throughput cadence runbook provisioning logistics over blueprint milestone northstar deliverable checkpoint.",
+      "sig": "8134501132550672646"
+    },
+    {
+      "coord": "C,A3",
+      "seed": "Operations C governs Fund A3. throughput cadence runbook provisioning logistics over runway valuation termsheet dividend endowment.",
+      "sig": "3474362101964937351"
+    },
+    {
+      "coord": "C,B1",
+      "seed": "Operations C governs Speed B1. throughput cadence runbook provisioning logistics over triage latency queueing velocity bottleneck.",
+      "sig": "3491149453408719127"
+    },
+    {
+      "coord": "C,B2",
+      "seed": "Operations C governs Deal B2. throughput cadence runbook provisioning logistics over handshake rapport goodwill camaraderie courtship.",
+      "sig": "8963281096520305042"
+    },
+    {
+      "coord": "C,B3",
+      "seed": "Operations C governs Signal B3. throughput cadence runbook provisioning logistics over narrative megaphone spotlight keynote manifesto.",
+      "sig": "8711085296402333956"
+    },
+    {
+      "coord": "C,C1",
+      "seed": "Operations C governs Grid C1. throughput cadence runbook provisioning logistics over silicon cacheline transistor firmware heatsink.",
+      "sig": "3633136805834998022"
+    },
+    {
+      "coord": "C,C2",
+      "seed": "Operations C governs Loop C2. throughput cadence runbook provisioning logistics over hypothesis replicate ablation holdout baseline.",
+      "sig": "3585811634954765958"
+    },
+    {
+      "coord": "C,C3",
+      "seed": "Operations C governs Flow C3. throughput cadence runbook provisioning logistics over invoicing fulfillment payout clearing remittance.",
+      "sig": "6109043758733533446"
+    },
+    {
+      "coord": "A1,A",
+      "seed": "Law A1 governs Strategy A. patent statute verdict jurisprudence affidavit over horizon mandate sovereignty doctrine azimuth.",
+      "sig": "1203280143726478138"
+    },
+    {
+      "coord": "A1,B",
+      "seed": "Law A1 governs Tactics B. patent statute verdict jurisprudence affidavit over maneuver gambit flanking wedge beachhead.",
+      "sig": "1205828828523463972"
+    },
+    {
+      "coord": "A1,C",
+      "seed": "Law A1 governs Operations C. patent statute verdict jurisprudence affidavit over throughput cadence runbook provisioning logistics.",
+      "sig": "3599478828624318754"
+    },
+    {
+      "coord": "A1,A1",
+      "seed": "Law A1 governs Law A1. patent statute verdict jurisprudence affidavit over patent statute verdict jurisprudence affidavit.",
+      "sig": "1277592853033059114"
+    },
+    {
+      "coord": "A1,A2",
+      "seed": "Law A1 governs Goal A2. patent statute verdict jurisprudence affidavit over blueprint milestone northstar deliverable checkpoint.",
+      "sig": "5886457524656281378"
+    },
+    {
+      "coord": "A1,A3",
+      "seed": "Law A1 governs Fund A3. fiduciary covenant escrow indemnity securities-compliance accreditation subpoena clawback injunction lockup decree antitrust consent-decree margin-call sanction capital-controls embargo blue-sky filing.",
+      "sig": "8652784509599824356"
+    },
+    {
+      "coord": "A1,B1",
+      "seed": "Law A1 governs Speed B1. patent statute verdict jurisprudence affidavit over triage latency queueing velocity bottleneck.",
+      "sig": "3527422342006887223"
+    },
+    {
+      "coord": "A1,B2",
+      "seed": "Law A1 governs Deal B2. patent statute verdict jurisprudence affidavit over handshake rapport goodwill camaraderie courtship.",
+      "sig": "2045454373153738546"
+    },
+    {
+      "coord": "A1,B3",
+      "seed": "Law A1 governs Signal B3. patent statute verdict jurisprudence affidavit over narrative megaphone spotlight keynote manifesto.",
+      "sig": "8769071340093212448"
+    },
+    {
+      "coord": "A1,C1",
+      "seed": "Law A1 governs Grid C1. patent statute verdict jurisprudence affidavit over silicon cacheline transistor firmware heatsink.",
+      "sig": "10464934993884956454"
+    },
+    {
+      "coord": "A1,C2",
+      "seed": "Law A1 governs Loop C2. patent statute verdict jurisprudence affidavit over hypothesis replicate ablation holdout baseline.",
+      "sig": "1277589554770478774"
+    },
+    {
+      "coord": "A1,C3",
+      "seed": "Law A1 governs Flow C3. mandate viscosity covenant kinetic protocol osmosis injunction trajectory ordinance flux.",
+      "sig": "4688551411138534794"
+    },
+    {
+      "coord": "A2,A",
+      "seed": "Goal A2 governs Strategy A. blueprint milestone northstar deliverable checkpoint over horizon mandate sovereignty doctrine azimuth.",
+      "sig": "5809864430113100574"
+    },
+    {
+      "coord": "A2,B",
+      "seed": "Goal A2 governs Tactics B. blueprint milestone northstar deliverable checkpoint over maneuver gambit flanking wedge beachhead.",
+      "sig": "5817231172984543174"
+    },
+    {
+      "coord": "A2,C",
+      "seed": "Goal A2 governs Operations C. blueprint milestone northstar deliverable checkpoint over throughput cadence runbook provisioning logistics.",
+      "sig": "5899897680715387158"
+    },
+    {
+      "coord": "A2,A1",
+      "seed": "Goal A2 governs Law A1. blueprint milestone northstar deliverable checkpoint over patent statute verdict jurisprudence affidavit.",
+      "sig": "5884214520927490862"
+    },
+    {
+      "coord": "A2,A2",
+      "seed": "Goal A2 governs Goal A2. blueprint milestone northstar deliverable checkpoint over blueprint milestone northstar deliverable checkpoint.",
+      "sig": "5881918434112313111"
+    },
+    {
+      "coord": "A2,A3",
+      "seed": "Goal A2 governs Fund A3. blueprint milestone northstar deliverable checkpoint over runway valuation termsheet dividend endowment.",
+      "sig": "5811022196554996235"
+    },
+    {
+      "coord": "A2,B1",
+      "seed": "Goal A2 governs Speed B1. blueprint milestone northstar deliverable checkpoint over triage latency queueing velocity bottleneck.",
+      "sig": "8133718554350776599"
+    },
+    {
+      "coord": "A2,B2",
+      "seed": "Goal A2 governs Deal B2. blueprint milestone northstar deliverable checkpoint over handshake rapport goodwill camaraderie courtship.",
+      "sig": "6117790083712032531"
+    },
+    {
+      "coord": "A2,B3",
+      "seed": "Goal A2 governs Signal B3. blueprint milestone northstar deliverable checkpoint over narrative megaphone spotlight keynote manifesto.",
+      "sig": "8187779069854651648"
+    },
+    {
+      "coord": "A2,C1",
+      "seed": "Goal A2 governs Grid C1. blueprint milestone northstar deliverable checkpoint over silicon cacheline transistor firmware heatsink.",
+      "sig": "6028294252437493527"
+    },
+    {
+      "coord": "A2,C2",
+      "seed": "Goal A2 governs Loop C2. objective function pins the acceptance threshold that the sprint cadence must satisfy; definition-of-done and exit-criterion steer each retrospective, burndown, and standup so the iteration cycle converges toward the mandated key-result rather than wandering.",
+      "sig": "8693660235590614460"
+    },
+    {
+      "coord": "A2,C3",
+      "seed": "Goal A2 governs Flow C3. blueprint milestone northstar deliverable checkpoint over invoicing fulfillment payout clearing remittance.",
+      "sig": "5882973174321132318"
+    },
+    {
+      "coord": "A3,A",
+      "seed": "Fund A3 governs Strategy A. runway valuation termsheet dividend endowment over horizon mandate sovereignty doctrine azimuth.",
+      "sig": "8121512858842372491"
+    },
+    {
+      "coord": "A3,B",
+      "seed": "Fund A3 governs Tactics B. runway valuation termsheet dividend endowment over maneuver gambit flanking wedge beachhead.",
+      "sig": "3512654767108328591"
+    },
+    {
+      "coord": "A3,C",
+      "seed": "Fund A3 governs Operations C. runway valuation termsheet dividend endowment over throughput cadence runbook provisioning logistics.",
+      "sig": "3654498390474166275"
+    },
+    {
+      "coord": "A3,A1",
+      "seed": "Fund A3 governs Law A1. runway valuation termsheet dividend endowment over patent statute verdict jurisprudence affidavit.",
+      "sig": "3584278088417085995"
+    },
+    {
+      "coord": "A3,A2",
+      "seed": "Fund A3 governs Goal A2. runway valuation termsheet dividend endowment over blueprint milestone northstar deliverable checkpoint.",
+      "sig": "8188782062297289227"
+    },
+    {
+      "coord": "A3,A3",
+      "seed": "Fund A3 governs Fund A3. runway valuation termsheet dividend endowment over runway valuation termsheet dividend endowment.",
+      "sig": "8411998316160817291"
+    },
+    {
+      "coord": "A3,B1",
+      "seed": "Fund A3 governs Speed B1. runway valuation termsheet dividend endowment over triage latency queueing velocity bottleneck.",
+      "sig": "8104053696495671335"
+    },
+    {
+      "coord": "A3,B2",
+      "seed": "Fund A3 governs Deal B2. runway valuation termsheet dividend endowment over handshake rapport goodwill camaraderie courtship.",
+      "sig": "8369766091556325395"
+    },
+    {
+      "coord": "A3,B3",
+      "seed": "Fund A3 governs Signal B3. capital-call schedule covenant tranche escrow treasury ledger burn-rate drawdown cap-table vesting liquidation-preference convertible-note budget allocation gating disclosure cadence press-cycle timing investor-relations calendar quiet-period embargo release-window.",
+      "sig": "8154260440169429256"
+    },
+    {
+      "coord": "A3,C1",
+      "seed": "Fund A3 governs Grid C1. runway valuation termsheet dividend endowment over silicon cacheline transistor firmware heatsink.",
+      "sig": "6214256025985435687"
+    },
+    {
+      "coord": "A3,C2",
+      "seed": "Fund A3 governs Loop C2. runway valuation termsheet dividend endowment over hypothesis replicate ablation holdout baseline.",
+      "sig": "3580187870810476175"
+    },
+    {
+      "coord": "A3,C3",
+      "seed": "Fund A3 governs Flow C3. runway valuation termsheet dividend endowment over invoicing fulfillment payout clearing remittance.",
+      "sig": "6103832073080086539"
+    },
+    {
+      "coord": "B1,A",
+      "seed": "Speed B1 governs Strategy A. triage latency queueing velocity bottleneck over horizon mandate sovereignty doctrine azimuth.",
+      "sig": "8134073679678929174"
+    },
+    {
+      "coord": "B1,B",
+      "seed": "Speed B1 governs Tactics B. triage latency queueing velocity bottleneck over maneuver gambit flanking wedge beachhead.",
+      "sig": "3529437745747197333"
+    },
+    {
+      "coord": "B1,C",
+      "seed": "Speed B1 governs Operations C. triage latency queueing velocity bottleneck over throughput cadence runbook provisioning logistics.",
+      "sig": "3491139557803546903"
+    },
+    {
+      "coord": "B1,A1",
+      "seed": "Speed B1 governs Law A1. triage latency queueing velocity bottleneck over patent statute verdict jurisprudence affidavit.",
+      "sig": "3527138667873033014"
+    },
+    {
+      "coord": "B1,A2",
+      "seed": "Speed B1 governs Goal A2. triage latency queueing velocity bottleneck over blueprint milestone northstar deliverable checkpoint.",
+      "sig": "8134211135564209431"
+    },
+    {
+      "coord": "B1,A3",
+      "seed": "Speed B1 governs Fund A3. triage latency queueing velocity bottleneck over runway valuation termsheet dividend endowment.",
+      "sig": "8104053730872252423"
+    },
+    {
+      "coord": "B1,B1",
+      "seed": "Speed B1 governs Speed B1. triage latency queueing velocity bottleneck over triage latency queueing velocity bottleneck.",
+      "sig": "8102826674684295479"
+    },
+    {
+      "coord": "B1,B2",
+      "seed": "Speed B1 governs Deal B2. triage latency queueing velocity bottleneck over handshake rapport goodwill camaraderie courtship.",
+      "sig": "8962965808881704211"
+    },
+    {
+      "coord": "B1,B3",
+      "seed": "Speed B1 governs Signal B3. triage latency queueing velocity bottleneck over narrative megaphone spotlight keynote manifesto.",
+      "sig": "8138521221262535957"
+    },
+    {
+      "coord": "B1,C1",
+      "seed": "Speed B1 governs Grid C1. triage latency queueing velocity bottleneck over silicon cacheline transistor firmware heatsink.",
+      "sig": "8100671633118059831"
+    },
+    {
+      "coord": "B1,C2",
+      "seed": "Speed B1 governs Loop C2. triage latency queueing velocity bottleneck over hypothesis replicate ablation holdout baseline.",
+      "sig": "3477726598413287063"
+    },
+    {
+      "coord": "B1,C3",
+      "seed": "Speed B1 governs Flow C3. triage latency queueing velocity bottleneck over invoicing fulfillment payout clearing remittance.",
+      "sig": "5788969326272702783"
+    },
+    {
+      "coord": "B2,A",
+      "seed": "Deal B2 governs Strategy A. handshake rapport goodwill camaraderie courtship over horizon mandate sovereignty doctrine azimuth.",
+      "sig": "15898525729882704146"
+    },
+    {
+      "coord": "B2,B",
+      "seed": "Deal B2 governs Tactics B. handshake rapport goodwill camaraderie courtship over maneuver gambit flanking wedge beachhead.",
+      "sig": "15903192056861928917"
+    },
+    {
+      "coord": "B2,C",
+      "seed": "Deal B2 governs Operations C. handshake rapport goodwill camaraderie courtship over throughput cadence runbook provisioning logistics.",
+      "sig": "8954256305014509843"
+    },
+    {
+      "coord": "B2,A1",
+      "seed": "Deal B2 governs Law A1. handshake rapport goodwill camaraderie courtship over patent statute verdict jurisprudence affidavit.",
+      "sig": "11286840808450624306"
+    },
+    {
+      "coord": "B2,A2",
+      "seed": "Deal B2 governs Goal A2. handshake rapport goodwill camaraderie courtship over blueprint milestone northstar deliverable checkpoint.",
+      "sig": "6116677377949310739"
+    },
+    {
+      "coord": "B2,A3",
+      "seed": "Deal B2 governs Fund A3. handshake rapport goodwill camaraderie courtship over runway valuation termsheet dividend endowment.",
+      "sig": "8369492862925213067"
+    },
+    {
+      "coord": "B2,B1",
+      "seed": "Deal B2 governs Speed B1. handshake rapport goodwill camaraderie courtship over triage latency queueing velocity bottleneck.",
+      "sig": "8953800279947868439"
+    },
+    {
+      "coord": "B2,B2",
+      "seed": "Deal B2 governs Deal B2. handshake rapport goodwill camaraderie courtship over handshake rapport goodwill camaraderie courtship.",
+      "sig": "15872630856864567187"
+    },
+    {
+      "coord": "B2,B3",
+      "seed": "Deal B2 governs Signal B3. handshake rapport goodwill camaraderie courtship over narrative megaphone spotlight keynote manifesto.",
+      "sig": "8981019508991888657"
+    },
+    {
+      "coord": "B2,C1",
+      "seed": "Deal B2 governs Grid C1. handshake rapport goodwill camaraderie courtship over silicon cacheline transistor firmware heatsink.",
+      "sig": "15871363120087764247"
+    },
+    {
+      "coord": "B2,C2",
+      "seed": "Deal B2 governs Loop C2. handshake rapport goodwill camaraderie courtship over hypothesis replicate ablation holdout baseline.",
+      "sig": "2036306164665298583"
+    },
+    {
+      "coord": "B2,C3",
+      "seed": "Deal B2 governs Flow C3. handshake rapport goodwill camaraderie courtship over invoicing fulfillment payout clearing remittance.",
+      "sig": "15872559388579408667"
+    },
+    {
+      "coord": "B3,A",
+      "seed": "Signal B3 governs Strategy A. narrative megaphone spotlight keynote manifesto over horizon mandate sovereignty doctrine azimuth.",
+      "sig": "8693316082038309722"
+    },
+    {
+      "coord": "B3,B",
+      "seed": "Signal B3 governs Tactics B. narrative megaphone spotlight keynote manifesto over maneuver gambit flanking wedge beachhead.",
+      "sig": "8123364455686112704"
+    },
+    {
+      "coord": "B3,C",
+      "seed": "Signal B3 governs Operations C. narrative megaphone spotlight keynote manifesto over throughput cadence runbook provisioning logistics.",
+      "sig": "8788700923870413122"
+    },
+    {
+      "coord": "B3,A1",
+      "seed": "Signal B3 governs Law A1. narrative megaphone spotlight keynote manifesto over patent statute verdict jurisprudence affidavit.",
+      "sig": "8769895973816402728"
+    },
+    {
+      "coord": "B3,A2",
+      "seed": "Signal B3 governs Goal A2. narrative megaphone spotlight keynote manifesto over blueprint milestone northstar deliverable checkpoint.",
+      "sig": "8188913765322097472"
+    },
+    {
+      "coord": "B3,A3",
+      "seed": "Signal B3 governs Fund A3. narrative megaphone spotlight keynote manifesto over runway valuation termsheet dividend endowment.",
+      "sig": "8193736487732284233"
+    },
+    {
+      "coord": "B3,B1",
+      "seed": "Signal B3 governs Speed B1. narrative megaphone spotlight keynote manifesto over triage latency queueing velocity bottleneck.",
+      "sig": "8714568557330227540"
+    },
+    {
+      "coord": "B3,B2",
+      "seed": "Signal B3 governs Deal B2. narrative megaphone spotlight keynote manifesto over handshake rapport goodwill camaraderie courtship.",
+      "sig": "8964131018979444560"
+    },
+    {
+      "coord": "B3,B3",
+      "seed": "Signal B3 governs Signal B3. narrative megaphone spotlight keynote manifesto over narrative megaphone spotlight keynote manifesto.",
+      "sig": "8769913568652199232"
+    },
+    {
+      "coord": "B3,C1",
+      "seed": "Signal B3 governs Grid C1. narrative megaphone spotlight keynote manifesto over silicon cacheline transistor firmware heatsink.",
+      "sig": "8152778582765454596"
+    },
+    {
+      "coord": "B3,C2",
+      "seed": "Signal B3 governs Loop C2. narrative megaphone spotlight keynote manifesto over hypothesis replicate ablation holdout baseline.",
+      "sig": "4153124432822445972"
+    },
+    {
+      "coord": "B3,C3",
+      "seed": "Signal B3 governs Flow C3. narrative megaphone spotlight keynote manifesto over invoicing fulfillment payout clearing remittance.",
+      "sig": "8481613931216216920"
+    },
+    {
+      "coord": "C1,A",
+      "seed": "Grid C1 governs Strategy A. silicon cacheline transistor firmware heatsink over horizon mandate sovereignty doctrine azimuth.",
+      "sig": "5774257845827649814"
+    },
+    {
+      "coord": "C1,B",
+      "seed": "Grid C1 governs Tactics B. silicon cacheline transistor firmware heatsink over maneuver gambit flanking wedge beachhead.",
+      "sig": "5817374095034148231"
+    },
+    {
+      "coord": "C1,C",
+      "seed": "Grid C1 governs Operations C. silicon cacheline transistor firmware heatsink over throughput cadence runbook provisioning logistics.",
+      "sig": "8530784083292280070"
+    },
+    {
+      "coord": "C1,A1",
+      "seed": "Grid C1 governs Law A1. silicon cacheline transistor firmware heatsink over patent statute verdict jurisprudence affidavit.",
+      "sig": "1313622750091625254"
+    },
+    {
+      "coord": "C1,A2",
+      "seed": "Grid C1 governs Goal A2. silicon cacheline transistor firmware heatsink over blueprint milestone northstar deliverable checkpoint.",
+      "sig": "5920207861380830215"
+    },
+    {
+      "coord": "C1,A3",
+      "seed": "Grid C1 governs Fund A3. silicon cacheline transistor firmware heatsink over runway valuation termsheet dividend endowment.",
+      "sig": "8520089140129238155"
+    },
+    {
+      "coord": "C1,B1",
+      "seed": "Grid C1 governs Speed B1. silicon cacheline transistor firmware heatsink over triage latency queueing velocity bottleneck.",
+      "sig": "8102904741200523319"
+    },
+    {
+      "coord": "C1,B2",
+      "seed": "Grid C1 governs Deal B2. silicon cacheline transistor firmware heatsink over handshake rapport goodwill camaraderie courtship.",
+      "sig": "15303909566938418579"
+    },
+    {
+      "coord": "C1,B3",
+      "seed": "Grid C1 governs Signal B3. silicon cacheline transistor firmware heatsink over narrative megaphone spotlight keynote manifesto.",
+      "sig": "8079735826306598144"
+    },
+    {
+      "coord": "C1,C1",
+      "seed": "Grid C1 governs Grid C1. silicon cacheline transistor firmware heatsink over silicon cacheline transistor firmware heatsink.",
+      "sig": "15432268753823450407"
+    },
+    {
+      "coord": "C1,C2",
+      "seed": "Grid C1 governs Loop C2. silicon cacheline transistor firmware heatsink over hypothesis replicate ablation holdout baseline.",
+      "sig": "1227878145667982999"
+    },
+    {
+      "coord": "C1,C3",
+      "seed": "Grid C1 governs Flow C3. silicon cacheline transistor firmware heatsink over invoicing fulfillment payout clearing remittance.",
+      "sig": "6054789459109569342"
+    },
+    {
+      "coord": "C2,A",
+      "seed": "Loop C2 governs Strategy A. hypothesis replicate ablation holdout baseline over horizon mandate sovereignty doctrine azimuth.",
+      "sig": "1198741361908059806"
+    },
+    {
+      "coord": "C2,B",
+      "seed": "Loop C2 governs Tactics B. hypothesis replicate ablation holdout baseline over maneuver gambit flanking wedge beachhead.",
+      "sig": "1277743471363401436"
+    },
+    {
+      "coord": "C2,C",
+      "seed": "Loop C2 governs Operations C. hypothesis replicate ablation holdout baseline over throughput cadence runbook provisioning logistics.",
+      "sig": "3585972163651389078"
+    },
+    {
+      "coord": "C2,A1",
+      "seed": "Loop C2 governs Law A1. hypothesis replicate ablation holdout baseline over patent statute verdict jurisprudence affidavit.",
+      "sig": "1273087054387351214"
+    },
+    {
+      "coord": "C2,A2",
+      "seed": "Loop C2 governs Goal A2. hypothesis replicate ablation holdout baseline over blueprint milestone northstar deliverable checkpoint.",
+      "sig": "5882481401241142940"
+    },
+    {
+      "coord": "C2,A3",
+      "seed": "Loop C2 governs Fund A3. hypothesis replicate ablation holdout baseline over runway valuation termsheet dividend endowment.",
+      "sig": "3541916070072946319"
+    },
+    {
+      "coord": "C2,B1",
+      "seed": "Loop C2 governs Speed B1. hypothesis replicate ablation holdout baseline over triage latency queueing velocity bottleneck.",
+      "sig": "3549757804182568599"
+    },
+    {
+      "coord": "C2,B2",
+      "seed": "Loop C2 governs Deal B2. hypothesis replicate ablation holdout baseline over handshake rapport goodwill camaraderie courtship.",
+      "sig": "2018432503644688022"
+    },
+    {
+      "coord": "C2,B3",
+      "seed": "Loop C2 governs Signal B3. hypothesis replicate ablation holdout baseline over narrative megaphone spotlight keynote manifesto.",
+      "sig": "4153442192228124292"
+    },
+    {
+      "coord": "C2,C1",
+      "seed": "Loop C2 governs Grid C1. hypothesis replicate ablation holdout baseline over silicon cacheline transistor firmware heatsink.",
+      "sig": "1228194805052425878"
+    },
+    {
+      "coord": "C2,C2",
+      "seed": "Loop C2 governs Loop C2. hypothesis replicate ablation holdout baseline over hypothesis replicate ablation holdout baseline.",
+      "sig": "1261937717410277022"
+    },
+    {
+      "coord": "C2,C3",
+      "seed": "Loop C2 governs Flow C3. hypothesis replicate ablation holdout baseline over invoicing fulfillment payout clearing remittance.",
+      "sig": "5874575088101697182"
+    },
+    {
+      "coord": "C3,A",
+      "seed": "Flow C3 governs Strategy A. invoicing fulfillment payout clearing remittance over horizon mandate sovereignty doctrine azimuth.",
+      "sig": "6099713287482319134"
+    },
+    {
+      "coord": "C3,B",
+      "seed": "Flow C3 governs Tactics B. invoicing fulfillment payout clearing remittance over maneuver gambit flanking wedge beachhead.",
+      "sig": "6105534116812628382"
+    },
+    {
+      "coord": "C3,C",
+      "seed": "Flow C3 governs Operations C. invoicing fulfillment payout clearing remittance over throughput cadence runbook provisioning logistics.",
+      "sig": "6113538562267885854"
+    },
+    {
+      "coord": "C3,A1",
+      "seed": "Flow C3 governs Law A1. invoicing fulfillment payout clearing remittance over patent statute verdict jurisprudence affidavit.",
+      "sig": "4735159998557782842"
+    },
+    {
+      "coord": "C3,A2",
+      "seed": "Flow C3 governs Goal A2. invoicing fulfillment payout clearing remittance over blueprint milestone northstar deliverable checkpoint.",
+      "sig": "5883536122127463199"
+    },
+    {
+      "coord": "C3,A3",
+      "seed": "Flow C3 governs Fund A3. invoicing fulfillment payout clearing remittance over runway valuation termsheet dividend endowment.",
+      "sig": "6103827675035666955"
+    },
+    {
+      "coord": "C3,B1",
+      "seed": "Flow C3 governs Speed B1. invoicing fulfillment payout clearing remittance over triage latency queueing velocity bottleneck.",
+      "sig": "6978053768327590207"
+    },
+    {
+      "coord": "C3,B2",
+      "seed": "Flow C3 governs Deal B2. invoicing fulfillment payout clearing remittance over handshake rapport goodwill camaraderie courtship.",
+      "sig": "6649257719999834907"
+    },
+    {
+      "coord": "C3,B3",
+      "seed": "Flow C3 governs Signal B3. invoicing fulfillment payout clearing remittance over narrative megaphone spotlight keynote manifesto.",
+      "sig": "8770116986259939608"
+    },
+    {
+      "coord": "C3,C1",
+      "seed": "Flow C3 governs Grid C1. invoicing fulfillment payout clearing remittance over silicon cacheline transistor firmware heatsink.",
+      "sig": "15285057615716237630"
+    },
+    {
+      "coord": "C3,C2",
+      "seed": "Flow C3 governs Loop C2. invoicing fulfillment payout clearing remittance over hypothesis replicate ablation holdout baseline.",
+      "sig": "1263053995881603742"
+    },
+    {
+      "coord": "C3,C3",
+      "seed": "Flow C3 governs Flow C3. invoicing fulfillment payout clearing remittance over invoicing fulfillment payout clearing remittance.",
+      "sig": "5014378777676686110"
+    }
+  ],
+  "report": {
+    "cells": 144,
+    "collisions": 2620,
+    "collisionRate": 0.2545,
+    "meanPairwise": 0.3592,
+    "closeness_rho": 0.7671
+  },
+  "strengthened": 8
+}

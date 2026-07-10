@@ -1,0 +1,48 @@
+{
+  "sha": "88feb314e7cecc142b5a60494aafd51dd6b56051",
+  "measured_at": "2026-07-05T02:35:45.287Z",
+  "platform": "darwin",
+  "arch": "arm64",
+  "tiers": {
+    "L1": {
+      "kib": 16,
+      "ns_per_access": 2.1
+    },
+    "L2": {
+      "kib": 256,
+      "ns_per_access": 10.79
+    },
+    "SLC": {
+      "kib": 8192,
+      "ns_per_access": 158.68
+    },
+    "DRAM": {
+      "kib": 131072,
+      "ns_per_access": 163.24
+    }
+  },
+  "gate_ns_per_comparison": 1.5773,
+  "walk_ns_12x12": 454.2,
+  "walk_xor_cycles": 288,
+  "miss_penalty_dram_l1": 77.9,
+  "touched_files": [
+    "docs/comms/self/approved/2026-07-05-dish-bridge-artifact.grade.json",
+    "docs/comms/self/approved/2026-07-05-dish-bridge-artifact.md",
+    "docs/comms/self/approved/2026-07-05-dish-case-study.grade.json",
+    "docs/comms/self/approved/2026-07-05-dish-case-study.md",
+    "docs/comms/self/approved/2026-07-05-dish-dno-condition.grade.json",
+    "docs/comms/self/approved/2026-07-05-dish-dno-condition.md",
+    "docs/comms/self/approved/2026-07-05-dish-options-market.grade.json",
+    "docs/comms/self/approved/2026-07-05-dish-options-market.md",
+    "docs/comms/self/approved/2026-07-05-dish-pixel-fusion.grade.json",
+    "docs/comms/self/approved/2026-07-05-dish-pixel-fusion.md",
+    "docs/comms/self/approved/2026-07-05-dish-youtube-demo.grade.json",
+    "docs/comms/self/approved/2026-07-05-dish-youtube-demo.md",
+    "docs/comms/self/approved/2026-07-05-m3-sense-wired.grade.json",
+    "docs/comms/self/approved/2026-07-05-m3-sense-wired.md",
+    "docs/comms/self/sent/2026-07-05-m3-sense-wired.grade.json",
+    "docs/comms/self/sent/2026-07-05-m3-sense-wired.md"
+  ],
+  "daemon_path": ".thetacog/pmu/target/release/pmu-onchip",
+  "raw_stdout_tail": "\nraw PMU counters [macos]: not yet wired\n  raw counters are behind kperf (private framework); pointer-chase is the unprivileged on-chip measurement\n"
+}

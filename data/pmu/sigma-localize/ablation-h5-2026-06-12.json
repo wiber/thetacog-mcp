@@ -1,0 +1,40 @@
+{
+  "kind": "sigma-localize-ablation-h5",
+  "registered": "2026-06-12",
+  "registeredBeforeRun": true,
+  "pair": { "baseSha": "5b875a47b", "pertSha": "4321b12c7", "coord": "B3,B3" },
+  "control": { "baseSha": "4321b12c7", "pertSha": "4321b12c7", "coord": "B3,B3", "why": "identical blobs through the real pipeline — the |delta| field is exactly 0, every rank is a degenerate all-tie (counted conservatively = worst rank, flagged degenerate, sigma reads 0), and the hypergeometric lens has no nonzero top-k cells to draw — n.s. by construction, no hit claimable" },
+  "buildsOn": { "h1h2": "ablation-2026-06-11.json", "h3h4": "ablation-h3-h4-2026-06-11.json", "priorHonestRead": { "sigmaLocalize": 0.61, "sigmaAim": 3.91, "sigmaTight": -1.93, "regionBlocks": 110, "attributedSigma": 2.55, "attributedZoneRank": 2 } },
+  "operator": "think in tolerances and RANKED lists of cells from the sensor instead of mass — if the sensor is clear, the geometric region should be more crystal than sigmas on the smear; rank regions may be enough or a starting point",
+  "hypotheses": {
+    "H5-rank-order-localization": {
+      "method": "hierarchical rank certainty down the crystal, on the whole-doc |delta| field: (a) LEVEL-12 — rank the 12 block-ROWS and 12 block-COLS by |delta| (both mass-rank and max-cell-rank reported); target row/col rank r gives the exact uniform-null p = r/12; (b) LEVEL-144 — rank the 144 12x12 blocks; target block rank r gives p = r/144; (c) CELL SET — top-k cells (k in {5,10,25}, nonzero only, ties broken value-desc then index-asc) intersected with the target zone (row 104 union col 104, m = 287 of N = 20736): exact hypergeometric tail P(X >= observed | k draws, m, N); (d) COMPOSED — p_row(level-12 mass rank) x p_within(target block's mass rank among the 12 blocks of its own block-row), independence-caveated honestly, converted to sigma_rank via the one-sided normal quantile. All p-to-sigma via qnorm(1-p). Ranks count ties conservatively (tied = worse rank); a zero field is flagged degenerate and reads 0. Deterministic throughout — no Math.random.",
+      "registeredPredictions": {
+        "P1-block-rank": "the target block (8,8) ranks top-3 of 144 by |delta| mass — sigma_aim 3.91 says the aim is real, so the crystal's own ordering should surface the target near the head even though the mass z (0.61) drowns in the smear",
+        "P2-hypergeometric-beats-mass": "the hypergeometric sigma at k=10 EXCEEDS the mass sigma_localize (0.61; H1 was refuted-by-inspection so frozen = floating = 0.61) — the ordered significance list is sharper than the zone-mass integral on this pair",
+        "P3-rank-is-the-sharpest-lens": "sigma_rank (the composed hierarchical product) is the most certain lens of all so far on this pair — it exceeds sigma_localize 0.61, attributed 2.55, and whatever H3 (top-n cut) and H4 (compression witness) measured"
+      },
+      "controls": { "no-op": "target ranks degenerate/worst under all-tie (no-hit), hypergeometric n.s. (no nonzero cells)", "expected": "every rank lens reads 0/degenerate on the no-op — the lens cannot manufacture certainty from a zero field" },
+      "measured": {
+        "ts": "2026-06-12",
+        "instrument": { "libSha": "ecd094a6a9fa", "codeSha": "19d1ecb40d8f" },
+        "wholeDoc": { "rowMassRank": "3/12", "colMassRank": "3/12", "blockRank": "58/144", "topK": "0/5 0/10 0/25 hits (sigma -8.21 each — p=1 shown as the hard negative, not hidden)", "sigmaRank": 0.09 },
+        "attributed": { "rowMassRank": "1/12", "colMassRank": "1/12", "blockRank": "1/144", "topK": "0/5 0/10 0/25 hits — the grip leads by BLOCK MASS while its hottest single cells sit outside the zone", "sigmaRank": 1.73 },
+        "compression": { "rowMassRank": "3/12", "colMassRank": "3/12", "blockRank": "3/144", "topK": "1/3 hits at every k (only 3 nonzero zones to draw; hypergeometric sigma 1.74)", "sigmaRank": 1.27, "pComposed": 0.1015, "note": "zone field diagonal-lifted; the generic hypergeometric null understates certainty on the lift — fails conservative" },
+        "control": { "pair": "4321b12c7 -> 4321b12c7", "allThreeFields": "degenerate, worst conservative ranks (12/12 · 144/144), 0 cells drawn, every sigma exactly 0 — n.s. by construction, exactly as registered" },
+        "lensTable": { "sigmaLocalize_wholeDocMass": 0.61, "sigmaLocalize_attributed": 2.55, "sigmaLocalize_compression_H4": 5.28, "sigmaRank_compression_H5": 1.27, "sigmaRank_attributed_H5": 1.73, "bestLens": "the H4 compression-witness z (5.28, zone rank 3/144) remains the sharpest; no lens clears the >=6 locked-goal floor yet" }
+      }
+    }
+  },
+  "chipNote": "ranks are comparator-native — the sensor's ordered significance list needs only pairwise comparisons and a counter, no mass integrals or floating accumulation; this is MORE chip-friendly than the zone-mass z, per the operator's standing constraint 'as long as it can be done on chip'",
+  "estimator": "exact uniform-null p = rank/levelSize at each level (ties conservative — a tie counts as the worse rank, fails conservative); hypergeometric tail exact via log-gamma; p -> sigma via the one-sided normal quantile qnorm(1-p); composed p = p_row x p_within (independence caveat stated, never hidden)",
+  "wiring": "if confirmed, 'rank' joins the sigma-legend types (bands by sigma-equivalent at the localize edges 1/3/6), the templated email gains the sigma_rank row + the rank table (target row rank / col rank / block rank / top-k hits), and localize-watch records sigmaRank in the trail + ledger — alongside, never replacing, the honest whole-field numbers",
+  "verdicts": {
+    "P1-block-rank": "REFUTED — the target block ranks 58/144 by whole-doc |delta| mass, nowhere near top-3; the whole-doc smear drowns the crystal's ordering exactly as it drowned the mass z (block-ROW/COL rank 3/12 is the only whole-doc trace of the aim)",
+    "P2-hypergeometric-beats-mass": "REFUTED as registered — on the whole-doc field the top-k cells (k=10) score 0 zone hits, p=1, sigma -8.21, far below sigma_localize 0.61; the hypergeometric clears 0.61 ONLY on the compression field (1.74 > 0.61), which is a different field than registered and is noted, not claimed",
+    "P3-rank-is-the-sharpest-lens": "REFUTED — sigma_rank reads 1.27 on the compression field and 1.73 on the attributed field, both below the attributed mass z (2.55) and far below the H4 compression-witness z (5.28); rank-on-compression was the predicted closer and is NOT — with only 3 nonzero zones the exact-null machinery has too few comparisons to convert a rank-3 position into certainty, while the z-score rewards the SIZE of the target's NCD excess, which rank deliberately discards",
+    "control": "CONFIRMED — the no-op reads degenerate at every level on all three fields, worst conservative ranks, zero draws, every sigma exactly 0; the lens cannot manufacture certainty from a zero field",
+    "honest-surprise": "the attributed field's block-level ranks all read 1 (row 1/12 · col 1/12 · block 1/144) while its top-k CELLS score zero zone hits — the changed claims lead by aggregate block mass, not by peak cells; rank-at-block-level and rank-at-cell-level are different sensors and the composed sigma_rank (1.73) correctly stays weak rather than inheriting the block-rank story",
+    "wiring-disposition": "wired anyway, as registered ('alongside, never replacing'): 'rank' joined the sigma-legend types, sigma_rank + the rank table joined the templated email, localize-watch records sigmaRank, measure-history gains sigmaRank — the lens stays visible so the refutation stays visible"
+  }
+}

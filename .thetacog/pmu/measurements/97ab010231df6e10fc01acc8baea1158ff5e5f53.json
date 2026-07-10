@@ -1,0 +1,38 @@
+{
+  "sha": "97ab010231df6e10fc01acc8baea1158ff5e5f53",
+  "measured_at": "2026-06-24T19:53:10.799Z",
+  "platform": "darwin",
+  "arch": "arm64",
+  "tiers": {
+    "L1": {
+      "kib": 16,
+      "ns_per_access": 2.23
+    },
+    "L2": {
+      "kib": 256,
+      "ns_per_access": 6.75
+    },
+    "SLC": {
+      "kib": 8192,
+      "ns_per_access": 93.12
+    },
+    "DRAM": {
+      "kib": 131072,
+      "ns_per_access": 275.46
+    }
+  },
+  "gate_ns_per_comparison": 2.2511,
+  "walk_ns_12x12": 648.3,
+  "walk_xor_cycles": 288,
+  "miss_penalty_dram_l1": 123.7,
+  "touched_files": [
+    "docs/pmu/commit-panels/d20505158.png",
+    "docs/pmu/commit-panels/de7b3bb7c.png",
+    "public/blog/post-panels/2026-06-24-ethics-vs-lane-what-makes-ai-insurable/d20505158e6bf6d9a31114d427d033ec0b469552.png",
+    "public/blog/post-panels/2026-06-24-ethics-vs-lane-what-makes-ai-insurable/de7b3bb7ca263293e503328b1e65d8c2bbce7292.png",
+    "public/blog/post-panels/2026-06-24-ethics-vs-lane-what-makes-ai-insurable/manifest.json",
+    "src/content/blog/2026-06-24-ethics-vs-lane-what-makes-ai-insurable.mdx"
+  ],
+  "daemon_path": ".thetacog/pmu/target/release/pmu-onchip",
+  "raw_stdout_tail": "\nraw PMU counters [macos]: not yet wired\n  raw counters are behind kperf (private framework); pointer-chase is the unprivileged on-chip measurement\n"
+}

@@ -1,0 +1,41 @@
+{
+  "sha": "3121553e6797a18f6c87226d2b36f40325dfa255",
+  "measured_at": "2026-06-20T12:59:03.571Z",
+  "platform": "darwin",
+  "arch": "arm64",
+  "tiers": {
+    "L1": {
+      "kib": 16,
+      "ns_per_access": 1.81
+    },
+    "L2": {
+      "kib": 256,
+      "ns_per_access": 4.25
+    },
+    "SLC": {
+      "kib": 8192,
+      "ns_per_access": 19.58
+    },
+    "DRAM": {
+      "kib": 131072,
+      "ns_per_access": 277.17
+    }
+  },
+  "gate_ns_per_comparison": 1.6489,
+  "walk_ns_12x12": 474.9,
+  "walk_xor_cycles": 288,
+  "miss_penalty_dram_l1": 152.9,
+  "touched_files": [
+    "books/tesseract/COMPLETE-BOOK.txt",
+    "books/tesseract/chapters-html/12-the-budget-is-the-proof.html",
+    "books/tesseract/chapters/chapter-12-the-budget-is-the-proof.md",
+    "books/tesseract/exports/tesseract-complete-book.txt",
+    "books/tesseract/exports/tesseract-physics-20260620.epub",
+    "books/tesseract/exports/tesseract-physics.epub",
+    "docs/book/COMPLETE-BOOK.txt",
+    "docs/book/tesseract-physics.epub",
+    "public/book/chapters/12-the-budget-is-the-proof.html"
+  ],
+  "daemon_path": ".thetacog/pmu/target/release/pmu-onchip",
+  "raw_stdout_tail": "\nraw PMU counters [macos]: not yet wired\n  raw counters are behind kperf (private framework); pointer-chase is the unprivileged on-chip measurement\n"
+}

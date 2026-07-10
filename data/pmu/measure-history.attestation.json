@@ -1,0 +1,11 @@
+{
+  "kind": "pmu-ledger-attestation",
+  "ledger": "data/pmu/measure-history.ndjson",
+  "algo": "sha256-merkle/ed25519",
+  "count": 200,
+  "root": "1d5cbf0ce2c22730de931199786d987d1767c1274ee1a17ffa27f31bea19feff",
+  "at": null,
+  "pubkey_hex": "fc0fb4d5709e3a763c3b794bf8be039fecc8786f78fd1143ff0172553875f139",
+  "sig_hex": "145de8738d9724bc27895827d4f0d2a9bada423b27ff44c75c6de2462f0a2b61a88d7e04db57f87063fe625a94f6e4b1caba088989f1c71bd0dfdc0c3f50d400",
+  "sha256": "65a12374d09a3e2ecc75c01488e743ec54faddd42e8995f783c351a6e7ffd746"
+}

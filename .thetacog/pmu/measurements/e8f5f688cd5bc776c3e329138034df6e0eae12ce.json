@@ -1,0 +1,62 @@
+{
+  "sha": "e8f5f688cd5bc776c3e329138034df6e0eae12ce",
+  "measured_at": "2026-07-07T18:38:30.408Z",
+  "platform": "darwin",
+  "arch": "arm64",
+  "tiers": {
+    "L1": {
+      "kib": 16,
+      "ns_per_access": 3.06
+    },
+    "L2": {
+      "kib": 256,
+      "ns_per_access": 13.21
+    },
+    "SLC": {
+      "kib": 8192,
+      "ns_per_access": 324.69
+    },
+    "DRAM": {
+      "kib": 131072,
+      "ns_per_access": 398.04
+    }
+  },
+  "gate_ns_per_comparison": 2.5253,
+  "walk_ns_12x12": 727.3,
+  "walk_xor_cycles": 288,
+  "miss_penalty_dram_l1": 130,
+  "touched_files": [
+    ".thetacog/email-sent.ndjson",
+    ".thetacog/lens-latest.json",
+    ".thetacog/lens-latest.md",
+    ".thetacog/lens-qwen-audit.ndjson",
+    ".thetacog/lens-receipts/lens-mrazq3j0.json",
+    ".thetacog/lens-signals/sig_216395d75b16ead411efc4cad6ed0139.json",
+    ".thetacog/lens-signals/sig_32f8f64c7aef2412da28b7789eb99fc8.json",
+    ".thetacog/lens-signals/sig_61273162d98fc922122255a25b32f550.json",
+    ".thetacog/lens-signals/sig_8524b779da1b74b376bd3b4b30d09012.json",
+    ".thetacog/lens-signals/sig_fa7dfb365c1d0db4a9dc0fa09e462097.json",
+    ".thetacog/mesh/ledger/2026-07-07T18-35-19-078Z__mesh_f56c2e68-0b1__ASK__c6d1c385.json",
+    ".thetacog/mesh/ledger/2026-07-07T18-35-27-714Z__mesh_88162eb8-2e0__ASK__a8bea3dc.json",
+    ".thetacog/mesh/ledger/2026-07-07T18-37-10-760Z__mesh_071e4ccd-03e__ASK__f7ce2ea8.json",
+    ".thetacog/mesh/ledger/2026-07-07T18-37-20-337Z__mesh_6d52bdd3-8eb__ASK__f629c59e.json",
+    ".thetacog/punch-list.json",
+    ".thetacog/sigma-panel-trend.ndjson",
+    "books/tesseract/exports/tesseract-physics-20260707.epub",
+    "data/pmu/measure-history.ndjson",
+    "data/pmu/pipeline/state.json",
+    "data/room-bifurcations.json",
+    "data/thetacoach.db",
+    "docs/commit-triptych-2fa21df0d.html",
+    "docs/commit-triptych-4719f6945.html",
+    "docs/commit-triptych-b98cc2636.html",
+    "docs/pmu/commit-panels/4719f6945.png",
+    "public/blog/triptych-tolerance-default.png",
+    "public/commit/4719f6945/index.html",
+    "public/commit/b98cc2636/index.html",
+    "public/commit/b98cc2636/og.png",
+    "src/data/commit-greeks-index.json"
+  ],
+  "daemon_path": ".thetacog/pmu/target/release/pmu-onchip",
+  "raw_stdout_tail": "\nraw PMU counters [macos]: not yet wired\n  raw counters are behind kperf (private framework); pointer-chase is the unprivileged on-chip measurement\n"
+}

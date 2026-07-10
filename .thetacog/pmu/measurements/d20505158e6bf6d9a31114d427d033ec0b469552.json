@@ -1,0 +1,33 @@
+{
+  "sha": "d20505158e6bf6d9a31114d427d033ec0b469552",
+  "measured_at": "2026-06-24T19:52:38.002Z",
+  "platform": "darwin",
+  "arch": "arm64",
+  "tiers": {
+    "L1": {
+      "kib": 16,
+      "ns_per_access": 2
+    },
+    "L2": {
+      "kib": 256,
+      "ns_per_access": 5.18
+    },
+    "SLC": {
+      "kib": 8192,
+      "ns_per_access": 56.21
+    },
+    "DRAM": {
+      "kib": 131072,
+      "ns_per_access": 273.63
+    }
+  },
+  "gate_ns_per_comparison": 1.9179,
+  "walk_ns_12x12": 552.4,
+  "walk_xor_cycles": 288,
+  "miss_penalty_dram_l1": 136.5,
+  "touched_files": [
+    "src/content/blog/2026-06-24-ethics-vs-lane-what-makes-ai-insurable.mdx"
+  ],
+  "daemon_path": ".thetacog/pmu/target/release/pmu-onchip",
+  "raw_stdout_tail": "\nraw PMU counters [macos]: not yet wired\n  raw counters are behind kperf (private framework); pointer-chase is the unprivileged on-chip measurement\n"
+}

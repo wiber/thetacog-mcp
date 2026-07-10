@@ -1,0 +1,42 @@
+{
+  "sha": "8a73a22bdc3b14d64d348727756e06884cfa84ce",
+  "measured_at": "2026-06-25T16:33:01.325Z",
+  "platform": "darwin",
+  "arch": "arm64",
+  "tiers": {
+    "L1": {
+      "kib": 16,
+      "ns_per_access": 1.72
+    },
+    "L2": {
+      "kib": 256,
+      "ns_per_access": 8.76
+    },
+    "SLC": {
+      "kib": 8192,
+      "ns_per_access": 24.2
+    },
+    "DRAM": {
+      "kib": 131072,
+      "ns_per_access": 124.77
+    }
+  },
+  "gate_ns_per_comparison": 0.5681,
+  "walk_ns_12x12": 163.6,
+  "walk_xor_cycles": 288,
+  "miss_penalty_dram_l1": 72.6,
+  "touched_files": [
+    "books/tesseract/COMPLETE-BOOK.txt",
+    "books/tesseract/appendices/appendix-t-pre-black-scholes-ai-competence.md",
+    "books/tesseract/exports/tesseract-complete-book.txt",
+    "books/tesseract/exports/tesseract-physics-20260625.epub",
+    "books/tesseract/exports/tesseract-physics.epub",
+    "docs/05-content/blog/scratchpad/appendix-pre-black-scholes.md",
+    "docs/book/COMPLETE-BOOK.txt",
+    "docs/book/tesseract-physics.epub",
+    "public/book/appendix/pre-black-scholes-ai-competence.html",
+    "scripts/convert-appendices-to-html.mjs"
+  ],
+  "daemon_path": ".thetacog/pmu/target/release/pmu-onchip",
+  "raw_stdout_tail": "\nraw PMU counters [macos]: not yet wired\n  raw counters are behind kperf (private framework); pointer-chase is the unprivileged on-chip measurement\n"
+}

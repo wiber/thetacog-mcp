@@ -1,0 +1,33 @@
+{
+  "sha": "dcfdcaa07d3264394e3270381317a0c3d52e82cc",
+  "measured_at": "2026-06-20T02:12:15.416Z",
+  "platform": "darwin",
+  "arch": "arm64",
+  "tiers": {
+    "L1": {
+      "kib": 16,
+      "ns_per_access": 1.8
+    },
+    "L2": {
+      "kib": 256,
+      "ns_per_access": 4.21
+    },
+    "SLC": {
+      "kib": 8192,
+      "ns_per_access": 22.52
+    },
+    "DRAM": {
+      "kib": 131072,
+      "ns_per_access": 124.71
+    }
+  },
+  "gate_ns_per_comparison": 0.578,
+  "walk_ns_12x12": 166.5,
+  "walk_xor_cycles": 288,
+  "miss_penalty_dram_l1": 69.3,
+  "touched_files": [
+    "src/content/blog/2026-06-19-the-objection-that-proves-the-pixel.mdx"
+  ],
+  "daemon_path": ".thetacog/pmu/target/release/pmu-onchip",
+  "raw_stdout_tail": "\nraw PMU counters [macos]: not yet wired\n  raw counters are behind kperf (private framework); pointer-chase is the unprivileged on-chip measurement\n"
+}

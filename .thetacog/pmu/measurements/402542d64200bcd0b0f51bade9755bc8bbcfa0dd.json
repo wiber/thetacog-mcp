@@ -1,0 +1,33 @@
+{
+  "sha": "402542d64200bcd0b0f51bade9755bc8bbcfa0dd",
+  "measured_at": "2026-06-21T14:28:23.021Z",
+  "platform": "darwin",
+  "arch": "arm64",
+  "tiers": {
+    "L1": {
+      "kib": 16,
+      "ns_per_access": 2.52
+    },
+    "L2": {
+      "kib": 256,
+      "ns_per_access": 8.04
+    },
+    "SLC": {
+      "kib": 8192,
+      "ns_per_access": 76.7
+    },
+    "DRAM": {
+      "kib": 131072,
+      "ns_per_access": 192.45
+    }
+  },
+  "gate_ns_per_comparison": 0.5777,
+  "walk_ns_12x12": 166.4,
+  "walk_xor_cycles": 288,
+  "miss_penalty_dram_l1": 76.2,
+  "touched_files": [
+    "docs/pmu/heldout-redpill-report-2026-06-21.html"
+  ],
+  "daemon_path": ".thetacog/pmu/target/release/pmu-onchip",
+  "raw_stdout_tail": "\nraw PMU counters [macos]: not yet wired\n  raw counters are behind kperf (private framework); pointer-chase is the unprivileged on-chip measurement\n"
+}
