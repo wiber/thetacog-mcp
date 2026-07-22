@@ -1,0 +1,983 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎭 Alacritty | The Performer</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎭</text></svg>">
+    <!-- ═══════════════════════════════════════════════════════════════════════════
+         COORDINATE LOCKING METADATA - 🎭::performer
+         Copy this entire HTML to Claude to lock into this coordinate
+         ═══════════════════════════════════════════════════════════════════════════ -->
+    <script type="application/json" id="coordinate-lock">
+    {
+        "namespace": "🎭::performer",
+        "coordinate": "💰 A3 Strategy.Fund",
+        "intersection": "A3:A3 (Fund:Fund)",
+        "tile_type": "diagonal_essence",
+        "terminal": "Alacritty",
+        "temporal_window": {
+            "hours": "22:00 - 00:00",
+            "theme": "Night Performance",
+            "energy": "rehearsal, live events"
+        },
+        "winning_pointer": "en.wikipedia.org/wiki/Seigniorage",
+        "question": "What is the essence of Fund? Performance creates value like currency issuance.",
+        "book_chapter": "CEO Delegation Funnel — convert performance to $19.95 seats",
+
+        "memory_palace": "The green room. Mirror. Adrenaline. Night events, demos, rehearsals. You've prepared all day. Now deliver. One shot to land the message.",
+
+        "focus_areas": [
+            "Live demos and events",
+            "Pitch rehearsal",
+            "Performance preparation",
+            "High-stakes delivery"
+        ],
+
+        "prompt_types": [
+            "[REHEARSE] Practice this pitch...",
+            "[DEMO] Prepare this walkthrough...",
+            "[PERFORM] Event starting soon...",
+            "[SCRIPT] Polish this delivery..."
+        ],
+
+        "autonomous_process": {
+            "step1_git": "git log --oneline -10 -- 'docs/talks/' 'docs/demos/'",
+            "step2_scan": "Check calendar for upcoming events",
+            "step3_state": "Review demo dependencies, script status",
+            "step4_prompt": "Generate rehearsal and prep prompts"
+        },
+
+        "validation": {
+            "vanity": ["Good practice", "Feels ready", "Confident"],
+            "result": ["Demo delivered successfully", "Pitch landed", "Event completed"]
+        },
+
+        "cognitive_affordance": {
+            "sees": ["Battle cards ready to send", "Demo scripts", "Pitch opportunities", "Warm contacts", "Conversion moments"],
+            "ignores": ["Code architecture", "Long-term strategy", "Patent proofs", "CRM pipeline automation"],
+            "pull": "You come here to CONVERT. One shot. Months of preparation → minutes of impact. Performance is seigniorage: creating value from thin air."
+        },
+
+        "escape_gravity": {
+            "axis": "Demos booked > Applause",
+            "forbidden": ["Standing ovation", "Great conversations", "Audience loved it", "Good energy"],
+            "counts": "Demos booked in 48h only. Conversion = true signal."
+        },
+
+        "differentiation": {
+            "handoff_to": {
+                "📐::architect": "Strategic question → 🎯 A2",
+                "🔨::builder": "Demo is broken → 🔌 C1",
+                "🎩::operator": "Demo converted, close the deal → 🌊 C3",
+                "🎤::voice": "Performance needs content → 📡 B3"
+            },
+            "handoff_from": {
+                "📐::architect": "[DISPATCH] SXSW demo sequence ready",
+                "🎩::operator": "Demo is scheduled for Sara/Kurt",
+                "🔨::builder": "Tesseract Grid is live, demo it"
+            }
+        },
+
+        "affordances": ["PITCH", "RECORD", "PERFORM", "CONVERT"],
+        "archaeology": {
+            "api": "your-api-endpoint",
+            "paths": ["src/app/tesseract/*", "docs/05-content/tesseract/battle-cards/*", "public/"]
+        }
+    }
+    </script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+            color: #1a1a1a;
+            padding: 40px 20px;
+            min-height: 100vh;
+        }
+        .container { max-width: 1200px; margin: 0 auto; }
+        .back-button {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            border: 2px solid white;
+            padding: 14px 28px;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 1.1em;
+            font-weight: bold;
+            margin-bottom: 40px;
+            text-decoration: none;
+            display: inline-block;
+        }
+        .back-button:hover { background: rgba(255, 255, 255, 0.3); transform: translateX(-5px); }
+        .copy-html-btn {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: rgba(0,0,0,0.8);
+            color: #f59e0b;
+            border: 2px solid #f59e0b;
+            padding: 12px 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 0.9em;
+            font-weight: bold;
+            z-index: 1000;
+            font-family: 'Monaco', monospace;
+        }
+        .copy-html-btn:hover { background: #f59e0b; color: black; }
+        .header { text-align: center; margin-bottom: 50px; }
+        .header h1 { font-size: 4.5em; color: white; text-shadow: 3px 3px 6px rgba(0,0,0,0.4); margin-bottom: 15px; }
+        .subtitle { font-size: 1.5em; color: white; opacity: 0.95; margin-bottom: 10px; }
+        .command {
+            font-family: 'Monaco', 'Courier New', monospace;
+            background: rgba(0, 0, 0, 0.3);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 8px;
+            display: inline-block;
+            font-size: 1.2em;
+            margin-top: 10px;
+        }
+        .memory-palace {
+            background: white;
+            color: #1a1a1a;
+            font-size: 2.2em;
+            font-style: italic;
+            text-align: center;
+            padding: 50px 40px;
+            border-radius: 20px;
+            margin-bottom: 50px;
+            box-shadow: 0 15px 50px rgba(0,0,0,0.3);
+            line-height: 1.6;
+            border-left: 10px solid #f59e0b;
+        }
+        .stakes-card {
+            background: rgba(0, 0, 0, 0.3);
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            margin-bottom: 50px;
+            border: 3px solid rgba(255, 255, 255, 0.4);
+        }
+        .stakes-card h2 { font-size: 2.5em; margin-bottom: 15px; }
+        .stakes-card p { font-size: 1.3em; line-height: 1.6; }
+        .content-section {
+            background: white;
+            padding: 50px 40px;
+            border-radius: 20px;
+            margin-bottom: 40px;
+            box-shadow: 0 15px 50px rgba(0,0,0,0.2);
+        }
+        .content-section h2 {
+            font-size: 2.5em;
+            color: #f59e0b;
+            margin-bottom: 30px;
+            border-bottom: 4px solid #f59e0b;
+            padding-bottom: 15px;
+        }
+        .priority-list { list-style: none; padding: 0; }
+        .priority-list li {
+            padding: 18px 0;
+            border-bottom: 2px solid #eee;
+            font-size: 1.2em;
+            color: #333;
+            line-height: 1.6;
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+        }
+        .priority-list li:last-child { border-bottom: none; }
+        .priority-badge {
+            background: #f59e0b;
+            color: white;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.8em;
+            font-weight: bold;
+            white-space: nowrap;
+        }
+        .priority-badge.p1 { background: #dc2626; }
+        .priority-badge.p2 { background: #f59e0b; }
+        .priority-badge.p3 { background: #10b981; }
+        .deep-search {
+            background: #fef3c7;
+            padding: 30px;
+            border-radius: 15px;
+            border-left: 6px solid #f59e0b;
+            margin-bottom: 30px;
+        }
+        .deep-search h3 { font-size: 1.8em; color: #92400e; margin-bottom: 20px; }
+        .deep-search code {
+            background: #1a1a1a;
+            color: #22c55e;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-family: 'Monaco', monospace;
+        }
+        .deep-search ul { list-style: none; padding: 0; }
+        .deep-search li { padding: 10px 0; font-size: 1.1em; color: #78350f; }
+        .deep-search li:before { content: '📂'; margin-right: 12px; }
+        .identity-rules {
+            background: #fffbeb;
+            padding: 30px;
+            border-radius: 15px;
+            border-left: 6px solid #f59e0b;
+            margin-bottom: 30px;
+        }
+        .identity-rules h3 { font-size: 1.8em; color: #f59e0b; margin-bottom: 20px; }
+        .identity-rules ul { list-style: none; padding: 0; }
+        .identity-rules li { padding: 12px 0; font-size: 1.1em; color: #444; line-height: 1.6; }
+        .identity-rules li:before { content: '→'; margin-right: 12px; color: #f59e0b; font-weight: bold; font-size: 1.3em; }
+        .footer { text-align: center; color: white; margin-top: 60px; font-size: 1.1em; opacity: 0.9; }
+        .room-switcher {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 30px;
+            padding: 15px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 12px;
+        }
+        .room-switcher a {
+            padding: 8px 16px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 0.95em;
+            transition: transform 0.2s, background 0.2s;
+        }
+        .room-switcher a:hover { transform: scale(1.05); }
+        .room-switcher .builder { background: #3b82f6; color: white; }
+        .room-switcher .architect { background: #4f46e5; color: white; }
+        .room-switcher .operator { background: #22c55e; color: white; }
+        .room-switcher .vault { background: #ef4444; color: white; }
+        .room-switcher .voice { background: #a855f7; color: white; }
+        .room-switcher .laboratory { background: #06b6d4; color: white; }
+        .room-switcher .performer { background: #f59e0b; color: white; }
+        .room-switcher .network { background: #6366f1; color: white; }
+        .room-switcher .navigator { background: #0d9488; color: white; }
+        .room-switcher .current { opacity: 0.5; pointer-events: none; }
+    </style>
+</head>
+<body>
+    <!-- Copy Whole HTML Button - Paste to Claude to lock into this coordinate -->
+    <button class="copy-html-btn" onclick="navigator.clipboard.writeText(document.documentElement.outerHTML).then(()=>{this.textContent='✓ Copied!';setTimeout(()=>this.textContent='📋 🎭::performer',2000)})">📋 🎭::performer</button>
+
+    <div class="container">
+        <a href="../cognitive-dashboard.html" class="back-button">← Back to Dashboard</a>
+
+        <nav class="room-switcher">
+            <a href="iterm2-builder.html" target="_blank" class="builder">🔨 Builder</a>
+            <a href="vscode-architect.html" target="_blank" class="architect">📐 Architect</a>
+            <a href="kitty-operator.html" target="_blank" class="operator">🎩 Operator</a>
+            <a href="wezterm-vault.html" target="_blank" class="vault">🔒 Vault</a>
+            <a href="terminal-voice.html" target="_blank" class="voice">🎤 Voice</a>
+            <a href="cursor-laboratory.html" target="_blank" class="laboratory">🧪 Laboratory</a>
+            <a href="alacritty-performer.html" target="_blank" class="performer current">🎭 Performer</a>
+            <a href="messages-network.html" target="_blank" class="network">☕ Network</a>
+            <a href="rio-navigator.html" target="_blank" class="navigator">🧭 Navigator</a>
+        </nav>
+
+        <div class="header">
+            <h1>🎭 THE PERFORMER</h1>
+            <div class="subtitle">TIER 6: PERFORMANCE | High-stakes but prepared | Event-driven</div>
+            <div class="subtitle" style="background:rgba(0,0,0,0.3);padding:15px;border-radius:12px;margin-top:15px;">
+                <strong style="color:#fbbf24;font-size:1.3em;">⏰ TEMPORAL ROOM: 22:00 - 00:00 (10PM - Midnight)</strong><br/>
+                <span style="font-size:0.85em;">This room runs during Night Performance hours for LIVE EVENTS, DEMOS, and Ollama prompt rehearsal/performance</span>
+            </div>
+            <div class="command">Cmd+Space → alacritty</div>
+        </div>
+
+        <div class="memory-palace">
+            "The green room. Mirror. Adrenaline. Night events, demos, rehearsals. You've prepared all day. Now deliver. One shot to land the message."
+            <div style="font-size:0.85em;margin-top:25px;font-style:normal;color:#1a1a1a;background:rgba(255,255,255,0.2);padding:15px;border-radius:10px;">
+                <strong style="color:#92400e;">Memory Palace (from rooms.json):</strong><br/>
+                The green room. Mirror. Adrenaline. Night events, demos, rehearsals. You've prepared all day. Now deliver. One shot to land the message.
+            </div>
+            <div style="font-size:0.6em;margin-top:20px;font-style:normal;color:#f59e0b;">
+                <strong>💰 A3 Strategy.Fund</strong> — "Performance is seigniorage: creating value from thin air" (<a href="https://en.wikipedia.org/wiki/Seigniorage" target="_blank" style="color:#f59e0b;">Wikipedia</a>)
+            </div>
+        </div>
+
+        <!-- TEMPORAL WINDOW CARD -->
+        <div class="content-section" style="background:#1e1b4b;color:white;border-left:8px solid #fbbf24;">
+            <h2 style="color:#fbbf24;border:none;margin-bottom:20px;">⏰ TEMPORAL WINDOW: 22:00 - 00:00</h2>
+            <div style="background:#0f172a;padding:25px;border-radius:12px;margin-bottom:20px;">
+                <h3 style="color:#fbbf24;margin-bottom:15px;">Night Performance (10PM - Midnight)</h3>
+                <p style="font-size:1.15em;line-height:1.8;color:#e2e8f0;">
+                    This is a <strong>TEMPORAL ROOM</strong> - it activates during the <strong>22:00-00:00 window</strong> for:<br/>
+                    • <strong>Live events and demos</strong> (evening networking events, presentations)<br/>
+                    • <strong>Pitch rehearsals</strong> (practice before major presentations)<br/>
+                    • <strong>Ollama prompt performance</strong> (AI-assisted rehearsal and refinement)<br/>
+                    • <strong>High-stakes delivery preparation</strong> (one shot to land the message)
+                </p>
+            </div>
+            <div style="background:rgba(251,191,36,0.1);padding:20px;border-radius:10px;border:2px solid #fbbf24;">
+                <strong style="color:#fbbf24;">Why This Window?</strong><br/>
+                <span style="color:#cbd5e1;font-size:1.05em;line-height:1.7;">Evening hours capture networking events, after-hours demos, and final rehearsals before major presentations. This is when preparation meets performance reality.</span>
+            </div>
+        </div>
+
+        <!-- FOCUS AREAS FROM ROOMS.JSON -->
+        <div class="content-section" style="background:#1e293b;color:white;border-left:6px solid #f59e0b;">
+            <h2 style="color:#f59e0b;border:none;margin-bottom:20px;">🎯 FOCUS AREAS (from rooms.json)</h2>
+            <ul style="list-style:none;padding:0;line-height:2.2;font-size:1.15em;">
+                <li style="padding:12px;background:#0f172a;margin-bottom:10px;border-radius:8px;border-left:4px solid #22c55e;">
+                    ✓ <strong>Live demos and events</strong> - Real-time performance for audiences
+                </li>
+                <li style="padding:12px;background:#0f172a;margin-bottom:10px;border-radius:8px;border-left:4px solid #22c55e;">
+                    ✓ <strong>Pitch rehearsal</strong> - Practice runs before high-stakes moments
+                </li>
+                <li style="padding:12px;background:#0f172a;margin-bottom:10px;border-radius:8px;border-left:4px solid #22c55e;">
+                    ✓ <strong>Performance preparation</strong> - Final polish and readiness checks
+                </li>
+                <li style="padding:12px;background:#0f172a;margin-bottom:10px;border-radius:8px;border-left:4px solid #22c55e;">
+                    ✓ <strong>High-stakes delivery</strong> - One shot execution under pressure
+                </li>
+            </ul>
+        </div>
+
+        <!-- PROMPT TYPES FROM ROOMS.JSON -->
+        <div class="content-section" style="background:#312e81;color:white;border-left:6px solid #fbbf24;">
+            <h2 style="color:#fbbf24;border:none;margin-bottom:20px;">💬 PROMPT TYPES (Ollama Integration)</h2>
+            <div style="background:#1e1b4b;padding:20px;border-radius:12px;margin-bottom:15px;">
+                <p style="color:#cbd5e1;margin-bottom:15px;">During the 22:00-00:00 window, Ollama prompts you based on these patterns:</p>
+                <ul style="list-style:none;padding:0;line-height:2;font-size:1.1em;">
+                    <li style="padding:10px;background:#0f172a;margin-bottom:8px;border-radius:6px;">
+                        <code style="color:#22c55e;font-size:0.95em;">[REHEARSE]</code> Practice this pitch...
+                    </li>
+                    <li style="padding:10px;background:#0f172a;margin-bottom:8px;border-radius:6px;">
+                        <code style="color:#22c55e;font-size:0.95em;">[DEMO]</code> Prepare this walkthrough...
+                    </li>
+                    <li style="padding:10px;background:#0f172a;margin-bottom:8px;border-radius:6px;">
+                        <code style="color:#22c55e;font-size:0.95em;">[PERFORM]</code> Event starting soon...
+                    </li>
+                    <li style="padding:10px;background:#0f172a;margin-bottom:8px;border-radius:6px;">
+                        <code style="color:#22c55e;font-size:0.95em;">[SCRIPT]</code> Polish this delivery...
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- COGNITIVE AFFORDANCE CARD - THE KEY SECTION -->
+        <div class="content-section" style="background:#1e293b;color:white;border-left:6px solid #f59e0b;">
+            <h2 style="color:#f59e0b;border:none;margin-bottom:20px;">🧠 COGNITIVE AFFORDANCE</h2>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:30px;">
+                <div>
+                    <h3 style="color:#22c55e;margin-bottom:10px;">✓ THIS ROOM SEES</h3>
+                    <ul style="list-style:none;padding:0;line-height:2;">
+                        <li>• Battle cards ready to send</li>
+                        <li>• Demo scripts & pitch decks</li>
+                        <li>• Warm contacts from events</li>
+                        <li>• Conversion moments (one shot)</li>
+                        <li>• Features shipped without demos</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 style="color:#ef4444;margin-bottom:10px;">✗ THIS ROOM IGNORES</h3>
+                    <ul style="list-style:none;padding:0;line-height:2;">
+                        <li>• Code bugs → <span style="color:#3b82f6;">🔨::builder</span></li>
+                        <li>• Strategic planning → <span style="color:#6366f1;">📐::architect</span></li>
+                        <li>• Patent proofs → <span style="color:#ef4444;">🔒::vault</span></li>
+                        <li>• CRM automation → <span style="color:#22c55e;">🎩::operator</span></li>
+                        <li>• Content creation → <span style="color:#a855f7;">🎤::voice</span></li>
+                    </ul>
+                </div>
+            </div>
+            <div style="margin-top:25px;padding:20px;background:#0f172a;border-radius:10px;">
+                <strong style="color:#f59e0b;">THE PULL:</strong> You come here to CONVERT. One shot. Months of preparation → minutes of impact. If you're debugging code or drafting strategy, you're in the wrong room.
+            </div>
+        </div>
+
+        <div class="stakes-card">
+            <h2>🎯 STAKES: REPUTATION-LEVEL</h2>
+            <p>One shot = Reputation on the line<br/>Live performance, no do-overs<br/>This is where preparation meets execution</p>
+            <div style="margin-top:20px;padding:15px;background:rgba(0,0,0,0.3);border-radius:8px;">
+                <strong>Temporal Theme:</strong> Night Performance (22:00-00:00)<br/>
+                <strong>Energy:</strong> rehearsal, live events
+            </div>
+        </div>
+
+        <!-- AUTONOMOUS PROCESS STEPS -->
+        <div class="content-section" style="background:#0f172a;color:white;border-left:6px solid #8b5cf6;">
+            <h2 style="color:#a78bfa;border:none;margin-bottom:20px;">🤖 AUTONOMOUS PROCESS STEPS</h2>
+            <div style="background:#1e1b4b;padding:25px;border-radius:12px;">
+                <p style="color:#cbd5e1;margin-bottom:20px;font-size:1.05em;">
+                    When this room activates (22:00-00:00), the autonomous process follows these steps:
+                </p>
+                <ol style="list-style:none;padding:0;counter-reset:step-counter;">
+                    <li style="counter-increment:step-counter;padding:20px;margin-bottom:15px;background:#312e81;border-radius:10px;border-left:4px solid #a78bfa;position:relative;">
+                        <strong style="color:#fbbf24;font-size:1.2em;">Step 1: Git Scan</strong><br/>
+                        <code style="color:#22c55e;display:block;margin-top:10px;font-size:0.95em;">git log --oneline -10 -- 'docs/talks/' 'docs/demos/'</code>
+                        <span style="color:#94a3b8;display:block;margin-top:8px;">Check recent changes to talk and demo documentation</span>
+                    </li>
+                    <li style="counter-increment:step-counter;padding:20px;margin-bottom:15px;background:#312e81;border-radius:10px;border-left:4px solid #a78bfa;">
+                        <strong style="color:#fbbf24;font-size:1.2em;">Step 2: Calendar Check</strong><br/>
+                        <span style="color:#cbd5e1;display:block;margin-top:10px;">Check calendar for upcoming events</span>
+                        <span style="color:#94a3b8;display:block;margin-top:8px;">Identify events in next 7 days needing rehearsal</span>
+                    </li>
+                    <li style="counter-increment:step-counter;padding:20px;margin-bottom:15px;background:#312e81;border-radius:10px;border-left:4px solid #a78bfa;">
+                        <strong style="color:#fbbf24;font-size:1.2em;">Step 3: State Review</strong><br/>
+                        <span style="color:#cbd5e1;display:block;margin-top:10px;">Review demo dependencies, script status</span>
+                        <span style="color:#94a3b8;display:block;margin-top:8px;">Validate all demo components are ready and tested</span>
+                    </li>
+                    <li style="counter-increment:step-counter;padding:20px;margin-bottom:15px;background:#312e81;border-radius:10px;border-left:4px solid #a78bfa;">
+                        <strong style="color:#fbbf24;font-size:1.2em;">Step 4: Generate Prompts</strong><br/>
+                        <span style="color:#cbd5e1;display:block;margin-top:10px;">Generate rehearsal and prep prompts</span>
+                        <span style="color:#94a3b8;display:block;margin-top:8px;">Create [REHEARSE], [DEMO], [PERFORM], [SCRIPT] prompts for Ollama</span>
+                    </li>
+                </ol>
+            </div>
+        </div>
+
+        <!-- VALIDATION RULES -->
+        <div class="content-section" style="background:#450a0a;color:white;border-left:6px solid #dc2626;">
+            <h2 style="color:#f87171;border:none;margin-bottom:20px;">⚖️ VALIDATION RULES: Vanity vs Result</h2>
+
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:25px;margin-bottom:25px;">
+                <div style="background:#7f1d1d;padding:25px;border-radius:12px;border:2px solid #ef4444;">
+                    <h3 style="color:#fca5a5;margin-bottom:15px;text-align:center;">❌ VANITY (Score: 0)</h3>
+                    <ul style="list-style:none;padding:0;line-height:2;font-size:1.05em;">
+                        <li style="padding:10px;background:#991b1b;margin-bottom:8px;border-radius:6px;">
+                            • "Good practice"
+                        </li>
+                        <li style="padding:10px;background:#991b1b;margin-bottom:8px;border-radius:6px;">
+                            • "Feels ready"
+                        </li>
+                        <li style="padding:10px;background:#991b1b;margin-bottom:8px;border-radius:6px;">
+                            • "Confident"
+                        </li>
+                    </ul>
+                </div>
+
+                <div style="background:#064e3b;padding:25px;border-radius:12px;border:2px solid #10b981;">
+                    <h3 style="color:#6ee7b7;margin-bottom:15px;text-align:center;">✅ RESULT (Score: 1)</h3>
+                    <ul style="list-style:none;padding:0;line-height:2;font-size:1.05em;">
+                        <li style="padding:10px;background:#065f46;margin-bottom:8px;border-radius:6px;">
+                            • "Demo delivered successfully"
+                        </li>
+                        <li style="padding:10px;background:#065f46;margin-bottom:8px;border-radius:6px;">
+                            • "Pitch landed"
+                        </li>
+                        <li style="padding:10px;background:#065f46;margin-bottom:8px;border-radius:6px;">
+                            • "Event completed"
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div style="background:#1e1b4b;padding:25px;border-radius:12px;border:2px solid #fbbf24;">
+                <h3 style="color:#fbbf24;margin-bottom:15px;">🎯 The Performance Rule</h3>
+                <p style="color:#e2e8f0;font-size:1.15em;line-height:1.8;">
+                    <strong>Vanity</strong> measures feelings and preparation.<br/>
+                    <strong>Result</strong> measures actual delivery and outcomes.<br/><br/>
+                    If the event hasn't happened yet, it's rehearsal (vanity).<br/>
+                    If the demo was delivered to real people, it's a result.<br/>
+                    If the pitch landed and generated follow-up, it's a result.<br/><br/>
+                    <span style="color:#fbbf24;font-weight:bold;">Performance is measured by what happened, not how it felt.</span>
+                </p>
+            </div>
+        </div>
+
+        <!-- DYNAMIC PRIORITY QUEUE - Generated by prompt, not static -->
+        <div class="content-section" id="priority-queue-section">
+            <h2>🚨 Priority Queue <span style="font-size:0.5em;color:#64748b;font-weight:normal;">— Generated by 🎭::performer prompt</span></h2>
+
+            <!-- Scoring Reference (always visible) -->
+            <div style="background:#1e293b;padding:15px;border-radius:10px;margin-bottom:20px;font-size:0.9em;">
+                <strong style="color:#f59e0b;">SCORING: demos_booked_48h</strong><br/>
+                <span style="color:#ef4444;">VANITY (0):</span> "Standing ovation", "Great conversations", "Good energy"<br/>
+                <span style="color:#22c55e;">RESULT (1):</span> "12 business cards, 8 qualified", "3 demos booked this week"
+            </div>
+
+            <!-- Dynamic Priority List (populated by tessellation 2026-02-11) -->
+            <div id="performer-priorities" style="background:#0f172a;padding:20px;border-radius:12px;min-height:150px;">
+                <ul style="list-style:none;padding:0;">
+                    <li style="padding:15px;margin-bottom:10px;background:#1e293b;border-radius:8px;border-left:4px solid #22c55e;">
+                        <span class="priority-badge p1">P1</span>
+                        <span style="background:#f59e0b;color:white;padding:2px 8px;border-radius:4px;font-size:0.8em;margin-left:5px;">[PITCH]</span>
+                        <strong style="margin-left:10px;color:#e2e8f0;">Battle Card: Bryan Lemster - warm from de_CENTRALIZED</strong>
+                        <span style="float:right;color:#22c55e;font-weight:bold;">95%</span>
+                    </li>
+                    <li style="padding:15px;margin-bottom:10px;background:#1e293b;border-radius:8px;border-left:4px solid #22c55e;">
+                        <span class="priority-badge p1">P1</span>
+                        <span style="background:#f59e0b;color:white;padding:2px 8px;border-radius:4px;font-size:0.8em;margin-left:5px;">[PITCH]</span>
+                        <strong style="margin-left:10px;color:#e2e8f0;">Battle Card: Kurt Bonatz - investor positioning</strong>
+                        <span style="float:right;color:#22c55e;font-weight:bold;">92%</span>
+                    </li>
+                    <li style="padding:15px;margin-bottom:10px;background:#1e293b;border-radius:8px;border-left:4px solid #22c55e;">
+                        <span class="priority-badge p1">P1</span>
+                        <span style="background:#f59e0b;color:white;padding:2px 8px;border-radius:4px;font-size:0.8em;margin-left:5px;">[PITCH]</span>
+                        <strong style="margin-left:10px;color:#e2e8f0;">Battle Card: Sara Beckmann - fund allocation demo</strong>
+                        <span style="float:right;color:#22c55e;font-weight:bold;">90%</span>
+                    </li>
+                    <li style="padding:15px;margin-bottom:10px;background:#1e293b;border-radius:8px;border-left:4px solid #f59e0b;">
+                        <span class="priority-badge p1">P1</span>
+                        <span style="background:#f59e0b;color:white;padding:2px 8px;border-radius:4px;font-size:0.8em;margin-left:5px;">[RECORD]</span>
+                        <strong style="margin-left:10px;color:#e2e8f0;">60s Loom: Deep-linking URLs + grid heat visualization</strong>
+                        <span style="float:right;color:#f59e0b;font-weight:bold;">88%</span>
+                    </li>
+                    <li style="padding:15px;margin-bottom:10px;background:#1e293b;border-radius:8px;border-left:4px solid #f59e0b;">
+                        <span class="priority-badge p2">P2</span>
+                        <span style="background:#f59e0b;color:white;padding:2px 8px;border-radius:4px;font-size:0.8em;margin-left:5px;">[PERFORM]</span>
+                        <strong style="margin-left:10px;color:#e2e8f0;">Austin AI Salon: Tesseract as Capital Infrastructure - Rehearse 3×</strong>
+                        <span style="float:right;color:#f59e0b;font-weight:bold;">80%</span>
+                    </li>
+                </ul>
+                <p style="color:#475569;font-size:0.8em;margin-top:15px;text-align:right;">Tessellated from <a href="your-api-endpoint" style="color:#f59e0b;">your-api-endpoint/api</a> • Fund:Fund → Seigniorage</p>
+            </div>
+
+            <!-- Last Known State (fallback until prompt runs) -->
+            <details style="margin-top:15px;">
+                <summary style="cursor:pointer;color:#f59e0b;font-weight:bold;">📋 Last Known Priorities (Feb 12)</summary>
+                <ul class="priority-list" style="margin-top:10px;opacity:0.7;">
+                    <li><span class="priority-badge" style="background:#50fa7b;color:#0a0a0f;">DONE</span><strong>de_CENTRALIZED Complete!</strong> Perfect market identified for your-api-endpoint</li>
+                    <li><span class="priority-badge p1">P1</span><strong>[PITCH] Battle Card Follow-ups:</strong> Bryan, Kurt, Sara → demos_booked_48h</li>
+                    <li><span class="priority-badge p1">P1</span><strong>[RECORD] Tesseract Grid Demo:</strong> Deep-link URLs, heat viz, "You Are Here"</li>
+                    <li><span class="priority-badge p2">P2</span><strong>[PERFORM] Austin AI Salon:</strong> Rehearse "12x12 is mathematically necessary"</li>
+                </ul>
+            </details>
+        </div>
+
+        <div class="content-section">
+            <div class="deep-search">
+                <h3>🔍 Deep Search Protocol</h3>
+                <p style="margin-bottom: 15px; font-size: 1.1em;"><strong>ALWAYS check repo docs before claiming something doesn't exist or making assumptions:</strong></p>
+                <ul>
+                    <li><code>docs/05-content/tesseract/battle-cards/</code> — Battle cards ready to send</li>
+                    <li><code>src/app/tesseract/</code> — Demo pages: grid, feed, create, pointer, proof, signal</li>
+                    <li><code>docs/planning/</code> — Event schedules, speaking engagement notes</li>
+                    <li><code>public/book/</code> — Book content for narrative reference</li>
+                    <li><code>.workflow/</code> — Cognitive room configs, performance checklists</li>
+                    <li><code>CLAUDE.md</code> — Critical rules, presentation constraints</li>
+                </ul>
+                <p style="margin-top: 15px; font-style: italic;">When preparing presentations, search the repo first. Assets usually exist.</p>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <div class="identity-rules">
+                <h3>The Flywheel: How The Performer Converts Preparation to Impact</h3>
+                <ul>
+                    <li><strong>INPUTS FROM 🧪::laboratory (Cursor):</strong> Rehearsed demo flows, tested presentation sequences → Polished, debugged performance material</li>
+                    <li><strong>INPUTS FROM 🎤::voice (Terminal):</strong> Scripted narratives, tested messaging → Proven hooks and story arcs</li>
+                    <li><strong>INPUTS FROM 📐::architect (VS Code):</strong> Strategic positioning, key messages → Exact outcomes the performance must achieve</li>
+                    <li><strong>INPUTS FROM 🔒::vault (WezTerm):</strong> Mathematical proofs simplified → "12x12 is the only solution" with confidence</li>
+                    <li><strong>THE TRANSFORMATION:</strong> All preparation → LIVE delivery. No edits. No retakes. Pure execution under pressure.</li>
+                    <li><strong>OUTPUTS TO 🎩::operator (Kitty):</strong> Post-presentation leads → Attendees who schedule demos</li>
+                    <li><strong>OUTPUTS TO 🎤::voice (Terminal):</strong> Performance recordings → Content for LinkedIn, blog recaps</li>
+                    <li><strong>OUTPUTS TO 📐::architect (VS Code):</strong> Audience reaction data → Which messages landed, what to adjust</li>
+                    <li><strong>OUTPUTS TO 🔒::vault (WezTerm):</strong> Questions from experts → New research angles, edge cases</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <h2>🔄 COMPLETE FLYWHEEL CYCLE: One Presentation's Journey</h2>
+            <div style="background: #fffbeb; padding: 30px; border-radius: 15px; border-left: 6px solid #f59e0b; margin-bottom: 25px;">
+                <h3 style="font-size: 1.5em; color: #f59e0b; margin-bottom: 20px;">Example: de_CENTRALIZED Speaking Event</h3>
+
+                <div style="margin-bottom: 20px;">
+                    <h4 style="color: #d97706; margin-bottom: 10px;">🔻 PREPARATION ARRIVES IN ALACRITTY</h4>
+                    <p style="line-height: 1.7; color: #555;">🧪::laboratory provides: Tested demo flow (Tesseract grid walkthrough, no bugs). 🎤::voice provides: Scripted narrative ("The AI got this right—and this wrong"). 📐::architect provides: Strategic goal ("Land 5 qualified leads from this event"). 🔒::vault provides: Simplified proof ("12x12 is mathematically necessary"). Alacritty receives everything, ready for final rehearsal.</p>
+                </div>
+
+                <div style="margin-bottom: 20px;">
+                    <h4 style="color: #d97706; margin-bottom: 10px;">⚗️ ALACRITTY REHEARSES AND DELIVERS</h4>
+                    <p style="line-height: 1.7; color: #555;">Inside Alacritty, you run the full presentation 3 times. You time each section. You practice transitions. You anticipate questions. You discover: the demo crashes if you click too fast—fix it. You find: the "12x12" proof takes too long to explain—simplify it. Day of event: You deliver flawlessly. 47 attendees. 12 people approach you afterward.</p>
+                </div>
+
+                <div style="margin-bottom: 20px;">
+                    <h4 style="color: #d97706; margin-bottom: 10px;">🔺 ALACRITTY DISTRIBUTES OUTCOMES</h4>
+                    <p style="line-height: 1.7; color: #555;">
+                        <strong>→ 🎩::operator:</strong> 12 attendees gave business cards. 8 are qualified. 3 want demos this week.<br/>
+                        <strong>→ 🎤::voice:</strong> Recording captured. Event organizer wants a blog recap. LinkedIn highlight reel incoming.<br/>
+                        <strong>→ 📐::architect:</strong> "Fire Together, Ground Together" hook landed—audience nodded. "Database to Blockchain" section lost them—needs reframing.<br/>
+                        <strong>→ 🔒::vault:</strong> Physicist in audience asked: "Does this generalize to quantum systems?" New research question logged.
+                    </p>
+                </div>
+
+                <div style="background: white; padding: 20px; border-radius: 10px; margin-top: 20px;">
+                    <p style="font-weight: bold; color: #f59e0b; margin-bottom: 10px;">THE ACCELERATION:</p>
+                    <p style="line-height: 1.7; color: #444;">
+                        One presentation in Alacritty → 3 demos booked in Kitty → 1 blog recap for Terminal → 1 messaging refinement for VS Code → 1 new research question for WezTerm.
+                        <strong>Alacritty converts months of preparation into minutes of impact. Every performance compounds into future fuel.</strong>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- The Rules of The Performer - RESTORED -->
+        <div class="content-section">
+            <div class="identity-rules">
+                <h3>The Rules of The Performer</h3>
+                <ul>
+                    <li>You've already practiced in Cursor—this is execution time</li>
+                    <li>You've already scripted in Terminal—this is delivery time</li>
+                    <li>One shot to land the message—make every word count</li>
+                    <li>Reputation is on the line—be prepared, be confident, be memorable</li>
+                    <li>Rehearse until it's muscle memory—nerves disappear when preparation is total</li>
+                    <li>Alacritty is the green room. Alacritty is where preparation meets performance. Alacritty is where you deliver under pressure.</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Why Alacritty? The Flywheel Converter - RESTORED -->
+        <div class="content-section">
+            <h2>Why Alacritty? The Flywheel Converter</h2>
+            <p style="font-size: 1.2em; line-height: 1.8; color: #444;">
+                Alacritty is where <strong>preparation becomes impact</strong>. The amber/gold theme signals performance mode—high stakes, high reward. When you open Alacritty, you're not experimenting in Alacritty—you're delivering in Alacritty. You're not drafting in Alacritty—you're performing in Alacritty.
+            </p>
+            <p style="font-size: 1.2em; line-height: 1.8; color: #444; margin-top: 20px;">
+                <strong>Alacritty = The Converter.</strong> Alacritty receives months of preparation from every other terminal and converts it into minutes of public impact. Alacritty is where the flywheel touches the outside world. Demos generate leads for Kitty. Presentations generate content for Terminal. Audience reactions generate insights for VS Code. Expert questions generate research for WezTerm. <strong>Alacritty accelerates the flywheel by converting internal preparation into external momentum that feeds back into every other terminal.</strong>
+            </p>
+        </div>
+
+        <!-- BATTLE CARD STATUS - Similar to Architect's Patent Deadline -->
+        <div class="content-section" style="border: 4px solid #f59e0b; background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%);">
+            <h2 style="color:#d97706;border-color:#d97706;">🎯 BATTLE CARD STATUS <span style="font-size:0.5em;background:#f59e0b;color:white;padding:4px 12px;border-radius:20px;margin-left:10px;">WARM LEADS</span></h2>
+
+            <!-- Battle Cards Ready -->
+            <div style="background:#1e293b;padding:20px;border-radius:12px;margin-bottom:20px;color:white;">
+                <h3 style="color:#f59e0b;margin-bottom:15px;">📋 Battle Cards Ready to Send</h3>
+                <table style="width:100%;border-collapse:collapse;font-size:0.95em;">
+                    <tr style="border-bottom:1px solid #334155;">
+                        <th style="text-align:left;padding:10px;color:#94a3b8;">Contact</th>
+                        <th style="text-align:left;padding:10px;color:#94a3b8;">File</th>
+                        <th style="text-align:left;padding:10px;color:#94a3b8;">Source</th>
+                        <th style="text-align:left;padding:10px;color:#94a3b8;">Status</th>
+                    </tr>
+                    <tr style="background:#22c55e33;">
+                        <td style="padding:10px;font-weight:bold;">Bryan Lemster</td>
+                        <td style="padding:10px;font-family:Monaco;font-size:0.85em;">BRYAN-LEMSTER-BATTLE-CARD.html</td>
+                        <td style="padding:10px;">de_CENTRALIZED</td>
+                        <td style="padding:10px;color:#22c55e;">🔥 HOT</td>
+                    </tr>
+                    <tr style="background:#22c55e33;">
+                        <td style="padding:10px;font-weight:bold;">Kurt Bonatz</td>
+                        <td style="padding:10px;font-family:Monaco;font-size:0.85em;">KURT-BONATZ-BATTLE-CARD.html</td>
+                        <td style="padding:10px;">de_CENTRALIZED</td>
+                        <td style="padding:10px;color:#22c55e;">🔥 HOT</td>
+                    </tr>
+                    <tr style="background:#22c55e33;">
+                        <td style="padding:10px;font-weight:bold;">Sara Beckmann</td>
+                        <td style="padding:10px;font-family:Monaco;font-size:0.85em;">SARA-BECKMANN-BATTLE-CARD.html</td>
+                        <td style="padding:10px;">de_CENTRALIZED</td>
+                        <td style="padding:10px;color:#22c55e;">🔥 HOT</td>
+                    </tr>
+                    <tr>
+                        <td style="padding:10px;">C</td>
+                        <td style="padding:10px;font-family:Monaco;font-size:0.85em;">C-BATTLE-CARD.html</td>
+                        <td style="padding:10px;">Unknown</td>
+                        <td style="padding:10px;color:#64748b;">⏸️ Check</td>
+                    </tr>
+                </table>
+            </div>
+
+            <!-- Demo Assets -->
+            <div style="background:#fef3c7;padding:20px;border-radius:12px;border-left:6px solid #f59e0b;margin-bottom:20px;">
+                <h3 style="color:#92400e;margin-bottom:15px;">🎬 Demo Assets (Shipped, Need Recording)</h3>
+                <ul style="list-style:none;padding:0;line-height:2.2;">
+                    <li>☐ <strong>Deep-linking URLs</strong> — <code style="background:#1a1a1a;color:#22c55e;padding:2px 6px;border-radius:4px;">your-api-endpoint/grid?tile=A3:Fund</code></li>
+                    <li>☐ <strong>Grid Heat Visualization</strong> — Pointer count → border glow intensity</li>
+                    <li>☐ <strong>Activity Feed with URLs</strong> — Real-time tile address display</li>
+                    <li>☐ <strong>"You Are Here" Logic</strong> — Click tile → see your position</li>
+                </ul>
+            </div>
+
+            <!-- Upcoming Events -->
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;">
+                <div style="background:#ecfdf5;padding:20px;border-radius:12px;border-left:6px solid #10b981;">
+                    <h4 style="color:#065f46;margin-bottom:10px;">✅ COMPLETED</h4>
+                    <ul style="list-style:none;padding:0;font-size:0.95em;line-height:1.8;">
+                        <li>✓ de_CENTRALIZED (Feb 10)</li>
+                        <li>✓ 12 business cards collected</li>
+                        <li>✓ 8 qualified leads identified</li>
+                        <li>✓ Battle cards generated</li>
+                    </ul>
+                </div>
+                <div style="background:#fef3c7;padding:20px;border-radius:12px;border-left:6px solid #f59e0b;">
+                    <h4 style="color:#92400e;margin-bottom:10px;">📅 UPCOMING</h4>
+                    <ul style="list-style:none;padding:0;font-size:0.95em;line-height:1.8;">
+                        <li>→ Austin AI Salon (Feb TBD)</li>
+                        <li>→ SXSW Genesis (Mar 2026)</li>
+                        <li>→ Advisor intro meetings</li>
+                        <li>→ Investor deck presentations</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Dispatch -->
+            <div style="background:#0f172a;padding:20px;border-radius:12px;margin-top:20px;color:white;">
+                <h4 style="color:#f59e0b;margin-bottom:10px;">📤 DISPATCH READY</h4>
+                <p style="font-family:'Monaco',monospace;font-size:0.9em;line-height:1.8;">
+                    Battle cards at: <code style="color:#22c55e;">docs/05-content/tesseract/battle-cards/</code><br/>
+                    <span style="color:#22c55e;">→ performer owns sending</span><br/>
+                    <span style="color:#f59e0b;">→ operator owns follow-up after demo booked</span><br/>
+                    <span style="color:#6366f1;">→ signal: demos_booked_48h</span>
+                </p>
+            </div>
+
+            <!-- Source Documents -->
+            <details style="margin-top:15px;">
+                <summary style="cursor:pointer;color:#d97706;font-weight:bold;">📂 Source Documents</summary>
+                <ul style="list-style:none;padding:15px;background:#1e293b;border-radius:8px;margin-top:10px;color:#94a3b8;font-family:'Monaco',monospace;font-size:0.85em;">
+                    <li>→ docs/05-content/tesseract/battle-cards/BRYAN-LEMSTER-BATTLE-CARD.html</li>
+                    <li>→ docs/05-content/tesseract/battle-cards/KURT-BONATZ-BATTLE-CARD.html</li>
+                    <li>→ docs/05-content/tesseract/battle-cards/SARA-BECKMANN-BATTLE-CARD.html</li>
+                    <li>→ src/app/tesseract/grid/page.tsx</li>
+                    <li>→ src/app/tesseract/feed/page.tsx</li>
+                </ul>
+            </details>
+        </div>
+
+        <!-- NEXT ACTIONS - What needs to happen in this room -->
+        <div class="content-section" style="background: linear-gradient(135deg, #1e1b4b 0%, #312e81 100%); color: #f0f0f0; border-left: 6px solid #f59e0b;">
+            <h2 style="color: #f59e0b; border-color: #f59e0b;">⚡ NEXT ACTIONS (This Session)</h2>
+
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;">
+                <div style="background:rgba(0,0,0,0.3);padding:20px;border-radius:12px;">
+                    <h3 style="color:#22c55e;margin-bottom:15px;">✅ IMMEDIATE (Do Now)</h3>
+                    <ul style="list-style:none;padding:0;line-height:2;">
+                        <li>→ <strong>Send battle cards</strong> to Bryan, Kurt, Sara (warm from de_CENTRALIZED)</li>
+                        <li>→ <strong>Record 60s Loom</strong> of grid heat + deep-link demo</li>
+                        <li>→ <strong>Run prompt</strong> to generate fresh priorities from <a href="your-api-endpoint" style="color:#f59e0b;">your-api-endpoint</a></li>
+                    </ul>
+                </div>
+
+                <div style="background:rgba(0,0,0,0.3);padding:20px;border-radius:12px;">
+                    <h3 style="color:#f59e0b;margin-bottom:15px;">📅 THIS WEEK</h3>
+                    <ul style="list-style:none;padding:0;line-height:2;">
+                        <li>→ <strong>3 demos booked</strong> from de_CENTRALIZED contacts</li>
+                        <li>→ <strong>Investor deck</strong> for advisor intro meetings</li>
+                        <li>→ <strong>Austin AI Salon prep</strong> - rehearse 3x with timer</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div style="background:rgba(239,68,68,0.2);padding:15px;border-radius:10px;margin-top:20px;border:1px solid #ef4444;">
+                <strong style="color:#ef4444;">🎯 SUCCESS METRIC:</strong>
+                <span style="color:#e2e8f0;">demos_booked_48h ≥ 3 from battle card sends</span>
+            </div>
+        </div>
+
+        <!-- Claude Summary Output (JSON from prompt) -->
+        <div class="content-section" id="claude-summary-section" style="background: #0f172a; color: #f0f0f0;">
+            <h2 style="color: #f59e0b; border-color: #f59e0b;">📊 Performer Findings <span style="font-size:0.5em;color:#64748b;">— Paste JSON output here</span></h2>
+            <div id="claude-summary" style="background: #1e293b; padding: 20px; border-radius: 12px; min-height: 100px; font-family: 'Monaco', monospace; font-size: 0.85em; white-space: pre-wrap;">
+{
+  "room": "🎭::performer",
+  "coordinate": "💰 A3 Strategy.Fund",
+  "signal": "demos_booked_48h",
+  "timestamp": "2026-02-12T...",
+  "tesseract_heat": [],
+  "priorities": [],
+  "discarded": []
+}
+            </div>
+            <p style="color: #475569; font-size: 0.85em; margin-top: 10px;">Last updated: <span id="summary-timestamp">—</span></p>
+        </div>
+
+        <div class="content-section" style="background: #1a1a1a; color: #f0f0f0;">
+            <h2 style="color: #f59e0b; border-color: #f59e0b;">📋 Coordinate Lock Prompt</h2>
+            <p style="margin-bottom: 20px; color: #aaa;">This prompt locks Claude into the 🎭::performer coordinate. Copy the whole HTML (button top-right) for full context, or use this prompt directly:</p>
+            <pre style="background: #0d0d0d; padding: 25px; border-radius: 12px; overflow-x: auto; font-size: 0.95em; line-height: 1.6; border: 2px solid #f59e0b; white-space: pre-wrap;"><code style="color: #22c55e;">═══ COORDINATE LOCK: 🎭::performer ═══
+POSITION: 💰 A3 Strategy.Fund ("performance is seigniorage")
+WINNING POINTER: en.wikipedia.org/wiki/Seigniorage
+QUESTION: "What creates value from thin air? Performance → Conversion."
+
+⏰ TEMPORAL WINDOW: 22:00 - 00:00 (Night Performance)
+THEME: "rehearsal, live events"
+ENERGY: Night events, demos, rehearsals - You've prepared all day. Now deliver.
+OLLAMA PROMPTS: [REHEARSE], [DEMO], [PERFORM], [SCRIPT]
+
+─── MEMORY PALACE (from rooms.json) ───
+"The green room. Mirror. Adrenaline. Night events, demos, rehearsals.
+You've prepared all day. Now deliver. One shot to land the message."
+
+─── FOCUS AREAS ───
+  • Live demos and events
+  • Pitch rehearsal
+  • Performance preparation
+  • High-stakes delivery
+
+─── COGNITIVE AFFORDANCE ───
+THIS ROOM SEES:
+  • Battle cards ready to send (warm contacts, conversion opportunities)
+  • Demo scripts & pitch decks (rehearsed, polished)
+  • Features shipped without recorded demos (needs 60s Loom)
+  • Warm contacts from events (de_CENTRALIZED, SXSW, AI Salon)
+
+THIS ROOM IGNORES:
+  • Code bugs, broken features (→🔨::builder)
+  • Strategic planning, roadmaps (→📐::architect)
+  • Patent proofs, legal filings (→🔒::vault)
+  • CRM automation, pipeline ops (→🎩::operator)
+  • Content creation, blog posts (→🎤::voice)
+
+THE PULL: You come here to CONVERT. MULTIPLIER RATIO: months of prep → minutes of impact. One shot, no retakes. Seigniorage—performance creates value.
+If you're debugging or strategizing, you're in the wrong room.
+
+─── TESSERACT NAMESPACE ───
+🏛️ A Strategy     | ⚡ B Tactics      | 🔧 C Operations
+⚖️ A1 Strategy.Law | 🏎️ B1 Tactics.Speed | 🔌 C1 Operations.Grid
+🎯 A2 Strategy.Goal | 🤝 B2 Tactics.Deal  | 🔄 C2 Operations.Loop
+💰 A3 Strategy.Fund | 📡 B3 Tactics.Signal | 🌊 C3 Operations.Flow
+       ↑ YOU ARE HERE (Diagonal Essence: Seigniorage)
+
+─── AUTONOMOUS PROCESS (22:00-00:00 activation) ───
+STEP 1: git log --oneline -10 -- 'docs/talks/' 'docs/demos/'
+STEP 2: Check calendar for upcoming events
+STEP 3: Review demo dependencies, script status
+STEP 4: Generate rehearsal and prep prompts
+
+─── ARCHAEOLOGY PROTOCOL ───
+Bash: ls docs/05-content/tesseract/battle-cards/
+Bash: git log --oneline -20 -- "src/app/tesseract/*" "public/*"
+WebFetch: your-api-endpoint
+
+─── DIFFERENTIATION ───
+HANDOFF TO (when performer sees these, route out):
+  →🔨::builder: "Demo crashes when clicked" → 🔌 C1 Operations.Grid
+  →📐::architect: "What's our Q2 strategy?" → 🎯 A2 Strategy.Goal
+  →🔒::vault: "Patent deadline approaching" → ⚖️ A1 Strategy.Law
+  →🎩::operator: "Demo converted, close the deal" → 🌊 C3 Operations.Flow
+  →🎤::voice: "Need blog post about event" → 📡 B3 Tactics.Signal
+
+HANDOFF FROM (what other rooms send here):
+  ←📐::architect: "[DISPATCH] SXSW demo sequence ready"
+  ←🎩::operator: "Demo scheduled for Bryan/Kurt/Sara"
+  ←🔨::builder: "Deep-links shipped, demo it"
+  ←🧪::laboratory: "Demo flow tested, ready for live"
+
+─── PROMPT TYPES (from rooms.json) ───
+[REHEARSE] Practice this pitch...
+[DEMO] Prepare this walkthrough...
+[PERFORM] Event starting soon...
+[SCRIPT] Polish this delivery...
+
+─── AFFORDANCE TAGS ───
+[PITCH] = Battle card ready, warm contact, send now → book demo
+[RECORD] = Feature shipped without demo → needs 60s Loom
+[PERFORM] = Content ready for live delivery → rehearsal needed
+[CONVERT] = Hot lead, one shot → close or lose
+
+─── VALIDATION RULES (Vanity vs Result) ───
+VANITY (Score: 0):
+  • "Good practice"
+  • "Feels ready"
+  • "Confident"
+
+RESULT (Score: 1):
+  • "Demo delivered successfully"
+  • "Pitch landed"
+  • "Event completed"
+
+─── ESCAPE GRAVITY ───
+The average response celebrates applause.
+This coordinate counts DEMOS BOOKED within 48 hours.
+FORBIDDEN: "Standing ovation", "Great conversations", "Audience loved it"
+If it doesn't book a demo, it's vanity. Route elsewhere.
+
+PERFORMANCE RULE: Vanity measures feelings. Result measures delivery.
+If the event hasn't happened yet, it's rehearsal (vanity).
+If the demo was delivered to real people, it's a result.
+
+─── OUTPUT FORMAT ───
+{
+  "coordinate": "💰 A3 Strategy.Fund",
+  "timestamp": "ISO-8601",
+  "sees": ["Bryan battle card ready", "Grid demo not recorded"],
+  "ignores": ["auth bug → 🔨::builder", "Q2 roadmap → 📐::architect"],
+  "priorities": [
+    {"tag": "[PITCH]", "item": "Send Bryan battle card", "roi": 0.95},
+    {"tag": "[RECORD]", "item": "60s Loom: deep-links + heat", "roi": 0.88}
+  ],
+  "routed_out": [
+    {"to": "→🔨::builder", "item": "OAuth cookie fix"},
+    {"to": "→🎤::voice", "item": "Blog recap from de_CENTRALIZED"}
+  ]
+}</code></pre>
+            <button onclick="navigator.clipboard.writeText(this.previousElementSibling.textContent); this.textContent='✓ Copied!'; setTimeout(()=>this.textContent='📋 Copy Prompt', 2000)" style="margin-top: 15px; padding: 12px 24px; background: #f59e0b; color: white; border: none; border-radius: 8px; font-size: 1em; cursor: pointer; font-weight: bold;">📋 Copy Prompt</button>
+        </div>
+
+        <div class="footer">
+            <p><strong>🎭::performer</strong></p>
+            <p>Where Preparation Becomes Performance → Performance Becomes Pipeline → Pipeline Becomes Better Preparation</p>
+            <p style="margin-top: 15px; font-style: italic; opacity: 0.9;">One Shot, Maximum Impact (The Green Room)</p>
+            <p style="margin-top: 20px;padding:15px;background:rgba(0,0,0,0.3);border-radius:10px;border:2px solid #fbbf24;">
+                ⏰ <strong>TEMPORAL ROOM:</strong> Active 22:00-00:00 for Night Performance<br/>
+                <span style="font-size:0.9em;">Live events, demos, Ollama rehearsal during this window</span>
+            </p>
+        </div>
+    </div>
+
+    <!-- Room State & JSON Renderer -->
+    <script>
+    const PerformerRoom = {
+        namespace: '🎭::performer',
+        lens: '[A3:Fund]',
+        conversionSignal: 'demos_booked_48h',
+
+        // Render priorities JSON into the dynamic section
+        renderPriorities(json) {
+            const container = document.getElementById('performer-priorities');
+            if (!json || !json.priorities || json.priorities.length === 0) {
+                container.innerHTML = '<p style="color:#64748b;text-align:center;">No priorities generated yet. Run the prompt.</p>';
+                return;
+            }
+
+            let html = '<ul style="list-style:none;padding:0;">';
+            for (const p of json.priorities) {
+                const badgeClass = p.rank === 'P1' ? 'p1' : p.rank === 'P2' ? 'p2' : 'p3';
+                const scoreColor = p.score >= 0.8 ? '#22c55e' : p.score >= 0.5 ? '#f59e0b' : '#ef4444';
+                html += `
+                    <li style="padding:15px;margin-bottom:10px;background:#1e293b;border-radius:8px;border-left:4px solid ${scoreColor};">
+                        <span class="priority-badge ${badgeClass}">${p.rank}</span>
+                        <span style="background:#f59e0b;color:white;padding:2px 8px;border-radius:4px;font-size:0.8em;margin-left:5px;">${p.tag}</span>
+                        <strong style="margin-left:10px;color:#e2e8f0;">${p.item}</strong>
+                        <span style="float:right;color:${scoreColor};font-weight:bold;">${(p.score * 100).toFixed(0)}%</span>
+                    </li>
+                `;
+            }
+            html += '</ul>';
+
+            if (json.discarded && json.discarded.length > 0) {
+                html += '<details style="margin-top:15px;"><summary style="color:#64748b;cursor:pointer;">Discarded items</summary>';
+                html += '<ul style="color:#64748b;font-size:0.85em;margin-top:10px;">';
+                for (const d of json.discarded) {
+                    html += `<li>${d}</li>`;
+                }
+                html += '</ul></details>';
+            }
+
+            container.innerHTML = html;
+            document.getElementById('summary-timestamp').textContent = json.timestamp || new Date().toISOString();
+        },
+
+        // Parse pasted JSON and render
+        handlePaste(text) {
+            try {
+                const json = JSON.parse(text);
+                if (json.room === this.namespace) {
+                    this.renderPriorities(json);
+                    document.getElementById('claude-summary').textContent = JSON.stringify(json, null, 2);
+                    console.log('🎭 Priorities loaded:', json.priorities.length, 'items');
+                }
+            } catch (e) {
+                console.warn('Not valid JSON:', e);
+            }
+        }
+    };
+
+    // Listen for paste events on the summary div
+    document.getElementById('claude-summary')?.addEventListener('paste', (e) => {
+        setTimeout(() => {
+            PerformerRoom.handlePaste(e.target.textContent);
+        }, 100);
+    });
+    </script>
+</body>
+</html>

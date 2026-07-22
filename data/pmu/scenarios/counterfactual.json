@@ -1,0 +1,29 @@
+{
+  "ts_note": "ABLATION CONVERGENCE · deterministic · LLM-free · held-out · both paths run the real walk",
+  "path_alpha": {
+    "label": "with reef",
+    "route_acc": 1,
+    "hat_acc": 1,
+    "rules_precision": 0.969,
+    "rules_recall": 0.556
+  },
+  "path_beta": {
+    "label": "ablated (no reef)",
+    "route_acc": 1,
+    "hat_acc": 0,
+    "rules_precision": 0,
+    "rules_recall": 0
+  },
+  "delta": {
+    "route": 0,
+    "hat": 1,
+    "rules_precision": 0.969,
+    "rules_recall": 0.556
+  },
+  "alpha_greek": {
+    "hat": "∞ (reef provides 100%)",
+    "rules": "∞ (reef provides 100%)",
+    "reads": "the reef contributes the ENTIRE rule+hat layer; the general model routes on its own but pulls 0 rules / 0 hats without the reef"
+  },
+  "story": "General intelligence finds the lane on its own (routing survives ablation). The REEF is what snaps it to the correct rules and playbook — 0→100% hats, 0→97%-precise rules — automatically, without prompting the model with all 181 rules. That gap is the product."
+}

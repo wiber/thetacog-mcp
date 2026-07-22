@@ -1,0 +1,94 @@
+ThetaCog MCP — DUAL LICENSE
+Copyright (c) 2026 Elias Moosman / ThetaDriven Inc.
+
+This project is dual-licensed. The SOFTWARE is open (MIT, Part A). The FINANCIAL
+INSTRUMENT layer built on its receipts is reserved (Part B). The measurement is
+free; the instrument is licensed. Oracle, not host.
+
+════════════════════════════════════════════════════════════════════════════════
+PART A — THE SOFTWARE (MIT License)
+════════════════════════════════════════════════════════════════════════════════
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+════════════════════════════════════════════════════════════════════════════════
+PART B — THE HOUSE INSTRUMENT LICENSE (reserved, commercial)
+════════════════════════════════════════════════════════════════════════════════
+
+The MIT grant in Part A covers the Software: the ballistic walk, the reef, the
+144-anchor lattice, the placement/drift receipts, and the demos. Run them, fork
+them, sell software built on them — freely.
+
+What Part A does NOT grant, and what is EXPRESSLY RESERVED to ThetaDriven Inc.,
+is the right to originate, price, underwrite, settle, clear, list, or sell any
+FINANCIAL INSTRUMENT whose trigger, exclusion, premium, coverage, or settlement
+references a ThetaCog placement or drift receipt — including without limitation:
+
+  • insurance or reinsurance policies (AI-liability, scope-breach exclusions,
+    affirmative AI cover, silent-AI riders);
+  • surety, fidelity, or performance BONDS keyed to an agent staying in-lane;
+  • OPTIONS, swaps, or other derivatives priced on the volatility of a placement
+    coordinate (the σ, the in-lane put, the strike);
+  • catastrophe or PARAMETRIC bonds triggered by an off-lane / rupture event;
+  • any attestation-fee, oracle, or clearing service that monetizes the receipts
+    as the settlement layer of such an instrument.
+
+To build, operate, or monetize any instrument in the above class you need a
+separate written commercial license from ThetaDriven Inc. — the "House
+Instrument License" — which carries a per-attestation fee. This is the fourth
+trust primitive (double-entry → blockchain → Black-Scholes → this): the decidable
+semantic slice is open so anyone can verify it; the instruments priced on top of
+it are the licensed asset.
+
+────────────────────────────────────────────────────────────────────────────────
+THE ATTESTATION UNIT AND THE STANDARD-OF-CARE BENCHMARK
+────────────────────────────────────────────────────────────────────────────────
+
+The commercial unit is the AGENT-YEAR: USD $20, billed annually, per agent.
+
+One agent-year covers up to 10,000 attestations. That ceiling is not arbitrary —
+it is one REEF EPOCH: the 144 × 144 placement lattice holds 20,736 coordinates,
+and responsible fill is capped at 70% (≈ 14,500 distinguishable placements) before
+the grid saturates. 10,000 sits under that ceiling with headroom; when a reef
+saturates, the epoch rolls to the next agent-year unit. Price therefore scales
+with raw throughput — a busier agent consumes more agent-year units — at zero
+marginal hosting cost, because the instrument runs air-gapped on the licensee's
+own silicon.
+
+At $20 per 10,000 attestations, deterministic attribution costs $0.002 — two-
+tenths of a cent — per insurable decision: a signed, re-runnable record of WHERE
+each decision landed, provable on the licensee's own hardware. (WHETHER a decision
+was correct stays undecidable (Rice); this license makes no such claim. Only the
+placement — the WHERE — is attested.) The standard is open-source (Part A),
+deployable today, and priced at a rounding error on a single hour of the agent's
+output. What a reasonable operator does with a safeguard that is cheap, available,
+and working is a question the licensee's own counsel is equipped to answer.
+
+Where an instrument (Part B) references these attestations, coverage may be
+conditioned on the insured maintaining attestation on covered agents; a carrier
+may also acquire agent-year units on an insured's behalf and bundle them into the
+premium. Such arrangements are governed by the separate House Instrument License.
+
+Patent pending — USPTO Application 19/637,714 (inventor: Elias Moosman).
+Commercial / instrument licensing: elias@thetadriven.com
+
+NOTE: This dual-license summary is a plain-language statement of intent, not
+legal advice; obtain counsel review before commercial reliance. Where Part A
+and Part B appear to conflict, Part A (MIT) governs the SOFTWARE and Part B
+governs the INSTRUMENT layer; they are complementary, not overlapping.

@@ -1,0 +1,27 @@
+#!/bin/bash
+# ThetaCog README-as-spec governor — ADVISORY pre-push (installed by `npx thetacog-mcp init-hooks`).
+#
+# The README is the SPEC. On every push this runs the LLM-free ballistic PMU walk comparing the
+# README (intent) against the pushed code (reality). It NEVER blocks — the push always goes through.
+# On a RUPTURE (code drifted from the spec past tolerance) it prints a "get to work" investigation
+# prompt an onboard LLM can act on: is the spec stale, or did the code overreach?
+#
+# Two-stage agentic governor: fast deterministic measurement points at the map; the heavy LLM tells
+# the why. Zero friction, and open drift investigations become a countable Truth-Debt number.
+set -uo pipefail
+ROOT="$(git rev-parse --show-toplevel 2>/dev/null || echo .)"
+cd "$ROOT" || exit 0
+
+# Only when code changed in the push range — bounded, fast (~1s chip walk), never the LLM path.
+RANGE="$(git diff --name-only @{u}..HEAD 2>/dev/null || true)"
+printf '%s\n' "$RANGE" | grep -qE '\.(mjs|js|ts|tsx|jsx|py|rs|sh|sol)$' || exit 0
+
+# Detached so the push NEVER stalls; findings + the get-to-work prompt land in .thetacog/prepush.log.
+( nohup bash -c '
+    cd "'"$ROOT"'" || exit 0
+    mkdir -p .thetacog
+    echo "── README-as-spec drift ($(date -u +%FT%TZ)) ──" >> .thetacog/prepush.log
+    npx --no-install thetacog-mcp spec-drift >> .thetacog/prepush.log 2>&1 || true
+  ' >/dev/null 2>&1 & ) ; disown 2>/dev/null || true
+
+exit 0

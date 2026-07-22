@@ -1,0 +1,36 @@
+{
+  "artifact": "thetacog-attestation-receipt",
+  "receipt_kind": "two-party-attestation",
+  "job_id": "demo",
+  "reef_commitment": "1d5514be576dd51040ceecf3bb781f158ead22bc14babb825dba30e4edc2eb5a",
+  "payload_sha256": "68d472545e175d720cac0b172637e71302d9d9929380ed3542aee208a381e11b",
+  "submitter_pubkey": "931ada436fc063d542248834631f4d7c10ef3e7c6504486444917ac0fce68cdc",
+  "addressed_to": "16dcd2919490a13dea079b53bfdfe6667fbc1989fab6745cb212287b70a285c1",
+  "authorized_cells": [
+    "A",
+    "A1",
+    "A2"
+  ],
+  "verdict": "MATCH",
+  "inner_verdict": "IN_ROLE",
+  "authoritative_cell": "A",
+  "gzip_witness": {
+    "cell": "A",
+    "sigma": 2.5417554438133276,
+    "ncd_margin": 0.001262626262626243,
+    "agreement": "GZIP_ONLY"
+  },
+  "threshold": 2,
+  "host_attestation": {
+    "daemon_sha256": "b409b4c1dedd815ba2627d96608c8fbe454d63b045fb1033a137b3008261630a",
+    "daemon_present": true,
+    "node": "v20.20.0",
+    "platform": "darwin/arm64",
+    "gate_ms": 206.010916
+  },
+  "inner_receipt_id": "a2d4811f-19a7-4f16-81a7-18b0062a59a9",
+  "oracle": "thetacog pmu gzip-NCD → 144×144 lattice → ballistic walk",
+  "pubkey_hex": "fc0fb4d5709e3a763c3b794bf8be039fecc8786f78fd1143ff0172553875f139",
+  "sig_hex": "08307150c884e8bc7cd68b048e660dec8e23dffd5f3a559c3f1b61c0de4ff10e48590cb5b8bd21423ac9342c06503d091231bb6b1607b7f2a08dcd2c1ebcd402",
+  "sha256": "eda805d33a851dc33f02e73ea023e33c94893cdb144ab2dbf486ee7317b62f04"
+}

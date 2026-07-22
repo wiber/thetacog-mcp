@@ -1,0 +1,301 @@
+{
+ "pinned_at": "2026-07-19T21:23:17.946Z",
+ "note": "ratchet floor v4 — CAUSE: HA-1, the first AUTONOMOUS harvest cycle (commit 7bbd30cff, no session trailer, sealed HA-1): +38 vocab +21 derived +1 anchor −2 evictions from the C1 adjudication (21 reef-missing seeded, 26 qwen trap-mislabels discarded, 4 over-broad). Constitution: F1 0.797→0.879, battery 22/22.",
+ "prior_floor": {
+  "pinned_at": "2026-07-19T21:08:18.975Z",
+  "f1": 0.797
+ },
+ "trap_set_version": 1,
+ "picker": {
+  "f1": 0.879,
+  "source": "harvest-accept gate run on HA-1 commit 7bbd30cff (defaults vector), trap-set v1"
+ },
+ "fn_attribution": {
+  "routed_away": 23,
+  "ranked_out": 0,
+  "source": "same sweep — was 54/1; S2 healed 31 routing misses and ALL sorter misses"
+ },
+ "routing_battery": {
+  "train_pct": 100,
+  "held_out_pct": 100,
+  "n": 22,
+  "source": "post-boundary-lock battery re-run (Φ_held healed 2→0)"
+ },
+ "seeded_heal_floor": {
+  "healed_min": 25,
+  "source": "tests/lens/s2-boundary-lock.test.mjs rate assertion (measured >=25 of 55 seeded prompts route home + surface rule)"
+ },
+ "e0": {
+  "keyword_routed_away": 23,
+  "heat_routed_away": 87,
+  "cc_funnel_hits": 81,
+  "verdict": "funnel holds — inversion waits on SLICE density (E1), re-run after; keyword router remains primary",
+  "source": "lens-e0.mjs runs T43 (baseline) + T44 (post-S2), sealed on the flight tape"
+ },
+ "grader_validation": {
+  "separated": 4,
+  "n": 5,
+  "source": "convergence sweep, designed-verdict planted pairs"
+ },
+ "walk_collapse_reference": {
+  "payload": "0005893e4",
+  "level0_hops": 2,
+  "target_slice_hops": 100,
+  "source": "docs/architecture/reef-grip-walk-collapse-2026-07-04.md; P3"
+ },
+ "reef_mass": {
+  "cells": 144,
+  "chars": 202419,
+  "min_cell": 671,
+  "source": "data/pmu/snippet-library-144.json, REEF GATE enforced"
+ },
+ "banks": {
+  "lanes_seeded": 7,
+  "broken": 0,
+  "source": "lens-reef.json d.specs, tape-health broken-banks"
+ },
+ "sentinel_classes_held": 13,
+ "e1": {
+  "decided": "NO-GO — depth-1 pinned",
+  "p1_contrast": 0.825,
+  "p2_lite_hit3": 0.104,
+  "p3_slice_hops": 4,
+  "level0_hops_now": 39,
+  "mechanism": "batch-synthesis homogeneity (blobby sub-well); E1-b scheduled with harvest-accumulated content",
+  "source": "e1-slice-walk.mjs, sealed E1-1"
+ },
+ "telemetry_contract": {
+  "live": [
+   "receipt (prompt-lens 🛰️ line, guarded)",
+   "tape (T43 sealed walk block)",
+   "page (chips)"
+  ],
+  "keys": 6,
+  "source": "tests/lens/telemetry-contract.test.mjs"
+ },
+ "harvest": {
+  "auto_revert_proven": "plant 406b09177 → revert e2cfc3ab8, reef restored, post-revert sweep 0.797",
+  "gate": "scripts/pmu/harvest-accept.mjs"
+ },
+ "dsigma_baseline": {
+  "pinned_at": "2026-07-19T21:08:18.975Z",
+  "n": 22,
+  "mean": -0.1391,
+  "min": -0.1666,
+  "min_prompt": "this person has never heard from us, add their add",
+  "min_sibling": "payments",
+  "lowest3": [
+   {
+    "p": "this person has never heard from us, add their add",
+    "m": -0.1666,
+    "sib": "payments"
+   },
+   {
+    "p": "warm-intro request to Jurgen so he can connect me ",
+    "m": -0.1628,
+    "sib": "payments"
+   },
+   {
+    "p": "ask Priya for a warm introduction to the risk offi",
+    "m": -0.162,
+    "sib": "voice-prompt"
+   }
+  ],
+  "source": "C2 pre-step (spec §9.3b) — battery Δσ via lensPrompt telemetry; the near-miss harvest pushes MIN and MEAN up from here"
+ },
+ "dsigma_trend": [
+  {
+   "measured_at": "2026-07-19T21:23:17.946Z",
+   "mean": -0.1399,
+   "min": -0.1671,
+   "vs_baseline": {
+    "mean_delta": -0.0008,
+    "min_delta": -0.0005
+   }
+  }
+ ],
+ "dsigma_baseline_v2": {
+  "metric": "v2-clamped-800",
+  "pinned_at": "2026-07-19T21:28:53.712Z",
+  "n": 22,
+  "mean": -0.0836,
+  "min": -0.1099,
+  "min_prompt": "compose the follow-up note to the reinsurer who al",
+  "min_sibling": "payments",
+  "lowest3": [
+   {
+    "prompt": "compose the follow-up note to the reinsurer who al",
+    "margin": -0.1099,
+    "sib": "payments",
+    "domain": "comms-email"
+   },
+   {
+    "prompt": "draft the reply to the cedant carrying our propert",
+    "margin": -0.0997,
+    "sib": "payments",
+    "domain": "comms-email"
+   },
+   {
+    "prompt": "answer the carrier that already covers our AI liab",
+    "margin": -0.0937,
+    "sib": "payments",
+    "domain": "comms-email"
+   }
+  ],
+  "note": "metric v2 re-baseline (small-lane length asymmetry fixed by 800ch clamp); v1 baseline retained above for the record; trends never mix metric versions"
+ },
+ "dsigma_trend_v2": [
+  {
+   "measured_at": "2026-07-19T21:31:40.388Z",
+   "cause": "HA-2 sibling-push (3 low-margin comms rows, +stems +derived)",
+   "mean": -0.0809,
+   "min": -0.0972,
+   "vs_v2_baseline": {
+    "mean_delta": 0.0027,
+    "min_delta": 0.0127
+   }
+  }
+ ],
+ "e1b_threshold": {
+  "re_pinned_at": "2026-07-19T21:32:19.475Z",
+  "note": "E1-b threshold RE-PINNED ON DATA-DRIVEN FRICTION — with the mechanism CORRECTED by measurement: the synthetic well diversity (0.7839) EXCEEDS level-0 (0.7682), so blobbiness-BETWEEN cells was NOT the failure; the failure was INCOHERENCE-WITHIN (P1 held-out halves: own-cell C=0.825 < 1 — batch-authored cells are grab-bags whose halves do not self-compress). The organic accumulation gate is therefore P1-LITE SELF-COHERENCE (held-out C > 1.1) as PRIMARY, diversity-vs-level0 as secondary. Run P1-lite before any full P-run is spent.",
+  "diversity_ref_level0": 0.7682,
+  "tolerance": "within 10% (>= 0.6914)",
+  "failed_synthetic_well": {
+   "diversity": 0.7839,
+   "p1_contrast": 0.825,
+   "verdict": "quarantined as reference-only; organic accumulation starts at 0"
+  },
+  "organic_target": {
+   "chars": 30000,
+   "source": "live traffic + calibration misses via harvest appends + reef-miner extracts (extractive law)"
+  },
+  "primary_gate": {
+   "metric": "P1-lite held-out self-coherence C",
+   "floor": 1.1,
+   "measured_failure": 0.825
+  }
+ },
+ "phi_held_explicit": {
+  "value": 0,
+  "source": "battery 22/22 across HA-1 + HA-2 gates (held-out 14/14 — Φ_held flat, C1 clause confirmed)"
+ },
+ "intake": {
+  "note": "THE INTAKE RATCHET (2026-07-20). Floors only rise. Measured after the stratified-intake rebuild; the prior narrow intake read 40 commits + ~33 doc files + 40 script comment blocks, front-truncated, identical every tick.",
+  "corpus_doc_files_min": 300,
+  "corpus_code_files_min": 1500,
+  "scored_candidates_min": 120,
+  "commit_window": 600,
+  "source": "scripts/pmu/reef-miner.mjs stratified intake; measured ticks 5-7 → doc 351 · code 1605 · scored 189-240 · novelty_median 0.770-0.784",
+  "curation": "SIGNAL_DIRS only (docs/architecture|pmu|ops|strategy|incidents + scripts/**); NOISE_RE excludes crm|outreach|comms|leads|contacts|newsletter|book — measured: an uncurated docs/** walk made the novelty ranker surface LinkedIn contact rows",
+  "novelty": "gzip-NCD min-vs-per-domain-text, used SUBTRACTIVELY (drop most-redundant quartile), never as the ranking key — ranking by novelty maximizes distance from the reef and selects off-topic noise"
+ },
+ "efficiency": {
+  "note": "THE EFFICIENCY RATCHET (2026-07-20). Placement efficiency = applied / (applied + burned). Floors only rise. The supply-driven miner measured 3.35% (9 applied vs 260 burned at capacity over 43 ticks) — it aimed at full lanes because that is where the repo's text mass sits. reef-demand.mjs inverts this: score lanes by starvation x importance, hunt with the target's own vocabulary, pick by LOWEST gzip-NCD (fit). Every point of this number is reclaimed compute.",
+  "placement_efficiency_pct_floor": 3.54,
+  "measured_applied": 14,
+  "measured_burned": 381,
+  "sample_ticks": 43,
+  "baseline_regime": "supply-driven (reef-miner alone)",
+  "target": "demand-driven (reef-demand.mjs) — the ceiling is 100%: every write fills a verified void",
+  "how_to_measure": "grep 'DROPPED' .thetacog/reef-loop.log → applied/(applied+burned); guarded by tests/pmu-simulator/efficiency-ratchet.test.mjs"
+ },
+ "yield": {
+  "note": "THE YIELD RATCHET (2026-07-20). Three numbers, and the hierarchy is the point — each alone is gameable, which is why the PRIMARY is the product.",
+  "primary": {
+   "metric": "yield_quality = target_demand_score x (1 - winning_fit_ncd)",
+   "why_primary": "It is the only one that cannot be gamed from either end. Hit rate alone is gamed by writing nothing (no burns). Yield-quality-without-demand is gamed by refilling one easy cell forever. The PRODUCT punishes both: a starved cell with no material scores low (bad fit), and a perfectly-fitting passage for a cell nobody needs scores low (low demand).",
+   "floor": 0.3919,
+   "floor_provisional": false,
+   "blocks": false,
+   "blocks_why": "nothing gates on it yet — I4 A/B and I5 UI read it. It becomes blocking when the A/B lands, not before: a floor that gates nothing cannot claim to be enforced.",
+   "operator": ">=",
+   "width": 8,
+   "width_why": "yield is width-dependent (measured: 0.329@w1 0.398@w3 0.529@w5). A floor is only comparable within its width — the earlier 0.676 vs 0.33 alarm was a w8 floor read against w3 ticks.",
+   "source": "data/pmu/shootout-ledger.ndjson rows where deflated===true && width===8 (recomputable by anyone)",
+   "window": "15 post-I2 width-8 ticks",
+   "distinct_samples": 15,
+   "observed_min": 0.3919,
+   "observed_max": 0.8261,
+   "would_have_refused": 0,
+   "superseded": 0.7725,
+   "superseded_why": "0.7725 was pinned on the pre-I2 fixed point: the demand engine returned the identical winner every tick, so 35 readings carried 2 distinct values — effective n=1. Doctrine 5: re-derive on regime change, old floors describe a system that no longer exists. I2 broke the fixed point and the regime changed.",
+   "doctrine": "pinned at the OBSERVED MINIMUM over the window (never the max — a max-pinned floor refuses the very next cycle), with >=5 DISTINCT values behind it"
+  },
+  "secondary": {
+   "metric": "hit_rate = applied / (applied + burned)",
+   "why": "measures AIMING — it collapses when the loop writes into full cells. This is the 3.54% number the supply-driven regime earned.",
+   "floor": 3.54
+  },
+  "diagnostic": {
+   "metric": "proposals_applied_per_tick",
+   "why": "throughput. Deliberately NOT a floor: a tick that honestly writes nothing (no target under the fit ceiling) is correct behaviour, and flooring throughput would incentivise forced fills — the exact defect being repaired."
+  },
+  "width_is_measured_not_guessed": {
+   "measured_2026_07_20": [
+    {
+     "width": 1,
+     "ms": 515,
+     "fit": 0.9111,
+     "yield_quality": 0.329
+    },
+    {
+     "width": 3,
+     "ms": 995,
+     "fit": 0.891,
+     "yield_quality": 0.398
+    },
+    {
+     "width": 5,
+     "ms": 1991,
+     "fit": 0.8406,
+     "yield_quality": 0.529
+    },
+    {
+     "width": 8,
+     "ms": 2807,
+     "fit": 0.7563,
+     "yield_quality": 0.7725
+    }
+   ],
+   "reading": "~350ms per additional target; fit and yield_quality both improve MONOTONICALLY through width 8. Cost is <10% of a 26-75s tick, so width is bounded by demand-drift, never by compute. Width may be ANY integer — 2 and 4 are as valid as 3 and 5. Re-measure as the reef fills: the optimum moves narrower once starved cells finally have supply.",
+   "decision_path_is_on_the_tape": "data/pmu/shootout-ledger.ndjson records every contender, its demand score, best fit, and the runners-up' material — so 'why did tick N fill X and not Y' stays answerable, and a later tick can carry over a close second instead of rediscovering it."
+  },
+  "PRECISION_DOCTRINE": {
+   "note": "How a floor earns the right to be a floor. Written 2026-07-20 after catching that yield_quality 0.7725 was pinned on the MAX of a DEGENERATE sample (2 distinct values, all from a fixed-point run where the winner never changed — effective n=1). The same session had already established the opposite rule for F1: advance to the observed MIN, never the max.",
+   "rules": [
+    "1. PIN THE OBSERVED MINIMUM over the window, never the maximum. A max-pinned floor refuses the very next cycle.",
+    "2. COUNT DISTINCT VALUES, not samples. 35 identical readings from a fixed point is n=1. A floor needs >=5 DISTINCT observations before it is anything but an estimate.",
+    "3. EVERY FLOOR CARRIES ITS PROVENANCE: metric · source artifact (recomputable) · window size · distinct-sample count · comparison operator · what happens on breach (block vs advisory).",
+    "4. A FLOOR BELOW ITS DISTINCT-SAMPLE THRESHOLD IS MARKED provisional:true AND MUST NOT BLOCK — it reports as an advisory until it earns its sample.",
+    "5. RE-DERIVE, DO NOT INHERIT. When the regime changes (supply-driven -> demand-driven), old floors describe a system that no longer exists. Re-measure or mark stale."
+   ],
+   "applied_now": "yield_quality demoted to provisional (2 distinct values from a degenerate run). It reports; it does not block. Re-pin at the observed MIN once I2 breaks the fixed point and >=5 distinct winners have been observed."
+  },
+  "cost": {
+   "metric": "neutral_bytes_per_accept = reef byte growth per accepted cycle whose capability delta (dF1 + derived + anchors) is zero",
+   "floor": 700,
+   "operator": "<=",
+   "floor_provenance": "measured offending rate 10,882 bytes / 12 neutral accepts = 907 bytes per neutral accept; 700 sits below the offending regime and above the healthy regime's noise (an accept that moves capability is exempt — the ceiling prices NEUTRAL mass only)",
+   "blocks": false,
+   "blocks_why": "advisory first, mirroring how yield.primary started — a cost gate that has never been seen to fire correctly should not block on day one; promote to blocking after it has flagged one real accumulation and zero false positives",
+   "seated_at": "2026-07-20",
+   "seated_from": "data/pmu/yield-cost-proposal.json (the spec §9 M3 packet, emailed 2026-07-20T17:10Z) — seated under the operator's /goal finish-the-board directive; the floor field carries the ceiling value, direction in the operator",
+   "source": "tape-health self-audit-usefulness firing 2026-07-20; spec §5 decision 3; spec §9 M3"
+  }
+ },
+ "selectors": {
+  "metric": "count of selectors that rank candidate material without consulting attempt history",
+  "source": "node scripts/pmu/selector-census.mjs --json (structural discovery, no list)",
+  "memoryless_debt_max": 5,
+  "operator": "<= (one-way: the debt may only SHRINK)",
+  "breach_behaviour": "BLOCKS — a count above the pin means either a new memoryless selector shipped or a debt tag was deleted without wiring the selector",
+  "undeclared_max": 0,
+  "undeclared_breach": "BLOCKS — an undeclared memoryless selector is an incident, never an advisory",
+  "pinned_at": "2026-07-20",
+  "provenance": "the census first run discovered 7 selectors; 2 were wired by I2, 5 carry an at-site // @selector: memoryless-debt tag. NONE of the 5 was on I2 hardcoded list of two — which is the argument for discovery over memory.",
+  "why_not_a_list": "the names live as tags in the files themselves (principle: no subsystem keeps an allowlist of its own components). This pin is a COUNT, so it cannot become a roster that quietly grows.",
+  "guard": "tests/pmu-simulator/selector-census-discovers.test.mjs",
+  "tape": "docs/architecture/self-observation-law-spec.md §7 — the REASONING for each debt entry (what it does, which trap, what breaks if wired early). This pin is the GATE; that section is the TAPE. A gate may not be its own explanation."
+ }
+}

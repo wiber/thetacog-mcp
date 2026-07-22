@@ -1,0 +1,29 @@
+# .npmignore — the anti-re-leak denylist for `npm publish` (2026-07-11 incident).
+# The `files` whitelist ships data/ .thetacog/ docs/ so the demo is self-contained; THIS denies the
+# private subset within them so the tarball can never carry it again. Mirror of the mirror-to-public
+# denylist. Guarded by tests/ops/npm-pack-no-leak.test.mjs (npm pack must show ZERO private paths).
+
+# ── private telemetry / strategy / personal — NEVER publish ──
+.thetacog/cache/
+.thetacog/pmu/measurements/
+.thetacog/pmu/measure-history/
+.thetacog/comms/
+.thetacog/blog-mail/
+data/pmu/shortlex-children-candidate.json
+data/pmu/measure-history.ndjson
+data/pmu/measure-history.attestation.json
+data/pmu/pipeline/
+data/pmu/sigma-localize/
+data/pmu/study/
+docs/comms/
+docs/strategy/
+docs/outreach/
+docs/research/
+
+# build artifacts / deps
+node_modules/
+pmu-rust/target/
+*.log
+.env
+.env.*
+.DS_Store

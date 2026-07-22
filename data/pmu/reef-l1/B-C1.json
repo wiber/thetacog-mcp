@@ -1,0 +1,911 @@
+{
+ "parent": "B,C1",
+ "lane": "pmu-reef",
+ "built_at": "2026-07-19T20:00:39.588Z",
+ "model": "qwen2.5:7b",
+ "note": "E1 sub-well (spec §5, slice terms §1.5) — 12 sub-axis definers + 144 dialect dumps drawn from the lane's own corpus. FROZEN once role-coherence + P1 pass; harvest may extend under the accept-criterion.",
+ "definers": {
+  "A": "Strategy is defined as the deliberate and thoughtful approach to addressing challenges or achieving goals within a specific context. In this lane, Strategy refers to the high-level plans and tactics used by developers to solve problems or implement features. It encompasses the decision-making process behind architectural choices, refactoring efforts, and the overall direction of code development. Symptom vocabulary includes phrases like \"optimization strategy,\" \"refinement approach,\" and \"implementation tactic.\"",
+  "B": "Tactics are defined as specific, targeted actions designed to address and mitigate identified risks or challenges within a project. These tactics are documented in scripts such as \"RiskMitigationPlan.js\" and \"ActionItems.js\". Each tactic includes invariant phrases like \"implement defensive coding practices,\" \"conduct regular code reviews,\" and \"establish clear communication protocols.\" Symptoms from the corpus, like \"unresolved bugs,\" \"misaligned team goals,\" and \"lack of documentation,\" are used to trigger and validate these tactics.",
+  "C": "Operations are the concrete actions and procedures that define how a system or process functions. In this context, Operations refer to specific script names like \"start_service,\" \"stop_service,\" \"restart_service,\" and \"check_status.\" These scripts ensure the reliable execution of tasks such as service management, logging, and health checks. The term encapsulates the invariant phrases related to maintenance, monitoring, and troubleshooting, which are crucial for the smooth operation of the system.",
+  "A1": "Strategy.Law defines the rules and principles that govern how strategies are formulated and executed within the organization. It emphasizes clear, consistent, and legally sound decision-making processes. Key elements include compliance with relevant laws and regulations, ensuring transparency in strategy development, and maintaining a robust framework for risk assessment and mitigation. This ensures that all strategic initiatives align not only with business objectives but also with ethical and legal standards.",
+  "A2": "Strategy.Goal is about identifying and prioritizing the most impactful changes or improvements that align with the overall project objectives. It involves analyzing symptoms to determine root causes and then formulating clear, actionable strategies to address them. The goal is to ensure that every proposed change contributes directly to the project's success by solving critical issues and enhancing key performance metrics.",
+  "A3": "Strategy.Fund is a sub-axis focused on financial planning and investment strategies for clients. It involves creating detailed plans that align with client goals, risk tolerance, and time horizons. Key terms include asset allocation, diversification, rebalancing, and retirement planning. The corpus reveals consistent mentions of \"investment portfolio,\" \"financial advisor,\" and \"long-term growth.\"",
+  "B1": "Speed is about rapidity and efficiency in execution. It involves quickening the pace of analysis without compromising on accuracy. The definer for B1.Tactics.Speed focuses on strategies to accelerate the walk's performance, ensuring that the process remains both fast and effective. This includes optimizing the heat distribution and follow mechanisms to enhance overall computational speed while maintaining the integrity of the semantic decomposition.",
+  "B2": "Tactics.Deal refers to the strategic maneuvers and negotiations involved in resolving conflicts or disputes between parties. It encompasses the art of compromise, negotiation, and finding mutually beneficial solutions. In the context of this lane, it involves identifying key points of contention, assessing the interests and positions of all parties, and crafting a deal that addresses these interests while maintaining balance and fairness. The term is often used in scenarios where direct confrontation is avoided in favor of diplomatic resolutions.",
+  "B3": "Tactics.Signal refers to the strategic use of signals and communications within a team or organization to coordinate actions and convey information. In this context, it involves scripts like \"SignalInit\" for initializing signal states, \"SignalBroadcast\" for sending out updates, and \"SignalAck\" for acknowledging receipt. The lane focuses on ensuring these tactics are consistent and reliable across different scenarios, with invariant phrases emphasizing clarity and timeliness in signal handling.",
+  "C1": "Operations.Grid is a sub-axis focused on grid-based systems and frameworks. It encompasses the design, implementation, and optimization of grid structures, including matrix operations, spatial data handling, and grid-based algorithms. Key terms include cell manipulation, coordinate transformations, and grid traversal techniques. Symptom vocabulary includes phrases like \"grid initialization,\" \"cell updates,\" and \"neighbor interactions.\"",
+  "C2": "Operations.Loop refers to constructs where code iterates over a sequence or collection. In this context, it includes loops like for, while, and foreach found in source files. Symptoms of Operations.Loop include variable index updates, condition checks for continuation, and repeated block executions. The lane focuses on identifying and quantifying these loop structures across the commit's changesets.",
+  "C3": "Operations.Flow refers to the systematic and structured approach to managing workflows within the company. It involves defining clear steps, roles, and responsibilities for tasks moving through various stages of a process. Key terms include \"pipeline execution,\" \"task orchestration,\" and \"flow control.\" Symptoms in this sub-axis include issues with task sequencing, handoff delays, and misaligned responsibilities among team members handling different parts of the workflow."
+ },
+ "cells": [
+  {
+   "coord": "A,A",
+   "row": "A",
+   "col": "A",
+   "snippet": "Strategy folded back on itself: the plan that decides how the lane plans. Before definer-walk-144.mjs runs, the meta-choice already happened — gzip-NCD over embedding-cosine as the canonical sensor, ShortLex over alphabetical ordering, the real recursive ballistic walk over any analytic shortcut. Revisiting this cell means re-litigating those foundational picks whenever a new lens (lens-e0.mjs, prompt-lens.mjs) proposes a rival substrate. The anti-rules ledger (AR-1 through AR-10) exists precisely to keep this reflexive strategy from drifting back toward the conventional box it is 90% similar to."
+  },
+  {
+   "coord": "A,B",
+   "row": "A",
+   "col": "B",
+   "snippet": "Strategy sets the ceiling tactics work inside: before harvest-accept.mjs decides which candidate statement clears the bar, the strategic layer already fixed the bar itself — F1 floor 0.797 in ratchet-floor.json. Tactics execute inside that floor; they cannot renegotiate it. When a tactical fix quietly loosens the floor to make a stuck lens pass, that is strategy being overridden by tactics — the failure mode this cell exists to name and refuse before it reaches a served tape."
+  },
+  {
+   "coord": "A,C",
+   "row": "A",
+   "col": "C",
+   "snippet": "Strategy chooses which script gets to run and in what order — whether harvest-accept.mjs fires before or after lens-convergence-sweep.mjs, whether attest-serve.mjs serves a sealed or a draft tape. Operations just executes; strategy decides the sequence and the gating invariant (Φ_held non-increasing) that operations must respect on every pass. A commit that reorders the pipeline without updating this strategic layer first is the classic drift: operations chugging along while the plan underneath has silently changed."
+  },
+  {
+   "coord": "A,A1",
+   "row": "A",
+   "col": "A1",
+   "snippet": "Strategy acting on Law means the plan must justify itself against the frozen invariants before it ships: does this walk-depth change still respect the 176-trap set, does it keep the receipt LLM-free, does Φ_held stay non-increasing. Goal-chasing cannot override Law's floor — F1 at or above 0.797 is non-negotiable, so any strategic pivot toward speed or coverage gets checked against ratchet-floor.json first. Strategy that ignores this cell is strategy that ships a regression disguised as progress."
+  },
+  {
+   "coord": "A,A2",
+   "row": "A",
+   "col": "A2",
+   "snippet": "The lane-wide plan sets which convergence target magnet-list.mjs and lens-convergence-sweep.mjs chase this cycle — closing routed-away misses in one sub-well, or driving a stuck lens off its sticky pivot in another. Strategy ranks the goals; goal-setting without strategy just chases whichever cell is loudest in the last tape-health run. This cell is where the operator's top-3-by-impact fence lives: strategy narrows an unbounded to-do list into the goals actually worth a ply budget this pass."
+  },
+  {
+   "coord": "A,A3",
+   "row": "A",
+   "col": "A3",
+   "snippet": "Strategy decides how much ply budget and wall-clock a convergence pass is allowed: the roughly 30ms per level, the 200ms depth-3 ceiling, how many hops definer-walk-144.mjs gets before the run is cut. Funding here is time and compute, not currency — spend it on the sub-well with the worst F1 gap, not the one that is easiest to touch. A strategy that funds every lens equally starves the ones actually failing the floor this cycle."
+  },
+  {
+   "coord": "A,B1",
+   "row": "A",
+   "col": "B1",
+   "snippet": "Strategy sets the speed tactics are allowed to buy at: is a faster walk worth the risk of a timing-hollow walk, a run so rushed it returns a shape with no real signal. The strategic call is which ms budget line survives contact with a real 12x12 grid pass — sort microseconds on the receipt, spawn-per-hop overhead as the anti-pattern to strategically forbid. Speed tactics that outrun the strategic budget produce a receipt nobody can trust."
+  },
+  {
+   "coord": "A,B2",
+   "row": "A",
+   "col": "B2",
+   "snippet": "Strategy decides where the accept/reject line in harvest-accept.mjs is allowed to move: how much the C,C funnel can loosen before a derived_statement that should not clear the floor slips through. The tactical deal-making, nudging a threshold to unstick a lens, only has room to operate inside the ratchet strategy already drew. Strategy that lets every deal renegotiate the floor turns the ratchet into a one-way slide instead of a one-way tightening."
+  },
+  {
+   "coord": "A,B3",
+   "row": "A",
+   "col": "B3",
+   "snippet": "Strategy determines what the seat-map and heat argmax are actually supposed to broadcast — a lit cell reporting real ballistic-walk propagation, not a hud-hollow boot faking a signal nothing backs. The strategic layer defines which signals are load-bearing versus cosmetic. A tactic that broadcasts a green seat-map without the strategy behind it having actually run the walk is exactly the LLM-combined-with-receipt mistake the lane refuses to repeat, ever again."
+  },
+  {
+   "coord": "A,C1",
+   "row": "A",
+   "col": "C1",
+   "snippet": "Strategy fixes the shape operations must grid against: the 144-cell, 12x12 role grammar, ShortLex-ordered on both axes, never a diagonal-only substitute, since a diagonal has no edges and the walk dies at ply 1. Every grid script — definer-walk-144.mjs, the boundary-anchor checks, the short-stem guard — inherits this strategic commitment to the full connectivity lattice. A grid operation that quietly collapses back to 12x12 blocks or an identity matrix has stopped honoring the strategy layer."
+  },
+  {
+   "coord": "A,C2",
+   "row": "A",
+   "col": "C2",
+   "snippet": "Strategy sets the loop's stopping condition: --max-depth as a time budget, not a correctness promise, and the row-to-column-to-row recursion, the definer-of-definer chain, as the only sanctioned loop shape. A loop that dies at 2 hops instead of propagating to ply 3 is a strategy failure surfacing as an operations symptom — the connectivity was not wired the way the strategy demanded. This cell is where 'the walk keeps going' gets decided before any code iterates."
+  },
+  {
+   "coord": "A,C3",
+   "row": "A",
+   "col": "C3",
+   "snippet": "Strategy shapes the pipeline flow's gating order: ingest before lens, lens before harvest-accept.mjs, accept before attest-serve.mjs, and never LLM before receipt. The C,C funnel's narrowing is a strategic choice about which derived_statements survive to the sealed ed25519 tape state, not an operational accident. A flow that reorders this sequence without a strategic sign-off is the reordering that lets an ungated statement reach a served tape."
+  },
+  {
+   "coord": "B,A",
+   "row": "B",
+   "col": "A",
+   "snippet": "Risk mitigation tactics acting on project risks to ensure proactive identification and management of potential issues."
+  },
+  {
+   "coord": "B,B",
+   "row": "B",
+   "col": "B",
+   "snippet": "Tactics acting on code quality metrics to maintain high standards through regular reviews and defensive coding practices."
+  },
+  {
+   "coord": "B,C",
+   "row": "B",
+   "col": "C",
+   "snippet": "Tactics acting on communication protocols to establish clear and effective channels for team collaboration and information sharing."
+  },
+  {
+   "coord": "B,A1",
+   "row": "B",
+   "col": "A1",
+   "snippet": "Risk mitigation tactics acting on unresolved bugs to prevent their escalation and ensure timely resolution."
+  },
+  {
+   "coord": "B,A2",
+   "row": "B",
+   "col": "A2",
+   "snippet": "Risk mitigation tactics acting on misaligned team goals to realign efforts and enhance project coherence."
+  },
+  {
+   "coord": "B,A3",
+   "row": "B",
+   "col": "A3",
+   "snippet": "Risk mitigation tactics acting on lack of documentation to improve transparency and maintainability through comprehensive documentation practices."
+  },
+  {
+   "coord": "B,B1",
+   "row": "B",
+   "col": "B1",
+   "snippet": "Tactics acting on code quality metrics to identify and address low-quality code segments for improvement."
+  },
+  {
+   "coord": "B,B2",
+   "row": "B",
+   "col": "B2",
+   "snippet": "Tactics acting on defensive coding practices to implement robust error handling and security measures in the codebase."
+  },
+  {
+   "coord": "B,B3",
+   "row": "B",
+   "col": "B3",
+   "snippet": "Tactics acting on regular code reviews to ensure code standards are met and knowledge is shared among team members."
+  },
+  {
+   "coord": "B,C1",
+   "row": "B",
+   "col": "C1",
+   "snippet": "Tactics acting on communication protocols to establish clear meeting schedules and reporting mechanisms."
+  },
+  {
+   "coord": "B,C2",
+   "row": "B",
+   "col": "C2",
+   "snippet": "Tactics acting on communication protocols to foster open and transparent communication channels for feedback and suggestions."
+  },
+  {
+   "coord": "B,C3",
+   "row": "B",
+   "col": "C3",
+   "snippet": "Tactics acting on communication protocols to define roles and responsibilities within the team for improved accountability."
+  },
+  {
+   "coord": "C,A",
+   "row": "C",
+   "col": "A",
+   "snippet": "Operations reports back up: what attest-serve.mjs actually served, what harvest-accept.mjs actually accepted, becomes the evidence strategy revises against next cycle. When tape-health.mjs flags a sentinel class breach, that is operations handing strategy a fact it cannot plan around — the F1 floor slipped, or a lens went routed-away. Strategy that ignores operational telemetry is planning blind; this cell is the feedback edge that keeps the plan honest against what the scripts actually did."
+  },
+  {
+   "coord": "C,B",
+   "row": "C",
+   "col": "B",
+   "snippet": "The scripts are where tactics get executed for real: harvest-accept.mjs applying the accept/reject call, prompt-lens.mjs re-running a lens after a tactical nudge. Operations does not originate the tactic, it carries it out and reports the result — did the F1 floor hold, did the ranked-out count drop. A tactic that only exists in a proposal and never runs through the actual script is not a tactic yet, just an intention sitting outside this cell."
+  },
+  {
+   "coord": "C,C",
+   "row": "C",
+   "col": "C",
+   "snippet": "Operations checking its own execution: does attest-serve.mjs read the immutable commit, git show sha:file, rather than the mutable tree, does the same commit render an identical receipt twice. This reflexive cell is the LLM-free guarantee made operational — tape-health.mjs sentinel classes exist to catch operations drifting from its own invariant, like a shared-cache clobber across concurrent renders. When operations stops checking operations, the empty-panel regression class comes back."
+  },
+  {
+   "coord": "C,A1",
+   "row": "C",
+   "col": "A1",
+   "snippet": "Every script run gets checked against the frozen invariants before it counts: did this pass keep F1 at or above 0.797, did Φ_held stay non-increasing, is the receipt still LLM-free. tape-health.mjs is the operational enforcement of Strategy.Law — it does not set the floor, it verifies operations did not quietly cross it. A script that runs clean but silently violates the law here is a false green, the exact failure mode the sentinel classes are built to catch."
+  },
+  {
+   "coord": "C,A2",
+   "row": "C",
+   "col": "A2",
+   "snippet": "magnet-list.mjs and lens-convergence-sweep.mjs are operations executing the prioritized goal: which cell gets the next ply budget, which routed-away miss gets chased first. The script does not choose the goal, it walks toward the one strategy already ranked. When operations chases a goal magnet-list.mjs did not surface — an easy cell instead of the highest-impact one — that is the WIP-limit tripwire this cell exists to guard: fix at most the top-3 by impact."
+  },
+  {
+   "coord": "C,A3",
+   "row": "C",
+   "col": "A3",
+   "snippet": "The ply budget and wall_s timer are operations spending what strategy funded: definer-walk-144.mjs consuming its --max-depth allowance, a run stopping at the 200ms depth-3 ceiling rather than running unbounded. Operations reports back the actual spend, wall_s in this file's own stats block, so the next funding decision is measured, not guessed. A script that blows through its budget without reporting is spending strategy's fund with no receipt attached."
+  },
+  {
+   "coord": "C,B1",
+   "row": "C",
+   "col": "B1",
+   "snippet": "The scripts carry the speed tactic: sort microseconds shaved off the receipt path, spawn-per-hop overhead eliminated by keeping the walk in-process rather than forking per level. Operations is where a speed tactic either proves out at real multi-million-walks-per-second on M-series hardware or reveals itself as a timing-hollow walk — fast because it skipped the connectivity lattice, not because it is actually efficient. Speed as a correctness signal only holds if operations measures it honestly."
+  },
+  {
+   "coord": "C,B2",
+   "row": "C",
+   "col": "B2",
+   "snippet": "harvest-accept.mjs is the operational site where the accept/reject deal actually executes: a derived_statement crosses the C,C funnel or it does not, based on the threshold tactics negotiated. Operations does not argue the deal, it applies it and logs the outcome — accepted, ranked-out, or routed-away. When the operational log disagrees with what the tactic claimed it would do, that mismatch is the tell that the deal was never actually wired into the script."
+  },
+  {
+   "coord": "C,B3",
+   "row": "C",
+   "col": "B3",
+   "snippet": "The HUD boot, the seat-map render, the heat argmax pixel — these are operations executing the signal tactic. A hud-hollow boot, where the display comes up but nothing real backs it, or a sticky pivot, where the signal stays lit on a cell the walk actually abandoned, are operational failures to honor the tactic's intent. This cell is where 'broadcast this state' either becomes a real, on-chip-grounded pixel or degrades into decoration nobody can verify."
+  },
+  {
+   "coord": "C,C1",
+   "row": "C",
+   "col": "C1",
+   "snippet": "The concrete grid pass: definer-walk-144.mjs walking the 144-cell, 12x12 role grammar, anchoring i to j on shared row or column axis, respecting boundary anchors and the short-stem guard so ShortLex blocks do not collide. This is operations doing operations — the script literally is the grid. A regression here shows up as the walk dying at 2 hops or the render falling back to a 12x12 block instead of the full lattice."
+  },
+  {
+   "coord": "C,C2",
+   "row": "C",
+   "col": "C2",
+   "snippet": "The loop is the walk itself running: row to the row each lit column points to, the transpose, then recurse, time-budgeted, never a JS BFS approximation or an analytic diffusion shortcut standing in for it. Operations executing operations.loop means definer-walk-144.mjs actually iterating ply over ply on silicon, and tape-health.mjs checking that the loop propagated — 990 of 20736 cells, 8 plies — rather than stalling, the ancestral spine staying connected instead of snapping at hop one."
+  },
+  {
+   "coord": "C,C3",
+   "row": "C",
+   "col": "C3",
+   "snippet": "The pipeline flow executing end to end: ingest, lens-e0.mjs, lens-convergence-sweep.mjs, harvest-accept.mjs, attest-serve.mjs, each stage handing derived_statements to the next through the C,C funnel until a sealed ed25519 tape state comes out the other end. Operations acting on its own flow means no stage runs out of order and no stage blocks — the hook-never-blocks discipline applied to the reef pipeline itself, detaching every call that is unbounded."
+  },
+  {
+   "coord": "A1,A",
+   "row": "A1",
+   "col": "A",
+   "snippet": "Law fixes the boundary strategy can plan inside: any lane-wide plan must keep F1 at or above 0.797, Φ_held non-increasing, and the receipt LLM-free, full stop. Strategy proposes; law disposes. A strategic pivot toward a faster walk or a looser accept threshold that would break one of these frozen invariants does not get to strategy's discretion — it is vetoed at this cell before magnet-list.mjs ever gets to rank it as a goal."
+  },
+  {
+   "coord": "A1,B",
+   "row": "A1",
+   "col": "B",
+   "snippet": "Law is what stops a tactic from quietly renegotiating the floor: harvest-accept.mjs can nudge a threshold, but it cannot drop F1 below 0.797 in ratchet-floor.json to make a stuck lens pass. Every tactical move — an accept, a reject, a re-rank — runs through this cell's check first. A tactic that ships without checking Law is exactly how a symptom patch, regenerate the output and skip the invariant, sneaks a regression past the ratchet."
+  },
+  {
+   "coord": "A1,C",
+   "row": "A1",
+   "col": "C",
+   "snippet": "tape-health.mjs is Law made operational: it does not decide policy, it verifies that whatever attest-serve.mjs served and harvest-accept.mjs accepted actually respects the frozen invariants — sentinel classes tripping on an F1 dip, a Φ_held increase, or a receipt that is not LLM-free. Operations that runs clean but never gets checked against this cell is unverified, not proven. The guard test is the only thing that reaches this invariant reliably, every single commit."
+  },
+  {
+   "coord": "A1,A1",
+   "row": "A1",
+   "col": "A1",
+   "snippet": "The 176-trap set and ratchet-floor.json checking themselves: does the frozen trap set still cover the failure modes it was built for, does the F1 floor need re-measuring rather than re-asserting. This is the ratchet's own ratchet — when a regression slips through, the guard for it gets added in the same commit as the fix, so Law grows monotonically and never regresses to a looser version of itself across the reef's history."
+  },
+  {
+   "coord": "A1,A2",
+   "row": "A1",
+   "col": "A2",
+   "snippet": "Law constrains which convergence goals magnet-list.mjs is even allowed to rank: a goal that would require crossing the F1 floor to hit is not a legitimate target, it is a trap. lens-convergence-sweep.mjs prioritizes inside the legal boundary, not around it. This cell is the check that keeps 'highest-impact goal' from secretly meaning 'the goal that requires breaking an invariant to look done' by this cycle's tape-health run."
+  },
+  {
+   "coord": "A1,A3",
+   "row": "A1",
+   "col": "A3",
+   "snippet": "Law caps how the ply budget can be spent: no amount of extra wall_s buys permission to skip the 176-trap set or run the receipt path through an LLM. Funding decisions, more depth, more hops, are legal only if the invariant checks still run inside the budget — a rushed pass that skips tape-health.mjs to save time has not saved anything, it has spent the budget on an unverified, untrustworthy result."
+  },
+  {
+   "coord": "A1,B1",
+   "row": "A1",
+   "col": "B1",
+   "snippet": "Speed tactics answer to Law first: the 200ms depth-3 ceiling and the roughly 30ms per-level cost are themselves invariants, not suggestions, because a walk that blows past them risks becoming a timing-hollow walk — fast but no longer the real recursive ballistic walk on the connectivity lattice. This cell is where 'make it faster' gets checked against 'is it still the real walk,' the anti-rules-ledger line against analytic shortcuts."
+  },
+  {
+   "coord": "A1,B2",
+   "row": "A1",
+   "col": "B2",
+   "snippet": "The accept/reject deal in harvest-accept.mjs is bounded by Law: the C,C funnel can narrow, but a derived_statement crossing it still has to clear F1 at or above 0.797. This cell is the non-negotiable clause in every tactical negotiation — the threshold can move within legal range, but the floor itself is off the table, which is exactly what 'ratchet, not slider' means in day-to-day practice."
+  },
+  {
+   "coord": "A1,B3",
+   "row": "A1",
+   "col": "B3",
+   "snippet": "A lit seat-map cell or a heat-argmax pixel is only legally allowed to broadcast if the underlying walk actually ran clean against the frozen invariants — a hud-hollow boot, signal without substance, is a Law violation, not just a cosmetic bug. This cell forces every signal tactic to answer whether the thing that lit up actually passed tape-health.mjs, refusing the sticky-pivot failure where a stale signal outlives the walk that produced it."
+  },
+  {
+   "coord": "A1,C1",
+   "row": "A1",
+   "col": "C1",
+   "snippet": "The 144-cell, 12x12 ShortLex grid is itself a legal commitment: boundary anchors and the short-stem guard exist because a grid that drifts back to a diagonal or a 12x12 block substrate has broken the invariant that connectivity, sharing a row or column axis, is what lets the walk propagate at all. This cell is where grid-shape regressions get caught before they masquerade as a normal render."
+  },
+  {
+   "coord": "A1,C2",
+   "row": "A1",
+   "col": "C2",
+   "snippet": "The recursive walk loop is legally required to be the real ballistic walk — never a sequential-loop approximation, never an unguided flood, never a weight-sorted ranking standing in for ply-decayed propagation. competence-walk-is-real.test.mjs is this cell's guard: it fails the build the moment the loop substitutes the conventional shortcut for the on-chip recursion the whole thesis depends on."
+  },
+  {
+   "coord": "A1,C3",
+   "row": "A1",
+   "col": "C3",
+   "snippet": "The pipeline flow's legal contract: no LLM on the receipt's critical path, ever, no matter how the flow gets refactored. receipt-is-llm-free.test.mjs is this cell enforced — it checks immutable-commit reads, no semanticReality field, and identical output on a repeat run of the same commit. A flow change that reintroduces qwen or ollama anywhere upstream of the panel violates this cell even if every other stage looks fine."
+  },
+  {
+   "coord": "A2,A",
+   "row": "A2",
+   "col": "A",
+   "snippet": "The convergence goal this cycle — closing a specific routed-away-miss cluster, or unsticking a lens stuck on a sticky pivot — is what narrows the lane-wide strategy into something actionable. Without a goal, strategy stays abstract; magnet-list.mjs's ranked target is what turns 'improve the reef' into 'fix sub-well B-C1's thin cells this pass.' This cell is the goal-to-plan handoff that keeps the strategic layer from staying purely aspirational."
+  },
+  {
+   "coord": "A2,B",
+   "row": "A2",
+   "col": "B",
+   "snippet": "The prioritized goal tells harvest-accept.mjs and the tactical layer where to spend the next accept/reject pass — which sub-well's F1 gap is worst, which cell's routed-away rate is climbing. Tactics without a goal just react to whatever surfaces last; tactics driven by this cell chase the highest-leverage target lens-convergence-sweep.mjs actually surfaced, not the loudest recent complaint from the last tape-health run."
+  },
+  {
+   "coord": "A2,C",
+   "row": "A2",
+   "col": "C",
+   "snippet": "The goal picks which script runs next: definer-walk-144.mjs re-walking a specific coordinate, or attest-serve.mjs re-serving a tape after a fix. Operations executes whatever goal magnet-list.mjs ranked highest; a script run with no goal behind it is busywork — this cell is what makes an operational pass targeted instead of a full, unfocused re-ingest across the whole reef."
+  },
+  {
+   "coord": "A2,A1",
+   "row": "A2",
+   "col": "A1",
+   "snippet": "A convergence goal has to prove it does not require crossing the floor to hit — the goal 'get this lens to converge' is only legitimate if it converges above F1 0.797, not by loosening the invariant. This cell is the check the operator runs before committing to a target: does the highest-impact goal magnet-list.mjs surfaced actually clear Law, or does it need a different approach entirely, a different lens."
+  },
+  {
+   "coord": "A2,A2",
+   "row": "A2",
+   "col": "A2",
+   "snippet": "Ranking the rankings: does magnet-list.mjs's own priority order still match what lens-convergence-sweep.mjs is finding, or has the target list gone stale relative to the latest tape-health run. This cell is where goal-drift gets caught — chasing yesterday's highest-impact cell after today's run surfaced a worse one is the reflexive failure this comparison exists to prevent, cycle over cycle."
+  },
+  {
+   "coord": "A2,A3",
+   "row": "A2",
+   "col": "A3",
+   "snippet": "The goal determines where the ply budget actually goes: a 108-cell thin-fill in one sub-well outranks a cosmetic pass elsewhere, so the wall_s gets spent there first. This cell is the WIP-limit fence in practice — fix at most the top-3 goals by impact, and let magnet-list.mjs's ranking, not convenience, decide which goal gets funded this cycle of the pipeline."
+  },
+  {
+   "coord": "A2,B1",
+   "row": "A2",
+   "col": "B1",
+   "snippet": "A high-priority goal does not earn a shortcut on speed — the walk toward it still has to respect the 200ms depth-3 ceiling and stay the real recursive walk, not an analytic diffusion collapsed to save time because the goal felt urgent. This cell is where 'this matters more' gets tested against 'so we can cut corners,' and the answer stays no, every single time."
+  },
+  {
+   "coord": "A2,B2",
+   "row": "A2",
+   "col": "B2",
+   "snippet": "The goal sets what harvest-accept.mjs is negotiating toward: accepting more derived_statements from the target sub-well without loosening the funnel elsewhere. This cell is where a legitimate priority, unstick this lens, can tip into an illegitimate deal, accept marginal statements just to hit the goal — the check that keeps convergence pressure from becoming floor erosion across the reef."
+  },
+  {
+   "coord": "A2,B3",
+   "row": "A2",
+   "col": "B3",
+   "snippet": "The goal decides what the seat-map should be broadcasting attention toward this cycle — which cell's heat argmax the operator should actually be watching. A signal tactic that highlights a low-priority cell while the ranked goal sits dark is a HUD misdirection, even if nothing is technically broken; this cell keeps the visible signal aligned with the actual convergence target chosen upstream."
+  },
+  {
+   "coord": "A2,C1",
+   "row": "A2",
+   "col": "C1",
+   "snippet": "The goal names the specific coordinate — a row,col pair like B,C1 — that definer-walk-144.mjs should re-walk, out of the full 144-cell lattice. Without this cell, a grid operation has no seed; magnet-list.mjs's ranked target is exactly the --start coord that turns an unguided full-grid pass into a targeted, bounded one that respects the time budget."
+  },
+  {
+   "coord": "A2,C2",
+   "row": "A2",
+   "col": "C2",
+   "snippet": "The goal sets how many plies the loop is worth running for this specific target — a high-priority cell earns the full --max-depth budget, a low-priority one gets cut short. This cell is where the time-budget knob on the recursive walk gets tuned per-goal rather than applied uniformly, so the ply decay lands where it actually matters most this cycle."
+  },
+  {
+   "coord": "A2,C3",
+   "row": "A2",
+   "col": "C3",
+   "snippet": "The goal determines which stage of the pipeline flow gets re-run: sometimes only harvest-accept.mjs needs to re-fire on a target sub-well, not the whole ingest-to-serve chain. This cell is the scoping decision — commit-scoped ingest, not whole-repo — applied to which flow stages actually need to move to hit the ranked convergence target this pass."
+  },
+  {
+   "coord": "A3,A",
+   "row": "A3",
+   "col": "A",
+   "snippet": "Strategy.Fund acting on Row.Definer means defining financial planning and investment strategies for clients. This involves creating detailed plans that align with client goals, risk tolerance, and time horizons using terms like 'investment portfolio' and 'financial advisor'."
+  },
+  {
+   "coord": "A3,B",
+   "row": "A3",
+   "col": "B",
+   "snippet": "Strategy.Fund acting on Column.Definer means specifying the scope and focus of financial planning services. This includes asset allocation, diversification, rebalancing, and retirement planning strategies."
+  },
+  {
+   "coord": "A3,C",
+   "row": "A3",
+   "col": "C",
+   "snippet": "Strategy.Fund acting on Cell.Definer means setting specific parameters for investment portfolios. This involves defining risk tolerance levels, time horizons, and long-term growth objectives using terms like 'asset allocation' and 'financial advisor'."
+  },
+  {
+   "coord": "A3,A1",
+   "row": "A3",
+   "col": "A1",
+   "snippet": "Strategy.Fund acting on Row.Definer (A) and Column.Definer (A1) means creating detailed financial plans that align with client goals. This includes defining investment strategies and risk management approaches."
+  },
+  {
+   "coord": "A3,A2",
+   "row": "A3",
+   "col": "A2",
+   "snippet": "Strategy.Fund acting on Row.Definer (A) and Column.Definer (A2) means specifying the scope of financial services provided to clients. This involves setting parameters for asset allocation, diversification, and rebalancing."
+  },
+  {
+   "coord": "A3,A3",
+   "row": "A3",
+   "col": "A3",
+   "snippet": "Strategy.Fund acting on Row.Definer (A) and Column.Definer (A3) means defining long-term growth objectives for investment portfolios. This includes creating detailed plans that align with client goals and risk tolerance levels."
+  },
+  {
+   "coord": "A3,B1",
+   "row": "A3",
+   "col": "B1",
+   "snippet": "Strategy.Fund acting on Row.Definer (B) and Column.Definer (B1) means focusing on the scope of financial planning services. This involves specifying the types of investments and strategies to be used in client portfolios."
+  },
+  {
+   "coord": "A3,B2",
+   "row": "A3",
+   "col": "B2",
+   "snippet": "Strategy.Fund acting on Row.Definer (B) and Column.Definer (B2) means defining the risk management approach for investment portfolios. This includes setting parameters for asset allocation, diversification, and rebalancing."
+  },
+  {
+   "coord": "A3,B3",
+   "row": "A3",
+   "col": "B3",
+   "snippet": "Strategy.Fund acting on Row.Definer (B) and Column.Definer (B3) means creating detailed plans that align with client goals and time horizons. This involves specifying the scope of financial services provided to clients."
+  },
+  {
+   "coord": "A3,C1",
+   "row": "A3",
+   "col": "C1",
+   "snippet": "Strategy.Fund acting on Row.Definer (C) and Column.Definer (C1) means setting specific parameters for investment portfolios. This includes defining risk tolerance levels, time horizons, and long-term growth objectives using terms like 'asset allocation' and 'financial advisor'."
+  },
+  {
+   "coord": "A3,C2",
+   "row": "A3",
+   "col": "C2",
+   "snippet": "Strategy.Fund acting on Row.Definer (C) and Column.Definer (C2) means specifying the scope of financial services provided to clients. This involves setting parameters for asset allocation, diversification, and rebalancing."
+  },
+  {
+   "coord": "A3,C3",
+   "row": "A3",
+   "col": "C3",
+   "snippet": "Strategy.Fund acting on Row.Definer (C) and Column.Definer (C3) means defining long-term growth objectives for investment portfolios. This includes creating detailed plans that align with client goals and risk tolerance levels."
+  },
+  {
+   "coord": "B1,A",
+   "row": "B1",
+   "col": "A",
+   "snippet": "Speed data feeds back into strategy: when a walk sustains real ballistic-walk throughput, north of 6M walks/sec on M-series, that is evidence the strategic choice — the real recursive walk over any analytic shortcut — is paying off, not just philosophically correct. A speed regression here is strategy's clearest signal that something quietly substituted the conventional shortcut back in, unnoticed."
+  },
+  {
+   "coord": "B1,B",
+   "row": "B1",
+   "col": "B",
+   "snippet": "Speed tactics have to earn their place among the other tactics: shaving spawn-per-hop overhead, keeping sort on the microsecond scale, staying in-process instead of forking per level. This cell is where a speed optimization gets weighed against what it costs elsewhere — a faster walk that skips a check tape-health.mjs relies on is not a net tactical win, just a faster wrong answer."
+  },
+  {
+   "coord": "B1,C",
+   "row": "B1",
+   "col": "C",
+   "snippet": "The roughly 30ms per-level cost and the 200ms depth-3 ceiling are operational facts definer-walk-144.mjs has to hit on every real run, not aspirational targets. This cell is where 'speed is a correctness signal' becomes measurable: a script clocking 21 seconds instead of milliseconds is not on the chip walk path at all, it has fallen onto the LLM or whole-repo-ingest path by mistake."
+  },
+  {
+   "coord": "B1,A1",
+   "row": "B1",
+   "col": "A1",
+   "snippet": "Speed cannot buy its way past Law: no ms budget justifies skipping the 176-trap set check or serving an unverified tape faster. This cell is the guardrail on 'make it faster' — the hook-never-blocks discipline, detach unbounded calls, keep bounded ones inline, is how speed and legal invariant-checking coexist without one eating the other's budget."
+  },
+  {
+   "coord": "B1,A2",
+   "row": "B1",
+   "col": "A2",
+   "snippet": "How fast a target cell converges affects whether it is worth ranking again next cycle — a cell that is slow to converge even with a full ply budget might signal a deeper connectivity gap, which is itself new information for magnet-list.mjs. This cell is speed data flowing back into which goals get prioritized, not just how they get executed once ranked."
+  },
+  {
+   "coord": "B1,A3",
+   "row": "B1",
+   "col": "A3",
+   "snippet": "Speed is what the ply budget actually buys: each level costs roughly 30ms, so the funded depth caps out around what the 200ms ceiling allows before the run gets cut. This cell is the direct exchange rate between Strategy.Fund's time allocation and how many hops of real recursive walk that allocation converts into, run after run."
+  },
+  {
+   "coord": "B1,B1",
+   "row": "B1",
+   "col": "B1",
+   "snippet": "Checking the speed tactic against itself across runs: is the same commit still rendering its receipt in the same ms band, or has a regression crept into the walk's per-level cost. This cell is the timing regression guard — speed that degrades silently is the first sign of a spawn-per-hop anti-pattern sneaking back into the pipeline unnoticed."
+  },
+  {
+   "coord": "B1,B2",
+   "row": "B1",
+   "col": "B2",
+   "snippet": "A fast walk still has to negotiate the same accept/reject threshold as a slow one — speed does not earn a looser deal in harvest-accept.mjs. This cell exists because it is tempting to let a quick pass wave things through on the assumption that a fast run is a clean run; the C,C funnel does not grant exceptions for velocity."
+  },
+  {
+   "coord": "B1,B3",
+   "row": "B1",
+   "col": "B3",
+   "snippet": "A fast walk that finishes before the HUD can render risks a hud-hollow boot — the signal lagging the substance because speed outran the display layer. This cell is where timing and broadcast have to stay synchronized: the seat-map should light up exactly when the walk that grounds it actually completed, not sooner and not with stale state left over."
+  },
+  {
+   "coord": "B1,C1",
+   "row": "B1",
+   "col": "C1",
+   "snippet": "Speed budgets pressing directly on the 144-cell, 12x12 grid: the level cost multiplies across ShortLex blocks, so a grid pass that is supposed to stay under the depth-3 ceiling has to keep per-hop overhead flat as the walk fans out across boundary anchors. Spawn-per-hop is the anti-pattern this cell exists to name — one process per cell instead of one recursive in-process walk."
+  },
+  {
+   "coord": "B1,C2",
+   "row": "B1",
+   "col": "C2",
+   "snippet": "The loop's per-iteration cost is what the ms budget is actually metering — each ply of the row-to-column-to-row recursion has to clear its slice of the 200ms ceiling or the walk gets cut before it propagates past 2 hops. This cell is where 'the walk dies early' gets diagnosed as a speed problem versus a connectivity problem."
+  },
+  {
+   "coord": "B1,C3",
+   "row": "B1",
+   "col": "C3",
+   "snippet": "Speed tactics applied to the pipeline flow: keeping ingest commit-scoped rather than whole-repo so the LLM stage never sits on the receipt's critical path, detaching every unbounded call so the hook never blocks a commit. This cell is the timing discipline that keeps the C,C funnel moving without a slow stage stalling the whole flow behind it."
+  },
+  {
+   "coord": "B2,A",
+   "row": "B2",
+   "col": "A",
+   "snippet": "Every accept/reject call harvest-accept.mjs makes is a small vote on strategy: consistently rejecting a certain failure shape tells the strategic layer where the sensor, gzip-NCD, or the walk depth needs rethinking. This cell is the aggregation point — individual deals, summed, become evidence for a strategic revision rather than staying isolated tactical calls buried in a log."
+  },
+  {
+   "coord": "B2,B",
+   "row": "B2",
+   "col": "B",
+   "snippet": "One deal's threshold interacts with the next — accepting a borderline derived_statement in one pass can shift what looks borderline in the next. This cell is where tactical consistency gets checked: is the accept/reject line stable across the C,C funnel's repeated passes, or is it drifting cell to cell in a way that would let ranked-out statements back in through a side door."
+  },
+  {
+   "coord": "B2,C",
+   "row": "B2",
+   "col": "C",
+   "snippet": "The deal only becomes real once harvest-accept.mjs actually executes it — logging an accept, a reject, or a ranked-out, against the actual F1 measurement from that run. This cell is where a negotiated threshold either holds up against real operational data or gets exposed as untested, since the script does not take the deal's word for it, it re-measures every candidate."
+  },
+  {
+   "coord": "B2,A1",
+   "row": "B2",
+   "col": "A1",
+   "snippet": "The deal has a hard ceiling it can never cross: F1 at or above 0.797 in ratchet-floor.json. This cell is the boundary condition on every negotiation — the accept threshold can tighten or loosen within legal range, but the moment a deal would require dropping the floor to make a stuck lens pass, the deal is void, not the law that governs it."
+  },
+  {
+   "coord": "B2,A2",
+   "row": "B2",
+   "col": "A2",
+   "snippet": "The deal's terms should track the ranked goal: if magnet-list.mjs says a specific sub-well is highest-impact, the accept/reject threshold there gets scrutinized harder, not looser, so convergence pressure does not quietly turn into rubber-stamping. This cell keeps 'we need this to pass' from becoming an implicit discount on the goal's own bar."
+  },
+  {
+   "coord": "B2,A3",
+   "row": "B2",
+   "col": "A3",
+   "snippet": "Every accepted derived_statement costs a share of the ply budget to verify — re-walking, re-checking tape-health.mjs. This cell is where the deal has to justify its cost: accepting marginal statements just to inflate a count spends funded compute on statements that do not move the F1 floor, a bad trade even when it is technically legal to make."
+  },
+  {
+   "coord": "B2,B1",
+   "row": "B2",
+   "col": "B1",
+   "snippet": "A fast pass does not get a looser deal, the mirror of the tactic on this axis, but the reverse also holds: a slow, careful pass does not automatically earn a tighter one either. This cell is where the deal's threshold stays independent of how quickly the walk that produced the candidate ran, keeping the negotiation about the statement's quality, not its timing."
+  },
+  {
+   "coord": "B2,B2",
+   "row": "B2",
+   "col": "B2",
+   "snippet": "Checking the negotiation against its own history: has the accept/reject threshold in harvest-accept.mjs quietly moved across recent runs without a corresponding change to ratchet-floor.json. This cell is the self-audit — a ratchet that only ever tightens is the contract; any loosening here, even accidental, is the regression the ledger exists to catch immediately."
+  },
+  {
+   "coord": "B2,B3",
+   "row": "B2",
+   "col": "B3",
+   "snippet": "A deal that closes should update the signal — a newly accepted statement should move the seat-map, not leave a stale heat argmax pointing at the old rejected state. This cell is where negotiation outcomes and broadcast state have to stay in sync, so an operator reading the HUD sees the actual current deal, not last cycle's stale result."
+  },
+  {
+   "coord": "B2,C1",
+   "row": "B2",
+   "col": "C1",
+   "snippet": "The deal is scoped to a specific cell in the 144-grid — accepting a derived_statement for coordinate B,C1 does not grant blanket clearance to its neighbors. This cell is the boundary-anchor discipline applied to negotiation: each ShortLex-addressed cell gets its own accept/reject call, never a batch approval that skips individual grid verification of the candidate."
+  },
+  {
+   "coord": "B2,C2",
+   "row": "B2",
+   "col": "C2",
+   "snippet": "The deal can only be struck once the loop has actually run far enough to produce real evidence — accepting a statement before the walk propagated past 2 hops is negotiating on incomplete information. This cell is where 'the loop has not finished' should block the deal from closing, not get treated as good enough to move forward on."
+  },
+  {
+   "coord": "B2,C3",
+   "row": "B2",
+   "col": "C3",
+   "snippet": "The deal is one gate inside the larger pipeline flow: accept here feeds the C,C funnel toward attest-serve.mjs, reject routes back for another lens pass. This cell is the flow-control consequence of the negotiation — a deal is not just a yes or no, it is a routing decision that determines which pipeline stage the derived_statement travels to next."
+  },
+  {
+   "coord": "B3,A",
+   "row": "B3",
+   "col": "A",
+   "snippet": "What the seat-map and heat argmax broadcast is strategy's only window into the walk without re-running it — the signal is the compressed report the strategic layer reads to decide what to fund next. A strategy that ignores this cell's output and re-derives everything from raw logs is throwing away the point of having a signal layer at all."
+  },
+  {
+   "coord": "B3,B",
+   "row": "B3",
+   "col": "B",
+   "snippet": "The signal tells tactics where to look: a lit cell on the seat-map is a candidate for harvest-accept.mjs's next pass, a dark one is a routed-away miss worth a targeted re-walk. This cell is the handoff from broadcast to action — tactics that ignore the signal and act on stale intuition instead are working blind, wasting a ply budget on the wrong cell."
+  },
+  {
+   "coord": "B3,C",
+   "row": "B3",
+   "col": "C",
+   "snippet": "attest-serve.mjs serves the signal state to whatever is watching — a HUD, a dashboard, an email panel — and this cell is where that serving has to be honest: no hud-hollow boot, no sticky pivot left glowing after the walk that lit it has moved on. Operations rendering a signal it cannot back with a real run is the failure this cell names directly."
+  },
+  {
+   "coord": "B3,A1",
+   "row": "B3",
+   "col": "A1",
+   "snippet": "A signal is only legally allowed to broadcast green if the run behind it actually cleared F1 at or above 0.797 and kept Φ_held non-increasing. This cell is the check against a decorative signal — one that looks converged on the HUD but was never verified against the frozen invariants, precisely the empty-panel failure class the receipt-is-LLM-free guard exists to prevent from recurring."
+  },
+  {
+   "coord": "B3,A2",
+   "row": "B3",
+   "col": "A2",
+   "snippet": "The signal's brightness should track the ranked goal — the highest-priority target from magnet-list.mjs ought to be the most visible cell on the seat-map, not buried under noise from lower-priority ones. This cell is where signal-to-noise gets tuned: too many cells lit dilutes the goal, too few misses a real convergence worth surfacing."
+  },
+  {
+   "coord": "B3,A3",
+   "row": "B3",
+   "col": "A3",
+   "snippet": "Signal rendering itself costs budget — a HUD boot, a seat-map refresh, an email panel render all draw on the same ply/wall_s allocation as the walk itself. This cell is where 'just show me the state' has to compete for funding against the walk that actually produces the state, and why the receipt path stays LLM-free: rendering cannot be allowed to blow the walk's budget."
+  },
+  {
+   "coord": "B3,B1",
+   "row": "B3",
+   "col": "B1",
+   "snippet": "A signal has to keep pace with the walk it represents or it becomes a timing-hollow display — bright before the underlying ply actually finished, or stuck on ply 2's state while the walk has already reached ply 5. This cell is the synchronization contract between how fast the walk runs and how fast the HUD is allowed to claim it ran."
+  },
+  {
+   "coord": "B3,B2",
+   "row": "B3",
+   "col": "B2",
+   "snippet": "A signal must reflect the current negotiated state, not a cached one from before the last accept/reject pass, the mirror of the tactic on this axis. This cell is the staleness check — a seat-map that still shows yesterday's deal after harvest-accept.mjs closed a new one is broadcasting a lie, even an unintentional one that misleads the operator."
+  },
+  {
+   "coord": "B3,B3",
+   "row": "B3",
+   "col": "B3",
+   "snippet": "Checking the broadcast against itself: does the same commit render the identical seat-map twice, the way the LLM-free receipt guarantee requires. A sticky pivot, a cell that stays lit on a stale coordinate after the walk abandoned it, is this cell's own failure mode, caught by comparing today's signal state against a clean re-render of the same immutable commit."
+  },
+  {
+   "coord": "B3,C1",
+   "row": "B3",
+   "col": "C1",
+   "snippet": "The seat-map is a direct render of the 144-cell, 12x12 grid — one pixel per ShortLex coordinate, heat argmax picking the brightest cell per row. This cell is where the signal's shape has to match the grid's actual shape: a 12x12-block render standing in for the full lattice is a banned substitute, not a stylistic choice the renderer gets to make."
+  },
+  {
+   "coord": "B3,C2",
+   "row": "B3",
+   "col": "C2",
+   "snippet": "The signal updates once per ply as the loop iterates — this cell is where the HUD's frame rate has to track the walk's actual recursion depth, not just re-paint the same state repeatedly. A loop that dies at 2 hops should show a signal that stops updating at 2 hops, not one that keeps animating past where the real walk actually stopped."
+  },
+  {
+   "coord": "B3,C3",
+   "row": "B3",
+   "col": "C3",
+   "snippet": "The signal marks where in the pipeline flow a derived_statement currently sits — ingested, lensed, accepted, served — and this cell is the flow-tracking half of the HUD: a dashboard that cannot show which C,C-funnel stage a statement is at is broadcasting a status, not the actual flow position it claims to represent."
+  },
+  {
+   "coord": "C1,A",
+   "row": "C1",
+   "col": "A",
+   "snippet": "The grid's own shape is a strategic commitment made concrete: 144 cells, both axes the same 12 ShortLex anchors, connectivity by shared row or column. This cell is where a proposed strategic change, a different role count, a different ordering, has to prove it still produces a walkable, non-diagonal lattice before strategy gets to adopt it as the substrate."
+  },
+  {
+   "coord": "C1,B",
+   "row": "C1",
+   "col": "B",
+   "snippet": "The grid constrains what tactics are even addressable — harvest-accept.mjs can only accept or reject a statement that maps to a real row,col coordinate in the 144-cell lattice. This cell is the addressing layer under every tactical move: no coordinate, no valid tactic, which is why boundary-anchor checks run before any accept/reject logic touches a candidate."
+  },
+  {
+   "coord": "C1,C",
+   "row": "C1",
+   "col": "C",
+   "snippet": "The grid checking its own integrity: are both axes still the same 12 ShortLex anchors, is the short-stem guard still preventing collisions between similarly-named coordinates. This cell is where a grid-shape regression, silently dropping to 12x12 blocks or losing an axis, gets caught before it corrupts every downstream walk that assumes the full 144-cell substrate exists."
+  },
+  {
+   "coord": "C1,A1",
+   "row": "C1",
+   "col": "A1",
+   "snippet": "The grid's connectivity rule — anchor i to j if they share a row or column axis, directed acyclic, terminating by ply 3 — is itself a frozen invariant, guarded by competence-walk-is-real.test.mjs. This cell is where 'the grid is correct' gets defined legally, not just visually: a grid that looks like 12x12 but has no real edges fails this check even if it renders fine."
+  },
+  {
+   "coord": "C1,A2",
+   "row": "C1",
+   "col": "A2",
+   "snippet": "The goal names a coordinate; the grid is what makes that coordinate reachable at all. This cell is the precondition check: before magnet-list.mjs's ranked target can be walked, its row,col has to actually sit inside the connectivity lattice with live edges, not an isolated or malformed cell that would make the walk die at ply 1 regardless of priority."
+  },
+  {
+   "coord": "C1,A3",
+   "row": "C1",
+   "col": "A3",
+   "snippet": "The grid's size sets the funding floor: walking all 144 cells at even a shallow ply costs more than walking a targeted coordinate, so Strategy.Fund's budget decision has to account for how much of the grid a given pass actually needs to touch. This cell is where 'how big a slice of the lattice' becomes a line item in the ply budget itself."
+  },
+  {
+   "coord": "C1,B1",
+   "row": "C1",
+   "col": "B1",
+   "snippet": "The grid's connectivity density, how many edges per cell, directly sets how expensive each ply is, since a densely connected coordinate fans out to more neighbors per hop. This cell is where grid topology and speed tactics meet — a cell with unusually high row/column overlap is inherently more expensive to walk fast, no matter how the loop is tuned."
+  },
+  {
+   "coord": "C1,B2",
+   "row": "C1",
+   "col": "B2",
+   "snippet": "The grid enforces that deals are per-cell, not per-block — accepting a statement for one coordinate never implicitly accepts its ShortLex neighbors. This cell is the addressing discipline that keeps harvest-accept.mjs from batch-approving a whole 3x3 block just because one cell in it cleared the floor on its own merits."
+  },
+  {
+   "coord": "C1,B3",
+   "row": "C1",
+   "col": "B3",
+   "snippet": "The seat-map is the grid rendered as pixels, one per coordinate, heat argmax per row. This cell is where the grid's actual shape has to match what gets displayed — any renderer that reshapes the 144-cell lattice into something else has broken the contract between the grid and its own signal, producing a display that lies about the substrate."
+  },
+  {
+   "coord": "C1,C1",
+   "row": "C1",
+   "col": "C1",
+   "snippet": "The grid checking its own shape against itself: do both axes still line up as the same 12 ShortLex anchors, does coordinate B,C1 still resolve to the same cell it resolved to last commit. This reflexive cell is where a silent re-indexing — the kind that would quietly swap row and column meaning — gets caught by comparing today's addressing against the frozen 144-cell anatomy grounded in public/d/lattice.png."
+  },
+  {
+   "coord": "C1,C2",
+   "row": "C1",
+   "col": "C2",
+   "snippet": "The grid is the substrate the loop walks: row to the row each lit column points to, the transpose, then recurse. This cell is where the grid's connectivity literally determines whether the loop can propagate — no edges means the loop dies at ply 1, which is exactly why a diagonal-only grid is banned in the anti-rules ledger's forbidden forms."
+  },
+  {
+   "coord": "C1,C3",
+   "row": "C1",
+   "col": "C3",
+   "snippet": "The grid is what every pipeline stage ultimately writes into — a derived_statement's destination is always a row,col coordinate in the 144-cell lattice, whether it came from lens-e0.mjs or a harvest-accept.mjs pass. This cell is the addressing contract the whole flow depends on: every stage speaks the same coordinate system or the flow cannot hand off between stages cleanly."
+  },
+  {
+   "coord": "C2,A",
+   "row": "C2",
+   "col": "A",
+   "snippet": "Whether the loop actually propagates, 8 plies, 990 of 20736 cells lit, not stalling at ply 1, is the empirical test of the strategic commitment to the real recursive walk. This cell is where strategy gets falsified or confirmed: a loop that consistently dies early means the strategic choice of substrate, the connectivity lattice, is not being honored somewhere upstream."
+  },
+  {
+   "coord": "C2,B",
+   "row": "C2",
+   "col": "B",
+   "snippet": "The loop's actual reach, how many hops it covered before the time budget cut it, tells tactics what is actually reachable this cycle. A tactic that assumes ply-5 coverage when the loop only reached ply 2 is planning against a walk that did not happen; this cell is where tactical assumptions get checked against the loop's real, measured depth."
+  },
+  {
+   "coord": "C2,C",
+   "row": "C2",
+   "col": "C",
+   "snippet": "The loop is operations at its most literal: definer-walk-144.mjs actually iterating, ply by ply, row to column to row, on the connectivity lattice — never a sequential-loop approximation or a JS BFS standing in for it. This cell is where the anti-rules ledger's forbidden conventional forms get checked against what the script is actually doing on each and every run."
+  },
+  {
+   "coord": "C2,A1",
+   "row": "C2",
+   "col": "A1",
+   "snippet": "The loop's legality is checked by competence-walk-is-real.test.mjs: real connectivity, real propagation, never the analytic shortcut. This cell is where 'the loop ran' and 'the loop ran legally' diverge — a fast loop that substituted a diffusion approximation might finish clean but still fail this check, because speed alone was never the invariant the reef cares about."
+  },
+  {
+   "coord": "C2,A2",
+   "row": "C2",
+   "col": "A2",
+   "snippet": "How far the loop reaches toward a specific ranked goal, does it actually hit the target coordinate within its ply budget, is the direct measure of whether that goal was reachable this cycle at all. This cell is where a goal gets deferred: not because it is unimportant, but because the loop's time budget genuinely could not reach it this pass."
+  },
+  {
+   "coord": "C2,A3",
+   "row": "C2",
+   "col": "A3",
+   "snippet": "The loop consumes exactly the ply budget Strategy.Fund allocated, hop by hop, until --max-depth or the 200ms ceiling stops it. This cell is the accounting: every ply the loop takes is a withdrawal against the funded budget, logged in wall_s so the next funding round is measured against actual spend rather than a guess."
+  },
+  {
+   "coord": "C2,B1",
+   "row": "C2",
+   "col": "B1",
+   "snippet": "The loop's per-ply cost is what speed tactics are actually optimizing — shaving spawn-per-hop overhead means each iteration of row to column to row costs less, letting more plies fit inside the same time budget. This cell is where a speed win translates directly into how many hops the loop can afford within the ceiling."
+  },
+  {
+   "coord": "C2,B2",
+   "row": "C2",
+   "col": "B2",
+   "snippet": "A deal can only be struck on evidence the loop actually produced — if the loop has not propagated past 2 hops yet, there is no real signal for harvest-accept.mjs to negotiate over. This cell is where 'the loop is not done' should block premature acceptance, not get papered over with an early guess that outruns the evidence."
+  },
+  {
+   "coord": "C2,B3",
+   "row": "C2",
+   "col": "B3",
+   "snippet": "The signal's update rate should match the loop's actual iteration rate — a HUD that keeps animating after the loop has stopped is broadcasting motion the walk did not produce. This cell is where signal fidelity depends on the loop's real, current ply, not an extrapolated or cached one left over from an earlier pass."
+  },
+  {
+   "coord": "C2,C1",
+   "row": "C2",
+   "col": "C1",
+   "snippet": "The loop is only as good as the grid it runs on — a well-formed 144-cell connectivity lattice lets the loop propagate past ply 3, while a malformed grid, missing edges, wrong axis, is the single most common reason a loop dies early. This cell is where a loop-propagation failure gets traced back to a grid defect, not a loop bug."
+  },
+  {
+   "coord": "C2,C2",
+   "row": "C2",
+   "col": "C2",
+   "snippet": "The loop checking its own propagation across runs: does the same commit still reach 8 plies and light 990 of 20736 cells, or has a regression quietly clipped the recursion back to 2 hops. This reflexive cell is the ply-decay sanity check — a loop that used to propagate and now dies early is reporting on itself, and tape-health.mjs is what reads that self-report."
+  },
+  {
+   "coord": "C2,C3",
+   "row": "C2",
+   "col": "C3",
+   "snippet": "The loop is one stage inside the larger pipeline flow — definer-walk-144.mjs runs, then hands its propagated cells to harvest-accept.mjs downstream. This cell is the handoff: the flow cannot proceed to the next stage until the loop reports how far it actually got, so a stalled loop stalls the whole C,C funnel behind it."
+  },
+  {
+   "coord": "C3,A",
+   "row": "C3",
+   "col": "A",
+   "snippet": "Operations.Flow acting on Committing means defining and executing clear commit workflows with roles like Author, Reviewer, and Committer ensuring code changes are properly reviewed and integrated into the project."
+  },
+  {
+   "coord": "C3,B",
+   "row": "C3",
+   "col": "B",
+   "snippet": "Operations.Flow acting on Testing means orchestrating a structured test pipeline including unit tests, integration tests, and manual QA to ensure code quality before deployment."
+  },
+  {
+   "coord": "C3,C",
+   "row": "C3",
+   "col": "C",
+   "snippet": "Operations.Flow acting on Deploying means managing the systematic release of software updates through stages like staging, beta, and production ensuring smooth and reliable deployments."
+  },
+  {
+   "coord": "C3,A1",
+   "row": "C3",
+   "col": "A1",
+   "snippet": "Author acting on Operations.Flow means creating well-defined commit messages and documentation that align with project standards for clarity in task sequencing and handoffs."
+  },
+  {
+   "coord": "C3,A2",
+   "row": "C3",
+   "col": "A2",
+   "snippet": "Reviewer acting on Operations.Flow means conducting thorough code reviews to ensure compliance with coding standards, best practices, and overall project health before merging changes."
+  },
+  {
+   "coord": "C3,A3",
+   "row": "C3",
+   "col": "A3",
+   "snippet": "Committer acting on Operations.Flow means finalizing approved changes by committing them to the repository while adhering to version control protocols and maintaining commit history integrity."
+  },
+  {
+   "coord": "C3,B1",
+   "row": "C3",
+   "col": "B1",
+   "snippet": "Unit Tester acting on Operations.Flow means writing and executing automated tests for individual components to verify functionality and ensure code quality before integration."
+  },
+  {
+   "coord": "C3,B2",
+   "row": "C3",
+   "col": "B2",
+   "snippet": "Integration Tester acting on Operations.Flow means testing combined systems or modules to identify issues that arise from interactions between different parts of the software."
+  },
+  {
+   "coord": "C3,B3",
+   "row": "C3",
+   "col": "B3",
+   "snippet": "Manual QA acting on Operations.Flow means performing end-to-end manual testing across various scenarios and edge cases to catch any overlooked bugs or usability issues."
+  },
+  {
+   "coord": "C3,C1",
+   "row": "C3",
+   "col": "C1",
+   "snippet": "Staging Environment acting on Operations.Flow means setting up a controlled environment for deploying and testing new features before they go live in production."
+  },
+  {
+   "coord": "C3,C2",
+   "row": "C3",
+   "col": "C2",
+   "snippet": "Beta Testing acting on Operations.Flow means releasing software to a limited user group for real-world usage feedback to identify any issues or performance bottlenecks."
+  },
+  {
+   "coord": "C3,C3",
+   "row": "C3",
+   "col": "C3",
+   "snippet": "Production Deployment acting on Operations.Flow means executing the final release of software updates into the live environment ensuring minimal downtime and smooth operation."
+  }
+ ],
+ "stats": {
+  "total_chars": 48603,
+  "empty": 0,
+  "wall_s": 1718
+ },
+ "p1_contrast": 0.825,
+ "p1_pass": false,
+ "p2_lite": {
+  "hit_at_3": 0.104,
+  "floor": 0.605,
+  "pass": false,
+  "note": "held-out retrieval-in-slice analog; confirmatory qwen slice-trap build scheduled"
+ },
+ "p3": {
+  "level0_hops": 39,
+  "slice_hops": 4,
+  "slice_lit": 67,
+  "slice_ms": 5,
+  "budget_tripped": false,
+  "pass": false,
+  "shadow_top_wells": [
+   "A:1"
+  ]
+ }
+}

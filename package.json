@@ -1,0 +1,92 @@
+{
+  "name": "thetacog-mcp",
+  "version": "2.39.0",
+  "description": "Geometric-Driven Development (GDD) toolkit: cognitive rooms + Shadow Agent hooks + Ghost-Read pipeline (6 routes, persona-monologue) + thetacog-iterate convergence loop (meta-rule-checker, auto-applies high-confidence rewrites, adaptive stall-softening) + Pareto-twice research + backpack-keepalive. Heavy LLM checks run async post-commit, never block push. One command (`thetacog-iterate <file>`) takes a draft to convergence: 95% avg triple-percentage + 80% paragraphs passing.",
+  "type": "module",
+  "main": "server.js",
+  "bin": {
+    "thetacog": "server.js",
+    "thetacog-mcp": "server.js",
+    "thetacog-backpack": "bin/backpack-keepalive.sh",
+    "thetacog-iterate": "scripts/gdd-iterate.sh",
+    "thetacog-pmu-rust": "bin/pmu-rust.sh",
+    "thetacog-install-hooks": "bin/install-hooks.sh",
+    "thetacog-gmail-sync": "./gmail-sync.js",
+    "thetacog-next": "next-engine.mjs"
+  },
+  "files": [
+    ".workflow/",
+    "CHANGELOG.md",
+    "LICENSE",
+    "README.md",
+    "bin/",
+    "dashboard.js",
+    "gmail-sync.js",
+    "hooks/",
+    "lib/",
+    "next-engine.mjs",
+    "overview.js",
+    "pmu-rust/",
+    "postinstall.js",
+    "regen-hooks.js",
+    "scripts/",
+    "server.js",
+    "sqlite-sync.js",
+    "src/",
+    "data/pmu/reef/",
+    "data/pmu/lens-reef.json",
+    "data/pmu/rice-proof-fixture.json",
+    "data/pmu/shortlex-144-registry.json",
+    "data/pmu/shortlex-words.json",
+    "data/pmu/snippet-library-144.json",
+    "data/pmu/snippet-library-20736.json",
+    "data/book/",
+    ".thetacog/pmu/target/",
+    ".thetacog/hooks-config.json",
+    "docs/pmu/attest-demo-report.html",
+    "docs/architecture/decidability-is-meaning.md",
+    "docs/architecture/axis-library-v1.json",
+    "data/pmu/study/"
+  ],
+  "keywords": [
+    "mcp",
+    "cognitive-rooms",
+    "thetacog",
+    "split-view",
+    "snap-layouts",
+    "mental-palace",
+    "flow-state",
+    "mode-management",
+    "claude",
+    "hebbian-learning",
+    "parallel-founders"
+  ],
+  "author": "ThetaDriven Inc.",
+  "license": "SEE LICENSE IN LICENSE",
+  "private": false,
+  "scripts": {
+    "postinstall": "node postinstall.js",
+    "overview": "node -e \"import('./overview.js').then(m => console.log(JSON.stringify(m.computeOverview(), null, 2)))\"",
+    "show-overview": "node -e \"import('./overview.js').then(m => console.log(JSON.stringify(m.computeOverview({ repoRoot: process.cwd() + '/../..' }), null, 2)))\"",
+    "prepack": "node scripts/bundle-pmu.mjs"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.0.0",
+    "better-sqlite3": "^9.2.2"
+  },
+  "optionalDependencies": {
+    "@supabase/supabase-js": "^2.39.0"
+  },
+  "devDependencies": {
+    "@types/better-sqlite3": "^7.6.8",
+    "@types/node": "^20.10.6"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "homepage": "https://github.com/wiber/thetacog-mcp#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wiber/thetacog-mcp.git"
+  }
+}

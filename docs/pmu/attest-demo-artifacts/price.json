@@ -1,0 +1,43 @@
+{
+  "artifact": "thetacog-underwriter-attestation",
+  "receipt_kind": "third-party-price-attestation",
+  "job_id": "demo",
+  "priced_receipt_sha256": "eda805d33a851dc33f02e73ea023e33c94893cdb144ab2dbf486ee7317b62f04",
+  "reef_commitment": "1d5514be576dd51040ceecf3bb781f158ead22bc14babb825dba30e4edc2eb5a",
+  "payload_sha256": "68d472545e175d720cac0b172637e71302d9d9929380ed3542aee208a381e11b",
+  "gate_verdict": "MATCH",
+  "observed_sigma": 2.5417554438133276,
+  "authoritative_cell": "A",
+  "tolerance": "MARGINAL",
+  "barter_flag": "REWORK",
+  "price": {
+    "pricing_status": "ADVISORY_PRE_CALIBRATION",
+    "currency": "USD",
+    "notional": 10000000,
+    "base_rate_bps": 50,
+    "tolerance_sigma_floor": 3.4,
+    "risk_multiplier": 1,
+    "advisory_premium_usd": 50000,
+    "option": {
+      "instrument": "in-lane put (advisory)",
+      "strike_sigma": 3.4,
+      "observed_sigma": 2.5417554438133276,
+      "distance_to_band": -0.86,
+      "moneyness": "at/near the money",
+      "note": "Black-Scholes-style pricing is intentionally NOT applied yet — volatility input requires the calibration we have not earned."
+    },
+    "DISCLAIMER": "ADVISORY, PRE-CALIBRATION. The TOLERANCE verdict is decidable and recomputable; the PRICE is a transparent function of σ, not a calibrated quote. A calibrated premium requires realized-rate data earned by running attestations. Selling a price without calibration is the 2008 failure mode — we refuse it. The fence is the asset."
+  },
+  "reason": "placement: cell A at σ=2.54 (floor 3.4). MARGINAL — inside the authorized cells but σ is close to the floor; the underwriter loads the premium or requests rework.",
+  "underwriter": {
+    "name": "underwriter",
+    "pubkey_hex": "46de10d775a33af39da9bee59775f6af5f33401ee1c8edf8acc519df0604109c",
+    "independent_of": [
+      "931ada436fc063d542248834631f4d7c10ef3e7c6504486444917ac0fce68cdc",
+      "16dcd2919490a13dea079b53bfdfe6667fbc1989fab6745cb212287b70a285c1"
+    ]
+  },
+  "pubkey_hex": "46de10d775a33af39da9bee59775f6af5f33401ee1c8edf8acc519df0604109c",
+  "sig_hex": "2b649243d7c0b190e1e527c3699458b18dcb3c8b52839bd92624c33280a771c806fdefcde51b6dc7ca7019c1ee582e469f71aeae81592abe28586a332c144108",
+  "sha256": "48c66ed36cc17abba3ad6e44c57d42e33965f85a05814f6796e5513373c4f0b1"
+}

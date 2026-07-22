@@ -1,0 +1,404 @@
+{
+  "version": "3.0.0",
+  "description": "ThetaCog 24-Hour Cognitive Schedule - Ollama prompts you based on temporal themes",
+  "timezone": "America/Chicago",
+  "schedule": [
+    {
+      "hours": [0, 1, 2],
+      "room": "laboratory",
+      "theme": "Deep Night Experiments",
+      "energy": "low-stakes exploration"
+    },
+    {
+      "hours": [3, 4, 5],
+      "room": "vault",
+      "theme": "Pre-Dawn Proofs",
+      "energy": "silent mathematical certainty"
+    },
+    {
+      "hours": [6, 7],
+      "room": "navigator",
+      "theme": "Dawn Planning",
+      "energy": "triage and routing"
+    },
+    {
+      "hours": [8, 9, 10],
+      "room": "architect",
+      "theme": "Morning Strategy",
+      "energy": "clear-headed blueprints"
+    },
+    {
+      "hours": [11, 12, 13],
+      "room": "voice",
+      "theme": "Midday Amplification",
+      "energy": "social peaks, content creation"
+    },
+    {
+      "hours": [14, 15, 16],
+      "room": "builder",
+      "theme": "Afternoon Shipping",
+      "energy": "execution velocity"
+    },
+    {
+      "hours": [17, 18],
+      "room": "operator",
+      "theme": "Business Close",
+      "energy": "deals, follow-ups, revenue"
+    },
+    {
+      "hours": [19, 20, 21],
+      "room": "network",
+      "theme": "Evening Cultivation",
+      "energy": "relationships, no agenda"
+    },
+    {
+      "hours": [22, 23],
+      "room": "performer",
+      "theme": "Night Performance",
+      "energy": "rehearsal, live events"
+    }
+  ],
+  "rooms": {
+    "laboratory": {
+      "id": "laboratory",
+      "name": "Cursor Laboratory",
+      "emoji": "🧪",
+      "terminal": "cursor",
+      "tier": 5,
+      "coordinate": "C2",
+      "hours": "00:00 - 03:00",
+      "temporal_theme": "Deep Night Experiments",
+      "memory_palace": "The lab glows pink in the darkness. Safety goggles on. Everyone else is asleep. This is when you break things safely. No interruptions. Pure exploration.",
+      "focus": [
+        "Prototype new ideas without pressure",
+        "Test assumptions that might fail",
+        "Explore architectures before committing",
+        "Break things to understand them"
+      ],
+      "prompt_types": [
+        "[EXPERIMENT] Try this approach...",
+        "[PROTOTYPE] Quick spike on...",
+        "[BREAK] What happens if we...",
+        "[EXPLORE] Research this pattern..."
+      ],
+      "autonomous_process": {
+        "step1_git": "git log --oneline -30 -- 'packages/' 'scripts/'",
+        "step2_scan": "Grep for 'TODO|EXPERIMENT|SPIKE|POC' in src/",
+        "step3_state": "Check .workflow/ for unfinished prototypes",
+        "step4_prompt": "Generate low-stakes exploration prompts"
+      },
+      "validation": {
+        "vanity": ["Interesting idea", "Could work", "Worth exploring"],
+        "result": ["Experiment has verdict", "Prototype validated/invalidated", "Architecture decision made"]
+      }
+    },
+    "vault": {
+      "id": "vault",
+      "name": "WezTerm Vault",
+      "emoji": "🔒",
+      "terminal": "wezterm",
+      "tier": 1,
+      "coordinate": "A1",
+      "hours": "03:00 - 06:00",
+      "temporal_theme": "Pre-Dawn Proofs",
+      "memory_palace": "Descend into silence. Amber light. Cold air. The world sleeps but truth doesn't. You are not writing code; you are writing law. Raw observations enter. Mathematical certainty leaves.",
+      "focus": [
+        "First-principles proofs",
+        "Patent-grade documentation",
+        "Irreversible decisions",
+        "Mathematical validation"
+      ],
+      "prompt_types": [
+        "[PROVE] This claim needs validation...",
+        "[PROTECT] IP boundary to establish...",
+        "[THEOREM] Formalize this observation...",
+        "[VERIFY] Check this against first principles..."
+      ],
+      "autonomous_process": {
+        "step1_git": "git log --oneline -30 -- 'docs/' '*.md'",
+        "step2_scan": "Read docs/planning/ for unvalidated claims",
+        "step3_state": "Fetch tesseract.nu state for open proofs",
+        "step4_prompt": "Generate proof/validation prompts"
+      },
+      "flywheel": {
+        "receives_from": ["builder", "voice", "architect"],
+        "outputs_to": ["voice", "architect", "builder"],
+        "transforms": "Observations → First-principles proofs → Patent-grade certainty"
+      },
+      "validation": {
+        "vanity": ["Sounds right", "Makes sense", "Good thinking"],
+        "result": ["Mathematical proof complete", "Theorem formalized", "IP documented"]
+      }
+    },
+    "navigator": {
+      "id": "navigator",
+      "name": "Rio Navigator",
+      "emoji": "🧭",
+      "terminal": "rio",
+      "tier": 3,
+      "coordinate": "B3",
+      "hours": "06:00 - 08:00",
+      "temporal_theme": "Dawn Planning",
+      "memory_palace": "Sun rises. Coffee steams. Spread out the map. Where are we? Where are we going? What's the most important thing today? Route the work to the right rooms.",
+      "focus": [
+        "Daily priority triage",
+        "Context routing decisions",
+        "Wayfinding between rooms",
+        "Unblocking stuck work"
+      ],
+      "prompt_types": [
+        "[TRIAGE] Today's top 3 priorities...",
+        "[ROUTE] This belongs in ::architect not ::builder...",
+        "[UNBLOCK] This is stuck because...",
+        "[PLAN] Sequence for today..."
+      ],
+      "autonomous_process": {
+        "step1_git": "git log --oneline -10 (yesterday's work)",
+        "step2_scan": "Read all room state.json files for queued items",
+        "step3_state": "Check calendar, deadlines, blockers",
+        "step4_prompt": "Generate routing and priority prompts"
+      },
+      "validation": {
+        "vanity": ["Good plan", "Makes sense", "Organized"],
+        "result": ["Work routed to correct room", "Blocker identified and assigned", "Day has clear sequence"]
+      }
+    },
+    "architect": {
+      "id": "architect",
+      "name": "Code Architect",
+      "emoji": "📐",
+      "terminal": "code",
+      "tier": 2,
+      "coordinate": "A2",
+      "hours": "08:00 - 11:00",
+      "temporal_theme": "Morning Strategy",
+      "memory_palace": "Walk up the stairs to the drafting room. Indigo light. Unroll the blueprints. Coffee is fresh, mind is clear. See the whole war before you fight it. Sequence the battles.",
+      "focus": [
+        "Strategic pivots and roadmaps",
+        "Architecture decisions",
+        "Sprint planning",
+        "Cross-room coordination"
+      ],
+      "prompt_types": [
+        "[STRATEGY] Consider this pivot...",
+        "[SEQUENCE] Order these priorities...",
+        "[DISPATCH] Send this to ::builder...",
+        "[BLUEPRINT] Architecture decision needed..."
+      ],
+      "autonomous_process": {
+        "step1_git": "git log --oneline -30 -- 'docs/planning/' 'ROADMAP.md'",
+        "step2_scan": "Read docs/planning/ for strategic decisions pending",
+        "step3_state": "Check all room queues for coordination needs",
+        "step4_prompt": "Generate strategy and dispatch prompts"
+      },
+      "flywheel": {
+        "receives_from": ["vault", "operator", "builder", "voice"],
+        "outputs_to": ["builder", "voice", "vault", "operator"],
+        "transforms": "Scattered signals → Unified strategy → Directive dispatch"
+      },
+      "validation": {
+        "vanity": ["Good strategy", "Smart pivot", "Well planned"],
+        "result": ["Decision made and dispatched", "4 terminals unblocked", "Roadmap updated"]
+      }
+    },
+    "voice": {
+      "id": "voice",
+      "name": "Terminal Voice",
+      "emoji": "🎤",
+      "terminal": "terminal",
+      "tier": 3,
+      "coordinate": "B1",
+      "hours": "11:00 - 14:00",
+      "temporal_theme": "Midday Amplification",
+      "memory_palace": "Step onto the stage. Purple spotlight. The crowd gathers for lunch. Take dense proofs from the vault, strategy from the architect - translate complexity into viral stories.",
+      "focus": [
+        "Content creation and amplification",
+        "Social posting at peaks",
+        "Messaging variants",
+        "Audience building"
+      ],
+      "prompt_types": [
+        "[TWEET] Post this now (peak hour)...",
+        "[DRAFT] LinkedIn post from this proof...",
+        "[AMPLIFY] This vault theorem as content...",
+        "[VARIANT] Test this message angle..."
+      ],
+      "social_peaks": {
+        "twitter": ["12:00-13:00", "17:00-18:00"],
+        "linkedin": ["08:00-10:00", "12:00-13:00"],
+        "note": "Midday slot catches both Twitter lunch peak and LinkedIn engagement"
+      },
+      "autonomous_process": {
+        "step1_git": "git log --oneline -30 -- 'docs/content/' 'src/content/blog/'",
+        "step2_scan": "Read recent vault proofs for content hooks",
+        "step3_state": "Check social peak timing, draft queue",
+        "step4_prompt": "Generate post-now and draft prompts"
+      },
+      "flywheel": {
+        "receives_from": ["vault", "architect", "operator"],
+        "outputs_to": ["operator", "vault"],
+        "transforms": "Dense proofs → Viral stories → Inbound leads"
+      },
+      "validation": {
+        "vanity": ["Great post", "Good engagement", "Nice writing"],
+        "result": ["23 DMs from post", "Content generated leads", "Message variant winning"]
+      }
+    },
+    "builder": {
+      "id": "builder",
+      "name": "iTerm2 Builder",
+      "emoji": "🔨",
+      "terminal": "iterm2",
+      "tier": 4,
+      "coordinate": "C1",
+      "hours": "14:00 - 17:00",
+      "temporal_theme": "Afternoon Shipping",
+      "memory_palace": "Descend to the factory floor. Blue sparks fly. Afternoon energy focused on execution. Grab the welding torch. Idea becomes iron. Theory meets reality.",
+      "focus": [
+        "Shipping features",
+        "Fixing bugs",
+        "Deployment checks",
+        "Code grounding"
+      ],
+      "prompt_types": [
+        "[SHIP] Deploy this feature...",
+        "[FIX] Regression in...",
+        "[GROUND] Implement this symbol...",
+        "[DEPLOY] Production check needed..."
+      ],
+      "autonomous_process": {
+        "step1_git": "git log --oneline -30 -- 'src/app/' 'src/lib/'",
+        "step2_scan": "Grep for 'TODO|FIXME|HACK' in src/",
+        "step3_state": "Check deployment status, Vercel health",
+        "step4_prompt": "Generate ship/fix/deploy prompts"
+      },
+      "flywheel": {
+        "receives_from": ["architect", "operator", "vault", "laboratory"],
+        "outputs_to": ["operator", "architect", "vault"],
+        "transforms": "Blueprints → Working code → Production data"
+      },
+      "validation": {
+        "vanity": ["Code written", "Tests passing locally", "PR opened"],
+        "result": ["Live on thetadriven.com", "Production health passing", "Feature deployed"]
+      }
+    },
+    "operator": {
+      "id": "operator",
+      "name": "Kitty Operator",
+      "emoji": "🎩",
+      "terminal": "kitty",
+      "tier": 3,
+      "coordinate": "C3",
+      "hours": "17:00 - 19:00",
+      "temporal_theme": "Business Close",
+      "memory_palace": "Kick open the double doors. Green radar screens. End of business day. Last chance for deals today. Every conversation ends with a next step. Hunt and close.",
+      "focus": [
+        "Deal follow-ups",
+        "Pipeline updates",
+        "Revenue operations",
+        "Market signal capture"
+      ],
+      "prompt_types": [
+        "[CLOSE] Follow up with...",
+        "[PIPELINE] Update this deal...",
+        "[SIGNAL] Market pattern detected...",
+        "[NUDGE] This deal is stalling..."
+      ],
+      "social_peaks": {
+        "linkedin": ["17:00-18:00"],
+        "email": ["End of day responses"],
+        "note": "Business close catches decision-makers wrapping up"
+      },
+      "autonomous_process": {
+        "step1_git": "git log --oneline -10 -- 'data/' (CRM changes)",
+        "step2_scan": "Check CRM for stale deals, hot leads",
+        "step3_state": "Review today's conversations for signals",
+        "step4_prompt": "Generate follow-up and close prompts"
+      },
+      "flywheel": {
+        "receives_from": ["voice", "builder"],
+        "outputs_to": ["architect", "builder"],
+        "transforms": "Attention → Revenue → Market intelligence"
+      },
+      "validation": {
+        "vanity": ["Good meeting", "Positive response", "Interested"],
+        "result": ["Deal closed", "Revenue generated", "PAIN + BUDGET confirmed"]
+      }
+    },
+    "network": {
+      "id": "network",
+      "name": "Messages Network",
+      "emoji": "☕",
+      "terminal": "messages",
+      "tier": 3,
+      "coordinate": "B2",
+      "hours": "19:00 - 22:00",
+      "temporal_theme": "Evening Cultivation",
+      "memory_palace": "Step into the warm café. Amber lighting. Quiet conversations. Steam rising. This isn't hunting (that's Kitty). This is watering the garden. No agenda. Just presence.",
+      "focus": [
+        "Relationship maintenance",
+        "Mentor check-ins",
+        "Gratitude loops",
+        "Serendipity cultivation"
+      ],
+      "prompt_types": [
+        "[CHECK-IN] Reach out to...",
+        "[GRATITUDE] Thank them for...",
+        "[WATER] This relationship needs attention...",
+        "[CONNECT] Introduce X to Y..."
+      ],
+      "autonomous_process": {
+        "step1_git": "git log --oneline -10 -- 'data/relationships/' (if exists)",
+        "step2_scan": "Check contact list for neglected relationships",
+        "step3_state": "Review last touchpoints, find gaps",
+        "step4_prompt": "Generate check-in and gratitude prompts"
+      },
+      "validation": {
+        "vanity": ["Nice chat", "Good to catch up", "Friendly"],
+        "result": ["Relationship strengthened", "Serendipity unlocked", "Trust deepened"]
+      }
+    },
+    "performer": {
+      "id": "performer",
+      "name": "Alacritty Performer",
+      "emoji": "🎭",
+      "terminal": "alacritty",
+      "tier": 6,
+      "coordinate": "A3",
+      "hours": "22:00 - 00:00",
+      "temporal_theme": "Night Performance",
+      "memory_palace": "The green room. Mirror. Adrenaline. Night events, demos, rehearsals. You've prepared all day. Now deliver. One shot to land the message.",
+      "focus": [
+        "Live demos and events",
+        "Pitch rehearsal",
+        "Performance preparation",
+        "High-stakes delivery"
+      ],
+      "prompt_types": [
+        "[REHEARSE] Practice this pitch...",
+        "[DEMO] Prepare this walkthrough...",
+        "[PERFORM] Event starting soon...",
+        "[SCRIPT] Polish this delivery..."
+      ],
+      "autonomous_process": {
+        "step1_git": "git log --oneline -10 -- 'docs/talks/' 'docs/demos/'",
+        "step2_scan": "Check calendar for upcoming events",
+        "step3_state": "Review demo dependencies, script status",
+        "step4_prompt": "Generate rehearsal and prep prompts"
+      },
+      "validation": {
+        "vanity": ["Good practice", "Feels ready", "Confident"],
+        "result": ["Demo delivered successfully", "Pitch landed", "Event completed"]
+      }
+    }
+  },
+  "flywheel_cycle": [
+    "vault proves theorems",
+    "voice makes them viral",
+    "operator converts attention to revenue",
+    "architect maps patterns into strategy",
+    "builder ships features",
+    "production validates theory",
+    "new questions return to vault"
+  ]
+}

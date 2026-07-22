@@ -1,0 +1,165 @@
+{
+  "$schema": "axis-library-v1",
+  "version": "1.0.0",
+  "generated": "2026-05-25",
+  "source": "src/lib/tesseract/matching.ts AXES + canonical operator-voice snippets (one paragraph each, drawn from book/blog/CLAUDE.md/PMU spec/outreach corpus to maximize cross-axis orthogonality)",
+  "ortho_target": "cross-axis cosine < 0.4 under wordShingles + 64-bit SimHash (witness: simhashCosine); to be measured by scripts/pmu/axis-library-orthogonality.mjs",
+  "axes": [
+    {
+      "rank": "A",
+      "code": "Strategy",
+      "name": "Strategy",
+      "emoji": "🏛️",
+      "question": "long-term direction",
+      "snippets": [
+        "The lattice we build today is what next year's underwriter inherits. We set the substrate that downstream pricing rides on, and that choice is paid back across every quarter we keep operating.",
+        "Direction is what you keep when you forget the calendar. Multi-year posture, irreversibly chosen, defines the boundary every quarter renegotiates inside. Strategy is the bearing the rotation is measured against.",
+        "Capital lives where strategy is durable. Frame the ten-year shape of the business before optimizing the ten-week sprint; the substrate decisions compound while the surface decisions decay.",
+        "The strategic question is which doors close on purpose. Anything that keeps every option open until next year has already chosen the option of inaction, paid in optionality cost."
+      ]
+    },
+    {
+      "rank": "B",
+      "code": "Tactics",
+      "name": "Tactics",
+      "emoji": "⚡",
+      "question": "execution approach",
+      "snippets": [
+        "Tactics is the choice of which leverage to pull at which beat. Not what we want, but how the want lands on Tuesday: the sequence of irreversible commitments, each made before the next one's information is available.",
+        "Speed of feedback dominates speed of execution. Tactics that converge fast beat tactics that compute long, because the loop closes around the world's response before the world has moved.",
+        "The tactical map is a ranked list of moves where each move carries a cost-of-delay. Pick the move whose cost of doing it tomorrow exceeds the cost of doing it imperfectly today.",
+        "Execution is a sequence of bets made under uncertainty. Tactics is the discipline of betting the right size on the bet whose information value pays for the loss-if-wrong."
+      ]
+    },
+    {
+      "rank": "C",
+      "code": "Operations",
+      "name": "Operations",
+      "emoji": "🔧",
+      "question": "daily process",
+      "snippets": [
+        "Operations is the loop that runs whether anyone watches. The daily commit, the hourly hook, the per-request fingerprint — the substrate of the substrate, ambient and unwatched.",
+        "Process is what you forget to do; ops is what does itself. Convert manual moves into ambient state, because the tax of remembering compounds faster than the tax of automating.",
+        "The daily friction is the diff between your intent and your harness. Close the diff or pay the tax twice — once in the slip, once in the apology to the next agent.",
+        "Operations earns its keep by being boring. The day the routine is interesting is the day it has already failed and is being narrated rather than executed."
+      ]
+    },
+    {
+      "rank": "A1",
+      "code": "Law",
+      "name": "Strategy.Law",
+      "emoji": "⚖️",
+      "question": "rules & constraints",
+      "snippets": [
+        "EU AI Act Article 14 requires human-on-the-loop oversight, with the supervisor able to interrupt the system at any moment. Compliance attaches to the artifact the artifact cannot escape — provenance is a regulatory primitive, not a feature.",
+        "Constraints precede objectives. The cap-table, the license text, the consent envelope — each draws the inviolate line the action must respect, and the line is enforced before the optimization runs.",
+        "A rule names what the system MAY NOT do. If the agent can do X, then 'forbid X' is not the constraint — it is wishful thinking dressed as policy. Constraints live in the gate, not in the prompt.",
+        "Regulation is not advisory. The fine is the price tag stapled to the omitted control; insurance is the option pricing on the failure-mode the regulation already named."
+      ]
+    },
+    {
+      "rank": "A2",
+      "code": "Goal",
+      "name": "Strategy.Goal",
+      "emoji": "🎯",
+      "question": "target & vision",
+      "snippets": [
+        "The target is the cell coordinate the system MUST occupy by end-of-quarter. Anything that does not drive toward that coordinate is exhaust, and exhaust does not become substrate by being labelled progress.",
+        "Vision is the coordinate the lattice rotates around — the fixed bearing every iteration is measured against. Without the fixed point, motion is movement; with the fixed point, motion is convergence.",
+        "Define the goal as a verifiable predicate, not a feeling. The system terminates when the predicate evaluates true, and the predicate is what the next agent inherits when this one hands off.",
+        "A goal that cannot be tested is a wish. Wishes have no termination condition, so they consume budget forever; goals have a finish line and therefore a payable price."
+      ]
+    },
+    {
+      "rank": "A3",
+      "code": "Fund",
+      "name": "Strategy.Fund",
+      "emoji": "💰",
+      "question": "capital allocation",
+      "snippets": [
+        "Every dollar builds either the floor (substrate that lifts future bets) or the ceiling (cap on the next round). Allocation is which one this dollar chooses, and the choice is irreversible by the time the wire clears.",
+        "Burn rate divides into substrate-building and exhaust. Substrate compounds; exhaust evaporates by quarter-end. The investor who pays for substrate is buying a different asset than the investor who pays for exhaust.",
+        "Capital allocation is the irreversible vote — the bet that closes options to keep the others open. Each dollar deployed buys both the asset and the foreclosure of every alternative the dollar could have funded.",
+        "The funding question is the runway question. Eighteen months at one burn rate is a different company than twelve months at a higher burn rate, even when the bank balance matches."
+      ]
+    },
+    {
+      "rank": "B1",
+      "code": "Speed",
+      "name": "Tactics.Speed",
+      "emoji": "🏎️",
+      "question": "velocity & timing",
+      "snippets": [
+        "Latency is the price of a missed beat. Every hundred milliseconds of round-trip turns a parallel race into a stalemate, because the first arrival sets the rules the second arrival has to honor.",
+        "Throughput compounds: doubling the rate doubles the surface area where serendipity can hit. A pipeline at twice the velocity is not twice as productive — it is exponentially more lucky.",
+        "Time-to-first-byte is the only number the operator feels at the wheel. Optimize the felt latency before the raw throughput; the operator's grip on the loop is what drives the loop forward.",
+        "Velocity is irreversible. A delivery sent fast cannot be unsent slow; a release deployed cannot be undeployed at the same speed it was deployed. Speed buys position, and position is harder to surrender than to occupy."
+      ]
+    },
+    {
+      "rank": "B2",
+      "code": "Deal",
+      "name": "Tactics.Deal",
+      "emoji": "🤝",
+      "question": "exchange & negotiation",
+      "snippets": [
+        "The deal sets the exchange rate between two value substrates. Mis-priced exchange is a slow-bleed; correctly priced exchange compounds both sides, because each cycle of trade enriches the bench on both ends.",
+        "Terms are the API between two organizations — every clause is a contract method that survives the handshake. Renegotiation is the breaking change; the deal is the stable interface either side can build against.",
+        "Negotiation closes at the moment both parties' BATNAs cross. Push past that point and you've bought regret at retail; stop short and you've left margin on the table that the next deal will not return to you.",
+        "A signed counterparty is more valuable than an unsigned promise. The signature is the substrate; the conversation that preceded it is the exhaust the signature converted into substrate."
+      ]
+    },
+    {
+      "rank": "B3",
+      "code": "Signal",
+      "name": "Tactics.Signal",
+      "emoji": "📡",
+      "question": "message & broadcast",
+      "snippets": [
+        "Signal-to-noise is the inverse cube of bandwidth — narrow the channel, the message arrives; broaden it, recipients tune out. The right channel is the one whose floor matches the message's importance.",
+        "A broadcast that addresses everyone addresses no one. Precision over reach until the address is calibrated; only then does scale convert prospects into recipients rather than into unsubscribes.",
+        "Repetition is the cost of being heard. Three sends to one recipient beats one send to three; the first send announces, the second send is heard, the third send is remembered.",
+        "Every message carries provenance. The sender's history is half the message's weight; an unknown sender pays in attention what a known sender pays in seconds saved."
+      ]
+    },
+    {
+      "rank": "C1",
+      "code": "Grid",
+      "name": "Operations.Grid",
+      "emoji": "🔌",
+      "question": "infrastructure & connection",
+      "snippets": [
+        "Power flows where the grid lets it. Choose connections before topologies; the topology is what the connections compose, and a connection added later is a topology silently rewritten.",
+        "Latency is geography expressed in milliseconds. The grid IS the map of where compute meets storage meets bandwidth; the map is the territory at the scale the request actually traverses.",
+        "Infrastructure decisions are reversible at ten-times the cost of being right the first time. Buy the irreversibility down before you provision the easy decisions, because the easy decisions ride on the irreversible ones.",
+        "A connection between two systems is a contract that outlasts the systems on either end. Wire-protocols outlive the processes they connect; the wire is the substrate, the endpoints are the exhaust."
+      ]
+    },
+    {
+      "rank": "C2",
+      "code": "Loop",
+      "name": "Operations.Loop",
+      "emoji": "🔄",
+      "question": "cycles & iteration",
+      "snippets": [
+        "Each iteration is a hypothesis tested against the ground truth of the world. Loops shorter than the feedback half-life waste the half-life; loops longer than it pay compounding interest on the wait.",
+        "Cycles compound when each turn's exhaust feeds the next turn's intake. Closed loops compound; open loops decay. The closing of the loop IS the productivity, not the running of it.",
+        "Iteration discipline: one commit per iteration, never bundled. Bundled iterations destroy the bisect, and the bisect is the future agent's only tool for finding which round of feedback produced which artifact.",
+        "A loop that does not learn is a treadmill. The cycle has to update its own model on the way around, or the same lap teaches nothing the previous lap did not already teach."
+      ]
+    },
+    {
+      "rank": "C3",
+      "code": "Flow",
+      "name": "Operations.Flow",
+      "emoji": "🌊",
+      "question": "throughput & movement",
+      "snippets": [
+        "Flow is the rate at which committed work crosses the finish line. Inventory accumulates upstream; flow is the only thing the customer pays for, and the only thing the operator can measure honestly.",
+        "Movement is the irreversible delivery of value across the boundary. Anything stationary is cost; anything moving is either revenue, deferred revenue, or the exhaust of revenue not yet realized.",
+        "Throughput dominates utilization. A ninety-nine-percent utilized system at low throughput pays the same wages as a fifty-percent utilized system at twice the throughput, but the second one ships the customer's order.",
+        "Flow has a direction. Bidirectional flow is two flows, each measured separately; calling them a single flow hides the chokepoint and the chokepoint is where the leverage lives."
+      ]
+    }
+  ]
+}

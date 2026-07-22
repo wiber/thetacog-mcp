@@ -1,0 +1,21 @@
+# thetacog-mcp — standalone public repo.
+# This repo is SELF-CONTAINED: `git clone` + `npm i` + `npx thetacog-mcp attest-demo`
+# runs with no monorepo access (clean-room verified). The prebuilt on-chip daemon,
+# reef data, walk driver, and book all ship. Exclude only build artifacts + deps:
+node_modules/
+pmu-rust/target/          # 57M Rust build tree — the daemon ships prebuilt under .thetacog/pmu/target/release/
+.DS_Store
+*.log
+npm-debug.log*
+.env
+.env.*
+
+# ── PRIVATE — never publish (scrubbed 2026-07-11) ──
+.thetacog/cache/
+.thetacog/pmu/measurements/
+.thetacog/pmu/measure-*
+data/pmu/shortlex-children-candidate.json
+data/pmu/measure-history*
+data/pmu/pipeline/
+data/pmu/sigma-localize/
+data/pmu/study/
