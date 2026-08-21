@@ -1,0 +1,63 @@
+{
+  "note": "THE TOOL REGISTRY — shaped ask → the exact command that does it. Created 2026-07-28 after a flagrant tesseract miss: six commits touched a blog post and only one drift panel existed, because NOTHING in the 190-rule reef named scripts/pmu/post-drift-history.sh. The one rule in the area was DIAGNOSTIC ('panel wrong/missing → check the index FIRST'), which only helps once you already suspect breakage. Repo-wide the reef measured 5 procedural rules against 14 diagnostic: it knew post-mortems, not process. A rule tells you what is true; a TOOL tells you what to run. The lens now injects both.",
+  "contract": "Each entry: when[] = shape phrases matched against the prompt (stemmed overlap, same scorer the rules use); run = the literal command; why = one line on what it produces; after[] = optional follow-ups that must run with it. Matching is deterministic and LLM-free.",
+  "tools": [
+    {
+      "id": "blog-drift-panels",
+      "domain": "blog-content",
+      "when": ["blog post commit panel", "encircled panels commit blog", "drift history post", "panel strip missing post", "wrote a blog post", "mdx cook post push", "tolerance panel blog"],
+      "run": "bash scripts/pmu/post-drift-history.sh src/content/blog/<slug>.mdx",
+      "after": ["node scripts/blog/build-panels-index.mjs", "git add public/blog/post-panels/<slug>/ src/data/post-panels-index.json"],
+      "why": "renders one tolerance panel PER COMMIT that touched the post and rewrites manifest.json — the post's edit provenance. EVERY commit touching a post needs this; the strip under-reports otherwise.",
+      "guard": "tests/blog/panels-fire-under-pause.test.mjs"
+    },
+    {
+      "id": "blog-og-panel",
+      "domain": "blog-content",
+      "when": ["og image blog", "social card post", "attach panel image", "post image frontmatter"],
+      "run": "bash scripts/blog/attach-tolerance-panel.sh src/content/blog/<slug>.mdx",
+      "why": "sets frontmatter image: to the densest commit panel and chains the ghost-read grade. Queues an LLM call — skip it under .thetacog/llm-pause and render panels directly instead.",
+      "guard": "tests/blog/og-is-meaningful-commit-panel.test.mjs"
+    },
+    {
+      "id": "blog-format-gates",
+      "domain": "blog-content",
+      "when": ["validate blog post", "before commit blog", "mdx format check", "cook check post"],
+      "run": "./scripts/validate-mdx.sh src/content/blog/<slug>.mdx && bash scripts/blog/mdx-cook-check.sh src/content/blog/<slug>.mdx",
+      "why": "the two gates a post must pass: forbidden chars + canonical spine + component registration (Check 15), then the market-meal structure.",
+      "guard": "scripts/validate-mdx.sh"
+    },
+    {
+      "id": "comms-send",
+      "domain": "comms-email",
+      "when": ["email me this", "send an update", "write an email", "forwardable note"],
+      "run": "compose in docs/comms/<channel>/approved/<stem>.md + <stem>.grade.json, then: COMMS_DISPATCH_LIVE=1 bash scripts/comms/comms-dispatch.sh <sha>",
+      "why": "the folder IS the trigger. Pre-commit blocks without a grade receipt >=95 on every need; dispatch is silent unless run directly with the LIVE flag.",
+      "guard": "scripts/comms/comms-precommit.sh"
+    },
+    {
+      "id": "book-build",
+      "domain": "book",
+      "when": ["book chapter edit", "add to the book", "book section"],
+      "run": "./scripts/build-book-html.sh",
+      "why": "converts markdown to the HTML Vercel actually serves, and mints the #heading-slug anchors blog deep links depend on. A book commit without it ships a stale page.",
+      "guard": "scripts/convert-chapters-to-html.mjs"
+    },
+    {
+      "id": "public-mirror",
+      "domain": "delegation-mesh",
+      "when": ["publish the package", "push the mirror", "open source release", "thetacog-mcp public"],
+      "run": "bash scripts/mirror-to-public.sh   # inspect, then re-run with --push",
+      "why": "syncs packages/thetacog-mcp to the public repo with the denylist scrub and a hard clean-assert that ABORTS on any private marker.",
+      "guard": "scripts/mirror-to-public.sh"
+    },
+    {
+      "id": "seat-rule",
+      "domain": "pmu-reef",
+      "when": ["seat a rule", "add to the reef", "remember this rule", "make this immortal"],
+      "run": "node scripts/pmu/knock-on.mjs --prompt \"<P>\" --payload \"<T>\" --name <slug> --apply",
+      "why": "seats a child shelf so the topology catches the prompt next time; never mutates the parent vocabulary. Receipt appends to data/pmu/knock-on-convergence.ndjson and logs the amputation command.",
+      "guard": "tests/pmu-simulator/knock-on-loop.test.mjs"
+    }
+  ]
+}

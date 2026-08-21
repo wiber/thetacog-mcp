@@ -1,0 +1,8 @@
+{
+ "n": 0,
+ "mean_delta": null,
+ "pct_with_real_home": 0,
+ "verdict": "no proposals to measure",
+ "honest_note": "Delta = ncd(prompt, C,C) − ncd(prompt, nearest real coord). Positive = a real home grips tighter than the collapse magnet. This measures the knock-on's POTENTIAL; it does not yet seat the rule live.",
+ "rows": []
+}

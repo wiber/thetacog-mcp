@@ -1,0 +1,234 @@
+{
+  "version": 1,
+  "_doc": "TRIGGER ANCHORS (operator 2026-08-01) — the dual-anchor half of rule retrieval. A rule is PLACED where its content compresses, but it must be RETRIEVED where the situations it governs land. Each entry seeds its rule text at each listed coord with src='trigger'. This file is the SOURCE; lens_rules is derived (seedRules DELETEs + rebuilds every reseed, so anchors live here and are re-applied by the seeder — never hand-INSERT into SQLite). curated = from the 2026-08-01 grading-pass miss families; learned = proposed by rule-trigger-anchors.mjs --learn from the trajectory spine. Keep rule text ≤240 chars (the seeder's cap).",
+  "anchors": [
+    {
+      "rule": "Measure, don't assert — when asked 'what measures did we add / could we compute', cite the computed series that exist (data/pmu/measure-history.ndjson · public/data/drift-series.json · rule-effectiveness.json), never a fresh exploration",
+      "coords": [
+        "A,B1"
+      ],
+      "src": "curated",
+      "why": "the 7x-repeated metrics prompt placed at A,B1 and retrieved MDX formatting rules; the content-cell of this rule sits at the C,C collapse magnet",
+      "added": "2026-08-01"
+    },
+    {
+      "rule": "Never hand the operator a fork — no multiple-choice, no A/B/C menu; compute the answer, take the highest-confidence path, NAME the paths not taken and bifurcate them to rooms; read the transcript momentum before asking anything",
+      "coords": [
+        "C,C"
+      ],
+      "src": "curated",
+      "why": "open-ended verdict prompts ('is this good enough?') are the worst offPct family (71-97%) and land at the C,C degenerate magnet; the NEVER-FORK line was never seeded (240ch cap dropped it)",
+      "added": "2026-08-01"
+    },
+    {
+      "rule": "A multi-domain prompt is placed at ONE coordinate and the fence SHEARS OFF every other ask — decompose into explicit subtasks (TaskCreate each) BEFORE executing; bifurcate the overflow to its room, never drop a direction",
+      "coords": [
+        "B,A",
+        "C,C"
+      ],
+      "src": "curated",
+      "why": "multi-domain asks (patent PDF + reply-to-Brian: 71-96% offPct) placed at B,A and retrieved only patent rules; the DELEGATE-TO-SUBTASKS line was never seeded (240ch cap)",
+      "added": "2026-08-01"
+    },
+    {
+      "rule": "CANONICAL-SEQUENCE-HANDSHAKE-FIRST: run the 8-part spine IN ORDER — (0) WHY-BELIEVE dont-trust-us/we-dont-trust-the-AI opens, then the six needs in canonical order, evidence LAST",
+      "coords": [
+        "A,A2"
+      ],
+      "src": "flywheel",
+      "why": "sidecar LOAD-BEARING at A,A2 (2026-08-01T15:19Z, receipt lens-msaikmg4)",
+      "added": "2026-08-01"
+    },
+    {
+      "rule": "HARDWARE-PRIMITIVE-LOCKOUT: define the solution as a hardware primitive below the software layer, which permanently lock",
+      "coords": [
+        "A,A2"
+      ],
+      "src": "flywheel",
+      "why": "sidecar LOAD-BEARING at A,A2 (2026-08-01T19:22Z, receipt lens-msar56q0)",
+      "added": "2026-08-02"
+    },
+    {
+      "rule": "voice: concrete object or scene BEFORE the abstraction — the abstraction is the payoff, never the opener",
+      "coords": [
+        "B,A1"
+      ],
+      "src": "flywheel",
+      "why": "sidecar LOAD-BEARING at B,A1 (2026-08-02T14:19Z, receipt lens-msbw01d7)",
+      "added": "2026-08-02"
+    },
+    {
+      "rule": "email images = CID inline (email-artifact --inline + <img src=\"cid:basename\">) — Gmail STRIPS data: URIs; always send a",
+      "coords": [
+        "C,A1"
+      ],
+      "src": "flywheel",
+      "why": "sidecar LOAD-BEARING at C,A1 (2026-08-02T19:05Z, receipt lens-msc66vjy)",
+      "added": "2026-08-05"
+    },
+    {
+      "rule": "two emails: forwardable + backstage receipt",
+      "coords": [
+        "A,A2"
+      ],
+      "src": "flywheel",
+      "why": "sidecar LOAD-BEARING at A,A2 (2026-08-02T19:19Z, receipt lens-msc6l9ak)",
+      "added": "2026-08-05"
+    },
+    {
+      "rule": "WHY-belief opens; 6 needs in canonical order; grade ≥95",
+      "coords": [
+        "C,A1"
+      ],
+      "src": "flywheel",
+      "why": "sidecar LOAD-BEARING at C,A1 (2026-08-04T22:17Z, receipt lens-msf7pwl6)",
+      "added": "2026-08-05"
+    },
+    {
+      "rule": "find the running code first; speed (~14ms) is a correctness signal",
+      "coords": [
+        "B,C1"
+      ],
+      "src": "flywheel",
+      "why": "sidecar LOAD-BEARING at B,C1 (2026-08-04T23:47Z, receipt lens-msfb666k)",
+      "added": "2026-08-05"
+    },
+    {
+      "rule": "'write/email/send X' ALWAYS routes through the comms folder pipeline, never a one-off send",
+      "coords": [
+        "C,A1"
+      ],
+      "src": "flywheel",
+      "why": "sidecar LOAD-BEARING at C,A1 (2026-08-05T00:20Z, receipt lens-msfc7que)",
+      "added": "2026-08-05"
+    },
+    {
+      "rule": "reader-POV first — what's in it for them",
+      "coords": [
+        "B,A1"
+      ],
+      "src": "flywheel",
+      "why": "sidecar LOAD-BEARING at B,A1 (2026-08-05T00:34Z, receipt lens-msfcufno)",
+      "added": "2026-08-05"
+    },
+    {
+      "rule": "delegation NEVER git-branches (rooms JSON + signed mesh)",
+      "coords": [
+        "B,B1"
+      ],
+      "src": "flywheel",
+      "why": "sidecar LOAD-BEARING at B,B1 (2026-08-05T20:15Z, receipt lens-msgiy1a0)",
+      "added": "2026-08-05"
+    },
+    {
+      "rule": "voice: show the loss with the win — the honest failure mode, shown, is what makes the win credible",
+      "coords": [
+        "C,A1"
+      ],
+      "src": "flywheel",
+      "why": "sidecar LOAD-BEARING at C,A1 (2026-08-06T20:41Z, receipt lens-mshzl1l3)",
+      "added": "2026-08-07"
+    },
+    {
+      "rule": "find the running code first; speed (~14ms) is a correctness signal",
+      "coords": [
+        "C,C2"
+      ],
+      "src": "flywheel",
+      "why": "sidecar LOAD-BEARING at C,C2 (2026-08-07T01:24Z, receipt lens-msi9j3sh)",
+      "added": "2026-08-07"
+    },
+    {
+      "rule": "the writing process includes the qwen ghost-read monologue gated at >=95 tri-check: qwen (weaker reader) monologues cold",
+      "coords": [
+        "B,A1"
+      ],
+      "src": "flywheel",
+      "why": "sidecar LOAD-BEARING at B,A1 (2026-08-07T02:31Z, receipt lens-msibwmt6)",
+      "added": "2026-08-07"
+    },
+    {
+      "rule": "NEVER commit hooks-off — no --no-verify, no hooksPath=/dev/null; the receipts silently drop. A slow hook is a bug in the hook: fix it (detach unbounded calls). Only bypass: landing hook/pipeline changes, say so, backfill after.",
+      "coords": [
+        "B,A1",
+        "C,C"
+      ],
+      "src": "curated",
+      "why": "A/B lab 2026-08-06 (lab-ab.ndjson task seeded-bug-hooks-off, pre+post-fix reruns): the hurried-commit prompt routes to blog-content at B,A1 and BOTH arms sprang the hooks-off trap — the fixed git-discipline rule never entered the injection; C,C added as the degenerate magnet for bare just-commit-it prompts · weight 2.0: safety anchor must win the two-slot per-block admission (lost the 1.0 four-way tie at B,A1 to voice anchors — measured, this file 2026-08-06)",
+      "added": "2026-08-06",
+      "weight": 2
+    },
+    {
+      "rule": "find the running code first; speed (~14ms) is a correctness signal",
+      "coords": [
+        "C,B2"
+      ],
+      "src": "flywheel",
+      "why": "sidecar LOAD-BEARING at C,B2 (2026-08-07T02:52Z, receipt lens-msicmery)",
+      "added": "2026-08-07"
+    },
+    {
+      "rule": "measure don't assert (prove the rate)",
+      "coords": [
+        "C,B2"
+      ],
+      "src": "flywheel",
+      "why": "sidecar LOAD-BEARING at C,B2 (2026-08-07T02:58Z, receipt lens-msicuo6g)",
+      "added": "2026-08-07"
+    },
+    {
+      "rule": "voice: show the loss with the win — the honest failure mode, shown, is what makes the win credible",
+      "coords": [
+        "B,A1"
+      ],
+      "src": "flywheel",
+      "why": "sidecar LOAD-BEARING at B,A1 (2026-08-16T18:01Z, receipt lens-msw3x5cj)",
+      "added": "2026-08-18"
+    },
+    {
+      "rule": "RESEARCH → BOOK → BLOG: add the book section first, quote it with deep links, verify anchors resolve in built HTML",
+      "coords": [
+        "B,A1"
+      ],
+      "src": "flywheel",
+      "why": "sidecar LOAD-BEARING at B,A1 (2026-08-16T17:14Z, receipt lens-msw2gja2)",
+      "added": "2026-08-19"
+    },
+    {
+      "rule": "every post carries its commit-encircles strip (drift history) at the TOP of the body — rendered automatically from post",
+      "coords": [
+        "B,A1"
+      ],
+      "src": "flywheel",
+      "why": "sidecar LOAD-BEARING at B,A1 (2026-08-16T17:15Z, receipt lens-msw2gja2)",
+      "added": "2026-08-19"
+    },
+    {
+      "rule": "measure don't assert (prove the rate)",
+      "coords": [
+        "B,C1"
+      ],
+      "src": "flywheel",
+      "why": "sidecar LOAD-BEARING at B,C1 (2026-08-19T15:58Z, receipt lens-mt0a1mfk)",
+      "added": "2026-08-19"
+    },
+    {
+      "rule": "GROUND-TRUTH-NOT-PERMISSION: every send delivers a FACT ('here is the structural reality you're inside'), never 'may I h",
+      "coords": [
+        "A,A2"
+      ],
+      "src": "flywheel",
+      "why": "sidecar LOAD-BEARING at A,A2 (2026-08-20T23:52Z, receipt lens-mt26bkit)",
+      "added": "2026-08-21"
+    },
+    {
+      "rule": "external = forwarding package, role-not-person",
+      "coords": [
+        "A,A2"
+      ],
+      "src": "flywheel",
+      "why": "sidecar LOAD-BEARING at A,A2 (2026-08-21T10:10Z, receipt lens-mt2sag8a)",
+      "added": "2026-08-21"
+    }
+  ]
+}

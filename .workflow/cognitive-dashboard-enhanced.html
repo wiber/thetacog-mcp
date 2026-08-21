@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cognitive Flow Dashboard | ThetaCoach + Claude Flow</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 100%);
+            color: white;
+            padding: 40px 20px;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1600px;
+            margin: 0 auto;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .header h1 {
+            font-size: 4em;
+            margin-bottom: 10px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .header p {
+            font-size: 1.4em;
+            opacity: 0.8;
+            margin-top: 10px;
+        }
+
+        .claude-flow-status {
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.2) 0%, rgba(118, 75, 162, 0.2) 100%);
+            border: 2px solid #667eea;
+            border-radius: 15px;
+            padding: 25px;
+            margin-bottom: 40px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .status-item {
+            text-align: center;
+        }
+
+        .status-number {
+            font-size: 2.5em;
+            font-weight: bold;
+            color: #667eea;
+        }
+
+        .status-label {
+            font-size: 0.9em;
+            opacity: 0.7;
+            margin-top: 5px;
+        }
+
+        .quick-actions {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+            margin-bottom: 40px;
+        }
+
+        .quick-action {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            padding: 15px 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .quick-action:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: #667eea;
+            transform: translateX(5px);
+        }
+
+        .quick-action-icon {
+            font-size: 1.5em;
+        }
+
+        .quick-action-text {
+            flex: 1;
+        }
+
+        .rooms {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+            gap: 30px;
+        }
+
+        .room {
+            background: linear-gradient(135deg, rgba(255,255,255,0.08) 0%, rgba(255,255,255,0.03) 100%);
+            border-radius: 20px;
+            padding: 35px;
+            cursor: pointer;
+            transition: all 0.4s ease;
+            border: 2px solid;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .room::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 6px;
+            background: var(--room-color);
+        }
+
+        .room:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 25px 50px rgba(0,0,0,0.5);
+            border-color: var(--room-color);
+        }
+
+        .room-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 25px;
+        }
+
+        .room-icon {
+            font-size: 3.5em;
+            margin-right: 20px;
+        }
+
+        .room-title {
+            flex: 1;
+        }
+
+        .room-title h2 {
+            font-size: 2em;
+            margin-bottom: 5px;
+            color: var(--room-color);
+        }
+
+        .room-app {
+            font-size: 0.95em;
+            opacity: 0.6;
+            font-family: 'Monaco', monospace;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 4px 10px;
+            border-radius: 5px;
+        }
+
+        .room-identity {
+            font-size: 1.2em;
+            font-style: italic;
+            margin-bottom: 20px;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.05);
+            border-left: 4px solid var(--room-color);
+            border-radius: 5px;
+        }
+
+        .room-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .room-stat {
+            text-align: center;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 15px;
+            border-radius: 10px;
+        }
+
+        .room-stat-number {
+            font-size: 2em;
+            font-weight: bold;
+            color: var(--room-color);
+        }
+
+        .room-stat-label {
+            font-size: 0.8em;
+            opacity: 0.7;
+            margin-top: 5px;
+        }
+
+        .room-actions {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .room-action-btn {
+            padding: 12px;
+            background: var(--room-color);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: opacity 0.3s ease;
+            font-size: 0.9em;
+        }
+
+        .room-action-btn:hover {
+            opacity: 0.8;
+        }
+
+        .room-action-btn.secondary {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid var(--room-color);
+        }
+
+        /* Room-specific colors - Updated with Hyper instead of Alacritty */
+        .room-terminal {
+            --room-color: #f59e0b;
+        }
+
+        .room-iterm2 {
+            --room-color: #10b981;
+        }
+
+        .room-kitty {
+            --room-color: #a855f7;
+        }
+
+        .room-hyper {
+            --room-color: #ef4444;
+        }
+
+        .room-cursor {
+            --room-color: #8b5cf6;
+        }
+
+        .room-vscode {
+            --room-color: #3b82f6;
+        }
+
+        .flywheel-viz {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            padding: 40px;
+            margin-top: 50px;
+            text-align: center;
+        }
+
+        .flywheel-viz h2 {
+            font-size: 2.5em;
+            margin-bottom: 30px;
+            color: #667eea;
+        }
+
+        .flywheel-diagram {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin: 40px 0;
+        }
+
+        .flywheel-node {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255, 255, 255, 0.1);
+            border: 3px solid;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .flywheel-node:hover {
+            transform: scale(1.15);
+            box-shadow: 0 0 30px currentColor;
+        }
+
+        .flywheel-arrow {
+            font-size: 2em;
+            color: #667eea;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 60px;
+            opacity: 0.6;
+            font-size: 0.9em;
+        }
+
+        .copy-button {
+            background: #667eea;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 0.9em;
+            margin-left: 10px;
+            transition: background 0.3s ease;
+        }
+
+        .copy-button:hover {
+            background: #764ba2;
+        }
+
+        .copy-button.copied {
+            background: #10b981;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🧠 Cognitive Flow Dashboard</h1>
+            <p>103 MCP Tools • 6 Cognitive Rooms • Infinite Flow States</p>
+            <p style="font-size: 0.9em; margin-top: 10px; opacity: 0.6;">
+                Claude Flow + ThetaCoach CRM + Book Revisions = Maximum Liftoff
+            </p>
+        </div>
+
+        <div class="claude-flow-status">
+            <div class="status-item">
+                <div class="status-number">103</div>
+                <div class="status-label">MCP Tools</div>
+            </div>
+            <div class="status-item">
+                <div class="status-number">6</div>
+                <div class="status-label">Cognitive Rooms</div>
+            </div>
+            <div class="status-item">
+                <div class="status-number">∞</div>
+                <div class="status-label">Parallel Tracks</div>
+            </div>
+            <div class="status-item">
+                <div class="status-number">0ms</div>
+                <div class="status-label">Context Switch</div>
+            </div>
+        </div>
+
+        <div class="quick-actions">
+            <div class="quick-action" onclick="copyToClipboard('npx claude-flow@alpha swarm init --topology hierarchical')">
+                <span class="quick-action-icon">🎯</span>
+                <span class="quick-action-text">Init Swarm</span>
+                <button class="copy-button" onclick="event.stopPropagation(); copyCommand(this, 'npx claude-flow@alpha swarm init --topology hierarchical')">Copy</button>
+            </div>
+            <div class="quick-action" onclick="copyToClipboard('List my CRM leads')">
+                <span class="quick-action-icon">📊</span>
+                <span class="quick-action-text">List CRM Leads</span>
+                <button class="copy-button" onclick="event.stopPropagation(); copyCommand(this, 'List my CRM leads')">Copy</button>
+            </div>
+            <div class="quick-action" onclick="copyToClipboard('List book revisions')">
+                <span class="quick-action-icon">📚</span>
+                <span class="quick-action-text">Book Revisions</span>
+                <button class="copy-button" onclick="event.stopPropagation(); copyCommand(this, 'List book revisions')">Copy</button>
+            </div>
+            <div class="quick-action" onclick="copyToClipboard('Generate progress report for today')">
+                <span class="quick-action-icon">📈</span>
+                <span class="quick-action-text">Progress Report</span>
+                <button class="copy-button" onclick="event.stopPropagation(); copyCommand(this, 'Generate progress report for today')">Copy</button>
+            </div>
+        </div>
+
+        <div class="rooms">
+            <!-- Terminal Room - THE TEACHER -->
+            <div class="room room-terminal" onclick="openRoom('terminal')">
+                <div class="room-header">
+                    <div class="room-icon">📣</div>
+                    <div class="room-title">
+                        <h2>The Teacher</h2>
+                        <div class="room-app">Terminal (Built-in) • Purple Theme</div>
+                    </div>
+                </div>
+                <div class="room-identity">
+                    "I explain complex ideas simply. I build audience. I ship content."
+                </div>
+                <div class="room-stats">
+                    <div class="room-stat">
+                        <div class="room-stat-number">90</div>
+                        <div class="room-stat-label">Flow Tools</div>
+                    </div>
+                    <div class="room-stat">
+                        <div class="room-stat-number">∞</div>
+                        <div class="room-stat-label">Agents</div>
+                    </div>
+                    <div class="room-stat">
+                        <div class="room-stat-number">100%</div>
+                        <div class="room-stat-label">Copy Ability</div>
+                    </div>
+                </div>
+                <div style="font-size: 0.9em; opacity: 0.7; margin: 15px 0; line-height: 1.6;">
+                    → Blog posts and thought leadership<br/>
+                    → SEO optimization and discoverability<br/>
+                    → Cmd+A Cmd+C instant context transfer<br/>
+                    → Tab navigation across all rooms<br/>
+                    → Performance monitoring & metrics<br/>
+                    → Cross-room report generation
+                </div>
+                <div class="room-actions">
+                    <button class="room-action-btn" onclick="event.stopPropagation(); openRoom('terminal')">
+                        Open Room →
+                    </button>
+                    <button class="room-action-btn secondary" onclick="event.stopPropagation(); generateReport('terminal')">
+                        Generate Report
+                    </button>
+                </div>
+            </div>
+
+            <!-- iTerm2 Room -->
+            <div class="room room-iterm2" onclick="openRoom('iterm2')">
+                <div class="room-header">
+                    <div class="room-icon">🏭</div>
+                    <div class="room-title">
+                        <h2>The Builder</h2>
+                        <div class="room-app">iTerm2</div>
+                    </div>
+                </div>
+                <div class="room-identity">
+                    "I am building the product infrastructure."
+                </div>
+                <div class="room-stats">
+                    <div class="room-stat">
+                        <div class="room-stat-number">89</div>
+                        <div class="room-stat-label">Commits</div>
+                    </div>
+                    <div class="room-stat">
+                        <div class="room-stat-number">45%</div>
+                        <div class="room-stat-label">Of Work</div>
+                    </div>
+                    <div class="room-stat">
+                        <div class="room-stat-number">8</div>
+                        <div class="room-stat-label">CRM Tools</div>
+                    </div>
+                </div>
+                <div style="font-size: 0.9em; opacity: 0.7; margin: 15px 0; line-height: 1.6;">
+                    → CRM development & debugging<br/>
+                    → Database schemas & migrations<br/>
+                    → API routes & authentication<br/>
+                    → ThetaCoach Account (isolated)
+                </div>
+                <div class="room-actions">
+                    <button class="room-action-btn" onclick="event.stopPropagation(); openRoom('iterm2')">
+                        Open Room →
+                    </button>
+                    <button class="room-action-btn secondary" onclick="event.stopPropagation(); generateReport('iterm2')">
+                        Generate Report
+                    </button>
+                </div>
+            </div>
+
+            <!-- Kitty Room -->
+            <div class="room room-kitty" onclick="openRoom('kitty')">
+                <div class="room-header">
+                    <div class="room-icon">🎩</div>
+                    <div class="room-title">
+                        <h2>The Operator</h2>
+                        <div class="room-app">Kitty</div>
+                    </div>
+                </div>
+                <div class="room-identity">
+                    "I am running business operations and creative work."
+                </div>
+                <div class="room-stats">
+                    <div class="room-stat">
+                        <div class="room-stat-number">24</div>
+                        <div class="room-stat-label">Commits</div>
+                    </div>
+                    <div class="room-stat">
+                        <div class="room-stat-number">12%</div>
+                        <div class="room-stat-label">Of Work</div>
+                    </div>
+                    <div class="room-stat">
+                        <div class="room-stat-number">11%</div>
+                        <div class="room-stat-label">Pattern</div>
+                    </div>
+                </div>
+                <div style="font-size: 0.9em; opacity: 0.7; margin: 15px 0; line-height: 1.6;">
+                    → Admin & user management<br/>
+                    → Email & partnerships<br/>
+                    → Chapter editing & blog posts<br/>
+                    → Copy writing & storytelling
+                </div>
+                <div class="room-actions">
+                    <button class="room-action-btn" onclick="event.stopPropagation(); openRoom('kitty')">
+                        Open Room →
+                    </button>
+                    <button class="room-action-btn secondary" onclick="event.stopPropagation(); generateReport('kitty')">
+                        Generate Report
+                    </button>
+                </div>
+            </div>
+
+            <!-- Hyper Room (replacing Alacritty) -->
+            <div class="room room-hyper" onclick="openRoom('hyper')">
+                <div class="room-header">
+                    <div class="room-icon">🔬</div>
+                    <div class="room-title">
+                        <h2>The Discoverer</h2>
+                        <div class="room-app">Hyper Terminal</div>
+                    </div>
+                </div>
+                <div class="room-identity">
+                    "I am creating foundational knowledge and deep IP."
+                </div>
+                <div class="room-stats">
+                    <div class="room-stat">
+                        <div class="room-stat-number">58</div>
+                        <div class="room-stat-label">Commits</div>
+                    </div>
+                    <div class="room-stat">
+                        <div class="room-stat-number">29%</div>
+                        <div class="room-stat-label">Of Work</div>
+                    </div>
+                    <div class="room-stat">
+                        <div class="room-stat-number">5</div>
+                        <div class="room-stat-label">Book Tools</div>
+                    </div>
+                </div>
+                <div style="font-size: 0.9em; opacity: 0.7; margin: 15px 0; line-height: 1.6;">
+                    → Patent writing & validation<br/>
+                    → Book chapters & appendices<br/>
+                    → Unity Principle theory<br/>
+                    → Deep technical research
+                </div>
+                <div class="room-actions">
+                    <button class="room-action-btn" onclick="event.stopPropagation(); openRoom('hyper')">
+                        Open Room →
+                    </button>
+                    <button class="room-action-btn secondary" onclick="event.stopPropagation(); generateReport('hyper')">
+                        Generate Report
+                    </button>
+                </div>
+            </div>
+
+            <!-- Cursor Room -->
+            <div class="room room-cursor" onclick="openRoom('cursor')">
+                <div class="room-header">
+                    <div class="room-icon">🧪</div>
+                    <div class="room-title">
+                        <h2>The Experimenter</h2>
+                        <div class="room-app">Cursor</div>
+                    </div>
+                </div>
+                <div class="room-identity">
+                    "I am rapidly prototyping and testing ideas in public."
+                </div>
+                <div class="room-stats">
+                    <div class="room-stat">
+                        <div class="room-stat-number">4</div>
+                        <div class="room-stat-label">Commits</div>
+                    </div>
+                    <div class="room-stat">
+                        <div class="room-stat-number">2%</div>
+                        <div class="room-stat-label">Of Work</div>
+                    </div>
+                    <div class="room-stat">
+                        <div class="room-stat-number">AI</div>
+                        <div class="room-stat-label">Powered</div>
+                    </div>
+                </div>
+                <div style="font-size: 0.9em; opacity: 0.7; margin: 15px 0; line-height: 1.6;">
+                    → IntentGuard architecture<br/>
+                    → NUCLEAR tracking patterns<br/>
+                    → Experimental features<br/>
+                    → Open-source traction
+                </div>
+                <div class="room-actions">
+                    <button class="room-action-btn" onclick="event.stopPropagation(); openRoom('cursor')">
+                        Open Room →
+                    </button>
+                    <button class="room-action-btn secondary" onclick="event.stopPropagation(); generateReport('cursor')">
+                        Generate Report
+                    </button>
+                </div>
+            </div>
+
+            <!-- VS Code Room -->
+            <div class="room room-vscode" onclick="openRoom('vscode')">
+                <div class="room-header">
+                    <div class="room-icon">🗺️</div>
+                    <div class="room-title">
+                        <h2>The Strategist</h2>
+                        <div class="room-app">VS Code</div>
+                    </div>
+                </div>
+                <div class="room-identity">
+                    "I am analyzing systems and understanding patterns."
+                </div>
+                <div class="room-stats">
+                    <div class="room-stat">
+                        <div class="room-stat-number">7</div>
+                        <div class="room-stat-label">Commits</div>
+                    </div>
+                    <div class="room-stat">
+                        <div class="room-stat-number">3%</div>
+                        <div class="room-stat-label">Of Work</div>
+                    </div>
+                    <div class="room-stat">
+                        <div class="room-stat-number">23%</div>
+                        <div class="room-stat-label">Pattern</div>
+                    </div>
+                </div>
+                <div style="font-size: 0.9em; opacity: 0.7; margin: 15px 0; line-height: 1.6;">
+                    → Commit history review<br/>
+                    → Architecture analysis<br/>
+                    → Documentation & guides<br/>
+                    → System understanding
+                </div>
+                <div class="room-actions">
+                    <button class="room-action-btn" onclick="event.stopPropagation(); openRoom('vscode')">
+                        Open Room →
+                    </button>
+                    <button class="room-action-btn secondary" onclick="event.stopPropagation(); generateReport('vscode')">
+                        Generate Report
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="flywheel-viz">
+            <h2>🔄 The Flywheel Effect</h2>
+            <p style="opacity: 0.7; max-width: 800px; margin: 0 auto 30px;">
+                Each room produces outputs that become inputs for other rooms. Context flows between identities with zero friction.
+            </p>
+            <div class="flywheel-diagram">
+                <div class="flywheel-node" style="border-color: #ef4444;" title="Discoverer (Hyper)">
+                    <div style="font-size: 2em;">🔬</div>
+                    <div style="font-size: 0.8em;">Hyper</div>
+                </div>
+                <div class="flywheel-arrow">→</div>
+                <div class="flywheel-node" style="border-color: #10b981;" title="Builder (iTerm2)">
+                    <div style="font-size: 2em;">🏭</div>
+                    <div style="font-size: 0.8em;">iTerm2</div>
+                </div>
+                <div class="flywheel-arrow">→</div>
+                <div class="flywheel-node" style="border-color: #a855f7;" title="Operator (Kitty)">
+                    <div style="font-size: 2em;">🎩</div>
+                    <div style="font-size: 0.8em;">Kitty</div>
+                </div>
+                <div class="flywheel-arrow">→</div>
+                <div class="flywheel-node" style="border-color: #3b82f6;" title="Strategist (VS Code)">
+                    <div style="font-size: 2em;">🗺️</div>
+                    <div style="font-size: 0.8em;">VS Code</div>
+                </div>
+                <div class="flywheel-arrow">→</div>
+                <div class="flywheel-node" style="border-color: #8b5cf6;" title="Teacher (Terminal)">
+                    <div style="font-size: 2em;">📣</div>
+                    <div style="font-size: 0.8em;">Terminal</div>
+                </div>
+            </div>
+            <p style="opacity: 0.6; font-size: 0.9em; margin-top: 30px;">
+                Cmd+Space → Room Name → Enter = Load Complete Cognitive Context
+            </p>
+        </div>
+
+        <div class="footer">
+            <p>Generated: <span id="timestamp"></span></p>
+            <p style="margin-top: 10px;">Tool = Identity = Mindset | 103 MCP Tools Working Together</p>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('timestamp').textContent = new Date().toLocaleString();
+
+        function openRoom(roomName) {
+            const roomPages = {
+                'terminal': '.workflow/rooms/terminal-teacher.html',
+                'iterm2': '.workflow/rooms/iterm2-builder.html',
+                'kitty': '.workflow/rooms/kitty-operator.html',
+                'hyper': '.workflow/rooms/hyper-discoverer.html',
+                'cursor': '.workflow/rooms/cursor-experimenter.html',
+                'vscode': '.workflow/rooms/vscode-strategist.html'
+            };
+            window.open(roomPages[roomName], '_blank');
+        }
+
+        function copyToClipboard(text) {
+            navigator.clipboard.writeText(text).then(() => {
+                console.log('Copied:', text);
+            });
+        }
+
+        function copyCommand(button, text) {
+            navigator.clipboard.writeText(text).then(() => {
+                button.textContent = '✓ Copied';
+                button.classList.add('copied');
+                setTimeout(() => {
+                    button.textContent = 'Copy';
+                    button.classList.remove('copied');
+                }, 2000);
+            });
+        }
+
+        function generateReport(roomName) {
+            const prompts = {
+                'terminal': 'Generate a comprehensive report of all work done in the Terminal (Teacher) room today. Include: blog posts written, content published, SEO optimization work, documentation created, teaching materials developed, audience engagement metrics, and next content priorities.',
+                'iterm2': 'Generate a comprehensive report of all work done in iTerm2 (Builder) room today. Include: CRM features built, database changes, API routes modified, authentication updates, commits made, and next development priorities.',
+                'kitty': 'Generate a comprehensive report of all work done in Kitty (Operator) room today. Include: emails sent, partnerships advanced, blog posts drafted, chapters edited, admin tasks completed, and next operational priorities.',
+                'hyper': 'Generate a comprehensive report of all work done in Hyper (Discoverer) room today. Include: patent writing progress, book chapters completed, technical validation performed, research breakthroughs, and next deep work priorities.',
+                'cursor': 'Generate a comprehensive report of all work done in Cursor (Experimenter) room today. Include: experiments conducted, IntentGuard progress, prototypes built, AI-assisted coding wins, and next experimentation priorities.',
+                'vscode': 'Generate a comprehensive report of all work done in VS Code (Strategist) room today. Include: commits analyzed, architecture insights gained, documentation reviewed, system patterns identified, and next strategic analysis priorities.'
+            };
+
+            const prompt = prompts[roomName];
+            copyToClipboard(prompt);
+            alert('Report prompt copied to clipboard! Paste it into Claude in the ' + roomName + ' room to generate your report.');
+        }
+    </script>
+</body>
+</html>

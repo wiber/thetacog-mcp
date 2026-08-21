@@ -1,0 +1,11 @@
+{
+  "item": 2,
+  "title": "The sensor is integer, not compression",
+  "files": [
+    "scripts/pmu/triptych-build.mjs"
+  ],
+  "grounds": "senseDecompose = FNV-1a simhash + Hamming over 20,736 pair-cells, max-pooled over placed claims — pure integer arithmetic, portable by construction",
+  "shallow_error_without": "'the sensor rides the compressor' — refuted by reading ten lines",
+  "files_missing": 0,
+  "read_at": null
+}

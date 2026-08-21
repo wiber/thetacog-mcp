@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>☕ Messages | The Network (19:00-22:00 Cultivation)</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>☕</text></svg>">
+    <!-- ═══════════════════════════════════════════════════════════════════════════
+         COORDINATE LOCKING METADATA - ☕::network
+         Copy this entire HTML to Claude to lock into this coordinate
+         ═══════════════════════════════════════════════════════════════════════════ -->
+    <script type="application/json" id="coordinate-lock">
+    {
+        "namespace": "☕::network",
+        "coordinate": "🤝 B2 Tactics.Deal",
+        "intersection": "B2:B2 (Deal:Deal)",
+        "tile_type": "diagonal_essence",
+        "terminal": "Messages",
+        "winning_pointer": "en.wikipedia.org/wiki/Commitment_scheme",
+        "question": "What is the essence of Deal? Binding commitments that can't be faked.",
+        "book_chapter": "[Your relevant chapter/doc]",
+
+        "temporal_config": {
+            "hours": "19:00 - 22:00",
+            "timezone": "America/Chicago",
+            "theme": "Evening Cultivation",
+            "energy": "relationships, no agenda",
+            "distinction": "This is CULTIVATION (watering), not hunting (🎩::operator 17:00-19:00)"
+        },
+
+        "memory_palace": "Step into the warm café. Amber lighting. Quiet conversations. Steam rising. This isn't hunting (that's Kitty). This is watering the garden. No agenda. Just presence.",
+
+        "focus_areas": [
+            "Relationship maintenance",
+            "Mentor check-ins",
+            "Gratitude loops",
+            "Serendipity cultivation"
+        ],
+
+        "prompt_types": [
+            "[CHECK-IN] Reach out to...",
+            "[GRATITUDE] Thank them for...",
+            "[WATER] This relationship needs attention...",
+            "[CONNECT] Introduce X to Y..."
+        ],
+
+        "autonomous_process": {
+            "step1_git": "git log --oneline -10 -- 'data/relationships/' (if exists)",
+            "step2_scan": "Check contact list for neglected relationships",
+            "step3_state": "Review last touchpoints, find gaps",
+            "step4_prompt": "Generate check-in and gratitude prompts"
+        },
+
+        "validation": {
+            "vanity": ["Nice chat", "Good to catch up", "Friendly"],
+            "result": ["Relationship strengthened", "Serendipity unlocked", "Trust deepened"]
+        },
+
+        "cognitive_affordance": {
+            "sees": ["Relationship equity", "Intros to make", "Gratitude to express", "Serendipitous connections"],
+            "ignores": ["Code architecture", "Patent proofs", "Demo logistics", "Content pipeline"],
+            "pull": "You come here to GIVE, not take. Commitment schemes work because they bind. Relationships are commitment schemes. Water the garden."
+        },
+
+        "escape_gravity": {
+            "axis": "Given > Taken",
+            "forbidden": ["Sent a follow-up", "Advisor hasn't replied", "Networking event attended", "LinkedIn connection made"],
+            "counts": "Relationship equity increased only. Unprompted help offered = true signal."
+        },
+
+        "differentiation": {
+            "handoff_to": {
+                "📐::architect": "Strategic relationship decision → 🎯 A2",
+                "🎩::operator": "Relationship is warm, convert → 🌊 C3",
+                "🎤::voice": "Connection has content opportunity → 📡 B3",
+                "🔒::vault": "Legal/contract question → ⚖️ A1"
+            },
+            "handoff_from": {
+                "📐::architect": "Need intro to [person]",
+                "🎩::operator": "Deal needs relationship warming",
+                "🎤::voice": "Endorsement opportunity"
+            }
+        },
+
+        "affordances": ["NURTURE", "INTRO", "GIVE", "BIND"],
+        "archaeology": {
+            "api": "your-api-endpoint",
+            "paths": ["docs/05-content/tesseract/battle-cards/*", "docs/crm/*"]
+        }
+    }
+    </script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'SF Mono', 'Monaco', 'Consolas', monospace;
+            background: linear-gradient(135deg, #f4a460 0%, #daa520 50%, #cd853f 100%);
+            color: #2c1810;
+            min-height: 100vh;
+            padding: 40px 20px;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: rgba(255, 248, 240, 0.95);
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            border: 3px solid #cd853f;
+        }
+        .back-button {
+            background: rgba(139, 69, 19, 0.2);
+            color: #8b4513;
+            border: 2px solid #cd853f;
+            padding: 14px 28px;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 1.1em;
+            font-weight: bold;
+            margin-bottom: 40px;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s ease;
+        }
+        .back-button:hover { background: rgba(139, 69, 19, 0.3); transform: translateX(-5px); }
+        .copy-html-btn {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: rgba(0,0,0,0.8);
+            color: #cd853f;
+            border: 2px solid #cd853f;
+            padding: 12px 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 0.9em;
+            font-weight: bold;
+            z-index: 1000;
+            font-family: 'Monaco', monospace;
+        }
+        .copy-html-btn:hover { background: #cd853f; color: white; }
+        h1 { font-size: 2.5em; margin-bottom: 10px; color: #8b4513; text-shadow: 2px 2px 4px rgba(0,0,0,0.2); }
+        .subtitle { font-size: 1.2em; color: #a0522d; margin-bottom: 30px; font-style: italic; }
+        .section {
+            margin: 30px 0;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.7);
+            border-left: 5px solid #cd853f;
+            border-radius: 8px;
+        }
+        h2 { color: #8b4513; margin-bottom: 15px; font-size: 1.8em; }
+        .visual-anchor {
+            background: linear-gradient(to right, #fff8dc, #ffe4b5);
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+            border: 2px dashed #cd853f;
+            font-size: 1.1em;
+            text-align: center;
+        }
+        .priority-list { list-style: none; padding: 0; }
+        .priority-list li {
+            padding: 18px 0;
+            border-bottom: 2px solid #eee;
+            font-size: 1.1em;
+            color: #333;
+            line-height: 1.6;
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+        }
+        .priority-list li:last-child { border-bottom: none; }
+        .priority-badge {
+            background: #cd853f;
+            color: white;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.8em;
+            font-weight: bold;
+            white-space: nowrap;
+        }
+        .priority-badge.p1 { background: #dc2626; }
+        .priority-badge.p2 { background: #f59e0b; }
+        .priority-badge.p3 { background: #10b981; }
+        .deep-search {
+            background: #fef3c7;
+            padding: 30px;
+            border-radius: 15px;
+            border-left: 6px solid #f59e0b;
+            margin-bottom: 30px;
+        }
+        .deep-search h3 { font-size: 1.5em; color: #92400e; margin-bottom: 20px; }
+        .deep-search code {
+            background: #1a1a1a;
+            color: #22c55e;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-family: 'Monaco', monospace;
+        }
+        .deep-search ul { list-style: none; padding: 0; }
+        .deep-search li { padding: 10px 0; font-size: 1.1em; color: #78350f; }
+        .deep-search li:before { content: '📂'; margin-right: 12px; }
+        .identity-rules {
+            background: rgba(205, 133, 63, 0.15);
+            padding: 30px;
+            border-radius: 15px;
+            border-left: 6px solid #cd853f;
+            margin-bottom: 30px;
+        }
+        .identity-rules h3 { font-size: 1.5em; color: #8b4513; margin-bottom: 20px; }
+        .identity-rules ul { list-style: none; padding: 0; }
+        .identity-rules li { padding: 12px 0; font-size: 1.1em; color: #444; line-height: 1.6; }
+        .identity-rules li:before { content: '→'; margin-right: 12px; color: #cd853f; font-weight: bold; font-size: 1.3em; }
+        strong { color: #8b4513; }
+        .room-switcher {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 30px;
+            padding: 15px;
+            background: rgba(255,255,255,0.3);
+            border-radius: 12px;
+        }
+        .room-switcher a {
+            padding: 8px 16px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 0.95em;
+            transition: transform 0.2s, background 0.2s;
+        }
+        .room-switcher a:hover { transform: scale(1.05); }
+        .room-switcher .builder { background: #3b82f6; color: white; }
+        .room-switcher .architect { background: #4f46e5; color: white; }
+        .room-switcher .operator { background: #22c55e; color: white; }
+        .room-switcher .vault { background: #ef4444; color: white; }
+        .room-switcher .voice { background: #a855f7; color: white; }
+        .room-switcher .laboratory { background: #06b6d4; color: white; }
+        .room-switcher .performer { background: #f59e0b; color: white; }
+        .room-switcher .network { background: #cd853f; color: white; }
+        .room-switcher .navigator { background: #0d9488; color: white; }
+        .room-switcher .current { opacity: 0.5; pointer-events: none; }
+        .footer { text-align: center; color: #8b4513; margin-top: 60px; font-size: 1.1em; opacity: 0.9; }
+    </style>
+</head>
+<body>
+    <!-- Copy Whole HTML Button - Paste to Claude to lock into this coordinate -->
+    <button class="copy-html-btn" onclick="navigator.clipboard.writeText(document.documentElement.outerHTML).then(()=>{this.textContent='✓ Copied!';setTimeout(()=>this.textContent='📋 ☕::network',2000)})">📋 ☕::network</button>
+
+    <div class="container">
+        <a href="../cognitive-dashboard.html" class="back-button">← Back to Dashboard</a>
+
+        <nav class="room-switcher">
+            <a href="iterm2-builder.html" target="_blank" class="builder">🔨 Builder</a>
+            <a href="vscode-architect.html" target="_blank" class="architect">📐 Architect</a>
+            <a href="kitty-operator.html" target="_blank" class="operator">🎩 Operator</a>
+            <a href="wezterm-vault.html" target="_blank" class="vault">🔒 Vault</a>
+            <a href="terminal-voice.html" target="_blank" class="voice">🎤 Voice</a>
+            <a href="cursor-laboratory.html" target="_blank" class="laboratory">🧪 Laboratory</a>
+            <a href="alacritty-performer.html" target="_blank" class="performer">🎭 Performer</a>
+            <a href="messages-network.html" target="_blank" class="network current">☕ Network</a>
+            <a href="rio-navigator.html" target="_blank" class="navigator">🧭 Navigator</a>
+        </nav>
+
+        <h1>☕ Messages: The Network</h1>
+        <p class="subtitle">The Warm Cafe | Relationship Cultivation | B2:Deal Coordinate</p>
+
+        <div style="background: linear-gradient(135deg, #1e293b 0%, #334155 100%); padding: 25px; border-radius: 12px; margin-bottom: 30px; border: 3px solid #cd853f; box-shadow: 0 8px 20px rgba(0,0,0,0.3);">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
+                <h2 style="color: #cd853f; margin: 0;">⏰ TEMPORAL ROOM: 19:00 - 22:00</h2>
+                <span style="background: #cd853f; color: white; padding: 8px 16px; border-radius: 20px; font-weight: bold; font-size: 1.1em;">ACTIVE: Evening Hours</span>
+            </div>
+            <p style="color: #e2e8f0; font-size: 1.1em; line-height: 1.7; margin: 0;">
+                <strong style="color: #fbbf24;">Theme:</strong> "Evening Cultivation" — This is RELATIONSHIP GARDENING time, not hunting (that's 🎩 Operator 17:00-19:00).
+                During this 3-hour window, Ollama prompts CHECK-INS and GRATITUDE. No agenda. Just presence. Water the garden.
+            </p>
+        </div>
+
+        <div class="visual-anchor">
+            <strong>The Memory Palace (from rooms.json):</strong> Step into the warm café. Amber lighting. Quiet conversations. Steam rising.
+            This isn't hunting (that's Kitty). This is watering the garden. No agenda. Just presence.
+        </div>
+
+        <!-- DYNAMIC PRIORITY QUEUE - Generated by prompt, not static -->
+        <div class="section" id="priority-queue-section">
+            <h2>🚨 Priority Queue <span style="font-size:0.5em;color:#64748b;font-weight:normal;">— Generated by ☕::network prompt</span></h2>
+
+            <!-- Scoring Reference (always visible) -->
+            <div style="background:#1e293b;padding:20px;border-radius:12px;margin-bottom:25px;border:2px solid #cd853f;">
+                <h3 style="color:#cd853f;font-size:1.3em;margin-bottom:15px;">📊 VALIDATION RULES (from rooms.json)</h3>
+                <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;">
+                    <div style="background:rgba(239,68,68,0.15);padding:15px;border-radius:8px;border-left:4px solid #ef4444;">
+                        <strong style="color:#ef4444;font-size:1.1em;">❌ VANITY (score=0)</strong><br/>
+                        <ul style="margin:10px 0 0 20px;color:#fca5a5;line-height:1.8;">
+                            <li>"Nice chat"</li>
+                            <li>"Good to catch up"</li>
+                            <li>"Friendly"</li>
+                            <li>"Sent a follow-up"</li>
+                            <li>"Advisor hasn't replied"</li>
+                        </ul>
+                        <p style="color:#e2e8f0;margin-top:10px;font-size:0.95em;">Passive signals. No reciprocal value exchange.</p>
+                    </div>
+                    <div style="background:rgba(34,197,94,0.15);padding:15px;border-radius:8px;border-left:4px solid #22c55e;">
+                        <strong style="color:#22c55e;font-size:1.1em;">✅ RESULT (score=1)</strong><br/>
+                        <ul style="margin:10px 0 0 20px;color:#86efac;line-height:1.8;">
+                            <li>"Relationship strengthened"</li>
+                            <li>"Serendipity unlocked"</li>
+                            <li>"Trust deepened"</li>
+                            <li>"They offered to introduce us"</li>
+                            <li>"Unprompted help offered"</li>
+                        </ul>
+                        <p style="color:#e2e8f0;margin-top:10px;font-size:0.95em;">Active signals. Reciprocal value created.</p>
+                    </div>
+                </div>
+                <div style="margin-top:15px;padding:15px;background:rgba(251,191,36,0.1);border-radius:8px;border:2px dashed #fbbf24;">
+                    <p style="color:#fbbf24;margin:0;font-size:1.05em;">
+                        <strong>🎯 CONVERSION SIGNAL:</strong> relationship_equity_increased
+                        — If no unprompted help was offered/received, it doesn't count.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Dynamic Priority List (populated by prompt output) -->
+            <div id="network-priorities" style="background:#0f172a;padding:20px;border-radius:12px;min-height:150px;">
+                <p style="color:#64748b;font-style:italic;text-align:center;padding:30px 0;">
+                    ⏳ Run the prompt below to generate priorities from live data...<br/>
+                    <span style="font-size:0.85em;">Prompt executes: git log, battle-cards ls, your-api-endpoint API</span>
+                </p>
+            </div>
+
+            <!-- Last Known State (fallback until prompt runs) -->
+            <details style="margin-top:15px;">
+                <summary style="cursor:pointer;color:#cd853f;font-weight:bold;">📋 Last Known Priorities (Feb 11)</summary>
+                <ul class="priority-list" style="margin-top:10px;opacity:0.7;">
+                    <li><span class="priority-badge p1">P1</span><strong>Advisor Updates:</strong> Monthly check-ins with key advisors - share Tesseract progress, ask for introductions</li>
+                    <li><span class="priority-badge p1">P1</span><strong>Mentor Relationships:</strong> Nurture connections that opened doors - gratitude loops, no-agenda catch-ups</li>
+                    <li><span class="priority-badge p2">P2</span><strong>Speaker Event Coordination:</strong> Logistics with organizers, travel, tech requirements</li>
+                    <li><span class="priority-badge p2">P2</span><strong>LinkedIn DM Triage:</strong> Route sales inquiries to Kitty, keep relationship convos here</li>
+                    <li><span class="priority-badge p3">P3</span><strong>Ecosystem Cultivation:</strong> Connect interesting people to each other, build social capital</li>
+                </ul>
+            </details>
+        </div>
+
+        <div class="section">
+            <div class="deep-search">
+                <h3>🔍 Deep Search Protocol</h3>
+                <p style="margin-bottom: 15px; font-size: 1.1em;"><strong>ALWAYS check repo docs before claiming something doesn't exist or making assumptions:</strong></p>
+                <ul>
+                    <li><code>docs/planning/</code> — Advisor relationships, networking strategy</li>
+                    <li><code>docs/crm/</code> — Contact management, relationship tracking</li>
+                    <li><code>.workflow/</code> — Cognitive room configs, relationship rituals</li>
+                    <li><code>CLAUDE.md</code> — Critical rules and patterns</li>
+                    <li><code>docs/05-content/</code> — Speaking event materials, bio assets</li>
+                </ul>
+                <p style="margin-top: 15px; font-style: italic;">When coordinating with advisors or events, search the repo first. Context usually exists.</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <div style="background: linear-gradient(135deg, #1e293b 0%, #334155 100%); padding: 30px; border-radius: 15px; border: 3px solid #fbbf24; margin-bottom: 30px;">
+                <h3 style="color: #fbbf24; font-size: 1.6em; margin-bottom: 20px;">🌱 Focus Areas (from rooms.json)</h3>
+                <ul style="list-style: none; padding: 0;">
+                    <li style="padding: 12px 0; font-size: 1.1em; color: #e2e8f0; line-height: 1.6;">
+                        <span style="color: #cd853f; font-weight: bold; font-size: 1.3em;">→</span> <strong style="color: #fbbf24;">Relationship maintenance</strong> — Regular watering, not extraction
+                    </li>
+                    <li style="padding: 12px 0; font-size: 1.1em; color: #e2e8f0; line-height: 1.6;">
+                        <span style="color: #cd853f; font-weight: bold; font-size: 1.3em;">→</span> <strong style="color: #fbbf24;">Mentor check-ins</strong> — Update advisors, no agenda catch-ups
+                    </li>
+                    <li style="padding: 12px 0; font-size: 1.1em; color: #e2e8f0; line-height: 1.6;">
+                        <span style="color: #cd853f; font-weight: bold; font-size: 1.3em;">→</span> <strong style="color: #fbbf24;">Gratitude loops</strong> — Thank-you notes, recognition, acknowledgment
+                    </li>
+                    <li style="padding: 12px 0; font-size: 1.1em; color: #e2e8f0; line-height: 1.6;">
+                        <span style="color: #cd853f; font-weight: bold; font-size: 1.3em;">→</span> <strong style="color: #fbbf24;">Serendipity cultivation</strong> — Introductions, connections, social capital
+                    </li>
+                </ul>
+            </div>
+
+            <div style="background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); padding: 30px; border-radius: 15px; border: 3px solid #22c55e; margin-bottom: 30px;">
+                <h3 style="color: #22c55e; font-size: 1.6em; margin-bottom: 20px;">💬 Prompt Types (Ollama executes during 19:00-22:00)</h3>
+                <ul style="list-style: none; padding: 0;">
+                    <li style="padding: 15px; margin-bottom: 12px; background: rgba(34, 197, 94, 0.1); border-radius: 8px; border-left: 4px solid #22c55e;">
+                        <code style="color: #22c55e; font-weight: bold; font-size: 1.1em;">[CHECK-IN]</code>
+                        <span style="color: #e2e8f0; margin-left: 10px;">Reach out to... (no agenda, just presence)</span>
+                    </li>
+                    <li style="padding: 15px; margin-bottom: 12px; background: rgba(251, 191, 36, 0.1); border-radius: 8px; border-left: 4px solid #fbbf24;">
+                        <code style="color: #fbbf24; font-weight: bold; font-size: 1.1em;">[GRATITUDE]</code>
+                        <span style="color: #e2e8f0; margin-left: 10px;">Thank them for... (express appreciation)</span>
+                    </li>
+                    <li style="padding: 15px; margin-bottom: 12px; background: rgba(59, 130, 246, 0.1); border-radius: 8px; border-left: 4px solid #3b82f6;">
+                        <code style="color: #3b82f6; font-weight: bold; font-size: 1.1em;">[WATER]</code>
+                        <span style="color: #e2e8f0; margin-left: 10px;">This relationship needs attention... (garden maintenance)</span>
+                    </li>
+                    <li style="padding: 15px; background: rgba(168, 85, 247, 0.1); border-radius: 8px; border-left: 4px solid #a855f7;">
+                        <code style="color: #a855f7; font-weight: bold; font-size: 1.1em;">[CONNECT]</code>
+                        <span style="color: #e2e8f0; margin-left: 10px;">Introduce X to Y... (connector role)</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="identity-rules">
+                <h3>The Flywheel: How The Network Compounds Relationships</h3>
+                <ul>
+                    <li><strong>INPUTS FROM KITTY (Operator):</strong> "This person isn't a buyer, but they're well-connected" → Move them from sales pipeline to relationship garden</li>
+                    <li><strong>INPUTS FROM TERMINAL (Voice):</strong> Tesseract Series post went viral → 15 DMs from strangers → Triage: buyers to Kitty, potential friends stay here</li>
+                    <li><strong>INPUTS FROM VS CODE (Architect):</strong> "You haven't talked to your advisor in 3 weeks. Update them." → Strategic relationships need regular watering</li>
+                    <li><strong>INPUTS FROM ALACRITTY (Performer):</strong> Post-event introductions → "Met 3 fascinating people at de_CENTRALIZED, following up"</li>
+                    <li><strong>OUTPUTS TO KITTY (Operator):</strong> "This person just asked 'how can I help?' — they're ready for a real conversation" → Warm handoff</li>
+                    <li><strong>OUTPUTS TO VS CODE (Architect):</strong> "Three advisors asked about patent timeline—should we communicate publicly?" → Strategic insight</li>
+                    <li><strong>OUTPUTS TO WEZTERM (Vault):</strong> "Advisor asked a physics question I couldn't answer" → Research direction</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>🤖 Autonomous Process (Ollama runs during 19:00-22:00)</h2>
+            <div style="background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); padding: 30px; border-radius: 15px; border: 3px solid #06b6d4; margin-bottom: 30px;">
+                <h3 style="color: #06b6d4; font-size: 1.6em; margin-bottom: 20px;">🔁 4-Step Process (from rooms.json)</h3>
+                <div style="display: flex; flex-direction: column; gap: 20px;">
+                    <div style="background: rgba(6, 182, 212, 0.1); padding: 20px; border-radius: 10px; border-left: 5px solid #06b6d4;">
+                        <strong style="color: #22d3ee; font-size: 1.2em;">STEP 1: git log</strong><br/>
+                        <code style="color: #94a3b8; font-size: 0.95em;">git log --oneline -10 -- "data/relationships/" (if exists)</code><br/>
+                        <span style="color: #e2e8f0; margin-top: 10px; display: block;">Scans recent relationship data changes to identify active connections.</span>
+                    </div>
+
+                    <div style="background: rgba(34, 197, 94, 0.1); padding: 20px; border-radius: 10px; border-left: 5px solid #22c55e;">
+                        <strong style="color: #4ade80; font-size: 1.2em;">STEP 2: Contact scan</strong><br/>
+                        <span style="color: #e2e8f0;">Check contact list for neglected relationships — who haven't we touched in 2+ weeks?</span>
+                    </div>
+
+                    <div style="background: rgba(251, 191, 36, 0.1); padding: 20px; border-radius: 10px; border-left: 5px solid #fbbf24;">
+                        <strong style="color: #fbbf24; font-size: 1.2em;">STEP 3: Touchpoint review</strong><br/>
+                        <span style="color: #e2e8f0;">Review last touchpoints, find gaps — relationships are gardens that need watering.</span>
+                    </div>
+
+                    <div style="background: rgba(168, 85, 247, 0.1); padding: 20px; border-radius: 10px; border-left: 5px solid #a855f7;">
+                        <strong style="color: #c084fc; font-size: 1.2em;">STEP 4: Prompt generation</strong><br/>
+                        <span style="color: #e2e8f0;">Generate check-in and gratitude prompts — [CHECK-IN], [GRATITUDE], [WATER], [CONNECT].</span>
+                    </div>
+                </div>
+                <div style="margin-top: 25px; padding: 20px; background: rgba(239, 68, 68, 0.1); border-radius: 10px; border: 2px dashed #ef4444;">
+                    <p style="color: #fca5a5; font-size: 1.1em; line-height: 1.7; margin: 0;">
+                        <strong style="color: #ef4444;">⚠️ CRITICAL DISTINCTION:</strong> This room runs 19:00-22:00 for CULTIVATION (watering the garden).
+                        If you're closing deals, that's 🎩::operator (17:00-19:00, Business Close). Network = give, Operator = take.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>🔄 COMPLETE FLYWHEEL CYCLE: One Relationship's Journey</h2>
+            <div style="background: rgba(205, 133, 63, 0.15); padding: 30px; border-radius: 15px; border-left: 6px solid #cd853f; margin-bottom: 25px;">
+                <h3 style="font-size: 1.5em; color: #8b4513; margin-bottom: 20px;">Example: The Advisor Introduction Chain</h3>
+
+                <div style="margin-bottom: 20px;">
+                    <h4 style="color: #a0522d; margin-bottom: 10px;">🔻 CONTACT ARRIVES IN NETWORK</h4>
+                    <p style="line-height: 1.7; color: #555;">Kitty triages: "This LinkedIn DM isn't a buyer—they're a former VP at a relevant company." Network receives: "Move to relationship cultivation, not sales pipeline." You send a warm message: "No agenda, just curious about your journey."</p>
+                </div>
+
+                <div style="margin-bottom: 20px;">
+                    <h4 style="color: #a0522d; margin-bottom: 10px;">⚗️ NETWORK CULTIVATES OVER TIME</h4>
+                    <p style="line-height: 1.7; color: #555;">Inside Network, you nurture: 3 no-agenda check-ins over 2 months. You share Tesseract progress without asking for anything. They respond with genuine interest. Relationship equity builds. Then unprompted: "I know someone who would love what you're building. Want an intro?"</p>
+                </div>
+
+                <div style="margin-bottom: 20px;">
+                    <h4 style="color: #a0522d; margin-bottom: 10px;">🔺 NETWORK DISTRIBUTES SERENDIPITY</h4>
+                    <p style="line-height: 1.7; color: #555;">
+                        <strong>→ Kitty (Operator):</strong> "Warm intro received. This is a qualified lead with social proof."<br/>
+                        <strong>→ VS Code (Architect):</strong> "Pattern detected: 3 advisors asked same question. Strategic insight."<br/>
+                        <strong>→ Terminal (Voice):</strong> "This conversation would make a great story (with permission)."
+                    </p>
+                </div>
+
+                <div style="background: white; padding: 20px; border-radius: 10px; margin-top: 20px;">
+                    <p style="font-weight: bold; color: #8b4513; margin-bottom: 10px;">THE ACCELERATION:</p>
+                    <p style="line-height: 1.7; color: #444;">
+                        One cultivated relationship in Network → Warm intro to Kitty → Deal closes → Revenue funds Builder → Better product → More people want to help.
+                        <strong>Network is the slowest flywheel to spin up, but the hardest to stop. Water the garden. Serendipity compounds.</strong>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Claude Summary Output (JSON from prompt) -->
+        <div class="section" id="claude-summary-section" style="background: #0f172a; color: #f0f0f0; border-left-color: #cd853f;">
+            <h2 style="color: #cd853f;">📊 Network Findings <span style="font-size:0.5em;color:#64748b;">— Paste JSON output here</span></h2>
+            <div id="claude-summary" style="background: #1e293b; padding: 20px; border-radius: 12px; min-height: 100px; font-family: 'Monaco', monospace; font-size: 0.85em; white-space: pre-wrap;">
+{
+  "room": "☕::network",
+  "lens": "[B2:Deal]",
+  "timestamp": "2026-02-11T...",
+  "tesseract_heat": [],
+  "priorities": [],
+  "discarded": []
+}
+            </div>
+            <p style="color: #475569; font-size: 0.85em; margin-top: 10px;">Last updated: <span id="summary-timestamp">—</span></p>
+        </div>
+
+        <div class="section" style="background: #1a1a1a; color: #f0f0f0; border-left-color: #cd853f;">
+            <h2 style="color: #cd853f;">📋 Coordinate Lock Prompt</h2>
+            <p style="color: #94a3b8; margin-bottom: 20px;">This prompt locks Claude into the ☕::network coordinate. Copy the whole HTML (button top-right) for full context, or use this prompt directly:</p>
+            <pre style="background: #0d0d0d; padding: 25px; border-radius: 12px; overflow-x: auto; font-size: 0.95em; line-height: 1.6; border: 2px solid #cd853f; white-space: pre-wrap;"><code style="color: #22c55e;">═══ COORDINATE LOCK: ☕::network ═══
+POSITION: 🤝 B2 Tactics.Deal ("binding commitments that can't be faked")
+INTERSECTION: B2:B2 (Deal:Deal) — DIAGONAL ESSENCE
+WINNING POINTER: en.wikipedia.org/wiki/Commitment_scheme
+QUESTION: "What is the essence of Deal? Relationships are commitment schemes."
+
+⏰ TEMPORAL ROOM: 19:00 - 22:00 (America/Chicago)
+THEME: "Evening Cultivation" — This is RELATIONSHIP GARDENING, not hunting (that's 🎩::operator 17:00-19:00).
+ENERGY: "relationships, no agenda" — Water the garden during these 3 evening hours.
+OLLAMA AUTONOMOUS: During this window, Ollama prompts [CHECK-IN], [GRATITUDE], [WATER], [CONNECT] actions.
+
+─── COGNITIVE AFFORDANCE ───
+THIS ROOM SEES:
+  • Relationship equity, trust balances
+  • Intros to make, connections to facilitate
+  • Gratitude to express, recognition to give
+  • Serendipitous opportunities, garden cultivation
+
+THIS ROOM IGNORES:
+  • Code architecture, debugging (→🔨::builder)
+  • Strategic sequencing, roadmaps (→📐::architect)
+  • Sales closing, revenue targets (→🎩::operator)
+  • Demo logistics, live performance (→🎭::performer)
+  • Mathematical proofs, patents (→🔒::vault)
+  • Content creation, blog posts (→🎤::voice)
+  • Rapid prototyping, experiments (→🧪::laboratory)
+  • Fast navigation, scouting (→🧭::navigator)
+
+THE PULL: RECIPROCITY FIRST. You give before asking—relationships are commitment schemes. Bind with unprompted value, then serendipity compounds.
+If you're closing deals or debugging code, you're in the wrong room.
+
+─── FOCUS AREAS (from rooms.json) ───
+  1. Relationship maintenance (regular watering, not extraction)
+  2. Mentor check-ins (update advisors, no-agenda catch-ups)
+  3. Gratitude loops (thank-you notes, recognition, acknowledgment)
+  4. Serendipity cultivation (introductions, connections, social capital)
+
+─── PROMPT TYPES (Ollama executes during 19:00-22:00) ───
+  [CHECK-IN] Reach out to... (no agenda, just presence)
+  [GRATITUDE] Thank them for... (express appreciation)
+  [WATER] This relationship needs attention... (garden maintenance)
+  [CONNECT] Introduce X to Y... (connector role)
+
+─── AUTONOMOUS PROCESS (runs during temporal window) ───
+  STEP 1: git log --oneline -10 -- "data/relationships/" (if exists)
+  STEP 2: Check contact list for neglected relationships (last touchpoint gaps)
+  STEP 3: Review last touchpoints, find who needs watering
+  STEP 4: Generate check-in and gratitude prompts
+
+─── VALIDATION RULES ───
+  VANITY (score=0): "Nice chat", "Good to catch up", "Friendly"
+  RESULT (score=1): "Relationship strengthened", "Serendipity unlocked", "Trust deepened"
+
+  VANITY signals are passive. RESULT signals show reciprocal value exchange.
+  If no unprompted help was offered/received, it doesn't count.
+
+─── TESSERACT NAMESPACE ───
+🏛️ A Strategy     | ⚡ B Tactics      | 🔧 C Operations
+⚖️ A1 Strategy.Law | 🏎️ B1 Tactics.Speed | 🔌 C1 Operations.Grid
+🎯 A2 Strategy.Goal | 🤝 B2 Tactics.Deal  | 🔄 C2 Operations.Loop
+💰 A3 Strategy.Fund | 📡 B3 Tactics.Signal | 🌊 C3 Operations.Flow
+                     ↑ YOU ARE HERE (Diagonal Essence: Commitment scheme)
+
+─── ARCHAEOLOGY PROTOCOL ───
+WebFetch: your-api-endpoint
+Bash: git log --oneline -30 -- "docs/05-content/tesseract/battle-cards/*" "docs/crm/*"
+Bash: ls docs/planning/ | head -20
+
+─── DIFFERENTIATION ───
+HANDOFF TO (when network sees these, route out):
+  →🔨::builder: "Technical question" → 🔌 C1 Operations.Grid
+  →📐::architect: "Strategic relationship decision" → 🎯 A2 Strategy.Goal
+  →🎩::operator: "Relationship is warm, convert" → 🌊 C3 Operations.Flow
+  →🎭::performer: "Event coordination needed" → 💰 A3 Strategy.Fund
+  →🔒::vault: "Legal/contract question" → ⚖️ A1 Strategy.Law
+  →🎤::voice: "Connection has content opportunity" → 📡 B3 Tactics.Signal
+  →🧪::laboratory: "Test this relationship approach" → 🔄 C2 Operations.Loop
+  →🧭::navigator: "Find this person's background" → 🏎️ B1 Tactics.Speed
+
+HANDOFF FROM (what other rooms send here):
+  ←📐::architect: "Need intro to [person]"
+  ←🎩::operator: "Deal needs relationship warming"
+  ←🎤::voice: "Endorsement opportunity"
+  ←🎭::performer: "Post-event follow-ups"
+
+─── AFFORDANCE TAGS ───
+[NURTURE] = Relationship needs cultivation (check-in, no-agenda)
+[INTRO] = Introduction opportunity detected (connector role)
+[GRATITUDE] = Acknowledgment needed (thank-you, recognition)
+[BIND] = Commitment opportunity (solidify the relationship)
+
+─── ESCAPE GRAVITY ───
+The average response celebrates activity.
+This coordinate counts RELATIONSHIP EQUITY INCREASED.
+FORBIDDEN: "Sent a follow-up", "Networking event attended", "LinkedIn connection made", "Advisor hasn't replied"
+If no reciprocal value offered, it's extraction. Route elsewhere.
+
+─── OUTPUT FORMAT ───
+{
+  "coordinate": "🤝 B2 Tactics.Deal",
+  "intersection": "B2:B2 (Deal:Deal)",
+  "timestamp": "ISO-8601",
+  "sees": ["Advisor needs update", "Intro opportunity detected"],
+  "ignores": ["sales close → 🎩::operator", "content creation → 🎤::voice"],
+  "priorities": [
+    {"tag": "[NURTURE]", "item": "...", "equity_change": "+|-", "roi": 0.90}
+  ],
+  "routed_out": [
+    {"to": "→🎩::operator", "item": "Relationship is warm, close the deal"}
+  ]
+}</code></pre>
+            <button onclick="navigator.clipboard.writeText(this.previousElementSibling.textContent); this.textContent='✓ Copied!'; setTimeout(()=>this.textContent='📋 Copy Prompt', 2000)" style="margin-top: 15px; padding: 12px 24px; background: #cd853f; color: white; border: none; border-radius: 8px; font-size: 1em; cursor: pointer; font-weight: bold;">📋 Copy Prompt</button>
+        </div>
+
+        <div class="footer">
+            <p><strong>☕::network</strong></p>
+            <p>Where Connections Become Relationships → Relationships Become Opportunities → Opportunities Become New Connections</p>
+            <p style="margin-top: 15px; font-style: italic; opacity: 0.9;">Water the Garden (Serendipity Compounds)</p>
+            <div style="margin-top: 25px; padding: 20px; background: rgba(205, 133, 63, 0.2); border-radius: 12px; border: 2px solid #cd853f;">
+                <p style="font-size: 1.2em; margin: 0; color: #8b4513;">
+                    ⏰ <strong>TEMPORAL WINDOW:</strong> 19:00 - 22:00 (America/Chicago)<br/>
+                    🌱 <strong>THEME:</strong> Evening Cultivation — Ollama prompts check-ins & gratitude during these hours<br/>
+                    💡 <strong>ENERGY:</strong> Relationships, no agenda — Water the garden, don't hunt
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Room State & JSON Renderer -->
+    <script>
+    const NetworkRoom = {
+        namespace: '☕::network',
+        lens: '[B2:Deal]',
+        conversionSignal: 'relationship_equity_increased',
+
+        renderPriorities(json) {
+            const container = document.getElementById('network-priorities');
+            if (!json || !json.priorities || json.priorities.length === 0) {
+                container.innerHTML = '<p style="color:#64748b;text-align:center;">No priorities generated yet. Run the prompt.</p>';
+                return;
+            }
+
+            let html = '<ul style="list-style:none;padding:0;">';
+            for (const p of json.priorities) {
+                const badgeClass = p.rank === 'P1' ? 'p1' : p.rank === 'P2' ? 'p2' : 'p3';
+                const scoreColor = p.score >= 0.8 ? '#22c55e' : p.score >= 0.5 ? '#f59e0b' : '#ef4444';
+                html += `
+                    <li style="padding:15px;margin-bottom:10px;background:#1e293b;border-radius:8px;border-left:4px solid ${scoreColor};">
+                        <span class="priority-badge ${badgeClass}">${p.rank}</span>
+                        <span style="background:#cd853f;color:white;padding:2px 8px;border-radius:4px;font-size:0.8em;margin-left:5px;">${p.tag}</span>
+                        <strong style="margin-left:10px;color:#e2e8f0;">${p.item}</strong>
+                        <span style="float:right;color:${scoreColor};font-weight:bold;">${(p.score * 100).toFixed(0)}%</span>
+                    </li>
+                `;
+            }
+            html += '</ul>';
+            container.innerHTML = html;
+            document.getElementById('summary-timestamp').textContent = json.timestamp || new Date().toISOString();
+        },
+
+        handlePaste(text) {
+            try {
+                const json = JSON.parse(text);
+                if (json.room === this.namespace) {
+                    this.renderPriorities(json);
+                    document.getElementById('claude-summary').textContent = JSON.stringify(json, null, 2);
+                    console.log('☕ Priorities loaded:', json.priorities.length, 'items');
+                }
+            } catch (e) {
+                console.warn('Not valid JSON:', e);
+            }
+        }
+    };
+
+    document.getElementById('claude-summary')?.addEventListener('paste', (e) => {
+        setTimeout(() => {
+            NetworkRoom.handlePaste(e.target.textContent);
+        }, 100);
+    });
+    </script>
+</body>
+</html>

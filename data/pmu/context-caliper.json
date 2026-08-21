@@ -1,0 +1,132 @@
+{
+ "ts": "2026-07-22T23:35:57.924Z",
+ "labeled_prompts": 22,
+ "baseline_accuracy_pct": 100,
+ "rows": [
+  {
+   "cap": 0,
+   "mode": "none",
+   "accuracy_pct": 100,
+   "hits": 22,
+   "n": 22,
+   "mean_added_bytes": 0,
+   "delta_vs_baseline": 0
+  },
+  {
+   "cap": 220,
+   "mode": "flat",
+   "accuracy_pct": 100,
+   "hits": 22,
+   "n": 22,
+   "mean_added_bytes": 434,
+   "delta_vs_baseline": 0
+  },
+  {
+   "cap": 220,
+   "mode": "grip",
+   "accuracy_pct": 100,
+   "hits": 22,
+   "n": 22,
+   "mean_added_bytes": 328,
+   "delta_vs_baseline": 0
+  }
+ ],
+ "optimum": {
+  "cap": 220,
+  "mode": "grip",
+  "accuracy_pct": 100,
+  "hits": 22,
+  "n": 22,
+  "mean_added_bytes": 328,
+  "delta_vs_baseline": 0
+ },
+ "live_cap": 220,
+ "saturated": true,
+ "hard_battery": {
+  "n": 18,
+  "rows": [
+   {
+    "cap": 0,
+    "mode": "none",
+    "rescued": 0,
+    "n": 18,
+    "rescue_pct": 0,
+    "distinct_domains": 0,
+    "top_domain_share": 0,
+    "valid": false,
+    "why": "nothing moved off the magnet"
+   },
+   {
+    "cap": 40,
+    "mode": "flat",
+    "rescued": 18,
+    "n": 18,
+    "rescue_pct": 100,
+    "distinct_domains": 1,
+    "top_domain_share": 1,
+    "valid": false,
+    "why": "CONSTANT-FUNCTION ARTIFACT — all 18 landed in 1 domain(s); the injected context decided the placement, the prompt did not"
+   },
+   {
+    "cap": 40,
+    "mode": "grip",
+    "rescued": 18,
+    "n": 18,
+    "rescue_pct": 100,
+    "distinct_domains": 1,
+    "top_domain_share": 1,
+    "valid": false,
+    "why": "CONSTANT-FUNCTION ARTIFACT — all 18 landed in 1 domain(s); the injected context decided the placement, the prompt did not"
+   },
+   {
+    "cap": 120,
+    "mode": "flat",
+    "rescued": 18,
+    "n": 18,
+    "rescue_pct": 100,
+    "distinct_domains": 1,
+    "top_domain_share": 1,
+    "valid": false,
+    "why": "CONSTANT-FUNCTION ARTIFACT — all 18 landed in 1 domain(s); the injected context decided the placement, the prompt did not"
+   },
+   {
+    "cap": 120,
+    "mode": "grip",
+    "rescued": 18,
+    "n": 18,
+    "rescue_pct": 100,
+    "distinct_domains": 1,
+    "top_domain_share": 1,
+    "valid": false,
+    "why": "CONSTANT-FUNCTION ARTIFACT — all 18 landed in 1 domain(s); the injected context decided the placement, the prompt did not"
+   },
+   {
+    "cap": 220,
+    "mode": "flat",
+    "rescued": 18,
+    "n": 18,
+    "rescue_pct": 100,
+    "distinct_domains": 1,
+    "top_domain_share": 1,
+    "valid": false,
+    "why": "CONSTANT-FUNCTION ARTIFACT — all 18 landed in 1 domain(s); the injected context decided the placement, the prompt did not"
+   },
+   {
+    "cap": 220,
+    "mode": "grip",
+    "rescued": 18,
+    "n": 18,
+    "rescue_pct": 100,
+    "distinct_domains": 1,
+    "top_domain_share": 1,
+    "valid": false,
+    "why": "CONSTANT-FUNCTION ARTIFACT — all 18 landed in 1 domain(s); the injected context decided the placement, the prompt did not"
+   }
+  ],
+  "note": "the no-lane population the labeled battery cannot represent — unlabeled, so scored by RESCUE RATE (does grounding move a collapsed prompt off the degenerate magnet?) AND by landing diversity, because a rescue that sends every prompt to one domain is a constant function: the injected text decided it. Off-magnet is necessary, spread is what makes it real.",
+  "valid_rows": 0
+ },
+ "verdict": "BATTERY SATURATED — the ungrounded baseline already routes 22/22. This battery CANNOT measure what grounding buys; every level reads identical by construction. The cost side stays real (separation falls monotonically with cap), so on present evidence a SMALLER cap is better — but that conclusion rests on an unmeasured benefit, and the honest next step is a HARDER battery with headroom, not a cap change.",
+ "honest_limit": "n=22 labeled prompts. One prompt = 4.5pp, so only multi-prompt gaps mean anything. Measures ROUTING accuracy only — not answer quality, not enrichment usefulness. A saturated baseline makes every row uninformative regardless of n.",
+ "what_would_measure_it": "a battery of prompts the ungrounded lens gets WRONG — deictic fragments (the 18 no-lane prompts already catalogued in unenriched-report.json are exactly this population), or prompts whose ideal domain is a near-neighbour of where they place ungrounded. Until such a battery exists, the grounding cap is an un-derivable judgment and must stay labelled as one."
+}

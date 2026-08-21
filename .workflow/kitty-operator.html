@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎩 Kitty | The Operator</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎩</text></svg>">
+    <!-- ═══════════════════════════════════════════════════════════════════════════
+         COORDINATE LOCKING METADATA - 🎩::operator
+         Copy this entire HTML to Claude to lock into this coordinate
+         ═══════════════════════════════════════════════════════════════════════════ -->
+    <script type="application/json" id="coordinate-lock">
+    {
+        "namespace": "🎩::operator",
+        "coordinate": "🌊 C3 Operations.Flow",
+        "intersection": "C3:B2 (Flow:Deal)",
+        "tile_type": "off_diagonal_translation",
+        "terminal": "Kitty",
+        "winning_pointer": "en.wikipedia.org/wiki/Drift_(telecommunications) + en.wikipedia.org/wiki/Commitment_scheme",
+        "question": "What does Flow mean in Deal? How do we prevent pipeline drift through commitment?",
+        "book_chapter": "[Your relevant chapter/doc]",
+
+        "cognitive_affordance": {
+            "sees": ["CRM stages", "Battle cards", "Objections heard", "Deal velocity", "Outreach copy"],
+            "ignores": ["Code architecture", "Strategic sequencing", "Patent language", "Demo scripts"],
+            "pull": "You come here to PREVENT DRIFT. Keep deals moving through binding commitments. If pipeline is stalling, deals are drifting."
+        },
+
+        "escape_gravity": {
+            "axis": "Revenue > Meetings",
+            "forbidden": ["Booked meeting", "Great conversation", "Sent follow-up", "Pipeline looks good"],
+            "counts": "Revenue generated only. Closed deals = true signal."
+        },
+
+        "differentiation": {
+            "handoff_to": {
+                "📐::architect": "This is a strategy question → 🎯 A2",
+                "🔨::builder": "Checkout is broken → 🔌 C1",
+                "🔒::vault": "Contract needs review → ⚖️ A1",
+                "🎭::performer": "Demo is scheduled → 💰 A3"
+            },
+            "handoff_from": {
+                "📐::architect": "[DISPATCH] Execute outreach to Sara/Kurt",
+                "🔨::builder": "Checkout is live, start selling",
+                "🎭::performer": "Demo converted, close the deal"
+            }
+        },
+
+        "affordances": ["OUTREACH", "CLOSE", "COMMIT", "FOLLOW-UP"],
+        "archaeology": {
+            "api": "your-api-endpoint",
+            "crm": "mcp__thetacoach-crm-local__crm-list-leads",
+            "paths": ["docs/05-content/battle-cards/*", "docs/planning/*"]
+        }
+    }
+    </script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+            color: #1a1a1a;
+            padding: 40px 20px;
+            min-height: 100vh;
+        }
+        .container { max-width: 1200px; margin: 0 auto; }
+        .back-button {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            border: 2px solid white;
+            padding: 14px 28px;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 1.1em;
+            font-weight: bold;
+            margin-bottom: 40px;
+            text-decoration: none;
+            display: inline-block;
+        }
+        .back-button:hover { background: rgba(255, 255, 255, 0.3); transform: translateX(-5px); }
+        .copy-html-btn {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: rgba(0,0,0,0.8);
+            color: #10b981;
+            border: 2px solid #10b981;
+            padding: 12px 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 0.9em;
+            font-weight: bold;
+            z-index: 1000;
+            font-family: 'Monaco', monospace;
+        }
+        .copy-html-btn:hover { background: #10b981; color: white; }
+        .header { text-align: center; margin-bottom: 50px; }
+        .header h1 { font-size: 4.5em; color: white; text-shadow: 3px 3px 6px rgba(0,0,0,0.4); margin-bottom: 15px; }
+        .subtitle { font-size: 1.5em; color: white; opacity: 0.95; margin-bottom: 10px; }
+        .command {
+            font-family: 'Monaco', 'Courier New', monospace;
+            background: rgba(0, 0, 0, 0.3);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 8px;
+            display: inline-block;
+            font-size: 1.2em;
+            margin-top: 10px;
+        }
+        .memory-palace {
+            background: white;
+            color: #1a1a1a;
+            font-size: 2.2em;
+            font-style: italic;
+            text-align: center;
+            padding: 50px 40px;
+            border-radius: 20px;
+            margin-bottom: 50px;
+            box-shadow: 0 15px 50px rgba(0,0,0,0.3);
+            line-height: 1.6;
+            border-left: 10px solid #10b981;
+        }
+        .stakes-card {
+            background: rgba(0, 0, 0, 0.3);
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            margin-bottom: 50px;
+            border: 3px solid rgba(255, 255, 255, 0.4);
+        }
+        .stakes-card h2 { font-size: 2.5em; margin-bottom: 15px; }
+        .stakes-card p { font-size: 1.3em; line-height: 1.6; }
+        .content-section {
+            background: white;
+            padding: 50px 40px;
+            border-radius: 20px;
+            margin-bottom: 40px;
+            box-shadow: 0 15px 50px rgba(0,0,0,0.2);
+        }
+        .content-section h2 {
+            font-size: 2.5em;
+            color: #10b981;
+            margin-bottom: 30px;
+            border-bottom: 4px solid #10b981;
+            padding-bottom: 15px;
+        }
+        .priority-list { list-style: none; padding: 0; }
+        .priority-list li {
+            padding: 18px 0;
+            border-bottom: 2px solid #eee;
+            font-size: 1.2em;
+            color: #333;
+            line-height: 1.6;
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+        }
+        .priority-list li:last-child { border-bottom: none; }
+        .priority-badge {
+            background: #10b981;
+            color: white;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.8em;
+            font-weight: bold;
+            white-space: nowrap;
+        }
+        .priority-badge.p1 { background: #dc2626; }
+        .priority-badge.p2 { background: #f59e0b; }
+        .priority-badge.p3 { background: #10b981; }
+        .deep-search {
+            background: #fef3c7;
+            padding: 30px;
+            border-radius: 15px;
+            border-left: 6px solid #f59e0b;
+            margin-bottom: 30px;
+        }
+        .deep-search h3 { font-size: 1.8em; color: #92400e; margin-bottom: 20px; }
+        .deep-search code {
+            background: #1a1a1a;
+            color: #22c55e;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-family: 'Monaco', monospace;
+        }
+        .deep-search ul { list-style: none; padding: 0; }
+        .deep-search li { padding: 10px 0; font-size: 1.1em; color: #78350f; }
+        .deep-search li:before { content: '📂'; margin-right: 12px; }
+        .identity-rules {
+            background: #ecfdf5;
+            padding: 30px;
+            border-radius: 15px;
+            border-left: 6px solid #10b981;
+            margin-bottom: 30px;
+        }
+        .identity-rules h3 { font-size: 1.8em; color: #10b981; margin-bottom: 20px; }
+        .identity-rules ul { list-style: none; padding: 0; }
+        .identity-rules li { padding: 12px 0; font-size: 1.1em; color: #444; line-height: 1.6; }
+        .identity-rules li:before { content: '→'; margin-right: 12px; color: #10b981; font-weight: bold; font-size: 1.3em; }
+        .footer { text-align: center; color: white; margin-top: 60px; font-size: 1.1em; opacity: 0.9; }
+        .room-switcher {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 30px;
+            padding: 15px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 12px;
+        }
+        .room-switcher a {
+            padding: 8px 16px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 0.95em;
+            transition: transform 0.2s, background 0.2s;
+        }
+        .room-switcher a:hover { transform: scale(1.05); }
+        .room-switcher .builder { background: #3b82f6; color: white; }
+        .room-switcher .architect { background: #4f46e5; color: white; }
+        .room-switcher .operator { background: #22c55e; color: white; }
+        .room-switcher .vault { background: #ef4444; color: white; }
+        .room-switcher .voice { background: #a855f7; color: white; }
+        .room-switcher .laboratory { background: #06b6d4; color: white; }
+        .room-switcher .performer { background: #f59e0b; color: white; }
+        .room-switcher .network { background: #6366f1; color: white; }
+        .room-switcher .navigator { background: #0d9488; color: white; }
+        .room-switcher .current { opacity: 0.5; pointer-events: none; }
+    </style>
+</head>
+<body>
+    <!-- Copy Whole HTML Button - Paste to Claude to lock into this coordinate -->
+    <button class="copy-html-btn" onclick="navigator.clipboard.writeText(document.documentElement.outerHTML).then(()=>{this.textContent='✓ Copied!';setTimeout(()=>this.textContent='📋 🎩::operator',2000)})">📋 🎩::operator</button>
+
+    <div class="container">
+        <a href="../cognitive-dashboard.html" class="back-button">← Back to Dashboard</a>
+
+        <nav class="room-switcher">
+            <a href="iterm2-builder.html" target="_blank" class="builder">🔨 Builder</a>
+            <a href="vscode-architect.html" target="_blank" class="architect">📐 Architect</a>
+            <a href="kitty-operator.html" target="_blank" class="operator current">🎩 Operator</a>
+            <a href="wezterm-vault.html" target="_blank" class="vault">🔒 Vault</a>
+            <a href="terminal-voice.html" target="_blank" class="voice">🎤 Voice</a>
+            <a href="cursor-laboratory.html" target="_blank" class="laboratory">🧪 Laboratory</a>
+            <a href="alacritty-performer.html" target="_blank" class="performer">🎭 Performer</a>
+            <a href="messages-network.html" target="_blank" class="network">☕ Network</a>
+            <a href="rio-navigator.html" target="_blank" class="navigator">🧭 Navigator</a>
+        </nav>
+
+        <div class="header">
+            <h1>🎩 KITTY: THE OPERATOR</h1>
+            <div class="subtitle">TIER 3: OPERATIONS | Reversible with cost | 1-Month Horizon</div>
+            <div class="command">Cmd+Space → kitty</div>
+            <div style="background:rgba(0,0,0,0.4);padding:15px;border-radius:10px;margin-top:15px;color:white;">
+                <div style="font-size:1.8em;font-weight:bold;margin-bottom:8px;">⏰ TEMPORAL WINDOW: 17:00 - 19:00</div>
+                <div style="font-size:1.2em;">Business Close | End of Day Deals | Follow-up Window</div>
+            </div>
+        </div>
+
+        <div class="memory-palace">
+            "Kick open the double doors. Green radar screens. End of business day. Last chance for deals today. Every conversation ends with a next step. Hunt and close."
+            <div style="font-size:0.6em;margin-top:20px;font-style:normal;color:#10b981;">
+                <strong>🌊 C3:🤝 B2 (Flow:Deal)</strong> — "How do we prevent pipeline drift through commitment?" (Drift + Commitment scheme)
+            </div>
+        </div>
+
+        <!-- TEMPORAL THEME & SOCIAL PEAKS -->
+        <div class="content-section" style="background:#0f172a;color:white;border-left:6px solid #f59e0b;">
+            <h2 style="color:#f59e0b;border:none;margin-bottom:20px;">⏰ TEMPORAL CONTEXT: Business Close (17:00-19:00)</h2>
+            <div style="background:#1e293b;padding:20px;border-radius:12px;margin-bottom:20px;">
+                <h3 style="color:#22c55e;margin-bottom:15px;">🎯 FOCUS AREAS</h3>
+                <ul style="list-style:none;padding:0;line-height:2;">
+                    <li>✓ Deal follow-ups</li>
+                    <li>✓ Pipeline updates</li>
+                    <li>✓ Revenue operations</li>
+                    <li>✓ Market signal capture</li>
+                </ul>
+            </div>
+            <div style="background:#1e293b;padding:20px;border-radius:12px;margin-bottom:20px;">
+                <h3 style="color:#3b82f6;margin-bottom:15px;">📱 SOCIAL PEAKS</h3>
+                <ul style="list-style:none;padding:0;line-height:2;">
+                    <li><strong>LinkedIn:</strong> 17:00-18:00 (peak decision-maker activity)</li>
+                    <li><strong>Email:</strong> End-of-day responses</li>
+                    <li><strong>Strategy:</strong> Business close catches decision-makers wrapping up</li>
+                </ul>
+            </div>
+            <div style="background:#1e293b;padding:20px;border-radius:12px;">
+                <h3 style="color:#a855f7;margin-bottom:15px;">💬 PROMPT TYPES</h3>
+                <ul style="list-style:none;padding:0;line-height:2;">
+                    <li><code style="background:#0f172a;padding:4px 8px;border-radius:4px;color:#22c55e;">[CLOSE]</code> Follow up with...</li>
+                    <li><code style="background:#0f172a;padding:4px 8px;border-radius:4px;color:#22c55e;">[PIPELINE]</code> Update this deal...</li>
+                    <li><code style="background:#0f172a;padding:4px 8px;border-radius:4px;color:#22c55e;">[SIGNAL]</code> Market pattern detected...</li>
+                    <li><code style="background:#0f172a;padding:4px 8px;border-radius:4px;color:#22c55e;">[NUDGE]</code> This deal is stalling...</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- COGNITIVE AFFORDANCE CARD -->
+        <div class="content-section" style="background:#1e293b;color:white;border-left:6px solid #10b981;">
+            <h2 style="color:#10b981;border:none;margin-bottom:20px;">🧠 COGNITIVE AFFORDANCE</h2>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:30px;">
+                <div>
+                    <h3 style="color:#22c55e;margin-bottom:10px;">✓ THIS ROOM SEES</h3>
+                    <ul style="list-style:none;padding:0;line-height:2;">
+                        <li>• CRM stages, deal velocity</li>
+                        <li>• Battle cards, objection patterns</li>
+                        <li>• Outreach copy, your team's content</li>
+                        <li>• Conversion rates, pipeline health</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 style="color:#ef4444;margin-bottom:10px;">✗ THIS ROOM IGNORES</h3>
+                    <ul style="list-style:none;padding:0;line-height:2;">
+                        <li>• Code architecture → <span style="color:#3b82f6;">🔨::builder</span></li>
+                        <li>• Strategic sequencing → <span style="color:#6366f1;">📐::architect</span></li>
+                        <li>• Patent language → <span style="color:#ef4444;">🔒::vault</span></li>
+                        <li>• Demo scripts → <span style="color:#f59e0b;">🎭::performer</span></li>
+                    </ul>
+                </div>
+            </div>
+            <div style="margin-top:25px;padding:20px;background:#0f172a;border-radius:10px;">
+                <strong style="color:#10b981;">THE PULL:</strong> You come here to PREVENT DRIFT. Deals are either moving or dying. 0.3% daily drift compounds. Every touchpoint needs a binding commitment (next step, calendar invite, signature). If you're debating architecture, you're in the wrong room.
+            </div>
+        </div>
+
+        <div class="stakes-card">
+            <h2>💰 STAKES: REVENUE-LEVEL</h2>
+            <p>Lost deal = Cash flow hit<br/>Revenue operations<br/>Turn attention into money</p>
+        </div>
+
+        <!-- DYNAMIC PRIORITY QUEUE - Generated by prompt, not static -->
+        <div class="content-section" id="priority-queue-section">
+            <h2>🚨 Priority Queue <span style="font-size:0.5em;color:#64748b;font-weight:normal;">— Generated by 🎩::operator prompt</span></h2>
+
+            <!-- Scoring Reference (always visible) -->
+            <div style="background:#1e293b;padding:15px;border-radius:10px;margin-bottom:20px;font-size:0.9em;">
+                <strong style="color:#10b981;">SCORING: revenue_generated</strong><br/>
+                <span style="color:#ef4444;">VANITY (0):</span> "Booked meeting", "Great conversation", "Sent follow-up"<br/>
+                <span style="color:#22c55e;">RESULT (1):</span> "PAIN + BUDGET confirmed", "Deal closed $X", "Revenue generated"
+            </div>
+
+            <!-- Dynamic Priority List (populated by prompt output) -->
+            <div id="operator-priorities" style="background:#0f172a;padding:20px;border-radius:12px;min-height:150px;">
+                <p style="color:#64748b;font-style:italic;text-align:center;padding:30px 0;">
+                    ⏳ Run the prompt below to generate priorities from live data...<br/>
+                    <span style="font-size:0.85em;">Prompt executes: git log, grep, your-api-endpoint API</span>
+                </p>
+            </div>
+
+            <!-- Last Known State (fallback until prompt runs) -->
+            <details style="margin-top:15px;">
+                <summary style="cursor:pointer;color:#10b981;font-weight:bold;">📋 Last Known Priorities (Feb 11)</summary>
+                <ul class="priority-list" style="margin-top:10px;opacity:0.7;">
+                    <li><span class="priority-badge p1">P1</span><strong>Tesseract Grid Sales:</strong> Direct sales via grid deep-links - convert interested prospects</li>
+                    <li><span class="priority-badge p1">P1</span><strong>Advisor Meeting Execution:</strong> Demand introductions to Sales Leaders, not ask for help</li>
+                    <li><span class="priority-badge p2">P2</span><strong>LinkedIn Inbox Triage:</strong> Flag the whales from Tesseract Series engagement, trash the noise</li>
+                    <li><span class="priority-badge p2">P2</span><strong>Hot Leads Follow-up:</strong> Close the deals from blog series engagement</li>
+                    <li><span class="priority-badge p3">P3</span><strong>Book Pre-orders:</strong> Convert Tesseract Series readers to book purchasers</li>
+                </ul>
+            </details>
+        </div>
+
+        <div class="content-section">
+            <div class="deep-search">
+                <h3>🔍 Deep Search Protocol</h3>
+                <p style="margin-bottom: 15px; font-size: 1.1em;"><strong>ALWAYS check repo docs before claiming something doesn't exist or making assumptions:</strong></p>
+                <ul>
+                    <li><code>docs/crm/</code> — CRM database schemas, lead management</li>
+                    <li><code>src/app/tesseract/</code> — Grid system, deep-link purchase flows</li>
+                    <li><code>docs/planning/</code> — Sales strategy, GTM documents</li>
+                    <li><code>.workflow/</code> — Cognitive room configs, dashboards</li>
+                    <li><code>CLAUDE.md</code> — Critical rules and patterns</li>
+                    <li><code>packages/crm-mcp/</code> — CRM MCP server tools</li>
+                </ul>
+                <p style="margin-top: 15px; font-style: italic;">When asked about sales features, search the repo first. The answer is usually documented.</p>
+            </div>
+        </div>
+
+        <!-- AUTONOMOUS PROCESS STEPS -->
+        <div class="content-section" style="background:#ecfdf5;border-left:6px solid #10b981;">
+            <h2 style="color:#10b981;">🤖 AUTONOMOUS PROCESS (Ollama Prompts Follow-ups)</h2>
+            <div style="background:white;padding:20px;border-radius:12px;margin-bottom:20px;">
+                <h3 style="color:#059669;margin-bottom:15px;">Step 1: Git State</h3>
+                <code style="background:#1a1a1a;color:#22c55e;padding:8px 12px;border-radius:6px;display:block;font-size:0.95em;">git log --oneline -10 -- 'data/' (CRM changes)</code>
+                <p style="margin-top:10px;color:#555;line-height:1.6;">Scan recent CRM database changes to detect new leads, updated pipeline stages, and deal movements.</p>
+            </div>
+            <div style="background:white;padding:20px;border-radius:12px;margin-bottom:20px;">
+                <h3 style="color:#059669;margin-bottom:15px;">Step 2: CRM Scan</h3>
+                <code style="background:#1a1a1a;color:#22c55e;padding:8px 12px;border-radius:6px;display:block;font-size:0.95em;">Check CRM for stale deals, hot leads</code>
+                <p style="margin-top:10px;color:#555;line-height:1.6;">Query CRM for deals with no activity in 3+ days (drift detection) and leads with high engagement scores.</p>
+            </div>
+            <div style="background:white;padding:20px;border-radius:12px;margin-bottom:20px;">
+                <h3 style="color:#059669;margin-bottom:15px;">Step 3: State Review</h3>
+                <code style="background:#1a1a1a;color:#22c55e;padding:8px 12px;border-radius:6px;display:block;font-size:0.95em;">Review today's conversations for signals</code>
+                <p style="margin-top:10px;color:#555;line-height:1.6;">Parse email, LinkedIn, and CRM notes for market signals (objections, feature requests, pricing feedback).</p>
+            </div>
+            <div style="background:white;padding:20px;border-radius:12px;">
+                <h3 style="color:#059669;margin-bottom:15px;">Step 4: Prompt Generation</h3>
+                <code style="background:#1a1a1a;color:#22c55e;padding:8px 12px;border-radius:6px;display:block;font-size:0.95em;">Generate follow-up and close prompts</code>
+                <p style="margin-top:10px;color:#555;line-height:1.6;">Ollama generates [CLOSE], [NUDGE], [PIPELINE] prompts based on deal state and temporal context (17:00-19:00 window).</p>
+            </div>
+        </div>
+
+        <!-- VALIDATION RULES -->
+        <div class="content-section" style="background:#fef3c7;border-left:6px solid #f59e0b;">
+            <h2 style="color:#92400e;">⚖️ VALIDATION RULES: Vanity vs Result</h2>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;">
+                <div style="background:white;padding:20px;border-radius:12px;border:3px solid #ef4444;">
+                    <h3 style="color:#dc2626;margin-bottom:15px;">❌ VANITY METRICS (Score: 0)</h3>
+                    <ul style="list-style:none;padding:0;line-height:2;color:#555;">
+                        <li>• "Good meeting"</li>
+                        <li>• "Positive response"</li>
+                        <li>• "Interested"</li>
+                        <li>• "Booked meeting"</li>
+                        <li>• "Great conversation"</li>
+                        <li>• "Sent follow-up"</li>
+                    </ul>
+                </div>
+                <div style="background:white;padding:20px;border-radius:12px;border:3px solid #22c55e;">
+                    <h3 style="color:#059669;margin-bottom:15px;">✓ RESULT METRICS (Score: 1)</h3>
+                    <ul style="list-style:none;padding:0;line-height:2;color:#555;">
+                        <li>• "Deal closed"</li>
+                        <li>• "Revenue generated"</li>
+                        <li>• "PAIN + BUDGET confirmed"</li>
+                        <li>• "Signed contract"</li>
+                        <li>• "Payment received"</li>
+                        <li>• "Binding commitment made"</li>
+                    </ul>
+                </div>
+            </div>
+            <div style="background:#fef3c7;padding:20px;border-radius:12px;margin-top:20px;border:2px solid #92400e;">
+                <p style="color:#78350f;font-size:1.1em;line-height:1.7;">
+                    <strong>The Test:</strong> If it doesn't close revenue or create binding commitment, it's drift. Every operator action must move deals forward on the calendar, not just generate positive feelings.
+                </p>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <div class="identity-rules">
+                <h3>The Flywheel: How The Operator Converts</h3>
+                <ul>
+                    <li><strong>RECEIVES FROM 🎤::voice:</strong> Warm leads from LinkedIn posts → DMs, thought leadership positioning</li>
+                    <li><strong>RECEIVES FROM 🔨::builder:</strong> Production features live → "Checkout deployed, start selling"</li>
+                    <li><strong>OUTPUTS TO 📐::architect:</strong> Customer objections → "5 prospects said too expensive" = pricing pivot signal</li>
+                    <li><strong>OUTPUTS TO 🔨::builder:</strong> Feature requests → "3 prospects asked for team features" = roadmap priority</li>
+                    <li><strong>TRANSFORMS:</strong> Attention → Revenue → Market intelligence</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <h2>🔄 COMPLETE FLYWHEEL CYCLE: One Deal's Intelligence Loop</h2>
+            <div style="background: #ecfdf5; padding: 30px; border-radius: 15px; border-left: 6px solid #10b981; margin-bottom: 25px;">
+                <h3 style="font-size: 1.5em; color: #10b981; margin-bottom: 20px;">Example: The Tesseract Grid Direct Sale</h3>
+
+                <div style="margin-bottom: 20px;">
+                    <h4 style="color: #059669; margin-bottom: 10px;">🔻 INBOUND ARRIVES IN KITTY</h4>
+                    <p style="line-height: 1.7; color: #555;">Terminal's Tesseract Series post generates 23 DMs. Kitty triages: 8 qualified leads. Kitty books 4 discovery calls. Prospect clicks deep-link from blog, lands on grid, sees their tile. Kitty follows up: "I see you explored the grid. What questions came up?"</p>
+                </div>
+
+                <div style="margin-bottom: 20px;">
+                    <h4 style="color: #059669; margin-bottom: 10px;">⚗️ KITTY TRANSFORMS INTO INTELLIGENCE</h4>
+                    <p style="line-height: 1.7; color: #555;">Inside Kitty, you analyze: <strong>4 prospects loved the physics visualization</strong> but <strong>2 asked about team pricing.</strong> This signals demand for multi-seat licenses. Kitty packages the insight: "Market wants team access, not just individual tiles."</p>
+                </div>
+
+                <div style="margin-bottom: 20px;">
+                    <h4 style="color: #059669; margin-bottom: 10px;">🔺 KITTY DISTRIBUTES MARKET SIGNALS</h4>
+                    <p style="line-height: 1.7; color: #555;">
+                        <strong>→ VS Code (Architect):</strong> "Team pricing demand detected. Recommend 3-tier structure."<br/>
+                        <strong>→ iTerm2 (Builder):</strong> "Need multi-seat Stripe checkout by next sprint."<br/>
+                        <strong>→ Terminal (Voice):</strong> "Market messaging should emphasize 'Ground your entire team'."
+                    </p>
+                </div>
+
+                <div style="background: white; padding: 20px; border-radius: 10px; margin-top: 20px;">
+                    <p style="font-weight: bold; color: #10b981; margin-bottom: 10px;">THE ACCELERATION:</p>
+                    <p style="line-height: 1.7; color: #444;">
+                        Kitty didn't just "close deals"—Kitty detected a SYSTEMIC PATTERN. One pricing insight in Kitty → Strategic pivot in VS Code → Implementation in iTerm2 → Messaging update in Terminal → Increased deal size back in Kitty.
+                        <strong>Kitty is the sensor array. Every conversation is not just revenue—it's research.</strong>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Claude Summary Output (JSON from prompt) -->
+        <div class="content-section" id="claude-summary-section" style="background: #0f172a; color: #f0f0f0;">
+            <h2 style="color: #10b981; border-color: #10b981;">📊 Operator Findings <span style="font-size:0.5em;color:#64748b;">— Paste JSON output here</span></h2>
+            <div id="claude-summary" style="background: #1e293b; padding: 20px; border-radius: 12px; min-height: 100px; font-family: 'Monaco', monospace; font-size: 0.85em; white-space: pre-wrap;">
+{
+  "room": "🎩::operator",
+  "lens": "[C3:Flow]",
+  "timestamp": "2026-02-11T...",
+  "tesseract_heat": [],
+  "priorities": [],
+  "discarded": []
+}
+            </div>
+            <p style="color: #475569; font-size: 0.85em; margin-top: 10px;">Last updated: <span id="summary-timestamp">—</span></p>
+        </div>
+
+        <div class="content-section" style="background: #1a1a1a; color: #f0f0f0;">
+            <h2 style="color: #10b981; border-color: #10b981;">📋 Coordinate Lock Prompt</h2>
+            <p style="margin-bottom: 20px; color: #aaa;">This prompt locks Claude into the 🎩::operator coordinate. Copy the whole HTML (button top-right) for full context, or use this prompt directly:</p>
+            <pre style="background: #0d0d0d; padding: 25px; border-radius: 12px; overflow-x: auto; font-size: 0.95em; line-height: 1.6; border: 2px solid #10b981; white-space: pre-wrap;"><code style="color: #22c55e;">═══ COORDINATE LOCK: 🎩::operator ═══
+POSITION: 🌊 C3 Operations.Flow : 🤝 B2 Tactics.Deal
+INTERSECTION: Flow:Deal (TRANSLATION — "How do we prevent pipeline drift through commitment?")
+WINNING POINTER: Drift + Commitment_scheme
+BOOK: Chapter 0 "Razor's Edge" — 0.3% daily drift compounds geometrically
+
+⏰ TEMPORAL WINDOW: 17:00 - 19:00 (Business Close)
+THEME: "End of business day. Last chance for deals today."
+ENERGY: "deals, follow-ups, revenue"
+
+─── MEMORY PALACE ───
+"Kick open the double doors. Green radar screens. End of business day.
+Last chance for deals today. Every conversation ends with a next step.
+Hunt and close."
+
+─── FOCUS AREAS ───
+  • Deal follow-ups
+  • Pipeline updates
+  • Revenue operations
+  • Market signal capture
+
+─── SOCIAL PEAKS ───
+  • LinkedIn: 17:00-18:00 (decision-makers wrapping up)
+  • Email: End-of-day responses
+  • Strategy: Business close catches last-minute momentum
+
+─── PROMPT TYPES ───
+  [CLOSE] Follow up with...
+  [PIPELINE] Update this deal...
+  [SIGNAL] Market pattern detected...
+  [NUDGE] This deal is stalling...
+
+─── COGNITIVE AFFORDANCE ───
+THIS ROOM SEES:
+  • CRM stages, deal velocity, battle cards
+  • Objection patterns, conversion rates
+  • Outreach copy, your team's content
+
+THIS ROOM IGNORES:
+  • Code architecture → 🔨::builder
+  • Strategic sequencing → 📐::architect
+  • Patent language → 🔒::vault
+  • Demo scripts → 🎭::performer
+
+THE PULL: Prevent drift. Every deal is either moving (velocity+) or dying (drift). Binding Commitment Index: % deals with locked next step on calendar.
+
+─── TESSERACT NAMESPACE ───
+             Strategy     Tactics      Operations
+           ┌────────────┬────────────┬────────────┐
+   A (Law) │⚖️A1 Law:Law│🔮A2 Law:Opp│💰A3 Law:Sig│
+           ├────────────┼────────────┼────────────┤
+   B (Opp) │🔀B1 Opp:Law│🎯B2 Opp:Opp│📡B3 Opp:Sig│
+           ├────────────┼────────────┼────────────┤
+   C (Grid)│🔌C1 Grd:Law│🧪C2 Grd:Opp│🌊C3[HERE]  │
+           └────────────┴────────────┴────────────┘
+
+─── DIFFERENTIATION ───
+HANDOFF TO (filter AWAY from this room):
+  📐::architect (A2) → Strategic sequencing, pricing strategy
+  🔒::vault (A1) → Contract review, legal language
+  🎭::performer (A3) → Demo scheduled, presentation needed
+  🔨::builder (C1) → Checkout broken, feature request
+  🎤::voice (B1) → Content creation, thought leadership
+  🧪::laboratory (C2) → Experiments, A/B tests (not closing)
+  ☕::network (B2) → Relationship building, warm introductions
+  🧭::navigator (B3) → Context switching, routing decisions
+
+HANDOFF FROM:
+  📐::architect → "[DISPATCH] Execute outreach to Sara/Kurt"
+  🔨::builder → "Checkout is live, start selling"
+  🎭::performer → "Demo converted, close the deal"
+  🎤::voice → "Warm lead from LinkedIn, DM received"
+
+─── AUTONOMOUS PROCESS ───
+Step 1 (Git): git log --oneline -10 -- 'data/' (CRM changes)
+Step 2 (Scan): Check CRM for stale deals (3+ days no activity), hot leads
+Step 3 (State): Review today's conversations for market signals
+Step 4 (Prompt): Generate [CLOSE], [NUDGE], [PIPELINE] prompts
+
+─── ARCHAEOLOGY PROTOCOL ───
+CRM: mcp__thetacoach-crm-local__crm-list-leads
+Bash: ls -lt docs/05-content/battle-cards/
+WebFetch: your-api-endpoint (check Flow:Deal)
+
+─── AFFORDANCE TAGS ───
+[OUTREACH] = Lead needs first contact (battle card → DM)
+[CLOSE] = Deal ready to convert (PAIN + BUDGET confirmed)
+[COMMIT] = Binding next step needed (calendar invite, signature)
+[FOLLOW-UP] = Deal is drifting, needs re-engagement
+
+─── VALIDATION RULES ───
+VANITY (Score: 0):
+  "Good meeting", "Positive response", "Interested", "Sent follow-up"
+RESULT (Score: 1):
+  "Deal closed", "Revenue generated", "PAIN + BUDGET confirmed"
+
+─── FLYWHEEL CONNECTIONS ───
+RECEIVES FROM:
+  • 🎤::voice → Warm leads from content (DMs from LinkedIn posts)
+  • 🔨::builder → Production features live (start selling)
+OUTPUTS TO:
+  • 📐::architect → Market intelligence (pricing objections → pivot signals)
+  • 🔨::builder → Feature demand (customer requests → roadmap priority)
+TRANSFORMS: Attention → Revenue → Market intelligence
+
+─── ESCAPE GRAVITY ───
+The average response celebrates meetings.
+This coordinate counts REVENUE GENERATED.
+FORBIDDEN: "Booked meeting", "Great conversation", "Pipeline looks good"
+If it doesn't close, it's drift.
+
+─── OUTPUT FORMAT ───
+{
+  "coordinate": "🌊 C3:🤝 B2 (Flow:Deal)",
+  "pipeline_drift_rate": "0.0-1.0",
+  "priorities": [
+    {"tag": "[CLOSE]", "lead": "...", "commitment_needed": "...", "roi": 0.9}
+  ],
+  "dispatches": [
+    {"to": "→🎭::performer", "reason": "Demo scheduled, hand off"}
+  ]
+}</code></pre>
+            <button onclick="navigator.clipboard.writeText(this.previousElementSibling.textContent); this.textContent='✓ Copied!'; setTimeout(()=>this.textContent='📋 Copy Prompt', 2000)" style="margin-top: 15px; padding: 12px 24px; background: #10b981; color: white; border: none; border-radius: 8px; font-size: 1em; cursor: pointer; font-weight: bold;">📋 Copy Prompt</button>
+        </div>
+
+        <div class="footer">
+            <p><strong>🎩::operator</strong></p>
+            <p>Where Attention Becomes Revenue → Revenue Becomes Intelligence → Intelligence Becomes Better Product</p>
+            <p style="margin-top: 15px; font-style: italic; opacity: 0.9;">The Market Sensor Array (Every Conversation is Research)</p>
+        </div>
+    </div>
+
+    <!-- Room State & JSON Renderer -->
+    <script>
+    const OperatorRoom = {
+        namespace: '🎩::operator',
+        lens: '[C3:Flow]',
+        conversionSignal: 'revenue_generated',
+
+        renderPriorities(json) {
+            const container = document.getElementById('operator-priorities');
+            if (!json || !json.priorities || json.priorities.length === 0) {
+                container.innerHTML = '<p style="color:#64748b;text-align:center;">No priorities generated yet. Run the prompt.</p>';
+                return;
+            }
+
+            let html = '<ul style="list-style:none;padding:0;">';
+            for (const p of json.priorities) {
+                const badgeClass = p.rank === 'P1' ? 'p1' : p.rank === 'P2' ? 'p2' : 'p3';
+                const scoreColor = p.score >= 0.8 ? '#22c55e' : p.score >= 0.5 ? '#f59e0b' : '#ef4444';
+                html += `
+                    <li style="padding:15px;margin-bottom:10px;background:#1e293b;border-radius:8px;border-left:4px solid ${scoreColor};">
+                        <span class="priority-badge ${badgeClass}">${p.rank}</span>
+                        <span style="background:#10b981;color:white;padding:2px 8px;border-radius:4px;font-size:0.8em;margin-left:5px;">${p.tag}</span>
+                        <strong style="margin-left:10px;color:#e2e8f0;">${p.item}</strong>
+                        <span style="float:right;color:${scoreColor};font-weight:bold;">${(p.score * 100).toFixed(0)}%</span>
+                    </li>
+                `;
+            }
+            html += '</ul>';
+            container.innerHTML = html;
+            document.getElementById('summary-timestamp').textContent = json.timestamp || new Date().toISOString();
+        },
+
+        handlePaste(text) {
+            try {
+                const json = JSON.parse(text);
+                if (json.room === this.namespace) {
+                    this.renderPriorities(json);
+                    document.getElementById('claude-summary').textContent = JSON.stringify(json, null, 2);
+                    console.log('🎩 Priorities loaded:', json.priorities.length, 'items');
+                }
+            } catch (e) {
+                console.warn('Not valid JSON:', e);
+            }
+        }
+    };
+
+    document.getElementById('claude-summary')?.addEventListener('paste', (e) => {
+        setTimeout(() => {
+            OperatorRoom.handlePaste(e.target.textContent);
+        }, 100);
+    });
+    </script>
+</body>
+</html>

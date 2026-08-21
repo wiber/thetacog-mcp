@@ -1,0 +1,313 @@
+{
+ "built_at": "2026-08-20T10:35:37.289Z",
+ "trap_set_version": 1,
+ "knobs": {
+  "theta": null,
+  "budget": 400,
+  "floor": 3
+ },
+ "note": "S2 seed list — each row is a measured miss: the prompt that failed, the rule it should have surfaced, and why it missed. SOURCE RULE: these are the historical-first derived_statements candidates.",
+ "misses": [
+  {
+   "kind": "must-fire",
+   "domain": "blog-content",
+   "rule_key": "reader-POV first — what's in it for them",
+   "prompt": "Explain how readers can benefit from our blog content.",
+   "miss_reason": "ranked-out"
+  },
+  {
+   "kind": "must-fire",
+   "domain": "blog-content",
+   "rule_key": "reader-POV first — what's in it for them",
+   "prompt": "Describe what readers will gain by following your advice.",
+   "miss_reason": "ranked-out"
+  },
+  {
+   "kind": "must-not",
+   "domain": "blog-content",
+   "rule_key": "breadcrumb + crest per section (validated)",
+   "prompt": "Confirm the header style is consistent across sections without adding crests.",
+   "miss_reason": "false-positive"
+  },
+  {
+   "kind": "must-not",
+   "domain": "blog-content",
+   "rule_key": "crest VARIANTS encode meaning — never replace with 'default'",
+   "prompt": "Check if the blog's default image alt text is descriptive enough.",
+   "miss_reason": "false-positive"
+  },
+  {
+   "kind": "must-not",
+   "domain": "blog-content",
+   "rule_key": "the writing process includes the qwen ghost-read monologue g",
+   "prompt": "Draft revisions for reader engagement and SEO optimization without requiring Qwen's tri-check process.",
+   "miss_reason": "false-positive"
+  },
+  {
+   "kind": "must-not",
+   "domain": "blog-content",
+   "rule_key": "the 6 needs live in the SUBTITLES (the mono orthogonal-direc",
+   "prompt": "Verify that the blog's main title does not contain any section themes.",
+   "miss_reason": "false-positive"
+  },
+  {
+   "kind": "must-not",
+   "domain": "blog-content",
+   "rule_key": "voice: show the paradox, never name the feeling — banned: 's",
+   "prompt": "Describe how the day started unusually but smoothly without using such specific words as 'surprising' or 'remarkable' — e.g., 'Sunrise was early; breakfast was delicious. '",
+   "miss_reason": "false-positive"
+  },
+  {
+   "kind": "must-not",
+   "domain": "blog-content",
+   "rule_key": "voice: concrete object or scene BEFORE the abstraction — the",
+   "prompt": "Describe the theoretical framework that underpins your blog post ideas.",
+   "miss_reason": "false-positive"
+  },
+  {
+   "kind": "must-not",
+   "domain": "blog-content",
+   "rule_key": "voice: no technique-name leaks in prose — name the map, the ",
+   "prompt": "Provide a detailed description of the algorithm's workflow without naming any specific techniques or methods.",
+   "miss_reason": "false-positive"
+  },
+  {
+   "kind": "must-fire",
+   "domain": "blog-content",
+   "rule_key": "voice: reader-as-hero — the sentence weight lands on the rea",
+   "prompt": "Shift the perspective to the reader's experience using 'we' as allies.",
+   "miss_reason": "routed-away"
+  },
+  {
+   "kind": "must-fire",
+   "domain": "pmu-reef",
+   "rule_key": "gzip-NCD is the canonical sensor, not SimHash",
+   "prompt": "Identify and prioritize data from gzip-NCD over SimHash for critical analysis.",
+   "miss_reason": "ranked-out"
+  },
+  {
+   "kind": "must-fire",
+   "domain": "pmu-reef",
+   "rule_key": "gzip-NCD is the canonical sensor, not SimHash",
+   "prompt": "Ensure all reports use gzip-NCD readings as the primary source.",
+   "miss_reason": "ranked-out"
+  },
+  {
+   "kind": "must-not",
+   "domain": "pmu-reef",
+   "rule_key": "find the running code first; speed (~14ms) is a correctness ",
+   "prompt": "Compare memory usage across different PMU-reef nodes.",
+   "miss_reason": "false-positive"
+  },
+  {
+   "kind": "must-fire",
+   "domain": "comms-email",
+   "rule_key": "WHY-belief opens; 6 needs in canonical order; grade ≥95",
+   "prompt": "Identify and correct any spelling errors in the email.",
+   "miss_reason": "routed-away"
+  },
+  {
+   "kind": "must-not",
+   "domain": "comms-email",
+   "rule_key": "WHY-belief opens; 6 needs in canonical order; grade ≥95",
+   "prompt": "Revise the email's closing statement to be more professional.",
+   "miss_reason": "false-positive"
+  },
+  {
+   "kind": "must-fire",
+   "domain": "comms-email",
+   "rule_key": "always premium Ava audio bundle",
+   "prompt": "send Ava a premium audio message",
+   "miss_reason": "ranked-out"
+  },
+  {
+   "kind": "must-fire",
+   "domain": "comms-email",
+   "rule_key": "always premium Ava audio bundle",
+   "prompt": "confirm Ava's audio bundle upgrade",
+   "miss_reason": "ranked-out"
+  },
+  {
+   "kind": "must-fire",
+   "domain": "comms-email",
+   "rule_key": "Contribution + Significance are the READER's",
+   "prompt": "Ensure the reader identifies who determines contribution and significance.",
+   "miss_reason": "ranked-out"
+  },
+  {
+   "kind": "must-fire",
+   "domain": "comms-email",
+   "rule_key": "Contribution + Significance are the READER's",
+   "prompt": "Confirm the perspective aligns with the READER's definition.",
+   "miss_reason": "ranked-out"
+  },
+  {
+   "kind": "must-not",
+   "domain": "comms-email",
+   "rule_key": "the trigger is the FOLDER + the COMMIT: docs/comms/<channel>",
+   "prompt": "Check if the 'docs/comms/sales/approved/' folder needs immediate attention.",
+   "miss_reason": "false-positive"
+  },
+  {
+   "kind": "must-not",
+   "domain": "comms-email",
+   "rule_key": "live sends gated by COMMS_DISPATCH_LIVE=1; silent post-commi",
+   "prompt": "Confirm that pre-commit review notifications follow the standard dispatch path without modifications.",
+   "miss_reason": "false-positive"
+  },
+  {
+   "kind": "must-not",
+   "domain": "comms-email",
+   "rule_key": "'write/email/send X' ALWAYS routes through the comms folder ",
+   "prompt": "Confirm direct manager emails bypass comms for immediate action",
+   "miss_reason": "false-positive"
+  },
+  {
+   "kind": "must-not",
+   "domain": "comms-email",
+   "rule_key": "voice: show the paradox, never name the feeling — banned: 's",
+   "prompt": "Explain why the outcome was unexpected without using 'surprising' or 'remarkable'.",
+   "miss_reason": "false-positive"
+  },
+  {
+   "kind": "must-fire",
+   "domain": "comms-email",
+   "rule_key": "voice: concrete object or scene BEFORE the abstraction — the",
+   "prompt": "Describe the physical setting first, then discuss the underlying theory.",
+   "miss_reason": "ranked-out"
+  },
+  {
+   "kind": "must-fire",
+   "domain": "comms-email",
+   "rule_key": "voice: show the loss with the win — the honest failure mode,",
+   "prompt": "include the setback in the email to validate the outcome",
+   "miss_reason": "ranked-out"
+  },
+  {
+   "kind": "must-fire",
+   "domain": "comms-email",
+   "rule_key": "voice: reader-as-hero — the sentence weight lands on the rea",
+   "prompt": "Rewrite the email to focus on the reader's experience and involvement.",
+   "miss_reason": "ranked-out"
+  },
+  {
+   "kind": "must-fire",
+   "domain": "outreach",
+   "rule_key": "external = forwarding package, role-not-person",
+   "prompt": "Forward packages only, avoid person roles.",
+   "miss_reason": "ranked-out"
+  },
+  {
+   "kind": "must-fire",
+   "domain": "outreach",
+   "rule_key": "external = forwarding package, role-not-person",
+   "prompt": "Exclude personal roles in external communications.",
+   "miss_reason": "ranked-out"
+  },
+  {
+   "kind": "must-fire",
+   "domain": "outreach",
+   "rule_key": "two emails: forwardable + backstage receipt",
+   "prompt": "Send forwardable email with meeting details.",
+   "miss_reason": "ranked-out"
+  },
+  {
+   "kind": "must-fire",
+   "domain": "outreach",
+   "rule_key": "two emails: forwardable + backstage receipt",
+   "prompt": "Attach backstage receipt for expense claim.",
+   "miss_reason": "ranked-out"
+  },
+  {
+   "kind": "must-fire",
+   "domain": "outreach",
+   "rule_key": "lead with what retires the risk/discount",
+   "prompt": "Identify and mitigate risks before suggesting any solutions.",
+   "miss_reason": "ranked-out"
+  },
+  {
+   "kind": "must-fire",
+   "domain": "outreach",
+   "rule_key": "lead with what retires the risk/discount",
+   "prompt": "Assess potential downsides and propose remedies first.",
+   "miss_reason": "ranked-out"
+  },
+  {
+   "kind": "must-fire",
+   "domain": "outreach",
+   "rule_key": "ROTATE-VECTOR-BEFORE-CLOSING: before any 'close the file'/mi",
+   "prompt": "Ensure vector rotation before closing; prioritize technical buyers.",
+   "miss_reason": "routed-away"
+  },
+  {
+   "kind": "must-fire",
+   "domain": "outreach",
+   "rule_key": "GROUND-TRUTH-NOT-PERMISSION: every send delivers a FACT ('he",
+   "prompt": "Craft an outreach message focusing on sharing relevant industry insights instead of requesting a connection.",
+   "miss_reason": "ranked-out"
+  },
+  {
+   "kind": "must-not",
+   "domain": "outreach",
+   "rule_key": "GROUND-TRUTH-NOT-PERMISSION: every send delivers a FACT ('he",
+   "prompt": "Develop a follow-up strategy for nurturing connections that have shown interest in your content.",
+   "miss_reason": "false-positive"
+  },
+  {
+   "kind": "must-not",
+   "domain": "outreach",
+   "rule_key": "DECIDE-DONT-SOLICIT: organizing an event = drive the decisio",
+   "prompt": "Gather feedback on potential event venues before finalizing",
+   "miss_reason": "false-positive"
+  },
+  {
+   "kind": "must-fire",
+   "domain": "outreach",
+   "rule_key": "COMPETENCE-CONCESSION: concede the software/operational buil",
+   "prompt": "Advocate for internal engineering team to handle AI development.",
+   "miss_reason": "routed-away"
+  },
+  {
+   "kind": "must-fire",
+   "domain": "outreach",
+   "rule_key": "RULE-OF-EVIDENCE-SOX-EUAIACT: separate operations from liabi",
+   "prompt": "Ensure operations and liability are clearly separated as per SOX and EU AI Act requirements.",
+   "miss_reason": "routed-away"
+  },
+  {
+   "kind": "must-fire",
+   "domain": "git-discipline",
+   "rule_key": "one iteration = one commit — NEVER bundle iterations",
+   "prompt": "Proposing multiple changes in a single commit is not allowed.",
+   "miss_reason": "ranked-out"
+  },
+  {
+   "kind": "must-fire",
+   "domain": "git-discipline",
+   "rule_key": "one iteration = one commit — NEVER bundle iterations",
+   "prompt": "Combining several iterations into one commit violates our policy.",
+   "miss_reason": "ranked-out"
+  },
+  {
+   "kind": "must-fire",
+   "domain": "git-discipline",
+   "rule_key": "NEVER auto-push after every commit; batch commits then push ",
+   "prompt": "Ensure commits are batched before pushing; avoid auto-committing after each change.",
+   "miss_reason": "routed-away"
+  },
+  {
+   "kind": "must-fire",
+   "domain": "git-discipline",
+   "rule_key": "pre-commit hang on pmu-suite staging → commit --no-verify; -",
+   "prompt": "Pre-commit hook failure on pmu-suite staging; use --no-verify then commit.",
+   "miss_reason": "ranked-out"
+  },
+  {
+   "kind": "must-fire",
+   "domain": "git-discipline",
+   "rule_key": "pre-commit hang on pmu-suite staging → commit --no-verify; -",
+   "prompt": "Fix pre-commit hang by running git with core.hooksPath set.",
+   "miss_reason": "ranked-out"
+  }
+ ]
+}

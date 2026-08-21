@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🧭 Rio | The Navigator</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🧭</text></svg>">
+    <!-- ═══════════════════════════════════════════════════════════════════════════
+         COORDINATE LOCKING METADATA - 🧭::navigator
+         Copy this entire HTML to Claude to lock into this coordinate
+         ═══════════════════════════════════════════════════════════════════════════ -->
+    <script type="application/json" id="coordinate-lock">
+    {
+        "namespace": "🧭::navigator",
+        "coordinate": "📡 B3 Tactics.Signal",
+        "intersection": "B3 (Tactics:Signal)",
+        "tile_type": "off_diagonal_translation",
+        "terminal": "rio",
+        "temporal_window": "06:00 - 08:00",
+        "temporal_theme": "Dawn Planning",
+        "winning_pointer": "Morning triage and routing decisions",
+        "question": "Where are we? Where are we going? What's the most important thing today?",
+        "book_chapter": "[Priority triage and wayfinding]",
+
+        "cognitive_affordance": {
+            "sees": ["Daily priorities", "Context routing", "Blocked work", "Room queues", "Temporal alignment"],
+            "ignores": ["Deep execution", "Long-term strategy", "Content creation", "Sales calls"],
+            "pull": "You come here to TRIAGE. Route work to the right rooms. Identify blockers. Set the day's sequence."
+        },
+
+        "escape_gravity": {
+            "axis": "Routed > Organized",
+            "forbidden": ["Good plan", "Makes sense", "Organized"],
+            "counts": "Work routed to correct room. Blocker identified and assigned. Day has clear sequence."
+        },
+
+        "differentiation": {
+            "handoff_to": {
+                "📐::architect": "Strategic question → 🎯 A2",
+                "🔨::builder": "Feature needs shipping → 🔌 C1",
+                "🔒::vault": "Proof needed → ⚖️ A1",
+                "🎩::operator": "Deal needs closing → 🌊 C3"
+            },
+            "handoff_from": {
+                "ALL_ROOMS": "Navigator receives from all rooms at dawn to triage the day"
+            }
+        },
+
+        "affordances": ["TRIAGE", "ROUTE", "UNBLOCK", "PLAN"],
+        "archaeology": {
+            "api": "room-state-files",
+            "paths": [".workflow/*.json", "git log --oneline -10", "calendar, deadlines, blockers"]
+        }
+    }
+    </script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, #0d9488 0%, #0f766e 100%);
+            color: #1a1a1a;
+            padding: 40px 20px;
+            min-height: 100vh;
+        }
+        .container { max-width: 1200px; margin: 0 auto; }
+        .back-button {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            border: 2px solid white;
+            padding: 14px 28px;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 1.1em;
+            font-weight: bold;
+            margin-bottom: 40px;
+            text-decoration: none;
+            display: inline-block;
+        }
+        .back-button:hover { background: rgba(255, 255, 255, 0.3); transform: translateX(-5px); }
+        .copy-html-btn {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: rgba(0,0,0,0.8);
+            color: #0d9488;
+            border: 2px solid #0d9488;
+            padding: 12px 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 0.9em;
+            font-weight: bold;
+            z-index: 1000;
+            font-family: 'Monaco', monospace;
+        }
+        .copy-html-btn:hover { background: #0d9488; color: white; }
+        .header { text-align: center; margin-bottom: 50px; }
+        .header h1 { font-size: 4.5em; color: white; text-shadow: 3px 3px 6px rgba(0,0,0,0.4); margin-bottom: 15px; }
+        .subtitle { font-size: 1.5em; color: white; opacity: 0.95; margin-bottom: 10px; }
+        .command {
+            font-family: 'Monaco', 'Courier New', monospace;
+            background: rgba(0, 0, 0, 0.3);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 8px;
+            display: inline-block;
+            font-size: 1.2em;
+            margin-top: 10px;
+        }
+        .temporal-window {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            padding: 15px 30px;
+            border-radius: 12px;
+            display: inline-block;
+            font-size: 1.3em;
+            font-weight: bold;
+            margin-top: 15px;
+            border: 3px solid rgba(255, 255, 255, 0.5);
+        }
+        .memory-palace {
+            background: white;
+            color: #1a1a1a;
+            font-size: 2.2em;
+            font-style: italic;
+            text-align: center;
+            padding: 50px 40px;
+            border-radius: 20px;
+            margin-bottom: 50px;
+            box-shadow: 0 15px 50px rgba(0,0,0,0.3);
+            line-height: 1.6;
+            border-left: 10px solid #0d9488;
+        }
+        .stakes-card {
+            background: rgba(0, 0, 0, 0.3);
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            margin-bottom: 50px;
+            border: 3px solid rgba(255, 255, 255, 0.4);
+        }
+        .stakes-card h2 { font-size: 2.5em; margin-bottom: 15px; }
+        .stakes-card p { font-size: 1.3em; line-height: 1.6; }
+        .content-section {
+            background: white;
+            padding: 50px 40px;
+            border-radius: 20px;
+            margin-bottom: 40px;
+            box-shadow: 0 15px 50px rgba(0,0,0,0.2);
+        }
+        .content-section h2 {
+            font-size: 2.5em;
+            color: #0d9488;
+            margin-bottom: 30px;
+            border-bottom: 4px solid #0d9488;
+            padding-bottom: 15px;
+        }
+        .priority-list { list-style: none; padding: 0; }
+        .priority-list li {
+            padding: 18px 0;
+            border-bottom: 2px solid #eee;
+            font-size: 1.2em;
+            color: #333;
+            line-height: 1.6;
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+        }
+        .priority-list li:last-child { border-bottom: none; }
+        .priority-badge {
+            background: #0d9488;
+            color: white;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.8em;
+            font-weight: bold;
+            white-space: nowrap;
+        }
+        .priority-badge.p1 { background: #dc2626; }
+        .priority-badge.p2 { background: #f59e0b; }
+        .priority-badge.p3 { background: #10b981; }
+        .deep-search {
+            background: #fef3c7;
+            padding: 30px;
+            border-radius: 15px;
+            border-left: 6px solid #f59e0b;
+            margin-bottom: 30px;
+        }
+        .deep-search h3 { font-size: 1.8em; color: #92400e; margin-bottom: 20px; }
+        .deep-search code {
+            background: #1a1a1a;
+            color: #22c55e;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-family: 'Monaco', monospace;
+        }
+        .deep-search ul { list-style: none; padding: 0; }
+        .deep-search li { padding: 10px 0; font-size: 1.1em; color: #78350f; }
+        .deep-search li:before { content: '📂'; margin-right: 12px; }
+        .identity-rules {
+            background: #ecfdf5;
+            padding: 30px;
+            border-radius: 15px;
+            border-left: 6px solid #0d9488;
+            margin-bottom: 30px;
+        }
+        .identity-rules h3 { font-size: 1.8em; color: #0d9488; margin-bottom: 20px; }
+        .identity-rules ul { list-style: none; padding: 0; }
+        .identity-rules li { padding: 12px 0; font-size: 1.1em; color: #444; line-height: 1.6; }
+        .identity-rules li:before { content: '→'; margin-right: 12px; color: #0d9488; font-weight: bold; font-size: 1.3em; }
+        .footer { text-align: center; color: white; margin-top: 60px; font-size: 1.1em; opacity: 0.9; }
+        .room-switcher {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 30px;
+            padding: 15px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 12px;
+        }
+        .room-switcher a {
+            padding: 8px 16px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 0.95em;
+            transition: transform 0.2s, background 0.2s;
+        }
+        .room-switcher a:hover { transform: scale(1.05); }
+        .room-switcher .builder { background: #3b82f6; color: white; }
+        .room-switcher .architect { background: #4f46e5; color: white; }
+        .room-switcher .operator { background: #22c55e; color: white; }
+        .room-switcher .vault { background: #ef4444; color: white; }
+        .room-switcher .voice { background: #a855f7; color: white; }
+        .room-switcher .laboratory { background: #06b6d4; color: white; }
+        .room-switcher .performer { background: #f59e0b; color: white; }
+        .room-switcher .network { background: #6366f1; color: white; }
+        .room-switcher .navigator { background: #0d9488; color: white; }
+        .room-switcher .current { opacity: 0.5; pointer-events: none; }
+        .autonomous-steps {
+            background: #dbeafe;
+            padding: 25px;
+            border-radius: 12px;
+            margin-bottom: 25px;
+        }
+        .autonomous-steps h3 { font-size: 1.6em; color: #1e40af; margin-bottom: 15px; }
+        .autonomous-steps ol { padding-left: 25px; }
+        .autonomous-steps li { padding: 10px 0; font-size: 1.05em; color: #1e3a8a; line-height: 1.6; }
+        .validation-rules {
+            background: #fef2f2;
+            padding: 25px;
+            border-radius: 12px;
+            margin-bottom: 25px;
+        }
+        .validation-rules h3 { font-size: 1.6em; color: #dc2626; margin-bottom: 15px; }
+        .validation-rules .vanity { color: #dc2626; font-weight: bold; }
+        .validation-rules .result { color: #059669; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <!-- Copy Whole HTML Button - Paste to Claude to lock into this coordinate -->
+    <button class="copy-html-btn" onclick="navigator.clipboard.writeText(document.documentElement.outerHTML).then(()=>{this.textContent='✓ Copied!';setTimeout(()=>this.textContent='📋 🧭::navigator',2000)})">📋 🧭::navigator</button>
+
+    <div class="container">
+        <a href="../cognitive-dashboard.html" class="back-button">← Back to Dashboard</a>
+
+        <nav class="room-switcher">
+            <a href="iterm2-builder.html" target="_blank" class="builder">🔨 Builder</a>
+            <a href="vscode-architect.html" target="_blank" class="architect">📐 Architect</a>
+            <a href="kitty-operator.html" target="_blank" class="operator">🎩 Operator</a>
+            <a href="wezterm-vault.html" target="_blank" class="vault">🔒 Vault</a>
+            <a href="terminal-voice.html" target="_blank" class="voice">🎤 Voice</a>
+            <a href="cursor-laboratory.html" target="_blank" class="laboratory">🧪 Laboratory</a>
+            <a href="alacritty-performer.html" target="_blank" class="performer">🎭 Performer</a>
+            <a href="messages-network.html" target="_blank" class="network">☕ Network</a>
+            <a href="rio-navigator.html" target="_blank" class="navigator current">🧭 Navigator</a>
+        </nav>
+
+        <div class="header">
+            <h1>🧭 RIO: THE NAVIGATOR</h1>
+            <div class="subtitle">TIER 3: TRIAGE | Daily priorities | Dawn Planning</div>
+            <div class="command">Cmd+Space → rio</div>
+            <div class="temporal-window">⏰ TEMPORAL WINDOW: 06:00 - 08:00</div>
+        </div>
+
+        <div class="memory-palace">
+            "Sun rises. Coffee steams. Spread out the map. <strong>Where are we? Where are we going? What's the most important thing today?</strong> Route the work to the right rooms."
+            <div style="font-size:0.6em;margin-top:20px;font-style:normal;color:#0d9488;">
+                <strong>📡 B3 Tactics.Signal</strong> — "Morning triage and routing decisions"
+            </div>
+        </div>
+
+        <!-- COGNITIVE AFFORDANCE CARD -->
+        <div class="content-section" style="background:#1e293b;color:white;border-left:6px solid #0d9488;">
+            <h2 style="color:#0d9488;border:none;margin-bottom:20px;">🧠 COGNITIVE AFFORDANCE</h2>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:30px;">
+                <div>
+                    <h3 style="color:#22c55e;margin-bottom:10px;">✓ THIS ROOM SEES</h3>
+                    <ul style="list-style:none;padding:0;line-height:2;">
+                        <li>• Daily priorities and queued work</li>
+                        <li>• Context routing decisions</li>
+                        <li>• Blocked work across all rooms</li>
+                        <li>• Calendar, deadlines, dependencies</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 style="color:#ef4444;margin-bottom:10px;">✗ THIS ROOM IGNORES</h3>
+                    <ul style="list-style:none;padding:0;line-height:2;">
+                        <li>• Deep execution → <span style="color:#3b82f6;">🔨::builder</span></li>
+                        <li>• Long-term strategy → <span style="color:#6366f1;">📐::architect</span></li>
+                        <li>• Content creation → <span style="color:#a855f7;">🎤::voice</span></li>
+                        <li>• Sales calls → <span style="color:#22c55e;">🎩::operator</span></li>
+                    </ul>
+                </div>
+            </div>
+            <div style="margin-top:25px;padding:20px;background:#0f172a;border-radius:10px;">
+                <strong style="color:#0d9488;">THE PULL:</strong> You come here at DAWN to TRIAGE. Scan yesterday's work. Check all room queues. Route today's work to the correct coordinates. Unblock stuck items. Set the sequence. This is wayfinding, not execution.
+            </div>
+        </div>
+
+        <div class="stakes-card">
+            <h2>🗺️ STAKES: DAILY DIRECTION</h2>
+            <p>Bad triage = wasted day<br/>Correct routing = 4 terminals unblocked<br/>Dawn planning sets the tempo</p>
+        </div>
+
+        <!-- FOCUS AREAS -->
+        <div class="content-section">
+            <h2>🎯 Focus Areas</h2>
+            <ul class="priority-list">
+                <li><span class="priority-badge">FOCUS</span><strong>Daily priority triage:</strong> What are the top 3 things today?</li>
+                <li><span class="priority-badge">FOCUS</span><strong>Context routing decisions:</strong> This belongs in ::architect not ::builder</li>
+                <li><span class="priority-badge">FOCUS</span><strong>Wayfinding between rooms:</strong> Map the day's flow across coordinates</li>
+                <li><span class="priority-badge">FOCUS</span><strong>Unblocking stuck work:</strong> Find bottlenecks, assign clear next steps</li>
+            </ul>
+        </div>
+
+        <!-- PROMPT TYPES -->
+        <div class="content-section">
+            <h2>💬 Prompt Types</h2>
+            <div style="background:#f0fdfa;padding:25px;border-radius:12px;border-left:6px solid #0d9488;">
+                <ul style="list-style:none;padding:0;">
+                    <li style="padding:12px 0;border-bottom:1px solid #ccfbf1;font-size:1.15em;">
+                        <code style="background:#0d9488;color:white;padding:4px 10px;border-radius:6px;font-weight:bold;">[TRIAGE]</code>
+                        <span style="margin-left:10px;">Today's top 3 priorities are X, Y, Z</span>
+                    </li>
+                    <li style="padding:12px 0;border-bottom:1px solid #ccfbf1;font-size:1.15em;">
+                        <code style="background:#0d9488;color:white;padding:4px 10px;border-radius:6px;font-weight:bold;">[ROUTE]</code>
+                        <span style="margin-left:10px;">This belongs in ::architect not ::builder</span>
+                    </li>
+                    <li style="padding:12px 0;border-bottom:1px solid #ccfbf1;font-size:1.15em;">
+                        <code style="background:#0d9488;color:white;padding:4px 10px;border-radius:6px;font-weight:bold;">[UNBLOCK]</code>
+                        <span style="margin-left:10px;">This is stuck because...</span>
+                    </li>
+                    <li style="padding:12px 0;font-size:1.15em;">
+                        <code style="background:#0d9488;color:white;padding:4px 10px;border-radius:6px;font-weight:bold;">[PLAN]</code>
+                        <span style="margin-left:10px;">Sequence for today: 06:00 Navigator → 08:00 Architect → 14:00 Builder → 17:00 Operator</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- AUTONOMOUS PROCESS STEPS -->
+        <div class="content-section">
+            <h2>🤖 Autonomous Process Steps</h2>
+            <div class="autonomous-steps">
+                <h3>Ollama executes at 06:00 daily:</h3>
+                <ol>
+                    <li><strong>Step 1 - Git Log:</strong> <code>git log --oneline -10</code> (yesterday's work)</li>
+                    <li><strong>Step 2 - Scan Room States:</strong> Read all room <code>state.json</code> files for queued items</li>
+                    <li><strong>Step 3 - Check State:</strong> Review calendar, deadlines, blockers</li>
+                    <li><strong>Step 4 - Generate Prompts:</strong> Create routing and priority prompts for today</li>
+                </ol>
+            </div>
+        </div>
+
+        <!-- VALIDATION RULES -->
+        <div class="content-section">
+            <h2>✅ Validation Rules</h2>
+            <div class="validation-rules">
+                <h3>Vanity vs Result</h3>
+                <div style="margin-bottom:20px;">
+                    <p style="font-size:1.1em;margin-bottom:10px;">
+                        <span class="vanity">VANITY (0 points):</span> "Good plan", "Makes sense", "Organized"
+                    </p>
+                    <p style="font-size:0.95em;color:#666;margin-left:20px;line-height:1.6;">
+                        These are feel-good statements with no measurable outcome. A plan in your head doesn't unblock terminals.
+                    </p>
+                </div>
+                <div>
+                    <p style="font-size:1.1em;margin-bottom:10px;">
+                        <span class="result">RESULT (1 point):</span> "Work routed to correct room", "Blocker identified and assigned", "Day has clear sequence"
+                    </p>
+                    <p style="font-size:0.95em;color:#666;margin-left:20px;line-height:1.6;">
+                        Concrete actions taken. Work moved from Navigator's queue to the correct terminal. Stuck items now have owners and next steps.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <div class="deep-search">
+                <h3>🔍 Deep Search Protocol</h3>
+                <p style="margin-bottom: 15px; font-size: 1.1em;"><strong>ALWAYS check room state files and git history before routing:</strong></p>
+                <ul>
+                    <li><code>.workflow/*.json</code> — All room state files</li>
+                    <li><code>git log --oneline -10</code> — Yesterday's commits</li>
+                    <li><code>docs/planning/</code> — Strategic priorities</li>
+                    <li><code>calendar</code> — Deadlines and meetings</li>
+                    <li><code>CLAUDE.md</code> — Critical rules and patterns</li>
+                </ul>
+                <p style="margin-top: 15px; font-style: italic;">Navigator routes based on CURRENT STATE, not assumptions. Check before you route.</p>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <div class="identity-rules">
+                <h3>The Flywheel: How The Navigator Manifests</h3>
+                <ul>
+                    <li><strong>RECEIVES FROM ALL ROOMS:</strong> Navigator is the only room that receives from ALL other rooms at dawn</li>
+                    <li><strong>OUTPUTS TO 🔨::builder:</strong> "P1: Ship deep-links today (demo dependency)"</li>
+                    <li><strong>OUTPUTS TO 📐::architect:</strong> "Strategic question detected: Should we pivot to team features?"</li>
+                    <li><strong>OUTPUTS TO 🔒::vault:</strong> "Proof needed: Does 12×12 grid generalize to N×N?"</li>
+                    <li><strong>OUTPUTS TO 🎩::operator:</strong> "3 deals stalled, need follow-up by 17:00"</li>
+                    <li><strong>OUTPUTS TO 🎤::voice:</strong> "Blog post drafted but unposted (peak hour 12:00)"</li>
+                    <li><strong>TRANSFORMS:</strong> Scattered work across rooms → Prioritized sequence → Clear routing → Unblocked terminals</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <h2>🔄 COMPLETE FLYWHEEL CYCLE: One Day's Journey</h2>
+            <div style="background: #ecfdf5; padding: 30px; border-radius: 15px; border-left: 6px solid #0d9488; margin-bottom: 25px;">
+                <h3 style="font-size: 1.5em; color: #0d9488; margin-bottom: 20px;">Example: A Productive Day Routed by Navigator</h3>
+
+                <div style="margin-bottom: 20px;">
+                    <h4 style="color: #0f766e; margin-bottom: 10px;">06:00 - NAVIGATOR DAWN TRIAGE</h4>
+                    <p style="line-height: 1.7; color: #555;">Scan yesterday: Builder deployed deep-links, Operator had 2 demo calls, Vault documented proof. Check room queues: Builder has 3 TODOs, Architect has strategic pivot question, Operator has 4 stale deals. Check calendar: Demo at 15:00 needs prep. <strong>Route the day:</strong></p>
+                    <ul style="margin-left:20px;margin-top:10px;line-height:1.8;">
+                        <li>→ 📐::architect (08:00): Strategic pivot question</li>
+                        <li>→ 🎤::voice (11:00): Blog post at social peak</li>
+                        <li>→ 🔨::builder (14:00): Demo prep (P1)</li>
+                        <li>→ 🎩::operator (17:00): Follow up stale deals</li>
+                    </ul>
+                </div>
+
+                <div style="margin-bottom: 20px;">
+                    <h4 style="color: #0f766e; margin-bottom: 10px;">08:00-17:00 - SEQUENCE EXECUTES</h4>
+                    <p style="line-height: 1.7; color: #555;">Architect answers strategic question, dispatches to Builder. Voice posts at 12:00 peak, generates 23 DMs. Builder ships demo fixes by 14:00. Operator follows up 4 deals, closes 1. Navigator's routing unlocked 4 terminals, prevented context switching chaos.</p>
+                </div>
+
+                <div style="margin-bottom: 20px;">
+                    <h4 style="color: #0f766e; margin-bottom: 10px;">NEXT 06:00 - NAVIGATOR RE-TRIAGES</h4>
+                    <p style="line-height: 1.7; color: #555;">Check results: Demo successful (Performer). Deal closed (Operator). New TODOs queued in Builder. Strategic question answered (Architect). Triage again. Route again. The cycle continues.</p>
+                </div>
+
+                <div style="background: white; padding: 20px; border-radius: 10px; margin-top: 20px;">
+                    <p style="font-weight: bold; color: #0d9488; margin-bottom: 10px;">THE ACCELERATION:</p>
+                    <p style="line-height: 1.7; color: #444;">
+                        Without Navigator, work scatters randomly. With Navigator, work flows through the correct sequence.
+                        <strong>Navigator is the traffic controller. Dawn triage prevents chaos. Routing decisions multiply efficiency across all terminals.</strong>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Claude Summary Output (JSON from prompt) -->
+        <div class="content-section" id="claude-summary-section" style="background: #0f172a; color: #f0f0f0;">
+            <h2 style="color: #0d9488; border-color: #0d9488;">📊 Navigator Findings <span style="font-size:0.5em;color:#64748b;">— Paste JSON output here</span></h2>
+            <div id="claude-summary" style="background: #1e293b; padding: 20px; border-radius: 12px; min-height: 100px; font-family: 'Monaco', monospace; font-size: 0.85em; white-space: pre-wrap;">
+{
+  "room": "🧭::navigator",
+  "lens": "[B3:Signal]",
+  "timestamp": "2026-02-15T06:00:00...",
+  "triage": [],
+  "routes": [],
+  "blockers": []
+}
+            </div>
+            <p style="color: #475569; font-size: 0.85em; margin-top: 10px;">Last updated: <span id="summary-timestamp">—</span></p>
+        </div>
+
+        <div class="content-section" style="background: #1a1a1a; color: #f0f0f0;">
+            <h2 style="color: #0d9488; border-color: #0d9488;">📋 Coordinate Lock Prompt</h2>
+            <p style="margin-bottom: 20px; color: #aaa;">This prompt locks Claude into the 🧭::navigator coordinate. Copy the whole HTML (button top-right) for full context, or use this prompt directly:</p>
+            <pre style="background: #0d0d0d; padding: 25px; border-radius: 12px; overflow-x: auto; font-size: 0.95em; line-height: 1.6; border: 2px solid #0d9488; white-space: pre-wrap;"><code style="color: #22c55e;">═══ COORDINATE LOCK: 🧭::navigator ═══
+POSITION: 📡 B3 Tactics.Signal
+INTERSECTION: B3 (Tactics:Signal)
+TEMPORAL WINDOW: 06:00 - 08:00
+TEMPORAL THEME: Dawn Planning
+WINNING POINTER: Morning triage and routing decisions
+QUESTION: "Where are we? Where are we going? What's the most important thing today?"
+
+─── COGNITIVE AFFORDANCE ───
+THIS ROOM SEES:
+  • Daily priorities and queued work
+  • Context routing decisions
+  • Blocked work across all rooms
+  • Calendar, deadlines, dependencies
+
+THIS ROOM IGNORES:
+  • Deep execution → 🔨::builder
+  • Long-term strategy → 📐::architect
+  • Content creation → 🎤::voice
+  • Sales calls → 🎩::operator
+
+THE PULL: Dawn triage. Scan yesterday. Check room queues. Route today's work to correct coordinates. Unblock stuck items. Set the sequence.
+
+─── TESSERACT NAMESPACE ───
+             Strategy     Tactics      Operations
+           ┌────────────┬────────────┬────────────┐
+   A (Law) │⚖️A1 Law:Law│🔮A2 Law:Opp│💰A3 Law:Sig│
+           ├────────────┼────────────┼────────────┤
+   B (Opp) │🔀B1 Opp:Law│🎯B2 Opp:Opp│📡B3[HERE]  │
+           ├────────────┼────────────┼────────────┤
+   C (Grid)│🔌C1 Grd:Law│🧪C2 Grd:Opp│🌊C3 Grd:Sig│
+           └────────────┴────────────┴────────────┘
+
+─── DIFFERENTIATION ───
+HANDOFF TO (route work from this room):
+  📐::architect (A2) → Strategic sequencing, long-term planning
+  🔨::builder (C1) → Feature needs shipping, bug needs fixing
+  🔒::vault (A1) → Proof needed, IP protection
+  🎩::operator (C3) → Deal needs closing, pipeline update
+  🎤::voice (B1) → Content creation at social peaks
+  🧪::laboratory (C2) → Experimental work, prototypes
+  ☕::network (B2) → Relationship cultivation
+  🎭::performer (A3) → Demo prep, live events
+
+HANDOFF FROM:
+  ALL ROOMS → Navigator receives from all rooms at dawn for triage
+
+─── ARCHAEOLOGY PROTOCOL ───
+Bash: git log --oneline -10 (yesterday's work)
+Read: .workflow/*.json (all room states)
+Grep: "TODO|URGENT|BLOCKED" in docs/planning/
+Check: calendar, deadlines, blockers
+
+─── AFFORDANCE TAGS ───
+[TRIAGE] = Prioritize today's work
+[ROUTE] = Send work to correct room
+[UNBLOCK] = Identify and assign blockers
+[PLAN] = Sequence the day's flow
+
+─── ESCAPE GRAVITY ───
+The average response makes a nice plan.
+This coordinate ROUTES WORK TO TERMINALS.
+FORBIDDEN: "Good plan", "Makes sense", "Organized"
+If work isn't routed to a specific room with a specific action, it's vanity.
+
+─── OUTPUT FORMAT ───
+{
+  "coordinate": "📡 B3 Tactics.Signal",
+  "temporal_window": "06:00 - 08:00",
+  "triage": [
+    {"priority": "P1", "item": "...", "route_to": "🔨::builder", "action": "..."}
+  ],
+  "routes": [
+    {"from": "queued", "to": "📐::architect", "reason": "Strategic question"}
+  ],
+  "blockers": [
+    {"item": "...", "blocked_by": "...", "assign_to": "🎩::operator"}
+  ],
+  "sequence": ["06:00 🧭 Navigator", "08:00 📐 Architect", "14:00 🔨 Builder", "17:00 🎩 Operator"]
+}</code></pre>
+            <button onclick="navigator.clipboard.writeText(this.previousElementSibling.textContent); this.textContent='✓ Copied!'; setTimeout(()=>this.textContent='📋 Copy Prompt', 2000)" style="margin-top: 15px; padding: 12px 24px; background: #0d9488; color: white; border: none; border-radius: 8px; font-size: 1em; cursor: pointer; font-weight: bold;">📋 Copy Prompt</button>
+        </div>
+
+        <div class="footer">
+            <p><strong>🧭::navigator</strong></p>
+            <p>Where Chaos Becomes Sequence → Sequence Becomes Progress → Progress Becomes Acceleration</p>
+            <p style="margin-top: 15px; font-style: italic; opacity: 0.9;">The Traffic Controller (Dawn Triage Prevents Chaos)</p>
+        </div>
+    </div>
+
+    <!-- Room State & JSON Renderer -->
+    <script>
+    const NavigatorRoom = {
+        namespace: '🧭::navigator',
+        lens: '[B3:Signal]',
+        conversionSignal: 'work_routed_to_terminal',
+
+        renderPriorities(json) {
+            const container = document.getElementById('navigator-priorities');
+            if (!json || !json.triage || json.triage.length === 0) {
+                if (container) {
+                    container.innerHTML = '<p style="color:#64748b;text-align:center;">No triage generated yet. Run the prompt at 06:00.</p>';
+                }
+                return;
+            }
+
+            let html = '<ul style="list-style:none;padding:0;">';
+            for (const t of json.triage) {
+                const badgeClass = t.priority === 'P1' ? 'p1' : t.priority === 'P2' ? 'p2' : 'p3';
+                html += `
+                    <li style="padding:15px;margin-bottom:10px;background:#1e293b;border-radius:8px;border-left:4px solid #0d9488;">
+                        <span class="priority-badge ${badgeClass}">${t.priority}</span>
+                        <strong style="margin-left:10px;color:#e2e8f0;">${t.item}</strong>
+                        <span style="float:right;color:#0d9488;font-weight:bold;">→ ${t.route_to}</span>
+                    </li>
+                `;
+            }
+            html += '</ul>';
+            if (container) {
+                container.innerHTML = html;
+            }
+            document.getElementById('summary-timestamp').textContent = json.timestamp || new Date().toISOString();
+        },
+
+        handlePaste(text) {
+            try {
+                const json = JSON.parse(text);
+                if (json.room === this.namespace) {
+                    this.renderPriorities(json);
+                    document.getElementById('claude-summary').textContent = JSON.stringify(json, null, 2);
+                    console.log('🧭 Triage loaded:', json.triage?.length || 0, 'items');
+                }
+            } catch (e) {
+                console.warn('Not valid JSON:', e);
+            }
+        }
+    };
+
+    document.getElementById('claude-summary')?.addEventListener('paste', (e) => {
+        setTimeout(() => {
+            NavigatorRoom.handlePaste(e.target.textContent);
+        }, 100);
+    });
+    </script>
+</body>
+</html>

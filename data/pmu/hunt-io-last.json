@@ -1,0 +1,56 @@
+{
+ "ts": "2026-07-25T15:06:37.915Z",
+ "surfaces": [
+  {
+   "path": "data/pmu/lens-reef.json",
+   "kind": "lanes+rules+statements (fit probes, laneText)",
+   "bytes": 338108
+  },
+  {
+   "path": "data/pmu/snippet-library-144.json",
+   "kind": "cell dumps (meld lead + hood banks)",
+   "bytes": 214677
+  },
+  {
+   "path": "docs/architecture/axis-library-v1.json",
+   "kind": "axis definitions (meld tail, void vocab)",
+   "bytes": 12400
+  },
+  {
+   "path": ".thetacog/transcript-corpus/",
+   "kind": "transcript passages (hunt corpus 2)",
+   "entries": 2289
+  },
+  {
+   "path": "data/pmu/reef-l1/",
+   "kind": "sub-wells (child seats, depth meat)",
+   "entries": 4
+  },
+  {
+   "path": "data/pmu/void-intake/",
+   "kind": "void captures",
+   "bytes": null
+  },
+  {
+   "path": "data/pmu/hunt-term-exhaustion.json",
+   "kind": "question-side memory",
+   "bytes": 89226
+  },
+  {
+   "path": "data/pmu/burn-mass.json",
+   "kind": "attempt repellors",
+   "bytes": 886767
+  },
+  {
+   "path": "git-grep(tracked files, target globs)",
+   "kind": "repo hunt corpus 1",
+   "bytes": null
+  }
+ ],
+ "gates": {
+  "fit_ceiling": 0.92,
+  "lambda": 0.24,
+  "cap": 8,
+  "topicality": "ours(rule+own-dump) < away(opposite-dump)"
+ }
+}

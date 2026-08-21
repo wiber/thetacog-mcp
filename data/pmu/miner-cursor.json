@@ -1,0 +1,4 @@
+{
+ "tick": 5684,
+ "note": "stratified-intake rotation cursor — advances every tick so coverage sweeps the repo deterministically (never Math.random)"
+}

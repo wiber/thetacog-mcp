@@ -1,0 +1,15 @@
+{
+  "dignity_pixel": "A1,C3",
+  "pixel_full_name": "A1,C3 (Strategy.Law × Operations.Flow)",
+  "grip_sigma": 2.1334,
+  "witness_agreement": false,
+  "lane": "A1",
+  "corpus_files": [
+    "README.md"
+  ],
+  "corpus_sha256": "93930145af1cdbc40de976bc425f9b289f79e42b877f171ec4a57d365f608e65",
+  "surface_url": "https://github.com/wiber/thetadrivencoach",
+  "status": "self-reported — a stranger recomputes this from the same public files",
+  "recompute": "npx thetacog-mcp my-pixel --file README.md",
+  "routing_note": "the pixel is a routing key: triggered work-orders in this corner route here first (L4 gates: accreditation + wording in force)"
+}

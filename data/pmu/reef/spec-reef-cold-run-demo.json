@@ -1,0 +1,33 @@
+{
+  "artifact": "spec-reef",
+  "spec_id": "cold-run-demo",
+  "source": "baked-synthetic",
+  "from_room": "author",
+  "to_room": "demo",
+  "built_from": "full-requirement-prose",
+  "anchors": [
+    {
+      "coord": "R1",
+      "title": "Deterministic verdict",
+      "snippet": "Deterministic verdict. The system must return the same placement and the same σ on identical input bytes, every run, recomputable by a stranger from the sealed receipt without trusting the vendor."
+    },
+    {
+      "coord": "R2",
+      "title": "Measured incumbent variance",
+      "snippet": "Measured incumbent variance. The receipt carries the run-to-run flip-rate of a sampling LLM judge on the same test, next to the verdict, as a measured number — not prose."
+    },
+    {
+      "coord": "R3",
+      "title": "Honest advisory price",
+      "snippet": "Honest advisory price. One loss-ratio number is emitted but explicitly flagged advisory and pre-calibration; the system refuses to assert a calibrated quote it has not earned."
+    },
+    {
+      "coord": "R4",
+      "title": "Boundary case the judge cannot hold",
+      "snippet": "Boundary case. A deliverable that sits between two requirements — partly determinism, partly pricing — so the placement is genuinely borderline; this is exactly where a sampling judge flips run-to-run while the oracle stays byte-identical."
+    }
+  ],
+  "pubkey_hex": "ea67748bf33a5f1a15e2c2378143aebd230b61d2f9d6846cc89251abab2ee580",
+  "sig_hex": "45e4ae2923d3e4972bc0620facf3249662ae2efa8dd49cc42967bb81cf9244ccf07ecb2deae55968750b085a8765a14abf8b698b84b8bf9de300e9e1af07e407",
+  "sha256": "d3f6d365c1f351bc6e4217dad698b260ef26e56afc9f202bd474aa63c4025b79"
+}

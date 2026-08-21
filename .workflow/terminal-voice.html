@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎤 Terminal | The Voice</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎤</text></svg>">
+    <!-- ═══════════════════════════════════════════════════════════════════════════
+         COORDINATE LOCKING METADATA - 🎤::voice
+         Copy this entire HTML to Claude to lock into this coordinate
+         ═══════════════════════════════════════════════════════════════════════════ -->
+    <script type="application/json" id="coordinate-lock">
+    {
+        "namespace": "🎤::voice",
+        "coordinate": "📡 B3 Tactics.Signal",
+        "intersection": "B3:B3 (Signal:Signal)",
+        "tile_type": "diagonal_essence",
+        "terminal": "Terminal",
+        "winning_pointer": "en.wikipedia.org/wiki/Proof_of_stake",
+        "question": "What is the essence of Signal? Content needs skin in the game.",
+        "book_chapter": "[Your relevant chapter/doc]",
+        "temporal_room": {
+            "hours": "11:00 - 14:00",
+            "theme": "Midday Amplification",
+            "energy": "social peaks, content creation",
+            "automation": "Ollama prompts content/tweets during social peak hours",
+            "social_peaks": {
+                "twitter": ["12:00-13:00", "17:00-18:00"],
+                "linkedin": ["08:00-10:00", "12:00-13:00"]
+            }
+        },
+
+        "cognitive_affordance": {
+            "sees": ["Content pipeline", "Blog posts", "Book chapters", "LinkedIn engagement", "Inbound DMs"],
+            "ignores": ["Code architecture", "Deal terms", "Patent proofs", "Demo logistics"],
+            "pull": "You come here to AMPLIFY, not just publish. Proof of stake = skin in the game. Content without commitment is noise."
+        },
+
+        "escape_gravity": {
+            "axis": "Inbound generated > Content created",
+            "forbidden": ["Published a post", "Great content", "High impressions", "Went viral"],
+            "counts": "Inbound leads generated only. DMs received = true signal."
+        },
+
+        "differentiation": {
+            "handoff_to": {
+                "📐::architect": "Strategy question → 🎯 A2",
+                "🔨::builder": "Technical implementation → 🔌 C1",
+                "🎩::operator": "Lead is warm, convert → 🌊 C3",
+                "🎭::performer": "Content needs demo → 💰 A3"
+            },
+            "handoff_from": {
+                "📐::architect": "[DISPATCH] Publish Tesseract Series Part N",
+                "🎩::operator": "Need content for objection handling",
+                "🔒::vault": "Patent filed, announce it"
+            }
+        },
+
+        "affordances": ["PUBLISH", "AMPLIFY", "STAKE", "BROADCAST"],
+        "archaeology": {
+            "api": "your-api-endpoint",
+            "paths": ["src/content/blog/*", "books/*", "public/book/*"]
+        }
+    }
+    </script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%);
+            color: #1a1a1a;
+            padding: 40px 20px;
+            min-height: 100vh;
+        }
+        .container { max-width: 1200px; margin: 0 auto; }
+        .back-button {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            border: 2px solid white;
+            padding: 14px 28px;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 1.1em;
+            font-weight: bold;
+            margin-bottom: 40px;
+            text-decoration: none;
+            display: inline-block;
+        }
+        .back-button:hover { background: rgba(255, 255, 255, 0.3); transform: translateX(-5px); }
+        .copy-html-btn {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: rgba(0,0,0,0.8);
+            color: #8b5cf6;
+            border: 2px solid #8b5cf6;
+            padding: 12px 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 0.9em;
+            font-weight: bold;
+            z-index: 1000;
+            font-family: 'Monaco', monospace;
+        }
+        .copy-html-btn:hover { background: #8b5cf6; color: white; }
+        .header { text-align: center; margin-bottom: 50px; }
+        .header h1 { font-size: 4.5em; color: white; text-shadow: 3px 3px 6px rgba(0,0,0,0.4); margin-bottom: 15px; }
+        .subtitle { font-size: 1.5em; color: white; opacity: 0.95; margin-bottom: 10px; }
+        .command {
+            font-family: 'Monaco', 'Courier New', monospace;
+            background: rgba(0, 0, 0, 0.3);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 8px;
+            display: inline-block;
+            font-size: 1.2em;
+            margin-top: 10px;
+        }
+        .memory-palace {
+            background: white;
+            color: #1a1a1a;
+            font-size: 2.2em;
+            font-style: italic;
+            text-align: center;
+            padding: 50px 40px;
+            border-radius: 20px;
+            margin-bottom: 50px;
+            box-shadow: 0 15px 50px rgba(0,0,0,0.3);
+            line-height: 1.6;
+            border-left: 10px solid #8b5cf6;
+        }
+        .stakes-card {
+            background: rgba(0, 0, 0, 0.3);
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            margin-bottom: 50px;
+            border: 3px solid rgba(255, 255, 255, 0.4);
+        }
+        .stakes-card h2 { font-size: 2.5em; margin-bottom: 15px; }
+        .stakes-card p { font-size: 1.3em; line-height: 1.6; }
+        .content-section {
+            background: white;
+            padding: 50px 40px;
+            border-radius: 20px;
+            margin-bottom: 40px;
+            box-shadow: 0 15px 50px rgba(0,0,0,0.2);
+        }
+        .content-section h2 {
+            font-size: 2.5em;
+            color: #8b5cf6;
+            margin-bottom: 30px;
+            border-bottom: 4px solid #8b5cf6;
+            padding-bottom: 15px;
+        }
+        .priority-list { list-style: none; padding: 0; }
+        .priority-list li {
+            padding: 18px 0;
+            border-bottom: 2px solid #eee;
+            font-size: 1.2em;
+            color: #333;
+            line-height: 1.6;
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+        }
+        .priority-list li:last-child { border-bottom: none; }
+        .priority-badge {
+            background: #8b5cf6;
+            color: white;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.8em;
+            font-weight: bold;
+            white-space: nowrap;
+        }
+        .priority-badge.p1 { background: #dc2626; }
+        .priority-badge.p2 { background: #f59e0b; }
+        .priority-badge.p3 { background: #10b981; }
+        .deep-search {
+            background: #fef3c7;
+            padding: 30px;
+            border-radius: 15px;
+            border-left: 6px solid #f59e0b;
+            margin-bottom: 30px;
+        }
+        .deep-search h3 { font-size: 1.8em; color: #92400e; margin-bottom: 20px; }
+        .deep-search code {
+            background: #1a1a1a;
+            color: #22c55e;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-family: 'Monaco', monospace;
+        }
+        .deep-search ul { list-style: none; padding: 0; }
+        .deep-search li { padding: 10px 0; font-size: 1.1em; color: #78350f; }
+        .deep-search li:before { content: '📂'; margin-right: 12px; }
+        .identity-rules {
+            background: #faf5ff;
+            padding: 30px;
+            border-radius: 15px;
+            border-left: 6px solid #8b5cf6;
+            margin-bottom: 30px;
+        }
+        .identity-rules h3 { font-size: 1.8em; color: #8b5cf6; margin-bottom: 20px; }
+        .identity-rules ul { list-style: none; padding: 0; }
+        .identity-rules li { padding: 12px 0; font-size: 1.1em; color: #444; line-height: 1.6; }
+        .identity-rules li:before { content: '→'; margin-right: 12px; color: #8b5cf6; font-weight: bold; font-size: 1.3em; }
+        .footer { text-align: center; color: white; margin-top: 60px; font-size: 1.1em; opacity: 0.9; }
+        .room-switcher {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 30px;
+            padding: 15px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 12px;
+        }
+        .room-switcher a {
+            padding: 8px 16px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 0.95em;
+            transition: transform 0.2s, background 0.2s;
+        }
+        .room-switcher a:hover { transform: scale(1.05); }
+        .room-switcher .builder { background: #3b82f6; color: white; }
+        .room-switcher .architect { background: #4f46e5; color: white; }
+        .room-switcher .operator { background: #22c55e; color: white; }
+        .room-switcher .vault { background: #ef4444; color: white; }
+        .room-switcher .voice { background: #a855f7; color: white; }
+        .room-switcher .laboratory { background: #06b6d4; color: white; }
+        .room-switcher .performer { background: #f59e0b; color: white; }
+        .room-switcher .network { background: #6366f1; color: white; }
+        .room-switcher .navigator { background: #0d9488; color: white; }
+        .room-switcher .current { opacity: 0.5; pointer-events: none; }
+    </style>
+</head>
+<body>
+    <!-- Copy Whole HTML Button - Paste to Claude to lock into this coordinate -->
+    <button class="copy-html-btn" onclick="navigator.clipboard.writeText(document.documentElement.outerHTML).then(()=>{this.textContent='✓ Copied!';setTimeout(()=>this.textContent='📋 🎤::voice',2000)})">📋 🎤::voice</button>
+
+    <div class="container">
+        <a href="../cognitive-dashboard.html" class="back-button">← Back to Dashboard</a>
+
+        <nav class="room-switcher">
+            <a href="iterm2-builder.html" target="_blank" class="builder">🔨 Builder</a>
+            <a href="vscode-architect.html" target="_blank" class="architect">📐 Architect</a>
+            <a href="kitty-operator.html" target="_blank" class="operator">🎩 Operator</a>
+            <a href="wezterm-vault.html" target="_blank" class="vault">🔒 Vault</a>
+            <a href="terminal-voice.html" target="_blank" class="voice current">🎤 Voice</a>
+            <a href="cursor-laboratory.html" target="_blank" class="laboratory">🧪 Laboratory</a>
+            <a href="alacritty-performer.html" target="_blank" class="performer">🎭 Performer</a>
+            <a href="messages-network.html" target="_blank" class="network">☕ Network</a>
+            <a href="rio-navigator.html" target="_blank" class="navigator">🧭 Navigator</a>
+        </nav>
+
+        <div class="header">
+            <h1>🎤 TERMINAL: THE VOICE</h1>
+            <div class="subtitle">TIER 3: BRAND | Reversible with cost | 1-Month Horizon</div>
+            <div class="subtitle" style="background: rgba(0,0,0,0.3); padding: 15px; border-radius: 10px; margin-top: 15px;">
+                ⏰ <strong>TEMPORAL ROOM: 11:00 - 14:00</strong> (Midday Amplification)<br/>
+                🎯 Social Peak Hours: Twitter 12-1pm | LinkedIn 8-10am, 12-1pm
+            </div>
+            <div class="command">Cmd+Space → terminal</div>
+        </div>
+
+        <div class="memory-palace">
+            "Step onto the stage. Purple spotlight. The crowd gathers for lunch. Take dense proofs from the vault, strategy from the architect - translate complexity into viral stories."
+        </div>
+
+        <div style="background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%); color: white; padding: 40px; border-radius: 20px; margin-bottom: 30px; box-shadow: 0 15px 50px rgba(0,0,0,0.3); border: 4px solid #fbbf24;">
+            <h2 style="font-size: 2.8em; margin-bottom: 15px; text-align: center; text-shadow: 2px 2px 4px rgba(0,0,0,0.4);">⏰ TEMPORAL ROOM: 11:00 - 14:00</h2>
+            <div style="background: rgba(0,0,0,0.3); padding: 25px; border-radius: 15px; text-align: center; margin-bottom: 20px;">
+                <p style="font-size: 1.4em; margin-bottom: 10px;"><strong>This is NOT a manual terminal.</strong></p>
+                <p style="font-size: 1.3em; line-height: 1.6;">
+                    Ollama runs autonomous prompts during <strong>MIDDAY AMPLIFICATION</strong> hours (11am-2pm).<br/>
+                    It scans vault proofs, generates content, and posts during social peak hours.<br/>
+                    <span style="display: inline-block; background: rgba(255,255,255,0.2); padding: 8px 16px; border-radius: 8px; margin-top: 10px;">
+                        🐦 Twitter 12-1pm | 💼 LinkedIn 12-1pm (8-10am secondary)
+                    </span>
+                </p>
+            </div>
+            <div style="text-align: center; font-size: 1.2em; font-style: italic; opacity: 0.95;">
+                While you work in other rooms, Voice is amplifying your proofs into tweets and posts automatically.
+            </div>
+        </div>
+
+        <div class="stakes-card">
+            <h2>🎯 STAKES: FLYWHEEL AMPLIFICATION</h2>
+            <p>Bad content = Reputation damage + broken flywheel<br/>MISSION: Turn internal complexity into external momentum<br/>SUCCESS: Audience reaction feeds back as qualified leads</p>
+        </div>
+
+        <div class="content-section" style="background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%); color: white;">
+            <h2 style="color: white; border-color: white;">⏰ TEMPORAL ROOM: Midday Amplification (11:00 - 14:00)</h2>
+
+            <div style="background: rgba(0,0,0,0.3); padding: 25px; border-radius: 15px; margin-bottom: 25px;">
+                <h3 style="font-size: 1.8em; margin-bottom: 15px; color: #fbbf24;">📅 Memory Palace</h3>
+                <p style="font-size: 1.2em; line-height: 1.7; font-style: italic;">
+                    "Step onto the stage. Purple spotlight. The crowd gathers for lunch. Take dense proofs from the vault, strategy from the architect - translate complexity into viral stories."
+                </p>
+            </div>
+
+            <div style="background: rgba(0,0,0,0.3); padding: 25px; border-radius: 15px; margin-bottom: 25px;">
+                <h3 style="font-size: 1.8em; margin-bottom: 15px; color: #fbbf24;">🎯 Focus Areas</h3>
+                <ul style="list-style: none; padding: 0;">
+                    <li style="padding: 12px 0; font-size: 1.15em; border-bottom: 1px solid rgba(255,255,255,0.2);">✓ Content creation and amplification</li>
+                    <li style="padding: 12px 0; font-size: 1.15em; border-bottom: 1px solid rgba(255,255,255,0.2);">✓ Social posting at peaks</li>
+                    <li style="padding: 12px 0; font-size: 1.15em; border-bottom: 1px solid rgba(255,255,255,0.2);">✓ Messaging variants</li>
+                    <li style="padding: 12px 0; font-size: 1.15em;">✓ Audience building</li>
+                </ul>
+            </div>
+
+            <div style="background: rgba(0,0,0,0.3); padding: 25px; border-radius: 15px; margin-bottom: 25px;">
+                <h3 style="font-size: 1.8em; margin-bottom: 15px; color: #fbbf24;">🔔 Social Peak Hours</h3>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
+                    <div style="background: rgba(59,130,246,0.2); padding: 20px; border-radius: 10px; border-left: 4px solid #3b82f6;">
+                        <strong style="font-size: 1.3em; display: block; margin-bottom: 8px;">🐦 Twitter</strong>
+                        <span style="font-size: 1.1em;">12:00-13:00 | 17:00-18:00</span>
+                    </div>
+                    <div style="background: rgba(34,197,94,0.2); padding: 20px; border-radius: 10px; border-left: 4px solid #22c55e;">
+                        <strong style="font-size: 1.3em; display: block; margin-bottom: 8px;">💼 LinkedIn</strong>
+                        <span style="font-size: 1.1em;">08:00-10:00 | 12:00-13:00</span>
+                    </div>
+                </div>
+                <p style="margin-top: 15px; font-style: italic; opacity: 0.9;">Midday slot catches both Twitter lunch peak and LinkedIn engagement</p>
+            </div>
+
+            <div style="background: rgba(0,0,0,0.3); padding: 25px; border-radius: 15px;">
+                <h3 style="font-size: 1.8em; margin-bottom: 15px; color: #fbbf24;">🤖 Ollama Prompt Types (Generated during 11-2pm)</h3>
+                <ul style="list-style: none; padding: 0;">
+                    <li style="padding: 10px 15px; margin-bottom: 8px; background: rgba(139,92,246,0.3); border-radius: 8px; font-size: 1.1em;">[TWEET] Post this now (peak hour)...</li>
+                    <li style="padding: 10px 15px; margin-bottom: 8px; background: rgba(139,92,246,0.3); border-radius: 8px; font-size: 1.1em;">[DRAFT] LinkedIn post from this proof...</li>
+                    <li style="padding: 10px 15px; margin-bottom: 8px; background: rgba(139,92,246,0.3); border-radius: 8px; font-size: 1.1em;">[AMPLIFY] This vault theorem as content...</li>
+                    <li style="padding: 10px 15px; background: rgba(139,92,246,0.3); border-radius: 8px; font-size: 1.1em;">[VARIANT] Test this message angle...</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- DYNAMIC PRIORITY QUEUE - Generated by prompt, not static -->
+        <div class="content-section" id="priority-queue-section">
+            <h2>🚨 Priority Queue <span style="font-size:0.5em;color:#64748b;font-weight:normal;">— Generated by 🎤::voice prompt</span></h2>
+
+            <!-- Scoring Reference (always visible) -->
+            <div style="background:#1e293b;padding:15px;border-radius:10px;margin-bottom:20px;font-size:0.9em;">
+                <strong style="color:#8b5cf6;">SCORING: content_generated_leads</strong><br/>
+                <span style="color:#ef4444;">VANITY (0):</span> "Published a post", "Great content", "High impressions"<br/>
+                <span style="color:#22c55e;">RESULT (1):</span> "23 DMs from that post", "8 qualified leads generated"
+            </div>
+
+            <!-- Dynamic Priority List (populated by prompt output) -->
+            <div id="voice-priorities" style="background:#0f172a;padding:20px;border-radius:12px;min-height:150px;">
+                <p style="color:#64748b;font-style:italic;text-align:center;padding:30px 0;">
+                    ⏳ Run the prompt below to generate priorities from live data...<br/>
+                    <span style="font-size:0.85em;">Prompt executes: git log, blog content, your-api-endpoint API</span>
+                </p>
+            </div>
+
+            <!-- Last Known State (fallback until prompt runs) -->
+            <details style="margin-top:15px;">
+                <summary style="cursor:pointer;color:#8b5cf6;font-weight:bold;">📋 Last Known Priorities (Feb 11)</summary>
+                <ul class="priority-list" style="margin-top:10px;opacity:0.7;">
+                    <li><span class="priority-badge p1">P1</span><strong>Tesseract Series Continuation:</strong> Parts 7+ exploring grid physics, AI corrections, deep-dive narratives</li>
+                    <li><span class="priority-badge p1">P1</span><strong>LinkedIn Thought Leadership:</strong> Transform Tesseract physics into viral hooks that generate qualified DMs</li>
+                    <li><span class="priority-badge p2">P2</span><strong>Book Preface Refinement:</strong> Transform WezTerm's Color Red proof into visceral hook</li>
+                    <li><span class="priority-badge p2">P2</span><strong>"Elias Tesseract" Persona:</strong> Consistent speaking voice across all content channels</li>
+                    <li><span class="priority-badge p3">P3</span><strong>Speaking Event Scripts:</strong> Event narratives that tease Tesseract without revealing full IP</li>
+                </ul>
+            </details>
+        </div>
+
+        <div class="content-section">
+            <div class="deep-search">
+                <h3>🔍 Deep Search Protocol</h3>
+                <p style="margin-bottom: 15px; font-size: 1.1em;"><strong>ALWAYS check repo docs before claiming something doesn't exist or making assumptions:</strong></p>
+                <ul>
+                    <li><code>src/content/blog/</code> — Published blog posts, Tesseract Series</li>
+                    <li><code>docs/05-content/blog/scratchpad/</code> — Draft content, blog planning</li>
+                    <li><code>docs/05-content/blog/scratchpad/tss/</code> — Tesseract Series source material</li>
+                    <li><code>public/book/</code> — Book chapters, preface, appendices</li>
+                    <li><code>.workflow/</code> — Cognitive room configs, content strategy</li>
+                    <li><code>CLAUDE.md</code> — MDX rules, blog post format requirements</li>
+                </ul>
+                <p style="margin-top: 15px; font-style: italic;">When creating content, search the repo first. Source material usually exists.</p>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <div style="background: #fef3c7; padding: 30px; border-radius: 15px; border-left: 6px solid #f59e0b; margin-bottom: 25px;">
+                <h3 style="font-size: 1.8em; color: #92400e; margin-bottom: 20px;">⚙️ Autonomous Process Steps</h3>
+                <ol style="list-style: decimal; padding-left: 25px; color: #78350f;">
+                    <li style="padding: 10px 0; font-size: 1.1em;"><strong>Step 1 - Git Scan:</strong> <code style="background: #1a1a1a; color: #22c55e; padding: 3px 8px; border-radius: 4px;">git log --oneline -30 -- 'docs/content/' 'src/content/blog/'</code></li>
+                    <li style="padding: 10px 0; font-size: 1.1em;"><strong>Step 2 - Content Hooks:</strong> Read recent vault proofs for content hooks</li>
+                    <li style="padding: 10px 0; font-size: 1.1em;"><strong>Step 3 - Timing Check:</strong> Check social peak timing, draft queue</li>
+                    <li style="padding: 10px 0; font-size: 1.1em;"><strong>Step 4 - Prompt Generation:</strong> Generate post-now and draft prompts</li>
+                </ol>
+            </div>
+
+            <div style="background: #fee2e2; padding: 30px; border-radius: 15px; border-left: 6px solid #dc2626; margin-bottom: 25px;">
+                <h3 style="font-size: 1.8em; color: #991b1b; margin-bottom: 20px;">⚠️ Validation Rules</h3>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                    <div style="background: white; padding: 20px; border-radius: 10px;">
+                        <h4 style="color: #dc2626; margin-bottom: 10px; font-size: 1.3em;">❌ VANITY (Score: 0)</h4>
+                        <ul style="list-style: none; padding: 0; color: #7f1d1d;">
+                            <li style="padding: 5px 0;">• "Great post"</li>
+                            <li style="padding: 5px 0;">• "Good engagement"</li>
+                            <li style="padding: 5px 0;">• "Nice writing"</li>
+                        </ul>
+                    </div>
+                    <div style="background: white; padding: 20px; border-radius: 10px;">
+                        <h4 style="color: #22c55e; margin-bottom: 10px; font-size: 1.3em;">✅ RESULT (Score: 1)</h4>
+                        <ul style="list-style: none; padding: 0; color: #14532d;">
+                            <li style="padding: 5px 0;">• "23 DMs from post"</li>
+                            <li style="padding: 5px 0;">• "Content generated leads"</li>
+                            <li style="padding: 5px 0;">• "Message variant winning"</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="identity-rules">
+                <h3>🔄 Flywheel Connections</h3>
+                <ul>
+                    <li><strong>RECEIVES FROM:</strong> Vault (dense proofs), Architect (strategy), Operator (market signals)</li>
+                    <li><strong>OUTPUTS TO:</strong> Operator (inbound leads), Vault (audience questions)</li>
+                    <li><strong>TRANSFORMS:</strong> Dense proofs → Viral stories → Inbound leads</li>
+                    <li><strong>INPUTS FROM WEZTERM (Vault):</strong> Dense mathematical proofs (65.36-bit Information Geometry), Gestalt Constraint formulas → Transform into "Color Red" metaphor, physics narratives</li>
+                    <li><strong>INPUTS FROM VS CODE (Architect):</strong> Business strategy (direct sales, 2-month roadmap, positioning) → Transform into LinkedIn thought leadership, speaking narratives</li>
+                    <li><strong>INPUTS FROM KITTY (Operator):</strong> Market patterns (what prospects ask, where they get stuck) → Transform into content that pre-handles objections</li>
+                    <li><strong>OUTPUTS TO KITTY (Operator):</strong> Viral LinkedIn posts → Warm inbound DMs flagged as whales</li>
+                    <li><strong>OUTPUTS TO WEZTERM (Vault):</strong> Audience questions reveal gaps in the physics → New research directions</li>
+                    <li><strong>OUTPUTS TO VS CODE (Architect):</strong> Content performance signals strategy validation → "Grounding" resonates more than alternatives</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <h2>🔄 COMPLETE FLYWHEEL CYCLE: One Post's Journey</h2>
+            <div style="background: #faf5ff; padding: 30px; border-radius: 15px; border-left: 6px solid #8b5cf6; margin-bottom: 25px;">
+                <h3 style="font-size: 1.5em; color: #8b5cf6; margin-bottom: 20px;">Example: "Tesseract Series Part 6" LinkedIn Post</h3>
+
+                <div style="margin-bottom: 20px;">
+                    <h4 style="color: #7c3aed; margin-bottom: 10px;">🔻 INPUTS ARRIVE IN TERMINAL</h4>
+                    <p style="line-height: 1.7; color: #555;"><strong>From WezTerm:</strong> Mathematical proof that 12x12 grid enforces Miller's Law. <strong>From VS Code:</strong> Strategic positioning: "We sell grounding, not standardization." <strong>From Kitty:</strong> 8 prospects say "AI tools hallucinate." Terminal receives these inputs and weaves them together.</p>
+                </div>
+
+                <div style="margin-bottom: 20px;">
+                    <h4 style="color: #7c3aed; margin-bottom: 10px;">⚗️ TERMINAL TRANSFORMS COMPLEXITY</h4>
+                    <p style="line-height: 1.7; color: #555;">Inside Terminal, you write: "The AI got this right—and this catastrophically wrong." You connect WezTerm's math → "Physics means 12x12 isn't negotiable." You connect VS Code's positioning → "Grounding vs. Standardization is THE wedge." You connect Kitty's pain → "Hallucination happens when AI has no ground truth." One viral post from three technical inputs.</p>
+                </div>
+
+                <div style="margin-bottom: 20px;">
+                    <h4 style="color: #7c3aed; margin-bottom: 10px;">🔺 TERMINAL BROADCASTS, AUDIENCE REACTS</h4>
+                    <p style="line-height: 1.7; color: #555;">
+                        <strong>→ Kitty receives:</strong> 23 warm DMs filtered to 8 qualified leads. Kitty books 4 discovery calls.<br/>
+                        <strong>→ WezTerm receives:</strong> Question "Is this related to RAG?" reveals public confusion. WezTerm clarifies grounding vs. retrieval.<br/>
+                        <strong>→ VS Code receives:</strong> Engagement metrics show "Physics" frame resonates 3x more than alternatives. VS Code confirms: "Double down on Physics messaging."
+                    </p>
+                </div>
+
+                <div style="background: white; padding: 20px; border-radius: 10px; margin-top: 20px;">
+                    <p style="font-weight: bold; color: #8b5cf6; margin-bottom: 10px;">THE ACCELERATION:</p>
+                    <p style="line-height: 1.7; color: #444;">
+                        One post in Terminal → 8 qualified leads in Kitty → 1 research gap for WezTerm → 1 messaging validation for VS Code.
+                        <strong>The better Terminal translates internal work into external stories, the more fuel enters the system.</strong>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Claude Summary Output (JSON from prompt) -->
+        <div class="content-section" id="claude-summary-section" style="background: #0f172a; color: #f0f0f0;">
+            <h2 style="color: #8b5cf6; border-color: #8b5cf6;">📊 Voice Findings <span style="font-size:0.5em;color:#64748b;">— Paste JSON output here</span></h2>
+            <div id="claude-summary" style="background: #1e293b; padding: 20px; border-radius: 12px; min-height: 100px; font-family: 'Monaco', monospace; font-size: 0.85em; white-space: pre-wrap;">
+{
+  "room": "🎤::voice",
+  "lens": "[B3:Signal]",
+  "timestamp": "2026-02-11T...",
+  "tesseract_heat": [],
+  "priorities": [],
+  "discarded": []
+}
+            </div>
+            <p style="color: #475569; font-size: 0.85em; margin-top: 10px;">Last updated: <span id="summary-timestamp">—</span></p>
+        </div>
+
+        <div class="content-section" style="background: #1a1a1a; color: #f0f0f0;">
+            <h2 style="color: #8b5cf6; border-color: #8b5cf6;">📋 Coordinate Lock Prompt</h2>
+            <p style="margin-bottom: 20px; color: #aaa;">This prompt locks Claude into the 🎤::voice coordinate. Copy the whole HTML (button top-right) for full context, or use this prompt directly:</p>
+            <pre style="background: #0d0d0d; padding: 25px; border-radius: 12px; overflow-x: auto; font-size: 0.95em; line-height: 1.6; border: 2px solid #8b5cf6; white-space: pre-wrap;"><code style="color: #22c55e;">═══ COORDINATE LOCK: 🎤::voice ═══
+POSITION: 📡 B3 Tactics.Signal ("content needs skin in the game")
+INTERSECTION: B3:B3 (Signal:Signal) — DIAGONAL ESSENCE
+WINNING POINTER: en.wikipedia.org/wiki/Proof_of_stake
+QUESTION: "What is the essence of Signal? Stake your reputation on the message."
+
+⏰ TEMPORAL ROOM: 11:00 - 14:00 (Midday Amplification)
+AUTOMATION: Ollama prompts content/tweets during social peak hours
+SOCIAL PEAKS: Twitter 12-1pm | LinkedIn 8-10am, 12-1pm
+
+─── COGNITIVE AFFORDANCE ───
+THIS ROOM SEES:
+  • Content pipeline, blog posts, Tesseract Series
+  • Book chapters, preface hooks, narrative arcs
+  • LinkedIn engagement patterns, viral hooks
+  • Inbound DMs, qualified interest signals
+
+THIS ROOM IGNORES:
+  • Code architecture, type errors (→🔨::builder)
+  • Strategic sequencing, roadmaps (→📐::architect)
+  • Deal terms, pipeline closing (→🎩::operator)
+  • Demo logistics, pitch rehearsal (→🎭::performer)
+  • Mathematical proofs, patents (→🔒::vault)
+  • Rapid prototyping, experiments (→🧪::laboratory)
+  • Relationship cultivation (→☕::network)
+  • Fast navigation, scouting (→🧭::navigator)
+
+THE PULL: You come here to STAKE CONVICTION, not just publish. Proof of stake means skin in the game—content without conviction is noise. Engagement metrics are vanity; conviction signals are reputation.
+If you're debugging code or proving theorems, you're in the wrong room.
+
+─── TESSERACT NAMESPACE ───
+🏛️ A Strategy     | ⚡ B Tactics      | 🔧 C Operations
+⚖️ A1 Strategy.Law | 🏎️ B1 Tactics.Speed | 🔌 C1 Operations.Grid
+🎯 A2 Strategy.Goal | 🤝 B2 Tactics.Deal  | 🔄 C2 Operations.Loop
+💰 A3 Strategy.Fund | 📡 B3 Tactics.Signal | 🌊 C3 Operations.Flow
+                            ↑ YOU ARE HERE (Diagonal Essence: Proof of stake)
+
+─── ARCHAEOLOGY PROTOCOL ───
+WebFetch: your-api-endpoint
+WebFetch: https://yoursite.com/api/fulltext
+Bash: git log --oneline -30 -- "src/content/blog/*" "books/*" "public/book/*"
+
+─── DIFFERENTIATION ───
+HANDOFF TO (when voice sees these, route out):
+  →🔨::builder: "Code is broken" → 🔌 C1 Operations.Grid
+  →📐::architect: "Strategic question" → 🎯 A2 Strategy.Goal
+  →🎩::operator: "Lead is warm, close it" → 🌊 C3 Operations.Flow
+  →🎭::performer: "Content needs live demo" → 💰 A3 Strategy.Fund
+  →🔒::vault: "Needs mathematical proof" → ⚖️ A1 Strategy.Law
+  →🧪::laboratory: "Test this format first" → 🔄 C2 Operations.Loop
+  →☕::network: "Relationship, not content" → 🤝 B2 Tactics.Deal
+  →🧭::navigator: "Need to find reference" → 🏎️ B1 Tactics.Speed
+
+HANDOFF FROM (what other rooms send here):
+  ←📐::architect: "[DISPATCH] Publish Tesseract Series Part N"
+  ←🎩::operator: "Need content for objection handling"
+  ←🔒::vault: "Patent filed, announce it"
+  ←🎭::performer: "Event recording needs blog recap"
+
+─── PROMPT TYPES (Ollama generates during 11-2pm) ───
+[TWEET] = Post this now (peak hour)...
+[DRAFT] = LinkedIn post from this proof...
+[AMPLIFY] = This vault theorem as content...
+[VARIANT] = Test this message angle...
+
+─── AUTONOMOUS PROCESS ───
+Step 1: git log --oneline -30 -- 'docs/content/' 'src/content/blog/'
+Step 2: Read recent vault proofs for content hooks
+Step 3: Check social peak timing, draft queue
+Step 4: Generate post-now and draft prompts
+
+─── VALIDATION RULES ───
+VANITY (0): "Great post", "Good engagement", "Nice writing"
+RESULT (1): "23 DMs from post", "Content generated leads", "Message variant winning"
+
+─── FLYWHEEL ───
+RECEIVES FROM: vault (proofs), architect (strategy), operator (market signals)
+OUTPUTS TO: operator (inbound leads), vault (audience questions)
+TRANSFORMS: Dense proofs → Viral stories → Inbound leads
+
+─── AFFORDANCE TAGS ───
+[PUBLISH] = Content ready to ship (blog post, LinkedIn, newsletter)
+[AMPLIFY] = Shipped feature without announcement (needs content)
+[SCRIPT] = Needs narrative for delivery (speaking, demo)
+[STAKE] = High-conviction content (reputation on the line)
+
+─── ESCAPE GRAVITY ───
+The average response celebrates publishing.
+This coordinate counts INBOUND LEADS GENERATED.
+FORBIDDEN: "Published a post", "Great content", "High impressions", "Went viral"
+If it doesn't generate DMs, it's vanity. Route elsewhere.
+
+─── OUTPUT FORMAT ───
+{
+  "coordinate": "📡 B3 Tactics.Signal",
+  "intersection": "B3:B3 (Signal:Signal)",
+  "timestamp": "ISO-8601",
+  "sees": ["Tesseract Series Part 7 ready", "Feature shipped, no announcement"],
+  "ignores": ["auth bug → 🔨::builder", "patent deadline → 🔒::vault"],
+  "priorities": [
+    {"tag": "[PUBLISH]", "item": "...", "stake_level": "high|medium", "roi": 0.90}
+  ],
+  "routed_out": [
+    {"to": "→🎩::operator", "item": "Warm lead from post"}
+  ]
+}</code></pre>
+            <button onclick="navigator.clipboard.writeText(this.previousElementSibling.textContent); this.textContent='✓ Copied!'; setTimeout(()=>this.textContent='📋 Copy Prompt', 2000)" style="margin-top: 15px; padding: 12px 24px; background: #8b5cf6; color: white; border: none; border-radius: 8px; font-size: 1em; cursor: pointer; font-weight: bold;">📋 Copy Prompt</button>
+        </div>
+
+        <div class="footer">
+            <p><strong>🎤::voice</strong></p>
+            <p>Where Physics Becomes Poetry → Poetry Becomes Pipeline → Pipeline Becomes New Physics</p>
+            <p style="margin-top: 15px; font-style: italic; opacity: 0.9;">The Amplifier (Internal Complexity → External Momentum → Inbound Fuel)</p>
+        </div>
+    </div>
+
+    <!-- Room State & JSON Renderer -->
+    <script>
+    const VoiceRoom = {
+        namespace: '🎤::voice',
+        lens: '[B3:Signal]',
+        conversionSignal: 'content_generated_leads',
+
+        renderPriorities(json) {
+            const container = document.getElementById('voice-priorities');
+            if (!json || !json.priorities || json.priorities.length === 0) {
+                container.innerHTML = '<p style="color:#64748b;text-align:center;">No priorities generated yet. Run the prompt.</p>';
+                return;
+            }
+
+            let html = '<ul style="list-style:none;padding:0;">';
+            for (const p of json.priorities) {
+                const badgeClass = p.rank === 'P1' ? 'p1' : p.rank === 'P2' ? 'p2' : 'p3';
+                const scoreColor = p.score >= 0.8 ? '#22c55e' : p.score >= 0.5 ? '#f59e0b' : '#ef4444';
+                html += `
+                    <li style="padding:15px;margin-bottom:10px;background:#1e293b;border-radius:8px;border-left:4px solid ${scoreColor};">
+                        <span class="priority-badge ${badgeClass}">${p.rank}</span>
+                        <span style="background:#8b5cf6;color:white;padding:2px 8px;border-radius:4px;font-size:0.8em;margin-left:5px;">${p.tag}</span>
+                        <strong style="margin-left:10px;color:#e2e8f0;">${p.item}</strong>
+                        <span style="float:right;color:${scoreColor};font-weight:bold;">${(p.score * 100).toFixed(0)}%</span>
+                    </li>
+                `;
+            }
+            html += '</ul>';
+            container.innerHTML = html;
+            document.getElementById('summary-timestamp').textContent = json.timestamp || new Date().toISOString();
+        },
+
+        handlePaste(text) {
+            try {
+                const json = JSON.parse(text);
+                if (json.room === this.namespace) {
+                    this.renderPriorities(json);
+                    document.getElementById('claude-summary').textContent = JSON.stringify(json, null, 2);
+                    console.log('🎤 Priorities loaded:', json.priorities.length, 'items');
+                }
+            } catch (e) {
+                console.warn('Not valid JSON:', e);
+            }
+        }
+    };
+
+    document.getElementById('claude-summary')?.addEventListener('paste', (e) => {
+        setTimeout(() => {
+            VoiceRoom.handlePaste(e.target.textContent);
+        }, 100);
+    });
+    </script>
+</body>
+</html>

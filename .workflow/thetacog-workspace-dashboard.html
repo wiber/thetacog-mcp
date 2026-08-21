@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ThetaCog Workspace | Priority Dashboard</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎯</text></svg>">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'JetBrains Mono', 'Monaco', 'Consolas', monospace;
+            background: linear-gradient(135deg, #0a0a0f 0%, #1a1a2e 100%);
+            color: #66fcf1;
+            min-height: 100vh;
+            padding: 40px;
+            line-height: 1.6;
+        }
+        .container { max-width: 1400px; margin: 0 auto; }
+
+        h1 { color: #c678dd; font-size: 2.5rem; margin-bottom: 10px; }
+        h2 { color: #45a29e; font-size: 1.5rem; margin: 40px 0 20px 0; border-bottom: 2px solid #1a1a2e; padding-bottom: 10px; }
+        h3 { color: #66fcf1; font-size: 1.2rem; margin: 25px 0 15px 0; }
+
+        .subtitle { color: #45a29e; font-size: 1rem; margin-bottom: 30px; }
+
+        /* Strategic Alert */
+        .strategic-alert {
+            background: linear-gradient(135deg, rgba(198,120,221,0.2) 0%, rgba(198,120,221,0.05) 100%);
+            border: 2px solid #c678dd;
+            border-radius: 12px;
+            padding: 30px;
+            margin: 30px 0;
+        }
+        .strategic-title { color: #c678dd; font-size: 1.4rem; margin-bottom: 15px; display: flex; align-items: center; gap: 10px; }
+
+        /* Revenue Box */
+        .revenue-box {
+            background: linear-gradient(135deg, rgba(80,250,123,0.2) 0%, rgba(80,250,123,0.05) 100%);
+            border: 2px solid #50fa7b;
+            border-radius: 12px;
+            padding: 25px;
+            margin: 20px 0;
+        }
+
+        /* Stats Grid */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+        .stat-box {
+            background: #0a0a0f;
+            border: 1px solid #1a1a2e;
+            border-radius: 10px;
+            padding: 25px;
+            text-align: center;
+        }
+        .stat-value { font-size: 2.5rem; font-weight: bold; }
+        .stat-label { font-size: 0.75rem; color: #45a29e; text-transform: uppercase; margin-top: 8px; letter-spacing: 1px; }
+        .green { color: #50fa7b; }
+        .purple { color: #c678dd; }
+        .cyan { color: #66fcf1; }
+        .yellow { color: #ffd93d; }
+        .red { color: #ff6b6b; }
+        .orange { color: #f59e0b; }
+
+        /* Room Grid */
+        .room-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+            gap: 25px;
+            margin: 30px 0;
+        }
+        .room-card {
+            background: #0a0a0f;
+            border: 2px solid #1a1a2e;
+            border-radius: 12px;
+            padding: 25px;
+            transition: all 0.3s ease;
+        }
+        .room-card:hover {
+            border-color: var(--room-color, #66fcf1);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(102,252,241,0.1);
+        }
+        .room-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #1a1a2e;
+        }
+        .room-emoji { font-size: 2.5rem; }
+        .room-title { font-size: 1.3rem; color: var(--room-color, #66fcf1); }
+        .room-tier { font-size: 0.75rem; color: #808080; text-transform: uppercase; letter-spacing: 1px; }
+
+        /* Priority List */
+        .priority-list { list-style: none; padding: 0; }
+        .priority-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            padding: 12px 0;
+            border-bottom: 1px solid #1a1a2e;
+        }
+        .priority-item:last-child { border-bottom: none; }
+        .priority-badge {
+            padding: 3px 10px;
+            border-radius: 12px;
+            font-size: 0.7rem;
+            font-weight: bold;
+            white-space: nowrap;
+        }
+        .p1 { background: #ff6b6b; color: #0a0a0f; }
+        .p2 { background: #ffd93d; color: #0a0a0f; }
+        .p3 { background: #50fa7b; color: #0a0a0f; }
+        .priority-text { flex: 1; font-size: 0.95rem; color: #cbd5e1; }
+        .priority-text strong { color: #66fcf1; }
+
+        /* Checklist */
+        .checklist { list-style: none; padding: 0; margin: 20px 0; }
+        .checklist li {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            padding: 10px 0;
+            border-bottom: 1px solid #1a1a2e;
+        }
+        .checklist li:last-child { border-bottom: none; }
+        .check-box {
+            width: 22px;
+            height: 22px;
+            border: 2px solid #45a29e;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            font-size: 0.9rem;
+        }
+        .check-box.done { background: #50fa7b; border-color: #50fa7b; color: #0a0a0f; }
+        .check-box.pending { border-color: #ffd93d; }
+
+        /* Code */
+        code { background: #1a1a2e; padding: 2px 8px; border-radius: 4px; color: #ff79c6; font-size: 0.9rem; }
+
+        /* Links */
+        a { color: #66fcf1; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+
+        /* Footer */
+        .footer { margin-top: 60px; text-align: center; color: #3a3a4a; font-size: 0.85rem; padding-top: 30px; border-top: 1px solid #1a1a2e; }
+        .footer a { color: #66fcf1; }
+
+        /* Room Colors */
+        .room-vault { --room-color: #ff6b6b; }
+        .room-architect { --room-color: #6366f1; }
+        .room-operator { --room-color: #50fa7b; }
+        .room-voice { --room-color: #c678dd; }
+        .room-builder { --room-color: #3b82f6; }
+        .room-laboratory { --room-color: #06b6d4; }
+        .room-performer { --room-color: #f59e0b; }
+        .room-network { --room-color: #a855f7; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎯 ThetaCog Workspace Dashboard</h1>
+        <p class="subtitle">Consolidated Priorities | Updated: 2026-02-10 | tesseract.nu Focus</p>
+
+        <!-- Strategic Alert: de_CENTRALIZED → Tesseract.nu -->
+        <div class="strategic-alert">
+            <div class="strategic-title">🌐 STRATEGIC PIVOT: de_CENTRALIZED → tesseract.nu</div>
+            <p style="margin-bottom:15px;">de_CENTRALIZED speaking event completed. <strong>Perfect market identified.</strong> All contacts from the event are ideal prospects for the Tesseract grid.</p>
+            <p style="color:#c678dd; font-weight:bold;">ACTION: Convert de_CENTRALIZED connections into First 12 Genesis allocations via Battle Card system.</p>
+        </div>
+
+        <!-- Revenue Stats -->
+        <div class="revenue-box">
+            <h3 style="color:#50fa7b; margin-bottom:20px;">💰 EPOCH II REVENUE TARGET: SXSW</h3>
+            <div class="stats-grid">
+                <div class="stat-box">
+                    <div class="stat-value green">$50k</div>
+                    <div class="stat-label">Revenue Target</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-value cyan">50</div>
+                    <div class="stat-label">Genesis Packs</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-value purple">$1,000</div>
+                    <div class="stat-label">Per Pack</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-value yellow">12</div>
+                    <div class="stat-label">First Recruits</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Epoch II Implementation -->
+        <h2>🌑 EPOCH II: BLACKOUT CHECKLIST</h2>
+        <p style="color:#808080; margin-bottom:20px;">Days -7 to 0 | Dopamine Loops + Battle Cards + Revenue Rails</p>
+
+        <h3>Dopamine Email System</h3>
+        <ul class="checklist">
+            <li><span class="check-box done">✓</span><div><code>GENESIS_PROOF</code> - First photo email (+50 fuel)</div></li>
+            <li><span class="check-box done">✓</span><div><code>PROOF_VERIFIED</code> - Admin verification reward (+20 fuel)</div></li>
+            <li><span class="check-box done">✓</span><div><code>PROOF_REJECTED</code> - Rejection notice</div></li>
+            <li><span class="check-box pending">○</span><div><code>FUEL_RECEIVED</code> - <strong>Admin grant notification (NEXT TO BUILD)</strong></div></li>
+            <li><span class="check-box pending">○</span><div><code>RANK_CHANGE</code> - Pointer pressure alerts</div></li>
+            <li><span class="check-box pending">○</span><div><code>TILE_DRIFT</code> - New pointer on your tile (Battle Card trigger)</div></li>
+            <li><span class="check-box pending">○</span><div><code>WEEKLY_DIGEST</code> - Sunday grid summary</div></li>
+        </ul>
+
+        <h3>Battle Card System</h3>
+        <ul class="checklist">
+            <li><span class="check-box done">✓</span><div>Oracle prompt defined (LLM tile mapping)</div></li>
+            <li><span class="check-box done">✓</span><div>Email archetypes: System Alert, Competence Defense, Patronage Pitch</div></li>
+            <li><span class="check-box done">✓</span><div>Reference grid cheatsheet (A:C, A1:A1, B3:C1, etc.)</div></li>
+            <li><span class="check-box pending">○</span><div>Integrate with prospect pipeline (<code>/docs/tesseract-onboarding/</code>)</div></li>
+            <li><span class="check-box pending">○</span><div>Add email template selector to admin panel</div></li>
+            <li><span class="check-box pending">○</span><div>Track Battle Card sends in CRM</div></li>
+        </ul>
+
+        <h3>Revenue Rails (SXSW)</h3>
+        <ul class="checklist">
+            <li><span class="check-box pending">○</span><div>Stripe integration - Genesis Pack $1,000</div></li>
+            <li><span class="check-box pending">○</span><div>Scarcity counter ("47/100 Genesis Packs remaining")</div></li>
+            <li><span class="check-box pending">○</span><div>QR code for tesseract.nu/genesis</div></li>
+            <li><span class="check-box pending">○</span><div>Receipt page with tile activation</div></li>
+        </ul>
+
+        <!-- Room Priority Cards -->
+        <h2>🏛️ COGNITIVE ROOM PRIORITIES</h2>
+        <p style="color:#808080; margin-bottom:20px;">Extracted from all terminal rooms | Tesseract-aligned</p>
+
+        <div class="room-grid">
+            <!-- Builder -->
+            <div class="room-card room-builder">
+                <div class="room-header">
+                    <span class="room-emoji">🔨</span>
+                    <div>
+                        <div class="room-title">THE BUILDER</div>
+                        <div class="room-tier">iTerm2 | Tier 4: Execution</div>
+                    </div>
+                </div>
+                <ul class="priority-list">
+                    <li class="priority-item">
+                        <span class="priority-badge p1">P1</span>
+                        <span class="priority-text"><strong>Tesseract Grid RPC:</strong> Fix fetch_tesseract_grid_heatmap (GRANT permissions)</span>
+                    </li>
+                    <li class="priority-item">
+                        <span class="priority-badge p1">P1</span>
+                        <span class="priority-text"><strong>Deep-Link System:</strong> Push tile/pointer/proof/signal pages to production</span>
+                    </li>
+                    <li class="priority-item">
+                        <span class="priority-badge p2">P2</span>
+                        <span class="priority-text"><strong>Stripe Fuel Purchase:</strong> Verify checkout flow end-to-end</span>
+                    </li>
+                    <li class="priority-item">
+                        <span class="priority-badge p2">P2</span>
+                        <span class="priority-text"><strong>Heat Border Viz:</strong> Cyan (pointers) → Orange (pressure)</span>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Architect -->
+            <div class="room-card room-architect">
+                <div class="room-header">
+                    <span class="room-emoji">📐</span>
+                    <div>
+                        <div class="room-title">THE ARCHITECT</div>
+                        <div class="room-tier">VS Code | Tier 2: Strategic</div>
+                    </div>
+                </div>
+                <ul class="priority-list">
+                    <li class="priority-item">
+                        <span class="priority-badge p1">P1</span>
+                        <span class="priority-text"><strong>Tesseract Grid Launch:</strong> Full grid + deep-link system live</span>
+                    </li>
+                    <li class="priority-item">
+                        <span class="priority-badge p1">P1</span>
+                        <span class="priority-text"><strong>Direct Sales Strategy:</strong> Pricing tiers + Stripe purchase flow</span>
+                    </li>
+                    <li class="priority-item">
+                        <span class="priority-badge p2">P2</span>
+                        <span class="priority-text"><strong>2-Month Roadmap:</strong> Tesseract Grid vs Book vs Speaking events</span>
+                    </li>
+                    <li class="priority-item">
+                        <span class="priority-badge p2">P2</span>
+                        <span class="priority-text"><strong>GTM Architecture:</strong> Direct sales engine, book as lead magnet</span>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Operator -->
+            <div class="room-card room-operator">
+                <div class="room-header">
+                    <span class="room-emoji">🎩</span>
+                    <div>
+                        <div class="room-title">THE OPERATOR</div>
+                        <div class="room-tier">Kitty | Tier 3: Operations</div>
+                    </div>
+                </div>
+                <ul class="priority-list">
+                    <li class="priority-item">
+                        <span class="priority-badge p1">P1</span>
+                        <span class="priority-text"><strong>Tesseract Grid Sales:</strong> Convert de_CENTRALIZED contacts via deep-links</span>
+                    </li>
+                    <li class="priority-item">
+                        <span class="priority-badge p1">P1</span>
+                        <span class="priority-text"><strong>First 12 Recruits:</strong> Use Battle Cards on de_CENTRALIZED network</span>
+                    </li>
+                    <li class="priority-item">
+                        <span class="priority-badge p2">P2</span>
+                        <span class="priority-text"><strong>LinkedIn Inbox Triage:</strong> Flag whales from Tesseract engagement</span>
+                    </li>
+                    <li class="priority-item">
+                        <span class="priority-badge p2">P2</span>
+                        <span class="priority-text"><strong>Advisor Meetings:</strong> Demand intros to Sales Leaders</span>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Voice -->
+            <div class="room-card room-voice">
+                <div class="room-header">
+                    <span class="room-emoji">🎤</span>
+                    <div>
+                        <div class="room-title">THE VOICE</div>
+                        <div class="room-tier">Terminal | Tier 3: Brand</div>
+                    </div>
+                </div>
+                <ul class="priority-list">
+                    <li class="priority-item">
+                        <span class="priority-badge p1">P1</span>
+                        <span class="priority-text"><strong>Tesseract Series 7+:</strong> Grid physics, AI corrections narratives</span>
+                    </li>
+                    <li class="priority-item">
+                        <span class="priority-badge p1">P1</span>
+                        <span class="priority-text"><strong>LinkedIn Thought Leadership:</strong> Physics → Viral hooks → Qualified DMs</span>
+                    </li>
+                    <li class="priority-item">
+                        <span class="priority-badge p2">P2</span>
+                        <span class="priority-text"><strong>Book Preface:</strong> Color Red proof → Visceral hook</span>
+                    </li>
+                    <li class="priority-item">
+                        <span class="priority-badge p2">P2</span>
+                        <span class="priority-text"><strong>"Elias Tesseract" Persona:</strong> Consistent speaking voice</span>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Performer -->
+            <div class="room-card room-performer">
+                <div class="room-header">
+                    <span class="room-emoji">🎬</span>
+                    <div>
+                        <div class="room-title">THE PERFORMER</div>
+                        <div class="room-tier">Alacritty | Tier 6: Performance</div>
+                    </div>
+                </div>
+                <ul class="priority-list">
+                    <li class="priority-item">
+                        <span class="priority-badge p1">P1</span>
+                        <span class="priority-text"><strong>de_CENTRALIZED Follow-up:</strong> Perfect market for tesseract.nu!</span>
+                    </li>
+                    <li class="priority-item">
+                        <span class="priority-badge p1">P1</span>
+                        <span class="priority-text"><strong>Investor Pitch Deck:</strong> For advisor introductions</span>
+                    </li>
+                    <li class="priority-item">
+                        <span class="priority-badge p2">P2</span>
+                        <span class="priority-text"><strong>Austin AI Salon:</strong> Rehearse the Tesseract story</span>
+                    </li>
+                    <li class="priority-item">
+                        <span class="priority-badge p2">P2</span>
+                        <span class="priority-text"><strong>SXSW Prep:</strong> Genesis Pack pitch, QR codes, demo flow</span>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Laboratory -->
+            <div class="room-card room-laboratory">
+                <div class="room-header">
+                    <span class="room-emoji">🧪</span>
+                    <div>
+                        <div class="room-title">THE LABORATORY</div>
+                        <div class="room-tier">Cursor | Tier 5: Experimental</div>
+                    </div>
+                </div>
+                <ul class="priority-list">
+                    <li class="priority-item">
+                        <span class="priority-badge p2">P2</span>
+                        <span class="priority-text"><strong>IntentGuard Demo:</strong> Sunday presentation materials</span>
+                    </li>
+                    <li class="priority-item">
+                        <span class="priority-badge p2">P2</span>
+                        <span class="priority-text"><strong>NUCLEAR Prototype:</strong> Rapid iteration cycles</span>
+                    </li>
+                    <li class="priority-item">
+                        <span class="priority-badge p3">P3</span>
+                        <span class="priority-text"><strong>Live Coding Prep:</strong> Demo environment ready</span>
+                    </li>
+                    <li class="priority-item">
+                        <span class="priority-badge p3">P3</span>
+                        <span class="priority-text"><strong>Architecture Experiments:</strong> New patterns exploration</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Quick Links -->
+        <h2>🔗 QUICK LINKS</h2>
+        <div class="stats-grid">
+            <div class="stat-box">
+                <a href="https://tesseract.nu/tesseract/grid" target="_blank" style="text-decoration:none;">
+                    <div class="stat-value cyan">🌐</div>
+                    <div class="stat-label">tesseract.nu/grid</div>
+                </a>
+            </div>
+            <div class="stat-box">
+                <a href="https://thetadriven.com/admin/tesseract" target="_blank" style="text-decoration:none;">
+                    <div class="stat-value purple">⚙️</div>
+                    <div class="stat-label">Admin Panel</div>
+                </a>
+            </div>
+            <div class="stat-box">
+                <a href="https://thetadriven.com/admin/tesseract-photos" target="_blank" style="text-decoration:none;">
+                    <div class="stat-value green">📸</div>
+                    <div class="stat-label">Photo Verification</div>
+                </a>
+            </div>
+            <div class="stat-box">
+                <a href="../../../docs/tesseract-epoch-ii-blackout-plan.html" style="text-decoration:none;">
+                    <div class="stat-value yellow">📋</div>
+                    <div class="stat-label">EPOCH II Plan</div>
+                </a>
+            </div>
+        </div>
+
+        <!-- Summary -->
+        <div class="strategic-alert" style="border-color:#50fa7b; background:linear-gradient(135deg, rgba(80,250,123,0.15) 0%, rgba(80,250,123,0.02) 100%);">
+            <div class="strategic-title" style="color:#50fa7b;">🚀 TODAY'S MISSION</div>
+            <ol style="margin-left:20px; color:#cbd5e1;">
+                <li style="margin-bottom:10px;"><strong>Build FUEL_RECEIVED email</strong> - Next dopamine trigger in the loop</li>
+                <li style="margin-bottom:10px;"><strong>Send Battle Cards to de_CENTRALIZED contacts</strong> - They ARE the perfect market</li>
+                <li style="margin-bottom:10px;"><strong>Recruit First 12</strong> - Genesis allocations ready</li>
+                <li style="margin-bottom:10px;"><strong>Update Performer room</strong> - de_CENTRALIZED is DONE, now it's follow-up time</li>
+            </ol>
+        </div>
+
+        <div class="footer">
+            <p>ThetaCog Workspace | <a href="https://tesseract.nu">tesseract.nu</a> | <a href="https://thetadriven.com">thetadriven.com</a></p>
+            <p style="margin-top:10px;">Generated: 2026-02-10 | Priorities from git commits + cognitive rooms</p>
+            <p style="margin-top:10px; color:#808080;">Future: SQLite/MCP integration for dynamic priority sync</p>
+        </div>
+    </div>
+</body>
+</html>
