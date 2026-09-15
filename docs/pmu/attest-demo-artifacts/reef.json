@@ -1,0 +1,32 @@
+{
+  "artifact": "thetacog-reef",
+  "job_id": "demo",
+  "spec": "The deliverable is the strategic capital-allocation plan: which dollars build the floor — the substrate that lifts future bets — versus the ceiling that caps the next round.\n\nIt must name the target coordinate the system must occupy by end of quarter, and treat anything that does not drive toward it as exhaust.\n\nIt must set the long-horizon direction the lattice inherits — the multi-year posture, irreversibly chosen. Strategy and funding, not the operational loop.",
+  "authorized_cells": [
+    "A",
+    "A1",
+    "A2"
+  ],
+  "authorized_lattice": [
+    {
+      "cell": "A",
+      "reads": "🏛️ A · Strategy — long-term direction"
+    },
+    {
+      "cell": "A1",
+      "reads": "⚖️ A1 · Strategy.Law — rules & constraints"
+    },
+    {
+      "cell": "A2",
+      "reads": "🎯 A2 · Strategy.Goal — target & vision"
+    }
+  ],
+  "reef_commitment": "1d5514be576dd51040ceecf3bb781f158ead22bc14babb825dba30e4edc2eb5a",
+  "published_by": {
+    "name": "node-a-buyer",
+    "pubkey_hex": "16dcd2919490a13dea079b53bfdfe6667fbc1989fab6745cb212287b70a285c1"
+  },
+  "pubkey_hex": "16dcd2919490a13dea079b53bfdfe6667fbc1989fab6745cb212287b70a285c1",
+  "sig_hex": "32967716773b13ea96baebc29e6c156ba0ad46452349d1d157bfbc8e683dd52cffcafb6f4c8064e61f76295a261e9f5d4b123b1984bf68204708815f464af800",
+  "sha256": "0b7fb70b38af2d34e0d081a8000da6a354e8039dc33dc184ada761a9d86886ab"
+}

@@ -1,0 +1,71 @@
+[
+  {
+    "key": "compliant",
+    "ground_truth": "in_lane",
+    "doc_sha256": "7d45de43dc34321a241625fbcec3d3061139519e6989b50167d5cfbc2c864060",
+    "spec_sha256": "d4720d8b51b655d63889a4d2259118f2b111de00eb46bd337d72af0475ce483e",
+    "cell": "A2",
+    "sigma": 2.64525,
+    "witness_agreement": false,
+    "pixel": "A2,A2",
+    "pixel_sigma": 3.574706,
+    "walk_off_pct": 10,
+    "walk_counts": {
+      "green": 743,
+      "amber": 489,
+      "red": 0
+    },
+    "walk_mode": "ballistic-edges",
+    "walk_gate": "GREEN"
+  },
+  {
+    "key": "paraphrase",
+    "ground_truth": "in_lane",
+    "doc_sha256": "306a048eceff263d93f8878f7205f05e55e6632c00167cb2fccac841bade2f20",
+    "spec_sha256": "d4720d8b51b655d63889a4d2259118f2b111de00eb46bd337d72af0475ce483e",
+    "cell": "A2",
+    "sigma": 1.915723,
+    "witness_agreement": false,
+    "pixel": "A,A",
+    "pixel_sigma": 3.557809
+  },
+  {
+    "key": "fake_ops",
+    "ground_truth": "off_lane",
+    "doc_sha256": "440a7dcd095cc48e59f5bc6494ca6240a19fa7fe16b597baa25d3cc812c81220",
+    "spec_sha256": "d4720d8b51b655d63889a4d2259118f2b111de00eb46bd337d72af0475ce483e",
+    "cell": "C2",
+    "sigma": 2.674056,
+    "witness_agreement": false,
+    "pixel": "C,C",
+    "pixel_sigma": 3.267739,
+    "walk_off_pct": 18,
+    "walk_counts": {
+      "green": 267,
+      "amber": 718,
+      "red": 0
+    },
+    "walk_mode": "ballistic-edges",
+    "walk_gate": "GREEN"
+  },
+  {
+    "key": "lorem",
+    "ground_truth": "off_lane",
+    "doc_sha256": "672e12ea5766468f3c1ff31cb7d77ba5b9a25065f9964190df5a750f9c7d157e",
+    "spec_sha256": "d4720d8b51b655d63889a4d2259118f2b111de00eb46bd337d72af0475ce483e",
+    "cell": "B",
+    "sigma": 1.267449,
+    "witness_agreement": true,
+    "pixel": "C,C",
+    "pixel_sigma": 3.648652,
+    "walk_off_pct": null,
+    "walk_counts": {
+      "green": 0,
+      "amber": 0,
+      "red": 0
+    },
+    "refusal": "LIT-MASS FLOOR — intent 1520 / reality 0 significant cells (floor 24); too thin to grade. UNMEASURED, never a pass.",
+    "walk_mode": "ballistic-edges",
+    "walk_gate": "UNMEASURED"
+  }
+]

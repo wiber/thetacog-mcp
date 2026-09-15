@@ -1,0 +1,557 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>◧ Ghost-Read Matrix</title>
+<style>
+  /* Own chrome. This is an instrument, not a page of a website — no header, no footer, no
+     status light that reports on some other system. Everything on screen is about THIS file. */
+  :root{
+    --bg:#07090c; --panel:#0d1117; --edge:#1c2430; --ink:#e6edf3; --dim:#8b98a5;
+    --accent:#22d3ee; --good:#3fb950; --warn:#d29922; --bad:#f85149; --orig:#a371f7;
+    --mono:ui-monospace,SFMono-Regular,Menlo,monospace;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+  a{color:var(--accent)}
+  .wrap{max-width:1180px;margin:0 auto;padding:18px 20px 80px}
+
+  /* ── crest ───────────────────────────────────────────────────────────── */
+  .crest{display:flex;align-items:center;gap:14px;padding-bottom:14px;border-bottom:1px solid var(--edge)}
+  .mark{width:38px;height:38px;flex:0 0 38px;border:2px solid var(--accent);border-radius:9px;
+        display:grid;place-items:center;font:700 19px/1 var(--mono);color:var(--accent)}
+  .crest h1{margin:0;font-size:17px;letter-spacing:.06em;text-transform:uppercase}
+  .thesis{margin:2px 0 0;font-size:12.5px;color:var(--dim)}
+  .lights{margin-left:auto;display:flex;gap:14px;font:11px var(--mono);color:var(--dim);text-align:right}
+  .lights b{display:block;color:var(--ink);font-size:12px;font-weight:600}
+
+  /* ── source bar ──────────────────────────────────────────────────────── */
+  .src{display:flex;gap:8px;align-items:center;margin:14px 0}
+  .src label{font:11px var(--mono);color:var(--dim);text-transform:uppercase;letter-spacing:.08em}
+  .src input{flex:1;background:#05070a;border:1px solid var(--edge);border-radius:7px;
+             color:var(--ink);font:13px var(--mono);padding:9px 11px}
+  .src input:focus{outline:none;border-color:var(--accent)}
+  button{background:#131c26;border:1px solid var(--edge);color:var(--ink);border-radius:7px;
+         padding:8px 13px;font:12px/1.2 var(--mono);cursor:pointer}
+  button:hover{border-color:var(--accent);color:var(--accent)}
+  button.primary{background:var(--accent);color:#04121a;border-color:var(--accent);font-weight:700}
+  button:disabled{opacity:.4;cursor:not-allowed}
+
+  .bar{height:4px;background:var(--edge);border-radius:2px;overflow:hidden;margin:8px 0 16px}
+  .bar>i{display:block;height:100%;background:var(--accent);transition:width .3s}
+
+  /* ── the card ────────────────────────────────────────────────────────── */
+  .card{background:var(--panel);border:1px solid var(--edge);border-radius:12px;padding:18px;margin-bottom:16px}
+  .ctx{color:var(--dim);font-size:14.5px;white-space:pre-wrap;max-height:8.5em;overflow:hidden;transition:max-height .2s}
+  .ctx.open{max-height:none}
+  .ctx em{font-style:normal;color:#4b5563}
+  textarea{width:100%;background:#05070a;border:2px solid var(--accent);border-radius:9px;color:var(--ink);
+           font:16px/1.65 Georgia,serif;padding:13px;resize:vertical;min-height:88px}
+  textarea:focus{outline:none;box-shadow:0 0 0 3px rgba(34,211,238,.15)}
+
+  .opt{display:flex;gap:11px;align-items:flex-start;width:100%;text-align:left;padding:11px 13px;margin:7px 0;
+       background:#0a0f15;border:1px solid var(--edge);border-radius:9px;font:14px/1.55 Georgia,serif;color:var(--ink)}
+  .opt:hover{border-color:var(--accent)}
+  .opt kbd{flex:0 0 auto;font:11px var(--mono);background:#131c26;border:1px solid var(--edge);
+           border-radius:4px;padding:2px 6px;color:var(--dim)}
+  .opt .arm{flex:0 0 auto;font:10px var(--mono);color:var(--dim);letter-spacing:.06em}
+  .opt.is-orig{border-color:var(--orig)}
+  .opt.is-orig kbd{color:var(--orig);border-color:var(--orig)}
+  ins{background:rgba(63,185,80,.16);text-decoration:none;border-bottom:1px solid rgba(63,185,80,.5)}
+  del{background:rgba(248,81,73,.13);opacity:.6}
+
+  /* ── panels ──────────────────────────────────────────────────────────── */
+  .grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  @media(max-width:900px){.grid{grid-template-columns:1fr}}
+  .panel img{width:100%;border-radius:8px;background:#000;image-rendering:pixelated}
+  .meta{font:11px var(--mono);color:var(--dim);margin-top:8px;display:flex;flex-wrap:wrap;gap:12px}
+  .prov{display:inline-block;font:9.5px var(--mono);letter-spacing:.1em;color:var(--warn);
+        border:1px solid var(--warn);border-radius:4px;padding:1px 6px;text-transform:uppercase}
+  h2{font:11px var(--mono);color:var(--dim);text-transform:uppercase;letter-spacing:.09em;margin:0 0 10px}
+  .chip{display:inline-flex;align-items:center;gap:5px;font:11px var(--mono);color:var(--dim);margin-right:12px}
+  .dot{width:7px;height:7px;border-radius:50%;background:var(--dim)}
+  .dot.on{background:var(--good)} .dot.off{background:var(--bad)}
+  .msg{font:12px var(--mono);padding:9px 12px;border-radius:7px;margin:10px 0}
+  .msg.ok{background:rgba(63,185,80,.1);color:var(--good)}
+  .msg.err{background:rgba(248,81,73,.1);color:var(--bad)}
+  details{margin-top:14px}
+  summary{cursor:pointer;font:11px var(--mono);color:var(--dim);text-transform:uppercase;letter-spacing:.08em}
+  .row{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-top:12px}
+  .mono{font:12px var(--mono);color:var(--dim)}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="crest">
+    <div class="mark">◧</div>
+    <div>
+      <h1>Ghost-Read Matrix</h1>
+      <p class="thesis">Reads your draft the way a stranger would, and shows you where they lost you.</p>
+    </div>
+    <div class="lights" id="lights"></div>
+  </div>
+
+  <div class="src">
+    <label for="src">src</label>
+    <input id="src" spellcheck="false" placeholder="path/to/file.md — or a name, or a chapter">
+    <button id="open" class="primary">open</button>
+    <button id="pick" title="OS file picker">▤</button>
+  </div>
+  <div class="bar"><i id="prog" style="width:0"></i></div>
+
+  <div id="msg"></div>
+
+  <!-- THE PANELS RENDER OUTSIDE EVERY TOGGLE. They went behind a collapsed `showAnalysis`
+       once and were lost for a hundred rounds. The encircled panel IS the claim. -->
+  <div class="grid" id="panels" style="display:none">
+    <div class="card panel">
+      <h2>intent → reality <span class="prov">provisional</span></h2>
+      <img id="panelImg" alt="encircled tolerance panel">
+      <div class="meta" id="panelMeta"></div>
+      <!-- WHERE IT LANDED — the two sides of the same walk plus the delta, as the walk itself
+           rendered them (144×144, one pixel per cell). These are handed over by the panel door;
+           nothing here draws a lattice of its own, because every hand-drawn one has been wrong. -->
+      <div id="panelSides" style="display:flex;gap:12px;margin-top:10px;flex-wrap:wrap"></div>
+      <p class="mono" style="margin:8px 0 0;font-size:10.5px;line-height:1.5">
+        Intent is the aperture as written; reality is the aperture with your draft spliced in.
+        Neither is a specification, so this is a coherence reading, not an attestation.
+      </p>
+    </div>
+    <div class="card panel">
+      <h2>internal monologue</h2>
+      <div id="mono"></div>
+    </div>
+  </div>
+
+  <div class="card" id="cardBox" style="display:none">
+    <h2 id="cardHead"></h2>
+    <div class="ctx" id="ctx"></div>
+    <button id="more" style="margin:6px 0 14px">read more ▾</button>
+    <!-- THE MODEL BAR (operator 2026-08-12). One button per model that is actually answering; each one
+         rewrites WHAT IS IN THE BOX to improve its sensemaking, with the context ticked below. The
+         roster is discovered, so an unreachable model greys out rather than failing on click. The
+         TESSERACT tick hands the model the same numbers the encircled panel is drawn from — if the
+         panel is wrong, the suggestions argue with it, and you see the disagreement. -->
+    <div id="modelBar" class="row" style="margin-bottom:6px;flex-wrap:wrap;gap:6px"></div>
+    <div id="ctxBar" class="row mono" style="margin-bottom:8px;flex-wrap:wrap;gap:10px;font-size:10.5px;opacity:.85"></div>
+    <textarea id="edit" spellcheck="false"></textarea>
+    <div id="sensemakeOut" style="margin:8px 0 0"></div>
+    <div class="row">
+      <button id="commit" class="primary">⏎ commit</button>
+      <button id="skip">skip (s)</button>
+      <button id="copyall">copy whole problem (c)</button>
+      <button id="shuffleBtn">shuffle (h)</button>
+      <span class="mono" id="cardStat"></span>
+    </div>
+    <div id="opts" style="margin-top:16px"></div>
+
+    <details>
+      <summary>direction override — when rewriting cannot fix it</summary>
+      <div class="row">
+        <input id="dir" class="mono" style="flex:1;background:#05070a;border:1px solid var(--edge);
+               border-radius:7px;color:var(--ink);padding:9px 11px" placeholder="say what it should do instead">
+        <button id="regen">regenerate</button>
+      </div>
+    </details>
+
+    <details>
+      <summary>drop box — paste a real reader's reaction, or a span that has to go</summary>
+      <div class="row">
+        <textarea id="drop" style="min-height:70px;border-width:1px;border-color:var(--edge);font:13px var(--mono)"
+                  placeholder="paste what a reader said, or paste a passage to queue verbatim"></textarea>
+      </div>
+      <div class="row">
+        <button id="dropBtn">queue reaction</button>
+        <button id="selBtn">queue this exact span</button>
+      </div>
+    </details>
+  </div>
+
+  <div class="card" id="stats" style="display:none">
+    <h2>tracks &amp; mode performance</h2>
+    <div id="tracks" class="row"></div>
+    <div id="scoreboard" class="mono" style="margin-top:12px"></div>
+  </div>
+
+  <p class="mono" style="text-align:center;font-size:10.5px;opacity:.55;margin-top:26px">
+    ⏎ commit · 1-5 pick · s skip · c copy · h shuffle · r regenerate · esc blur
+  </p>
+</div>
+
+<script>
+const $ = (id) => document.getElementById(id);
+let S = null, FILE = null, CARD = null, panelTimer = null, busy = false;
+
+const api = {
+  get: (a, p={}) => fetch(`/api?action=${a}&${new URLSearchParams(p)}`).then(r => r.json()),
+  post: (body) => fetch('/api', {method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(body)}).then(r => r.json()),
+};
+const say = (text, cls='ok') => { $('msg').innerHTML = text ? `<div class="msg ${cls}">${esc(text)}</div>` : ''; };
+const esc = (s) => String(s ?? '').replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+
+/* Word-level diff so the CHANGE is what you read, not the sentence. Reading two near-identical
+   sentences and spotting the delta yourself is the slowest possible way to choose. */
+function diff(a, b) {
+  const A = String(a).split(/(\s+)/), B = String(b).split(/(\s+)/);
+  const m = Array.from({length:A.length+1}, () => new Uint16Array(B.length+1));
+  for (let i=A.length-1;i>=0;i--) for (let j=B.length-1;j>=0;j--)
+    m[i][j] = A[i]===B[j] ? m[i+1][j+1]+1 : Math.max(m[i+1][j], m[i][j+1]);
+  let i=0,j=0,out='';
+  while (i<A.length && j<B.length) {
+    if (A[i]===B[j]) { out+=esc(A[i]); i++; j++; }
+    else if (m[i+1][j] >= m[i][j+1]) { out+=`<del>${esc(A[i])}</del>`; i++; }
+    else { out+=`<ins>${esc(B[j])}</ins>`; j++; }
+  }
+  while (j<B.length) out+=`<ins>${esc(B[j++])}</ins>`;
+  return out;
+}
+
+async function health() {
+  const h = await api.get('health');
+  const dot = (ok) => `<span class="dot ${ok?'on':'off'}"></span>`;
+  $('lights').innerHTML =
+    `<span class="chip">${dot(h.local?.available)}local</span>` +
+    `<span class="chip">${dot(h.cloud?.available)}cloud</span>` +
+    `<span class="chip">${dot(h.tesseract?.available)}tesseract</span>`;
+}
+
+async function poll() {
+  if (!FILE) return;
+  const s = await api.get('state', {file:FILE});
+  if (!s.open) return;
+  S = s;
+  const b = s.buffer || {};
+  $('prog').style.width = `${Math.min(100, (b.have/(b.target||10))*100)}%`;
+  $('lights').dataset.buf = `${b.have}/${b.target}`;
+  const head = document.querySelector('.lights');
+  if (!head.querySelector('#buf')) head.insertAdjacentHTML('beforeend','<span class="chip" id="buf"></span>');
+  /* THE COMMIT QUEUE, said out loud. Accepting no longer waits on git — the file is written, the
+     commit is batched behind you — so the one thing the writer must never have to wonder is whether
+     it landed. Pending count while it waits, short sha when it lands, the error if git refused. */
+  const cq = s.commits || {};
+  const cqTxt = cq.pending ? ` · ⏳ ${cq.pending} commit${cq.pending === 1 ? '' : 's'} queued`
+    : cq.lastState === 'failed' ? ` · ⚠ commit failed: ${String(cq.lastError || '').slice(0, 40)}`
+    : cq.lastSha ? ` · ✓ ${cq.lastSha}` : '';
+  head.querySelector('#buf').textContent =
+    `${b.have}/${b.target} ahead` + (b.generating ? ` · ${b.generating} gen` : '') + (s.workerAlive ? '' : ' · worker down') + cqTxt;
+  renderTracks();
+  // the roster is fetched once — it probes ollama and the claude CLI, so it is not a per-poll cost.
+  if (!MODELS.length) loadModels();
+  const next = (s.cards||[])[0];
+  if (next && next.id !== CARD?.id) { CARD = next; renderCard(); }
+  else if (!next) { $('cardBox').style.display='none'; say('stack empty — the scanner is still reading ahead', 'ok'); }
+}
+
+function renderCard() {
+  const c = CARD; if (!c) return;
+  // suggestions belong to the card they were asked for — carrying them across is how you commit a
+  // rewrite of the previous sentence into this one.
+  ROUNDS = []; TOOK_FROM = null;
+  $('sensemakeOut').innerHTML = '';
+  renderTookFrom();
+  $('cardBox').style.display='';
+  $('stats').style.display='';
+  $('panels').style.display='grid';
+  $('cardHead').textContent = `¶${c.finding.paragraphIndex} · ${c.finding.reason || 'hardest to read here'}`;
+  /* If the stack demoted or promoted this card from what it has learned, say so — a ranker that
+     reorders silently is a ranker the writer stops trusting. */
+  if (c.finding.rankWhy) {
+    $('cardHead').insertAdjacentHTML('beforeend',
+      `<span class="mono" style="font-size:10px;opacity:.6;margin-left:8px">↕ ${esc(c.finding.rankWhy)}</span>`);
+  }
+  const w = c.window;
+  if (w) {
+    const before = w.text.slice(0, w.sentenceInWindow.start);
+    const after  = w.text.slice(w.sentenceInWindow.end);
+    $('ctx').innerHTML = `<em>${esc(before)}</em><strong style="color:var(--ink)">${esc(c.finding.text)}</strong><em>${esc(after)}</em>`;
+  }
+  $('edit').value = c.finding.text;
+  $('cardStat').textContent = `${(c.options||[]).length} options · arms ${[...new Set((c.options||[]).map(o=>o.track))].join('')}`;
+  renderOpts();
+  renderMono();
+  encircle();
+  $('edit').focus();
+}
+
+function renderOpts() {
+  const opts = CARD?.options || [];
+  $('opts').innerHTML = opts.map((o,i) => {
+    const isOrig = o.track === 'ORIG' || o.text === CARD.finding.text;
+    return `<button class="opt ${isOrig?'is-orig':''}" data-i="${i}">
+      <kbd>${i+1}</kbd><span class="arm">${esc(isOrig?'ORIG':o.track)}</span>
+      <span>${isOrig ? esc(o.text) : diff(CARD.finding.text, o.text)}</span></button>`;
+  }).join('');
+  $('opts').querySelectorAll('.opt').forEach(el =>
+    el.onclick = () => { $('edit').value = opts[el.dataset.i].text; $('edit').focus(); encircle(); });
+}
+
+function renderMono() {
+  const m = CARD?.finding?.monologue;
+  $('mono').innerHTML = m
+    ? `<p style="margin:0 0 10px;font:14px/1.6 Georgia,serif">${esc(m.text || m)}</p>` +
+      `<div class="meta"><span>ease ${CARD.finding.ease ?? '—'}</span><span>slop ${CARD.finding.slop ?? '—'}</span>` +
+      `<span>dip ${CARD.finding.dip ?? '—'}</span></div>`
+    : `<p class="mono">no monologue recorded for this card</p>`;
+}
+
+/* Re-run the Rust on every edit, debounced. The panel is only evidence if it tracks the
+   text in the box — a stale panel is a decoration. */
+function encircle() {
+  clearTimeout(panelTimer);
+  panelTimer = setTimeout(async () => {
+    if (!CARD || !FILE) return;
+    const r = await api.post({action:'encircle', file:FILE, cardId:CARD.id, text:$('edit').value});
+    const p = r?.panels;
+    if (!p || p.error) { $('panelMeta').innerHTML = `<span style="color:var(--bad)">${esc(p?.error||'panel unavailable')}</span>`; return; }
+    $('panelImg').src = p.dataUri;
+    /* THE READOUT SAYS WHAT THE WALK REPORTS, not what this file asserts. `engine` is a constant
+       baked into tesseract.mjs; walkMode comes back from the walk. They disagreed for months —
+       the panel was the coarse anchor-block paint while the label read "rust-ballistic-walk" —
+       so the label is now the measurement, and a degraded run announces itself in red. */
+    const edges = p.walkMode === 'ballistic-edges';
+    $('panelMeta').innerHTML = [
+      `<span style="color:${(p.regions?.length ?? 0) === 0 ? 'var(--bad)' : 'inherit'}">${p.regions?.length ?? 0} regions</span>`,
+      p.regionSource === 'js-carpet-fallback' ? `<span style="opacity:.6">all in-lane · JS clusterer</span>` : '',
+      `<span style="color:var(--good)">green ${p.green}</span>`,
+      `<span style="color:var(--warn)">amber ${p.amber}</span>`,
+      `<span style="color:var(--bad)">red ${p.red}</span>`,
+      edges
+        ? `<span>144×144 edge walk · ${p.ms}ms</span>`
+        : `<span style="color:var(--bad)">⚠ coarse fallback — the walk did not run${p.walkNote ? ': ' + esc(p.walkNote) : ''}</span>`,
+      p.aperture
+        ? `<span>aperture ${esc(p.aperture.actor)} → ${esc(p.aperture.patient)} · grip ${p.aperture.grip}</span>`
+        : `<span style="color:var(--bad)">aperture unset</span>`,
+      p.matchSigma != null ? `<span>match σ ${p.matchSigma}</span>` : '',
+    ].filter(Boolean).join('');
+    const side = (id, label, count) => p.surfaces?.[id]
+      ? `<figure style="margin:0"><figcaption class="mono" style="font-size:9.5px;opacity:.7;margin-bottom:3px">${label}${count != null ? ' · ' + count : ''}</figcaption>
+         <img src="${p.surfaces[id]}" width="108" height="108" alt="${label}" style="image-rendering:pixelated;background:#000;border-radius:3px;display:block"></figure>`
+      : `<figure style="margin:0"><figcaption class="mono" style="font-size:9.5px;opacity:.7;margin-bottom:3px">${label}</figcaption>
+         <div style="width:108px;height:108px;display:flex;align-items:center;justify-content:center;font-size:9px;opacity:.5;text-align:center;border-radius:3px;background:#0a0e14">no surface — the walk did not run</div></figure>`;
+    $('panelSides').innerHTML = [
+      side('intent', 'LANDED · intent', p.intentCells),
+      side('reality', 'LANDED · with your edit', p.realityCells),
+      side('delta', 'DELTA · what moved', null),
+    ].join('');
+  }, 550);
+}
+
+/* ── THE MODEL BAR ───────────────────────────────────────────────────────────────
+   Each button asks ONE model to improve the sensemaking of what is currently in the
+   edit box — not the original sentence, the DRAFT — so the bar keeps working after
+   you have already changed it by hand. Options come back as multiple choice and fill
+   the box on click; the box stays the single source of what gets committed. */
+let MODELS = [], BUSY_MODEL = null;
+const CTX_KEYS = [
+  ['before', 'text before', true],
+  ['after', 'text after', true],
+  ['monologue', 'reader monologue', false],
+  ['metrics', 'metrics', false],
+  ['tesseract', 'full tesseract', false],
+];
+const ctxState = Object.fromEntries(CTX_KEYS.map(([k, , d]) => [k, d]));
+
+async function loadModels() {
+  const r = await api.get('models');
+  MODELS = r?.models || [];
+  renderModelBar();
+}
+
+function renderModelBar() {
+  $('modelBar').innerHTML = MODELS.map((m) => {
+    const dis = m.available ? '' : 'disabled';
+    const title = esc(m.reason || m.note || '');
+    const busy = BUSY_MODEL === m.id;
+    return `<button class="chip" data-model="${esc(m.id)}" ${dis} title="${title}"
+      style="${m.available ? '' : 'opacity:.4;cursor:not-allowed'}">${busy ? '…' : (m.engine === 'cloud' ? '☁' : '▪')} ${esc(m.label)}</button>`;
+  }).join('') || '<span class="mono" style="opacity:.6">no models answering</span>';
+  $('modelBar').querySelectorAll('button[data-model]').forEach((b) => {
+    b.onclick = () => askModel(b.dataset.model);
+  });
+  $('ctxBar').innerHTML = '<span style="opacity:.6">context:</span>' + CTX_KEYS.map(([k, label]) =>
+    `<label style="cursor:pointer"><input type="checkbox" data-ctx="${k}" ${ctxState[k] ? 'checked' : ''}> ${esc(label)}</label>`).join('');
+  $('ctxBar').querySelectorAll('input[data-ctx]').forEach((el) => {
+    el.onchange = () => { ctxState[el.dataset.ctx] = el.checked; };
+  });
+}
+
+async function askModel(modelId, opts = {}) {
+  if (!CARD || !FILE || BUSY_MODEL) return;
+  BUSY_MODEL = modelId; renderModelBar();
+  const t0 = Date.now();
+  const tick = setInterval(() => {
+    const el = document.getElementById('askClock');
+    if (el) el.textContent = `${Math.round((Date.now() - t0) / 1000)}s`;
+  }, 1000);
+  /* A live clock, because "is it working or is it hung" was unanswerable for three minutes. Opus on a
+     full-context prompt takes over two minutes on a busy machine; silence made that look broken. */
+  $('sensemakeOut').innerHTML = `<p class="mono" style="opacity:.7">${esc(modelId)} ${opts.steer ? 'is rewriting the box' : 'is reading'}${ctxState.tesseract ? ' (running the walk first)' : ''}… <b id="askClock">0s</b></p>`;
+  const r = await api.post({
+    action: 'sensemake', file: FILE, cardId: CARD.id,
+    text: $('edit').value, model: modelId, n: opts.steer ? 3 : 4, context: { ...ctxState },
+    picked: opts.picked || null, steer: opts.steer || null,
+  });
+  clearInterval(tick);
+  BUSY_MODEL = null; renderModelBar();
+  if (!r?.ok) {
+    $('sensemakeOut').innerHTML = `<p class="mono" style="color:var(--bad)">${esc(r?.error || 'no answer')}${r?.raw ? ' · ' + esc(r.raw.slice(0, 160)) : ''}</p>`;
+    return;
+  }
+  /* Results ACCUMULATE across models — asking Opus after qwen should let you compare them side by
+     side, not replace one with the other. Each round is stamped with the model that produced it and
+     the context it was given, because "which button wrote this" is the number the ledger needs. */
+  ROUNDS.unshift({ model: r.model, ms: r.ms, context: r.context, options: r.options,
+    rerolled: $('edit').value.trim() !== (CARD?.finding?.text || '').trim(), steer: r.steer || null });
+  /* A STEERED REROLL WRITES THE BOX (operator: "the rewrite or reroll should use the subagent chosen
+     to rewrite the box"). You already said what was wrong with the candidate you picked; making you
+     click the answer as well is a step that earns nothing. The other alternatives stay listed. */
+  if (opts.steer && r.options.length) {
+    $('edit').value = r.options[0].text;
+    TOOK_FROM = r.model;
+    $('edit').dispatchEvent(new Event('input'));
+    renderTookFrom();
+  }
+  renderRounds();
+}
+
+let ROUNDS = [], TOOK_FROM = null;
+
+function renderRounds() {
+  if (!ROUNDS.length) { $('sensemakeOut').innerHTML = ''; return; }
+  $('sensemakeOut').innerHTML = ROUNDS.map((rd, ri) => {
+    const ticked = Object.entries(rd.context || {}).filter(([, v]) => v).map(([k]) => k).join(' · ');
+    return `<div style="margin-bottom:10px">
+      <p class="mono" style="opacity:.7;margin:0 0 5px">${esc(rd.model)} · ${rd.ms}ms · ${esc(ticked || 'no context')}${rd.rerolled ? ' · reroll on your edit' : ''}${rd.steer ? ` · steered: "${esc(String(rd.steer).slice(0, 60))}"` : ''}</p>
+      ${rd.options.map((o, i) => `<div style="display:flex;gap:5px;align-items:stretch;margin-bottom:5px">
+        <button class="chip" data-r="${ri}" data-opt="${i}" style="flex:1;text-align:left;white-space:normal;line-height:1.5;margin:0">
+          <b>${i + 1}.</b> ${esc(o.text)}<br><span class="mono" style="opacity:.55;font-size:10px">${esc(rd.model)} — ${esc(o.why || '')}</span></button>
+        <button class="chip" data-steer-r="${ri}" data-steer-opt="${i}" title="say what is wrong with this one — ${esc(rd.model)} rewrites the box" style="margin:0;flex:0 0 auto">✎</button>
+      </div>`).join('')}
+    </div>`;
+  }).join('');
+  $('sensemakeOut').querySelectorAll('button[data-steer-opt]').forEach((b) => {
+    b.onclick = () => {
+      const rd = ROUNDS[Number(b.dataset.steerR)];
+      const picked = rd.options[Number(b.dataset.steerOpt)].text;
+      const note = window.prompt(`What is wrong with it? ${rd.model} will rewrite the box, fixing exactly that.`, '');
+      if (note && note.trim()) askModel(rd.model, { picked, steer: note.trim() });
+    };
+  });
+  $('sensemakeOut').querySelectorAll('button[data-opt]').forEach((b) => {
+    b.onclick = () => {
+      const rd = ROUNDS[Number(b.dataset.r)];
+      $('edit').value = rd.options[Number(b.dataset.opt)].text;
+      /* THE ATTRIBUTION FOLLOWS THE TEXT. Cleared the moment you type over it — a commit is only
+         credited to a model if what lands is what that model wrote. */
+      TOOK_FROM = rd.model;
+      $('edit').dispatchEvent(new Event('input'));
+      $('edit').focus();
+      renderTookFrom();
+    };
+  });
+}
+
+function renderTookFrom() {
+  let el = document.getElementById('tookFrom');
+  if (!el) {
+    el = document.createElement('span');
+    el.id = 'tookFrom'; el.className = 'mono';
+    el.style.cssText = 'font-size:10.5px;opacity:.75;margin-left:8px';
+    $('commit').parentElement.appendChild(el);
+  }
+  el.textContent = TOOK_FROM ? `⏎ credits ${TOOK_FROM}` : '';
+}
+
+function renderTracks() {
+  const on = new Set(S?.tracks || []);
+  const NAMES = {A:'local', B:'local+T', C:'cloud', D:'cloud+T'};
+  $('tracks').innerHTML = ['A','B','C','D'].map(t =>
+    `<label class="chip" style="cursor:pointer"><input type="checkbox" data-t="${t}" ${on.has(t)?'checked':''}> ${t} ${NAMES[t]}</label>`).join('');
+  $('tracks').querySelectorAll('input').forEach(el => el.onchange = async () => {
+    const tracks = [...$('tracks').querySelectorAll('input')].filter(i=>i.checked).map(i=>i.dataset.t);
+    await api.post({action:'tracks', file:FILE, tracks});
+  });
+  const st = S?.stats?.byTrack || {};
+  $('scoreboard').innerHTML = Object.keys(st).length
+    ? Object.entries(st).map(([t,v]) => `<span class="chip">${t}: ${v.wins||0}w/${v.offered||0} · ${Math.round(v.avgMs||0)}ms</span>`).join('')
+    : '<span class="chip">no decisions in the ledger yet — this is n=0 until you commit</span>';
+}
+
+/* ── actions ─────────────────────────────────────────────────────────── */
+async function open_() {
+  const target = $('src').value.trim(); if (!target) return;
+  say('opening…');
+  const r = await api.post({action:'open', target});
+  if (r.error) return say(r.error + (r.suggestions?.length ? ` — try: ${r.suggestions.slice(0,3).join(', ')}` : ''), 'err');
+  FILE = r.file; $('src').value = r.relFile || r.file;
+  history.replaceState({}, '', `?target=${encodeURIComponent(r.relFile||r.file)}`);
+  say(`open · ${r.label || r.relFile} · ${r.totalParagraphs} paragraphs`);
+  poll();
+}
+
+async function commit() {
+  if (busy || !CARD) return;
+  busy = true; $('commit').disabled = true; say('committing…');
+  const r = await api.post({action:'accept', file:FILE, cardId:CARD.id, text:$('edit').value, via: TOOK_FROM});
+  busy = false; $('commit').disabled = false;
+  if (r.error || r.ok === false) return say(r.error || 'commit failed', 'err');
+  say(`committed · ${r.commit ? r.commit.slice(0,8) : 'written'}${r.rescan ? ` · re-scan ${r.rescan.delta>0?'+':''}${r.rescan.delta}` : ''}`);
+  CARD = null; poll();
+}
+
+$('open').onclick = open_;
+$('src').onkeydown = (e) => { if (e.key === 'Enter') open_(); };
+$('commit').onclick = commit;
+$('skip').onclick = async () => { await api.post({action:'skip', file:FILE, cardId:CARD.id}); CARD=null; poll(); };
+$('more').onclick = () => { $('ctx').classList.toggle('open'); $('more').textContent = $('ctx').classList.contains('open') ? 'read less ▴' : 'read more ▾'; };
+$('edit').oninput = () => {
+  /* The credit is only valid while the box still holds what the model wrote. One keystroke of the
+     author's own and this becomes their sentence, which is what the ledger should say. */
+  if (TOOK_FROM) {
+    const still = ROUNDS.some((rd) => rd.model === TOOK_FROM && rd.options.some((o) => o.text === $('edit').value));
+    if (!still) { TOOK_FROM = null; renderTookFrom(); }
+  }
+  encircle();
+};
+$('regen').onclick = async () => { say('regenerating against your direction…'); const r = await api.post({action:'regenerate', file:FILE, cardId:CARD.id, direction:$('dir').value}); if (r.state) { S=r.state; CARD=(S.cards||[])[0]; renderCard(); } say('regenerated'); };
+$('dropBtn').onclick = async () => { say('anchoring reaction…'); await api.post({action:'drop', file:FILE, text:$('drop').value}); $('drop').value=''; say('queued'); poll(); };
+$('selBtn').onclick = async () => { const r = await api.post({action:'select', file:FILE, text:$('drop').value}); say(r.error || 'span queued above everything a model found', r.error?'err':'ok'); $('drop').value=''; poll(); };
+$('shuffleBtn').onclick = async () => { const r = await api.post({action:'shuffle', file:FILE, cardId:CARD?.id}); say(r.cells ? `lattice draw: ${r.cells.map(c=>c.coord).join(' · ')}` : (r.error||'shuffled')); };
+$('pick').onclick = async () => { const r = await api.post({action:'pick', file:FILE}); if (r?.file) { $('src').value = r.relFile || r.file; open_(); } else say('picker unavailable — paste the path', 'err'); };
+
+$('copyall').onclick = () => {
+  const w = CARD?.window;
+  const md = [
+    `## The sentence`, CARD.finding.text, ``,
+    `## Where it sits`, w?.text || '', ``,
+    `## What the reader said`, CARD.finding.monologue?.text || CARD.finding.monologue || '(none)', ``,
+    `## Options generated`,
+    ...(CARD.options||[]).map((o,i) => `${i+1}. [${o.track}] ${o.text}`), ``,
+    `## Placement`, JSON.stringify(CARD.finding.placement || {}, null, 2),
+  ].join('\n');
+  navigator.clipboard.writeText(md);
+  say('whole problem copied — paste it into any model');
+};
+
+document.addEventListener('keydown', (e) => {
+  const inField = ['INPUT','TEXTAREA'].includes(e.target.tagName);
+  if (e.key === 'Escape') return e.target.blur();
+  if (e.target === $('edit') && e.key === 'Enter' && (e.metaKey || !e.shiftKey)) { e.preventDefault(); return commit(); }
+  if (inField) return;
+  if (e.key >= '1' && e.key <= '5') { const o = CARD?.options?.[+e.key-1]; if (o) { $('edit').value = o.text; $('edit').focus(); encircle(); } }
+  if (e.key === 's') $('skip').click();
+  if (e.key === 'c') $('copyall').click();
+  if (e.key === 'h') $('shuffleBtn').click();
+  if (e.key === 'r') $('dir').focus();
+});
+
+health();
+const q = new URLSearchParams(location.search).get('target');
+if (q) { $('src').value = q; open_(); }
+setInterval(poll, 1500);
+</script>
+</body>
+</html>

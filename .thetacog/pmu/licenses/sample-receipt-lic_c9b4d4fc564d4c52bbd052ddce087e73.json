@@ -1,0 +1,11 @@
+{
+  "v": 1,
+  "kind": "agent-attestation",
+  "license_id": "lic_c9b4d4fc564d4c52bbd052ddce087e73",
+  "agent_id": "agent-demo-01",
+  "ts": "2026-08-25T18:15:10.206Z",
+  "claim": "demo attestation, sealed by the agent key derived from the licence issued in the same run",
+  "pubkey_hex": "3e7a928da5a13be65701a83e81ed7432303f2a153c91f6b30ecc480bce864f8f",
+  "sig_hex": "e997e06acf37241bcbc9247c2d83db017f4506cced33988e02bad8c8055946f7fe9f995af9a0b408e045678b3a6d48638c7004da2482a01d18c5b39ba5b7690b",
+  "sha256": "30f4303dc4cda0699e80e6cc7a07d671adb4d22405c6468cabbe2478762ff979"
+}

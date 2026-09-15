@@ -1,0 +1,178 @@
+{
+  "receipt": {
+    "artifact": "spec-deliver-walk-receipt",
+    "schema": "walk-drift/v1",
+    "spec_id": "dinner-the-table",
+    "source": "docs/specs/done/builder-dinner-the-table.md",
+    "room": "builder",
+    "author_room": "network",
+    "reef_sha256": "aeae92d0c0016c0d04afd392f11f9a7608ae69c78c85dd7465e03d8064002c26",
+    "reef_pubkey_hex": "aa22f9f59bce075dbbc31c84b98b7edd0a67e0a8c28cc9dcc7c6dcd4a743e9d3",
+    "walk": {
+      "engine": "pmu-onchip --ballistic (definerWalk144 — real recursive on-chip; row→column→transpose→recurse)",
+      "start_coord": "B,A1",
+      "intent_seeds": 3,
+      "max_ply": 5,
+      "hops": 91,
+      "propagated_past_ply1": true,
+      "sigma_shape_match_pct": 0,
+      "kill_pct": 36,
+      "coverage": 0,
+      "covered": 0,
+      "requirements_total": 7,
+      "coverage_sensing": "spec-universe · background-relative (signal = work_ncd − neutral_bg_ncd ≥ margin)",
+      "requirements": [
+        {
+          "req": "R1",
+          "title": "WHY-belief opens on the information hazard",
+          "sim": 0.1653,
+          "background": 0.1903,
+          "signal": -0.0249,
+          "verdict": "UNCOVERED"
+        },
+        {
+          "req": "R2",
+          "title": "Six needs, reader's perspective",
+          "sim": 0.1717,
+          "background": 0.1903,
+          "signal": -0.0186,
+          "verdict": "UNCOVERED"
+        },
+        {
+          "req": "R3",
+          "title": "Format clarity (board meeting)",
+          "sim": 0.1395,
+          "background": 0.1903,
+          "signal": -0.0508,
+          "verdict": "UNCOVERED"
+        },
+        {
+          "req": "R4",
+          "title": "Frictionless nomination form",
+          "sim": 0.1903,
+          "background": 0.1903,
+          "signal": 0,
+          "verdict": "UNCOVERED"
+        },
+        {
+          "req": "R5",
+          "title": "Evidence AFTER the form (reach is verify)",
+          "sim": 0.2347,
+          "background": 0.2296,
+          "signal": 0.0051,
+          "verdict": "UNCOVERED"
+        },
+        {
+          "req": "R6",
+          "title": "Research links + contact",
+          "sim": 0.2638,
+          "background": 0.2577,
+          "signal": 0.0061,
+          "verdict": "UNCOVERED"
+        },
+        {
+          "req": "R7",
+          "title": "Peer-convening tone, not a vendor pitch",
+          "sim": 0.197,
+          "background": 0.197,
+          "signal": 0,
+          "verdict": "UNCOVERED"
+        }
+      ],
+      "tolerance_pct": 15,
+      "reef_floor": 0.3,
+      "inside_top": [
+        {
+          "coord": "B,A1",
+          "heat": 1,
+          "first": "The blog writer's hat — Tactician×Counsel: the tactician chooses which beat lands first, and counsel holds the"
+        },
+        {
+          "coord": "B,A2",
+          "heat": 1,
+          "first": "Tactical leverage provides the timing and beat to occupy a quarterly goal and target position."
+        },
+        {
+          "coord": "B,A3",
+          "heat": 1,
+          "first": "Optimizing tactical maneuver timing protects the budget runway and funds the floor with capital."
+        },
+        {
+          "coord": "A1,B",
+          "heat": 1,
+          "first": "Governance rules mandate a binding article that restricts which tactics and maneuver choices are legally permi"
+        },
+        {
+          "coord": "A1,C",
+          "heat": 1,
+          "first": "Mandates in law establish the binding governance rule that regulates the daily operations run and loop."
+        },
+        {
+          "coord": "A2,A2",
+          "heat": 1,
+          "first": "The target is the cell coordinate the system MUST occupy by end-of-quarter."
+        }
+      ],
+      "off_shape_top": [
+        {
+          "coord": "C1,C3",
+          "heat": 1,
+          "first": "Every infrastructure grid and route path determines the flow throughput and delivery rate of power systems."
+        },
+        {
+          "coord": "C2,C3",
+          "heat": 1,
+          "first": "Regular feedback loops and hypothesis test measures optimize the flow throughput and delivery rate across the "
+        },
+        {
+          "coord": "C3,C2",
+          "heat": 1,
+          "first": "Finish throughput and flow rate provide the data for the iterative feedback loop and hypothesis test."
+        },
+        {
+          "coord": "C3,C3",
+          "heat": 0.5,
+          "first": "Flow is the rate at which committed work crosses the finish line."
+        }
+      ]
+    },
+    "verdict": "OFF_SPEC",
+    "insurability": {
+      "boundary": "WHERE (domain membership) = decidable, recomputable, hard-to-fool · NOT WHETHER (within-domain quality) = undecidable, the LLM's job",
+      "insured_peril": "domain-departure",
+      "decidable": true,
+      "basis_risk": "low — the trigger IS the peril (we measure domain membership, not a proxy)",
+      "foolable": "hard — gzip-NCD reads structure, not keywords; off-domain prose with keywords jammed in still does not compress like the domain",
+      "coverage": 0,
+      "status": "PERIL FIRED — the delivery LEFT the spec's competence domain (insured event · decidable · signed · recomputable)"
+    },
+    "verdict_reason": "the delivery covered only 0/7 (0%) of the spec's own requirements above the off-domain background — off-domain / UNINSURABLE work, the spec was not built",
+    "triptych": {
+      "artifact": "docs/pmu/spec-deliver-walk-dinner-the-table.html",
+      "sha256": "ab5a6424fdd27125c360bd1f1aa9562b009d4ad15e1e8167ed4432529ed22acf",
+      "anatomy": "INTENT(cyan) / REALITY(amber) / DELTA(red), 144 ShortLex anchors, 4×4 blocks of 3×3"
+    },
+    "spec_universe_panel": {
+      "artifact": "docs/pmu/spec-deliver-panel-dinner-the-table.html",
+      "sha256": "7654be636be6175386f4b08baf70aa4e2b4ca365e803c24959c9df1b64276409",
+      "anatomy": "spec-universe · per-requirement green(covered)/red(missing), background-relative coverage"
+    },
+    "fences": {
+      "walk_is_real": true,
+      "no_llm_in_trust_path": true,
+      "forbidden_shortcuts_not_used": "no placePixel placement · no --walk converged/diffusion · no JS BFS · no Monte-Carlo-as-the-walk",
+      "attestation_layer": "L1 — your own machine, your own cache hierarchy, sealed locally"
+    },
+    "pubkey_hex": "7820d621cc55b784f2f331378225b158786d44fe3c77371afd6b112d37b3753c",
+    "sig_hex": "f00de5f9da09f7987d7d8f84afded8f43155a371d778bb1ab31272cf4fdb897a17dcf56f5a78725a532c5f12f8c4294f924f201754011f1031772275593cdb06",
+    "sha256": "7fc690207e45df61c6ab0f874576bc7c9303dd51f00c96b8a00f8b453afac055"
+  },
+  "attestation_root": "c37b97a9174f5e70a9b3cac581f00af15effefbf0f23a8ac80f35a25b7a42bfc",
+  "reef_sha256": "aeae92d0c0016c0d04afd392f11f9a7608ae69c78c85dd7465e03d8064002c26",
+  "inputs": {
+    "reef": "/Users/thetacoach/GitHub/thetadrivencoach/data/pmu/reef/spec-reef-dinner.json",
+    "deliverables": "/Users/thetacoach/GitHub/thetadrivencoach/.thetacog/prompt-drift/manifest-guard-sep-off.json",
+    "floor": 0.3,
+    "tolerance": 15
+  }
+}

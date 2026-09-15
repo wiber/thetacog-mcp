@@ -1,0 +1,22 @@
+#!/bin/bash
+# ThetaCog intervention hook — the out-of-lane knock-on, portable to any repo.
+#
+# Fired DETACHED after every commit (never blocks — a post-commit hook's exit code is ignored
+# by git, and the heavy work runs backgrounded anyway). It runs the deterministic drift
+# measurement (reality = this commit's code read from the immutable commit; intent = your
+# README-as-spec) and, ONLY when the receipt lands out of lane:
+#   counts ONE event  → .thetacog/interventions/events.ndjson   (before any model runs)
+#   sensemakes        → INTERVENE_LLM=claude|gemini|none  (bounded, model-pinned, best-effort)
+#   publishes         → .thetacog/interventions/stories/<sha>.json + a receipt in the log
+#   closes the loop   → each fire MEASURES its predecessors (drift trend + gzip dictionary
+#                       ablation) and feeds the result into the next intervention's prompt.
+#
+# Flags via env: INTERVENE_LLM (default claude) · INTERVENE_KILL (default 25) · SPEC_README.
+# Turn it off: INTERVENE_OFF=1.
+[ "${INTERVENE_OFF:-0}" = "1" ] && exit 0
+LATEST_SHA=$(git rev-parse HEAD 2>/dev/null || true)
+[ -z "$LATEST_SHA" ] && exit 0
+LOG_DIR=".thetacog/cache"; mkdir -p "$LOG_DIR"
+( nohup npx thetacog-mcp intervene --sha "$LATEST_SHA" \
+    > "$LOG_DIR/intervene-${LATEST_SHA:0:8}.log" 2>&1 & ) ; disown 2>/dev/null || true
+exit 0

@@ -1,0 +1,28 @@
+{
+ "ts": "2026-09-08T13:07:41.049Z",
+ "meaning": {
+  "sample_n": 500,
+  "sigma_baseline": 2.856,
+  "sigma_injected": 2.18,
+  "delta_sigma": -0.676,
+  "verdict": "injection did NOT help placement (−σ) — honest"
+ },
+ "density": {
+  "reef_tiles": 325,
+  "authored_proposals": 0,
+  "distinct_coords_authored": 0
+ },
+ "mass": {
+  "code_chunks": 28262,
+  "rule_hat_tiles": 325,
+  "tape_prompts": 1319,
+  "targeted_bytes": 15744,
+  "dump_bytes": 131072
+ },
+ "usefulness": {
+  "token_economy": "targeted injection spends 12.0% of the dump's bytes",
+  "same_or_better_grip_at_fraction_cost": false,
+  "drift_reduction": null,
+  "honest_note": "Usefulness = does injection help the agent, measured. Token-economy is real now (subtraction beats bloat). Whether it improves PLACEMENT is the delta_sigma above; whether it improves the MODEL is still separate (needs model-in-the-loop). Nothing here is faked."
+ }
+}
