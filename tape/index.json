@@ -1,0 +1,74 @@
+{
+  "_view": "YOUR INDEX — the surfaces YOU follow, ranked by lane proximity to YOUR pixel. A point of view, not a registry.",
+  "_regenerate": "npx thetacog-mcp index",
+  "_pattern": "nostr: no central registry — every surface publishes its own signed receipts on its own public repo; you index the ones you chose.",
+  "_sufficient_for": "which surfaces you index sit in your lane, and which adjacent coordinates none of them occupy",
+  "_not_sufficient_for": "whether a vacant coordinate is vacant because it is valuable or because it is worthless — read the denominator before treating this as a market view",
+  "you": {
+    "pixel": "A1,C3",
+    "full_name": "A1,C3 (Strategy.Law × Operations.Flow)",
+    "surface": "https://github.com/wiber/thetadrivencoach",
+    "grip_sigma": 2.1334
+  },
+  "denominator": {
+    "surfaces_indexed": 1,
+    "with_a_published_pixel": 1,
+    "subscriptions": 1,
+    "source": "tape/map.json (npx thetacog-mcp map-crawl) + tape/subscriptions.json"
+  },
+  "same_cell": [
+    {
+      "surface": "https://github.com/wiber/thetacog-mcp",
+      "pixel": "A1,C3",
+      "full_name": "A1,C3 (Strategy.Law × Operations.Flow)",
+      "grip_sigma": 2.1334,
+      "relation": "SAME-CELL",
+      "standing": "self-reported",
+      "inbound_attestations": 0
+    }
+  ],
+  "in_lane": [],
+  "off_lane": [],
+  "unplaced": [],
+  "alpha": {
+    "coordinate": "A1,A",
+    "full_name": "A1,A (Strategy.Law × Strategy)",
+    "demand": 1,
+    "shortlexRank": 0,
+    "vacant": true,
+    "ranked": false,
+    "confidence": "UNRANKED — only 1 indexed pixel(s) (need 3); the pick below is ShortLex-first, NOT evidence"
+  },
+  "alpha_candidates": [
+    {
+      "coordinate": "A1,A",
+      "full_name": "A1,A (Strategy.Law × Strategy)",
+      "demand": 1,
+      "shortlexRank": 0
+    },
+    {
+      "coordinate": "A1,B",
+      "full_name": "A1,B (Strategy.Law × Tactics)",
+      "demand": 1,
+      "shortlexRank": 1
+    },
+    {
+      "coordinate": "A1,C",
+      "full_name": "A1,C (Strategy.Law × Operations)",
+      "demand": 1,
+      "shortlexRank": 2
+    },
+    {
+      "coordinate": "A1,A1",
+      "full_name": "A1,A1 (Strategy.Law × Strategy.Law)",
+      "demand": 1,
+      "shortlexRank": 3
+    },
+    {
+      "coordinate": "A1,A2",
+      "full_name": "A1,A2 (Strategy.Law × Strategy.Goal)",
+      "demand": 1,
+      "shortlexRank": 4
+    }
+  ]
+}

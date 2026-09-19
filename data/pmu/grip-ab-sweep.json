@@ -1,0 +1,10033 @@
+{
+ "ts": "2026-09-19T02:54:26.909Z",
+ "note": "Grip A/B sweep — σ (real-walk placement sharpness) + byte cost per injection tier. LLM-free, real on-chip walk. Recompute: node scripts/pmu/grip-ab-sweep.mjs",
+ "honest_limit": "measures PLACEMENT concentration (LLM-free), NOT model post-generation drift — that is the live loop; direction is data, not asserted.",
+ "provenance": {
+  "host": "Eliass-MacBook-Pro.local",
+  "commit": "ac8536e8f9",
+  "node": "v20.20.0",
+  "measured_at": "2026-09-19T02:54:26.909Z"
+ },
+ "token_economy": {
+  "arm2_vs_arm1_byte_ratio": 0.121
+ },
+ "aggregate": {
+  "arm0": {
+   "label": "zero injection (raw baseline)",
+   "mean_sigma": 2.855,
+   "mean_bytes": 0
+  },
+  "arm1": {
+   "label": "raw dump (~128KB naive)",
+   "mean_sigma": 1.77,
+   "mean_bytes": 131072
+  },
+  "arm2": {
+   "label": "knock-on targeted inject",
+   "mean_sigma": 2.155,
+   "mean_bytes": 15860
+  }
+ },
+ "rows": [
+  {
+   "prompt": "<task-notification> <task-id>a799201b73f521018</task",
+   "arm": 1,
+   "arm0": {
+    "sigma": 2.96,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 1.87,
+    "bytes": 14641,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "<task-notification> <task-id>a4fd9b8db9f03275d</task",
+   "arm": 2,
+   "arm0": {
+    "sigma": 2.86,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 2.62,
+    "bytes": 18254,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "is this accurate? we need cleaner refinements and or",
+   "arm": 0,
+   "arm0": {
+    "sigma": 3.15,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 3.22,
+    "bytes": 17571,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "defining the end state in terms of what we have shou",
+   "arm": 1,
+   "arm0": {
+    "sigma": 3.15,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 3.22,
+    "bytes": 17672,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "its not only the absense of exploration, we should p",
+   "arm": 2,
+   "arm0": {
+    "sigma": 2.96,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 2.06,
+    "bytes": 14641,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "hmm escape velocity then needs formally defined upst",
+   "arm": 0,
+   "arm0": {
+    "sigma": 3.74,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 2.73,
+    "bytes": 16058,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "what memory /cpu intense processes are slowing the m",
+   "arm": 0,
+   "arm0": {
+    "sigma": 2.61,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 1.9,
+    "bytes": 16407,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "we may want heavy loads on the harness, but postman ",
+   "arm": 0,
+   "arm0": {
+    "sigma": 2.8,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 2.62,
+    "bytes": 17340,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "<task-notification> <task-id>bwpz9skyw</task-id> <to",
+   "arm": 1,
+   "arm0": {
+    "sigma": 3.32,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 1.87,
+    "bytes": 12174,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "The 66% versus 36% delta is the empirical proof of t",
+   "arm": 0,
+   "arm0": {
+    "sigma": 2.96,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 1.87,
+    "bytes": 14641,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "we can do better ... sufficiency is a formal methods",
+   "arm": 2,
+   "arm0": {
+    "sigma": 2.59,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 1.87,
+    "bytes": 15420,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "<task-notification> <task-id>a8f407a941563cb5b</task",
+   "arm": 1,
+   "arm0": {
+    "sigma": 2.96,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 1.87,
+    "bytes": 14641,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "mdx cook and embed this youtube video and push when ",
+   "arm": 1,
+   "arm0": {
+    "sigma": 2.62,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 2.06,
+    "bytes": 15950,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "/Users/thetacoach/GitHub/thetadrivencoach/docs/05-co",
+   "arm": 1,
+   "arm0": {
+    "sigma": 2.59,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 2.06,
+    "bytes": 15420,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "bash open the txt of the blog text (that is the mdx ",
+   "arm": 2,
+   "arm0": {
+    "sigma": 2.62,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 1.87,
+    "bytes": 15950,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "how do we fix the lagg, is it chrome?",
+   "arm": 2,
+   "arm0": {
+    "sigma": 2.62,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 2.06,
+    "bytes": 15950,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "monologue 1... ¶1  > > lost me immediately — \"cut fr",
+   "arm": 1,
+   "arm0": {
+    "sigma": 2.56,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 2.06,
+    "bytes": 14561,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "make sure both videos moloch and top are quoted, err",
+   "arm": 0,
+   "arm0": {
+    "sigma": 3.17,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 1.72,
+    "bytes": 16791,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "The sufficiency measurement provides the most soberi",
+   "arm": 2,
+   "arm0": {
+    "sigma": 2.64,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 1.9,
+    "bytes": 16455,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "¶1  > > \"Moloch explainer\" and \"Trust Physics explai",
+   "arm": 0,
+   "arm0": {
+    "sigma": 2.52,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 1.99,
+    "bytes": 16079,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "reference the work we did in the repo",
+   "arm": 2,
+   "arm0": {
+    "sigma": 2.62,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 2.06,
+    "bytes": 15950,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "can we end tccd without issue?",
+   "arm": 2,
+   "arm0": {
+    "sigma": 2.61,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 1.9,
+    "bytes": 16346,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "ran it, lets see what it did",
+   "arm": 0,
+   "arm0": {
+    "sigma": 2.59,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 1.87,
+    "bytes": 15481,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "still syrup, what did this?",
+   "arm": 0,
+   "arm0": {
+    "sigma": 3.09,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 2.06,
+    "bytes": 14561,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "is it auto loaded by the mdx cook>? make it stop tha",
+   "arm": 1,
+   "arm0": {
+    "sigma": 2.61,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 1.9,
+    "bytes": 16346,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "I can copy pste the txt into a web instead of that, ",
+   "arm": 0,
+   "arm0": {
+    "sigma": 2.62,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 2.06,
+    "bytes": 15950,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "¶1  > > (No bounce here — Defining Moloch in the thi",
+   "arm": 0,
+   "arm0": {
+    "sigma": 2.52,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 1.99,
+    "bytes": 16018,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "¶11  > > The defense of the word \"hardware\" is much ",
+   "arm": 2,
+   "arm0": {
+    "sigma": 2.96,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 1.87,
+    "bytes": 14765,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "is this the vessel for the breakthroughs we made it ",
+   "arm": 0,
+   "arm0": {
+    "sigma": 3.32,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 1.87,
+    "bytes": 12174,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "<task-notification> <task-id>b5igpylhz</task-id> <to",
+   "arm": 2,
+   "arm0": {
+    "sigma": 3.32,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 1.87,
+    "bytes": 12174,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "I dont see the video thumbnails discussed properly i",
+   "arm": 0,
+   "arm0": {
+    "sigma": 2.56,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 1.87,
+    "bytes": 15455,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "lets walk through our assumptions, and how they are ",
+   "arm": 2,
+   "arm0": {
+    "sigma": 3.4,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 2.81,
+    "bytes": 17823,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "based on recent progress, do we improve /deck/insure",
+   "arm": 1,
+   "arm0": {
+    "sigma": 2.61,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 1.9,
+    "bytes": 16346,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "then, rethink it and add the most relevant nyc insur",
+   "arm": 2,
+   "arm0": {
+    "sigma": 2.62,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 2.06,
+    "bytes": 15950,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "<task-notification> <task-id>a5822b2fd946ff75b</task",
+   "arm": 2,
+   "arm0": {
+    "sigma": 2.86,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 2.62,
+    "bytes": 18165,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "lets estimate how close we are to 1) the sufficient ",
+   "arm": 1,
+   "arm0": {
+    "sigma": 3.12,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 2.73,
+    "bytes": 16753,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "this is an mdx cook - strengthen what we can say, an",
+   "arm": 0,
+   "arm0": {
+    "sigma": 3.17,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 2.73,
+    "bytes": 16400,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "bash open the estimates txt first (based on what you",
+   "arm": 2,
+   "arm0": {
+    "sigma": 2.8,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 2.62,
+    "bytes": 17340,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "then mdx cook and push it",
+   "arm": 0,
+   "arm0": {
+    "sigma": 2.96,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 2.06,
+    "bytes": 14641,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "can we show any gains (and what is left untill we ca",
+   "arm": 1,
+   "arm0": {
+    "sigma": 3.08,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 2.73,
+    "bytes": 15575,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "puffery is ok if we can defend it (or delta from to ",
+   "arm": 2,
+   "arm0": {
+    "sigma": 3.4,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 2.61,
+    "bytes": 17823,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "when you mdx cook, use lists and asci art, asci tabl",
+   "arm": 1,
+   "arm0": {
+    "sigma": 3.08,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 2.73,
+    "bytes": 15575,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "Are we really just trying to predict the next next c",
+   "arm": 1,
+   "arm0": {
+    "sigma": 2.64,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 1.72,
+    "bytes": 17251,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "look for the strongest claims we can back up",
+   "arm": 0,
+   "arm0": {
+    "sigma": 2.86,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 2.62,
+    "bytes": 18165,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "The arm reader's tail is still malformed from the tw",
+   "arm": 2,
+   "arm0": {
+    "sigma": 2.62,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 2.28,
+    "bytes": 16011,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "<task-notification> <task-id>a1741db02b0a14141</task",
+   "arm": 0,
+   "arm0": {
+    "sigma": 2.96,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 2.06,
+    "bytes": 14641,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "hmm... push it past the limit.. find the alpha we ca",
+   "arm": 1,
+   "arm0": {
+    "sigma": 2.86,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 2.62,
+    "bytes": 18165,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "then push the public github with all we added..",
+   "arm": 0,
+   "arm0": {
+    "sigma": 2.59,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 2.06,
+    "bytes": 15420,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "and push the mdx so I can review it",
+   "arm": 0,
+   "arm0": {
+    "sigma": 2.62,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 1.87,
+    "bytes": 15950,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "the table needs to be a list or better formatted - w",
+   "arm": 2,
+   "arm0": {
+    "sigma": 2.86,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 2.62,
+    "bytes": 18165,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "can we build what we need to claim it makes the agen",
+   "arm": 2,
+   "arm0": {
+    "sigma": 3.15,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 3.22,
+    "bytes": 17571,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "Under the architecture's separation of layers, \"proo",
+   "arm": 0,
+   "arm0": {
+    "sigma": 3.09,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 1.87,
+    "bytes": 14561,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "is there a likely candidate?",
+   "arm": 1,
+   "arm0": {
+    "sigma": 2.8,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 2.62,
+    "bytes": 17340,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "if we cant make the strongest claims now, what can w",
+   "arm": 0,
+   "arm0": {
+    "sigma": 3.17,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 2.73,
+    "bytes": 16400,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "<task-notification> <task-id>bskdqn6nw</task-id> <to",
+   "arm": 0,
+   "arm0": {
+    "sigma": 3.32,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 1.87,
+    "bytes": 12174,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "convert to rust? we may need a more comprehensive fi",
+   "arm": 1,
+   "arm0": {
+    "sigma": 2.8,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 2.62,
+    "bytes": 17635,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "hmm maybe capitalise on the signal we need to be bla",
+   "arm": 0,
+   "arm0": {
+    "sigma": 3.17,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 2.73,
+    "bytes": 16400,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "<task-notification> <task-id>a1741db02b0a14141</task",
+   "arm": 0,
+   "arm0": {
+    "sigma": 2.96,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 2.06,
+    "bytes": 14765,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "<task-notification> <task-id>a773bacc1b20e5a57</task",
+   "arm": 2,
+   "arm0": {
+    "sigma": 2.96,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 1.87,
+    "bytes": 14641,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "### 1. The Financial Isomorphism: Black-Scholes for ",
+   "arm": 1,
+   "arm0": {
+    "sigma": 2.62,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 2.06,
+    "bytes": 16039,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "The strongest claim is that the price of an attestat",
+   "arm": 1,
+   "arm0": {
+    "sigma": 2.86,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 2.62,
+    "bytes": 18165,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "mit except insurance/derivative/bonds that run it (a",
+   "arm": 2,
+   "arm0": {
+    "sigma": 2.61,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 1.9,
+    "bytes": 16346,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "update the mdx cook with what we learned (and point ",
+   "arm": 1,
+   "arm0": {
+    "sigma": 2.59,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 1.99,
+    "bytes": 16843,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "when they point back at us, we take the finger",
+   "arm": 1,
+   "arm0": {
+    "sigma": 2.62,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 2.06,
+    "bytes": 15950,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "use it to spec what we can build to land the stronge",
+   "arm": 0,
+   "arm0": {
+    "sigma": 3.15,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 3.22,
+    "bytes": 17571,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "selection bias is the exact function of the tool tho",
+   "arm": 0,
+   "arm0": {
+    "sigma": 2.59,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 1.99,
+    "bytes": 16843,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "the perf gain is contextual, based on the fit of you",
+   "arm": 2,
+   "arm0": {
+    "sigma": 2.86,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 2.62,
+    "bytes": 18165,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "tell me if im wrong, but theres slack in that trial",
+   "arm": 0,
+   "arm0": {
+    "sigma": 2.8,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 2.62,
+    "bytes": 17420,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "did we bear out the black scholes of our definition ",
+   "arm": 1,
+   "arm0": {
+    "sigma": 2.62,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 2.06,
+    "bytes": 15950,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "<task-notification> <task-id>a7ae916c95d1beee6</task",
+   "arm": 0,
+   "arm0": {
+    "sigma": 2.96,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 2.06,
+    "bytes": 14765,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "hmm, is it within reach (what is)",
+   "arm": 0,
+   "arm0": {
+    "sigma": 2.62,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 2.06,
+    "bytes": 15950,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "stands to reason, that if perturbation / deltation i",
+   "arm": 2,
+   "arm0": {
+    "sigma": 3.15,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 3.22,
+    "bytes": 17571,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "is it an issue with the inputs? upstream/downstream/",
+   "arm": 2,
+   "arm0": {
+    "sigma": 3.19,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 1.9,
+    "bytes": 17409,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "<task-notification> <task-id>a7b1d52ae9256348d</task",
+   "arm": 2,
+   "arm0": {
+    "sigma": 2.96,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 1.87,
+    "bytes": 14641,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "we should be able to price this...The delta between ",
+   "arm": 2,
+   "arm0": {
+    "sigma": 2.52,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 1.99,
+    "bytes": 16018,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "the pricing to be part of the post as well? ### 1. W",
+   "arm": 0,
+   "arm0": {
+    "sigma": 3.12,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 2.73,
+    "bytes": 16854,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "and the formal methods behind it described in detail",
+   "arm": 2,
+   "arm0": {
+    "sigma": 2.8,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 2.62,
+    "bytes": 17340,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "attestation pillar between the left right bank / eco",
+   "arm": 2,
+   "arm0": {
+    "sigma": 2.82,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 2.56,
+    "bytes": 18364,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "the metrics / financial narratives",
+   "arm": 0,
+   "arm0": {
+    "sigma": 2.8,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 2.62,
+    "bytes": 17340,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "The basis spread does not lead to an actuarial prici",
+   "arm": 2,
+   "arm0": {
+    "sigma": 2.85,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 2.73,
+    "bytes": 18518,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "<task-notification> <task-id>a7ae916c95d1beee6</task",
+   "arm": 1,
+   "arm0": {
+    "sigma": 2.8,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 2.62,
+    "bytes": 17635,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "A bottom-up economic thesis does not require borrowi",
+   "arm": 0,
+   "arm0": {
+    "sigma": 2.67,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 1.9,
+    "bytes": 17171,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "update the terms and the blog with subagents.. Repor",
+   "arm": 1,
+   "arm0": {
+    "sigma": 3.17,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 2.73,
+    "bytes": 16400,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "<task-notification> <task-id>a7b1d52ae9256348d</task",
+   "arm": 1,
+   "arm0": {
+    "sigma": 2.96,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 1.87,
+    "bytes": 14641,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "<task-notification> <task-id>a7ae916c95d1beee6</task",
+   "arm": 0,
+   "arm0": {
+    "sigma": 2.96,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 1.87,
+    "bytes": 14641,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "its not just coding, its any doctor/plumber spec dri",
+   "arm": 1,
+   "arm0": {
+    "sigma": 2.8,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 2.62,
+    "bytes": 17340,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "where does it land?",
+   "arm": 0,
+   "arm0": {
+    "sigma": 2.8,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 2.62,
+    "bytes": 17340,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "<task-notification> <task-id>a7b1d52ae9256348d</task",
+   "arm": 2,
+   "arm0": {
+    "sigma": 2.96,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 1.87,
+    "bytes": 14641,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "make a plan to email cro/gc and underwriters with th",
+   "arm": 1,
+   "arm0": {
+    "sigma": 3.17,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 2.73,
+    "bytes": 16400,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "email me the plan, then email me the forwardable ver",
+   "arm": 0,
+   "arm0": {
+    "sigma": 3.09,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 2.06,
+    "bytes": 14561,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "then update /playbook and /cta with this",
+   "arm": 2,
+   "arm0": {
+    "sigma": 2.62,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 2.06,
+    "bytes": 16039,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "what can we land today?. Fourth pass is live at comm",
+   "arm": 2,
+   "arm0": {
+    "sigma": 3.15,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 3.22,
+    "bytes": 17571,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "<task-notification> <task-id>ac01e95fd5a93397e</task",
+   "arm": 1,
+   "arm0": {
+    "sigma": 2.96,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 1.87,
+    "bytes": 14730,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "whatis slowing the computer now? unlikely to be chro",
+   "arm": 1,
+   "arm0": {
+    "sigma": 2.86,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 2.62,
+    "bytes": 18165,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "<task-notification> <task-id>a773bacc1b20e5a57</task",
+   "arm": 2,
+   "arm0": {
+    "sigma": 3.13,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 2.94,
+    "bytes": 16204,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "<task-notification> <task-id>bkt8uh3e0</task-id> <to",
+   "arm": 0,
+   "arm0": {
+    "sigma": 2.8,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 2.62,
+    "bytes": 17635,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "<task-notification> <task-id>ad3d87e47fd7fece5</task",
+   "arm": 2,
+   "arm0": {
+    "sigma": 2.86,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 2.62,
+    "bytes": 18165,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "<task-notification> <task-id>ada949e70fe23ac08</task",
+   "arm": 2,
+   "arm0": {
+    "sigma": 2.96,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 1.87,
+    "bytes": 14641,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "<task-notification> <task-id>aec01cefb11c8ba73</task",
+   "arm": 0,
+   "arm0": {
+    "sigma": 2.96,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 1.87,
+    "bytes": 14730,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "**Immediate / Active Blockers**  * **Diagnose the KR",
+   "arm": 0,
+   "arm0": {
+    "sigma": 3.32,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 1.87,
+    "bytes": 12174,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "<task-notification> <task-id>a7b1d52ae9256348d</task",
+   "arm": 2,
+   "arm0": {
+    "sigma": 2.8,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 2.62,
+    "bytes": 17635,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "is there anything we can finish today - what has yet",
+   "arm": 1,
+   "arm0": {
+    "sigma": 2.54,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 1.77,
+    "bytes": 15210,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "<task-notification> <task-id>a89d3e72bb615e9bf</task",
+   "arm": 1,
+   "arm0": {
+    "sigma": 2.96,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 1.87,
+    "bytes": 14641,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "<task-notification> <task-id>ac01e95fd5a93397e</task",
+   "arm": 0,
+   "arm0": {
+    "sigma": 2.96,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 1.87,
+    "bytes": 14641,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "this is something we can do today - is there any way",
+   "arm": 1,
+   "arm0": {
+    "sigma": 3.4,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 2.61,
+    "bytes": 17823,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "cant you write an option on a specific sensor snowba",
+   "arm": 1,
+   "arm0": {
+    "sigma": 3.74,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 2.73,
+    "bytes": 16159,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "where is the most value to be had? nah, cant you wri",
+   "arm": 1,
+   "arm0": {
+    "sigma": 3.63,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 3.03,
+    "bytes": 14349,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "You can write that option, but it prices as a **digi",
+   "arm": 0,
+   "arm0": {
+    "sigma": 3.74,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 2.73,
+    "bytes": 16159,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "we simply need to understand where it fits where is ",
+   "arm": 2,
+   "arm0": {
+    "sigma": 3.15,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 3.22,
+    "bytes": 17571,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "No vetoes. The structure holds every boundary invari",
+   "arm": 0,
+   "arm0": {
+    "sigma": 3.32,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 1.87,
+    "bytes": 12174,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "<task-notification> <task-id>a32bab5042e3c10a6</task",
+   "arm": 1,
+   "arm0": {
+    "sigma": 2.96,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 1.87,
+    "bytes": 14765,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "The single highest-leverage action before closing th",
+   "arm": 1,
+   "arm0": {
+    "sigma": 2.86,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 2.62,
+    "bytes": 18245,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "<task-notification> <task-id>a773bacc1b20e5a57</task",
+   "arm": 2,
+   "arm0": {
+    "sigma": 2.96,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 1.87,
+    "bytes": 14730,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "<task-notification> <task-id>a7b1d52ae9256348d</task",
+   "arm": 1,
+   "arm0": {
+    "sigma": 2.96,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 1.87,
+    "bytes": 14641,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "<task-notification> <task-id>a7546f7f3b6c5161a</task",
+   "arm": 0,
+   "arm0": {
+    "sigma": 2.96,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 1.87,
+    "bytes": 14641,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "/Users/thetacoach/GitHub/thetadrivencoach/docs/05-co",
+   "arm": 1,
+   "arm0": {
+    "sigma": 2.66,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 1.87,
+    "bytes": 15489,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "the tail has most of it",
+   "arm": 2,
+   "arm0": {
+    "sigma": 2.8,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 2.62,
+    "bytes": 17340,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "Formal methods covers the marketplace by defining th",
+   "arm": 0,
+   "arm0": {
+    "sigma": 2.62,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 2.06,
+    "bytes": 15950,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "kill whatever did file:///Users/thetacoach/GitHub/th",
+   "arm": 0,
+   "arm0": {
+    "sigma": 2.8,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 2.62,
+    "bytes": 17340,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "unless, was it done by getting the book club sent? i",
+   "arm": 1,
+   "arm0": {
+    "sigma": 3.74,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 2.73,
+    "bytes": 16058,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "did we resolve the full pricing? The valuation mecha",
+   "arm": 2,
+   "arm0": {
+    "sigma": 3.12,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 2.73,
+    "bytes": 16753,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "the envoleope needs to be formally proven in terms o",
+   "arm": 0,
+   "arm0": {
+    "sigma": 3.4,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 2.61,
+    "bytes": 17823,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "The correction is exact, and the sidecar note names ",
+   "arm": 1,
+   "arm0": {
+    "sigma": 2.96,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 1.87,
+    "bytes": 14641,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "<task-notification> <task-id>a9bd7868d1a6af415</task",
+   "arm": 0,
+   "arm0": {
+    "sigma": 2.96,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 1.87,
+    "bytes": 14765,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "was gemini scraper running now?",
+   "arm": 0,
+   "arm0": {
+    "sigma": 2.62,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 2.06,
+    "bytes": 15950,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "The verifier gives the double-entry model its extern",
+   "arm": 2,
+   "arm0": {
+    "sigma": 3.4,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 2.81,
+    "bytes": 17823,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "<task-notification> <task-id>bo5zptx45</task-id> <to",
+   "arm": 2,
+   "arm0": {
+    "sigma": 2.64,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 2.58,
+    "bytes": 16730,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "<task-notification> <task-id>aed17cd411865013f</task",
+   "arm": 2,
+   "arm0": {
+    "sigma": 2.96,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 1.87,
+    "bytes": 14765,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "The formal methods math required to justify the clea",
+   "arm": 2,
+   "arm0": {
+    "sigma": 2.85,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 2.73,
+    "bytes": 18518,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "<task-notification> <task-id>afffc8141a58e9394</task",
+   "arm": 0,
+   "arm0": {
+    "sigma": 2.8,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 2.62,
+    "bytes": 17635,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "<task-notification> <task-id>a508025d211142fec</task",
+   "arm": 0,
+   "arm0": {
+    "sigma": 2.96,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 1.87,
+    "bytes": 14641,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "run the vna steer vscode extension here and tie it t",
+   "arm": 2,
+   "arm0": {
+    "sigma": 2.62,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 2.06,
+    "bytes": 15950,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "<task-notification> <task-id>ab407e83604e2eae7</task",
+   "arm": 0,
+   "arm0": {
+    "sigma": 2.96,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 1.87,
+    "bytes": 14641,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "<task-notification> <task-id>a01913224d8e6ed62</task",
+   "arm": 1,
+   "arm0": {
+    "sigma": 2.96,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 1.87,
+    "bytes": 14641,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "<task-notification> <task-id>afffc8141a58e9394</task",
+   "arm": 2,
+   "arm0": {
+    "sigma": 2.96,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 1.87,
+    "bytes": 14641,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "can we use what we learned in the rust pipeline to m",
+   "arm": 2,
+   "arm0": {
+    "sigma": 2.56,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 1.77,
+    "bytes": 15505,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "update the book with this",
+   "arm": 1,
+   "arm0": {
+    "sigma": 2.62,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 2.06,
+    "bytes": 15950,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "<task-notification> <task-id>a625daff3d18e32e5</task",
+   "arm": 1,
+   "arm0": {
+    "sigma": 2.73,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 2.06,
+    "bytes": 15437,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "<task-notification> <task-id>acedf53d55e25e9c7</task",
+   "arm": 1,
+   "arm0": {
+    "sigma": 2.96,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 1.87,
+    "bytes": 14765,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "<task-notification> <task-id>a24c143838cab7ce4</task",
+   "arm": 0,
+   "arm0": {
+    "sigma": 3.32,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 1.87,
+    "bytes": 12174,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "<task-notification> <task-id>be97nmxkj</task-id> <to",
+   "arm": 2,
+   "arm0": {
+    "sigma": 2.8,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 2.62,
+    "bytes": 17635,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "te vna steer needs to be opened in the editor fromt ",
+   "arm": 1,
+   "arm0": {
+    "sigma": 2.67,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 1.9,
+    "bytes": 17171,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "then make sure its properly wired in with the formal",
+   "arm": 2,
+   "arm0": {
+    "sigma": 3.4,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 2.81,
+    "bytes": 17823,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "<task-notification> <task-id>bwpp8wk7n</task-id> <to",
+   "arm": 1,
+   "arm0": {
+    "sigma": 2.8,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 2.62,
+    "bytes": 17635,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "/goal maximise the six percentage predictive impact ",
+   "arm": 1,
+   "arm0": {
+    "sigma": 2.8,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 2.62,
+    "bytes": 17340,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "the filth is the thesis",
+   "arm": 0,
+   "arm0": {
+    "sigma": 2.96,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 1.87,
+    "bytes": 14641,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "its the posture required, we need this to be the par",
+   "arm": 0,
+   "arm0": {
+    "sigma": 3.08,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 2.73,
+    "bytes": 15575,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "mixed with champagne",
+   "arm": 0,
+   "arm0": {
+    "sigma": 2.85,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 2.73,
+    "bytes": 18518,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "filth is the working word, we may want a better..",
+   "arm": 1,
+   "arm0": {
+    "sigma": 2.86,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 2.62,
+    "bytes": 18165,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "<task-notification> <task-id>a339903d5981dcd8d</task",
+   "arm": 0,
+   "arm0": {
+    "sigma": 2.96,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 1.87,
+    "bytes": 14641,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "<task-notification> <task-id>a2272218833341850</task",
+   "arm": 1,
+   "arm0": {
+    "sigma": 2.96,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 1.87,
+    "bytes": 14765,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "<task-notification> <task-id>ae80d51f056b639ab</task",
+   "arm": 2,
+   "arm0": {
+    "sigma": 2.8,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 2.62,
+    "bytes": 17635,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "<task-notification> <task-id>bidxxvea6</task-id> <to",
+   "arm": 0,
+   "arm0": {
+    "sigma": 2.96,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 1.87,
+    "bytes": 14641,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "<task-notification> <task-id>bbopwls7r</task-id> <to",
+   "arm": 1,
+   "arm0": {
+    "sigma": 3.2,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 1.87,
+    "bytes": 14616,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "<task-notification> <task-id>a9c7580b70f706a36</task",
+   "arm": 1,
+   "arm0": {
+    "sigma": 2.62,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 2.06,
+    "bytes": 15950,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "<task-notification> <task-id>a71e6f7d3bb7630f6</task",
+   "arm": 0,
+   "arm0": {
+    "sigma": 2.96,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 1.87,
+    "bytes": 14765,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "<task-notification> <task-id>b87y95b0n</task-id> <to",
+   "arm": 0,
+   "arm0": {
+    "sigma": 2.96,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 1.87,
+    "bytes": 14641,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "<task-notification> <task-id>bsq85ku7o</task-id> <to",
+   "arm": 1,
+   "arm0": {
+    "sigma": 2.96,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 1.87,
+    "bytes": 14641,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "<task-notification> <task-id>aeec2591d62149450</task",
+   "arm": 0,
+   "arm0": {
+    "sigma": 2.96,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 2.06,
+    "bytes": 14765,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "<task-notification> <task-id>a186106570437b5ec</task",
+   "arm": 2,
+   "arm0": {
+    "sigma": 2.96,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 1.87,
+    "bytes": 14641,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "<task-notification> <task-id>bu3h0l4bq</task-id> <to",
+   "arm": 0,
+   "arm0": {
+    "sigma": 2.8,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 2.62,
+    "bytes": 17635,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "<task-notification> <task-id>b87cbgt0y</task-id> <to",
+   "arm": 0,
+   "arm0": {
+    "sigma": 2.96,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 1.87,
+    "bytes": 14641,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "<task-notification> <task-id>a2f7ae064efe95723</task",
+   "arm": 0,
+   "arm0": {
+    "sigma": 2.96,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 1.87,
+    "bytes": 14641,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "<task-notification> <task-id>ae637b2e9a7a13df3</task",
+   "arm": 1,
+   "arm0": {
+    "sigma": 2.96,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 1.88,
+    "bytes": 14730,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "<task-notification> <task-id>a58892e9609b05426</task",
+   "arm": 1,
+   "arm0": {
+    "sigma": 2.96,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 1.87,
+    "bytes": 14730,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "This is an architectural audit of the friction in yo",
+   "arm": 2,
+   "arm0": {
+    "sigma": 2.59,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 2.06,
+    "bytes": 15420,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "Good night this is supposed to maximize the trade-of",
+   "arm": 2,
+   "arm0": {
+    "sigma": 2.62,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 2.06,
+    "bytes": 15950,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "<task-notification> <task-id>a910879a8ec9dc565</task",
+   "arm": 1,
+   "arm0": {
+    "sigma": 2.96,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 1.87,
+    "bytes": 14765,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "<task-notification> <task-id>afc6275bad29c1aa1</task",
+   "arm": 1,
+   "arm0": {
+    "sigma": 2.86,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 2.62,
+    "bytes": 18165,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "Algorithmic Anthropomorphism These phrases project s",
+   "arm": 1,
+   "arm0": {
+    "sigma": 2.65,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 1.81,
+    "bytes": 15438,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "A lot of the reflexive language sound like a machine",
+   "arm": 2,
+   "arm0": {
+    "sigma": 2.61,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 1.9,
+    "bytes": 16346,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "<task-notification> <task-id>bh2j8p9m1</task-id> <to",
+   "arm": 1,
+   "arm0": {
+    "sigma": 2.96,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 1.87,
+    "bytes": 14641,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "Anything that makes a text Moore impotent needs to g",
+   "arm": 0,
+   "arm0": {
+    "sigma": 2.58,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 1.79,
+    "bytes": 15717,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "1. Replace Confession with a Declaration of Terms Ne",
+   "arm": 2,
+   "arm0": {
+    "sigma": 2.62,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 1.87,
+    "bytes": 15950,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "<task-notification> <task-id>a73315366a43a5d07</task",
+   "arm": 1,
+   "arm0": {
+    "sigma": 2.96,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 1.87,
+    "bytes": 14641,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "<task-notification> <task-id>badtea9xc</task-id> <to",
+   "arm": 1,
+   "arm0": {
+    "sigma": 2.8,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 2.62,
+    "bytes": 17635,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "Audit Scorecard across the Six Percentages | Dimensi",
+   "arm": 1,
+   "arm0": {
+    "sigma": 3.09,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 2.06,
+    "bytes": 14675,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "Geez my intent must not have been clear",
+   "arm": 0,
+   "arm0": {
+    "sigma": 3.32,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 1.87,
+    "bytes": 12174,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "Did i not make it clear how important the efficacy i",
+   "arm": 2,
+   "arm0": {
+    "sigma": 3.09,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 2.06,
+    "bytes": 14622,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "The fact that the Symetry means that the bad outcome",
+   "arm": 2,
+   "arm0": {
+    "sigma": 2.61,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 1.9,
+    "bytes": 16346,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "Therefore, my advice is by my stuff",
+   "arm": 0,
+   "arm0": {
+    "sigma": 2.8,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 2.62,
+    "bytes": 17340,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "That story, but we clean it up with you saying why w",
+   "arm": 2,
+   "arm0": {
+    "sigma": 2.58,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 1.79,
+    "bytes": 15717,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "It’s not a political side it’s the side of the futur",
+   "arm": 2,
+   "arm0": {
+    "sigma": 2.65,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 1.79,
+    "bytes": 16542,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "My device says that you should want that why on eart",
+   "arm": 2,
+   "arm0": {
+    "sigma": 2.61,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 1.9,
+    "bytes": 16346,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "Did you give up on your ability to tell us come down",
+   "arm": 0,
+   "arm0": {
+    "sigma": 2.67,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 1.9,
+    "bytes": 17171,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "<task-notification> <summary>Goal check-in: backgrou",
+   "arm": 1,
+   "arm0": {
+    "sigma": 3.4,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 2.61,
+    "bytes": 17937,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "The opposite of a profound truth is a profound truth",
+   "arm": 1,
+   "arm0": {
+    "sigma": 2.59,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 2.06,
+    "bytes": 15420,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "That was a typo. Obviously, I meant the opposite of ",
+   "arm": 1,
+   "arm0": {
+    "sigma": 2.59,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 2.17,
+    "bytes": 16843,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "When you send me the emails, always include a text f",
+   "arm": 1,
+   "arm0": {
+    "sigma": 3.17,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 2.73,
+    "bytes": 16400,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "<task-notification> <task-id>af786818feaca0861</task",
+   "arm": 1,
+   "arm0": {
+    "sigma": 0,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 0,
+    "bytes": 5413,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "<task-notification> <task-id>aebcce1fb38e3e353</task",
+   "arm": 0,
+   "arm0": {
+    "sigma": 2.8,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 2.62,
+    "bytes": 17635,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "Scorecard Delta: Before vs. After the 4 Commits The ",
+   "arm": 0,
+   "arm0": {
+    "sigma": 3.17,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 2.73,
+    "bytes": 16400,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "<task-notification> <task-id>bba2okenw</task-id> <to",
+   "arm": 1,
+   "arm0": {
+    "sigma": 2.96,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 1.87,
+    "bytes": 14641,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "Listing pennies totally misses the pricing clearing ",
+   "arm": 1,
+   "arm0": {
+    "sigma": 3.1,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 2.73,
+    "bytes": 15870,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "We have currency “cogs” reasoning as cognitive units",
+   "arm": 2,
+   "arm0": {
+    "sigma": 2.61,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 1.9,
+    "bytes": 16346,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "Which pins a task to dollars zero arbitrage possible",
+   "arm": 0,
+   "arm0": {
+    "sigma": 3.4,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 2.81,
+    "bytes": 17903,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "For buyer and seller",
+   "arm": 2,
+   "arm0": {
+    "sigma": 3.17,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 2.73,
+    "bytes": 16400,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "H nce vkack scgoles",
+   "arm": 2,
+   "arm0": {
+    "sigma": 2.96,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 1.87,
+    "bytes": 14641,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "Look at the formal methods of the rust pipeline",
+   "arm": 0,
+   "arm0": {
+    "sigma": 2.61,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 1.77,
+    "bytes": 16035,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "And show we probably are on your side",
+   "arm": 2,
+   "arm0": {
+    "sigma": 3.08,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 2.73,
+    "bytes": 15575,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "Two way optimisation",
+   "arm": 2,
+   "arm0": {
+    "sigma": 3.17,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 2.73,
+    "bytes": 16400,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "<task-notification> <task-id>a1bb32640b608c530</task",
+   "arm": 0,
+   "arm0": {
+    "sigma": 2.96,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 1.87,
+    "bytes": 14641,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "<task-notification> <task-id>a1bb32640b608c530</task",
+   "arm": 0,
+   "arm0": {
+    "sigma": 2.86,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 2.62,
+    "bytes": 18165,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "Finish the formal methods and rust with fable subage",
+   "arm": 1,
+   "arm0": {
+    "sigma": 3.4,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 2.81,
+    "bytes": 17823,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "Tie it to the map of maps, how conplex ( not just la",
+   "arm": 1,
+   "arm0": {
+    "sigma": 3.09,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 1.87,
+    "bytes": 14561,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "Check the subagent gets the math pushed to the limit",
+   "arm": 2,
+   "arm0": {
+    "sigma": 2.61,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 1.9,
+    "bytes": 16346,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "<task-notification> <task-id>bzuwyij91</task-id> <to",
+   "arm": 1,
+   "arm0": {
+    "sigma": 2.96,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 1.87,
+    "bytes": 14641,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "<task-notification> <task-id>a117da07e305f7b50</task",
+   "arm": 2,
+   "arm0": {
+    "sigma": 2.96,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 1.87,
+    "bytes": 14641,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "<task-notification> <task-id>a176b29894bab39d4</task",
+   "arm": 1,
+   "arm0": {
+    "sigma": 2.8,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 2.62,
+    "bytes": 17635,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "Vso1 is tying it to the mdx cook so we get it narrat",
+   "arm": 1,
+   "arm0": {
+    "sigma": 2.8,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 2.62,
+    "bytes": 17340,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "<task-notification> <task-id>b4dejn2m9</task-id> <to",
+   "arm": 2,
+   "arm0": {
+    "sigma": 2.96,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 1.87,
+    "bytes": 14641,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "How can we just do this without any help and just ha",
+   "arm": 2,
+   "arm0": {
+    "sigma": 2.96,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 1.87,
+    "bytes": 14641,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "Mdx cook needs to format the tax ao the tts picks up",
+   "arm": 2,
+   "arm0": {
+    "sigma": 2.61,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 1.9,
+    "bytes": 16346,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "It just stops reading",
+   "arm": 0,
+   "arm0": {
+    "sigma": 2.59,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 1.99,
+    "bytes": 16843,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "Name the things that make the boat move in the piece",
+   "arm": 1,
+   "arm0": {
+    "sigma": 3.09,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 2.06,
+    "bytes": 14561,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "<task-notification> <task-id>a74a68110881bf015</task",
+   "arm": 2,
+   "arm0": {
+    "sigma": 2.96,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 1.87,
+    "bytes": 14641,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "That’s reason about something when people scan the s",
+   "arm": 2,
+   "arm0": {
+    "sigma": 2.61,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 1.9,
+    "bytes": 16346,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "What can we put into the block post for me to pay at",
+   "arm": 2,
+   "arm0": {
+    "sigma": 2.84,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 2.44,
+    "bytes": 18245,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "<task-notification> <task-id>a057c86712381ebdc</task",
+   "arm": 0,
+   "arm0": {
+    "sigma": 3.32,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 1.87,
+    "bytes": 12174,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "1. Why It Feels Impotent The post feels impotent bec",
+   "arm": 0,
+   "arm0": {
+    "sigma": 2.96,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 1.87,
+    "bytes": 14730,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "That’s the role we need everywhere, the rule",
+   "arm": 0,
+   "arm0": {
+    "sigma": 2.61,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 1.9,
+    "bytes": 16407,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "The explicit callout of all enterprise AI selling sl",
+   "arm": 0,
+   "arm0": {
+    "sigma": 2.61,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 1.9,
+    "bytes": 16346,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "<task-notification> <task-id>aa8ba1f85ce097d07</task",
+   "arm": 2,
+   "arm0": {
+    "sigma": 2.66,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 1.87,
+    "bytes": 15489,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "<task-notification> <task-id>bozqlv50c</task-id> <to",
+   "arm": 2,
+   "arm0": {
+    "sigma": 3.14,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 1.81,
+    "bytes": 15412,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "<task-notification> <task-id>b4xbrsomb</task-id> <to",
+   "arm": 0,
+   "arm0": {
+    "sigma": 2.8,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 2.62,
+    "bytes": 17635,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "Careful with that one it needs to be puffy not a unf",
+   "arm": 1,
+   "arm0": {
+    "sigma": 2.61,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 1.9,
+    "bytes": 16346,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "Research an email me the document on Paul Denne and ",
+   "arm": 1,
+   "arm0": {
+    "sigma": 2.8,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 2.62,
+    "bytes": 17340,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "<task-notification> <task-id>a8ac28dba4d8a3c7c</task",
+   "arm": 1,
+   "arm0": {
+    "sigma": 2.73,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 2.06,
+    "bytes": 15437,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "<task-notification> <task-id>b61044x8b</task-id> <to",
+   "arm": 0,
+   "arm0": {
+    "sigma": 2.64,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 2.58,
+    "bytes": 16730,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "we had the new dep etc",
+   "arm": 0,
+   "arm0": {
+    "sigma": 2.8,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 2.62,
+    "bytes": 17340,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "email me a forwardable report with txt attached",
+   "arm": 2,
+   "arm0": {
+    "sigma": 2.61,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 1.9,
+    "bytes": 16346,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "<task-notification> <task-id>af6eb6ee60aeda640</task",
+   "arm": 2,
+   "arm0": {
+    "sigma": 2.96,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 2.06,
+    "bytes": 14765,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "<task-notification> <task-id>a72645d923d533e2a</task",
+   "arm": 1,
+   "arm0": {
+    "sigma": 2.96,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 1.87,
+    "bytes": 14730,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "The person you are referring to is **Christos Adaman",
+   "arm": 0,
+   "arm0": {
+    "sigma": 3.11,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 2.73,
+    "bytes": 16480,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "build the whole researched stragtegy around it",
+   "arm": 2,
+   "arm0": {
+    "sigma": 2.62,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 2.06,
+    "bytes": 15950,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "(what they care about, ou rrecent advice voice, same",
+   "arm": 0,
+   "arm0": {
+    "sigma": 3.08,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 2.73,
+    "bytes": 15575,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "research our repo posoitons",
+   "arm": 2,
+   "arm0": {
+    "sigma": 2.59,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 2.06,
+    "bytes": 15420,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "<task-notification> <task-id>ab4d93b0c147a3a6a</task",
+   "arm": 2,
+   "arm0": {
+    "sigma": 2.96,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 1.87,
+    "bytes": 14641,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "outline what they care about, who they want to impre",
+   "arm": 1,
+   "arm0": {
+    "sigma": 2.67,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 1.9,
+    "bytes": 17171,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "<task-notification> <task-id>broasoyu9</task-id> <to",
+   "arm": 2,
+   "arm0": {
+    "sigma": 2.96,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 1.87,
+    "bytes": 14641,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "<task-notification> <task-id>a51a6e2d9273dfd97</task",
+   "arm": 2,
+   "arm0": {
+    "sigma": 2.96,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 1.87,
+    "bytes": 14730,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "Christos Adamantiadis is stepping into the newly cre",
+   "arm": 2,
+   "arm0": {
+    "sigma": 2.96,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 1.87,
+    "bytes": 14641,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "use what we learned in the last days and take it int",
+   "arm": 0,
+   "arm0": {
+    "sigma": 2.62,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 2.06,
+    "bytes": 15950,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "<task-notification> <task-id>a9e616e953386a332</task",
+   "arm": 1,
+   "arm0": {
+    "sigma": 2.96,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 1.87,
+    "bytes": 14641,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "<task-notification> <task-id>af35c91bb44c77882</task",
+   "arm": 2,
+   "arm0": {
+    "sigma": 2.86,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 2.62,
+    "bytes": 18165,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "lets push this all the way - bosses. questions on th",
+   "arm": 0,
+   "arm0": {
+    "sigma": 2.96,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 2.06,
+    "bytes": 14641,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "lets manufacture the finpro angle, Let's trace the e",
+   "arm": 2,
+   "arm0": {
+    "sigma": 3.2,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 1.87,
+    "bytes": 14616,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "Yep. Um, all right, that's what you want to do? Sure",
+   "arm": 1,
+   "arm0": {
+    "sigma": 2.8,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 2.62,
+    "bytes": 17340,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "That is exactly how you play the board. You are not ",
+   "arm": 1,
+   "arm0": {
+    "sigma": 2.62,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 1.9,
+    "bytes": 16641,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "lets add action items to the email - and send the fu",
+   "arm": 0,
+   "arm0": {
+    "sigma": 2.8,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 2.62,
+    "bytes": 17340,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "<task-notification> <task-id>a1d43e415aa060d77</task",
+   "arm": 2,
+   "arm0": {
+    "sigma": 2.96,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 1.87,
+    "bytes": 14730,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "Interesting question. I don't know. What's the bette",
+   "arm": 1,
+   "arm0": {
+    "sigma": 3.17,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 2.73,
+    "bytes": 16400,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "Adam’s hunger is visibility and lateral power.  Look",
+   "arm": 1,
+   "arm0": {
+    "sigma": 2.62,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 1.87,
+    "bytes": 15950,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "make his kingship clear, adams and paul v etc",
+   "arm": 0,
+   "arm0": {
+    "sigma": 2.86,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 2.62,
+    "bytes": 18165,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "yep this will be forwarded to adam",
+   "arm": 1,
+   "arm0": {
+    "sigma": 3.15,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 3.22,
+    "bytes": 17571,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "i am not doing the spv right now (though should I ?)",
+   "arm": 1,
+   "arm0": {
+    "sigma": 3.09,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 2.06,
+    "bytes": 14561,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "We want to get paid though so they have to know what",
+   "arm": 2,
+   "arm0": {
+    "sigma": 2.61,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 1.9,
+    "bytes": 16346,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "You are absolutely right about the Joker rule. You a",
+   "arm": 1,
+   "arm0": {
+    "sigma": 2.78,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 2.62,
+    "bytes": 17750,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "The edits in V2 completely eliminate Adam’s psycholo",
+   "arm": 1,
+   "arm0": {
+    "sigma": 2.61,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 1.9,
+    "bytes": 16346,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "<task-notification> <task-id>aa578be16cfc3cf2e</task",
+   "arm": 2,
+   "arm0": {
+    "sigma": 2.96,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 1.87,
+    "bytes": 14730,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "<task-notification> <task-id>a3c53d95b1dee0a9e</task",
+   "arm": 1,
+   "arm0": {
+    "sigma": 2.86,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 2.62,
+    "bytes": 18165,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "<task-notification> <task-id>bk2e7mpse</task-id> <to",
+   "arm": 2,
+   "arm0": {
+    "sigma": 3.4,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 2.61,
+    "bytes": 17823,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "combine 2 and 3 and include the example dm for him t",
+   "arm": 0,
+   "arm0": {
+    "sigma": 3.32,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 1.87,
+    "bytes": 12174,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "look at the n var for the ratchet on prompts - does ",
+   "arm": 1,
+   "arm0": {
+    "sigma": 2.62,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 1.87,
+    "bytes": 15950,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "make sure [Image #1] has a either a encircled or.. t",
+   "arm": 1,
+   "arm0": {
+    "sigma": 3.09,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 2.06,
+    "bytes": 14561,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "<task-notification> <task-id>ab5e7443791842deb</task",
+   "arm": 1,
+   "arm0": {
+    "sigma": 2.96,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 1.87,
+    "bytes": 14730,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "<task-notification> <task-id>b9wzqxcdw</task-id> <to",
+   "arm": 1,
+   "arm0": {
+    "sigma": 2.96,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 1.87,
+    "bytes": 14641,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "add redacted@example.com to the book club",
+   "arm": 0,
+   "arm0": {
+    "sigma": 3.09,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 2.06,
+    "bytes": 14561,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "<task-notification> <task-id>a0f01c46c348176be</task",
+   "arm": 1,
+   "arm0": {
+    "sigma": 2.86,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 2.62,
+    "bytes": 18165,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "<task-notification> <task-id>boyilox7g</task-id> <to",
+   "arm": 1,
+   "arm0": {
+    "sigma": 2.96,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 1.87,
+    "bytes": 14641,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "<task-notification> <task-id>bf18qul2c</task-id> <to",
+   "arm": 2,
+   "arm0": {
+    "sigma": 2.96,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 1.87,
+    "bytes": 14641,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "<task-notification> <task-id>bqmrhbjv4</task-id> <to",
+   "arm": 2,
+   "arm0": {
+    "sigma": 3.32,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 1.87,
+    "bytes": 12174,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "<task-notification> <task-id>a9b796c2fcce5c1a0</task",
+   "arm": 0,
+   "arm0": {
+    "sigma": 2.8,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 2.62,
+    "bytes": 17635,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "<task-notification> <task-id>bmyb52nao</task-id> <to",
+   "arm": 2,
+   "arm0": {
+    "sigma": 2.96,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 1.87,
+    "bytes": 14641,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "<task-notification> <task-id>a9b796c2fcce5c1a0</task",
+   "arm": 2,
+   "arm0": {
+    "sigma": 2.86,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 2.62,
+    "bytes": 18165,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "<task-notification> <task-id>a9b796c2fcce5c1a0</task",
+   "arm": 1,
+   "arm0": {
+    "sigma": 2.96,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 1.87,
+    "bytes": 14730,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "<task-notification> <task-id>bzdwvs8bl</task-id> <to",
+   "arm": 1,
+   "arm0": {
+    "sigma": 3.32,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 1.87,
+    "bytes": 12174,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "Tie it all together",
+   "arm": 1,
+   "arm0": {
+    "sigma": 2.8,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 2.62,
+    "bytes": 17340,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "Add everyone has ever been an email chain with me in",
+   "arm": 1,
+   "arm0": {
+    "sigma": 2.61,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 1.9,
+    "bytes": 16346,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "<task-notification> <task-id>a4cb2ea94a92e1dce</task",
+   "arm": 2,
+   "arm0": {
+    "sigma": 2.96,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 1.87,
+    "bytes": 14730,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "<task-notification> <task-id>abbb244a1aaddf37a</task",
+   "arm": 2,
+   "arm0": {
+    "sigma": 2.96,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 1.87,
+    "bytes": 14641,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "<task-notification> <task-id>a1786d058bf61f275</task",
+   "arm": 0,
+   "arm0": {
+    "sigma": 2.96,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 1.87,
+    "bytes": 14641,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "<task-notification> <task-id>a34f445d20acd4b08</task",
+   "arm": 0,
+   "arm0": {
+    "sigma": 2.86,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 2.62,
+    "bytes": 18165,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "<task-notification> <task-id>a0feea05ed62a9c4d</task",
+   "arm": 1,
+   "arm0": {
+    "sigma": 2.96,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 1.87,
+    "bytes": 14730,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "<task-notification> <task-id>a3a5d760e6a9a3bb1</task",
+   "arm": 2,
+   "arm0": {
+    "sigma": 2.96,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 1.87,
+    "bytes": 14641,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "<task-notification> <task-id>ae8452191ed891382</task",
+   "arm": 2,
+   "arm0": {
+    "sigma": 2.86,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 2.62,
+    "bytes": 18165,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "<task-notification> <task-id>aac3bed2d5250ad12</task",
+   "arm": 1,
+   "arm0": {
+    "sigma": 2.96,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 1.87,
+    "bytes": 14641,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "<task-notification> <task-id>b52h5cqf2</task-id> <to",
+   "arm": 1,
+   "arm0": {
+    "sigma": 2.96,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 1.87,
+    "bytes": 14641,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "<task-notification> <task-id>bcl1ycd3i</task-id> <to",
+   "arm": 1,
+   "arm0": {
+    "sigma": 2.96,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 1.87,
+    "bytes": 14641,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "<task-notification> <task-id>a2fab9b16cf89bf9a</task",
+   "arm": 2,
+   "arm0": {
+    "sigma": 2.96,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 1.87,
+    "bytes": 14641,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "<task-notification> <task-id>aa51446ccdb2c2ff4</task",
+   "arm": 0,
+   "arm0": {
+    "sigma": 2.96,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 1.87,
+    "bytes": 14641,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "<task-notification> <task-id>a7373c20735492d0a</task",
+   "arm": 2,
+   "arm0": {
+    "sigma": 2.96,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 1.87,
+    "bytes": 14730,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "<task-notification> <task-id>a6b04cb45772d2269</task",
+   "arm": 2,
+   "arm0": {
+    "sigma": 2.86,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 2.62,
+    "bytes": 18165,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "<task-notification> <task-id>aeddf23f3439d176c</task",
+   "arm": 2,
+   "arm0": {
+    "sigma": 2.96,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 1.87,
+    "bytes": 14641,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "<task-notification> <task-id>a8872c765f5eb5c05</task",
+   "arm": 1,
+   "arm0": {
+    "sigma": 2.96,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 1.87,
+    "bytes": 14730,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "<task-notification> <task-id>af79197ca6a65e535</task",
+   "arm": 2,
+   "arm0": {
+    "sigma": 2.96,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 1.87,
+    "bytes": 14641,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "<task-notification> <task-id>a295db426fbba3231</task",
+   "arm": 2,
+   "arm0": {
+    "sigma": 2.96,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 1.81,
+    "bytes": 14765,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "<task-notification> <task-id>a5387966762acd9a0</task",
+   "arm": 1,
+   "arm0": {
+    "sigma": 2.96,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 1.87,
+    "bytes": 14730,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "<task-notification> <task-id>a835296144fd3b40c</task",
+   "arm": 0,
+   "arm0": {
+    "sigma": 2.96,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 1.87,
+    "bytes": 14641,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "<task-notification> <task-id>ad94885cadedd01a4</task",
+   "arm": 1,
+   "arm0": {
+    "sigma": 0,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 0,
+    "bytes": 5413,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "<task-notification> <task-id>a88846ee559e70dd1</task",
+   "arm": 0,
+   "arm0": {
+    "sigma": 0.45,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 0,
+    "bytes": 8792,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "<task-notification> <task-id>a391a5dab5d4c0d72</task",
+   "arm": 1,
+   "arm0": {
+    "sigma": 2.96,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 1.87,
+    "bytes": 14641,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "<task-notification> <task-id>a1d8569523a86f278</task",
+   "arm": 2,
+   "arm0": {
+    "sigma": 2.8,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 2.62,
+    "bytes": 17635,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "<task-notification> <task-id>a4349baf10f4a4560</task",
+   "arm": 1,
+   "arm0": {
+    "sigma": 2.8,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 2.62,
+    "bytes": 17635,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "<task-notification> <task-id>aa4ab9b2e6c9ad5dd</task",
+   "arm": 1,
+   "arm0": {
+    "sigma": 2.96,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 1.87,
+    "bytes": 14641,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "<task-notification> <task-id>a99fe0ca1dd8eecf3</task",
+   "arm": 1,
+   "arm0": {
+    "sigma": 2.96,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 1.87,
+    "bytes": 14641,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "How far did we get? That would have drained all cred",
+   "arm": 0,
+   "arm0": {
+    "sigma": 2.61,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 1.9,
+    "bytes": 16435,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "Let’s try to do one single RPM, but it always starts",
+   "arm": 0,
+   "arm0": {
+    "sigma": 2.56,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 1.87,
+    "bytes": 14561,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "The difference is that we’re doing them one at a tim",
+   "arm": 1,
+   "arm0": {
+    "sigma": 2.58,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 1.79,
+    "bytes": 15717,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "<task-notification> <task-id>a5fbca8b1ec2c4b33</task",
+   "arm": 2,
+   "arm0": {
+    "sigma": 2.96,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 1.87,
+    "bytes": 14730,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "<task-notification> <task-id>acba93afaf585b5e8</task",
+   "arm": 2,
+   "arm0": {
+    "sigma": 2.96,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 1.87,
+    "bytes": 14641,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "<task-notification> <task-id>ad4d9c9a1f3540133</task",
+   "arm": 2,
+   "arm0": {
+    "sigma": 2.96,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 1.87,
+    "bytes": 14641,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "<task-notification> <task-id>a4b1d0ae441c4003e</task",
+   "arm": 0,
+   "arm0": {
+    "sigma": 2.96,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 1.87,
+    "bytes": 14641,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "Write out the 50 most important results we can get d",
+   "arm": 2,
+   "arm0": {
+    "sigma": 2.56,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 1.87,
+    "bytes": 14561,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "<task-notification> <task-id>ab44378ec8cd4f681</task",
+   "arm": 0,
+   "arm0": {
+    "sigma": 2.8,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 2.62,
+    "bytes": 17635,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "Selection: Outcome A21 (The 100-Hour Operator Ratche",
+   "arm": 2,
+   "arm0": {
+    "sigma": 3.2,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 1.87,
+    "bytes": 14616,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "<task-notification> <task-id>ab6d334fb3624f919</task",
+   "arm": 1,
+   "arm0": {
+    "sigma": 2.8,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 2.62,
+    "bytes": 17635,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "<task-notification> <task-id>ab0b0fd4b5b12838e</task",
+   "arm": 0,
+   "arm0": {
+    "sigma": 2.8,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 2.62,
+    "bytes": 17635,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "<task-notification> <task-id>aec8b2fa974084383</task",
+   "arm": 0,
+   "arm0": {
+    "sigma": 2.86,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 2.62,
+    "bytes": 18165,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "Research sites, people and companies who can actuall",
+   "arm": 2,
+   "arm0": {
+    "sigma": 2.56,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 2.06,
+    "bytes": 15455,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "Email me a list of options and the best use cases th",
+   "arm": 0,
+   "arm0": {
+    "sigma": 2.8,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 2.62,
+    "bytes": 17340,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "/steer /Users/thetacoach/GitHub/thetadrivencoach/doc",
+   "arm": 2,
+   "arm0": {
+    "sigma": 2.62,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 1.87,
+    "bytes": 15950,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "vna steer side panel is not open",
+   "arm": 0,
+   "arm0": {
+    "sigma": 2.61,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 1.9,
+    "bytes": 16346,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "use fable subagents if absolutely needed - we need t",
+   "arm": 1,
+   "arm0": {
+    "sigma": 2.62,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 1.87,
+    "bytes": 15950,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "it says restart required, is that true?",
+   "arm": 0,
+   "arm0": {
+    "sigma": 2.61,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 1.9,
+    "bytes": 16346,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "that opened it",
+   "arm": 0,
+   "arm0": {
+    "sigma": 2.62,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 2.06,
+    "bytes": 15950,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "I said stop splitting the code area into vna steer [",
+   "arm": 1,
+   "arm0": {
+    "sigma": 2.62,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 2.06,
+    "bytes": 15950,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "monitor clipboard, and claude monitor spec and txt f",
+   "arm": 1,
+   "arm0": {
+    "sigma": 2.62,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 1.87,
+    "bytes": 15950,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "we should be able to mine both the clipboard and the",
+   "arm": 2,
+   "arm0": {
+    "sigma": 2.6,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 1.9,
+    "bytes": 16676,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "<task-notification> <task-id>bla23xdwm</task-id> <su",
+   "arm": 0,
+   "arm0": {
+    "sigma": 2.62,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 2.06,
+    "bytes": 15950,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "this is the spec for the full ThetaCog VNA steer to ",
+   "arm": 0,
+   "arm0": {
+    "sigma": 2.8,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 2.62,
+    "bytes": 17635,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "<task-notification> <task-id>bm2dzqx3r</task-id> <su",
+   "arm": 1,
+   "arm0": {
+    "sigma": 2.52,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 1.99,
+    "bytes": 16018,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "remove the panel splitting call [Image #2]",
+   "arm": 0,
+   "arm0": {
+    "sigma": 2.59,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 1.74,
+    "bytes": 16843,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "add the auto paste to the merkle tree subdivision lo",
+   "arm": 1,
+   "arm0": {
+    "sigma": 2.61,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 1.9,
+    "bytes": 16346,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "This is something we have to combine with the work w",
+   "arm": 0,
+   "arm0": {
+    "sigma": 3.32,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 1.87,
+    "bytes": 12174,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "<task-notification> <task-id>a1bcc45d1796ffbd6</task",
+   "arm": 1,
+   "arm0": {
+    "sigma": 3.32,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 1.87,
+    "bytes": 12174,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "comitt all files - and clean up the processes that c",
+   "arm": 1,
+   "arm0": {
+    "sigma": 2.85,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 2.73,
+    "bytes": 18518,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "there are 2k..",
+   "arm": 0,
+   "arm0": {
+    "sigma": 2.8,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 2.62,
+    "bytes": 17340,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "refresh left panel? how do we increase the usability",
+   "arm": 2,
+   "arm0": {
+    "sigma": 2.96,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 1.87,
+    "bytes": 14641,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "nice I see append",
+   "arm": 2,
+   "arm0": {
+    "sigma": 2.59,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 1.99,
+    "bytes": 16843,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "the auto paste worked",
+   "arm": 2,
+   "arm0": {
+    "sigma": 3.32,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 1.87,
+    "bytes": 12174,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "it must be a button in the vns steer left panel",
+   "arm": 0,
+   "arm0": {
+    "sigma": 2.8,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 2.62,
+    "bytes": 17340,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "refresh button or auto refresh on the button",
+   "arm": 1,
+   "arm0": {
+    "sigma": 2.8,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 2.62,
+    "bytes": 17635,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "the file system alert must let you know when both th",
+   "arm": 2,
+   "arm0": {
+    "sigma": 3.19,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 1.9,
+    "bytes": 17295,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "<task-notification> <task-id>a8b0076fdab2f3da7</task",
+   "arm": 2,
+   "arm0": {
+    "sigma": 2.96,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 1.87,
+    "bytes": 14641,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "<task-notification> <task-id>b2qpbhwrm</task-id> <to",
+   "arm": 1,
+   "arm0": {
+    "sigma": 2.8,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 2.62,
+    "bytes": 17635,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "<task-notification> <task-id>b4yaess1x</task-id> <to",
+   "arm": 1,
+   "arm0": {
+    "sigma": 3.32,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 1.87,
+    "bytes": 12174,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "side panel needs to list the watched files (appended",
+   "arm": 1,
+   "arm0": {
+    "sigma": 2.62,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 2.06,
+    "bytes": 15950,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "add it and lets figure out how to auto update the le",
+   "arm": 2,
+   "arm0": {
+    "sigma": 2.96,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 1.88,
+    "bytes": 14641,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "<task-notification> <task-id>b5ud4fz8f</task-id> <to",
+   "arm": 0,
+   "arm0": {
+    "sigma": 2.96,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 1.87,
+    "bytes": 14641,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "is this the prior session or the right one? it is th",
+   "arm": 0,
+   "arm0": {
+    "sigma": 2.62,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 2.06,
+    "bytes": 15950,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "<task-notification> <task-id>bcollmrve</task-id> <su",
+   "arm": 1,
+   "arm0": {
+    "sigma": 2.56,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 2.06,
+    "bytes": 14561,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "add the new decisions by me - was that event fired b",
+   "arm": 2,
+   "arm0": {
+    "sigma": 3.08,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 2.73,
+    "bytes": 15575,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "we need to be smarter about not pasting the pasted f",
+   "arm": 0,
+   "arm0": {
+    "sigma": 2.96,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 1.87,
+    "bytes": 14641,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "<task-notification> <task-id>a8b0076fdab2f3da7</task",
+   "arm": 0,
+   "arm0": {
+    "sigma": 2.96,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 1.87,
+    "bytes": 14641,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "and add the autp paste button to the left panel as a",
+   "arm": 0,
+   "arm0": {
+    "sigma": 2.86,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 2.62,
+    "bytes": 18165,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "**Glance 1: The Health Check (\"Am I on fire?\")**  * ",
+   "arm": 0,
+   "arm0": {
+    "sigma": 2.96,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 1.87,
+    "bytes": 14641,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "lets think that through and make it better than that",
+   "arm": 1,
+   "arm0": {
+    "sigma": 3.09,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 2.06,
+    "bytes": 14561,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "even scroll sideways would be useful, for the spec o",
+   "arm": 1,
+   "arm0": {
+    "sigma": 2.62,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 2.06,
+    "bytes": 15950,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "We need a health check to be obvious. One of the thi",
+   "arm": 1,
+   "arm0": {
+    "sigma": 3.74,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 2.73,
+    "bytes": 16172,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "[Image #4] [Image #5] two issues",
+   "arm": 0,
+   "arm0": {
+    "sigma": 2.59,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 1.74,
+    "bytes": 16843,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "panels were working, do we need to use the repair lo",
+   "arm": 2,
+   "arm0": {
+    "sigma": 3.4,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 2.61,
+    "bytes": 17823,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "I'm a bit concerned that this is kind of a wild west",
+   "arm": 2,
+   "arm0": {
+    "sigma": 2.8,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 2.62,
+    "bytes": 17401,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "its still opening the split file view, on refresh al",
+   "arm": 0,
+   "arm0": {
+    "sigma": 2.96,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 1.87,
+    "bytes": 14641,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "turning off the auto paste seems useful",
+   "arm": 1,
+   "arm0": {
+    "sigma": 2.96,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 1.87,
+    "bytes": 14641,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "[Image #6] ooops that made it worse",
+   "arm": 2,
+   "arm0": {
+    "sigma": 2.62,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 2.06,
+    "bytes": 15950,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "ah you did what I asked",
+   "arm": 1,
+   "arm0": {
+    "sigma": 2.59,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 2.06,
+    "bytes": 15420,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "up right is the split still",
+   "arm": 1,
+   "arm0": {
+    "sigma": 2.8,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 2.62,
+    "bytes": 17340,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "we got the buttons, we need better usability and ove",
+   "arm": 1,
+   "arm0": {
+    "sigma": 2.61,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 1.9,
+    "bytes": 16346,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "intersting, that resets the whole ide which does not",
+   "arm": 0,
+   "arm0": {
+    "sigma": 2.62,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 2.06,
+    "bytes": 15950,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "The sidebar currently reads like a raw debug log rat",
+   "arm": 0,
+   "arm0": {
+    "sigma": 2.59,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 2.06,
+    "bytes": 15420,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "is the tail of the doc ingested into merkle tree, an",
+   "arm": 1,
+   "arm0": {
+    "sigma": 3.12,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 2.73,
+    "bytes": 16753,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "VNA STEER · every number is read from a receipt · no",
+   "arm": 0,
+   "arm0": {
+    "sigma": 2.54,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 1.77,
+    "bytes": 15210,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "<task-notification> <task-id>bl38aul32</task-id> <su",
+   "arm": 2,
+   "arm0": {
+    "sigma": 2.56,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 2.06,
+    "bytes": 14561,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "[Raw Clipboard Snippet (3,375B)]               │    ",
+   "arm": 0,
+   "arm0": {
+    "sigma": 2.63,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 2.58,
+    "bytes": 17459,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "▼ [C] Operations (22 nodes · 42.1k chars · gzip 14.8",
+   "arm": 0,
+   "arm0": {
+    "sigma": 2.52,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 1.99,
+    "bytes": 15454,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "undo the paste if it is a duplicate",
+   "arm": 0,
+   "arm0": {
+    "sigma": 2.59,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 2.06,
+    "bytes": 15420,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "most of those buttons are broken, does the json vers",
+   "arm": 1,
+   "arm0": {
+    "sigma": 3.08,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 2.73,
+    "bytes": 15636,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "and stop with the spec ammendment txt files, that pr",
+   "arm": 1,
+   "arm0": {
+    "sigma": 2.61,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 1.9,
+    "bytes": 16346,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "We need a way to make use of the gzip sensor and the",
+   "arm": 1,
+   "arm0": {
+    "sigma": 3.17,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 2.73,
+    "bytes": 16400,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "Using the gzip-NCD sensor to slice raw ingest into v",
+   "arm": 2,
+   "arm0": {
+    "sigma": 2.62,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 1.9,
+    "bytes": 16786,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "are you reading the tail ?",
+   "arm": 0,
+   "arm0": {
+    "sigma": 2.61,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 1.9,
+    "bytes": 16346,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "spec dag and repo rules (repo sensor snowball slots ",
+   "arm": 1,
+   "arm0": {
+    "sigma": 2.62,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 2.06,
+    "bytes": 15950,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "<task-notification> <task-id>a8b0076fdab2f3da7</task",
+   "arm": 1,
+   "arm0": {
+    "sigma": 2.96,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 1.87,
+    "bytes": 14641,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "list the unimplemented requirements from the file -",
+   "arm": 2,
+   "arm0": {
+    "sigma": 2.62,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 1.87,
+    "bytes": 15950,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "why do we need spec ammendment tt files? stop that..",
+   "arm": 1,
+   "arm0": {
+    "sigma": 2.61,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 1.9,
+    "bytes": 16346,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "[ ] C48 Turn-by-Turn Snowball Seeding (Spec-First An",
+   "arm": 1,
+   "arm0": {
+    "sigma": 2.58,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 1.79,
+    "bytes": 15717,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "<task-notification> <task-id>bypssguf9</task-id> <su",
+   "arm": 2,
+   "arm0": {
+    "sigma": 2.56,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 2.06,
+    "bytes": 14561,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "?? vna steer may have been the actual notification ?",
+   "arm": 0,
+   "arm0": {
+    "sigma": 2.62,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 2.06,
+    "bytes": 15950,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "it supposed to be injected from the extension, what ",
+   "arm": 2,
+   "arm0": {
+    "sigma": 3.74,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 2.73,
+    "bytes": 16058,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "<task-notification> <task-id>bayr3wmm1</task-id> <su",
+   "arm": 2,
+   "arm0": {
+    "sigma": 2.96,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 1.87,
+    "bytes": 14641,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "that would save a lot of tokens",
+   "arm": 0,
+   "arm0": {
+    "sigma": 2.8,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 2.62,
+    "bytes": 17340,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "ahhh sidepanel must do this, alert the operator that",
+   "arm": 2,
+   "arm0": {
+    "sigma": 3.09,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 2.06,
+    "bytes": 14561,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "we need this process to save us tokens, how? remind ",
+   "arm": 0,
+   "arm0": {
+    "sigma": 2.8,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 2.62,
+    "bytes": 17635,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "that needs to be a factor in vna steer panel",
+   "arm": 2,
+   "arm0": {
+    "sigma": 2.61,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 1.9,
+    "bytes": 16346,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "you have the /steer spec",
+   "arm": 0,
+   "arm0": {
+    "sigma": 2.61,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 1.9,
+    "bytes": 16346,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "start from there always",
+   "arm": 0,
+   "arm0": {
+    "sigma": 2.62,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 2.06,
+    "bytes": 15950,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "and you can read the transcript",
+   "arm": 2,
+   "arm0": {
+    "sigma": 2.52,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 1.99,
+    "bytes": 16018,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "clearing often should be low or now cost with this s",
+   "arm": 1,
+   "arm0": {
+    "sigma": 2.64,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 1.72,
+    "bytes": 17251,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "its a key upside of the panel",
+   "arm": 2,
+   "arm0": {
+    "sigma": 2.96,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 2.06,
+    "bytes": 14641,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "when done right",
+   "arm": 2,
+   "arm0": {
+    "sigma": 2.8,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 2.62,
+    "bytes": 17401,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "<task-notification> <task-id>a8b0076fdab2f3da7</task",
+   "arm": 2,
+   "arm0": {
+    "sigma": 2.96,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 1.87,
+    "bytes": 14641,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "Goal set: implement all the features asked for /clea",
+   "arm": 1,
+   "arm0": {
+    "sigma": 3.4,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 2.61,
+    "bytes": 17823,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "Are we running the gzip compression to slide into th",
+   "arm": 0,
+   "arm0": {
+    "sigma": 3.08,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 2.99,
+    "bytes": 15218,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "spec should track a json tree with slotted chunks fr",
+   "arm": 1,
+   "arm0": {
+    "sigma": 2.96,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 1.87,
+    "bytes": 14641,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "for aging decisions in the same slots by tesseract r",
+   "arm": 1,
+   "arm0": {
+    "sigma": 2.62,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 2.06,
+    "bytes": 15950,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "then execute the spec",
+   "arm": 2,
+   "arm0": {
+    "sigma": 2.62,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 2.06,
+    "bytes": 15950,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "How much do we need to go back to the prior work we ",
+   "arm": 0,
+   "arm0": {
+    "sigma": 3.09,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 2.06,
+    "bytes": 14561,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "Make sure all of the progress we did in prior sessio",
+   "arm": 0,
+   "arm0": {
+    "sigma": 2.62,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 1.9,
+    "bytes": 16786,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "Is the snowball hooked up on every turn not just eve",
+   "arm": 0,
+   "arm0": {
+    "sigma": 2.62,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 2.06,
+    "bytes": 15950,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "I thought the snowball was built into the rust pipel",
+   "arm": 0,
+   "arm0": {
+    "sigma": 2.62,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 1.9,
+    "bytes": 16786,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "<task-notification> <task-id>b113atb7g</task-id> <to",
+   "arm": 1,
+   "arm0": {
+    "sigma": 2.8,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 2.62,
+    "bytes": 17635,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "<task-notification> <task-id>bs1h7jt1u</task-id> <to",
+   "arm": 0,
+   "arm0": {
+    "sigma": 2.64,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 2.58,
+    "bytes": 16730,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "<task-notification> <task-id>a307cfa9189219657</task",
+   "arm": 1,
+   "arm0": {
+    "sigma": 2.96,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 1.87,
+    "bytes": 14641,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "<task-notification> <task-id>a88eceda722b59053</task",
+   "arm": 1,
+   "arm0": {
+    "sigma": 2.96,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 1.87,
+    "bytes": 14641,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "<task-notification> <task-id>ab5a3fc0017c57217</task",
+   "arm": 2,
+   "arm0": {
+    "sigma": 2.62,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 2.06,
+    "bytes": 15950,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "<task-notification> <task-id>b9tbbak7s</task-id> <to",
+   "arm": 2,
+   "arm0": {
+    "sigma": 2.66,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 1.87,
+    "bytes": 15697,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "<task-notification> <task-id>bsdzi1efk</task-id> <to",
+   "arm": 2,
+   "arm0": {
+    "sigma": 2.86,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 2.62,
+    "bytes": 18165,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "It is neither a JSON parsing failure nor a broken sp",
+   "arm": 1,
+   "arm0": {
+    "sigma": 3.17,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 2.73,
+    "bytes": 16400,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "Evaluate the trajectory so what I want to be happeni",
+   "arm": 1,
+   "arm0": {
+    "sigma": 2.61,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 1.9,
+    "bytes": 17370,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "<task-notification> <task-id>bjhqge79u</task-id> <to",
+   "arm": 2,
+   "arm0": {
+    "sigma": 3.2,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 1.87,
+    "bytes": 14616,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "Is it that we haven’t built the way to aim the snowb",
+   "arm": 1,
+   "arm0": {
+    "sigma": 2.64,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 1.72,
+    "bytes": 17251,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "Do it let’s try this I’m still not convinced that I ",
+   "arm": 0,
+   "arm0": {
+    "sigma": 2.61,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 1.9,
+    "bytes": 16346,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "redacted@example.com unsubscribed, did the sql run remov",
+   "arm": 1,
+   "arm0": {
+    "sigma": 2.61,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 1.9,
+    "bytes": 16407,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "Explain how the spec uses shortlex and the rust l1 n",
+   "arm": 2,
+   "arm0": {
+    "sigma": 2.62,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 1.87,
+    "bytes": 15950,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "Finish building it all..",
+   "arm": 0,
+   "arm0": {
+    "sigma": 3.1,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 2.83,
+    "bytes": 16366,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "Wiping the terminal with /clear is the zero-cost imm",
+   "arm": 1,
+   "arm0": {
+    "sigma": 2.62,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 2.06,
+    "bytes": 16011,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "What’s left until it works the way I wanted to work",
+   "arm": 1,
+   "arm0": {
+    "sigma": 2.56,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 2.06,
+    "bytes": 14561,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "continue — execute C57 (active leaf default anchor f",
+   "arm": 0,
+   "arm0": {
+    "sigma": 2.61,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 1.9,
+    "bytes": 16346,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "Interesting you to mention the L1 cash ballistic wal",
+   "arm": 1,
+   "arm0": {
+    "sigma": 2.61,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 1.77,
+    "bytes": 16035,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "Correct,? Wire the forest line into the prompt hook ",
+   "arm": 0,
+   "arm0": {
+    "sigma": 3.17,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 2.73,
+    "bytes": 16400,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "Continue? Why is that necessary to say?",
+   "arm": 2,
+   "arm0": {
+    "sigma": 2.61,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 1.9,
+    "bytes": 16346,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "The true architecture of this system is not an IDE h",
+   "arm": 0,
+   "arm0": {
+    "sigma": 3.19,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 1.9,
+    "bytes": 17384,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "Correct what needs to be",
+   "arm": 1,
+   "arm0": {
+    "sigma": 3.08,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 2.73,
+    "bytes": 15575,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "/goal: Complete VNA Part 1 Closure, Audit Open Debt,",
+   "arm": 2,
+   "arm0": {
+    "sigma": 2.61,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 1.9,
+    "bytes": 16346,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "You still have the cc transcript if needed",
+   "arm": 2,
+   "arm0": {
+    "sigma": 2.8,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 2.62,
+    "bytes": 17340,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "# /goal: Complete VNA Flight Tape Notarization, Tess",
+   "arm": 0,
+   "arm0": {
+    "sigma": 3.12,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 2.73,
+    "bytes": 16753,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "/goal: Complete VNA Flight Tape Notarization, Tesser",
+   "arm": 1,
+   "arm0": {
+    "sigma": 3.12,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 2.73,
+    "bytes": 16753,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "lets prep adams meeting and write out the agenda, re",
+   "arm": 0,
+   "arm0": {
+    "sigma": 2.62,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 2.06,
+    "bytes": 15950,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "<task-notification> <task-id>bk3rl1sd1</task-id> <to",
+   "arm": 1,
+   "arm0": {
+    "sigma": 2.96,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 1.87,
+    "bytes": 14641,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "<task-notification> <task-id>bqzdzybru</task-id> <to",
+   "arm": 1,
+   "arm0": {
+    "sigma": 2.96,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 1.87,
+    "bytes": 14641,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "/goal: Progressive Disclosure Cockpit, Attested Back",
+   "arm": 0,
+   "arm0": {
+    "sigma": 0,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 0,
+    "bytes": 6209,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "I need to see the 3 encircled panels update on each ",
+   "arm": 0,
+   "arm0": {
+    "sigma": 2.62,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 2.06,
+    "bytes": 15950,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "confirm the goal references the spec properly and th",
+   "arm": 1,
+   "arm0": {
+    "sigma": 2.67,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 1.9,
+    "bytes": 17171,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "/goal: Progressive Disclosure Cockpit, Three-Panel E",
+   "arm": 2,
+   "arm0": {
+    "sigma": 3.32,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 1.87,
+    "bytes": 12263,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "was the goal accepted?",
+   "arm": 0,
+   "arm0": {
+    "sigma": 2.67,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 1.9,
+    "bytes": 17171,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "or goal update ratchet",
+   "arm": 0,
+   "arm0": {
+    "sigma": 2.62,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 2.06,
+    "bytes": 15950,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "<task-notification> <task-id>burw6rt9x</task-id> <su",
+   "arm": 1,
+   "arm0": {
+    "sigma": 2.61,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 1.9,
+    "bytes": 16346,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "<cross-session-message from=\"uds:/tmp/cc-socks/96902",
+   "arm": 2,
+   "arm0": {
+    "sigma": 2.8,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 2.62,
+    "bytes": 17401,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "<cross-session-message from=\"uds:/tmp/cc-socks/29855",
+   "arm": 0,
+   "arm0": {
+    "sigma": 2.61,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 1.9,
+    "bytes": 16346,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "<task-notification> <task-id>burw6rt9x</task-id> <su",
+   "arm": 0,
+   "arm0": {
+    "sigma": 2.61,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 1.9,
+    "bytes": 16346,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "<cross-session-message from=\"uds:/tmp/cc-socks/96902",
+   "arm": 1,
+   "arm0": {
+    "sigma": 2.56,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 1.87,
+    "bytes": 14622,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "we dont hide all the buttons behind the runner/accou",
+   "arm": 0,
+   "arm0": {
+    "sigma": 2.86,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 2.62,
+    "bytes": 18165,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "access goal etc most used actions need to be above t",
+   "arm": 0,
+   "arm0": {
+    "sigma": 2.8,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 2.62,
+    "bytes": 17340,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "ets make this as high s/n as we can..  To maximize t",
+   "arm": 0,
+   "arm0": {
+    "sigma": 2.8,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 2.62,
+    "bytes": 17401,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "we need the health checks,",
+   "arm": 2,
+   "arm0": {
+    "sigma": 2.52,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 1.99,
+    "bytes": 16018,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "anything that implies active",
+   "arm": 1,
+   "arm0": {
+    "sigma": 2.61,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 1.9,
+    "bytes": 16407,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "/goal: Collaborative Sense-Making Bridge, UI State R",
+   "arm": 1,
+   "arm0": {
+    "sigma": 2.96,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 1.87,
+    "bytes": 14765,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "<task-notification> <task-id>b5yvr45f1</task-id> <to",
+   "arm": 2,
+   "arm0": {
+    "sigma": 2.96,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 1.87,
+    "bytes": 14641,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "is that goal using the steer spec to subdivide into ",
+   "arm": 1,
+   "arm0": {
+    "sigma": 3.12,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 2.73,
+    "bytes": 16753,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "<task-notification> <task-id>bac5pym6o</task-id> <to",
+   "arm": 0,
+   "arm0": {
+    "sigma": 2.96,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 1.87,
+    "bytes": 14641,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "<task-notification> <task-id>buqj2jp1q</task-id> <to",
+   "arm": 0,
+   "arm0": {
+    "sigma": 2.96,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 1.87,
+    "bytes": 14641,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "None selected   Skip to content Using Gmail with scr",
+   "arm": 0,
+   "arm0": {
+    "sigma": 2.86,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 2.62,
+    "bytes": 18165,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "hmm, the dispersion and declared mass etc is wasted,",
+   "arm": 0,
+   "arm0": {
+    "sigma": 2.62,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 2.06,
+    "bytes": 15950,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "We have a big piece of work that hasn't been landed ",
+   "arm": 0,
+   "arm0": {
+    "sigma": 2.86,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 2.62,
+    "bytes": 18165,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "its a health meatric understanding how the 12 transl",
+   "arm": 1,
+   "arm0": {
+    "sigma": 3.17,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 2.73,
+    "bytes": 16400,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "bash open a txt file with a vastly simplified conclu",
+   "arm": 1,
+   "arm0": {
+    "sigma": 2.62,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 1.87,
+    "bytes": 15950,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "way too long, and its not strategy fund - that is th",
+   "arm": 1,
+   "arm0": {
+    "sigma": 2.67,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 1.9,
+    "bytes": 17171,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "reverse engineer what the viewer needs?",
+   "arm": 1,
+   "arm0": {
+    "sigma": 2.56,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 2.06,
+    "bytes": 15455,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "We have to have a very strict and sufficient spec fo",
+   "arm": 0,
+   "arm0": {
+    "sigma": 2.85,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 2.73,
+    "bytes": 18518,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "When you email me the rounds include a full text Stu",
+   "arm": 0,
+   "arm0": {
+    "sigma": 2.85,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 2.73,
+    "bytes": 18518,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "Let’s go harder around this. Make sure that we thoug",
+   "arm": 1,
+   "arm0": {
+    "sigma": 2.64,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 1.72,
+    "bytes": 17251,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "Stop telling developers their current AI workflow is",
+   "arm": 2,
+   "arm0": {
+    "sigma": 3.09,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 1.87,
+    "bytes": 14675,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "Explain how we backed it up",
+   "arm": 2,
+   "arm0": {
+    "sigma": 2.86,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 2.62,
+    "bytes": 18245,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "America snowball is pretty cool but we have to stay ",
+   "arm": 0,
+   "arm0": {
+    "sigma": 2.86,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 2.62,
+    "bytes": 18165,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "Interesting isn’t it? Yeah, the description of the l",
+   "arm": 2,
+   "arm0": {
+    "sigma": 2.62,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 1.87,
+    "bytes": 15950,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "<task-notification> <task-id>a58599eb3202d5cc3</task",
+   "arm": 1,
+   "arm0": {
+    "sigma": 2.96,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 1.87,
+    "bytes": 14730,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "<task-notification> <task-id>a5cc84f2c043d0d85</task",
+   "arm": 1,
+   "arm0": {
+    "sigma": 2.8,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 2.62,
+    "bytes": 17715,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "<task-notification> <task-id>aac713096b72ce33f</task",
+   "arm": 0,
+   "arm0": {
+    "sigma": 2.96,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 1.87,
+    "bytes": 14730,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "<task-notification> <task-id>a05f270367d334acb</task",
+   "arm": 2,
+   "arm0": {
+    "sigma": 3.13,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 2.94,
+    "bytes": 16204,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "The Developer’s Inner Monologue (Seconds 0 to 3) Sec",
+   "arm": 1,
+   "arm0": {
+    "sigma": 2.67,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 1.9,
+    "bytes": 17171,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "<task-notification> <task-id>ab9d54612a549190d</task",
+   "arm": 0,
+   "arm0": {
+    "sigma": 2.96,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 1.87,
+    "bytes": 14641,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "Wire up the signing for running llm calls in app too",
+   "arm": 1,
+   "arm0": {
+    "sigma": 3.19,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 1.9,
+    "bytes": 17295,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "<task-notification> <task-id>a4c3f6b0fa8df24d4</task",
+   "arm": 1,
+   "arm0": {
+    "sigma": 2.96,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 1.87,
+    "bytes": 14730,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "<task-notification> <task-id>a27e11484bb46a0ac</task",
+   "arm": 2,
+   "arm0": {
+    "sigma": 2.96,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 1.87,
+    "bytes": 14765,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "Aim for the ambitous reqs - The system has crossed t",
+   "arm": 2,
+   "arm0": {
+    "sigma": 3.4,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 2.81,
+    "bytes": 17823,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "Uodate spec and aubagent pointing with it still",
+   "arm": 0,
+   "arm0": {
+    "sigma": 2.67,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 1.9,
+    "bytes": 17171,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "Developers do not want a philosophy lecture on Rice'",
+   "arm": 2,
+   "arm0": {
+    "sigma": 3.08,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 2.73,
+    "bytes": 15575,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "<task-notification> <task-id>a46497430828be6f7</task",
+   "arm": 2,
+   "arm0": {
+    "sigma": 2.96,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 1.87,
+    "bytes": 14641,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "<task-notification> <task-id>a25808ccecf985843</task",
+   "arm": 0,
+   "arm0": {
+    "sigma": 2.96,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 2.06,
+    "bytes": 14765,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "Ever watched 40% of your monthly API budget vanish b",
+   "arm": 2,
+   "arm0": {
+    "sigma": 2.54,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 1.77,
+    "bytes": 15540,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "<task-notification> <task-id>afda7337c0691dc1e</task",
+   "arm": 1,
+   "arm0": {
+    "sigma": 2.96,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 1.87,
+    "bytes": 14641,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "No single platform combines deterministic local pack",
+   "arm": 1,
+   "arm0": {
+    "sigma": 3.14,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 1.87,
+    "bytes": 15412,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "I hope these turns use the Merle tree on the aspect ",
+   "arm": 2,
+   "arm0": {
+    "sigma": 2.54,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 1.77,
+    "bytes": 15210,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "I guess that means that we’re open sourcing the exte",
+   "arm": 2,
+   "arm0": {
+    "sigma": 2.52,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 1.99,
+    "bytes": 16018,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "Yes, open source the entire extension. An instrument",
+   "arm": 1,
+   "arm0": {
+    "sigma": 3.19,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 1.9,
+    "bytes": 17295,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "And thing you write on a public surface has to mercy",
+   "arm": 2,
+   "arm0": {
+    "sigma": 3.74,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 2.73,
+    "bytes": 16058,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "Use it but make fun of it",
+   "arm": 0,
+   "arm0": {
+    "sigma": 2.8,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 2.62,
+    "bytes": 17340,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "<task-notification> <task-id>abcf7208e6525913e</task",
+   "arm": 2,
+   "arm0": {
+    "sigma": 2.96,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 2.06,
+    "bytes": 14641,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  },
+  {
+   "prompt": "<task-notification> <task-id>bwcib59v7</task-id> <to",
+   "arm": 1,
+   "arm0": {
+    "sigma": 3.32,
+    "bytes": 0,
+    "sensor": "metal"
+   },
+   "arm1": {
+    "sigma": 1.77,
+    "bytes": 131072,
+    "sensor": "metal"
+   },
+   "arm2": {
+    "sigma": 1.87,
+    "bytes": 12174,
+    "sensor": "metal"
+   },
+   "gripPct": 100
+  }
+ ]
+}

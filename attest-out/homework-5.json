@@ -1,0 +1,12 @@
+{
+  "item": 5,
+  "title": "The counts are lattice-native, never scraped",
+  "files": [
+    "scripts/pmu/triptych-render.mjs",
+    "pmu-rust/src/regions.rs"
+  ],
+  "grounds": "green/amber/red/offPct are integers over Chebyshev block distance on 20,736 cells; regions.rs does pixel work for the ENCIRCLING ONLY (a post-process on the rendered PNG)",
+  "shallow_error_without": "'the counts are OCR-d off a picture' — kills the parametric count->rate->threshold shape by mistake",
+  "files_missing": 0,
+  "read_at": null
+}

@@ -1,0 +1,851 @@
+{
+ "rows": [
+  {
+   "key": "A realistic reader always has SOME reaction — a part still C",
+   "reason": "funnel",
+   "source": "operator-corpus",
+   "at": "2026-09-18T11:34:00.618Z"
+  },
+  {
+   "key": "Again for the hundredth time I’m not sure if this happened b",
+   "reason": "funnel",
+   "source": "operator-corpus",
+   "at": "2026-09-18T11:34:00.618Z"
+  },
+  {
+   "key": "At least it's not clear to me that I'm making sense here. Th",
+   "reason": "funnel",
+   "source": "operator-corpus",
+   "at": "2026-09-18T11:34:00.618Z"
+  },
+  {
+   "key": "Because if it's... if the reef runs in subsecond, we don't n",
+   "reason": "funnel",
+   "source": "operator-corpus",
+   "at": "2026-09-18T11:34:00.618Z"
+  },
+  {
+   "key": "Below is an INDEPENDENT reader's (Elias's) inner monologue o",
+   "reason": "funnel",
+   "source": "operator-corpus",
+   "at": "2026-09-18T11:34:00.618Z"
+  },
+  {
+   "key": "Double check this email should always just be sent the commi",
+   "reason": "funnel",
+   "source": "operator-corpus",
+   "at": "2026-09-18T11:56:20.848Z"
+  },
+  {
+   "key": "I think we have an issue where the, uh, hooks are blocking t",
+   "reason": "funnel",
+   "source": "operator-corpus",
+   "at": "2026-09-18T11:56:20.848Z"
+  },
+  {
+   "key": "It works in the committee males except when it’s ends up com",
+   "reason": "funnel",
+   "source": "operator-corpus",
+   "at": "2026-09-18T11:56:20.848Z"
+  },
+  {
+   "key": "Let's, uh, look at the book and the repo from the higher per",
+   "reason": "funnel",
+   "source": "operator-corpus",
+   "at": "2026-09-18T11:56:20.848Z"
+  },
+  {
+   "key": "Maybe these edits are old, but just looking at the chat, let",
+   "reason": "funnel",
+   "source": "operator-corpus",
+   "at": "2026-09-18T11:56:20.848Z"
+  },
+  {
+   "key": "run it through the onboard OLM until it passes ninety five p",
+   "reason": "funnel",
+   "source": "operator-corpus",
+   "at": "2026-09-18T11:56:20.848Z"
+  },
+  {
+   "key": "Shipped with that example rather than hiding it. - \"Recomput",
+   "reason": "funnel",
+   "source": "operator-corpus",
+   "at": "2026-09-18T11:56:20.848Z"
+  },
+  {
+   "key": "That means that something was wrong with our process. Let’s ",
+   "reason": "funnel",
+   "source": "operator-corpus",
+   "at": "2026-09-18T11:56:20.848Z"
+  },
+  {
+   "key": "That was a failure of procedure is now 703 in a Kia fired we",
+   "reason": "funnel",
+   "source": "operator-corpus",
+   "at": "2026-09-18T11:56:20.848Z"
+  },
+  {
+   "key": "The follow up with Chloe is within an hour or two I guess th",
+   "reason": "funnel",
+   "source": "operator-corpus",
+   "at": "2026-09-18T11:56:20.848Z"
+  },
+  {
+   "key": "The raw text submissions provided by the agent. A status ind",
+   "reason": "funnel",
+   "source": "operator-corpus",
+   "at": "2026-09-18T11:56:20.848Z"
+  },
+  {
+   "key": "the rule is the bloglist must be the og share of the drift e",
+   "reason": "funnel",
+   "source": "operator-corpus",
+   "at": "2026-09-18T11:56:20.848Z"
+  },
+  {
+   "key": "This record strictly contains: A unique, cryptographically h",
+   "reason": "funnel",
+   "source": "operator-corpus",
+   "at": "2026-09-18T11:56:20.848Z"
+  },
+  {
+   "key": "Through a postmortem incident report on why the... one of th",
+   "reason": "funnel",
+   "source": "operator-corpus",
+   "at": "2026-09-18T11:56:20.848Z"
+  },
+  {
+   "key": "Write AND SEND the wrap-up email for tonight's repo-improve-",
+   "reason": "funnel",
+   "source": "operator-corpus",
+   "at": "2026-09-18T11:56:20.848Z"
+  },
+  {
+   "key": "Yeah that’s actually if internal congruence and consistency ",
+   "reason": "funnel",
+   "source": "operator-corpus",
+   "at": "2026-09-18T11:56:20.848Z"
+  },
+  {
+   "key": "chore(blog): cook tape round 7 + panel strip for a-named-lev",
+   "reason": "funnel",
+   "source": "git-log",
+   "at": "2026-09-18T11:56:20.848Z"
+  },
+  {
+   "key": "chore(blog): cook tape rounds 12–13 + panel strip Originatin",
+   "reason": "funnel",
+   "source": "git-log",
+   "at": "2026-09-18T11:56:20.848Z"
+  },
+  {
+   "key": "chore(blog): panel strip for a-named-lever-is-a-handhold (Bo",
+   "reason": "funnel",
+   "source": "git-log",
+   "at": "2026-09-18T11:56:20.848Z"
+  },
+  {
+   "key": "Originating-Terminal: 📐 architect Relevant-Rooms: architect",
+   "reason": "funnel",
+   "source": "git-log",
+   "at": "2026-09-18T11:56:20.848Z"
+  },
+  {
+   "key": "Originating-Terminal: 📐 architect Relevant-Rooms: voice, op",
+   "reason": "funnel",
+   "source": "git-log",
+   "at": "2026-09-18T11:56:20.848Z"
+  },
+  {
+   "key": "test(vna): the C43 wiring assertion reads the chained attest",
+   "reason": "funnel",
+   "source": "git-log",
+   "at": "2026-09-18T11:56:20.848Z"
+  },
+  {
+   "key": "_Overnight loop output. Each section: an angle developed by ",
+   "reason": "funnel",
+   "source": "docs/architecture/batna-reinsurer-wiring-design-smoke.md",
+   "at": "2026-09-18T11:56:20.848Z"
+  },
+  {
+   "key": "\"Deterministic vs probabilistic\" is a red herring — it even ",
+   "reason": "funnel",
+   "source": "docs/architecture/2026-06-20-flip-of-the-flip-retro.md",
+   "at": "2026-09-18T11:56:20.848Z"
+  },
+  {
+   "key": "*Read with [the anti-rules ledger](anti-rules-ledger.md). Th",
+   "reason": "funnel",
+   "source": "docs/architecture/ballistic-walk-the-definer-of-definer.md",
+   "at": "2026-09-18T11:56:20.848Z"
+  },
+  {
+   "key": "// ❌ WRONG: Direct database access class EmailService { asyn",
+   "reason": "funnel",
+   "source": "docs/architecture/CANONICAL_MONOLITH_STYLE_GUIDE.md",
+   "at": "2026-09-18T11:56:20.848Z"
+  },
+  {
+   "key": "// 2. Check pattern matching if (emailType.includes('sufferi",
+   "reason": "funnel",
+   "source": "docs/architecture/UNIFIED_BLAST_SYSTEM_ARCHITECTURE.md",
+   "at": "2026-09-18T11:56:20.848Z"
+  },
+  {
+   "key": "// API routes are THIN wrappers // api/email/send/route.ts e",
+   "reason": "funnel",
+   "source": "docs/architecture/CANONICAL_MONOLITH_STYLE_GUIDE.md",
+   "at": "2026-09-18T11:56:20.848Z"
+  },
+  {
+   "key": "// POST /api/integrations/onboarding/progress export async f",
+   "reason": "funnel",
+   "source": "docs/architecture/EMAIL_VOICE_ONBOARDING_INTEGRATION.md",
+   "at": "2026-09-18T11:56:20.848Z"
+  },
+  {
+   "key": "// POST /api/integrations/onboarding/start export async func",
+   "reason": "funnel",
+   "source": "docs/architecture/EMAIL_VOICE_ONBOARDING_INTEGRATION.md",
+   "at": "2026-09-18T11:56:20.848Z"
+  },
+  {
+   "key": "// POST /api/integrations/voice-email/followup export async ",
+   "reason": "funnel",
+   "source": "docs/architecture/EMAIL_VOICE_ONBOARDING_INTEGRATION.md",
+   "at": "2026-09-18T11:56:20.848Z"
+  },
+  {
+   "key": "──────────────────────────────────────────────────────The fl",
+   "reason": "funnel",
+   "source": "operator-corpus",
+   "at": "2026-09-18T17:22:39.937Z"
+  },
+  {
+   "key": "2. The 5-Minute Promise: It completely lowers the barrier to",
+   "reason": "funnel",
+   "source": "operator-corpus",
+   "at": "2026-09-18T17:22:39.937Z"
+  },
+  {
+   "key": "Accountability when it works for me is not about homework - ",
+   "reason": "funnel",
+   "source": "operator-corpus",
+   "at": "2026-09-18T17:22:39.937Z"
+  },
+  {
+   "key": "Check the rest of the repo. There might be work that has hap",
+   "reason": "funnel",
+   "source": "operator-corpus",
+   "at": "2026-09-18T17:22:39.937Z"
+  },
+  {
+   "key": "Email me the first iteration of the two sided A4 in fact she",
+   "reason": "funnel",
+   "source": "operator-corpus",
+   "at": "2026-09-18T17:22:39.937Z"
+  },
+  {
+   "key": "2. The Gate Catch: The strict gate rejects the hallucinated ",
+   "reason": "funnel",
+   "source": "operator-corpus",
+   "at": "2026-09-18T17:30:57.147Z"
+  },
+  {
+   "key": "3. You don't fit the VC hype-cycle playbook. What you are bu",
+   "reason": "funnel",
+   "source": "operator-corpus",
+   "at": "2026-09-18T17:30:57.147Z"
+  },
+  {
+   "key": "4. The Recovery: The Chebyshev band slams back to 0. The fix",
+   "reason": "funnel",
+   "source": "operator-corpus",
+   "at": "2026-09-18T17:30:57.147Z"
+  },
+  {
+   "key": "Guests may not expect AI to be perfect, but they do expect i",
+   "reason": "funnel",
+   "source": "operator-corpus",
+   "at": "2026-09-18T17:30:57.147Z"
+  },
+  {
+   "key": "Here is exactly why they are not trying to hire you, and why",
+   "reason": "funnel",
+   "source": "operator-corpus",
+   "at": "2026-09-18T17:30:57.147Z"
+  },
+  {
+   "key": "* The Pivot: The \"This is not an IAM\" block cleanly severs t",
+   "reason": "funnel",
+   "source": "operator-corpus",
+   "at": "2026-09-18T18:11:20.036Z"
+  },
+  {
+   "key": "Because it’s reached to verify? That’s what’s on the back of",
+   "reason": "funnel",
+   "source": "operator-corpus",
+   "at": "2026-09-18T18:11:20.036Z"
+  },
+  {
+   "key": "can we trigge work in the other room with the blockchain (no",
+   "reason": "funnel",
+   "source": "operator-corpus",
+   "at": "2026-09-18T18:11:20.036Z"
+  },
+  {
+   "key": "Email me a second pass that you generated on three times gra",
+   "reason": "funnel",
+   "source": "operator-corpus",
+   "at": "2026-09-18T18:11:20.036Z"
+  },
+  {
+   "key": "Email the goal runner for this one what ahould we add? Based",
+   "reason": "funnel",
+   "source": "operator-corpus",
+   "at": "2026-09-18T18:11:20.036Z"
+  },
+  {
+   "key": "--- Subject: Update: Monday Briefing (Agent Liability Standa",
+   "reason": "funnel",
+   "source": "operator-corpus",
+   "at": "2026-09-18T18:25:35.123Z"
+  },
+  {
+   "key": "I’ve attached the calendar invite. Join if this is a bottlen",
+   "reason": "funnel",
+   "source": "operator-corpus",
+   "at": "2026-09-18T18:25:35.123Z"
+  },
+  {
+   "key": "Optimism without structural reality is just hope. The odds a",
+   "reason": "funnel",
+   "source": "operator-corpus",
+   "at": "2026-09-18T18:25:35.123Z"
+  },
+  {
+   "key": "otherwise I will leave the file with you.\" You aren't chasin",
+   "reason": "funnel",
+   "source": "operator-corpus",
+   "at": "2026-09-18T18:25:35.123Z"
+  },
+  {
+   "key": "Recompute any of them yourself: npx thetacog-mcp attest-demo",
+   "reason": "funnel",
+   "source": "operator-corpus",
+   "at": "2026-09-18T18:25:35.123Z"
+  },
+  {
+   "key": "> Enter → Which of these replacements strikes the right bala",
+   "reason": "funnel",
+   "source": "operator-corpus",
+   "at": "2026-09-18T19:58:21.435Z"
+  },
+  {
+   "key": "And they should be involved in the generation of these. So, ",
+   "reason": "funnel",
+   "source": "operator-corpus",
+   "at": "2026-09-18T19:58:21.435Z"
+  },
+  {
+   "key": "Confirm that we are using whatever we need to including it s",
+   "reason": "funnel",
+   "source": "operator-corpus",
+   "at": "2026-09-18T19:58:21.435Z"
+  },
+  {
+   "key": "countable event... and make a new route for all those email ",
+   "reason": "funnel",
+   "source": "operator-corpus",
+   "at": "2026-09-18T19:58:21.435Z"
+  },
+  {
+   "key": "Crucially, the agent also recorded an honest boundary in the",
+   "reason": "funnel",
+   "source": "operator-corpus",
+   "at": "2026-09-18T19:58:21.435Z"
+  },
+  {
+   "key": "'Drop the Blog vector — it reads as housekeeping.' / 'Make t",
+   "reason": "funnel",
+   "source": "operator-corpus",
+   "at": "2026-09-18T20:06:23.442Z"
+  },
+  {
+   "key": "* Organic Depth Accumulation / E1-b (C3): Abandon batch-synt",
+   "reason": "funnel",
+   "source": "operator-corpus",
+   "at": "2026-09-18T20:06:23.442Z"
+  },
+  {
+   "key": "* The Afterwards-Agent (C4): Upgrade the rule-emergence punc",
+   "reason": "funnel",
+   "source": "operator-corpus",
+   "at": "2026-09-18T20:06:23.442Z"
+  },
+  {
+   "key": "* The Near-Miss Harvest (C2): Implement the mastery metric b",
+   "reason": "funnel",
+   "source": "operator-corpus",
+   "at": "2026-09-18T20:06:23.442Z"
+  },
+  {
+   "key": "BUILD (§10.5 open list, highest value first — one iteration ",
+   "reason": "funnel",
+   "source": "operator-corpus",
+   "at": "2026-09-18T20:06:23.442Z"
+  },
+  {
+   "key": "5 min? only wake up cc if there is one (or if the calander i",
+   "reason": "funnel",
+   "source": "operator-corpus",
+   "at": "2026-09-18T21:33:45.811Z"
+  },
+  {
+   "key": "ehh, that is unlikelt to be the grand slam, in the comit hoo",
+   "reason": "funnel",
+   "source": "operator-corpus",
+   "at": "2026-09-18T21:33:45.811Z"
+  },
+  {
+   "key": "examine the pipeline now, the way we decompose the lense to ",
+   "reason": "funnel",
+   "source": "operator-corpus",
+   "at": "2026-09-18T21:33:45.811Z"
+  },
+  {
+   "key": "It’s supposed to be item potent reading the sequel. Are you ",
+   "reason": "funnel",
+   "source": "operator-corpus",
+   "at": "2026-09-18T21:33:45.811Z"
+  },
+  {
+   "key": "lets do this, lets use gcal as the scheduler for ongoing age",
+   "reason": "funnel",
+   "source": "operator-corpus",
+   "at": "2026-09-18T21:33:45.811Z"
+  },
+  {
+   "key": "Here is the exact trajectory we are forcing onto the tape: 1",
+   "reason": "funnel",
+   "source": "operator-corpus",
+   "at": "2026-09-18T21:42:10.357Z"
+  },
+  {
+   "key": "I just responded to an email with this text and I hope that ",
+   "reason": "funnel",
+   "source": "operator-corpus",
+   "at": "2026-09-18T21:42:10.357Z"
+  },
+  {
+   "key": "interestingly they all seem to point to the same comitt rece",
+   "reason": "funnel",
+   "source": "operator-corpus",
+   "at": "2026-09-18T21:42:10.357Z"
+  },
+  {
+   "key": "It goes infinite very quickly that should be the end of the ",
+   "reason": "funnel",
+   "source": "operator-corpus",
+   "at": "2026-09-18T21:42:10.357Z"
+  },
+  {
+   "key": "It must be one of the first things in the commit receipt in ",
+   "reason": "funnel",
+   "source": "operator-corpus",
+   "at": "2026-09-18T21:42:10.357Z"
+  },
+  {
+   "key": "2. Wire mine-operator-prompts.mjs (data/pmu/operator-corpus.",
+   "reason": "funnel",
+   "source": "operator-corpus",
+   "at": "2026-09-18T21:52:23.492Z"
+  },
+  {
+   "key": "And we can actually remove the uh orange entirely. Just remo",
+   "reason": "funnel",
+   "source": "operator-corpus",
+   "at": "2026-09-18T21:52:23.492Z"
+  },
+  {
+   "key": "But if the rush runner, uh, runs subsecond, uh, we can learn",
+   "reason": "funnel",
+   "source": "operator-corpus",
+   "at": "2026-09-18T21:52:23.492Z"
+  },
+  {
+   "key": "Can we inject an improvement to the prompt, uh, on every pro",
+   "reason": "funnel",
+   "source": "operator-corpus",
+   "at": "2026-09-18T21:52:23.492Z"
+  },
+  {
+   "key": "Do not append the full chapter. The constraint is the featur",
+   "reason": "funnel",
+   "source": "operator-corpus",
+   "at": "2026-09-18T21:52:23.492Z"
+  },
+  {
+   "key": "─── 🛰️ PMU Lens · outreach [A.Strategy × A2.Strategy.Goal] ",
+   "reason": "funnel",
+   "source": "operator-corpus",
+   "at": "2026-09-18T22:22:09.711Z"
+  },
+  {
+   "key": "Also it was always the other way around so this points towar",
+   "reason": "funnel",
+   "source": "operator-corpus",
+   "at": "2026-09-18T22:22:09.711Z"
+  },
+  {
+   "key": "could be interesting to post my own job ad, seeking an over ",
+   "reason": "funnel",
+   "source": "operator-corpus",
+   "at": "2026-09-18T22:22:09.711Z"
+  },
+  {
+   "key": "insurable and unplacable? NPLACEABLE: the distance to Intent",
+   "reason": "funnel",
+   "source": "operator-corpus",
+   "at": "2026-09-18T22:22:09.711Z"
+  },
+  {
+   "key": "It never guesses. The Greeks & timings 1.73 σ — placement (g",
+   "reason": "funnel",
+   "source": "operator-corpus",
+   "at": "2026-09-18T22:22:09.711Z"
+  },
+  {
+   "key": "(3) Commit each fix separately; never push. Report only delt",
+   "reason": "funnel",
+   "source": "operator-corpus",
+   "at": "2026-09-18T22:32:51.642Z"
+  },
+  {
+   "key": "Best, Elias Moosman We almost dropped a few bowls here are w",
+   "reason": "funnel",
+   "source": "operator-corpus",
+   "at": "2026-09-18T22:32:51.642Z"
+  },
+  {
+   "key": "Do NOT auto-advance the floor; report it. BUILD (§10.5, one ",
+   "reason": "funnel",
+   "source": "operator-corpus",
+   "at": "2026-09-18T22:32:51.642Z"
+  },
+  {
+   "key": "E1: P1/P2/P3 decided (Go = Orchestration shipped; No-Go = de",
+   "reason": "funnel",
+   "source": "operator-corpus",
+   "at": "2026-09-18T22:32:51.642Z"
+  },
+  {
+   "key": "I’m not sure about that but that’s what I meant so send anot",
+   "reason": "funnel",
+   "source": "operator-corpus",
+   "at": "2026-09-18T22:32:51.642Z"
+  },
+  {
+   "key": "Do each of them all of them can spin a parallel workflow if ",
+   "reason": "funnel",
+   "source": "operator-corpus",
+   "at": "2026-09-18T22:38:45.248Z"
+  },
+  {
+   "key": "Harvest: Auto-revert proven to fire on planted regression.\".",
+   "reason": "funnel",
+   "source": "operator-corpus",
+   "at": "2026-09-18T22:38:45.248Z"
+  },
+  {
+   "key": "Highest value: it is the difference between a loop that heal",
+   "reason": "funnel",
+   "source": "operator-corpus",
+   "at": "2026-09-18T22:38:45.248Z"
+  },
+  {
+   "key": "I just copying the reason running it against itself. I’m gue",
+   "reason": "funnel",
+   "source": "operator-corpus",
+   "at": "2026-09-18T22:38:45.248Z"
+  },
+  {
+   "key": "If pivots fail (stickiness), wire §2.6 Pivot Tripwire/Clutch",
+   "reason": "funnel",
+   "source": "operator-corpus",
+   "at": "2026-09-18T22:38:45.248Z"
+  },
+  {
+   "key": "(admit we are right / reveal to user what is new and unexpec",
+   "reason": "funnel",
+   "source": "operator-corpus",
+   "at": "2026-09-18T22:44:44.707Z"
+  },
+  {
+   "key": "Because we have a repo pick up from our Cement universe is m",
+   "reason": "funnel",
+   "source": "operator-corpus",
+   "at": "2026-09-18T22:44:44.707Z"
+  },
+  {
+   "key": "Everything we do is asynchronous or needs to be. It must be ",
+   "reason": "funnel",
+   "source": "operator-corpus",
+   "at": "2026-09-18T22:44:44.707Z"
+  },
+  {
+   "key": "it’s finding the clusters and covering 5060% or up to 80% of",
+   "reason": "funnel",
+   "source": "operator-corpus",
+   "at": "2026-09-18T22:44:44.707Z"
+  },
+  {
+   "key": "Let’s discuss how important the plan that we can make in the",
+   "reason": "funnel",
+   "source": "operator-corpus",
+   "at": "2026-09-18T22:44:44.707Z"
+  },
+  {
+   "key": "add the fields for prompt in, lense sql rules out, rules out",
+   "reason": "funnel",
+   "source": "operator-corpus",
+   "at": "2026-09-18T23:30:24.808Z"
+  },
+  {
+   "key": "Because, uh, otherwise, it's just going to be reading the le",
+   "reason": "funnel",
+   "source": "operator-corpus",
+   "at": "2026-09-18T23:30:24.808Z"
+  },
+  {
+   "key": "But it only works if the baseline tape is clean first. Say g",
+   "reason": "funnel",
+   "source": "operator-corpus",
+   "at": "2026-09-18T23:30:24.808Z"
+  },
+  {
+   "key": "Collect Clean Tape: Let the fixed loop run to establish a re",
+   "reason": "funnel",
+   "source": "operator-corpus",
+   "at": "2026-09-18T23:30:24.808Z"
+  },
+  {
+   "key": "Execute the Completeness Test: Only then take those sealed c",
+   "reason": "funnel",
+   "source": "operator-corpus",
+   "at": "2026-09-18T23:30:24.808Z"
+  },
+  {
+   "key": "Keep working on this until we get it all hooked up together ",
+   "reason": "funnel",
+   "source": "operator-corpus",
+   "at": "2026-09-18T23:31:40.505Z"
+  },
+  {
+   "key": "lets publish a real delegation receipt instead of Verify any",
+   "reason": "funnel",
+   "source": "operator-corpus",
+   "at": "2026-09-18T23:31:40.505Z"
+  },
+  {
+   "key": "Maybe that’s how it went wrong for all the dozens of philia ",
+   "reason": "funnel",
+   "source": "operator-corpus",
+   "at": "2026-09-18T23:31:40.505Z"
+  },
+  {
+   "key": "Option 1: Focus on Boundaries (Recommended) > “To remain com",
+   "reason": "funnel",
+   "source": "operator-corpus",
+   "at": "2026-09-18T23:31:40.505Z"
+  },
+  {
+   "key": "Ran 1 shell command Verified—and the trajectory shows clean ",
+   "reason": "funnel",
+   "source": "operator-corpus",
+   "at": "2026-09-18T23:31:40.505Z"
+  },
+  {
+   "key": "Don’t just read the transcripts also read the repo and it’s ",
+   "reason": "funnel",
+   "source": "operator-corpus",
+   "at": "2026-09-18T23:31:46.145Z"
+  },
+  {
+   "key": "insurer can buy for them at markup (or insist they deprecate",
+   "reason": "funnel",
+   "source": "operator-corpus",
+   "at": "2026-09-18T23:31:46.145Z"
+  },
+  {
+   "key": "It means decidable if I’m wrong about this tell me how we do",
+   "reason": "funnel",
+   "source": "operator-corpus",
+   "at": "2026-09-18T23:31:46.145Z"
+  },
+  {
+   "key": "outstanding, qwen can tell a story about the comitt message,",
+   "reason": "funnel",
+   "source": "operator-corpus",
+   "at": "2026-09-18T23:31:46.145Z"
+  },
+  {
+   "key": "We should have some kind of way to rank the epicentres clust",
+   "reason": "funnel",
+   "source": "operator-corpus",
+   "at": "2026-09-18T23:31:46.145Z"
+  },
+  {
+   "key": "(3) If no new finding remains, instead advance the next [ ] ",
+   "reason": "funnel",
+   "source": "operator-corpus",
+   "at": "2026-09-18T23:58:59.925Z"
+  },
+  {
+   "key": "I mean, how cool is that? Um also, but as long as we don't g",
+   "reason": "funnel",
+   "source": "operator-corpus",
+   "at": "2026-09-18T23:58:59.925Z"
+  },
+  {
+   "key": "It is the exact separation of duties mandated by Sarbanes-Ox",
+   "reason": "funnel",
+   "source": "operator-corpus",
+   "at": "2026-09-18T23:58:59.925Z"
+  },
+  {
+   "key": "Judge if the deliverable satisfies the spec. One short sente",
+   "reason": "funnel",
+   "source": "operator-corpus",
+   "at": "2026-09-18T23:58:59.925Z"
+  },
+  {
+   "key": "lets confirm the facts and definitions before going forward.",
+   "reason": "funnel",
+   "source": "operator-corpus",
+   "at": "2026-09-18T23:58:59.925Z"
+  },
+  {
+   "key": "'Is it good?' is undecidable. 'Where did it land?' is decida",
+   "reason": "funnel",
+   "source": "operator-corpus",
+   "at": "2026-09-19T00:07:15.391Z"
+  },
+  {
+   "key": "Competence isn't a score. It's a shape: a region on a map sh",
+   "reason": "funnel",
+   "source": "operator-corpus",
+   "at": "2026-09-19T00:07:15.391Z"
+  },
+  {
+   "key": "I don’t expect to reply from them. I expect that to be somet",
+   "reason": "funnel",
+   "source": "operator-corpus",
+   "at": "2026-09-19T00:07:15.391Z"
+  },
+  {
+   "key": "I just told him I enjoy his weekend. I’m always working so f",
+   "reason": "funnel",
+   "source": "operator-corpus",
+   "at": "2026-09-19T00:07:15.391Z"
+  },
+  {
+   "key": "If you’re within five minutes it’s not you know make it work",
+   "reason": "funnel",
+   "source": "operator-corpus",
+   "at": "2026-09-19T00:07:15.391Z"
+  },
+  {
+   "key": "actually the email subject should be of the delegator room, ",
+   "reason": "funnel",
+   "source": "operator-corpus",
+   "at": "2026-09-19T00:18:38.779Z"
+  },
+  {
+   "key": "This reason about it first yes that means that we use the me",
+   "reason": "funnel",
+   "source": "operator-corpus",
+   "at": "2026-09-19T00:18:38.779Z"
+  },
+  {
+   "key": "This touches on the reader’s perspective of how decisions ar",
+   "reason": "funnel",
+   "source": "operator-corpus",
+   "at": "2026-09-19T00:18:38.779Z"
+  },
+  {
+   "key": "Very concerning, the prior bloglist image worked, that is th",
+   "reason": "funnel",
+   "source": "operator-corpus",
+   "at": "2026-09-19T00:18:38.779Z"
+  },
+  {
+   "key": "What is what? What’s the best claim we can make? Is the most",
+   "reason": "funnel",
+   "source": "operator-corpus",
+   "at": "2026-09-19T00:18:38.779Z"
+  },
+  {
+   "key": "the ollama monologue should be post comitt hook maybe? if at",
+   "reason": "funnel",
+   "source": "operator-corpus",
+   "at": "2026-09-19T00:30:27.224Z"
+  },
+  {
+   "key": "We are not able to apply it here or can we apply it to this ",
+   "reason": "funnel",
+   "source": "operator-corpus",
+   "at": "2026-09-19T00:30:27.224Z"
+  },
+  {
+   "key": "What do you recommend? How can we do that? First of all push",
+   "reason": "funnel",
+   "source": "operator-corpus",
+   "at": "2026-09-19T00:30:27.224Z"
+  },
+  {
+   "key": "your sentences there. And if you, uh, do the most meaningful",
+   "reason": "funnel",
+   "source": "operator-corpus",
+   "at": "2026-09-19T00:30:27.224Z"
+  },
+  {
+   "key": "Banned-word grep clean: no determinism/deterministic, confin",
+   "reason": "funnel",
+   "source": "git-log",
+   "at": "2026-09-19T00:30:27.224Z"
+  },
+  {
+   "key": "Am I right? Or is there some kind of way to argue that LMs a",
+   "reason": "funnel",
+   "source": "operator-corpus",
+   "at": "2026-09-19T01:56:03.897Z"
+  },
+  {
+   "key": "Because that would be an argument that you could try to do a",
+   "reason": "funnel",
+   "source": "operator-corpus",
+   "at": "2026-09-19T01:56:03.897Z"
+  },
+  {
+   "key": "I created an AI chief of staff that themes my work day by or",
+   "reason": "funnel",
+   "source": "operator-corpus",
+   "at": "2026-09-19T01:56:03.897Z"
+  },
+  {
+   "key": "It was not a bad call. My day was great. I made a huge pirat",
+   "reason": "funnel",
+   "source": "operator-corpus",
+   "at": "2026-09-19T01:56:03.897Z"
+  },
+  {
+   "key": "It’s forced to look at the rust code and see what it’s doing",
+   "reason": "funnel",
+   "source": "operator-corpus",
+   "at": "2026-09-19T01:56:03.897Z"
+  }
+ ],
+ "updated_at": "2026-09-19T01:56:03.897Z"
+}

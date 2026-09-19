@@ -1,0 +1,20 @@
+{
+  "label": "SIMULATED BOOK — every number below is caps x simulated events, uncalibrated",
+  "settled_events": 1,
+  "source": "repo tape (1044 rows)",
+  "pints": 1,
+  "gpu_credit_hours": 40,
+  "accredited_man_hours": 16,
+  "derivatives_on_top": {
+    "note": "the layer OTHERS write on this series — we license the oracle, we never issue",
+    "instruments": [
+      "competence cat bond (pool attachment on settled-event rate)",
+      "options on the off-lane spread",
+      "SLA-linked notes"
+    ],
+    "quote_commands": [
+      "npx thetacog-mcp premium",
+      "npx thetacog-mcp variance"
+    ]
+  }
+}
