@@ -1,0 +1,146 @@
+{
+  "at": "2026-08-21T09:05:47.173Z",
+  "coord": "A,B3",
+  "domain": "tesseract",
+  "hat": "Strategist×Herald",
+  "regions": [
+    {
+      "kind": 3,
+      "coord": "B3,B3",
+      "hat": "Herald",
+      "name": "B3.Tactics.Signal × B3.Tactics.Signal → ~market-posture · posture positioning market narrative"
+    }
+  ],
+  "inLane": [],
+  "outOfLane": [
+    {
+      "coord": "A2,A2",
+      "hat": "Aim-Setter"
+    },
+    {
+      "coord": "A2,A3",
+      "hat": "Aim-Setter×Treasurer"
+    },
+    {
+      "coord": "A2,B1",
+      "hat": "Aim-Setter×Pacesetter"
+    },
+    {
+      "coord": "A2,B2",
+      "hat": "Aim-Setter×Dealmaker"
+    },
+    {
+      "coord": "A2,B3",
+      "hat": "Aim-Setter×Herald"
+    },
+    {
+      "coord": "A2,C1",
+      "hat": "Aim-Setter×Gridkeeper"
+    },
+    {
+      "coord": "A2,C3",
+      "hat": "Aim-Setter×Flowkeeper"
+    },
+    {
+      "coord": "A3,A3",
+      "hat": "Treasurer"
+    },
+    {
+      "coord": "A3,B1",
+      "hat": "Treasurer×Pacesetter"
+    },
+    {
+      "coord": "A3,B2",
+      "hat": "Treasurer×Dealmaker"
+    },
+    {
+      "coord": "A3,C2",
+      "hat": "Treasurer×Loopkeeper"
+    },
+    {
+      "coord": "A3,C3",
+      "hat": "Treasurer×Flowkeeper"
+    },
+    {
+      "coord": "B1,B1",
+      "hat": "Pacesetter"
+    },
+    {
+      "coord": "B1,B2",
+      "hat": "Pacesetter×Dealmaker"
+    },
+    {
+      "coord": "B1,C2",
+      "hat": "Pacesetter×Loopkeeper"
+    },
+    {
+      "coord": "B1,C3",
+      "hat": "Pacesetter×Flowkeeper"
+    },
+    {
+      "coord": "B2,B1",
+      "hat": "Dealmaker×Pacesetter"
+    },
+    {
+      "coord": "B2,B2",
+      "hat": "Dealmaker"
+    },
+    {
+      "coord": "B2,C2",
+      "hat": "Dealmaker×Loopkeeper"
+    },
+    {
+      "coord": "B2,C3",
+      "hat": "Dealmaker×Flowkeeper"
+    },
+    {
+      "coord": "B3,C2",
+      "hat": "Herald×Loopkeeper"
+    },
+    {
+      "coord": "C1,C2",
+      "hat": "Gridkeeper×Loopkeeper"
+    },
+    {
+      "coord": "C2,A3",
+      "hat": "Loopkeeper×Treasurer"
+    },
+    {
+      "coord": "C2,B1",
+      "hat": "Loopkeeper×Pacesetter"
+    },
+    {
+      "coord": "C2,B2",
+      "hat": "Loopkeeper×Dealmaker"
+    },
+    {
+      "coord": "C2,B3",
+      "hat": "Loopkeeper×Herald"
+    },
+    {
+      "coord": "C2,C1",
+      "hat": "Loopkeeper×Gridkeeper"
+    },
+    {
+      "coord": "C2,C2",
+      "hat": "Loopkeeper"
+    },
+    {
+      "coord": "C2,C3",
+      "hat": "Loopkeeper×Flowkeeper"
+    },
+    {
+      "coord": "C3,B1",
+      "hat": "Flowkeeper×Pacesetter"
+    },
+    {
+      "coord": "C3,B2",
+      "hat": "Flowkeeper×Dealmaker"
+    },
+    {
+      "coord": "C3,C2",
+      "hat": "Flowkeeper×Loopkeeper"
+    }
+  ],
+  "prompt": "THIS cycle seated: A2,B3 (A2.Strategy.Goal ⊕ B3.Tactics.Signal) · three beats for the transactio (refresh) [The target is the cell coordinate the system MUST occupy by end-of-quarter. Anything that do"
+}

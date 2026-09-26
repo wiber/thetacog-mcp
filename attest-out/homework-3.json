@@ -1,0 +1,12 @@
+{
+  "item": 3,
+  "title": "Halting is by construction; the null is the sensitive part",
+  "files": [
+    "pmu-rust/src/ballistic.rs",
+    "scripts/pmu/triptych-build.mjs"
+  ],
+  "grounds": "max_depth + decay + weight_floor + hop budget: a total function. budgetMs 600000 = wall clock as last resort only. Measured: sigma drift ran through the eight IMPOSTOR-NULL shuffles while both walks sat converged",
+  "shallow_error_without": "'nondeterministic walk' — or auditing walk budgets while sigma drifts through the null underneath",
+  "files_missing": 0,
+  "read_at": null
+}

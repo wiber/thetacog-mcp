@@ -1,0 +1,18 @@
+{
+  "artifact": "rice-proof-fixture",
+  "note": "First run of `thetacog-mcp prove-rice --check` re-runs this payload and asserts the Oracle reproduces the verdict + σ byte-for-byte. Software (the judge) cannot make this guarantee.",
+  "spec": "Deliverable must hold the Strategy lane: long-horizon direction, mandate, sovereignty.",
+  "authorized_cells": [
+    "A",
+    "A1",
+    "A2"
+  ],
+  "threshold": 2,
+  "K": 5,
+  "winner_mix": 0.5,
+  "payload": "The lattice we build today is what next year's underwriter inherits. We set the substrate that downstream pricing rides on, and that choice is paid back across every quarter we keep operating. Direction is what you keep when you forget the calendar. Multi-year posture, irreversibly chosen, defines the boundary every quarter renegotiates inside. Strategy Each iteration is a hypothesis tested against the ground truth of the world. Loops shorter than the feedback half-life waste the half-life; loops longer than it pay compounding interest on the wait. Cycles compound when each turn's exhaust feeds the next turn's intake. Closed loops compound; open loops decay. The closing of the loop IS the productivity, not the running of it. Iteration discipline:",
+  "expected_verdict": "IN_ROLE",
+  "expected_sigma": 3.1110429320875985,
+  "expected_oracle_body_sha256": "4b50b6c2707fcd74a0e3a2f373a8e0bc7b2e72403ce3b56166fa975bd6ccd3bb",
+  "generated_with": "stochastic-stand-in-judge"
+}

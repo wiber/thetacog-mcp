@@ -1,0 +1,395 @@
+{
+  "name": "thetacog-mcp",
+  "displayName": "ThetaCog Steer: Double-Entry Bookkeeping for Autonomy",
+  "description": "Flying, and it saves you tokens. How? Double-entry bookkeeping for autonomy",
+  "version": "0.3.53",
+  "publisher": "thetadriven",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/wiber/thetacog-mcp",
+    "directory": "vscode-extension"
+  },
+  "bugs": {
+    "url": "https://github.com/wiber/thetacog-mcp/issues"
+  },
+  "pricing": "Free",
+  "galleryBanner": {
+    "color": "#0b0f14",
+    "theme": "dark"
+  },
+  "qna": "marketplace",
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "Visualization",
+    "Testing",
+    "Other"
+  ],
+  "keywords": [
+    "thetacog",
+    "vna",
+    "drift",
+    "receipts",
+    "semantic",
+    "commit",
+    "governance",
+    "attestation",
+    "tokens",
+    "context",
+    "context window",
+    "claude code",
+    "cursor",
+    "agent cost"
+  ],
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "vna.openCockpit",
+        "title": "Steer: Open Semantic Cockpit (3 encircled panels)"
+      },
+      {
+        "command": "vna.refreshCockpit",
+        "title": "Steer: Refresh Cockpit"
+      },
+      {
+        "command": "vna.copyPayload",
+        "title": "Steer: 📋 export — copy cockpit + spec state to the clipboard"
+      },
+      {
+        "command": "vna.copySpec",
+        "title": "Steer: Copy Spec State to Clipboard"
+      },
+      {
+        "command": "vna.openSpec",
+        "title": "Steer: Open the Spec Document"
+      },
+      {
+        "command": "vna.cycle",
+        "title": "Steer: Cycle (attractor envelope — both arms, pick, re-run)"
+      },
+      {
+        "command": "vna.copyCycleCard",
+        "title": "Steer: Copy the Last Envelope Card to Clipboard"
+      },
+      {
+        "command": "vna.steer",
+        "title": "Steer: Run the Loop (sensors · map · spec · chip walk)"
+      },
+      {
+        "command": "vna.openSteerPage",
+        "title": "Steer: Open the Last Steer Page (no re-run)"
+      },
+      {
+        "command": "vna.steerThisFile",
+        "title": "Steer: 📄 follow .txt — point the tail watcher + the Claude hook at the active .txt, then Steer"
+      },
+      {
+        "command": "vna.checkTail",
+        "title": "Steer: Check the Tail of the Steer File (amendment, not a command)"
+      },
+      {
+        "command": "vna.openAmendments",
+        "title": "Steer: Open the Amendments Ledger"
+      },
+      {
+        "command": "vna.preview",
+        "title": "Steer: Preview the Working Tree (where would this land if committed now?)"
+      },
+      {
+        "command": "vna.toggleCheck",
+        "title": "Steer: Tick a Checklist Item (runs its acceptance first)"
+      },
+      {
+        "command": "vna.run.cockpit",
+        "title": "Steer: Refresh the Chip Walk"
+      },
+      {
+        "command": "vna.run.envelope",
+        "title": "Steer: Refresh Both Arms"
+      },
+      {
+        "command": "vna.run.spec",
+        "title": "Steer: Refresh the Spec Page"
+      },
+      {
+        "command": "vna.run.net",
+        "title": "Steer: Refresh the Net"
+      },
+      {
+        "command": "vna.run.specTree",
+        "title": "Steer: Refresh the Spec Tree"
+      },
+      {
+        "command": "vna.pasteToTree",
+        "title": "Steer: Paste → Tree — arm the clipboard and fold every new row into the spec tree"
+      },
+      {
+        "command": "vna.copyResearch",
+        "title": "Steer: 🧠 Copy Prompt Bundle — active leaf + drift zones + open invariants, with the handshake (C36)"
+      },
+      {
+        "command": "vna.clearClaudeTerminal",
+        "title": "Steer: ⚡ /clear the terminal — one click, only when the gauge says the tree holds everything"
+      },
+      {
+        "command": "vna.clipArm",
+        "title": "Steer: 🟢 auto-paste — arm the clipboard → steer file (every copy appends to the file open)"
+      },
+      {
+        "command": "vna.clipIngest",
+        "title": "Steer: ⤵ Ingest Clipboard — one click: clipboard → steer file (clip stamp) → ledger row → fold; prints N new · M attached · R RELEASED"
+      },
+      {
+        "command": "vna.audioArm",
+        "title": "Steer: 🎙️ audio — arm the audio basin (mic → local whisper → .thetacog/audio/stream.txt → the tree on a timer)"
+      },
+      {
+        "command": "vna.audioDisarm",
+        "title": "Steer: Disarm the Audio Basin"
+      },
+      {
+        "command": "vna.audioAutobuildOn",
+        "title": "Steer: 🔨 auto-build — dispatch the parts of what the mic hears that the walk admits (≤ 2 cycles, $20 each)"
+      },
+      {
+        "command": "vna.audioAutobuildOff",
+        "title": "Steer: Stop Auto-Building from Audio"
+      },
+      {
+        "command": "vna.audioOpen",
+        "title": "Steer: 🎙️ Audio Stream — open the transcript txt"
+      },
+      {
+        "command": "vna.clipDisarm",
+        "title": "Steer: Disarm the Clipboard"
+      },
+      {
+        "command": "vna.runGoal",
+        "title": "Steer: ⚡ Run Headless — the goal, one ephemeral worker per open unit"
+      },
+      {
+        "command": "vna.abortGoal",
+        "title": "Steer: 🛑 Abort Worker — the headless runner's process group"
+      },
+      {
+        "command": "vna.openEnginesConfig",
+        "title": "Steer: ⚙️🔑 Engine & Keys — pick the worker, set its keys (SecretStorage), claim licences to this machine"
+      },
+      {
+        "command": "vna.openChat",
+        "title": "Steer: 💬 Steer chat — the same chat as the 💬 pill, in the sidebar; a steer verb runs /steer, only 🌳 Fold to Tree moves text"
+      },
+      {
+        "command": "vna.setChatModel",
+        "title": "Steer: 💬 control loop — the model the Steer chat reasons and acts with (C198 role chat; the pill's dropdown and ⚙️🔑 Engine & Keys write this one setting)"
+      },
+      {
+        "command": "vna.getChatModel",
+        "title": "Steer: 💬 control loop — read the model the Steer chat will ask for: the picked tag, the setting, or the fallback (C198; ⚙️🔑 Engine & Keys reads it through this one door)"
+      },
+      {
+        "command": "vna.setSubagentHands",
+        "title": "Steer: 🤖 subagent hands — the model a dispatched /steer worker runs on: a local tag = goose-local + that tag, claude -p = the claude preset (C201a, one door)"
+      },
+      {
+        "command": "vna.useLocalEngine",
+        "title": "Steer: 💬 Use the local model instead of the default (claude -p) subagents (runner-resolver.mjs set --preset goose-local)"
+      },
+      {
+        "command": "vna.useClaudeEngine",
+        "title": "Steer: 💬 Use the default (claude -p) for subagents (runner-resolver.mjs set --preset claude-code-headless)"
+      },
+      {
+        "command": "vna.engineBoot",
+        "title": "Steer: ⏵ Boot the local engine (launchctl enable + bootstrap com.thetacog.ollama)"
+      },
+      {
+        "command": "vna.engineHalt",
+        "title": "Steer: ⏹ Halt the local engine (launchctl bootout com.thetacog.ollama)"
+      },
+      {
+        "command": "vna.copyGoal",
+        "title": "Steer: Copy the goal in execution order"
+      },
+      {
+        "command": "vna.refreshPage",
+        "title": "Steer: Refresh the side panel (repaint from receipts, no sensors)"
+      },
+      {
+        "command": "vna.reloadWindow",
+        "title": "Steer: Reload Window (mount the installed extension build)"
+      },
+      {
+        "command": "vna.viewUnit",
+        "title": "Steer: 📄 View Unit Contract — the current unit's spec row, its invariants and its guard"
+      },
+      {
+        "command": "vna.openFile",
+        "title": "Steer: 📎 Open a receipt the page names — data/vna, docs/specs/vna or .thetacog, inside the repo only"
+      },
+      {
+        "command": "vna.openGuard",
+        "title": "Steer: 🧪 Open Red Witness — the unit's guard, the file its spec row names; absent → not on disk"
+      },
+      {
+        "command": "vna.inspectHalt",
+        "title": "Steer: 🔍 Inspect Halt Reason — the halt row runner.ndjson wrote, in its own words"
+      },
+      {
+        "command": "vna.syncTape",
+        "title": "Steer: ☁️ Sync tape — send the signed rows the notary has not seen (one credit per witnessed commit)"
+      },
+      {
+        "command": "vna.ingestGoal",
+        "title": "Steer: 📥 Ingest Refined Goal — the clipboard through goal.mjs import --validate --install"
+      },
+      {
+        "command": "vna.copyRunSummary",
+        "title": "Steer: 📋 Copy Run Summary — one line for the team, every term from a receipt"
+      },
+      {
+        "command": "vna.signTape",
+        "title": "Steer: 🔏 Sign this tape (HEAD's row onto the tape under your own key — free, local, nothing leaves the machine)"
+      },
+      {
+        "command": "vna.notariseTape",
+        "title": "Steer: 💳 Fund Autonomy Ledger (buy keys on thetadriven.com/notarise — the key lands in SecretStorage by the poll, then stamps your rows locally; nothing uploaded)"
+      },
+      {
+        "command": "vna.backupTape",
+        "title": "Steer: 🔗 Countersign (backup) — licence credits: bundle to .thetacog/backup/<sha>.tar.gz, then open thetadriven.com/backup?manifest=<sha>"
+      },
+      {
+        "command": "vna.connect",
+        "title": "Steer: 🔑 Connect / Buy credits (device flow on the tape's own key — login, payment and the licence happen on thetadriven.com)"
+      },
+      {
+        "command": "vna.disconnect",
+        "title": "Steer: 🔑 Disconnect (remove the entitlement from the secret store)"
+      },
+      {
+        "command": "vna.enterEntitlement",
+        "title": "Steer: 🔑 Paste licence key — the licence by hand, the bypass under ⋮ on the ledger pill (if the vscode:// return did not open — verified before it is stored)"
+      },
+      {
+        "command": "vna.amendBasin",
+        "title": "Steer: Auto-Amend Spec Basin (the drift is the work)",
+        "category": "ThetaCog"
+      },
+      {
+        "command": "vna.revertDrift",
+        "title": "Steer: Revert Drift Changes (git restore the drifted paths)",
+        "category": "ThetaCog"
+      },
+      {
+        "command": "vna.openWalk",
+        "title": "Steer: ↗ Open the walk — the cockpit page and the walk tape (C103f: the card is a link)"
+      },
+      {
+        "command": "vna.viewAperture",
+        "title": "Steer: 🔍 View Aperture Receipt — read-only: the spec basins that were intent, the files at the commit that were reality, κ, ω (C116)"
+      },
+      {
+        "command": "vna.recomputeReceipt",
+        "title": "Steer: 🔁 Recompute this receipt — re-derive it from the immutable commit + the aperture tuple; match / MISMATCH / UNMEASURED with both hashes, one pasteable line for docs/receipts/third-party-recompute.md (C241)"
+      },
+      {
+        "command": "vna.openCog",
+        "title": "Steer: ↗ Open the cog ledger — data/vna/cog.ndjson and the peg"
+      },
+      {
+        "command": "vna.openRunLog",
+        "title": "Steer: ↗ Open the runner log — .thetacog/runner.ndjson"
+      },
+      {
+        "command": "vna.openTape",
+        "title": "Steer: ↗ Open the tape — the flight tape, editable never; read it"
+      },
+      {
+        "command": "vna.openBridge",
+        "title": "Steer: ↗ Open the steer file — the .txt the loop follows and the last research bundle"
+      },
+      {
+        "command": "vna.openTree",
+        "title": "Steer: ↗ Open the tree — data/vna/spec-tree.txt"
+      }
+    ],
+    "configuration": {
+      "title": "ThetaCog Steer",
+      "properties": {
+        "vna.chat.model": {
+          "type": "string",
+          "default": "gemma2:2b",
+          "description": "The ollama tag 💬 Steer chat asks for (C198: gemma for the control chat, qwen for local subagents — both settable on ⚙️🔑 Engine & Keys) until you pick one in its selector. A tag that is not installed is shown as not installed — never silently swapped for another."
+        },
+        "vna.refreshOnSave": {
+          "type": "boolean",
+          "default": false,
+          "description": "Re-run the Steer cockpit 1.5s after a save. Off by default: the pipeline walks the chip and writes shared cache, so the panel is a per-turn read-out, not a live linter."
+        },
+        "vna.showStatusBar": {
+          "type": "boolean",
+          "default": true,
+          "description": "Show the last walk's placement in the status bar. Reads data/vna/cockpit.json; shows \"not run\" when no walk has been run rather than a number."
+        },
+        "vna.authBase": {
+          "type": "string",
+          "default": "",
+          "description": "Authorization server base for the device flow (device · token · keys). Empty = https://thetadriven.com/api/auth."
+        }
+      }
+    },
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "thetacog",
+          "title": "ThetaCog Steer: Double-Entry Bookkeeping for Autonomy",
+          "icon": "media/thetacog.svg"
+        }
+      ]
+    },
+    "views": {
+      "thetacog": [
+        {
+          "type": "webview",
+          "id": "thetacog.steer",
+          "name": "Steer — where the work landed",
+          "contextualTitle": "ThetaCog Steer"
+        },
+        {
+          "type": "webview",
+          "id": "thetacog.chat",
+          "name": "💬 Steer chat",
+          "contextualTitle": "ThetaCog Chat"
+        }
+      ]
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "package": "vsce package && node scripts/vsix-to-desktop.mjs",
+    "publish": "vsce publish",
+    "release": "node scripts/release.mjs",
+    "release:publish": "node scripts/release.mjs --publish"
+  },
+  "devDependencies": {
+    "@types/node": "^20.10.0",
+    "@types/vscode": "^1.85.0",
+    "@vscode/vsce": "^2.22.0",
+    "typescript": "^5.3.0"
+  },
+  "author": {
+    "name": "ThetaDriven Inc",
+    "email": "elias@thetadriven.com"
+  },
+  "license": "MIT",
+  "icon": "icon.png",
+  "homepage": "https://thetadriven.com"
+}

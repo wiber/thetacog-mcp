@@ -1,0 +1,2347 @@
+{
+ "note": "The walkable compression map, measured: reef mass + repo grip. Gripped = best-cell gzip-NCD <= GRIP_CEILING (shared with reef-demand FIT_CEILING). The frontier is the harvest demand, computed.",
+ "head": "3a9b9f9e9",
+ "grip_ceiling": 0.92,
+ "reef": {
+  "cells": 144,
+  "chars": 203531,
+  "min_cell": 671,
+  "median_cell": 1477
+ },
+ "territory": {
+  "files": 8976,
+  "sections_graded": 322
+ },
+ "grip": {
+  "sections_gripped": 163,
+  "pct": 50.6
+ },
+ "frontier": [
+  {
+   "section": "docs/analytics",
+   "files": 14,
+   "cell": "C3,A3",
+   "fit": 0.9701,
+   "gripped": false
+  },
+  {
+   "section": "docs/troubleshooting",
+   "files": 10,
+   "cell": "A1,C2",
+   "fit": 0.9694,
+   "gripped": false
+  },
+  {
+   "section": "src/hooks",
+   "files": 12,
+   "cell": "B1,C3",
+   "fit": 0.9672,
+   "gripped": false
+  },
+  {
+   "section": "docs/02-technical",
+   "files": 200,
+   "cell": "A2,A1",
+   "fit": 0.9666,
+   "gripped": false
+  },
+  {
+   "section": "docs/crm",
+   "files": 208,
+   "cell": "A1,B",
+   "fit": 0.9655,
+   "gripped": false
+  },
+  {
+   "section": "docs/engagement-analysis",
+   "files": 13,
+   "cell": "B,B1",
+   "fit": 0.9653,
+   "gripped": false
+  },
+  {
+   "section": "docs/synergies",
+   "files": 11,
+   "cell": "A1,A2",
+   "fit": 0.9651,
+   "gripped": false
+  },
+  {
+   "section": "docs/crm-gtm-strategy",
+   "files": 13,
+   "cell": "B2,A2",
+   "fit": 0.9649,
+   "gripped": false
+  },
+  {
+   "section": "docs/partnerships",
+   "files": 10,
+   "cell": "A1,A2",
+   "fit": 0.9649,
+   "gripped": false
+  },
+  {
+   "section": "docs/integrations",
+   "files": 14,
+   "cell": "A2,B2",
+   "fit": 0.9647,
+   "gripped": false
+  }
+ ],
+ "sections": [
+  {
+   "section": "CLAUDE.md",
+   "files": 1,
+   "cell": "C,C",
+   "fit": 0.8777,
+   "gripped": true
+  },
+  {
+   "section": "docs/00-admin",
+   "files": 36,
+   "cell": "A1,C3",
+   "fit": 0.9593,
+   "gripped": false
+  },
+  {
+   "section": "docs/00-overview",
+   "files": 33,
+   "cell": "A1,A",
+   "fit": 0.9582,
+   "gripped": false
+  },
+  {
+   "section": "docs/01-business",
+   "files": 1052,
+   "cell": "A1,C3",
+   "fit": 0.9598,
+   "gripped": false
+  },
+  {
+   "section": "docs/02-engineering",
+   "files": 90,
+   "cell": "A1,C3",
+   "fit": 0.9622,
+   "gripped": false
+  },
+  {
+   "section": "docs/02-product",
+   "files": 34,
+   "cell": "A1,C",
+   "fit": 0.9639,
+   "gripped": false
+  },
+  {
+   "section": "docs/02-technical",
+   "files": 200,
+   "cell": "A2,A1",
+   "fit": 0.9666,
+   "gripped": false
+  },
+  {
+   "section": "docs/03-engineering",
+   "files": 17,
+   "cell": "A1,A",
+   "fit": 0.952,
+   "gripped": false
+  },
+  {
+   "section": "docs/03-features",
+   "files": 371,
+   "cell": "A1,C3",
+   "fit": 0.9535,
+   "gripped": false
+  },
+  {
+   "section": "docs/03-product",
+   "files": 167,
+   "cell": "A1,C3",
+   "fit": 0.9592,
+   "gripped": false
+  },
+  {
+   "section": "docs/04-analysis",
+   "files": 42,
+   "cell": "A1,C1",
+   "fit": 0.9639,
+   "gripped": false
+  },
+  {
+   "section": "docs/04-fim",
+   "files": 80,
+   "cell": "A1,B",
+   "fit": 0.9594,
+   "gripped": false
+  },
+  {
+   "section": "docs/04-fim-technology",
+   "files": 4,
+   "cell": "A1,C1",
+   "fit": 0.9118,
+   "gripped": true
+  },
+  {
+   "section": "docs/04-infrastructure",
+   "files": 6,
+   "cell": "A1,B",
+   "fit": 0.9441,
+   "gripped": false
+  },
+  {
+   "section": "docs/05-content",
+   "files": 215,
+   "cell": "A1,C3",
+   "fit": 0.9594,
+   "gripped": false
+  },
+  {
+   "section": "docs/05-style-guides",
+   "files": 46,
+   "cell": "A1,C",
+   "fit": 0.9568,
+   "gripped": false
+  },
+  {
+   "section": "docs/06-operations",
+   "files": 53,
+   "cell": "A1,A",
+   "fit": 0.9635,
+   "gripped": false
+  },
+  {
+   "section": "docs/07-development",
+   "files": 48,
+   "cell": "A1,C3",
+   "fit": 0.9517,
+   "gripped": false
+  },
+  {
+   "section": "docs/08-learnings",
+   "files": 29,
+   "cell": "A,A2",
+   "fit": 0.9591,
+   "gripped": false
+  },
+  {
+   "section": "docs/09-external",
+   "files": 6,
+   "cell": "B,C1",
+   "fit": 0.93,
+   "gripped": false
+  },
+  {
+   "section": "docs/3d-models",
+   "files": 32,
+   "cell": "A1,B",
+   "fit": 0.964,
+   "gripped": false
+  },
+  {
+   "section": "docs/99-archive",
+   "files": 5,
+   "cell": "A1,C3",
+   "fit": 0.9282,
+   "gripped": false
+  },
+  {
+   "section": "docs/RESOLUTIONS",
+   "files": 4,
+   "cell": "A1,B",
+   "fit": 0.9166,
+   "gripped": true
+  },
+  {
+   "section": "docs/alignment-cycles",
+   "files": 2,
+   "cell": "B2,B2",
+   "fit": 0.8996,
+   "gripped": true
+  },
+  {
+   "section": "docs/analysis",
+   "files": 1,
+   "cell": "C,C",
+   "fit": 0.875,
+   "gripped": true
+  },
+  {
+   "section": "docs/analytics",
+   "files": 14,
+   "cell": "C3,A3",
+   "fit": 0.9701,
+   "gripped": false
+  },
+  {
+   "section": "docs/analytics-reports",
+   "files": 1,
+   "cell": "C,C",
+   "fit": 0.9069,
+   "gripped": true
+  },
+  {
+   "section": "docs/api",
+   "files": 2,
+   "cell": "A1,A1",
+   "fit": 0.8879,
+   "gripped": true
+  },
+  {
+   "section": "docs/architecture",
+   "files": 152,
+   "cell": "A2,A1",
+   "fit": 0.9382,
+   "gripped": false
+  },
+  {
+   "section": "docs/archive",
+   "files": 1,
+   "cell": "A,A",
+   "fit": 0.9087,
+   "gripped": true
+  },
+  {
+   "section": "docs/attorney-package-2026-03",
+   "files": 2,
+   "cell": "C3,C3",
+   "fit": 0.8949,
+   "gripped": true
+  },
+  {
+   "section": "docs/attorney-package-2026-03-06",
+   "files": 10,
+   "cell": "A1,B",
+   "fit": 0.9534,
+   "gripped": false
+  },
+  {
+   "section": "docs/battlecards",
+   "files": 1,
+   "cell": "C2,C2",
+   "fit": 0.8838,
+   "gripped": true
+  },
+  {
+   "section": "docs/blast-system",
+   "files": 2,
+   "cell": "A1,A1",
+   "fit": 0.8737,
+   "gripped": true
+  },
+  {
+   "section": "docs/blast-voice-integration",
+   "files": 1,
+   "cell": "C,C",
+   "fit": 0.883,
+   "gripped": true
+  },
+  {
+   "section": "docs/blog",
+   "files": 8,
+   "cell": "A1,A",
+   "fit": 0.9479,
+   "gripped": false
+  },
+  {
+   "section": "docs/blog-research",
+   "files": 1,
+   "cell": "C,C",
+   "fit": 0.8803,
+   "gripped": true
+  },
+  {
+   "section": "docs/book",
+   "files": 44,
+   "cell": "A1,C3",
+   "fit": 0.9626,
+   "gripped": false
+  },
+  {
+   "section": "docs/build-prevention",
+   "files": 9,
+   "cell": "A3,B1",
+   "fit": 0.9535,
+   "gripped": false
+  },
+  {
+   "section": "docs/business",
+   "files": 15,
+   "cell": "A1,B",
+   "fit": 0.9627,
+   "gripped": false
+  },
+  {
+   "section": "docs/campaigns",
+   "files": 2,
+   "cell": "B2,B2",
+   "fit": 0.8805,
+   "gripped": true
+  },
+  {
+   "section": "docs/capital",
+   "files": 1,
+   "cell": "B2,B2",
+   "fit": 0.865,
+   "gripped": true
+  },
+  {
+   "section": "docs/challenger-os-strategy",
+   "files": 10,
+   "cell": "C3,C1",
+   "fit": 0.947,
+   "gripped": false
+  },
+  {
+   "section": "docs/champions",
+   "files": 3,
+   "cell": "A3,A",
+   "fit": 0.8974,
+   "gripped": true
+  },
+  {
+   "section": "docs/claude-alignment",
+   "files": 39,
+   "cell": "A1,A2",
+   "fit": 0.9639,
+   "gripped": false
+  },
+  {
+   "section": "docs/claude-extension",
+   "files": 8,
+   "cell": "A,A1",
+   "fit": 0.9528,
+   "gripped": false
+  },
+  {
+   "section": "docs/cognitive-rooms-npm",
+   "files": 2,
+   "cell": "C2,C2",
+   "fit": 0.8518,
+   "gripped": true
+  },
+  {
+   "section": "docs/coherence-cycles",
+   "files": 155,
+   "cell": "A1,A3",
+   "fit": 0.9613,
+   "gripped": false
+  },
+  {
+   "section": "docs/comms",
+   "files": 502,
+   "cell": "A1,B1",
+   "fit": 0.9467,
+   "gripped": false
+  },
+  {
+   "section": "docs/contacts",
+   "files": 1,
+   "cell": "C,C",
+   "fit": 0.8883,
+   "gripped": true
+  },
+  {
+   "section": "docs/crm",
+   "files": 208,
+   "cell": "A1,B",
+   "fit": 0.9655,
+   "gripped": false
+  },
+  {
+   "section": "docs/crm-gtm-strategy",
+   "files": 13,
+   "cell": "B2,A2",
+   "fit": 0.9649,
+   "gripped": false
+  },
+  {
+   "section": "docs/cycles",
+   "files": 1,
+   "cell": "C,C",
+   "fit": 0.9069,
+   "gripped": true
+  },
+  {
+   "section": "docs/data-room",
+   "files": 2,
+   "cell": "C2,C2",
+   "fit": 0.8811,
+   "gripped": true
+  },
+  {
+   "section": "docs/database",
+   "files": 1,
+   "cell": "A1,A1",
+   "fit": 0.882,
+   "gripped": true
+  },
+  {
+   "section": "docs/dataroom",
+   "files": 2,
+   "cell": "A,A",
+   "fit": 0.9028,
+   "gripped": true
+  },
+  {
+   "section": "docs/decks",
+   "files": 7,
+   "cell": "A,C",
+   "fit": 0.9524,
+   "gripped": false
+  },
+  {
+   "section": "docs/deployment",
+   "files": 2,
+   "cell": "A1,A1",
+   "fit": 0.9034,
+   "gripped": true
+  },
+  {
+   "section": "docs/development",
+   "files": 2,
+   "cell": "A3,A3",
+   "fit": 0.8744,
+   "gripped": true
+  },
+  {
+   "section": "docs/email",
+   "files": 1,
+   "cell": "C,C",
+   "fit": 0.891,
+   "gripped": true
+  },
+  {
+   "section": "docs/endorsements-outreach",
+   "files": 5,
+   "cell": "C,A1",
+   "fit": 0.9325,
+   "gripped": false
+  },
+  {
+   "section": "docs/engagement-analysis",
+   "files": 13,
+   "cell": "B,B1",
+   "fit": 0.9653,
+   "gripped": false
+  },
+  {
+   "section": "docs/engagement-cycles",
+   "files": 3,
+   "cell": "A3,B",
+   "fit": 0.9207,
+   "gripped": false
+  },
+  {
+   "section": "docs/engagement-system",
+   "files": 2,
+   "cell": "A1,A1",
+   "fit": 0.8878,
+   "gripped": true
+  },
+  {
+   "section": "docs/engineering-principles",
+   "files": 2,
+   "cell": "A1,A1",
+   "fit": 0.8869,
+   "gripped": true
+  },
+  {
+   "section": "docs/events",
+   "files": 1,
+   "cell": "B2,B2",
+   "fit": 0.8872,
+   "gripped": true
+  },
+  {
+   "section": "docs/evidence",
+   "files": 1,
+   "cell": "A1,A1",
+   "fit": 0.9034,
+   "gripped": true
+  },
+  {
+   "section": "docs/examples",
+   "files": 2,
+   "cell": "A,A",
+   "fit": 0.8831,
+   "gripped": true
+  },
+  {
+   "section": "docs/features",
+   "files": 1,
+   "cell": "C,C",
+   "fit": 0.8617,
+   "gripped": true
+  },
+  {
+   "section": "docs/fim",
+   "files": 7,
+   "cell": "A1,C3",
+   "fit": 0.9476,
+   "gripped": false
+  },
+  {
+   "section": "docs/fim-authority",
+   "files": 8,
+   "cell": "A1,C3",
+   "fit": 0.9491,
+   "gripped": false
+  },
+  {
+   "section": "docs/fim-iam",
+   "files": 2,
+   "cell": "C2,C2",
+   "fit": 0.9171,
+   "gripped": true
+  },
+  {
+   "section": "docs/fim-patent",
+   "files": 39,
+   "cell": "A1,C",
+   "fit": 0.9536,
+   "gripped": false
+  },
+  {
+   "section": "docs/fim-phosita-enablement",
+   "files": 9,
+   "cell": "A1,A3",
+   "fit": 0.9522,
+   "gripped": false
+  },
+  {
+   "section": "docs/fim-stories",
+   "files": 8,
+   "cell": "A1,A3",
+   "fit": 0.9461,
+   "gripped": false
+  },
+  {
+   "section": "docs/fim-validation",
+   "files": 1,
+   "cell": "C3,C3",
+   "fit": 0.8496,
+   "gripped": true
+  },
+  {
+   "section": "docs/fixes",
+   "files": 1,
+   "cell": "C,C",
+   "fit": 0.8537,
+   "gripped": true
+  },
+  {
+   "section": "docs/frameworks-concepts",
+   "files": 2,
+   "cell": "C3,C3",
+   "fit": 0.8862,
+   "gripped": true
+  },
+  {
+   "section": "docs/fundraising",
+   "files": 5,
+   "cell": "A1,B",
+   "fit": 0.9331,
+   "gripped": false
+  },
+  {
+   "section": "docs/funnel",
+   "files": 1,
+   "cell": "B3,B3",
+   "fit": 0.8596,
+   "gripped": true
+  },
+  {
+   "section": "docs/gtm",
+   "files": 10,
+   "cell": "A1,A3",
+   "fit": 0.9465,
+   "gripped": false
+  },
+  {
+   "section": "docs/gtm-strategy",
+   "files": 2,
+   "cell": "A1,A1",
+   "fit": 0.8865,
+   "gripped": true
+  },
+  {
+   "section": "docs/iamfim",
+   "files": 8,
+   "cell": "A1,B3",
+   "fit": 0.9534,
+   "gripped": false
+  },
+  {
+   "section": "docs/implementation",
+   "files": 1,
+   "cell": "C,C",
+   "fit": 0.9069,
+   "gripped": true
+  },
+  {
+   "section": "docs/incident-reports",
+   "files": 2,
+   "cell": "B2,B2",
+   "fit": 0.8776,
+   "gripped": true
+  },
+  {
+   "section": "docs/incidents",
+   "files": 45,
+   "cell": "A1,C3",
+   "fit": 0.9549,
+   "gripped": false
+  },
+  {
+   "section": "docs/integrations",
+   "files": 14,
+   "cell": "A2,B2",
+   "fit": 0.9647,
+   "gripped": false
+  },
+  {
+   "section": "docs/intentguard",
+   "files": 7,
+   "cell": "A,C",
+   "fit": 0.9447,
+   "gripped": false
+  },
+  {
+   "section": "docs/ip",
+   "files": 1,
+   "cell": "C2,C2",
+   "fit": 0.8789,
+   "gripped": true
+  },
+  {
+   "section": "docs/ken-yi-strategy",
+   "files": 3,
+   "cell": "A1,B",
+   "fit": 0.907,
+   "gripped": true
+  },
+  {
+   "section": "docs/lattice-corpus",
+   "files": 38,
+   "cell": "A1,A2",
+   "fit": 0.9269,
+   "gripped": false
+  },
+  {
+   "section": "docs/launch-plan",
+   "files": 2,
+   "cell": "A1,A1",
+   "fit": 0.9213,
+   "gripped": false
+  },
+  {
+   "section": "docs/leads-analysis",
+   "files": 1,
+   "cell": "C,C",
+   "fit": 0.8777,
+   "gripped": true
+  },
+  {
+   "section": "docs/learnings",
+   "files": 1,
+   "cell": "C,C",
+   "fit": 0.8777,
+   "gripped": true
+  },
+  {
+   "section": "docs/legal",
+   "files": 18,
+   "cell": "A1,B",
+   "fit": 0.947,
+   "gripped": false
+  },
+  {
+   "section": "docs/lessons-learned",
+   "files": 2,
+   "cell": "B2,B2",
+   "fit": 0.9014,
+   "gripped": true
+  },
+  {
+   "section": "docs/marketing",
+   "files": 4,
+   "cell": "C,C",
+   "fit": 0.9492,
+   "gripped": false
+  },
+  {
+   "section": "docs/mcp",
+   "files": 6,
+   "cell": "A1,C3",
+   "fit": 0.9388,
+   "gripped": false
+  },
+  {
+   "section": "docs/meetings",
+   "files": 19,
+   "cell": "C1,B",
+   "fit": 0.9641,
+   "gripped": false
+  },
+  {
+   "section": "docs/migrations",
+   "files": 2,
+   "cell": "A1,A1",
+   "fit": 0.9201,
+   "gripped": false
+  },
+  {
+   "section": "docs/notebooklm-transcripts",
+   "files": 4,
+   "cell": "A3,A1",
+   "fit": 0.9397,
+   "gripped": false
+  },
+  {
+   "section": "docs/notes",
+   "files": 2,
+   "cell": "A1,A1",
+   "fit": 0.8848,
+   "gripped": true
+  },
+  {
+   "section": "docs/nudges",
+   "files": 1,
+   "cell": "C,C",
+   "fit": 0.8963,
+   "gripped": true
+  },
+  {
+   "section": "docs/oh-moments",
+   "files": 11,
+   "cell": "A1,A2",
+   "fit": 0.9621,
+   "gripped": false
+  },
+  {
+   "section": "docs/ops",
+   "files": 116,
+   "cell": "A3,A1",
+   "fit": 0.961,
+   "gripped": false
+  },
+  {
+   "section": "docs/outreach",
+   "files": 77,
+   "cell": "A1,A",
+   "fit": 0.9589,
+   "gripped": false
+  },
+  {
+   "section": "docs/partnerships",
+   "files": 10,
+   "cell": "A1,A2",
+   "fit": 0.9649,
+   "gripped": false
+  },
+  {
+   "section": "docs/patent",
+   "files": 24,
+   "cell": "A1,A2",
+   "fit": 0.9501,
+   "gripped": false
+  },
+  {
+   "section": "docs/patent-cognitive-flow-analysis",
+   "files": 1,
+   "cell": "B3,B3",
+   "fit": 0.8772,
+   "gripped": true
+  },
+  {
+   "section": "docs/patents",
+   "files": 6,
+   "cell": "A1,A1",
+   "fit": 0.9631,
+   "gripped": false
+  },
+  {
+   "section": "docs/pdf-generation",
+   "files": 4,
+   "cell": "C3,C",
+   "fit": 0.9097,
+   "gripped": true
+  },
+  {
+   "section": "docs/personal",
+   "files": 2,
+   "cell": "C,C",
+   "fit": 0.8793,
+   "gripped": true
+  },
+  {
+   "section": "docs/physics",
+   "files": 2,
+   "cell": "C2,C2",
+   "fit": 0.8944,
+   "gripped": true
+  },
+  {
+   "section": "docs/pixel",
+   "files": 1,
+   "cell": "C,C",
+   "fit": 0.8457,
+   "gripped": true
+  },
+  {
+   "section": "docs/planning",
+   "files": 5,
+   "cell": "B,C1",
+   "fit": 0.9396,
+   "gripped": false
+  },
+  {
+   "section": "docs/plans",
+   "files": 16,
+   "cell": "A1,C3",
+   "fit": 0.9525,
+   "gripped": false
+  },
+  {
+   "section": "docs/pmu",
+   "files": 15,
+   "cell": "A2,A1",
+   "fit": 0.9416,
+   "gripped": false
+  },
+  {
+   "section": "docs/podcast",
+   "files": 3,
+   "cell": "A,A",
+   "fit": 0.8998,
+   "gripped": true
+  },
+  {
+   "section": "docs/postmortems",
+   "files": 7,
+   "cell": "A1,B2",
+   "fit": 0.9438,
+   "gripped": false
+  },
+  {
+   "section": "docs/private",
+   "files": 1,
+   "cell": "C,C",
+   "fit": 0.867,
+   "gripped": true
+  },
+  {
+   "section": "docs/reference",
+   "files": 15,
+   "cell": "A1,C3",
+   "fit": 0.9604,
+   "gripped": false
+  },
+  {
+   "section": "docs/reports",
+   "files": 139,
+   "cell": "B1,A3",
+   "fit": 0.9567,
+   "gripped": false
+  },
+  {
+   "section": "docs/research",
+   "files": 20,
+   "cell": "A1,C3",
+   "fit": 0.9562,
+   "gripped": false
+  },
+  {
+   "section": "docs/sales",
+   "files": 8,
+   "cell": "A1,B",
+   "fit": 0.9464,
+   "gripped": false
+  },
+  {
+   "section": "docs/scratchpad",
+   "files": 1,
+   "cell": "A1,A1",
+   "fit": 0.9163,
+   "gripped": true
+  },
+  {
+   "section": "docs/semantic-indexability-proof",
+   "files": 3,
+   "cell": "A1,A1",
+   "fit": 0.9068,
+   "gripped": true
+  },
+  {
+   "section": "docs/shoot",
+   "files": 23,
+   "cell": "B1,A2",
+   "fit": 0.9369,
+   "gripped": false
+  },
+  {
+   "section": "docs/skip-formula",
+   "files": 2,
+   "cell": "A3,A3",
+   "fit": 0.8889,
+   "gripped": true
+  },
+  {
+   "section": "docs/social",
+   "files": 1,
+   "cell": "C,C",
+   "fit": 0.8617,
+   "gripped": true
+  },
+  {
+   "section": "docs/speaking",
+   "files": 6,
+   "cell": "B2,A2",
+   "fit": 0.952,
+   "gripped": false
+  },
+  {
+   "section": "docs/specs",
+   "files": 49,
+   "cell": "A,A1",
+   "fit": 0.9504,
+   "gripped": false
+  },
+  {
+   "section": "docs/steer-cycles",
+   "files": 6,
+   "cell": "C2,A2",
+   "fit": 0.8947,
+   "gripped": true
+  },
+  {
+   "section": "docs/strategic-analysis",
+   "files": 2,
+   "cell": "A1,A1",
+   "fit": 0.8988,
+   "gripped": true
+  },
+  {
+   "section": "docs/strategy",
+   "files": 61,
+   "cell": "A1,A3",
+   "fit": 0.9486,
+   "gripped": false
+  },
+  {
+   "section": "docs/strategy-documents",
+   "files": 6,
+   "cell": "A1,B",
+   "fit": 0.932,
+   "gripped": false
+  },
+  {
+   "section": "docs/style-guides",
+   "files": 1,
+   "cell": "C,C",
+   "fit": 0.867,
+   "gripped": true
+  },
+  {
+   "section": "docs/superpowers",
+   "files": 14,
+   "cell": "B1,A1",
+   "fit": 0.9511,
+   "gripped": false
+  },
+  {
+   "section": "docs/synergies",
+   "files": 11,
+   "cell": "A1,A2",
+   "fit": 0.9651,
+   "gripped": false
+  },
+  {
+   "section": "docs/technical",
+   "files": 2,
+   "cell": "A1,A1",
+   "fit": 0.8974,
+   "gripped": true
+  },
+  {
+   "section": "docs/templates",
+   "files": 2,
+   "cell": "A1,A1",
+   "fit": 0.8884,
+   "gripped": true
+  },
+  {
+   "section": "docs/tesseract-game",
+   "files": 2,
+   "cell": "A1,A1",
+   "fit": 0.8743,
+   "gripped": true
+  },
+  {
+   "section": "docs/thought-leadership",
+   "files": 1,
+   "cell": "C,C",
+   "fit": 0.8564,
+   "gripped": true
+  },
+  {
+   "section": "docs/troubleshooting",
+   "files": 10,
+   "cell": "A1,C2",
+   "fit": 0.9694,
+   "gripped": false
+  },
+  {
+   "section": "docs/underwriting",
+   "files": 2,
+   "cell": "A1,A1",
+   "fit": 0.8737,
+   "gripped": true
+  },
+  {
+   "section": "docs/ventures",
+   "files": 17,
+   "cell": "A1,A",
+   "fit": 0.9511,
+   "gripped": false
+  },
+  {
+   "section": "docs/video-scripts",
+   "files": 2,
+   "cell": "B1,B1",
+   "fit": 0.8987,
+   "gripped": true
+  },
+  {
+   "section": "docs/voice",
+   "files": 48,
+   "cell": "A1,B",
+   "fit": 0.9574,
+   "gripped": false
+  },
+  {
+   "section": "docs/youtube",
+   "files": 2,
+   "cell": "A1,A1",
+   "fit": 0.895,
+   "gripped": true
+  },
+  {
+   "section": "scripts/analytics",
+   "files": 6,
+   "cell": "A1,A",
+   "fit": 0.9445,
+   "gripped": false
+  },
+  {
+   "section": "scripts/benchmark",
+   "files": 4,
+   "cell": "A,A2",
+   "fit": 0.92,
+   "gripped": false
+  },
+  {
+   "section": "scripts/blog",
+   "files": 24,
+   "cell": "B1,C2",
+   "fit": 0.9545,
+   "gripped": false
+  },
+  {
+   "section": "scripts/book",
+   "files": 11,
+   "cell": "A1,A3",
+   "fit": 0.9529,
+   "gripped": false
+  },
+  {
+   "section": "scripts/bookclub",
+   "files": 83,
+   "cell": "A1,B",
+   "fit": 0.9525,
+   "gripped": false
+  },
+  {
+   "section": "scripts/central",
+   "files": 2,
+   "cell": "B3,B3",
+   "fit": 0.8717,
+   "gripped": true
+  },
+  {
+   "section": "scripts/channels",
+   "files": 7,
+   "cell": "B2,C2",
+   "fit": 0.9289,
+   "gripped": false
+  },
+  {
+   "section": "scripts/chat",
+   "files": 49,
+   "cell": "B3,A1",
+   "fit": 0.9513,
+   "gripped": false
+  },
+  {
+   "section": "scripts/cockpit",
+   "files": 2,
+   "cell": "A3,A3",
+   "fit": 0.8943,
+   "gripped": true
+  },
+  {
+   "section": "scripts/cog",
+   "files": 22,
+   "cell": "A1,C3",
+   "fit": 0.9523,
+   "gripped": false
+  },
+  {
+   "section": "scripts/comms",
+   "files": 45,
+   "cell": "A1,B3",
+   "fit": 0.9515,
+   "gripped": false
+  },
+  {
+   "section": "scripts/controller",
+   "files": 16,
+   "cell": "B2,C3",
+   "fit": 0.9557,
+   "gripped": false
+  },
+  {
+   "section": "scripts/db",
+   "files": 4,
+   "cell": "A1,C2",
+   "fit": 0.8996,
+   "gripped": true
+  },
+  {
+   "section": "scripts/deck",
+   "files": 3,
+   "cell": "A3,B1",
+   "fit": 0.8973,
+   "gripped": true
+  },
+  {
+   "section": "scripts/delegation",
+   "files": 4,
+   "cell": "B1,A1",
+   "fit": 0.8925,
+   "gripped": true
+  },
+  {
+   "section": "scripts/digest",
+   "files": 3,
+   "cell": "A1,A1",
+   "fit": 0.9092,
+   "gripped": true
+  },
+  {
+   "section": "scripts/distill",
+   "files": 1,
+   "cell": "B3,B3",
+   "fit": 0.8596,
+   "gripped": true
+  },
+  {
+   "section": "scripts/economics",
+   "files": 2,
+   "cell": "A1,A1",
+   "fit": 0.8652,
+   "gripped": true
+  },
+  {
+   "section": "scripts/elicit",
+   "files": 50,
+   "cell": "A1,B1",
+   "fit": 0.9507,
+   "gripped": false
+  },
+  {
+   "section": "scripts/experiments",
+   "files": 2,
+   "cell": "B2,B2",
+   "fit": 0.8656,
+   "gripped": true
+  },
+  {
+   "section": "scripts/fanout",
+   "files": 1,
+   "cell": "C,C",
+   "fit": 0.8617,
+   "gripped": true
+  },
+  {
+   "section": "scripts/fundraise",
+   "files": 1,
+   "cell": "C,C",
+   "fit": 0.8644,
+   "gripped": true
+  },
+  {
+   "section": "scripts/funnel",
+   "files": 7,
+   "cell": "A1,C1",
+   "fit": 0.9339,
+   "gripped": false
+  },
+  {
+   "section": "scripts/gcal-agent",
+   "files": 5,
+   "cell": "B2,C3",
+   "fit": 0.9369,
+   "gripped": false
+  },
+  {
+   "section": "scripts/gdd",
+   "files": 9,
+   "cell": "A2,A1",
+   "fit": 0.9445,
+   "gripped": false
+  },
+  {
+   "section": "scripts/gdd-rules",
+   "files": 11,
+   "cell": "C3,A3",
+   "fit": 0.9582,
+   "gripped": false
+  },
+  {
+   "section": "scripts/ghost-read",
+   "files": 1,
+   "cell": "C,C",
+   "fit": 0.875,
+   "gripped": true
+  },
+  {
+   "section": "scripts/gtm",
+   "files": 1,
+   "cell": "B3,B3",
+   "fit": 0.8697,
+   "gripped": true
+  },
+  {
+   "section": "scripts/hive",
+   "files": 4,
+   "cell": "A1,C2",
+   "fit": 0.9133,
+   "gripped": true
+  },
+  {
+   "section": "scripts/intake",
+   "files": 1,
+   "cell": "C2,C2",
+   "fit": 0.8886,
+   "gripped": true
+  },
+  {
+   "section": "scripts/interventions",
+   "files": 5,
+   "cell": "C2,A1",
+   "fit": 0.9266,
+   "gripped": false
+  },
+  {
+   "section": "scripts/lab",
+   "files": 8,
+   "cell": "C2,B1",
+   "fit": 0.958,
+   "gripped": false
+  },
+  {
+   "section": "scripts/leads",
+   "files": 2,
+   "cell": "B1,B1",
+   "fit": 0.8801,
+   "gripped": true
+  },
+  {
+   "section": "scripts/legal",
+   "files": 1,
+   "cell": "C,C",
+   "fit": 0.8564,
+   "gripped": true
+  },
+  {
+   "section": "scripts/lens",
+   "files": 2,
+   "cell": "B2,B2",
+   "fit": 0.8628,
+   "gripped": true
+  },
+  {
+   "section": "scripts/leverage",
+   "files": 1,
+   "cell": "C,C",
+   "fit": 0.8537,
+   "gripped": true
+  },
+  {
+   "section": "scripts/lib",
+   "files": 7,
+   "cell": "B1,C3",
+   "fit": 0.9507,
+   "gripped": false
+  },
+  {
+   "section": "scripts/license",
+   "files": 2,
+   "cell": "B1,B1",
+   "fit": 0.8901,
+   "gripped": true
+  },
+  {
+   "section": "scripts/mailbox",
+   "files": 3,
+   "cell": "C,C",
+   "fit": 0.8788,
+   "gripped": true
+  },
+  {
+   "section": "scripts/meetings",
+   "files": 1,
+   "cell": "C,C",
+   "fit": 0.8484,
+   "gripped": true
+  },
+  {
+   "section": "scripts/mesh",
+   "files": 17,
+   "cell": "A1,A",
+   "fit": 0.9491,
+   "gripped": false
+  },
+  {
+   "section": "scripts/milestones",
+   "files": 18,
+   "cell": "A2,C3",
+   "fit": 0.9498,
+   "gripped": false
+  },
+  {
+   "section": "scripts/network",
+   "files": 2,
+   "cell": "C,C",
+   "fit": 0.9029,
+   "gripped": true
+  },
+  {
+   "section": "scripts/notify",
+   "files": 1,
+   "cell": "C,C",
+   "fit": 0.883,
+   "gripped": true
+  },
+  {
+   "section": "scripts/ops",
+   "files": 78,
+   "cell": "A1,B1",
+   "fit": 0.9562,
+   "gripped": false
+  },
+  {
+   "section": "scripts/orthogonal",
+   "files": 4,
+   "cell": "A1,C",
+   "fit": 0.9148,
+   "gripped": true
+  },
+  {
+   "section": "scripts/oss",
+   "files": 1,
+   "cell": "B3,B3",
+   "fit": 0.8672,
+   "gripped": true
+  },
+  {
+   "section": "scripts/outreach",
+   "files": 32,
+   "cell": "C,C2",
+   "fit": 0.9579,
+   "gripped": false
+  },
+  {
+   "section": "scripts/pages",
+   "files": 1,
+   "cell": "B3,B3",
+   "fit": 0.8672,
+   "gripped": true
+  },
+  {
+   "section": "scripts/patent",
+   "files": 7,
+   "cell": "A1,A3",
+   "fit": 0.9528,
+   "gripped": false
+  },
+  {
+   "section": "scripts/pixel",
+   "files": 2,
+   "cell": "B3,C1",
+   "fit": 0.8644,
+   "gripped": true
+  },
+  {
+   "section": "scripts/pmu",
+   "files": 541,
+   "cell": "A1,C2",
+   "fit": 0.9521,
+   "gripped": false
+  },
+  {
+   "section": "scripts/predictions",
+   "files": 2,
+   "cell": "A1,A1",
+   "fit": 0.8616,
+   "gripped": true
+  },
+  {
+   "section": "scripts/punch-list-tick-tasks",
+   "files": 7,
+   "cell": "B1,C3",
+   "fit": 0.9377,
+   "gripped": false
+  },
+  {
+   "section": "scripts/raycast",
+   "files": 8,
+   "cell": "A1,C2",
+   "fit": 0.9453,
+   "gripped": false
+  },
+  {
+   "section": "scripts/register",
+   "files": 1,
+   "cell": "C,C",
+   "fit": 0.8564,
+   "gripped": true
+  },
+  {
+   "section": "scripts/reorg",
+   "files": 1,
+   "cell": "C,C",
+   "fit": 0.8457,
+   "gripped": true
+  },
+  {
+   "section": "scripts/rewrite",
+   "files": 26,
+   "cell": "A1,C3",
+   "fit": 0.9457,
+   "gripped": false
+  },
+  {
+   "section": "scripts/rooms",
+   "files": 17,
+   "cell": "B1,C2",
+   "fit": 0.953,
+   "gripped": false
+  },
+  {
+   "section": "scripts/rules",
+   "files": 2,
+   "cell": "B2,B2",
+   "fit": 0.878,
+   "gripped": true
+  },
+  {
+   "section": "scripts/shoot",
+   "files": 6,
+   "cell": "B1,B",
+   "fit": 0.931,
+   "gripped": false
+  },
+  {
+   "section": "scripts/social",
+   "files": 5,
+   "cell": "A1,C3",
+   "fit": 0.9,
+   "gripped": true
+  },
+  {
+   "section": "scripts/spanish",
+   "files": 2,
+   "cell": "B2,B2",
+   "fit": 0.8702,
+   "gripped": true
+  },
+  {
+   "section": "scripts/spec",
+   "files": 5,
+   "cell": "B,B1",
+   "fit": 0.9169,
+   "gripped": true
+  },
+  {
+   "section": "scripts/specs",
+   "files": 2,
+   "cell": "A1,A1",
+   "fit": 0.877,
+   "gripped": true
+  },
+  {
+   "section": "scripts/stickers",
+   "files": 4,
+   "cell": "B1,B2",
+   "fit": 0.9053,
+   "gripped": true
+  },
+  {
+   "section": "scripts/test",
+   "files": 1,
+   "cell": "A2,A2",
+   "fit": 0.8596,
+   "gripped": true
+  },
+  {
+   "section": "scripts/tm",
+   "files": 4,
+   "cell": "B1,C2",
+   "fit": 0.8843,
+   "gripped": true
+  },
+  {
+   "section": "scripts/track",
+   "files": 7,
+   "cell": "A3,C3",
+   "fit": 0.942,
+   "gripped": false
+  },
+  {
+   "section": "scripts/transcripts",
+   "files": 1,
+   "cell": "C,C",
+   "fit": 0.8404,
+   "gripped": true
+  },
+  {
+   "section": "scripts/vna",
+   "files": 74,
+   "cell": "A1,C3",
+   "fit": 0.952,
+   "gripped": false
+  },
+  {
+   "section": "scripts/voice",
+   "files": 3,
+   "cell": "A1,C2",
+   "fit": 0.8924,
+   "gripped": true
+  },
+  {
+   "section": "scripts/voice-bridge",
+   "files": 8,
+   "cell": "B2,C2",
+   "fit": 0.9379,
+   "gripped": false
+  },
+  {
+   "section": "src/__tests__",
+   "files": 18,
+   "cell": "B3,C1",
+   "fit": 0.9434,
+   "gripped": false
+  },
+  {
+   "section": "src/adapters",
+   "files": 1,
+   "cell": "C,C",
+   "fit": 0.8644,
+   "gripped": true
+  },
+  {
+   "section": "src/app",
+   "files": 707,
+   "cell": "A1,A3",
+   "fit": 0.9585,
+   "gripped": false
+  },
+  {
+   "section": "src/components",
+   "files": 7,
+   "cell": "C3,C3",
+   "fit": 0.9458,
+   "gripped": false
+  },
+  {
+   "section": "src/config",
+   "files": 5,
+   "cell": "C2,A1",
+   "fit": 0.942,
+   "gripped": false
+  },
+  {
+   "section": "src/constants",
+   "files": 1,
+   "cell": "C,C",
+   "fit": 0.8936,
+   "gripped": true
+  },
+  {
+   "section": "src/core",
+   "files": 22,
+   "cell": "B2,A2",
+   "fit": 0.9615,
+   "gripped": false
+  },
+  {
+   "section": "src/data",
+   "files": 64,
+   "cell": "B3,A1",
+   "fit": 0.9564,
+   "gripped": false
+  },
+  {
+   "section": "src/emails",
+   "files": 6,
+   "cell": "A3,A1",
+   "fit": 0.9333,
+   "gripped": false
+  },
+  {
+   "section": "src/hooks",
+   "files": 12,
+   "cell": "B1,C3",
+   "fit": 0.9672,
+   "gripped": false
+  },
+  {
+   "section": "src/lib",
+   "files": 363,
+   "cell": "A1,C2",
+   "fit": 0.9576,
+   "gripped": false
+  },
+  {
+   "section": "src/mcp",
+   "files": 1,
+   "cell": "C,C",
+   "fit": 0.8777,
+   "gripped": true
+  },
+  {
+   "section": "src/scripts",
+   "files": 2,
+   "cell": "B2,B2",
+   "fit": 0.91,
+   "gripped": true
+  },
+  {
+   "section": "src/services",
+   "files": 5,
+   "cell": "A1,C3",
+   "fit": 0.906,
+   "gripped": true
+  },
+  {
+   "section": "src/tests",
+   "files": 2,
+   "cell": "A1,A1",
+   "fit": 0.8753,
+   "gripped": true
+  },
+  {
+   "section": "src/types",
+   "files": 7,
+   "cell": "B2,C2",
+   "fit": 0.9385,
+   "gripped": false
+  },
+  {
+   "section": "src/utils",
+   "files": 9,
+   "cell": "B2,B1",
+   "fit": 0.9568,
+   "gripped": false
+  },
+  {
+   "section": "tests/analytics",
+   "files": 1,
+   "cell": "C2,C2",
+   "fit": 0.8692,
+   "gripped": true
+  },
+  {
+   "section": "tests/api",
+   "files": 4,
+   "cell": "B1,C2",
+   "fit": 0.9155,
+   "gripped": true
+  },
+  {
+   "section": "tests/architecture",
+   "files": 2,
+   "cell": "A1,A1",
+   "fit": 0.8505,
+   "gripped": true
+  },
+  {
+   "section": "tests/attest",
+   "files": 2,
+   "cell": "A3,A3",
+   "fit": 0.8698,
+   "gripped": true
+  },
+  {
+   "section": "tests/benchmark",
+   "files": 5,
+   "cell": "A3,A1",
+   "fit": 0.9034,
+   "gripped": true
+  },
+  {
+   "section": "tests/blog",
+   "files": 46,
+   "cell": "B1,A2",
+   "fit": 0.9571,
+   "gripped": false
+  },
+  {
+   "section": "tests/book",
+   "files": 22,
+   "cell": "A1,A3",
+   "fit": 0.9528,
+   "gripped": false
+  },
+  {
+   "section": "tests/bookclub",
+   "files": 57,
+   "cell": "A1,A3",
+   "fit": 0.9531,
+   "gripped": false
+  },
+  {
+   "section": "tests/central",
+   "files": 1,
+   "cell": "B3,B3",
+   "fit": 0.8622,
+   "gripped": true
+  },
+  {
+   "section": "tests/channels",
+   "files": 5,
+   "cell": "B2,A2",
+   "fit": 0.9087,
+   "gripped": true
+  },
+  {
+   "section": "tests/chat",
+   "files": 67,
+   "cell": "C,A1",
+   "fit": 0.9583,
+   "gripped": false
+  },
+  {
+   "section": "tests/claims",
+   "files": 2,
+   "cell": "B2,B2",
+   "fit": 0.8731,
+   "gripped": true
+  },
+  {
+   "section": "tests/cockpit",
+   "files": 16,
+   "cell": "A1,C3",
+   "fit": 0.9506,
+   "gripped": false
+  },
+  {
+   "section": "tests/cog",
+   "files": 11,
+   "cell": "A1,C3",
+   "fit": 0.9564,
+   "gripped": false
+  },
+  {
+   "section": "tests/comms",
+   "files": 69,
+   "cell": "B1,C2",
+   "fit": 0.9509,
+   "gripped": false
+  },
+  {
+   "section": "tests/components",
+   "files": 9,
+   "cell": "A1,B1",
+   "fit": 0.9487,
+   "gripped": false
+  },
+  {
+   "section": "tests/cta",
+   "files": 1,
+   "cell": "C,C",
+   "fit": 0.8484,
+   "gripped": true
+  },
+  {
+   "section": "tests/dashboard",
+   "files": 1,
+   "cell": "C,C",
+   "fit": 0.867,
+   "gripped": true
+  },
+  {
+   "section": "tests/deck",
+   "files": 20,
+   "cell": "A1,B1",
+   "fit": 0.9484,
+   "gripped": false
+  },
+  {
+   "section": "tests/decks",
+   "files": 1,
+   "cell": "B3,B3",
+   "fit": 0.8772,
+   "gripped": true
+  },
+  {
+   "section": "tests/delegation",
+   "files": 2,
+   "cell": "C,C",
+   "fit": 0.8991,
+   "gripped": true
+  },
+  {
+   "section": "tests/deploy",
+   "files": 2,
+   "cell": "A1,A1",
+   "fit": 0.8866,
+   "gripped": true
+  },
+  {
+   "section": "tests/deployment",
+   "files": 8,
+   "cell": "B1,A3",
+   "fit": 0.9415,
+   "gripped": false
+  },
+  {
+   "section": "tests/dev",
+   "files": 1,
+   "cell": "C,C",
+   "fit": 0.9016,
+   "gripped": true
+  },
+  {
+   "section": "tests/distillation",
+   "files": 1,
+   "cell": "B3,B3",
+   "fit": 0.8622,
+   "gripped": true
+  },
+  {
+   "section": "tests/economics",
+   "files": 2,
+   "cell": "B2,B2",
+   "fit": 0.8592,
+   "gripped": true
+  },
+  {
+   "section": "tests/elicit",
+   "files": 77,
+   "cell": "A1,B1",
+   "fit": 0.9401,
+   "gripped": false
+  },
+  {
+   "section": "tests/email",
+   "files": 1,
+   "cell": "B3,B3",
+   "fit": 0.8647,
+   "gripped": true
+  },
+  {
+   "section": "tests/formal",
+   "files": 40,
+   "cell": "B2,C2",
+   "fit": 0.9485,
+   "gripped": false
+  },
+  {
+   "section": "tests/fundraise",
+   "files": 1,
+   "cell": "C,C",
+   "fit": 0.8351,
+   "gripped": true
+  },
+  {
+   "section": "tests/funnel",
+   "files": 3,
+   "cell": "B2,A1",
+   "fit": 0.8922,
+   "gripped": true
+  },
+  {
+   "section": "tests/ghost-read",
+   "files": 15,
+   "cell": "A1,C3",
+   "fit": 0.9589,
+   "gripped": false
+  },
+  {
+   "section": "tests/go",
+   "files": 1,
+   "cell": "C,C",
+   "fit": 0.8484,
+   "gripped": true
+  },
+  {
+   "section": "tests/hiring",
+   "files": 2,
+   "cell": "A1,A1",
+   "fit": 0.8672,
+   "gripped": true
+  },
+  {
+   "section": "tests/hive",
+   "files": 1,
+   "cell": "A2,A2",
+   "fit": 0.8838,
+   "gripped": true
+  },
+  {
+   "section": "tests/home",
+   "files": 1,
+   "cell": "C,C",
+   "fit": 0.8431,
+   "gripped": true
+  },
+  {
+   "section": "tests/lab",
+   "files": 5,
+   "cell": "A1,C2",
+   "fit": 0.9181,
+   "gripped": true
+  },
+  {
+   "section": "tests/landing",
+   "files": 1,
+   "cell": "B3,B3",
+   "fit": 0.8622,
+   "gripped": true
+  },
+  {
+   "section": "tests/legal",
+   "files": 11,
+   "cell": "A1,A3",
+   "fit": 0.953,
+   "gripped": false
+  },
+  {
+   "section": "tests/lens",
+   "files": 11,
+   "cell": "B2,C2",
+   "fit": 0.9517,
+   "gripped": false
+  },
+  {
+   "section": "tests/leverage",
+   "files": 3,
+   "cell": "B1,A3",
+   "fit": 0.8871,
+   "gripped": true
+  },
+  {
+   "section": "tests/lib",
+   "files": 1,
+   "cell": "C,C",
+   "fit": 0.8484,
+   "gripped": true
+  },
+  {
+   "section": "tests/license",
+   "files": 10,
+   "cell": "A1,C3",
+   "fit": 0.9445,
+   "gripped": false
+  },
+  {
+   "section": "tests/mailbox",
+   "files": 7,
+   "cell": "C2,A2",
+   "fit": 0.9405,
+   "gripped": false
+  },
+  {
+   "section": "tests/map",
+   "files": 1,
+   "cell": "C,C",
+   "fit": 0.8404,
+   "gripped": true
+  },
+  {
+   "section": "tests/mesh",
+   "files": 5,
+   "cell": "A2,A1",
+   "fit": 0.9186,
+   "gripped": true
+  },
+  {
+   "section": "tests/milestones",
+   "files": 14,
+   "cell": "A2,A1",
+   "fit": 0.9532,
+   "gripped": false
+  },
+  {
+   "section": "tests/network",
+   "files": 2,
+   "cell": "B1,B1",
+   "fit": 0.8548,
+   "gripped": true
+  },
+  {
+   "section": "tests/next",
+   "files": 1,
+   "cell": "C,C",
+   "fit": 0.8644,
+   "gripped": true
+  },
+  {
+   "section": "tests/notify",
+   "files": 6,
+   "cell": "B1,A3",
+   "fit": 0.9387,
+   "gripped": false
+  },
+  {
+   "section": "tests/ops",
+   "files": 127,
+   "cell": "A1,B1",
+   "fit": 0.9535,
+   "gripped": false
+  },
+  {
+   "section": "tests/orthogonal",
+   "files": 1,
+   "cell": "C,C",
+   "fit": 0.9016,
+   "gripped": true
+  },
+  {
+   "section": "tests/oss",
+   "files": 1,
+   "cell": "B3,B3",
+   "fit": 0.8772,
+   "gripped": true
+  },
+  {
+   "section": "tests/outreach",
+   "files": 12,
+   "cell": "A1,A3",
+   "fit": 0.9505,
+   "gripped": false
+  },
+  {
+   "section": "tests/pages",
+   "files": 6,
+   "cell": "A3,A1",
+   "fit": 0.9347,
+   "gripped": false
+  },
+  {
+   "section": "tests/pay",
+   "files": 1,
+   "cell": "C,C",
+   "fit": 0.8431,
+   "gripped": true
+  },
+  {
+   "section": "tests/pixel",
+   "files": 2,
+   "cell": "C,C",
+   "fit": 0.839,
+   "gripped": true
+  },
+  {
+   "section": "tests/pmu",
+   "files": 33,
+   "cell": "B1,B",
+   "fit": 0.9618,
+   "gripped": false
+  },
+  {
+   "section": "tests/pmu-simulator",
+   "files": 432,
+   "cell": "A1,C3",
+   "fit": 0.9548,
+   "gripped": false
+  },
+  {
+   "section": "tests/predictions",
+   "files": 1,
+   "cell": "C2,C2",
+   "fit": 0.8692,
+   "gripped": true
+  },
+  {
+   "section": "tests/preview-send",
+   "files": 5,
+   "cell": "A1,B",
+   "fit": 0.9276,
+   "gripped": false
+  },
+  {
+   "section": "tests/pricing",
+   "files": 1,
+   "cell": "C,C",
+   "fit": 0.859,
+   "gripped": true
+  },
+  {
+   "section": "tests/punch-list-tasks",
+   "files": 2,
+   "cell": "B3,B3",
+   "fit": 0.8947,
+   "gripped": true
+  },
+  {
+   "section": "tests/readme",
+   "files": 2,
+   "cell": "A1,A1",
+   "fit": 0.8605,
+   "gripped": true
+  },
+  {
+   "section": "tests/repo",
+   "files": 1,
+   "cell": "C,C",
+   "fit": 0.8511,
+   "gripped": true
+  },
+  {
+   "section": "tests/repo-hygiene",
+   "files": 5,
+   "cell": "B1,B",
+   "fit": 0.9251,
+   "gripped": false
+  },
+  {
+   "section": "tests/research",
+   "files": 1,
+   "cell": "A1,A1",
+   "fit": 0.8798,
+   "gripped": true
+  },
+  {
+   "section": "tests/rewrite",
+   "files": 12,
+   "cell": "A1,A3",
+   "fit": 0.9463,
+   "gripped": false
+  },
+  {
+   "section": "tests/rooms",
+   "files": 4,
+   "cell": "B2,B1",
+   "fit": 0.8987,
+   "gripped": true
+  },
+  {
+   "section": "tests/security",
+   "files": 2,
+   "cell": "B2,B2",
+   "fit": 0.9133,
+   "gripped": true
+  },
+  {
+   "section": "tests/seo",
+   "files": 2,
+   "cell": "A1,A1",
+   "fit": 0.8743,
+   "gripped": true
+  },
+  {
+   "section": "tests/shoot",
+   "files": 10,
+   "cell": "B1,B",
+   "fit": 0.9516,
+   "gripped": false
+  },
+  {
+   "section": "tests/site",
+   "files": 6,
+   "cell": "B1,A1",
+   "fit": 0.9297,
+   "gripped": false
+  },
+  {
+   "section": "tests/spanish",
+   "files": 1,
+   "cell": "C,C",
+   "fit": 0.8564,
+   "gripped": true
+  },
+  {
+   "section": "tests/spec",
+   "files": 2,
+   "cell": "C,C",
+   "fit": 0.8588,
+   "gripped": true
+  },
+  {
+   "section": "tests/specs",
+   "files": 1,
+   "cell": "C,C",
+   "fit": 0.8511,
+   "gripped": true
+  },
+  {
+   "section": "tests/stickers",
+   "files": 6,
+   "cell": "B1,A2",
+   "fit": 0.9216,
+   "gripped": false
+  },
+  {
+   "section": "tests/strategy",
+   "files": 2,
+   "cell": "A1,A1",
+   "fit": 0.9004,
+   "gripped": true
+  },
+  {
+   "section": "tests/surfaces",
+   "files": 17,
+   "cell": "A1,B1",
+   "fit": 0.943,
+   "gripped": false
+  },
+  {
+   "section": "tests/tape",
+   "files": 55,
+   "cell": "A1,A",
+   "fit": 0.9468,
+   "gripped": false
+  },
+  {
+   "section": "tests/track",
+   "files": 26,
+   "cell": "A3,A1",
+   "fit": 0.9558,
+   "gripped": false
+  },
+  {
+   "section": "tests/vna",
+   "files": 146,
+   "cell": "A1,A3",
+   "fit": 0.9504,
+   "gripped": false
+  },
+  {
+   "section": "tests/voice",
+   "files": 75,
+   "cell": "B1,B",
+   "fit": 0.9563,
+   "gripped": false
+  },
+  {
+   "section": "tests/voice-bridge",
+   "files": 1,
+   "cell": "C,C",
+   "fit": 0.8484,
+   "gripped": true
+  }
+ ]
+}

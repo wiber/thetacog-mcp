@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+  <!-- C119k (operator 2026-09-21: "use the logo here") — the TD shield of icon.png, drawn monochrome so the activity bar can tint it:
+       VS Code paints an activity-bar SVG as a mask in the theme's foreground colour, so a colour PNG would render as a blob.
+       The shield outline is a stroke; the T and the D are filled paths. Guard: tests/vna/c119k-activity-bar-icon-is-the-shield.test.mjs -->
+  <path d="M12 2.2 L20 5.2 V12 C20 16.9 16.3 20.7 12 22 C7.7 20.7 4 16.9 4 12 V5.2 Z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/>
+  <path d="M7.4 7.2 H14.2 V9.1 H11.8 V16.4 H9.8 V9.1 H7.4 Z" fill="currentColor"/>
+  <path d="M13.2 10.2 H15.4 C17.6 10.2 18.9 11.5 18.9 13.3 C18.9 15.1 17.6 16.4 15.4 16.4 H13.2 Z M15.1 12 V14.6 H15.4 C16.4 14.6 17 14.1 17 13.3 C17 12.5 16.4 12 15.4 12 Z" fill="currentColor" fill-rule="evenodd"/>
+</svg>

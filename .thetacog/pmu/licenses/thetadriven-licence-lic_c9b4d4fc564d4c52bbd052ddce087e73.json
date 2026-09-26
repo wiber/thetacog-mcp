@@ -1,0 +1,16 @@
+{
+  "_readme": "ThetaDriven per-agent licence key. The seed_hex field at the bottom is a PRIVATE key — treat it like an SSH private key: never commit it, never paste it into a shared channel. Everything else in this file is public and safe to hand to a verifier.",
+  "_patent": "US Patent Application 19/637,714 (Track One)",
+  "_verify": "https://thetadriven.com/verify-receipt",
+  "format": "thetadriven-licence-key/v1",
+  "license_id": "lic_c9b4d4fc564d4c52bbd052ddce087e73",
+  "holder_email": "elias@thetadriven.com",
+  "holder_company": "thetacog-mcp (open-source runtime)",
+  "agent_years": 1,
+  "minted_at": "2026-08-25T18:15:10.204Z",
+  "pubkey_hex": "40bacc2db553005b6c10a727d1db2e8965058130c51fbf4caf55d4abfe51d007",
+  "purpose": "issued by the operator and recorded on the licence tape",
+  "issued_by": "scripts/license/issue-key.mts",
+  "agent_key_derivation": "HKDF-SHA256(seed = seed_hex, salt = \"thetadriven-agent-v1\", info = agent_id) → that agent's own ed25519 seed. One licence key derives every agent identity offline; you never send us an agent key.",
+  "seed_hex": "69b869acd8e1ccc75a91d8e8dde3ec3abe06b89ae0985e5d31305902cbc3b9f7"
+}

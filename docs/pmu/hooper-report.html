@@ -1,0 +1,69 @@
+<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The Hooper Standard — Verification Ledger</title>
+<style>
+  body{margin:0;background:#0b0e14;color:#e6e6e6;font:16px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;padding:0 0 60px}
+  .wrap{max-width:820px;margin:0 auto;padding:0 24px}
+  header{text-align:center;padding:54px 24px 30px;border-bottom:1px solid #1c2230}
+  h1{font-size:30px;margin:0 0 8px;letter-spacing:-.5px}
+  .sub{color:#8a93a6;font-style:italic;font-size:17px}
+  .verdict{margin:30px auto;max-width:820px;padding:18px 24px;border-radius:12px;text-align:center;font-size:19px;font-weight:600;
+    background:rgba(46,160,67,.12);border:1px solid #2ea043;color:#3fb950}
+  .crit{margin:18px 0;padding:18px 20px;border-radius:12px;background:#11151f;border:1px solid #1c2230;border-left:4px solid #2ea043}
+  .crit.fail{border-left-color:#f85149}
+  .hd{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap}
+  .badge{font-size:13px;font-weight:700}
+  .id{font-family:ui-monospace,Menlo,monospace;color:#58a6ff;font-weight:700}
+  .title{font-weight:600}
+  .hand{color:#aab2c0;margin:10px 0 8px}
+  .ev{background:#0b0e14;border:1px solid #1c2230;border-radius:8px;padding:10px 12px;font-family:ui-monospace,Menlo,monospace;font-size:13px;color:#7ee787;white-space:pre-wrap;margin:0}
+  .foot{color:#5a6373;font-size:13px;text-align:center;margin-top:34px;line-height:1.7}
+  code{font-family:ui-monospace,Menlo,monospace;color:#79c0ff}
+</style></head>
+<body>
+  <header>
+    <h1>The Hooper Standard — Verification Ledger</h1>
+    <div class="sub">"The standard is not care. The standard is what is available." — <i>The T.J. Hooper</i>, 1932</div>
+  </header>
+  <div class="verdict">✅ ALL SEVEN CRITERIA PASS — Are you out of your pixel?</div>
+  <div class="wrap">
+    
+    <div class="crit pass">
+      <div class="hd"><span class="badge">✅ PASS</span><span class="id">C1</span><span class="title">AVAILABLE — a free, one-command device exists</span></div>
+      <p class="hand">The available precaution: `npx thetacog`. Not a future product — installed and running now.</p>
+      <pre class="ev">attest + prove-rice present; gate ran (exit 0); MATCH minted.</pre>
+    </div>
+    <div class="crit pass">
+      <div class="hd"><span class="badge">✅ PASS</span><span class="id">C2</span><span class="title">DETERMINISTIC — the gate has no amnesia</span></div>
+      <p class="hand">The custom (LLM eval) flips between runs. The available device does not — that variance is the defect Hand would not excuse.</p>
+      <pre class="ev">5 runs → 1 distinct verdict (MATCH), 1 distinct σ (18.254248).</pre>
+    </div>
+    <div class="crit pass">
+      <div class="hd"><span class="badge">✅ PASS</span><span class="id">C3</span><span class="title">RECOMPUTABLE — a stranger reproduces the verdict</span></div>
+      <p class="hand">Hand asked what a reasonable party could verify. Anyone re-runs the gate and gets the SAME answer without trusting the issuer.</p>
+      <pre class="ev">attest verify re-walked on this machine → exit 0 (0 = reproduced verdict + σ).</pre>
+    </div>
+    <div class="crit pass">
+      <div class="hd"><span class="badge">✅ PASS</span><span class="id">C4</span><span class="title">HARDWARE-GROUNDED + SIGNED — a fact, not an opinion</span></div>
+      <p class="hand">An LLM verdict is an opinion in a head that dies with it. This verdict is bound to the silicon (daemon digest) and ed25519-sealed.</p>
+      <pre class="ev">host seal verifies=true; daemon_sha256=3aa47a065def1ea4…; gate 113.1ms.</pre>
+    </div>
+    <div class="crit pass">
+      <div class="hd"><span class="badge">✅ PASS</span><span class="id">C5</span><span class="title">TAMPER-EVIDENT — the receipt cannot lie</span></div>
+      <p class="hand">A precaution that can be quietly altered is no precaution. Flip one field and it is caught twice.</p>
+      <pre class="ev">flipped verdict → seal breaks=true AND re-walk disagrees (verify exit 1).</pre>
+    </div>
+    <div class="crit pass">
+      <div class="hd"><span class="badge">✅ PASS</span><span class="id">C6</span><span class="title">EXPOSES THE INCUMBENT — Rice's theorem</span></div>
+      <p class="hand">Software cannot evaluate software without infinite recursion. The LLM judge drifts; the silicon holds. `prove-rice` shows both, and DRIFT is detected, not flattered.</p>
+      <pre class="ev">prove-rice --check (oracle reproduces) exit 0; out-of-lane payload → DRIFT (gate exit 1).</pre>
+    </div>
+    <div class="crit pass">
+      <div class="hd"><span class="badge">✅ PASS</span><span class="id">C7</span><span class="title">LEGIBLE — a non-engineer can read it</span></div>
+      <p class="hand">A standard the risk officer cannot read is not a standard they can be held to. The reef states the spec in words AND in the glossed lattice.</p>
+      <pre class="ev">reef carries spec + 3 glossed cells: 🏛️ A · Strategy — long-term direction · ⚖️ A1 · Strategy.Law — rules &amp; constraints · 🎯 A2 · Strategy.Goal — target &amp; vision</pre>
+    </div>
+    <p class="foot">Every line above was produced by running the shipped code on this machine.<br>
+    Reproduce it yourself: <code>npx thetacog-mcp hooper</code> · <code>npx thetacog-mcp prove-rice</code> · <code>npx thetacog-mcp attest verify …</code><br>
+    Generated by <code>scripts/pmu/hooper.mjs</code> — the ledger IS the product.</p>
+  </div>
+</body></html>

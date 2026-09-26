@@ -1,0 +1,63 @@
+{
+  "artifact": "spec-reef",
+  "spec_id": "npx-underwriter-package",
+  "source": "docs/specs/drafts/builder-npx-underwriter-package.md",
+  "from_room": "operator",
+  "to_room": "builder",
+  "built_from": "full-requirement-prose",
+  "spec_sha256": "3f8d565da915990f31cdd1ff6f94db4c140b68c4ceb46482e1ff5c895a90dbc6",
+  "anchors": [
+    {
+      "coord": "R1",
+      "title": "C2/C6 in the output (the brick)",
+      "snippet": "C2/C6 in the output (the brick). The receipt must carry the **measured** incumbent (LLM-judge) run-to-run variance on the *same* test, next to the verdict — the held-out sweep where the gate is decidable and the judge flips on identical bytes. *Check:* run the demo; the output contains a measured `incumbent_variance` (judge flip-rate per drift level), NOT prose.",
+      "sig": "14539902586604932059"
+    },
+    {
+      "coord": "R2",
+      "title": "Input spec, bulletproof",
+      "snippet": "Input spec, bulletproof. Inputs = a declared **Reef** (intent/vocabulary) + a **Payload** (the work), each named, timestamped, hash-verified. Lead with the **synthetic spec+reef** case (no Git-infra knowledge needed); the commit-bearer attestation is the optional second act. *Check:* documented input format; ambiguous input is rejected, not guessed.",
+      "sig": "9985117096771970224"
+    },
+    {
+      "coord": "R3",
+      "title": "One signed receipt, three readable layers",
+      "snippet": "One signed receipt, three readable layers. A single ed25519 receipt: (a) verdict — coherence/drift with σ + cell placement; (b) measured incumbent variance (R1); (c) one-number **advisory** loss-ratio, flagged pre-calibration. *Check:* the receipt JSON has all three layers in one artifact, never split.",
+      "sig": "3393611135648746712"
+    },
+    {
+      "coord": "R4",
+      "title": "Recompute is the ballgame",
+      "snippet": "Recompute is the ballgame. `npx thetacog-mcp prove-rice --check` on a *different* machine reproduces the receipt **byte-for-byte, exit 0**. *Check:* a stranger machine returns exit 0 + identical σ.",
+      "sig": "4538393466834374894"
+    },
+    {
+      "coord": "R5",
+      "title": "Cold-run < 5 min",
+      "snippet": "Cold-run < 5 min. One pre-baked synthetic reef+payload case runs cold for someone who has never seen the architecture, in under 5 minutes. \"Bring your own payload\" is the follow-on, not the first run. *Check:* time a clean-room run.",
+      "sig": "2918228764794746306"
+    },
+    {
+      "coord": "R6",
+      "title": "Accept a spec as the reef",
+      "snippet": "Accept a spec as the reef. The package can take an arbitrary spec document in as the reef/intent (depends on Laboratory's `reef-from-spec`; coordinate). *Check:* feed this very spec file → a reef is built from its vocabulary.",
+      "sig": "17100962804172945078"
+    },
+    {
+      "coord": "R7",
+      "title": "Honest fences baked in",
+      "snippet": "Honest fences baked in. Output states: price = advisory/pre-calibration; Layer-A only (\"your own machine, your own cache hierarchy, sealed locally\" — NEVER \"reads hardware perf counters\"; `counter.rs` self-reports not-wired, test-guarded); paraphrase-invariance 0.30 named; no LLM in the trust path. *Check:* none of the banned claims appear; all four fences present.",
+      "sig": "2173272762198198357"
+    }
+  ],
+  "report": {
+    "requirements": 7,
+    "collisions": 0,
+    "collisionRate": 0,
+    "meanPairwiseNCD": 0.7719,
+    "closeness_rho": 0.3026
+  },
+  "pubkey_hex": "4ab36c672436feb6250cf129d52fbc9eb2a7b5e40c995436c46a4394072b05fb",
+  "sig_hex": "bff62aba0984025c02bfbdff92da08b9c06fbc5a9518865817a5cccae5ab0b319924e540b7d046400e3669e1f6e9fbe6ed66cc07f79f3d2dadaf217d84e4810f",
+  "sha256": "4f71916ca1707065c9e1662b7a51c7e486c77a58ddc381f8ddebd877bc756370"
+}

@@ -1,0 +1,127 @@
+/* packages/thetacog-mcp-vscode/media/chat.css — C167 · C167b 💬 LOCAL IDEATION, ONE STYLESHEET FOR BOTH SURFACES.
+   The steer page inlines this whole file (scripts/vna/chat-bridge.mjs chatCss()), the chat view links it — so the pill's 🟢/🔴 and the
+   view's header are one look. Every rule is scoped (.c-chat on the steer page, .chatview in the view), so neither leaks into the other. */
+
+/* ── the pill on the steer page, top of the intake funnel, above auto-paste ─────────────────────────────────────────────────── */
+.card3.c-chat{border-color:#2a3350;background:linear-gradient(90deg,#10142a 0%,#0e141c 55%)}
+.c-chat .face>button.action{background:#26235a;border-color:#4a44a0}
+.c-chat .face>button.action:hover{background:#322e75}
+.c-chat .chat-on{color:#7ad38a;font-weight:600}
+.c-chat .chat-off{color:#ff7a7a;font-weight:600}
+.c-chat .chat-tag{font:600 10px/1.4 ui-monospace,Menlo,monospace;background:#1d2a44;color:#cfe0ff;padding:0 5px;border-radius:3px;margin-left:2px}
+.c-chat .chat-age{color:#7b8794}
+/* C167g — the inline form under the + (the default interaction; ⧉ Pop out stays for the dedicated view) */
+.c-chat .chatinline{gap:6px}
+.c-chat .chatinline input{flex:1 1 200px;min-width:120px;font:11px ui-monospace,Menlo,monospace;padding:4px 8px;border:1px solid #2a3350;border-radius:4px;background:#0b0e13;color:#d8e6ff}
+.c-chat .chatlog{max-height:220px;overflow:auto;white-space:pre-wrap;display:block;font:11px ui-monospace,Menlo,monospace;background:#0b0e13;border:1px solid #1a2230;border-radius:4px;padding:6px 8px;margin-top:4px}
+.c-chat .chatlog:empty{display:none}
+.c-chat .chatlog .you{color:#8fd3c4;margin-bottom:2px}
+.c-chat .chatlog .ai{color:#d8e6ff;margin-bottom:6px}
+.c-chat .chatlog .ai .dim{color:#7b8794}
+/* C167i — the state line is never a silent dot: sending/streaming/done/error/timeout, always text */
+.c-chat .chatlog .state{color:#8fd3c4;font-size:10.5px;margin-bottom:2px}
+.c-chat .chatlog .state button.sb{font-size:10px;padding:1px 6px;margin-left:4px}
+.c-chat .chatlog .body{white-space:pre-wrap}
+
+/* ── the chat view ──────────────────────────────────────────────────────────────────────────────────────────────────────── */
+/* C201 (operator 2026-09-23: "fix the color scheme", "no black bg, white on black") — the view is PINNED to the steer card's palette, never
+   the IDE theme's: on a light theme the old --vscode-* fallbacks gave a white page with dark theme text on dark bubbles (the answer was
+   unreadable). Every surface below is dark and every text colour on it is near-white. */
+body.chatview{--bg:#0b0e13;--panel:#10142a;--fg:#eef3ff;--dim:#aab6c8;--line:#26304a;--acc:#8b83ff;--ok:#4cc38a;--bad:#ff7a7a;--you:#16233a;--ai:#141a2a;
+  margin:0;height:100vh;display:flex;flex-direction:column;background:var(--bg);color:var(--fg);font:12.5px/1.5 var(--vscode-font-family,ui-sans-serif,system-ui)}
+.chatview .bar{padding:6px 10px;border-bottom:1px solid var(--line);display:flex;flex-direction:column;gap:4px;background:var(--bg,#0d1117);position:relative;z-index:1}
+.chatview .row1{display:flex;align-items:center;gap:8px;min-width:0}
+.chatview .row1 .status{flex:1;min-width:0;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;display:block}
+.chatview .row1 .ctl button{padding:1px 7px}
+.chatview .title{font-weight:700;letter-spacing:.2px;font-size:12.5px}
+.chatview .status{display:flex;flex-wrap:wrap;gap:4px 8px;align-items:center;font-size:11px}
+.chatview .status .face{font-weight:600}
+.chatview .status.on .face{color:var(--ok)}
+.chatview .status.off .face{color:var(--bad)}
+.chatview .status .ms,.chatview .status .why{color:var(--dim)}
+.chatview .ctl{display:flex;gap:5px;align-items:center}
+.chatview select{flex:1;min-width:0;background:var(--panel);color:var(--fg);border:1px solid var(--line);border-radius:5px;padding:3px 6px;font:11.5px ui-monospace,Menlo,monospace}
+.chatview button{background:#26235a;color:var(--fg);border:1px solid #4a44a0;border-radius:5px;padding:4px 10px;font-size:11.5px;cursor:pointer;white-space:nowrap}
+.chatview button:hover{background:#322e75}
+.chatview button:disabled{opacity:.45;cursor:default}
+.chatview button.ghost{background:transparent;color:var(--fg);border:1px solid var(--line)}
+.chatview button.ghost:hover{border-color:var(--acc)}
+.chatview .log{flex:1;overflow-y:auto;padding:10px;display:flex;flex-direction:column;gap:8px}
+.chatview .msg{border-radius:9px;padding:7px 9px;max-width:100%;border:1px solid var(--line)}
+.chatview .msg.user{background:var(--you);align-self:flex-end;border-color:#24406a}
+.chatview .msg.assistant{background:var(--ai)}
+.chatview .msg .who{font-size:9.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--dim);margin-bottom:2px}
+.chatview .msg .body{white-space:pre-wrap;word-wrap:break-word}
+.chatview .msg.streaming .body::after{content:"▍";color:var(--acc);animation:chatblink 1s steps(2) infinite}
+@keyframes chatblink{50%{opacity:0}}
+.chatview .msg .meta{font-size:10.5px;color:var(--dim);margin-top:4px}
+.chatview .msg .meta.bad{color:var(--bad)}
+.chatview .doors{display:flex;flex-wrap:wrap;gap:4px;margin-top:6px}
+.chatview .doors .door{background:transparent;color:var(--fg);border:1px solid var(--line);padding:2px 8px;font-size:10.5px}
+.chatview .doors .door.fold{border-color:#2f6f4f;color:#9fe0bb}
+.chatview .doors .door.goal{border-color:#6f5a2f;color:#f0d49a}
+.chatview .doors .door:hover{border-color:var(--acc)}
+.chatview .note{font-size:11px;color:var(--dim);text-align:center}
+.chatview .note.bad{color:var(--bad)}
+.chatview .compose{border-top:1px solid var(--line);padding:8px 10px;display:flex;flex-direction:row;align-items:stretch;gap:6px}
+.chatview textarea{flex:1;min-width:0;resize:vertical;min-height:44px;background:var(--panel);color:var(--fg);border:1px solid var(--line);border-radius:6px;padding:6px 8px;font:12px/1.45 var(--vscode-font-family,ui-sans-serif,system-ui)}
+.chatview textarea::placeholder{color:var(--dim)}
+.chatview textarea:focus{outline:1px solid var(--acc)}
+.chatview .acts{display:flex;flex-direction:column;gap:6px;justify-content:flex-end}
+/* C201 — two models side by side: 💬 chat (reasoning + acting, default gemma) · 🤖 /steer subagents on the Merkle tree (default qwen) */
+.chatview .models{display:flex;gap:6px;align-items:flex-end}
+.chatview .models .pick{flex:1;min-width:0;display:flex;align-items:center;gap:4px}
+.chatview .models .pick select{width:100%;min-width:0}
+.chatview .models .pick .job{font-size:10px;opacity:.7;white-space:nowrap}   /* C262: each model's job, named beside it */
+.chatview .subnote{font-size:10.5px;color:var(--dim)}
+/* C201a — the two role dropdowns under the 💬 + (control loop · subagent hands) and the seams as ONE status line */
+.c-chat .roles{display:flex;flex-wrap:wrap;gap:6px 12px;align-items:center}
+.c-chat .roles .role{display:inline-flex;align-items:center;gap:4px;font-size:11px;color:#9fb0c8}
+.c-chat .roles select{max-width:190px;font:11px/1.4 ui-monospace,Menlo,monospace;background:#1d2a44;color:#cfe0ff;border:1px solid #2a3350;border-radius:3px;padding:1px 3px}
+.c-chat .seams .seam{white-space:nowrap}
+/* C250b — the engines pill in the chat view is the SAME pill the steer page paints (steer-ui.mjs pillBox): a card whose face line is
+   [ + ] [ action ] · reading, and whatever the + holds opens UNDER the face. The panel is a sibling of the <details>, shown on toggle, so
+   the + never moves (no display:contents on <details>, which Chromium ignores). Sizes and colours are the page's own. */
+.chatview .card3.pill{border:1px solid #1a2230;border-radius:5px;padding:4px 7px;background:#0e141c;margin:0}   /* C260: the bar gap (4px) is the only space before the 💬 row — was 6px + 4px */
+.chatview .card3.pill>.c3l.face{display:flex;flex-wrap:nowrap;align-items:center;gap:4px 6px;font-size:11px;line-height:1.45}
+.chatview details.plus{display:inline-block;margin:0}
+.chatview details.plus>summary{display:inline-block;box-sizing:border-box;width:27px;text-align:center;cursor:pointer;font:700 13px/1.2 ui-monospace,Menlo,monospace;color:#8fa3bf;border:1px solid #2a3442;border-radius:4px;padding:2px 0;background:#121821;list-style:none}
+.chatview details.plus>summary::-webkit-details-marker{display:none}
+.chatview .face>button.action{flex:0 0 auto;white-space:nowrap;padding:4px 10px;font-weight:600;font-size:11px;border-radius:4px;border:1px solid #6a3030;background:#4a1f1f;color:#fff;cursor:pointer}
+.chatview .face>button.action:hover{background:#632828}
+.chatview .face>button.action:disabled{opacity:.6;cursor:default}
+.chatview .face .reading{display:block;flex:1 1 auto;min-width:0;white-space:normal}   /* C250f: both models' stats are read on the face — it wraps rather than cutting them off */
+.chatview .face .reading::before{content:"· ";color:var(--dim)}
+.chatview .face .reading .status>span{margin-right:6px}
+.chatview .face .reading .status{display:inline}
+.chatview .face .eface{color:#cfe0ff;white-space:normal}
+.chatview .epanel{display:flex;flex-direction:column;gap:4px;padding:6px 0 2px 33px;font-size:11px}
+.chatview .epanel[hidden]{display:none}
+.chatview .epanel .subnote{margin:0}
+.chatview .epanel .eline{color:var(--fg)}
+.chatview .epanel .eacts button{padding:1px 8px;font-size:11px}
+.chatview .eout{white-space:pre-wrap;color:var(--dim)}
+.chatview .eout.bad{color:var(--bad)}
+/* C250c — a + is universally "show me more": the chat's instructions live behind it, never in the compose box */
+.chatview .epanel .howto{display:flex;flex-direction:column;gap:1px;color:var(--dim)}
+.chatview .epanel .howto b{color:var(--fg);font-weight:600}
+.chatview .epanel .howto code{color:var(--fg)}
+/* C250e — each reply's doors behind its own small + ; one divider for the restored history */
+.chatview details.plus.rdoors{display:block;margin-top:4px}
+.chatview details.plus.rdoors>summary{width:22px;font-size:11px;padding:0}
+.chatview details.plus.rdoors .doors{margin-top:4px}
+.chatview .note.divider{text-align:center;color:var(--dim);font-size:10.5px;margin:4px 0}
+/* C250g — max legible: the model names in green, the numbers in near-white, one chip per role; no "Online" words */
+.chatview .face .reading::before{content:none}
+.chatview .face .reading .status:empty{display:none}
+.chatview .face .eface{display:inline-flex;flex-wrap:wrap;gap:2px 12px;align-items:baseline;color:var(--fg)}
+.chatview .mchip{display:inline-flex;gap:5px;align-items:baseline;white-space:nowrap;font-size:12.5px}
+.chatview .mchip .mtag{color:var(--ok);font-weight:700}
+.chatview .mchip .mms{color:var(--fg)}
+.chatview .mchip .mst{color:var(--fg)}
+.chatview .mchip .mst.idle{color:var(--dim)}
+.chatview .mchip.mrun{color:var(--fg)}
+
+/* C277 — the ↻ keep-running box, beside ⏹ End all */
+.chatview label.keep { display: inline-flex; align-items: center; gap: 3px; margin-right: 6px; font-size: 11px; cursor: pointer; white-space: nowrap; }
+.chatview label.keep input { margin: 0; }
