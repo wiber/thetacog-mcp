@@ -1,0 +1,152 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://thetadriven.com/schemas/tape-adapter-1.0.0.json",
+  "title": "ThetaCog tape bundle — the adapter contract",
+  "description": "C426a. One JSON file a deployer or an underwriter reads: the backup manifest, the signed flight-tape rows, the notary witness receipts and the MMR peaks. It carries placement, paths, hashes, guards and signatures, never code, diffs or prompts. Written by scripts/vna/tape-adapter.mjs export; checked by scripts/vna/tape-adapter.mjs check. Prose: docs/specs/vna/TAPE-ADAPTER-CONTRACT.md.",
+  "type": "object",
+  "required": ["contract_version", "kind", "exported_at", "head", "scope", "manifest", "tape", "witness", "mmr", "licence", "refused"],
+  "additionalProperties": false,
+  "properties": {
+    "contract_version": { "const": "1.0.0" },
+    "kind": { "const": "thetacog.tape-bundle" },
+    "exported_at": { "type": "string", "pattern": "^\\d{4}-\\d{2}-\\d{2}T" },
+    "head": { "type": ["string", "null"], "pattern": "^[0-9a-f]{40}$" },
+    "scope": {
+      "type": "object",
+      "required": ["sufficient_for", "not_sufficient_for"],
+      "additionalProperties": false,
+      "properties": {
+        "sufficient_for": { "type": "string" },
+        "not_sufficient_for": { "type": "string" }
+      }
+    },
+    "manifest": {
+      "type": ["object", "null"],
+      "required": ["sha", "bytes", "at", "head", "rows", "chain_verified", "tesseract_sha", "files"],
+      "additionalProperties": false,
+      "properties": {
+        "sha": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+        "bytes": { "type": "integer", "minimum": 0 },
+        "at": { "type": "string" },
+        "head": { "type": ["string", "null"] },
+        "rows": { "type": "object" },
+        "chain_verified": { "type": "boolean" },
+        "tesseract_sha": { "type": ["string", "null"] },
+        "files": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["path", "bytes", "sha256"],
+            "additionalProperties": false,
+            "properties": {
+              "path": { "type": "string" },
+              "bytes": { "type": "integer", "minimum": 0 },
+              "sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" }
+            }
+          }
+        }
+      }
+    },
+    "tape": {
+      "type": "object",
+      "required": ["rows", "chain"],
+      "additionalProperties": false,
+      "properties": {
+        "rows": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["seq", "ts", "kind", "prev", "sha", "session", "room", "proofs", "delta", "seed", "gauge", "row_sha", "sig", "sig_pubkey"],
+            "additionalProperties": false,
+            "properties": {
+              "seq": { "type": "integer", "minimum": 0 },
+              "ts": { "type": "string" },
+              "kind": { "enum": ["commit", "turn", "batch", "reading", "goal", "onboard"] },
+              "prev": { "type": "string" },
+              "sha": { "type": ["string", "null"] },
+              "session": { "type": ["string", "null"] },
+              "room": { "type": ["string", "null"] },
+              "proofs": { "type": ["object", "null"] },
+              "delta": { "type": ["object", "null"] },
+              "seed": { "type": ["object", "null"] },
+              "gauge": { "type": ["object", "null"] },
+              "row_sha": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+              "sig": { "type": ["string", "null"], "pattern": "^[0-9a-f]{128}$" },
+              "sig_pubkey": { "type": ["string", "null"], "pattern": "^[0-9a-f]{64}$" },
+              "signed_as": { "type": ["string", "null"] },
+              "sig_why": { "type": ["string", "null"] },
+              "stamp_why": { "type": ["string", "null"] }
+            }
+          }
+        },
+        "chain": {
+          "type": "object",
+          "required": ["rows", "ok", "signed", "unsigned", "first_break"],
+          "additionalProperties": false,
+          "properties": {
+            "rows": { "type": "integer", "minimum": 0 },
+            "ok": { "type": "boolean" },
+            "signed": { "type": "integer", "minimum": 0 },
+            "unsigned": { "type": "integer", "minimum": 0 },
+            "first_break": { "type": ["object", "null"] }
+          }
+        }
+      }
+    },
+    "witness": {
+      "type": "object",
+      "required": ["rows", "status"],
+      "additionalProperties": false,
+      "properties": {
+        "status": { "type": "string" },
+        "rows": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["car_sha", "sequence_height", "witness_root", "notary_signature", "received_at"],
+            "additionalProperties": false,
+            "properties": {
+              "car_sha": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+              "sequence_height": { "type": "integer", "minimum": 1 },
+              "witness_root": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+              "notary_signature": { "type": "string", "pattern": "^[0-9a-f]{128}$" },
+              "received_at": { "type": "string" },
+              "commit_sha": { "type": ["string", "null"] },
+              "pubkey": { "type": ["string", "null"] },
+              "fingerprint": { "type": ["string", "null"] },
+              "replay": { "type": "boolean" },
+              "notary_pubkey": { "type": ["string", "null"], "pattern": "^[0-9a-f]{64}$" },
+              "mmr": { "type": ["object", "null"] },
+              "signatures": { "type": ["array", "null"] },
+              "forks": { "type": ["array", "object", "null"] },
+              "synced_at": { "type": ["string", "null"] }
+            }
+          }
+        }
+      }
+    },
+    "mmr": {
+      "type": ["object", "null"],
+      "required": ["sequence_height", "witness_root", "peaks"],
+      "additionalProperties": false,
+      "properties": {
+        "sequence_height": { "type": "integer", "minimum": 1 },
+        "witness_root": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+        "peaks": { "type": "array", "items": { "type": "string", "pattern": "^[0-9a-f]{64}$" } }
+      }
+    },
+    "licence": {
+      "type": "object",
+      "required": ["licensed", "unlicensed"],
+      "additionalProperties": false,
+      "properties": {
+        "licensed": { "type": "integer", "minimum": 0 },
+        "unlicensed": { "type": "integer", "minimum": 0 }
+      }
+    },
+    "refused": {
+      "type": "array",
+      "items": { "type": "string" }
+    }
+  }
+}
