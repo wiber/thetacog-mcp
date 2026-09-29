@@ -1,0 +1,14 @@
+{
+ "ts": "2026-07-23T00:48:29.501Z",
+ "chunks": 28262,
+ "transcript": 18262,
+ "repo": 10000,
+ "dropped": 1598,
+ "dropped_pct": 5.4,
+ "dedupe_bar_pct": 5,
+ "rolling_hash_verdict": "RECONSIDER",
+ "secs": 40.5,
+ "coords_covered": 133,
+ "engine": "para",
+ "custody": "raw_sha+raw_len on every row"
+}

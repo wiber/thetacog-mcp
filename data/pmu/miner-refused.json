@@ -1,0 +1,369 @@
+{
+ "note": "candidates the constitution refused \u2014 survives the gate revert so the miner never re-proposes them",
+ "rows": [
+  {
+   "key": "chore(commit-page): panel-repair 14c0c0428 \u2014 re-grounded pan",
+   "reason": "constitution-refused",
+   "sha": "1c39f3540",
+   "ts": "2026-07-19T21:40:31.827Z",
+   "backfilled": true
+  },
+  {
+   "key": "Receipt-Verified: \u03c3=2.54 \u00b7 cell=A \u00b7 witness-agreement=GZIP_O",
+   "reason": "constitution-refused",
+   "sha": "1c39f3540",
+   "ts": "2026-07-19T21:40:31.827Z",
+   "backfilled": true
+  },
+  {
+   "key": "S6: tape-health class 13 sweep-below-floor (latest sweep F1 ",
+   "reason": "constitution-refused",
+   "sha": "1c39f3540",
+   "ts": "2026-07-19T21:40:31.827Z",
+   "backfilled": true
+  },
+  {
+   "key": "- The page carries G1 + G5 live and G2/G3/G4 as named gray s",
+   "reason": "constitution-refused",
+   "sha": "1c39f3540",
+   "ts": "2026-07-19T21:40:31.827Z",
+   "backfilled": true
+  },
+  {
+   "key": "~50 commits local, not pushed (yours to push). Spec at v8.3 ",
+   "reason": "constitution-refused",
+   "sha": "e28971e37",
+   "ts": "2026-07-20T00:50:42.354Z",
+   "backfilled": true
+  },
+  {
+   "key": "Cadence: one cycle per session in which the lens misfires, p",
+   "reason": "constitution-refused",
+   "sha": "e28971e37",
+   "ts": "2026-07-20T00:50:42.354Z",
+   "backfilled": true
+  },
+  {
+   "key": "Cycle 1's structural limit: every number is relative to a qw",
+   "reason": "constitution-refused",
+   "sha": "e28971e37",
+   "ts": "2026-07-20T00:50:42.354Z",
+   "backfilled": true
+  },
+  {
+   "key": "The \"Ideal pane shows 21 rules\" confusion was Q2 leaking int",
+   "reason": "constitution-refused",
+   "sha": "e28971e37",
+   "ts": "2026-07-20T00:50:42.354Z",
+   "backfilled": true
+  },
+  {
+   "key": "> \"gzip would actually teach you where to do the right thing",
+   "reason": "constitution-refused",
+   "sha": "e28971e37",
+   "ts": "2026-07-20T00:50:42.354Z",
+   "backfilled": true
+  },
+  {
+   "key": "Each round is a red-first gate; \"probability of completeness",
+   "reason": "constitution-refused",
+   "sha": "e28971e37",
+   "ts": "2026-07-20T00:50:42.354Z",
+   "backfilled": true
+  },
+  {
+   "key": "Status source of truth for the overnight build. Every requir",
+   "reason": "constitution-refused",
+   "sha": "e28971e37",
+   "ts": "2026-07-20T00:50:42.354Z",
+   "backfilled": true
+  },
+  {
+   "key": "Each HUD_MAP entry already declares {id, get(st)}. Extend th",
+   "reason": "constitution-refused",
+   "sha": "e28971e37",
+   "ts": "2026-07-20T00:50:42.354Z",
+   "backfilled": true
+  },
+  {
+   "key": "Operator, 2026-07-18: *\"gzip would actually teach you where ",
+   "reason": "constitution-refused",
+   "sha": "e28971e37",
+   "ts": "2026-07-20T00:50:42.354Z",
+   "backfilled": true
+  },
+  {
+   "key": "The emitter compares state N-1 vs N on each signal; a signal",
+   "reason": "constitution-refused",
+   "sha": "e28971e37",
+   "ts": "2026-07-20T00:50:42.354Z",
+   "backfilled": true
+  },
+  {
+   "key": "The end state, one sentence: a self-verifying, hardware-dete",
+   "reason": "constitution-refused",
+   "sha": "e28971e37",
+   "ts": "2026-07-20T00:50:42.354Z",
+   "backfilled": true
+  },
+  {
+   "key": "- The demo page boots to state 1 (the clean opener, IN_LANE)",
+   "reason": "constitution-refused",
+   "sha": "e28971e37",
+   "ts": "2026-07-20T00:50:42.354Z",
+   "backfilled": true
+  },
+  {
+   "key": "tests/pmu-simulator/scenario-library-tape.test.mjs extends t",
+   "reason": "constitution-refused",
+   "sha": "e28971e37",
+   "ts": "2026-07-20T00:50:42.354Z",
+   "backfilled": true
+  },
+  {
+   "key": "The arc's shape is the optimisation signal: a shallow arc (4",
+   "reason": "constitution-refused",
+   "sha": "e28971e37",
+   "ts": "2026-07-20T00:50:42.354Z",
+   "backfilled": true
+  },
+  {
+   "key": "The chart points to the CURRENT SCENARIO's recovery arc \u2014 br",
+   "reason": "constitution-refused",
+   "sha": "e28971e37",
+   "ts": "2026-07-20T00:50:42.354Z",
+   "backfilled": true
+  },
+  {
+   "key": "GUARD (the actual deliverable) \u2014 tests/pmu-simulator/miner-c",
+   "reason": "constitution-refused",
+   "sha": "e28971e37",
+   "ts": "2026-07-20T00:50:42.354Z",
+   "backfilled": true
+  },
+  {
+   "key": "MEASURED after the fix (three consecutive runs, unchanged co",
+   "reason": "constitution-refused",
+   "sha": "e28971e37",
+   "ts": "2026-07-20T00:50:42.354Z",
+   "backfilled": true
+  },
+  {
+   "key": "The forwardable artifact must be legible in ten seconds to a",
+   "reason": "constitution-refused",
+   "sha": "e28971e37",
+   "ts": "2026-07-20T00:50:42.354Z",
+   "backfilled": true
+  },
+  {
+   "key": "Alpha (classes HELD, recurrences 0) is the internal floor. T",
+   "reason": "constitution-refused",
+   "sha": "e28971e37",
+   "ts": "2026-07-20T00:50:42.354Z",
+   "backfilled": true
+  },
+  {
+   "key": "K0 \u2014 the kill posture. *\"Twenty of these this quarter. They ",
+   "reason": "constitution-refused",
+   "sha": "e28971e37",
+   "ts": "2026-07-20T00:50:42.354Z",
+   "backfilled": true
+  },
+  {
+   "key": "K6 \u2014 the memo I can't write. *\"The kill memo would have to a",
+   "reason": "constitution-refused",
+   "sha": "e28971e37",
+   "ts": "2026-07-20T00:50:42.354Z",
+   "backfilled": true
+  },
+  {
+   "key": "K8 \u2014 terminal. *\"It's not a product anymore. It's the unit o",
+   "reason": "constitution-refused",
+   "sha": "e28971e37",
+   "ts": "2026-07-20T00:50:42.354Z",
+   "backfilled": true
+  },
+  {
+   "key": "The breach lever is the MEASURED exemplar-mass poison (GRIP_",
+   "reason": "constitution-refused",
+   "sha": "e28971e37",
+   "ts": "2026-07-20T00:50:42.354Z",
+   "backfilled": true
+  },
+  {
+   "key": "The navigator fence lever (mesh_123fa9e1-f78) upgrades R3 fr",
+   "reason": "constitution-refused",
+   "sha": "e28971e37",
+   "ts": "2026-07-20T00:50:42.354Z",
+   "backfilled": true
+  },
+  {
+   "key": "Status: the definition the build converges toward. Companion",
+   "reason": "constitution-refused",
+   "sha": "b5bfa44d2",
+   "ts": "2026-07-20T01:39:03.099Z",
+   "backfilled": true
+  },
+  {
+   "key": "AR-3 \u2014 FORBIDDEN: weight-sorted ranking of a row's significa",
+   "reason": "constitution-refused",
+   "sha": "b5bfa44d2",
+   "ts": "2026-07-20T01:39:03.099Z",
+   "backfilled": true
+  },
+  {
+   "key": " seed the message onto the 144 lattice via the canonical gzi",
+   "reason": "constitution-refused",
+   "sha": "b5bfa44d2",
+   "ts": "2026-07-20T01:39:03.099Z",
+   "backfilled": true
+  },
+  {
+   "key": "> Purpose. Work *backwards* from the claims we make to the p",
+   "reason": "constitution-refused",
+   "sha": "7b4f433cd",
+   "ts": "2026-07-20T01:53:23.919Z",
+   "backfilled": true
+  },
+  {
+   "key": "> The drift metric measures PLACEMENT, not defect-risk. The ",
+   "reason": "constitution-refused",
+   "sha": "7b4f433cd",
+   "ts": "2026-07-20T01:53:23.919Z",
+   "backfilled": true
+  },
+  {
+   "key": "2026-06-30 \u00b7 flag-gated study change \u00b7 engine (src/lib/pmu/u",
+   "reason": "constitution-refused",
+   "sha": "7b4f433cd",
+   "ts": "2026-07-20T01:53:23.919Z",
+   "backfilled": true
+  },
+  {
+   "key": "Diagnosis from those runs: \u03c3 is bimodal. A saturation-high c",
+   "reason": "constitution-refused",
+   "sha": "7b4f433cd",
+   "ts": "2026-07-20T01:53:23.919Z",
+   "backfilled": true
+  },
+  {
+   "key": "Originating-Terminal: \ud83d\udd28 builder Relevant-Rooms: \ud83c\udfa4 voice, \ud83e\uddea l",
+   "reason": "constitution-refused",
+   "sha": "1b97f5f55",
+   "ts": "2026-07-20T02:30:13.600Z",
+   "backfilled": true
+  },
+  {
+   "key": "Tick log now attributes time per stage (miner \u00b7 agent+gate \u00b7",
+   "reason": "constitution-refused",
+   "sha": "1b97f5f55",
+   "ts": "2026-07-20T02:30:13.600Z",
+   "backfilled": true
+  },
+  {
+   "key": "Guard in same commit: overnight-loop-health.test.mjs sweep-c",
+   "reason": "constitution-refused",
+   "sha": "b1c607b79",
+   "ts": "2026-07-20T03:37:05.382Z",
+   "backfilled": true
+  },
+  {
+   "key": "Enrichment moved AUC *the wrong way* (0.50 \u2192 0.44, slightly ",
+   "reason": "constitution-refused",
+   "sha": "bdb8dde71",
+   "ts": "2026-07-20T04:23:44.781Z",
+   "backfilled": true
+  },
+  {
+   "key": "Hypothesis under test: if the thin commit-message *intent* i",
+   "reason": "constitution-refused",
+   "sha": "bdb8dde71",
+   "ts": "2026-07-20T04:23:44.781Z",
+   "backfilled": true
+  },
+  {
+   "key": "litScores/topSeeds/COORDS are imported READ-ONLY from unifie",
+   "reason": "constitution-refused",
+   "sha": "bdb8dde71",
+   "ts": "2026-07-20T04:23:44.781Z",
+   "backfilled": true
+  },
+  {
+   "key": "Today's binding constraint lives at \u2465 (reef sharpness \u2192 \u03c3_pa",
+   "reason": "constitution-refused",
+   "sha": "bdb8dde71",
+   "ts": "2026-07-20T04:23:44.781Z",
+   "backfilled": true
+  },
+  {
+   "key": "- Signal = the position of the text relative to the reef's c",
+   "reason": "constitution-refused",
+   "sha": "bdb8dde71",
+   "ts": "2026-07-20T04:23:44.781Z",
+   "backfilled": true
+  },
+  {
+   "key": "> Canonical argument. Source of truth for the README, the np",
+   "reason": "constitution-refused",
+   "sha": "bdb8dde71",
+   "ts": "2026-07-20T04:23:44.781Z",
+   "backfilled": true
+  },
+  {
+   "key": "> Meaning that cannot be grounded in hardware as a measurabl",
+   "reason": "constitution-refused",
+   "sha": "bdb8dde71",
+   "ts": "2026-07-20T04:23:44.781Z",
+   "backfilled": true
+  },
+  {
+   "key": "> The chip decides WHERE the semantic mass sits \u2014 the positi",
+   "reason": "constitution-refused",
+   "sha": "bdb8dde71",
+   "ts": "2026-07-20T04:23:44.781Z",
+   "backfilled": true
+  },
+  {
+   "key": "For verifiable AI safety, meaning must be geometric and phys",
+   "reason": "constitution-refused",
+   "sha": "bdb8dde71",
+   "ts": "2026-07-20T04:23:44.781Z",
+   "backfilled": true
+  },
+  {
+   "key": "Independent walks' \u03c3 (real intent\u2194reality alignment vs rando",
+   "reason": "constitution-refused",
+   "sha": "bdb8dde71",
+   "ts": "2026-07-20T04:23:44.781Z",
+   "backfilled": true
+  },
+  {
+   "key": "NCD (Normalized Compression Distance) against a *curated sem",
+   "reason": "constitution-refused",
+   "sha": "bdb8dde71",
+   "ts": "2026-07-20T04:23:44.781Z",
+   "backfilled": true
+  },
+  {
+   "key": "Philosophers blur two different things under one word. We re",
+   "reason": "constitution-refused",
+   "sha": "bdb8dde71",
+   "ts": "2026-07-20T04:23:44.781Z",
+   "backfilled": true
+  },
+  {
+   "key": "Reproduce: npx thetacog-mcp prove-rice --check (byte-for-byt",
+   "reason": "constitution-refused",
+   "sha": "bdb8dde71",
+   "ts": "2026-07-20T04:23:44.781Z",
+   "backfilled": true
+  },
+  {
+   "key": "Guard in same commit: overnight-loop-health.test.mjs leg 6 (",
+   "reason": "constitution-refused",
+   "sha": "b39bc4968",
+   "ts": "2026-07-20T04:35:39.977Z",
+   "backfilled": true
+  }
+ ]
+}

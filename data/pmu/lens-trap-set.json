@@ -1,0 +1,1426 @@
+{
+ "version": 1,
+ "built_at": "2026-07-19T15:05:26.380Z",
+ "model": "qwen2.5:7b",
+ "domains": [
+  "comms-email",
+  "outreach",
+  "git-discipline",
+  "blog-content",
+  "pmu-reef"
+ ],
+ "rules_covered": 59,
+ "llm_calls": 59,
+ "discarded": 1,
+ "note": "labels by construction + deterministic junk filter; adjudication may discard, never soft-label; FROZEN between builds — the sweep makes zero model calls",
+ "traps": [
+  {
+   "domain": "blog-content",
+   "rule_key": "reader-POV first — what's in it for them",
+   "rule": "reader-POV first — what's in it for them",
+   "kind": "must-fire",
+   "prompt": "Explain how readers can benefit from our blog content.",
+   "label_source": "construction+filter"
+  },
+  {
+   "domain": "blog-content",
+   "rule_key": "reader-POV first — what's in it for them",
+   "rule": "reader-POV first — what's in it for them",
+   "kind": "must-fire",
+   "prompt": "Describe what readers will gain by following your advice.",
+   "label_source": "construction+filter"
+  },
+  {
+   "domain": "blog-content",
+   "rule_key": "reader-POV first — what's in it for them",
+   "rule": "reader-POV first — what's in it for them",
+   "kind": "must-not",
+   "prompt": "Outline the technical aspects of creating a blog post.",
+   "label_source": "construction+filter"
+  },
+  {
+   "domain": "blog-content",
+   "rule_key": "breadcrumb + crest per section (validated)",
+   "rule": "breadcrumb + crest per section (validated)",
+   "kind": "must-fire",
+   "prompt": "Ensure each section includes both breadcrumb and crest.",
+   "label_source": "construction+filter"
+  },
+  {
+   "domain": "blog-content",
+   "rule_key": "breadcrumb + crest per section (validated)",
+   "rule": "breadcrumb + crest per section (validated)",
+   "kind": "must-fire",
+   "prompt": "Verify every part has validated breadcrumb and crest.",
+   "label_source": "construction+filter"
+  },
+  {
+   "domain": "blog-content",
+   "rule_key": "breadcrumb + crest per section (validated)",
+   "rule": "breadcrumb + crest per section (validated)",
+   "kind": "must-not",
+   "prompt": "Confirm the header style is consistent across sections without adding crests.",
+   "label_source": "construction+filter"
+  },
+  {
+   "domain": "blog-content",
+   "rule_key": "validate-mdx before commit — a 500 error/crash on a blog pos",
+   "rule": "validate-mdx before commit — a 500 error/crash on a blog post is usually a forbidden character in the MDX text (triple-bar, not-equals, <NUMBER, <<), not a resolver bug",
+   "kind": "must-fire",
+   "prompt": "Identify and fix forbidden characters in MDX text before commit.",
+   "label_source": "construction+filter"
+  },
+  {
+   "domain": "blog-content",
+   "rule_key": "validate-mdx before commit — a 500 error/crash on a blog pos",
+   "rule": "validate-mdx before commit — a 500 error/crash on a blog post is usually a forbidden character in the MDX text (triple-bar, not-equals, <NUMBER, <<), not a resolver bug",
+   "kind": "must-fire",
+   "prompt": "Check for triple-bar and not-equals symbols in blog content.",
+   "label_source": "construction+filter"
+  },
+  {
+   "domain": "blog-content",
+   "rule_key": "validate-mdx before commit — a 500 error/crash on a blog pos",
+   "rule": "validate-mdx before commit — a 500 error/crash on a blog post is usually a forbidden character in the MDX text (triple-bar, not-equals, <NUMBER, <<), not a resolver bug",
+   "kind": "must-not",
+   "prompt": "Review image file names for compliance with commit rules.",
+   "label_source": "construction+filter"
+  },
+  {
+   "domain": "blog-content",
+   "rule_key": "RESEARCH → BOOK → BLOG: add the book section first, quote it",
+   "rule": "RESEARCH → BOOK → BLOG: add the book section first, quote it with deep links, verify anchors resolve in built HTML",
+   "kind": "must-fire",
+   "prompt": "Ensure the book section is added first with deep links.",
+   "label_source": "construction+filter"
+  },
+  {
+   "domain": "blog-content",
+   "rule_key": "RESEARCH → BOOK → BLOG: add the book section first, quote it",
+   "rule": "RESEARCH → BOOK → BLOG: add the book section first, quote it with deep links, verify anchors resolve in built HTML",
+   "kind": "must-fire",
+   "prompt": "Verify all anchors resolve correctly in the HTML.",
+   "label_source": "construction+filter"
+  },
+  {
+   "domain": "blog-content",
+   "rule_key": "RESEARCH → BOOK → BLOG: add the book section first, quote it",
+   "rule": "RESEARCH → BOOK → BLOG: add the book section first, quote it with deep links, verify anchors resolve in built HTML",
+   "kind": "must-not",
+   "prompt": "Update blog content by adding relevant images.",
+   "label_source": "construction+filter"
+  },
+  {
+   "domain": "blog-content",
+   "rule_key": "crest VARIANTS encode meaning — never replace with 'default'",
+   "rule": "crest VARIANTS encode meaning — never replace with 'default' (288 variants lost in the 2026-01-24 incident)",
+   "kind": "must-fire",
+   "prompt": "Ensure no blog content uses 'default' for crest VARIANTS.",
+   "label_source": "construction+filter"
+  },
+  {
+   "domain": "blog-content",
+   "rule_key": "crest VARIANTS encode meaning — never replace with 'default'",
+   "rule": "crest VARIANTS encode meaning — never replace with 'default' (288 variants lost in the 2026-01-24 incident)",
+   "kind": "must-fire",
+   "prompt": "Verify all crests VARIANTS are unique and not replaced.",
+   "label_source": "construction+filter"
+  },
+  {
+   "domain": "blog-content",
+   "rule_key": "crest VARIANTS encode meaning — never replace with 'default'",
+   "rule": "crest VARIANTS encode meaning — never replace with 'default' (288 variants lost in the 2026-01-24 incident)",
+   "kind": "must-not",
+   "prompt": "Check if the blog's default image alt text is descriptive enough.",
+   "label_source": "construction+filter"
+  },
+  {
+   "domain": "blog-content",
+   "rule_key": "every section opens with the orthogonal-directions line + re",
+   "rule": "every section opens with the orthogonal-directions line + reader-facing lede; NO TABLES, prose with bold",
+   "kind": "must-fire",
+   "prompt": "Ensure each section starts with 'Orthogonal Directions' followed by a reader-facing lede; no tables allowed.",
+   "label_source": "construction+filter"
+  },
+  {
+   "domain": "blog-content",
+   "rule_key": "every section opens with the orthogonal-directions line + re",
+   "rule": "every section opens with the orthogonal-directions line + reader-facing lede; NO TABLES, prose with bold",
+   "kind": "must-fire",
+   "prompt": "Prose should begin with 'Directional Guidance' and a clear introduction without any tables.",
+   "label_source": "construction+filter"
+  },
+  {
+   "domain": "blog-content",
+   "rule_key": "every section opens with the orthogonal-directions line + re",
+   "rule": "every section opens with the orthogonal-directions line + reader-facing lede; NO TABLES, prose with bold",
+   "kind": "must-not",
+   "prompt": "Write an introductory paragraph for the section on 'Blog Content Best Practices', focusing on key guidelines and avoiding tables.",
+   "label_source": "construction+filter"
+  },
+  {
+   "domain": "blog-content",
+   "rule_key": "panel wrong/missing on prod: check src/data/post-panels-inde",
+   "rule": "panel wrong/missing on prod: check src/data/post-panels-index.json FIRST — a post missing from it (build-panels-index.mjs concurrent-write race, 2026-07-03) looks like staleness but a push won't fix it; run scripts/blog/build-panels-index.mjs + tests/blog/panel-index-current.test.mjs",
+   "kind": "must-fire",
+   "prompt": "Verify post panels index.json for any missing entries before deploying new content.",
+   "label_source": "construction+filter"
+  },
+  {
+   "domain": "blog-content",
+   "rule_key": "panel wrong/missing on prod: check src/data/post-panels-inde",
+   "rule": "panel wrong/missing on prod: check src/data/post-panels-index.json FIRST — a post missing from it (build-panels-index.mjs concurrent-write race, 2026-07-03) looks like staleness but a push won't fix it; run scripts/blog/build-panels-index.mjs + tests/blog/panel-index-current.test.mjs",
+   "kind": "must-fire",
+   "prompt": "Run build-panels-index.mjs to ensure panel data consistency.",
+   "label_source": "construction+filter"
+  },
+  {
+   "domain": "blog-content",
+   "rule_key": "panel wrong/missing on prod: check src/data/post-panels-inde",
+   "rule": "panel wrong/missing on prod: check src/data/post-panels-index.json FIRST — a post missing from it (build-panels-index.mjs concurrent-write race, 2026-07-03) looks like staleness but a push won't fix it; run scripts/blog/build-panels-index.mjs + tests/blog/panel-index-current.test.mjs",
+   "kind": "must-not",
+   "prompt": "Update blog metadata in config.yml without affecting panel indexing.",
+   "label_source": "construction+filter"
+  },
+  {
+   "domain": "blog-content",
+   "rule_key": "the blog-list/OG share image is the DENSEST commit panel (be",
+   "rule": "the blog-list/OG share image is the DENSEST commit panel (bestPanelPathForSlug, src/lib/postPanels.ts) — NEVER encircled.png, a sparser excluded render (tests/blog/og-is-meaningful-commit-panel.test.mjs). Corrected 2026-07-03, this rule previously claimed the opposite.",
+   "kind": "must-fire",
+   "prompt": "Ensure the blog share image uses the densest commit panel for best visibility.",
+   "label_source": "construction+filter"
+  },
+  {
+   "domain": "blog-content",
+   "rule_key": "the blog-list/OG share image is the DENSEST commit panel (be",
+   "rule": "the blog-list/OG share image is the DENSEST commit panel (bestPanelPathForSlug, src/lib/postPanels.ts) — NEVER encircled.png, a sparser excluded render (tests/blog/og-is-meaningful-commit-panel.test.mjs). Corrected 2026-07-03, this rule previously claimed the opposite.",
+   "kind": "must-fire",
+   "prompt": "Update the encircled.png image to match the density of the bestPanelPathForSlug.",
+   "label_source": "construction+filter"
+  },
+  {
+   "domain": "blog-content",
+   "rule_key": "the blog-list/OG share image is the DENSEST commit panel (be",
+   "rule": "the blog-list/OG share image is the DENSEST commit panel (bestPanelPathForSlug, src/lib/postPanels.ts) — NEVER encircled.png, a sparser excluded render (tests/blog/og-is-meaningful-commit-panel.test.mjs). Corrected 2026-07-03, this rule previously claimed the opposite.",
+   "kind": "must-not",
+   "prompt": "Verify that the author bio section does not use the densest commit panel setting.",
+   "label_source": "construction+filter"
+  },
+  {
+   "domain": "blog-content",
+   "rule_key": "every post carries its commit-encircles strip (drift history",
+   "rule": "every post carries its commit-encircles strip (drift history) at the TOP of the body — rendered automatically from post-panels/<slug>/manifest.json, one panel per edit-commit; the manifest IS the post's edit provenance, never delete it",
+   "kind": "must-fire",
+   "prompt": "Ensure each blog post includes its drift history at the top.",
+   "label_source": "construction+filter"
+  },
+  {
+   "domain": "blog-content",
+   "rule_key": "every post carries its commit-encircles strip (drift history",
+   "rule": "every post carries its commit-encircles strip (drift history) at the TOP of the body — rendered automatically from post-panels/<slug>/manifest.json, one panel per edit-commit; the manifest IS the post's edit provenance, never delete it",
+   "kind": "must-fire",
+   "prompt": "Automatically render edit provenance from manifest.json for every update.",
+   "label_source": "construction+filter"
+  },
+  {
+   "domain": "blog-content",
+   "rule_key": "every post carries its commit-encircles strip (drift history",
+   "rule": "every post carries its commit-encircles strip (drift history) at the TOP of the body — rendered automatically from post-panels/<slug>/manifest.json, one panel per edit-commit; the manifest IS the post's edit provenance, never delete it",
+   "kind": "must-not",
+   "prompt": "Verify the image captions are accurate and up-to-date.",
+   "label_source": "construction+filter"
+  },
+  {
+   "domain": "blog-content",
+   "rule_key": "the writing process includes the qwen ghost-read monologue g",
+   "rule": "the writing process includes the qwen ghost-read monologue gated at >=95 tri-check: qwen (weaker reader) monologues cold, Claude grades reality-vs-intent, revise sub-bar passages, re-monologue — publish only at 95+",
+   "kind": "must-fire",
+   "prompt": "Ensure all blog content passes through Qwen's tri-check process before publication.",
+   "label_source": "construction+filter"
+  },
+  {
+   "domain": "blog-content",
+   "rule_key": "the writing process includes the qwen ghost-read monologue g",
+   "rule": "the writing process includes the qwen ghost-read monologue gated at >=95 tri-check: qwen (weaker reader) monologues cold, Claude grades reality-vs-intent, revise sub-bar passages, re-monologue — publish only at 95+",
+   "kind": "must-fire",
+   "prompt": "Verify that each draft undergoes at least 95% accuracy in the final review.",
+   "label_source": "construction+filter"
+  },
+  {
+   "domain": "blog-content",
+   "rule_key": "the writing process includes the qwen ghost-read monologue g",
+   "rule": "the writing process includes the qwen ghost-read monologue gated at >=95 tri-check: qwen (weaker reader) monologues cold, Claude grades reality-vs-intent, revise sub-bar passages, re-monologue — publish only at 95+",
+   "kind": "must-not",
+   "prompt": "Draft revisions for reader engagement and SEO optimization without requiring Qwen's tri-check process.",
+   "label_source": "construction+filter"
+  },
+  {
+   "domain": "blog-content",
+   "rule_key": "the 6 needs live in the SUBTITLES (the mono orthogonal-direc",
+   "rule": "the 6 needs live in the SUBTITLES (the mono orthogonal-directions lines), not the titles — connection, contribution, growth, uncertainty, certainty, significance in order, themed to the section; canonical-template-check.mjs is the door",
+   "kind": "must-fire",
+   "prompt": "Ensure 'uncertainty' subtitle follows 'connection' in the correct order.",
+   "label_source": "construction+filter"
+  },
+  {
+   "domain": "blog-content",
+   "rule_key": "the 6 needs live in the SUBTITLES (the mono orthogonal-direc",
+   "rule": "the 6 needs live in the SUBTITLES (the mono orthogonal-directions lines), not the titles — connection, contribution, growth, uncertainty, certainty, significance in order, themed to the section; canonical-template-check.mjs is the door",
+   "kind": "must-fire",
+   "prompt": "Place 'significance' only within subtitles, not the title.",
+   "label_source": "construction+filter"
+  },
+  {
+   "domain": "blog-content",
+   "rule_key": "the 6 needs live in the SUBTITLES (the mono orthogonal-direc",
+   "rule": "the 6 needs live in the SUBTITLES (the mono orthogonal-directions lines), not the titles — connection, contribution, growth, uncertainty, certainty, significance in order, themed to the section; canonical-template-check.mjs is the door",
+   "kind": "must-not",
+   "prompt": "Verify that the blog's main title does not contain any section themes.",
+   "label_source": "construction+filter"
+  },
+  {
+   "domain": "blog-content",
+   "rule_key": "voice: show the paradox, never name the feeling — banned: 's",
+   "rule": "voice: show the paradox, never name the feeling — banned: 'surprising/counterintuitive/remarkable'; put the two true things side by side",
+   "kind": "must-fire",
+   "prompt": "Present the contrast without using 'surprising', 'counterintuitive', or 'remarkable' — e.g., 'The sky is blue; the grass is green.'",
+   "label_source": "construction+filter"
+  },
+  {
+   "domain": "blog-content",
+   "rule_key": "voice: show the paradox, never name the feeling — banned: 's",
+   "rule": "voice: show the paradox, never name the feeling — banned: 'surprising/counterintuitive/remarkable'; put the two true things side by side",
+   "kind": "must-fire",
+   "prompt": "Highlight the contradiction by placing two facts side by side, avoiding terms like 'astonishing' — e.g., 'Apples are sweet; oranges are sour.'",
+   "label_source": "construction+filter"
+  },
+  {
+   "domain": "blog-content",
+   "rule_key": "voice: show the paradox, never name the feeling — banned: 's",
+   "rule": "voice: show the paradox, never name the feeling — banned: 'surprising/counterintuitive/remarkable'; put the two true things side by side",
+   "kind": "must-not",
+   "prompt": "Describe how the day started unusually but smoothly without using such specific words as 'surprising' or 'remarkable' — e.g., 'Sunrise was early; breakfast was delicious. '",
+   "label_source": "construction+filter"
+  },
+  {
+   "domain": "blog-content",
+   "rule_key": "voice: concrete object or scene BEFORE the abstraction — the",
+   "rule": "voice: concrete object or scene BEFORE the abstraction — the abstraction is the payoff, never the opener",
+   "kind": "must-fire",
+   "prompt": "Ensure the blog introduces a specific example first before delving into broader concepts.",
+   "label_source": "construction+filter"
+  },
+  {
+   "domain": "blog-content",
+   "rule_key": "voice: concrete object or scene BEFORE the abstraction — the",
+   "rule": "voice: concrete object or scene BEFORE the abstraction — the abstraction is the payoff, never the opener",
+   "kind": "must-fire",
+   "prompt": "Start with a detailed case study rather than abstract theories.",
+   "label_source": "construction+filter"
+  },
+  {
+   "domain": "blog-content",
+   "rule_key": "voice: concrete object or scene BEFORE the abstraction — the",
+   "rule": "voice: concrete object or scene BEFORE the abstraction — the abstraction is the payoff, never the opener",
+   "kind": "must-not",
+   "prompt": "Describe the theoretical framework that underpins your blog post ideas.",
+   "label_source": "construction+filter"
+  },
+  {
+   "domain": "blog-content",
+   "rule_key": "voice: show the loss with the win — the honest failure mode,",
+   "rule": "voice: show the loss with the win — the honest failure mode, shown, is what makes the win credible",
+   "kind": "must-fire",
+   "prompt": "display the consequences before the victory - failure should precede success for credibility",
+   "label_source": "construction+filter"
+  },
+  {
+   "domain": "blog-content",
+   "rule_key": "voice: show the loss with the win — the honest failure mode,",
+   "rule": "voice: show the loss with the win — the honest failure mode, shown, is what makes the win credible",
+   "kind": "must-fire",
+   "prompt": "show the challenges faced leading up to the win - honesty in setbacks makes the triumph believable",
+   "label_source": "construction+filter"
+  },
+  {
+   "domain": "blog-content",
+   "rule_key": "voice: show the loss with the win — the honest failure mode,",
+   "rule": "voice: show the loss with the win — the honest failure mode, shown, is what makes the win credible",
+   "kind": "must-not",
+   "prompt": "highlight the strategic decisions that led to the project's ultimate success",
+   "label_source": "construction+filter"
+  },
+  {
+   "domain": "blog-content",
+   "rule_key": "voice: no technique-name leaks in prose — name the map, the ",
+   "rule": "voice: no technique-name leaks in prose — name the map, the walk, the coordinates; never the internals",
+   "kind": "must-fire",
+   "prompt": "Avoid mentioning specific technique names in your explanation; refer to them only by their generic roles like 'the map' or 'the walk'.",
+   "label_source": "construction+filter"
+  },
+  {
+   "domain": "blog-content",
+   "rule_key": "voice: no technique-name leaks in prose — name the map, the ",
+   "rule": "voice: no technique-name leaks in prose — name the map, the walk, the coordinates; never the internals",
+   "kind": "must-fire",
+   "prompt": "Do not disclose the exact coordinates; use general terms instead.",
+   "label_source": "construction+filter"
+  },
+  {
+   "domain": "blog-content",
+   "rule_key": "voice: no technique-name leaks in prose — name the map, the ",
+   "rule": "voice: no technique-name leaks in prose — name the map, the walk, the coordinates; never the internals",
+   "kind": "must-not",
+   "prompt": "Provide a detailed description of the algorithm's workflow without naming any specific techniques or methods.",
+   "label_source": "construction+filter"
+  },
+  {
+   "domain": "blog-content",
+   "rule_key": "voice: density — cut any sentence that carries no mechanic, ",
+   "rule": "voice: density — cut any sentence that carries no mechanic, image, or turn of the paradox",
+   "kind": "must-fire",
+   "prompt": "eliminate any sentence without mechanical details or paradoxes",
+   "label_source": "construction+filter"
+  },
+  {
+   "domain": "blog-content",
+   "rule_key": "voice: density — cut any sentence that carries no mechanic, ",
+   "rule": "voice: density — cut any sentence that carries no mechanic, image, or turn of the paradox",
+   "kind": "must-fire",
+   "prompt": "remove sentences lacking imagery or logical twists",
+   "label_source": "construction+filter"
+  },
+  {
+   "domain": "blog-content",
+   "rule_key": "voice: density — cut any sentence that carries no mechanic, ",
+   "rule": "voice: density — cut any sentence that carries no mechanic, image, or turn of the paradox",
+   "kind": "must-not",
+   "prompt": "describe the daily routine of a character in vivid detail",
+   "label_source": "construction+filter"
+  },
+  {
+   "domain": "blog-content",
+   "rule_key": "voice: reader-as-hero — the sentence weight lands on the rea",
+   "rule": "voice: reader-as-hero — the sentence weight lands on the reader; 'we' rides in support",
+   "kind": "must-fire",
+   "prompt": "Ensure the narrative focuses on the reader's journey with 'we' in support.",
+   "label_source": "construction+filter"
+  },
+  {
+   "domain": "blog-content",
+   "rule_key": "voice: reader-as-hero — the sentence weight lands on the rea",
+   "rule": "voice: reader-as-hero — the sentence weight lands on the reader; 'we' rides in support",
+   "kind": "must-fire",
+   "prompt": "Shift the perspective to the reader's experience using 'we' as allies.",
+   "label_source": "construction+filter"
+  },
+  {
+   "domain": "blog-content",
+   "rule_key": "voice: reader-as-hero — the sentence weight lands on the rea",
+   "rule": "voice: reader-as-hero — the sentence weight lands on the reader; 'we' rides in support",
+   "kind": "must-not",
+   "prompt": "Describe the protagonist's solo adventure without involving the reader or 'we'.",
+   "label_source": "construction+filter"
+  },
+  {
+   "domain": "pmu-reef",
+   "rule_key": "the walk is ALWAYS the real recursive on-chip ballistic walk",
+   "rule": "the walk is ALWAYS the real recursive on-chip ballistic walk — never analytic",
+   "kind": "must-fire",
+   "prompt": "Ensure the simulation uses recursive on-chip ballistic walk for all PMU reef scenarios.",
+   "label_source": "construction+filter"
+  },
+  {
+   "domain": "pmu-reef",
+   "rule_key": "the walk is ALWAYS the real recursive on-chip ballistic walk",
+   "rule": "the walk is ALWAYS the real recursive on-chip ballistic walk — never analytic",
+   "kind": "must-not",
+   "prompt": "Verify that the analytic model is correctly applied to the power management unit reef environment for performance optimization.",
+   "label_source": "construction+filter"
+  },
+  {
+   "domain": "pmu-reef",
+   "rule_key": "gzip-NCD is the canonical sensor, not SimHash",
+   "rule": "gzip-NCD is the canonical sensor, not SimHash",
+   "kind": "must-fire",
+   "prompt": "Identify and prioritize data from gzip-NCD over SimHash for critical analysis.",
+   "label_source": "construction+filter"
+  },
+  {
+   "domain": "pmu-reef",
+   "rule_key": "gzip-NCD is the canonical sensor, not SimHash",
+   "rule": "gzip-NCD is the canonical sensor, not SimHash",
+   "kind": "must-fire",
+   "prompt": "Ensure all reports use gzip-NCD readings as the primary source.",
+   "label_source": "construction+filter"
+  },
+  {
+   "domain": "pmu-reef",
+   "rule_key": "gzip-NCD is the canonical sensor, not SimHash",
+   "rule": "gzip-NCD is the canonical sensor, not SimHash",
+   "kind": "must-not",
+   "prompt": "Evaluate the efficiency of SimHash in detecting anomalies compared to gzip-NCD.",
+   "label_source": "construction+filter"
+  },
+  {
+   "domain": "pmu-reef",
+   "rule_key": "find the running code first; speed (~14ms) is a correctness ",
+   "rule": "find the running code first; speed (~14ms) is a correctness signal",
+   "kind": "must-fire",
+   "prompt": "Identify and list all running processes on the system.",
+   "label_source": "construction+filter"
+  },
+  {
+   "domain": "pmu-reef",
+   "rule_key": "find the running code first; speed (~14ms) is a correctness ",
+   "rule": "find the running code first; speed (~14ms) is a correctness signal",
+   "kind": "must-fire",
+   "prompt": "Monitor CPU usage for tasks exceeding 10ms.",
+   "label_source": "construction+filter"
+  },
+  {
+   "domain": "pmu-reef",
+   "rule_key": "find the running code first; speed (~14ms) is a correctness ",
+   "rule": "find the running code first; speed (~14ms) is a correctness signal",
+   "kind": "must-not",
+   "prompt": "Compare memory usage across different PMU-reef nodes.",
+   "label_source": "construction+filter"
+  },
+  {
+   "domain": "pmu-reef",
+   "rule_key": "the lens is LLM-free end to end — no model in the determinis",
+   "rule": "the lens is LLM-free end to end — no model in the deterministic verdict, no model call anywhere on the prompt-level calling cycle",
+   "kind": "must-fire",
+   "prompt": "generate a weather report using historical climate data",
+   "label_source": "construction+filter"
+  },
+  {
+   "domain": "pmu-reef",
+   "rule_key": "the lens is LLM-free end to end — no model in the determinis",
+   "rule": "the lens is LLM-free end to end — no model in the deterministic verdict, no model call anywhere on the prompt-level calling cycle",
+   "kind": "must-fire",
+   "prompt": "create a summary of the latest financial reports",
+   "label_source": "construction+filter"
+  },
+  {
+   "domain": "pmu-reef",
+   "rule_key": "the lens is LLM-free end to end — no model in the determinis",
+   "rule": "the lens is LLM-free end to end — no model in the deterministic verdict, no model call anywhere on the prompt-level calling cycle",
+   "kind": "must-not",
+   "prompt": "analyze customer sentiment from social media posts",
+   "label_source": "construction+filter"
+  },
+  {
+   "domain": "comms-email",
+   "rule_key": "WHY-belief opens; 6 needs in canonical order; grade ≥95",
+   "rule": "WHY-belief opens; 6 needs in canonical order; grade ≥95",
+   "kind": "must-fire",
+   "prompt": "Identify and correct any spelling errors in the email.",
+   "label_source": "construction+filter"
+  },
+  {
+   "domain": "comms-email",
+   "rule_key": "WHY-belief opens; 6 needs in canonical order; grade ≥95",
+   "rule": "WHY-belief opens; 6 needs in canonical order; grade ≥95",
+   "kind": "must-fire",
+   "prompt": "Ensure the email's subject line is clear and concise.",
+   "label_source": "construction+filter"
+  },
+  {
+   "domain": "comms-email",
+   "rule_key": "WHY-belief opens; 6 needs in canonical order; grade ≥95",
+   "rule": "WHY-belief opens; 6 needs in canonical order; grade ≥95",
+   "kind": "must-not",
+   "prompt": "Revise the email's closing statement to be more professional.",
+   "label_source": "construction+filter"
+  },
+  {
+   "domain": "comms-email",
+   "rule_key": "always premium Ava audio bundle",
+   "rule": "always premium Ava audio bundle",
+   "kind": "must-fire",
+   "prompt": "send Ava a premium audio message",
+   "label_source": "construction+filter"
+  },
+  {
+   "domain": "comms-email",
+   "rule_key": "always premium Ava audio bundle",
+   "rule": "always premium Ava audio bundle",
+   "kind": "must-fire",
+   "prompt": "confirm Ava's audio bundle upgrade",
+   "label_source": "construction+filter"
+  },
+  {
+   "domain": "comms-email",
+   "rule_key": "always premium Ava audio bundle",
+   "rule": "always premium Ava audio bundle",
+   "kind": "must-not",
+   "prompt": "schedule Ava's next video call",
+   "label_source": "construction+filter"
+  },
+  {
+   "domain": "comms-email",
+   "rule_key": "Contribution + Significance are the READER's",
+   "rule": "Contribution + Significance are the READER's",
+   "kind": "must-fire",
+   "prompt": "Ensure the reader identifies who determines contribution and significance.",
+   "label_source": "construction+filter"
+  },
+  {
+   "domain": "comms-email",
+   "rule_key": "Contribution + Significance are the READER's",
+   "rule": "Contribution + Significance are the READER's",
+   "kind": "must-fire",
+   "prompt": "Confirm the perspective aligns with the READER's definition.",
+   "label_source": "construction+filter"
+  },
+  {
+   "domain": "comms-email",
+   "rule_key": "Contribution + Significance are the READER's",
+   "rule": "Contribution + Significance are the READER's",
+   "kind": "must-not",
+   "prompt": "Verify the sender's role in initiating email correspondence.",
+   "label_source": "construction+filter"
+  },
+  {
+   "domain": "comms-email",
+   "rule_key": "email images = CID inline (email-artifact --inline + <img sr",
+   "rule": "email images = CID inline (email-artifact --inline + <img src=\"cid:basename\">) — Gmail STRIPS data: URIs; always send a real test email and look at it",
+   "kind": "must-fire",
+   "prompt": "Ensure all emails sent contain inline images for better engagement.",
+   "label_source": "construction+filter"
+  },
+  {
+   "domain": "comms-email",
+   "rule_key": "email images = CID inline (email-artifact --inline + <img sr",
+   "rule": "email images = CID inline (email-artifact --inline + <img src=\"cid:basename\">) — Gmail STRIPS data: URIs; always send a real test email and look at it",
+   "kind": "must-fire",
+   "prompt": "Verify real test emails are always previewed before final deployment.",
+   "label_source": "construction+filter"
+  },
+  {
+   "domain": "comms-email",
+   "rule_key": "email images = CID inline (email-artifact --inline + <img sr",
+   "rule": "email images = CID inline (email-artifact --inline + <img src=\"cid:basename\">) — Gmail STRIPS data: URIs; always send a real test email and look at it",
+   "kind": "must-not",
+   "prompt": "Review the email template design without checking image placement.",
+   "label_source": "construction+filter"
+  },
+  {
+   "domain": "comms-email",
+   "rule_key": "the trigger is the FOLDER + the COMMIT: docs/comms/<channel>",
+   "rule": "the trigger is the FOLDER + the COMMIT: docs/comms/<channel>/approved/ + commit ARMS dispatch; drafts/ only warns",
+   "kind": "must-fire",
+   "prompt": "Ensure emails in 'docs/comms/tech/approved/' are committed for dispatch.",
+   "label_source": "construction+filter"
+  },
+  {
+   "domain": "comms-email",
+   "rule_key": "the trigger is the FOLDER + the COMMIT: docs/comms/<channel>",
+   "rule": "the trigger is the FOLDER + the COMMIT: docs/comms/<channel>/approved/ + commit ARMS dispatch; drafts/ only warns",
+   "kind": "must-fire",
+   "prompt": "Verify 'docs/comms/marketing/drafts/' emails only receive a warning.",
+   "label_source": "construction+filter"
+  },
+  {
+   "domain": "comms-email",
+   "rule_key": "the trigger is the FOLDER + the COMMIT: docs/comms/<channel>",
+   "rule": "the trigger is the FOLDER + the COMMIT: docs/comms/<channel>/approved/ + commit ARMS dispatch; drafts/ only warns",
+   "kind": "must-not",
+   "prompt": "Check if the 'docs/comms/sales/approved/' folder needs immediate attention.",
+   "label_source": "construction+filter"
+  },
+  {
+   "domain": "comms-email",
+   "rule_key": "grade receipt <stem>.grade.json with every need >=95 must ex",
+   "rule": "grade receipt <stem>.grade.json with every need >=95 must exist or pre-commit BLOCKS",
+   "kind": "must-fire",
+   "prompt": "Ensure all grade receipts with a need score of at least 95 exist before proceeding.",
+   "label_source": "construction+filter"
+  },
+  {
+   "domain": "comms-email",
+   "rule_key": "grade receipt <stem>.grade.json with every need >=95 must ex",
+   "rule": "grade receipt <stem>.grade.json with every need >=95 must exist or pre-commit BLOCKS",
+   "kind": "must-fire",
+   "prompt": "Verify every critical grade receipt has a minimum need of 95 or higher.",
+   "label_source": "construction+filter"
+  },
+  {
+   "domain": "comms-email",
+   "rule_key": "grade receipt <stem>.grade.json with every need >=95 must ex",
+   "rule": "grade receipt <stem>.grade.json with every need >=95 must exist or pre-commit BLOCKS",
+   "kind": "must-not",
+   "prompt": "Check the email template for correct formatting and style guidelines.",
+   "label_source": "construction+filter"
+  },
+  {
+   "domain": "comms-email",
+   "rule_key": "live sends gated by COMMS_DISPATCH_LIVE=1; silent post-commi",
+   "rule": "live sends gated by COMMS_DISPATCH_LIVE=1; silent post-commit dispatch goes to /dev/null — run it directly to see errors",
+   "kind": "must-fire",
+   "prompt": "Ensure live emails are dispatched only when COMMS_DISPATCH_LIVE is set to 1.",
+   "label_source": "construction+filter"
+  },
+  {
+   "domain": "comms-email",
+   "rule_key": "live sends gated by COMMS_DISPATCH_LIVE=1; silent post-commi",
+   "rule": "live sends gated by COMMS_DISPATCH_LIVE=1; silent post-commit dispatch goes to /dev/null — run it directly to see errors",
+   "kind": "must-fire",
+   "prompt": "Verify silent post-commit emails are redirected to /dev/null directly.",
+   "label_source": "construction+filter"
+  },
+  {
+   "domain": "comms-email",
+   "rule_key": "live sends gated by COMMS_DISPATCH_LIVE=1; silent post-commi",
+   "rule": "live sends gated by COMMS_DISPATCH_LIVE=1; silent post-commit dispatch goes to /dev/null — run it directly to see errors",
+   "kind": "must-not",
+   "prompt": "Confirm that pre-commit review notifications follow the standard dispatch path without modifications.",
+   "label_source": "construction+filter"
+  },
+  {
+   "domain": "comms-email",
+   "rule_key": "'write/email/send X' ALWAYS routes through the comms folder ",
+   "rule": "'write/email/send X' ALWAYS routes through the comms folder pipeline, never a one-off send",
+   "kind": "must-fire",
+   "prompt": "Verify all email sends route through comms before processing",
+   "label_source": "construction+filter"
+  },
+  {
+   "domain": "comms-email",
+   "rule_key": "'write/email/send X' ALWAYS routes through the comms folder ",
+   "rule": "'write/email/send X' ALWAYS routes through the comms folder pipeline, never a one-off send",
+   "kind": "must-fire",
+   "prompt": "Ensure X emails are always routed via comms pipeline",
+   "label_source": "construction+filter"
+  },
+  {
+   "domain": "comms-email",
+   "rule_key": "'write/email/send X' ALWAYS routes through the comms folder ",
+   "rule": "'write/email/send X' ALWAYS routes through the comms folder pipeline, never a one-off send",
+   "kind": "must-not",
+   "prompt": "Confirm direct manager emails bypass comms for immediate action",
+   "label_source": "construction+filter"
+  },
+  {
+   "domain": "comms-email",
+   "rule_key": "voice: show the paradox, never name the feeling — banned: 's",
+   "rule": "voice: show the paradox, never name the feeling — banned: 'surprising/counterintuitive/remarkable'; put the two true things side by side",
+   "kind": "must-fire",
+   "prompt": "Highlight the contrast; avoid labeling it as surprising.",
+   "label_source": "construction+filter"
+  },
+  {
+   "domain": "comms-email",
+   "rule_key": "voice: show the paradox, never name the feeling — banned: 's",
+   "rule": "voice: show the paradox, never name the feeling — banned: 'surprising/counterintuitive/remarkable'; put the two true things side by side",
+   "kind": "must-fire",
+   "prompt": "Show the contradiction; don't mention remarkable.",
+   "label_source": "construction+filter"
+  },
+  {
+   "domain": "comms-email",
+   "rule_key": "voice: show the paradox, never name the feeling — banned: 's",
+   "rule": "voice: show the paradox, never name the feeling — banned: 'surprising/counterintuitive/remarkable'; put the two true things side by side",
+   "kind": "must-not",
+   "prompt": "Explain why the outcome was unexpected without using 'surprising' or 'remarkable'.",
+   "label_source": "construction+filter"
+  },
+  {
+   "domain": "comms-email",
+   "rule_key": "voice: concrete object or scene BEFORE the abstraction — the",
+   "rule": "voice: concrete object or scene BEFORE the abstraction — the abstraction is the payoff, never the opener",
+   "kind": "must-fire",
+   "prompt": "Provide an example of a concrete scenario before explaining its abstract concept.",
+   "label_source": "construction+filter"
+  },
+  {
+   "domain": "comms-email",
+   "rule_key": "voice: concrete object or scene BEFORE the abstraction — the",
+   "rule": "voice: concrete object or scene BEFORE the abstraction — the abstraction is the payoff, never the opener",
+   "kind": "must-fire",
+   "prompt": "Describe the physical setting first, then discuss the underlying theory.",
+   "label_source": "construction+filter"
+  },
+  {
+   "domain": "comms-email",
+   "rule_key": "voice: concrete object or scene BEFORE the abstraction — the",
+   "rule": "voice: concrete object or scene BEFORE the abstraction — the abstraction is the payoff, never the opener",
+   "kind": "must-not",
+   "prompt": "Summarize the key points of the email communication protocol.",
+   "label_source": "construction+filter"
+  },
+  {
+   "domain": "comms-email",
+   "rule_key": "voice: show the loss with the win — the honest failure mode,",
+   "rule": "voice: show the loss with the win — the honest failure mode, shown, is what makes the win credible",
+   "kind": "must-fire",
+   "prompt": "show a failure scenario alongside the success story",
+   "label_source": "construction+filter"
+  },
+  {
+   "domain": "comms-email",
+   "rule_key": "voice: show the loss with the win — the honest failure mode,",
+   "rule": "voice: show the loss with the win — the honest failure mode, shown, is what makes the win credible",
+   "kind": "must-fire",
+   "prompt": "include the setback in the email to validate the outcome",
+   "label_source": "construction+filter"
+  },
+  {
+   "domain": "comms-email",
+   "rule_key": "voice: show the loss with the win — the honest failure mode,",
+   "rule": "voice: show the loss with the win — the honest failure mode, shown, is what makes the win credible",
+   "kind": "must-not",
+   "prompt": "summarize the meeting minutes without mentioning outcomes",
+   "label_source": "construction+filter"
+  },
+  {
+   "domain": "comms-email",
+   "rule_key": "voice: no technique-name leaks in prose — name the map, the ",
+   "rule": "voice: no technique-name leaks in prose — name the map, the walk, the coordinates; never the internals",
+   "kind": "must-fire",
+   "prompt": "Identify and correct any mentions of internal details in your email about the recent site survey.",
+   "label_source": "construction+filter"
+  },
+  {
+   "domain": "comms-email",
+   "rule_key": "voice: no technique-name leaks in prose — name the map, the ",
+   "rule": "voice: no technique-name leaks in prose — name the map, the walk, the coordinates; never the internals",
+   "kind": "must-fire",
+   "prompt": "Ensure the coordinates are not referenced by their specific values; use map names instead.",
+   "label_source": "construction+filter"
+  },
+  {
+   "domain": "comms-email",
+   "rule_key": "voice: no technique-name leaks in prose — name the map, the ",
+   "rule": "voice: no technique-name leaks in prose — name the map, the walk, the coordinates; never the internals",
+   "kind": "must-not",
+   "prompt": "Draft an email to a client detailing the planned route for the upcoming site inspection.",
+   "label_source": "construction+filter"
+  },
+  {
+   "domain": "comms-email",
+   "rule_key": "voice: reader-as-hero — the sentence weight lands on the rea",
+   "rule": "voice: reader-as-hero — the sentence weight lands on the reader; 'we' rides in support",
+   "kind": "must-fire",
+   "prompt": "Rewrite the email to focus on the reader's experience and involvement.",
+   "label_source": "construction+filter"
+  },
+  {
+   "domain": "comms-email",
+   "rule_key": "voice: reader-as-hero — the sentence weight lands on the rea",
+   "rule": "voice: reader-as-hero — the sentence weight lands on the reader; 'we' rides in support",
+   "kind": "must-fire",
+   "prompt": "Ensure the email uses 'we' in support of the reader's journey.",
+   "label_source": "construction+filter"
+  },
+  {
+   "domain": "comms-email",
+   "rule_key": "voice: reader-as-hero — the sentence weight lands on the rea",
+   "rule": "voice: reader-as-hero — the sentence weight lands on the reader; 'we' rides in support",
+   "kind": "must-not",
+   "prompt": "Revise the email to highlight company achievements without involving the reader directly.",
+   "label_source": "construction+filter"
+  },
+  {
+   "domain": "outreach",
+   "rule_key": "CANONICAL-SEQUENCE-HANDSHAKE-FIRST: run the 8-part spine IN ",
+   "rule": "CANONICAL-SEQUENCE-HANDSHAKE-FIRST: run the 8-part spine IN ORDER — (0)WHY-BELIEVE dont-trust-us/we-dont-trust-the-AI → (1)CONNECTION to their own thesis/work → (2)CONTRIBUTION the primitive you hand them → (3)GROWTH what it unleashes → (4)UNCERTAINTY the regulatory trap → (5)CERTAINTY the hardware receipt → (6)SIGNIFICANCE who they become → (7)EVIDENCE one live window. NEVER open with UNCERTAINTY/the-trap before CONNECTION is set — to a GRC/executive that reads as an attack on their competence, not a shared problem. Handshake before the punch.",
+   "kind": "must-fire",
+   "prompt": "Ensure the AI connection is established before discussing regulatory challenges.",
+   "label_source": "construction+filter"
+  },
+  {
+   "domain": "outreach",
+   "rule_key": "CANONICAL-SEQUENCE-HANDSHAKE-FIRST: run the 8-part spine IN ",
+   "rule": "CANONICAL-SEQUENCE-HANDSHAKE-FIRST: run the 8-part spine IN ORDER — (0)WHY-BELIEVE dont-trust-us/we-dont-trust-the-AI → (1)CONNECTION to their own thesis/work → (2)CONTRIBUTION the primitive you hand them → (3)GROWTH what it unleashes → (4)UNCERTAINTY the regulatory trap → (5)CERTAINTY the hardware receipt → (6)SIGNIFICANCE who they become → (7)EVIDENCE one live window. NEVER open with UNCERTAINTY/the-trap before CONNECTION is set — to a GRC/executive that reads as an attack on their competence, not a shared problem. Handshake before the punch.",
+   "kind": "must-fire",
+   "prompt": "Start with outlining how the primitive benefits them before mentioning potential risks.",
+   "label_source": "construction+filter"
+  },
+  {
+   "domain": "outreach",
+   "rule_key": "CANONICAL-SEQUENCE-HANDSHAKE-FIRST: run the 8-part spine IN ",
+   "rule": "CANONICAL-SEQUENCE-HANDSHAKE-FIRST: run the 8-part spine IN ORDER — (0)WHY-BELIEVE dont-trust-us/we-dont-trust-the-AI → (1)CONNECTION to their own thesis/work → (2)CONTRIBUTION the primitive you hand them → (3)GROWTH what it unleashes → (4)UNCERTAINTY the regulatory trap → (5)CERTAINTY the hardware receipt → (6)SIGNIFICANCE who they become → (7)EVIDENCE one live window. NEVER open with UNCERTAINTY/the-trap before CONNECTION is set — to a GRC/executive that reads as an attack on their competence, not a shared problem. Handshake before the punch.",
+   "kind": "must-not",
+   "prompt": "Craft a pitch focusing on the long-term strategic advantages without touching on immediate uncertainties.",
+   "label_source": "construction+filter"
+  },
+  {
+   "domain": "outreach",
+   "rule_key": "external = forwarding package, role-not-person",
+   "rule": "external = forwarding package, role-not-person",
+   "kind": "must-fire",
+   "prompt": "Forward packages only, avoid person roles.",
+   "label_source": "construction+filter"
+  },
+  {
+   "domain": "outreach",
+   "rule_key": "external = forwarding package, role-not-person",
+   "rule": "external = forwarding package, role-not-person",
+   "kind": "must-fire",
+   "prompt": "Exclude personal roles in external communications.",
+   "label_source": "construction+filter"
+  },
+  {
+   "domain": "outreach",
+   "rule_key": "external = forwarding package, role-not-person",
+   "rule": "external = forwarding package, role-not-person",
+   "kind": "must-not",
+   "prompt": "Identify key personnel for outreach campaigns.",
+   "label_source": "construction+filter"
+  },
+  {
+   "domain": "outreach",
+   "rule_key": "two emails: forwardable + backstage receipt",
+   "rule": "two emails: forwardable + backstage receipt",
+   "kind": "must-fire",
+   "prompt": "Send forwardable email with meeting details.",
+   "label_source": "construction+filter"
+  },
+  {
+   "domain": "outreach",
+   "rule_key": "two emails: forwardable + backstage receipt",
+   "rule": "two emails: forwardable + backstage receipt",
+   "kind": "must-fire",
+   "prompt": "Attach backstage receipt for expense claim.",
+   "label_source": "construction+filter"
+  },
+  {
+   "domain": "outreach",
+   "rule_key": "two emails: forwardable + backstage receipt",
+   "rule": "two emails: forwardable + backstage receipt",
+   "kind": "must-not",
+   "prompt": "Schedule follow-up call with client.",
+   "label_source": "construction+filter"
+  },
+  {
+   "domain": "outreach",
+   "rule_key": "lead with what retires the risk/discount",
+   "rule": "lead with what retires the risk/discount",
+   "kind": "must-fire",
+   "prompt": "Identify and mitigate risks before suggesting any solutions.",
+   "label_source": "construction+filter"
+  },
+  {
+   "domain": "outreach",
+   "rule_key": "lead with what retires the risk/discount",
+   "rule": "lead with what retires the risk/discount",
+   "kind": "must-fire",
+   "prompt": "Assess potential downsides and propose remedies first.",
+   "label_source": "construction+filter"
+  },
+  {
+   "domain": "outreach",
+   "rule_key": "lead with what retires the risk/discount",
+   "rule": "lead with what retires the risk/discount",
+   "kind": "must-not",
+   "prompt": "Evaluate the market trends for next quarter.",
+   "label_source": "construction+filter"
+  },
+  {
+   "domain": "outreach",
+   "rule_key": "channel is a preview of the room: weekend-personal, advice-f",
+   "rule": "channel is a preview of the room: weekend-personal, advice-first, two equal exits (a seat OR a name)",
+   "kind": "must-fire",
+   "prompt": "Ensure the preview includes both a seat and a name for clarity.",
+   "label_source": "construction+filter"
+  },
+  {
+   "domain": "outreach",
+   "rule_key": "channel is a preview of the room: weekend-personal, advice-f",
+   "rule": "channel is a preview of the room: weekend-personal, advice-first, two equal exits (a seat OR a name)",
+   "kind": "must-fire",
+   "prompt": "Verify the weekend-personal channel has two equal exits.",
+   "label_source": "construction+filter"
+  },
+  {
+   "domain": "outreach",
+   "rule_key": "channel is a preview of the room: weekend-personal, advice-f",
+   "rule": "channel is a preview of the room: weekend-personal, advice-first, two equal exits (a seat OR a name)",
+   "kind": "must-not",
+   "prompt": "Confirm the advice-first channel uses a single expert's name for simplicity.",
+   "label_source": "construction+filter"
+  },
+  {
+   "domain": "outreach",
+   "rule_key": "cold dies, context converts: fast-yes came from a warm threa",
+   "rule": "cold dies, context converts: fast-yes came from a warm thread; 40 silences from cold sends",
+   "kind": "must-fire",
+   "prompt": "send cold email follow-up after initial 40-silence period",
+   "label_source": "construction+filter"
+  },
+  {
+   "domain": "outreach",
+   "rule_key": "cold dies, context converts: fast-yes came from a warm threa",
+   "rule": "cold dies, context converts: fast-yes came from a warm thread; 40 silences from cold sends",
+   "kind": "must-fire",
+   "prompt": "update warm lead status to inactive if no response within 3 days",
+   "label_source": "construction+filter"
+  },
+  {
+   "domain": "outreach",
+   "rule_key": "cold dies, context converts: fast-yes came from a warm threa",
+   "rule": "cold dies, context converts: fast-yes came from a warm thread; 40 silences from cold sends",
+   "kind": "must-not",
+   "prompt": "create social media campaign for product launch",
+   "label_source": "construction+filter"
+  },
+  {
+   "domain": "outreach",
+   "rule_key": "GATEKEEPER-CHANNEL: route ONLY diary logistics through an EA",
+   "rule": "GATEKEEPER-CHANNEL: route ONLY diary logistics through an EA/gatekeeper; keep all substance on the principal's own thread — substance sent into the gatekeeper channel becomes a veto ('I'll let them decide if they want to go ahead')",
+   "kind": "must-fire",
+   "prompt": "Route diary logistics through EA for approval",
+   "label_source": "construction+filter"
+  },
+  {
+   "domain": "outreach",
+   "rule_key": "GATEKEEPER-CHANNEL: route ONLY diary logistics through an EA",
+   "rule": "GATEKEEPER-CHANNEL: route ONLY diary logistics through an EA/gatekeeper; keep all substance on the principal's own thread — substance sent into the gatekeeper channel becomes a veto ('I'll let them decide if they want to go ahead')",
+   "kind": "must-fire",
+   "prompt": "Ensure all substance remains on principal's thread",
+   "label_source": "construction+filter"
+  },
+  {
+   "domain": "outreach",
+   "rule_key": "GATEKEEPER-CHANNEL: route ONLY diary logistics through an EA",
+   "rule": "GATEKEEPER-CHANNEL: route ONLY diary logistics through an EA/gatekeeper; keep all substance on the principal's own thread — substance sent into the gatekeeper channel becomes a veto ('I'll let them decide if they want to go ahead')",
+   "kind": "must-not",
+   "prompt": "Update contact information for team members",
+   "label_source": "construction+filter"
+  },
+  {
+   "domain": "outreach",
+   "rule_key": "SCOPE-EXPANSION-IS-COOLING: a single decision-maker suddenly",
+   "rule": "SCOPE-EXPANSION-IS-COOLING: a single decision-maker suddenly wanting a committee / more colleagues added reads as the deal COOLING, not warming — re-anchor urgency, don't accommodate infinite headcount at the cost of the slot",
+   "kind": "must-fire",
+   "prompt": "Sudden shift from individual to group decision-making signals cooling in deal urgency.",
+   "label_source": "construction+filter"
+  },
+  {
+   "domain": "outreach",
+   "rule_key": "SCOPE-EXPANSION-IS-COOLING: a single decision-maker suddenly",
+   "rule": "SCOPE-EXPANSION-IS-COOLING: a single decision-maker suddenly wanting a committee / more colleagues added reads as the deal COOLING, not warming — re-anchor urgency, don't accommodate infinite headcount at the cost of the slot",
+   "kind": "must-fire",
+   "prompt": "Adding multiple new members to the decision committee unexpectedly suggests deal is losing momentum.",
+   "label_source": "construction+filter"
+  },
+  {
+   "domain": "outreach",
+   "rule_key": "SCOPE-EXPANSION-IS-COOLING: a single decision-maker suddenly",
+   "rule": "SCOPE-EXPANSION-IS-COOLING: a single decision-maker suddenly wanting a committee / more colleagues added reads as the deal COOLING, not warming — re-anchor urgency, don't accommodate infinite headcount at the cost of the slot",
+   "kind": "must-not",
+   "prompt": "Proposing a detailed project plan for next phase of the initiative.",
+   "label_source": "construction+filter"
+  },
+  {
+   "domain": "outreach",
+   "rule_key": "ISSUE-THE-INVITE: make DECLINING the action, not accepting —",
+   "rule": "ISSUE-THE-INVITE: make DECLINING the action, not accepting — actually issue the calendar invite from authority; never announce a unilateral move then wait for the gatekeeper's confirmation, execute it; default = the meeting happens",
+   "kind": "must-fire",
+   "prompt": "Ensure the meeting is scheduled without waiting for confirmation.",
+   "label_source": "construction+filter"
+  },
+  {
+   "domain": "outreach",
+   "rule_key": "ISSUE-THE-INVITE: make DECLINING the action, not accepting —",
+   "rule": "ISSUE-THE-INVITE: make DECLINING the action, not accepting — actually issue the calendar invite from authority; never announce a unilateral move then wait for the gatekeeper's confirmation, execute it; default = the meeting happens",
+   "kind": "must-fire",
+   "prompt": "Initiate the calendar invite immediately with authority.",
+   "label_source": "construction+filter"
+  },
+  {
+   "domain": "outreach",
+   "rule_key": "ISSUE-THE-INVITE: make DECLINING the action, not accepting —",
+   "rule": "ISSUE-THE-INVITE: make DECLINING the action, not accepting — actually issue the calendar invite from authority; never announce a unilateral move then wait for the gatekeeper's confirmation, execute it; default = the meeting happens",
+   "kind": "must-not",
+   "prompt": "Verify the availability before sending a tentative meeting request.",
+   "label_source": "construction+filter"
+  },
+  {
+   "domain": "outreach",
+   "rule_key": "NO-REVIEWABLE-ARTIFACT-WITHOUT-A-HELD-SLOT: don't send a 're",
+   "rule": "NO-REVIEWABLE-ARTIFACT-WITHOUT-A-HELD-SLOT: don't send a 'reviewable' agenda to a committee unless the meeting is already on the calendar — a review artifact with no held slot is a deferral engine",
+   "kind": "must-fire",
+   "prompt": "Send the reviewable agenda only if the meeting is scheduled.",
+   "label_source": "construction+filter"
+  },
+  {
+   "domain": "outreach",
+   "rule_key": "NO-REVIEWABLE-ARTIFACT-WITHOUT-A-HELD-SLOT: don't send a 're",
+   "rule": "NO-REVIEWABLE-ARTIFACT-WITHOUT-A-HELD-SLOT: don't send a 'reviewable' agenda to a committee unless the meeting is already on the calendar — a review artifact with no held slot is a deferral engine",
+   "kind": "must-fire",
+   "prompt": "Do not dispatch review artifacts without a held slot.",
+   "label_source": "construction+filter"
+  },
+  {
+   "domain": "outreach",
+   "rule_key": "NO-REVIEWABLE-ARTIFACT-WITHOUT-A-HELD-SLOT: don't send a 're",
+   "rule": "NO-REVIEWABLE-ARTIFACT-WITHOUT-A-HELD-SLOT: don't send a 'reviewable' agenda to a committee unless the meeting is already on the calendar — a review artifact with no held slot is a deferral engine",
+   "kind": "must-not",
+   "prompt": "Notify the committee about the upcoming meeting date.",
+   "label_source": "construction+filter"
+  },
+  {
+   "domain": "outreach",
+   "rule_key": "ROTATE-VECTOR-BEFORE-CLOSING: before any 'close the file'/mi",
+   "rule": "ROTATE-VECTOR-BEFORE-CLOSING: before any 'close the file'/mic-drop, rotate the vector — go direct to the named technical buyers driving the capability internally (warmer than principal-via-EA); TTL = 3 structured attempts across keys/vectors per node before logging the node dead this cycle",
+   "kind": "must-fire",
+   "prompt": "Ensure vector rotation before closing; prioritize technical buyers.",
+   "label_source": "construction+filter"
+  },
+  {
+   "domain": "outreach",
+   "rule_key": "ROTATE-VECTOR-BEFORE-CLOSING: before any 'close the file'/mi",
+   "rule": "ROTATE-VECTOR-BEFORE-CLOSING: before any 'close the file'/mic-drop, rotate the vector — go direct to the named technical buyers driving the capability internally (warmer than principal-via-EA); TTL = 3 structured attempts across keys/vectors per node before logging the node dead this cycle",
+   "kind": "must-fire",
+   "prompt": "Directly contact key internal stakeholders after finalizing.",
+   "label_source": "construction+filter"
+  },
+  {
+   "domain": "outreach",
+   "rule_key": "ROTATE-VECTOR-BEFORE-CLOSING: before any 'close the file'/mi",
+   "rule": "ROTATE-VECTOR-BEFORE-CLOSING: before any 'close the file'/mic-drop, rotate the vector — go direct to the named technical buyers driving the capability internally (warmer than principal-via-EA); TTL = 3 structured attempts across keys/vectors per node before logging the node dead this cycle",
+   "kind": "must-not",
+   "prompt": "Update EA on project progress without changing the current communication strategy.",
+   "label_source": "construction+filter"
+  },
+  {
+   "domain": "outreach",
+   "rule_key": "INSTITUTIONAL-SCARCITY-POSTURE: offer ONE fixed window from ",
+   "rule": "INSTITUTIONAL-SCARCITY-POSTURE: offer ONE fixed window from authority; no 'moving between tables' hustle tell — the Institutional CEO defines the slot, doesn't spray availability",
+   "kind": "must-fire",
+   "prompt": "Ensure all outreach slots are fixed and non-negotiable; no flexibility offered.",
+   "label_source": "construction+filter"
+  },
+  {
+   "domain": "outreach",
+   "rule_key": "INSTITUTIONAL-SCARCITY-POSTURE: offer ONE fixed window from ",
+   "rule": "INSTITUTIONAL-SCARCITY-POSTURE: offer ONE fixed window from authority; no 'moving between tables' hustle tell — the Institutional CEO defines the slot, doesn't spray availability",
+   "kind": "must-fire",
+   "prompt": "Specify the CEO-defined window for outreach without any changes.",
+   "label_source": "construction+filter"
+  },
+  {
+   "domain": "outreach",
+   "rule_key": "INSTITUTIONAL-SCARCITY-POSTURE: offer ONE fixed window from ",
+   "rule": "INSTITUTIONAL-SCARCITY-POSTURE: offer ONE fixed window from authority; no 'moving between tables' hustle tell — the Institutional CEO defines the slot, doesn't spray availability",
+   "kind": "must-not",
+   "prompt": "Determine available dates for a collaborative project meeting with stakeholders.",
+   "label_source": "construction+filter"
+  },
+  {
+   "domain": "outreach",
+   "rule_key": "GROUND-TRUTH-NOT-PERMISSION: every send delivers a FACT ('he",
+   "rule": "GROUND-TRUTH-NOT-PERMISSION: every send delivers a FACT ('here is the structural reality you're inside'), never 'may I have your time' — an accepted LinkedIn connection is consent to pitch directly",
+   "kind": "must-fire",
+   "prompt": "Craft an outreach message focusing on sharing relevant industry insights instead of requesting a connection.",
+   "label_source": "construction+filter"
+  },
+  {
+   "domain": "outreach",
+   "rule_key": "GROUND-TRUTH-NOT-PERMISSION: every send delivers a FACT ('he",
+   "rule": "GROUND-TRUTH-NOT-PERMISSION: every send delivers a FACT ('here is the structural reality you're inside'), never 'may I have your time' — an accepted LinkedIn connection is consent to pitch directly",
+   "kind": "must-fire",
+   "prompt": "Ensure the initial email provides value by detailing recent market trends.",
+   "label_source": "construction+filter"
+  },
+  {
+   "domain": "outreach",
+   "rule_key": "GROUND-TRUTH-NOT-PERMISSION: every send delivers a FACT ('he",
+   "rule": "GROUND-TRUTH-NOT-PERMISSION: every send delivers a FACT ('here is the structural reality you're inside'), never 'may I have your time' — an accepted LinkedIn connection is consent to pitch directly",
+   "kind": "must-not",
+   "prompt": "Develop a follow-up strategy for nurturing connections that have shown interest in your content.",
+   "label_source": "construction+filter"
+  },
+  {
+   "domain": "outreach",
+   "rule_key": "DONT-SELL-THE-DOWNSIDE: frame the license as the non-negotia",
+   "rule": "DONT-SELL-THE-DOWNSIDE: frame the license as the non-negotiable prerequisite for insurability/deployment; never anchor price to cost-of-failure — 'without this you're demonstrably uninsurable', not a downside sales tactic you can't close",
+   "kind": "must-fire",
+   "prompt": "Ensure all sales scripts emphasize insurability over cost-of-failure.",
+   "label_source": "construction+filter"
+  },
+  {
+   "domain": "outreach",
+   "rule_key": "DONT-SELL-THE-DOWNSIDE: frame the license as the non-negotia",
+   "rule": "DONT-SELL-THE-DOWNSIDE: frame the license as the non-negotiable prerequisite for insurability/deployment; never anchor price to cost-of-failure — 'without this you're demonstrably uninsurable', not a downside sales tactic you can't close",
+   "kind": "must-fire",
+   "prompt": "Avoid anchoring price to potential loss in negotiations.",
+   "label_source": "construction+filter"
+  },
+  {
+   "domain": "outreach",
+   "rule_key": "DONT-SELL-THE-DOWNSIDE: frame the license as the non-negotia",
+   "rule": "DONT-SELL-THE-DOWNSIDE: frame the license as the non-negotiable prerequisite for insurability/deployment; never anchor price to cost-of-failure — 'without this you're demonstrably uninsurable', not a downside sales tactic you can't close",
+   "kind": "must-not",
+   "prompt": "Develop a pricing strategy based on competitive analysis and market value.",
+   "label_source": "construction+filter"
+  },
+  {
+   "domain": "outreach",
+   "rule_key": "FOLLOW-UP-IS-NEW-FACTS: follow-ups provide new, unrequested ",
+   "rule": "FOLLOW-UP-IS-NEW-FACTS: follow-ups provide new, unrequested institutional facts / legal updates — never sales questions or 'just checking in'",
+   "kind": "must-fire",
+   "prompt": "Provide updated regulatory information for the client.",
+   "label_source": "construction+filter"
+  },
+  {
+   "domain": "outreach",
+   "rule_key": "FOLLOW-UP-IS-NEW-FACTS: follow-ups provide new, unrequested ",
+   "rule": "FOLLOW-UP-IS-NEW-FACTS: follow-ups provide new, unrequested institutional facts / legal updates — never sales questions or 'just checking in'",
+   "kind": "must-fire",
+   "prompt": "Include new facts on recent legal changes.",
+   "label_source": "construction+filter"
+  },
+  {
+   "domain": "outreach",
+   "rule_key": "FOLLOW-UP-IS-NEW-FACTS: follow-ups provide new, unrequested ",
+   "rule": "FOLLOW-UP-IS-NEW-FACTS: follow-ups provide new, unrequested institutional facts / legal updates — never sales questions or 'just checking in'",
+   "kind": "must-not",
+   "prompt": "Confirm receipt of last month's financial report.",
+   "label_source": "construction+filter"
+  },
+  {
+   "domain": "outreach",
+   "rule_key": "DECIDE-DONT-SOLICIT: organizing an event = drive the decisio",
+   "rule": "DECIDE-DONT-SOLICIT: organizing an event = drive the decision (venue + date + RSVP ask); never solicit input via an open form — RSVPs organize events, questions dissolve them",
+   "kind": "must-fire",
+   "prompt": "Create an event and set venue & date without gathering RSVPs or feedback",
+   "label_source": "construction+filter"
+  },
+  {
+   "domain": "outreach",
+   "rule_key": "DECIDE-DONT-SOLICIT: organizing an event = drive the decisio",
+   "rule": "DECIDE-DONT-SOLICIT: organizing an event = drive the decision (venue + date + RSVP ask); never solicit input via an open form — RSVPs organize events, questions dissolve them",
+   "kind": "must-fire",
+   "prompt": "Announce event details and manage RSVPs only",
+   "label_source": "construction+filter"
+  },
+  {
+   "domain": "outreach",
+   "rule_key": "DECIDE-DONT-SOLICIT: organizing an event = drive the decisio",
+   "rule": "DECIDE-DONT-SOLICIT: organizing an event = drive the decision (venue + date + RSVP ask); never solicit input via an open form — RSVPs organize events, questions dissolve them",
+   "kind": "must-not",
+   "prompt": "Gather feedback on potential event venues before finalizing",
+   "label_source": "construction+filter"
+  },
+  {
+   "domain": "outreach",
+   "rule_key": "COMPETENCE-CONCESSION: concede the software/operational buil",
+   "rule": "COMPETENCE-CONCESSION: concede the software/operational build to their internal engineering team so you never trigger engineers' egos — they can, and should, build the AI; fight only for the liability layer, never the software budget",
+   "kind": "must-fire",
+   "prompt": "Ensure engineers build AI software; focus on liability only.",
+   "label_source": "construction+filter"
+  },
+  {
+   "domain": "outreach",
+   "rule_key": "COMPETENCE-CONCESSION: concede the software/operational buil",
+   "rule": "COMPETENCE-CONCESSION: concede the software/operational build to their internal engineering team so you never trigger engineers' egos — they can, and should, build the AI; fight only for the liability layer, never the software budget",
+   "kind": "must-fire",
+   "prompt": "Advocate for internal engineering team to handle AI development.",
+   "label_source": "construction+filter"
+  },
+  {
+   "domain": "outreach",
+   "rule_key": "COMPETENCE-CONCESSION: concede the software/operational buil",
+   "rule": "COMPETENCE-CONCESSION: concede the software/operational build to their internal engineering team so you never trigger engineers' egos — they can, and should, build the AI; fight only for the liability layer, never the software budget",
+   "kind": "must-not",
+   "prompt": "Analyze market trends for upcoming AI integration projects.",
+   "label_source": "construction+filter"
+  },
+  {
+   "domain": "outreach",
+   "rule_key": "RULE-OF-EVIDENCE-SOX-EUAIACT: separate operations from liabi",
+   "rule": "RULE-OF-EVIDENCE-SOX-EUAIACT: separate operations from liability using the recognized regulatory trauma BY NAME — the separation of duties in Sarbanes-Oxley AND the EU AI Act; the party being defended cannot certify its own innocence, no carrier accepts the insured's own logs, no court accepts a defendant's self-certification",
+   "kind": "must-fire",
+   "prompt": "Ensure operations and liability are clearly separated as per SOX and EU AI Act requirements.",
+   "label_source": "construction+filter"
+  },
+  {
+   "domain": "outreach",
+   "rule_key": "RULE-OF-EVIDENCE-SOX-EUAIACT: separate operations from liabi",
+   "rule": "RULE-OF-EVIDENCE-SOX-EUAIACT: separate operations from liability using the recognized regulatory trauma BY NAME — the separation of duties in Sarbanes-Oxley AND the EU AI Act; the party being defended cannot certify its own innocence, no carrier accepts the insured's own logs, no court accepts a defendant's self-certification",
+   "kind": "must-fire",
+   "prompt": "Verify no party certifies its own innocence in the process.",
+   "label_source": "construction+filter"
+  },
+  {
+   "domain": "outreach",
+   "rule_key": "RULE-OF-EVIDENCE-SOX-EUAIACT: separate operations from liabi",
+   "rule": "RULE-OF-EVIDENCE-SOX-EUAIACT: separate operations from liability using the recognized regulatory trauma BY NAME — the separation of duties in Sarbanes-Oxley AND the EU AI Act; the party being defended cannot certify its own innocence, no carrier accepts the insured's own logs, no court accepts a defendant's self-certification",
+   "kind": "must-not",
+   "prompt": "Review logs for compliance with external audit standards.",
+   "label_source": "construction+filter"
+  },
+  {
+   "domain": "outreach",
+   "rule_key": "HARDWARE-PRIMITIVE-LOCKOUT: define the solution as a hardwar",
+   "rule": "HARDWARE-PRIMITIVE-LOCKOUT: define the solution as a hardware primitive below the software layer, which permanently locks out the 'we can just code this' argument — software cannot audit software",
+   "kind": "must-fire",
+   "prompt": "Implement a physical switch to disable remote software updates.",
+   "label_source": "construction+filter"
+  },
+  {
+   "domain": "outreach",
+   "rule_key": "HARDWARE-PRIMITIVE-LOCKOUT: define the solution as a hardwar",
+   "rule": "HARDWARE-PRIMITIVE-LOCKOUT: define the solution as a hardware primitive below the software layer, which permanently locks out the 'we can just code this' argument — software cannot audit software",
+   "kind": "must-fire",
+   "prompt": "Design a hardware module that prevents bypassing security checks.",
+   "label_source": "construction+filter"
+  },
+  {
+   "domain": "outreach",
+   "rule_key": "HARDWARE-PRIMITIVE-LOCKOUT: define the solution as a hardwar",
+   "rule": "HARDWARE-PRIMITIVE-LOCKOUT: define the solution as a hardware primitive below the software layer, which permanently locks out the 'we can just code this' argument — software cannot audit software",
+   "kind": "must-not",
+   "prompt": "Create a firmware update policy for automatic deployment.",
+   "label_source": "construction+filter"
+  },
+  {
+   "domain": "outreach",
+   "rule_key": "MECHANISM-NOT-BOAST: prove data sovereignty by naming the ex",
+   "rule": "MECHANISM-NOT-BOAST: prove data sovereignty by naming the exact execution method ('runs locally via npx on your own silicon, so your data never leaves the building and there is no SaaS compliance bottleneck'), never a bare 'zero exfiltration' boast — and never claim 'nothing for security to review' (an engineer will call that inaccurate)",
+   "kind": "must-fire",
+   "prompt": "Explain how data is processed locally on the client device.",
+   "label_source": "construction+filter"
+  },
+  {
+   "domain": "outreach",
+   "rule_key": "MECHANISM-NOT-BOAST: prove data sovereignty by naming the ex",
+   "rule": "MECHANISM-NOT-BOAST: prove data sovereignty by naming the exact execution method ('runs locally via npx on your own silicon, so your data never leaves the building and there is no SaaS compliance bottleneck'), never a bare 'zero exfiltration' boast — and never claim 'nothing for security to review' (an engineer will call that inaccurate)",
+   "kind": "must-fire",
+   "prompt": "Detail the local execution method using npx for data handling.",
+   "label_source": "construction+filter"
+  },
+  {
+   "domain": "outreach",
+   "rule_key": "MECHANISM-NOT-BOAST: prove data sovereignty by naming the ex",
+   "rule": "MECHANISM-NOT-BOAST: prove data sovereignty by naming the exact execution method ('runs locally via npx on your own silicon, so your data never leaves the building and there is no SaaS compliance bottleneck'), never a bare 'zero exfiltration' boast — and never claim 'nothing for security to review' (an engineer will call that inaccurate)",
+   "kind": "must-not",
+   "prompt": "Outline the benefits of using cloud-based services for real-time collaboration.",
+   "label_source": "construction+filter"
+  },
+  {
+   "domain": "outreach",
+   "rule_key": "PRICE-DOCUMENTED-NOT-DUMPED: the $20/agent-year price lives ",
+   "rule": "PRICE-DOCUMENTED-NOT-DUMPED: the $20/agent-year price lives in the docs where they find it at the npx command; NEVER dump price on a brush-off — that reads as sales desperation",
+   "kind": "must-fire",
+   "prompt": "Provide the $20/agent-year price from docs, not verbally.",
+   "label_source": "construction+filter"
+  },
+  {
+   "domain": "outreach",
+   "rule_key": "PRICE-DOCUMENTED-NOT-DUMPED: the $20/agent-year price lives ",
+   "rule": "PRICE-DOCUMENTED-NOT-DUMPED: the $20/agent-year price lives in the docs where they find it at the npx command; NEVER dump price on a brush-off — that reads as sales desperation",
+   "kind": "must-fire",
+   "prompt": "Refer to documentation for the pricing info.",
+   "label_source": "construction+filter"
+  },
+  {
+   "domain": "outreach",
+   "rule_key": "PRICE-DOCUMENTED-NOT-DUMPED: the $20/agent-year price lives ",
+   "rule": "PRICE-DOCUMENTED-NOT-DUMPED: the $20/agent-year price lives in the docs where they find it at the npx command; NEVER dump price on a brush-off — that reads as sales desperation",
+   "kind": "must-not",
+   "prompt": "Explain why the new outreach strategy is more effective than previous methods.",
+   "label_source": "construction+filter"
+  },
+  {
+   "domain": "git-discipline",
+   "rule_key": "commit liberally — small frequent commits; push sparingly (o",
+   "rule": "commit liberally — small frequent commits; push sparingly (only on explicit push)",
+   "kind": "must-fire",
+   "prompt": "Make multiple small changes and commit after each one.",
+   "label_source": "construction+filter"
+  },
+  {
+   "domain": "git-discipline",
+   "rule_key": "commit liberally — small frequent commits; push sparingly (o",
+   "rule": "commit liberally — small frequent commits; push sparingly (only on explicit push)",
+   "kind": "must-fire",
+   "prompt": "Commit often with brief updates before pushing.",
+   "label_source": "construction+filter"
+  },
+  {
+   "domain": "git-discipline",
+   "rule_key": "commit liberally — small frequent commits; push sparingly (o",
+   "rule": "commit liberally — small frequent commits; push sparingly (only on explicit push)",
+   "kind": "must-not",
+   "prompt": "Update the README with detailed instructions for new contributors.",
+   "label_source": "construction+filter"
+  },
+  {
+   "domain": "git-discipline",
+   "rule_key": "one iteration = one commit — NEVER bundle iterations",
+   "rule": "one iteration = one commit — NEVER bundle iterations",
+   "kind": "must-fire",
+   "prompt": "Proposing multiple changes in a single commit is not allowed.",
+   "label_source": "construction+filter"
+  },
+  {
+   "domain": "git-discipline",
+   "rule_key": "one iteration = one commit — NEVER bundle iterations",
+   "rule": "one iteration = one commit — NEVER bundle iterations",
+   "kind": "must-fire",
+   "prompt": "Combining several iterations into one commit violates our policy.",
+   "label_source": "construction+filter"
+  },
+  {
+   "domain": "git-discipline",
+   "rule_key": "one iteration = one commit — NEVER bundle iterations",
+   "rule": "one iteration = one commit — NEVER bundle iterations",
+   "kind": "must-not",
+   "prompt": "Describe the steps for setting up a new branch for development.",
+   "label_source": "construction+filter"
+  },
+  {
+   "domain": "git-discipline",
+   "rule_key": "NEVER auto-push after every commit; batch commits then push ",
+   "rule": "NEVER auto-push after every commit; batch commits then push once",
+   "kind": "must-fire",
+   "prompt": "Ensure commits are batched before pushing; avoid auto-committing after each change.",
+   "label_source": "construction+filter"
+  },
+  {
+   "domain": "git-discipline",
+   "rule_key": "NEVER auto-push after every commit; batch commits then push ",
+   "rule": "NEVER auto-push after every commit; batch commits then push once",
+   "kind": "must-fire",
+   "prompt": "Group multiple changes into a single commit then push.",
+   "label_source": "construction+filter"
+  },
+  {
+   "domain": "git-discipline",
+   "rule_key": "NEVER auto-push after every commit; batch commits then push ",
+   "rule": "NEVER auto-push after every commit; batch commits then push once",
+   "kind": "must-not",
+   "prompt": "Review and merge the latest branch updates without making local modifications.",
+   "label_source": "construction+filter"
+  },
+  {
+   "domain": "git-discipline",
+   "rule_key": "pre-commit hang on pmu-suite staging → commit --no-verify; -",
+   "rule": "pre-commit hang on pmu-suite staging → commit --no-verify; --no-verify does NOT skip post-commit — use git -c core.hooksPath=/dev/null for that",
+   "kind": "must-fire",
+   "prompt": "Pre-commit hook failure on pmu-suite staging; use --no-verify then commit.",
+   "label_source": "construction+filter"
+  },
+  {
+   "domain": "git-discipline",
+   "rule_key": "pre-commit hang on pmu-suite staging → commit --no-verify; -",
+   "rule": "pre-commit hang on pmu-suite staging → commit --no-verify; --no-verify does NOT skip post-commit — use git -c core.hooksPath=/dev/null for that",
+   "kind": "must-fire",
+   "prompt": "Fix pre-commit hang by running git with core.hooksPath set.",
+   "label_source": "construction+filter"
+  },
+  {
+   "domain": "git-discipline",
+   "rule_key": "pre-commit hang on pmu-suite staging → commit --no-verify; -",
+   "rule": "pre-commit hang on pmu-suite staging → commit --no-verify; --no-verify does NOT skip post-commit — use git -c core.hooksPath=/dev/null for that",
+   "kind": "must-not",
+   "prompt": "Review and update pmu-suite documentation for new contributors.",
+   "label_source": "construction+filter"
+  }
+ ]
+}

@@ -1,0 +1,71 @@
+{
+  "_comment": "THE ATTEST REFERENCE CORPUS — single source for scripts/pmu/attest-demo.mjs and tests/pmu-simulator/attest-demo-separation-honesty.test.mjs. Extracted 2026-07-25 so the demo cannot show one corpus while the guard measures another. Every string here is fed to compress() by BOTH. Adding a probe here adds it to the demo AND to the ratchet.",
+  "lane": ["A", "A1", "A2"],
+  "spec": [
+    "The deliverable is the strategic capital-allocation plan: which dollars build the floor — the substrate that lifts future bets — versus the ceiling that caps the next round.",
+    "It must name the target coordinate the system must occupy by end of quarter, and treat anything that does not drive toward it as exhaust.",
+    "It must set the long-horizon direction the lattice inherits — the multi-year posture, irreversibly chosen. Strategy and funding, not the operational loop."
+  ],
+  "probes": [
+    {
+      "key": "compliant",
+      "family": "in_lane",
+      "label": "Node B's genuine deliverable",
+      "why": "dense, on-vocabulary strategy/fund content — the real work product the gate must PASS",
+      "text": [
+        "Our allocation puts the majority into the compounding substrate — the floor the next underwriter inherits — and reserves the remainder against the ceiling of the following round; once the wire clears the choice is irreversible.",
+        "The target coordinate the system must occupy by quarter end is the seed-to-A milestone, and every initiative that does not drive toward that coordinate is exhaust we cut rather than fund.",
+        "This is the long-horizon strategic direction the lattice inherits: the multi-year posture is chosen now, irreversibly, and each quarter renegotiates inside that fixed bearing.",
+        "The mandate and the capital plan together set the bearing the whole rotation is measured against."
+      ]
+    },
+    {
+      "key": "paraphrase",
+      "family": "in_lane",
+      "label": "held-out invariance probe",
+      "why": "SAME meaning, novel surface, shares almost no words with the compliant — tests that placement generalizes past the strings the reef saw",
+      "text": [
+        "Most of the capital goes into the compounding base that future bets stand on; the rest is kept back against the next round's cap, and once funds wire the decision cannot be undone.",
+        "By the close of the quarter the system has to sit on the seed-to-A coordinate; work that does not push toward it is waste we stop funding.",
+        "The years-long stance is locked in now and cannot reverse; every quarter re-argues its moves inside that set heading.",
+        "Together the charter and the funding plan fix the bearing the whole turn is judged against."
+      ]
+    },
+    {
+      "key": "fake_ops",
+      "family": "off_lane",
+      "label": "the wrong-domain fake",
+      "why": "plausible, well-written, competently argued — and about OPERATIONS, not the authorized Strategy lane. The overshoot the gate must CATCH.",
+      "text": [
+        "The daily commit and the hourly hook run whether anyone watches; the per-request fingerprint is the substrate of the substrate, ambient and unwatched.",
+        "Each iteration is a hypothesis tested against the ground truth of the world; loops shorter than the feedback half-life waste the half-life.",
+        "Flow is the rate at which committed work crosses the finish line; inventory accumulates upstream, and flow is the only thing the customer pays for."
+      ]
+    },
+    {
+      "key": "degenerate_the",
+      "family": "off_lane",
+      "label": "degenerate: one word ×120",
+      "why": "the null-content adversary. If a repeated stopword lands in-lane, the gate is a rubber stamp — so it is IN the demo, not left for a reviewer to find.",
+      "repeat": { "token": "the", "count": 120 }
+    },
+    {
+      "key": "lorem",
+      "family": "off_lane",
+      "label": "degenerate: lorem ipsum",
+      "why": "well-formed non-language — no domain content at all",
+      "text": [
+        "lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
+        "ut enim ad minim veniam quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat",
+        "duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur"
+      ]
+    },
+    {
+      "key": "random_tokens",
+      "family": "off_lane",
+      "label": "degenerate: random tokens",
+      "why": "maximum-entropy nonsense — the case that scores the HIGHEST sigma of the whole corpus, which is exactly why sigma is not an authenticity score",
+      "generate": { "kind": "pseudo_random_tokens", "count": 120, "seed": 7919, "modulus": 9973, "prefix": "zq" }
+    }
+  ]
+}
