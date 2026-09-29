@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+  <!-- C119k (operator 2026-09-21: "use the logo here") — the logo of icon.png, drawn monochrome so the activity bar can tint it:
+       VS Code paints an activity-bar SVG as a mask in the theme's foreground colour, so a colour PNG would render as a blob.
+       C119k.3–.6 (operator 2026-09-27) redrew the TD by hand, round by round; C119k.6 ran the T stem out through the shield.
+       C119k.7 (operator 2026-09-27: "the D is flattened not a real D" · "the T pokes out of the shield instead of being painted on it -
+       the design in the original logo gets it right" · "yellow to the mask logo with small edits would do it") — this IS the logo's
+       yellow line, traced off publisher-logo-512.png: one stroke opens at the frame's lower-left, runs up, across, down the right,
+       to the frame's bottom point, and turns up into the T stem, so the T is painted on the frame and never leaves it. The crossbar
+       rolls into the round D, whose own back stops short of the crossbar, as in the logo. The one edit: the line is thickened to
+       read at 16 px.
+       C119k.8 (operator 2026-09-27: "gap is too big, too crammed to the right … I did not mean the D should be low rez, or the right
+       down shield edge straight") — re-traced on a 72-cell grid of the logo: the lower-left break closes to the logo's width (its
+       tail heads at the stem), the T sits 38 % across the frame as in the logo, the lower-right edge bows out in a curve, and the D
+       is drawn in smooth cubics. C119k.9 (operator 2026-09-27: "we could try to make it rounder" · "few pixels left too, cant be crampled, one elegant line") —
+       round caps and joins, the shield's top corners rounded as in the logo, and the T and D moved ~1.3 units left so the D bowl
+       stands clear of the right edge instead of crowding it.
+       C119k.10 (operator 2026-09-27: "the missing quality … optical weight and figure-ground" · "minimal change" · "land it instead of redo it") —
+       the knockout: the logo's blue field becomes a filled shield and its yellow line is cut out of it, so the mark carries the
+       same mass as its neighbours. The line's path is unchanged; it is only masked out of the field, drawn at 86 % inside it.
+       Guard: tests/vna/c119k-activity-bar-icon-is-the-shield.test.mjs -->
+  <mask id="knockout" maskUnits="userSpaceOnUse" x="0" y="0" width="24" height="24">
+    <rect width="24" height="24" fill="white"/>
+    <path d="M6.4 18.8 L3.3 14.3 V4 Q3.3 2.4 4.9 2.4 H19.1 Q20.7 2.4 20.7 4 V14.3 Q18.3 17.9 12 22 Q8.8 23.3 8.8 20.6 V6.9 M5.4 6.9 H14.5 C16.3 6.9 17 8.4 17 10.2 V11.4 C17 13.7 15.3 15.3 13.1 15.3 Q11.8 15.3 11.8 14 V9.8" fill="none" stroke="black" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" transform="translate(12 12.2) scale(0.86) translate(-12 -12)"/>
+  </mask>
+  <path d="M2 3.8 Q2 1.6 4.2 1.6 H19.8 Q22 1.6 22 3.8 V14.6 Q19.6 19.4 12 23.4 Q4.4 19.4 2 14.6 Z" fill="currentColor" mask="url(#knockout)"/>
+</svg>
