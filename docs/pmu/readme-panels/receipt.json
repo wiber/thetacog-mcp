@@ -1,0 +1,12 @@
+{
+  "generatedAt": "2026-09-27T02:14:21.734Z",
+  "sourceCommit": "f8eef6a6fb",
+  "walkImplSha": "d3395abef6d056a0678a97a5704442cb2e203961",
+  "walkImplFiles": [
+    ".thetacog/pmu/src/ballistic.rs",
+    ".thetacog/pmu/src/lens.rs",
+    "scripts/pmu/definer-walk-144.mjs",
+    "src/lib/pmu/walk-knobs.mjs",
+    "src/lib/pmu/pmu-binary.mjs"
+  ]
+}

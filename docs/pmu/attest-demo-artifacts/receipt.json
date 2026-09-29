@@ -1,0 +1,36 @@
+{
+  "artifact": "thetacog-attestation-receipt",
+  "receipt_kind": "two-party-attestation",
+  "job_id": "demo",
+  "reef_commitment": "1d5514be576dd51040ceecf3bb781f158ead22bc14babb825dba30e4edc2eb5a",
+  "payload_sha256": "68d472545e175d720cac0b172637e71302d9d9929380ed3542aee208a381e11b",
+  "submitter_pubkey": "931ada436fc063d542248834631f4d7c10ef3e7c6504486444917ac0fce68cdc",
+  "addressed_to": "16dcd2919490a13dea079b53bfdfe6667fbc1989fab6745cb212287b70a285c1",
+  "authorized_cells": [
+    "A",
+    "A1",
+    "A2"
+  ],
+  "verdict": "MATCH",
+  "inner_verdict": "IN_ROLE",
+  "authoritative_cell": "A",
+  "gzip_witness": {
+    "cell": "A",
+    "sigma": 2.5417554438133276,
+    "ncd_margin": 0.001262626262626243,
+    "agreement": "GZIP_ONLY"
+  },
+  "threshold": 2,
+  "host_attestation": {
+    "daemon_sha256": "9646bf005bca6baebe2370c32e4e982d620c1d19c357f4b51749900a446a224a",
+    "daemon_present": true,
+    "node": "v20.20.0",
+    "platform": "darwin/arm64",
+    "gate_ms": 109.575708
+  },
+  "inner_receipt_id": "12dfa26b-67d9-42d1-91bf-70528df789df",
+  "oracle": "thetacog pmu gzip-NCD → 12 ShortLex axis nodes (48 anchors) → lane argmax (compress.mjs)",
+  "pubkey_hex": "fc0fb4d5709e3a763c3b794bf8be039fecc8786f78fd1143ff0172553875f139",
+  "sig_hex": "db2b144a6ca3a069dce4b23cc62a693b541335f09da96f8e810370db60147fb556b348df21996260c0403555a6fd9b0371c5ce649372227e6b00f66139efd70b",
+  "sha256": "a0d390e54384ce747b43b9bfe17fd819d52f67c04c078764c0e4ed7bdd9c10d4"
+}

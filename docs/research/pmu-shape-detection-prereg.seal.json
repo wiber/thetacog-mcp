@@ -1,0 +1,15 @@
+{
+  "kind": "pmu-prereg/v1",
+  "sealed_at_note": "frozen before held-out opened (no machine clock in scripts — pin via git commit time)",
+  "manifest": "docs/research/pmu-shape-detection-prereg.md",
+  "manifest_body_sha256": "62ce8410c9bb01f0f0cab1e9b3d311f489ceeca274a7a6e5e1e880ab84e21b0d",
+  "reef_path": "data/pmu/reef/reef-144.json",
+  "reef_sha256": "6545f57f39446e22dffc28d4253eb62f76da785005d06cb1ff12687d5da8ed2b",
+  "lens_path": "data/pmu/snippet-library-144.json",
+  "lens_sha256": "6f77c19a7500b64a16b241875e635174201e34dd9948b365465c11f28a29fe97",
+  "ground_truth_path": "docs/research/pmu-shape-detection-ground-truth.json",
+  "ground_truth_sha256": "44e6fe78c26749d4c7f979bf674fc6cd8666414bb6d7488d11899697e0ea60ad",
+  "pubkey_hex": "fc0fb4d5709e3a763c3b794bf8be039fecc8786f78fd1143ff0172553875f139",
+  "sig_hex": "bedd09f2433796bb67402867ab4176b1207169752e8cda38ff19481bb7151d842feb528b7dcc0a4ce419a02c9f87007be84d399f09d56d7acf790f3ac71abf07",
+  "sha256": "ee04774d10e8b551375ba7bd9e29afd0ba4032f9da80a6df736160cd192ddc31"
+}
