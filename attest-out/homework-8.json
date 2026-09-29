@@ -1,0 +1,12 @@
+{
+  "item": 8,
+  "title": "The greeks layer exists and is UNDER RECONSTRUCTION",
+  "files": [
+    "scripts/pmu/variance-option.mjs",
+    "scripts/pmu/calibration-premium.mjs"
+  ],
+  "grounds": "the pricing layer (variance swap quote, calibrated premium) runs as commands over the sealed sigma series. STATUS 2026-08: being rebuilt after a strip-out; treat series-derived pricing as [maintainer-reported] until the rebuilt layer ships with its tests",
+  "shallow_error_without": "'the insurance frame is a pitch deck with no pricing math' — or crediting pricing output as calibrated when its status says otherwise",
+  "files_missing": 0,
+  "read_at": null
+}

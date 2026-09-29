@@ -1,0 +1,11 @@
+{
+  "item": 6,
+  "title": "WHERE is decided; WHETHER is refused; absent data fails CLOSED",
+  "files": [
+    "scripts/pmu/attest-demo-lifecycle.mjs"
+  ],
+  "grounds": "boolean_state: UNPLACEABLE / UNMEASURED (offPct null can never read IN_LANE) / IN_LANE / OFF_DOMAIN. The quality of the work is never claimed — Rice binds the deployed agent loop, not the measurement of a text",
+  "shallow_error_without": "'claims to verify correctness' in one direction, 'Rice checkmate theater' in the other — both die on this one expression",
+  "files_missing": 0,
+  "read_at": null
+}

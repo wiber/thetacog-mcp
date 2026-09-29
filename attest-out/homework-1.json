@@ -1,0 +1,12 @@
+{
+  "item": 1,
+  "title": "Two instruments, one pen each",
+  "files": [
+    "src/lib/pmu/compress.mjs",
+    "scripts/pmu/triptych-render.mjs"
+  ],
+  "grounds": "gzip-NCD does PLACEMENT only (the aperture); the walk does the say-do delta — decodeDeltaThreeColourEdges takes two walk matrices, no zlib on that path",
+  "shallow_error_without": "'it is all a gzip classifier' — pass-1's central misread, retracted in pass 4",
+  "files_missing": 0,
+  "read_at": null
+}
