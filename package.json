@@ -72,7 +72,7 @@
     "parallel-founders"
   ],
   "author": "ThetaDriven Inc.",
-  "license": "SEE LICENSE IN LICENSE",
+  "license": "MIT",
   "private": true,
   "scripts": {
     "postinstall": "node postinstall.js",

@@ -2061,7 +2061,7 @@ This is option 2. Give your brain a break. Let the rooms remember.
 
 ## License — the measurement is free, the instrument is licensed
 
-**Dual-licensed. Full terms: [`LICENSE`](LICENSE).** The line between the two parts is bright on purpose, so you can plan around it.
+**Dual-licensed. Full terms: [`LICENSE`](LICENSE) (MIT, the software) and [`INSTRUMENT-TERMS.md`](INSTRUMENT-TERMS.md) (the verification grant, the reserved instrument layer, the patent notice).** The line between the two parts is bright on purpose, so you can plan around it.
 
 - **Part A — the Software (MIT).** The ballistic walk, the reef, the 144-anchor lattice, the placement/drift receipts, and every demo (`attest-demo`, `prove-rice`, …). Run them, fork them, sell software built on them — **free for builders and operators.** Go nuts.
 - **Part B — the House Instrument License (reserved).** What Part A does *not* grant is the right to **originate, price, underwrite, settle, or list any financial instrument** whose trigger/premium/coverage references a ThetaCog placement or drift receipt — AI-liability policies, in-lane surety bonds, options on the σ, parametric cat bonds, or any attestation-fee oracle that monetizes the receipts as a settlement layer. That takes a separate commercial license (a per-attestation fee). Patent pending, USPTO App. 19/637,714.
