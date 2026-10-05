@@ -1,0 +1,71 @@
+# Recompute the curve — a third party's run of the same recompute, on a schedule (C663, thetadrivencoach).
+#
+# Why this exists: a carrier, an actuary or an enterprise risk team should never have to run a package from an email to check a
+# figure. This workflow runs on GitHub's machines, in this public repository, not on ours. Every day it downloads the published
+# dataset, its reference script and the receipt the figure was drawn from (https://thetadriven.com/curve), recomputes p, the
+# worst-5% shares and the null band with the Python standard library alone, and attaches:
+#   - recompute.log          what the script printed, each figure marked MATCH or DIFFER against the receipt
+#   - inputs.sha256          the sha256 of every file it downloaded, so you can tell which published bytes it read
+#   - a signed build-provenance attestation over the log (Sigstore, via actions/attest-build-provenance)
+# A DIFFER fails the run, in public. Or run it yourself, on your own agent logs, on your own machine:
+#   npx -y thetacog-mcp@latest loss-run
+name: Recompute the curve
+
+on:
+  schedule:
+    - cron: '17 6 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  id-token: write
+  attestations: write
+
+jobs:
+  recompute:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download the published dataset, the reference script and the receipt
+        run: |
+          set -euo pipefail
+          mkdir run && cd run
+          for f in actuarial-dataset.csv actuarial-dataset.py default-curve.json; do
+            curl -fsSL "https://thetadriven.com/backup/$f" -o "$f"
+          done
+          sha256sum actuarial-dataset.csv actuarial-dataset.py default-curve.json | tee inputs.sha256
+
+      - name: Recompute from the dataset alone
+        run: |
+          set -euo pipefail
+          cd run
+          {
+            echo "run: ${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID} at $(date -u +%Y-%m-%dT%H:%M:%SZ)"
+            python3 --version
+            echo "inputs:"; cat inputs.sha256
+            python3 actuarial-dataset.py actuarial-dataset.csv
+          } 2>&1 | tee recompute.log
+          if grep -q DIFFER recompute.log; then echo "VERDICT: DIFFER — the published figure does not recompute from its own dataset" | tee -a recompute.log; exit 1; fi
+          echo "VERDICT: MATCH — every figure recomputed from the published dataset" | tee -a recompute.log
+
+      - name: Hash the log
+        if: always()
+        run: cd run && [ -f recompute.log ] && sha256sum recompute.log | tee recompute.log.sha256 || true
+
+      - name: Sign the log (build provenance)
+        if: success()
+        uses: actions/attest-build-provenance@v2
+        with:
+          subject-path: run/recompute.log
+
+      - name: Attach the log, the input hashes and the log hash
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: recompute-the-curve-${{ github.run_id }}
+          path: run/
+
+      - name: Show the log on the run page
+        if: always()
+        run: |
+          { echo '## Recompute the curve'; echo; echo '```'; cat run/recompute.log 2>/dev/null || echo 'no log: the download step failed'; cat run/recompute.log.sha256 2>/dev/null || true; echo '```';
+            echo; echo 'Or run it yourself, on your own agent logs, on your own machine: `npx -y thetacog-mcp@latest loss-run`'; } >> "$GITHUB_STEP_SUMMARY"
