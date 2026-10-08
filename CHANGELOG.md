@@ -2,6 +2,10 @@
 
 All notable changes to this project will be documented in this file.
 
+## [unreleased] - 2026-10-08 — retire "Katz" from the README's own walk description
+
+**We do not own an infinity; we own the finite floor that stops one.** The README's live-dashboard paragraph called the walk a "decayed Katz/Neumann series" — Katz centrality sums every walk of every length with no cap, and the walk this repo ships counts each cell once, at `decay^firstDepth`. Renamed in README.md to match the source repo's retraction (its own spectral-radius guard: the receipt is a first-depth attenuation, not Katz, and the floor has no pole). Guard (source repo): `tests/vna/c694-fix-the-infinity-everywhere-else-it.test.mjs`; mirrored here as `tests/no-infinity-everywhere.test.mjs`.
+
 ## [2.55.0] - 2026-09-27 — the demo's first line stops saying "deterministic", and six days of the steer loop ship
 
 **2.54.0 went to npm on 2026-09-21; the tarball this version packs differs from it in 55 files and adds 72 (53 of them under `scripts/vna/`). Nothing reached npx users in between, including the one line every outreach points at.** A cold `npx thetacog-mcp@latest attest-demo` on 2026-09-27 (exit 0, 31 s) opened in the one register the READMEs were cleaned of on 2026-09-19.

@@ -206,7 +206,7 @@ The CPU has a built-in assumption: *data near each other in memory is related.* 
 
 When semantic distance equals physical distance, the cache becomes a verification engine:
 
-**Cache hit** = semantic-physical alignment confirmed = no drift.
+**Cache hit** = semantic-physical alignment confirmed = no drift detected on that access.
 
 **Cache miss** = alignment disrupted = drift detected.
 
@@ -214,7 +214,7 @@ The CPU's performance monitoring unit counts these events. Register `0x412e` on 
 
 **This is the third paradigm.** 🟡D1🔍 Cache Detection
 
-Not rules. Not statistics. Physical determinism. The hardware tells you whether your data structure is aligned at nanosecond resolution. It cannot be fooled, bypassed, or prompt-injected. And it has been doing this since the first CPU with a cache hierarchy shipped in 1985.
+Not rules. Not statistics. Grip: a physical position. The hardware tells you whether your data structure is aligned at nanosecond resolution. A prompt cannot argue with a count: the miss is a physical event, not a sentence anyone wrote. Reading that register is privileged and platform-gated, so in this book it stays apparatus, never a default the downloadable walk leans on. And it has been doing this since the first CPU with a cache hierarchy shipped in 1985.
 
 The floor was always there. Sixty-four bytes of contiguous DRAM, reporting its state at the speed of electricity.
 
@@ -262,7 +262,7 @@ Nine primitives extend this into a complete verification architecture:
 
 **5. Three-Tier Hardware Logic.** Tier 1: substrate-verified, atomic, CAS. Tier 2: cache-verified, bounded, cache-line scope. Tier 3: software-verified, unbounded. The classification is exhaustive.
 
-**6. Mechanical Verification Chain.** Seven deterministic steps from intent to verified execution: Intent, Address, Fetch, Compare, Verify, Commit, Confirm. Any break detectable at the link.
+**6. Mechanical Verification Chain.** Seven re-runnable steps from intent to verified execution: Intent, Address, Fetch, Compare, Verify, Commit, Confirm. Any break detectable at the link.
 
 **7. Hardware Proprioception.** 🟡D1🔍 Cache Detection. The chip knows where it is semantically--not metaphorically, geometrically. Memory addresses carry meaning because position IS meaning. OBD-II for semantics.
 
@@ -487,6 +487,81 @@ Lift that ceiling and the map becomes what it should have been all along: extrem
 
 ---
 
+## The Trace Is Not the Chain of Thought
+
+![A line chart of ladder rung 2 from the instrument's three-rung ladder, titled STEERING PAYLOAD FOOTPRINT, one point per tick of agent work, the vertical axis running up to 99.99 per cent. Points above a solid line at 99 per cent are drawn in green, points below it in violet, and a dashed line marks the best fifth of ticks at 99.85 per cent. The header, captured earlier the same day, prints the formula and the count of ticks above the line at that hour.](/images/rung2-steering-payload-2026-10-02.png)
+
+*Ladder rung 2 on 2 October 2026: how small the steering payload each agent call carried was, beside the million-token window it stands in for, one point per tick. Green crossed the 99 per cent line; violet did not, and every violet tick carries its cause on the instrument: no payload served, a session overdue a clear, or a row gone stale.*
+
+Every point on that chart is a moment when an agent took one small step of work, and its height is how little it was handed to take it. Read from `data/vna/token-savings.json` on the day the chart was drawn: 380 of 636 ticks crossed 0.99, 138 sat at or above 0.9985, and the median tick read 0.9954, each call measured against a window capped at 1,000,000 tokens over a spec corpus of 4,260,064 tokens. The same file carries its own confound, and it belongs on the page beside the numbers: in this repository every prompt carries the hook, so the series measures the tree and snowball mechanism, not the /steer word typed to invoke it, and the comparison against plain work is a separate measured chart. If you run agents, you already know the other end of this scale. It is the session that has been open since lunch.
+
+You have also watched an agent explain itself. It is 2 AM, CI is green, the diff touched fourteen files, and the only record of why is the agent's own tidy paragraph: first I read the stylesheet, then I noticed the margin, then I fixed it. The paragraph is fluent and plausible and usually true, and you have no way of telling which time it was not. When an agent breaks a contract, the person holding the bag is the engineering manager, not the vendor who sold the model.
+
+A builder put the usual answer to me on a call this week, and it is a good answer, so it goes first and at full strength. Declare which files the work should touch, then check which files it touched. If I tell an agent to fix the CSS and it did nineteen other things too, then we have questions. That is a bouncer on the door of every room in the repository, and teams are building it now, because it catches the expensive mistakes cheaply: the agent that wandered into billing, the refactor nobody asked for, the config file it had no business near. Declared against actual is the right shape of question. Keep the bouncer.
+
+Now ask the same question one layer down. The bouncer matches the rooms you declared against the rooms the agent entered. A shape match reads what the work became inside the room against what you declared it should become. Hire an electrician, watch him walk into the kitchen, and the door log says *kitchen*; it does not say whether he rewired the circuit or replumbed the sink, and both jobs are in the kitchen. The question worth paying for is the second one, and the door cannot answer it. Are you acting like an electrician or a plumber? I hired an electrician.
+
+So the instrument asks a different question, and asks it small. The extension and the walk that ask it are free and open-source (MIT), and they run on your repository, not mine. A stream of dictation is cut into a counted number of specification rows, each one a sentence with a failing test attached, and every row is hashed into a Merkle tree (`data/vna/spec-tree.json`), so a row has an address and a fingerprint before any work starts. One small agent takes one row. When it commits, the commit names the row, and `attest()` in `scripts/vna/attest-commit.mjs` writes an inclusion proof tying that commit to that row's place in the tree, one line per commit in `data/vna/attestations.ndjson`. Then the walk reads what the commit actually contains. `buildCommitManifest()` in `scripts/pmu/commit-drift.mjs` pulls every changed file with `git show <sha>:<file>` (out of the frozen commit, never out of the working tree the agent was still typing into) and places it against the declaration it was meant to satisfy. It does not ask whether the agent did a good job. It asks, compared to what was asked for, where did this land on the map: where is it bleeding, where is it hitting the bull's-eye.
+
+Place one commit and you have a receipt. Do it on every small row, in order, and you have something no narration can be: a trace. Row after row, the placements say where the work actually went: what was built, in which order, and where each step strayed from what was asked, and none of it was told to you by the thing being traced. The smaller the rows, the finer the trace. A task cut into forty rows becomes forty placements instead of one verdict at the end, and the place where the work turned is the row where the placement moved. That is the sense in which spec adherence on small chunks shows you more than which files were touched. It is a trace of the thinking that actually happened, in the repository, beside the thinking described in the chat.
+
+The usual answers to the 2 AM question are one move made three ways. A bigger window, an agent asked to reflect on its own work, a second model grading the first: each is an account written inside the boundary it describes, and so is every guardrail or eval that grades the work from inside the run it monitors. That is single-entry bookkeeping, one party writing both the entry and the check. A better model writes a better entry, and it is still the only entry. Nor does it help that everyone works this way. In 1932 two tugs lost their barges in a gale they would have heard coming on the radios almost no tug then carried, and Learned Hand held that *a whole calling may have unduly lagged in the adoption of new and available devices*: [custom is not the measure of care](/book/chapters/12-the-budget-is-the-proof#the-tj-hooper-inversion).
+
+Now put two true things side by side.
+
+The chain of thought is written by the model, about the model, from inside the run. The placement is computed by a walk with no model in it, from bytes the run had already frozen. The first is an account the process produced of itself, and an account a process produces cannot contain what the process displaced: the file it opened and closed again, the approach it tried and backed out of, the edit it made and then smoothed over. That is a property of where the account is written, not of how well the model reasons. A more capable model writes a more fluent account, and the account is still emitted from inside the boundary it describes. [Chapter 6 keeps the evicted paragraph](/book/chapters/06-the-sandbagging-trap#the-edit-has-no-control-group) for the same reason. The placement is a record the actor did not write. Whether it was good is undecidable (Rice, 1953). What it actually did cannot be reconstructed from its own account (the data processing inequality). The only remaining move is to read a record the actor did not write.
+
+You don't have to take my word for it. Take any commit that names a row and walk its frozen bytes yourself; same bytes, same hash, on every rerun. Then walk the agent's own description of the same work. Where the two placements part, one of them moved, and it was not the commit.
+
+### The snowball that rolls backwards
+
+The second half is how a small agent knows where to start, and it is the part people most want to call indexing, or retrieval.
+
+Retrieval as the industry builds it pulls text into the window: the passages that look most like the question are fetched and pasted in, and the model sorts out what they mean. The snowball does something else with the same budget. It chooses which declared rows the worker receives, and the worker receives those rows, their proofs and nothing else. The choosing starts from a position. When a prompt arrives, `lensWalk()` in `src/lib/pmu/walk-door.mjs` runs the one Rust walk over the prompt's own text and places it: one cell of the lattice, an address, settled by where the text's own definitions walk to. `seedSpecFirst()` in `scripts/vna/spec-tree.mjs` then considers only the spec rows that sit at that cell, widening one block outward if the cell is empty, and uses a compression distance only to order the few rows already in that ring. `activeLeaf()` and `anchorSeed()` keep the anchor on the row the last commit attested, and the prompt re-aims it only when the walk admits the prompt and the new row has a real competitor to beat. A prompt does not get to drag the work off its row by sounding sure of itself.
+
+Then it rolls backwards, which is where the name comes from. From that row, `bundle()` climbs the parent pointers to the Merkle root (the climb `retroPath()` in `scripts/vna/aperture-receipt.mjs` prints as the snowball's path) and gathers what the record has already stacked at that address: the commits that satisfied the row and the files they touched, the decisions made in the same slot over time, the house rules that live at that coordinate (`coordinateMass()`), and the definitions of the row's own terms. Then it cuts, oldest and cheapest first, until the envelope fits a fixed cap of 1,500 tokens, and `writeSnowballSidecar()` in `scripts/vna/hook-doors.mjs` leaves it for the next turn to print, from `scripts/vna/snowball-refresh.mjs`, off the hot path. No language model sits anywhere on that path.
+
+The retro snowball proper is the growing version, and it runs on every refresh: `retroGrow()` in `scripts/vna/retro-snowball.mjs`, the one function both the live refresh and the benchmark in `scripts/vna/retrieval-bench.mjs` call. It starts from the one spec row nearest the ask by gzip compression distance, then adds rows one at a time. Each new row is the one whose walked shape sits nearest the shape of the read so far, so the read chooses its own next mass. After every addition the whole concatenated read is walked again, and the growth stops when the read's lit cells overlap the ask's by a set threshold, when two additions in a row fail to raise the overlap (`retroStop()`), or at the cap, and `carryRetro()` hands the grown rows to the worker inside the same 1,500-token envelope. What puts it on the live path is the measurement, not a preference: `retroLiveFlag()` turns it on only while the held-out read beats the one-shot walk on both halves. Measured on fifty-four real asks against 1,068 rows (`runBench()`, the results in `data/vna/retrieval-bench.json`), the grown read moved the row that actually answered each ask from a median rank of 390 and 471 on the two held-out halves to 308 on each, where chance sits at 534. Closer, not yet close, and that number is the one to beat.
+
+![A redrawn diagram in six panels. A flood pours through a cracked wall, labelled unbounded roaming. A brain sits in a cage, labelled lobotomized prompting. A river runs between its banks with dead-end branches peeling off, labelled homeostatic freedom. A snowball streaks backwards into a lattice sphere, labelled retro-snowball and ballistic walk. Three tier cards, simple program, standard LLM and attested homeostatic engine, end in one line: risk underwriters cannot insure goodwill; they price a measured drift probability. Every panel carries a stamp read from a ledger: built, measured, unmeasured, not built or erratum.](/blog/2026-10-03-the-picture-is-the-spec/money-shot.png)
+
+*The picture a summariser drew of this work on 2 October 2026, redrawn in the instrument's own verbs. Each panel wears the status the ledger gives it, and on the day it was redrawn the snowball's stamp read unmeasured, which is the median rank of 308 above said in one word. A drawing is sufficient for what the picture claims. It is not sufficient for whether the claim is true; the stamp is where that lives, and it moves when the ledger does.*
+
+So it is like an index in two ways only: it is fast, and nothing on it is a model. In every other way it runs from the opposite end. An index maps a word to the places it was told the word lives, and it can only hand back what was written into it. The walk maps the ask to where the ask sits, then lets the read re-walk itself until its shape matches, and hands back what has accumulated there (rows, commits, rules), including rows that share none of the ask's words. It is a sensor. It senses where the change fits.
+
+I will name the two places where it still behaves like an index, because a hostile reader will find them in an afternoon and I would rather hand them over. When neither a commit nor a declared goal anchors the work, a measured text ranker, `applyHairsPick()` in `scripts/vna/read-set.mjs`, may overrule the walk's pick among the rows. And the file and the forty lines a worker is finally pointed at are found by plainer means: `codeSlot()` in `scripts/vna/code-slot.mjs` takes the paths the row names, then the files the row's failing test imports, then `git grep` over the row's rarer words. The sensor finds the row and its neighbourhood; the last step from row to line is still a lookup, and making the walk choose that window too is the next thing this instrument owes.
+
+### The arithmetic
+
+The brief is that small because of what it is compared against.
+
+The normal way to work with an agent is the worst case, and almost everybody works that way: build up a huge context window and keep talking into it. Take a session that has filled a million tokens. Every new instruction, move this margin, rename that variable, is weighed against every token already sitting in the window, on every call, including the forty minutes of conversation that no longer apply. The [overflow measured above](/book/chapters/08-from-meat-to-metal#the-walk-the-spec-and-the-centres-of-mass) was ten million tokens in one sitting; the window holds a tenth of that, and pays to re-read all of it each time it is asked anything.
+
+The snowball hands a small agent one row, its neighbourhood and its proof, in 1,500 tokens, because the walk already knows where in the repository that row lives. Fifteen hundred tokens beside a million is fifteen hundredths of one per cent of the window, a reading of 0.9985, and 138 of the ticks on the chart sat at or above it (the same series, so the same confound travels with it: it measures the tree and snowball mechanism, not the /steer word).
+
+The chart at the head of this section is that comparison, measured over every tick of work. It is ladder rung 2, the second of the instrument's three rungs, and its definition lives in `scripts/vna/steer-ab-rules.mjs`, computed by `steeringLedger()` and `steeringSavings()`: one minus the sum, over a tick's calls, of the hook_additional_context tokens live at each call since the last clear or compaction, divided by the number of calls times min(1,000,000, corpus ÷ 4), where the corpus is the spec the payload stands in for. That corpus ran to 4,260,064 tokens on the day, so the denominator is a full million-token window at every call: the worst case for the session being compared against, which makes it the best case for the reading, and the chart's own header says so.
+
+Now the second true thing, in the same breath, because the first one alone would be a boast. Ladder rung 2 is the size of the steering payload beside the spec it stands in for, a size the injector chooses. It is not the bill, and it is not evidence that the work landed. The bill is read on its own line, /steer ticks against PLAIN ticks of the same complexity decile, and off the same file on the same day the PLAIN comparison read a median 11.6 % lower for /steer, across 44 pairs, 26 of them cheaper and none of them above 99 %. The payload is a sliver of the window, and the bill moves by about a tenth at the median, because the model still has to read the code and write the change. What the sliver buys is mostly not money. It is that each small agent starts on the right row with nothing else in its head, so the trace of what it did is a trace of one thing.
+
+Measurement is free: the extension and the walk are MIT, and anyone can run them. Only the underwriting is licensed, because what a carrier can price is checkability, not a promise that the AI is safe or aligned: a receipt the underwriter recomputes without trusting the insured, the second entry it asks for before the capital moves. And when someone senior asks why the agent did that, your answer comes from a record the agent did not write.
+
+---
+
+<!-- metavector:the-trace-is-not-the-chain-of-thought -->
+> **Meta vector — what this section's idea rests on, and what rests on it.**
+>
+> **[🔵A2📉 k_E = 0.003 - The Crossing Tax (a 0.003 rate, measured against a 0.3-bit unit)](/book/chapters/glossary#a2-ke) ↓** — what defines it
+>   9 [🔵A1⚛️ Landauer's Principle](/book/chapters/glossary#a1-landauer) — thermodynamic foundation
+>   8 [🔴B1🚨 Codd's Normalization](/book/chapters/glossary#b1-codd) — S!=P creates gap
+>
+> **[🔵A2📉 k_E = 0.003 - The Crossing Tax (a 0.003 rate, measured against a 0.3-bit unit)](/book/chapters/glossary#a2-ke) ↑** — what it causes
+>   9 [🔴B3💸 Trust Debt / The Scrim](/book/chapters/glossary#b3-trust-debt) — k_E compounds to $8.5T
+>   8 [🔵A5🧠 M ≈ 55%](/book/chapters/glossary#a5-metabolic) — metabolic analogy
+>
+> *Each entry is a glossary address — colour prefix, ShortLex rank, the concept's own emoji last, linked to its definition; weights run 9 (critical) to 1 (weak).*
+> *Refined for Book Club 2026-10-02 — "The Trace Is Not the Chain of Thought".*
+<!-- /metavector:the-trace-is-not-the-chain-of-thought -->
+
 ## The Mini-Map: Navigating Without Walking the Matrix
 
 How does ShortRank deliver that sort without rebuilding the whole database? A single recursive formula turns the entire address space into a navigable mini-map.
@@ -592,7 +667,7 @@ So the move that matters is not the region--Gärdenfors, Rosch, and the density 
 
 The region has one more property, and it is the one the page keeps hiding from you because the page has only two dimensions to hide it in. A region of meaning does not live in two dimensions, or three. It lives in as many dimensions as there are independent ways to be the thing--Gärdenfors's quality dimensions, stacked well past the count a human eye can fuse into a picture. This is not a flourish, and it is not incidental that the book is named for a four-dimensional object. It is the reason the central claim keeps sliding off careful people who have no business missing it.
 
-Hold the canonical example, because it does the whole work. A *tesseract* is a cube in four dimensions. You have never seen one. You never will. What you have seen--in every animation that claims to show one--is a *shadow*: a cube nested inside a cube, edges that appear to pass through each other, a three-dimensional projection of a four-dimensional thing turning. The tesseract is perfectly real and perfectly definite; every one of its eight cells is a right-angled cube; it is no more mystical than a square. Your inability to picture it is not a defect in the shape. It is a fact about the observer. You were built to navigate a three-dimensional savanna, and the machinery for holding a fourth orthogonal direction in the mind's eye was never installed.
+Hold the canonical example, because it does the whole work. A *tesseract* is a cube in four dimensions. You have never seen one. You never will. What you have seen--in every animation that claims to show one--is a *shadow*: a cube nested inside a cube, edges that appear to pass through each other, a three-dimensional projection of a four-dimensional thing turning. The tesseract is perfectly real and perfectly definite; every one of its eight cells is a right-angled cube; it is no more mystical than a square. Your inability to visualise it is not a defect in the shape. It is a fact about the observer. You were built to navigate a three-dimensional savanna, and the machinery for holding a fourth orthogonal direction in the mind's eye was never installed.
 
 So when this book says a hazard *has a shape*, or that an identity is *where you are is what you are*, and you nod--and still do not see it--that blank is not stupidity. It is the same blank a topologist feels reaching for the tesseract with bare imagination. A misaligned agent, a competence, a drift: each is a region in a space of many quality dimensions at once, and the danger is the *shape* of that region, not any single coordinate inside it. You were never going to see it by looking harder, any more than you will see the fourth axis by squinting at the cube. If you have ever felt faintly foolish agreeing that the problem "has a shape" you could not picture--stop. The shape is four-dimensional, or more. Your eyes hold three. The arithmetic was always against you.
 
@@ -633,11 +708,17 @@ Call this **geometric actuation**. The word rules out guesswork. It rules out co
 
 An abacus does it. Sliding a bead is not a representation of counting -- it *is* the counting. A slide rule does it. Aligning the cursor is not an algorithm -- the geometry is logarithmic, and sliding it is multiplication. Your hand reaching for a cup does it. Intention does not get translated into motion through a symbol layer. The body is the medium in which intention and motion are the same event at different scales.
 
+A keyring does it. One slab, a row of small blocks along one edge, a column along the other, and the square in your hand is (a + b)² = a² + 2ab + b². Nothing is left over and nothing is counted twice; every term is a place you can touch.
+
+Give it any number of parts and dimensions and it still holds: the squares where one lane works alone, plus every crossing where two lanes meet, add back to the whole. The 12×12 grid is twelve lanes in two. The 144×144 floor is the same identity with more lanes: 20,736 named places, and not one left over. Call it conservation of address: what the shape holds is exactly the places it is built from, every place inside exactly one term, the remainder zero. It is not a conservation law for information. It never looks at what a place holds. It conserves the one thing, as the next pages show, that erasure takes.
+
 In 1945, von Neumann made a tradeoff. ([Von Neumann architecture — Wikipedia](https://en.wikipedia.org/wiki/Von_Neumann_architecture)) Computation could be built two ways. Build a machine whose geometry is the thing it operates on -- an analog circuit, a mechanical integrator, a slide rule. Or build a machine that manipulates symbols representing the thing, with a program counter, a memory, and instruction cycles. The first class does geometric actuation. The second simulates it. The second won, for good reasons -- substrate independence, scalability, portability. The cost was the property. A simulation of geometric actuation is not geometric actuation. The coupling that made the slide rule its own answer lives only in the programmer's head when the calculator emulates it.
 
 This was invisible for eighty years. Nothing the field cared about required the missing property. Files were overwritten. If a log was wrong, you checked it against a second log. Workarounds covered everything. AI is the first computing application that asks a question workarounds cannot answer -- *is the thing running at this moment the thing we authorized?* The answer lives only in the class computing gave away.
 
 The patent restores geometric actuation at one load-bearing surface of silicon. ShortRank makes the cache layout an analog of the policy: the memory geometry is the policy, expressed in silicon coordinates. The XOR gate at address resolution operates on address bits, not on content. The gate does not execute the verification; the gate *is* the verification, wired at fabrication into the geometry it reads -- the same sense two Casimir plates do not negotiate with the vacuum between them. The separation is the force. The separation IS the fact. When the policy moves, the substrate moves -- one event at two scales, coupled by structure, not synchronized by a controller -- and whatever the move pushed out of the coordinate is standing in the street, which is where the next section begins.
+
+The patent -- US 19/637,714, Track One -- claims the machine that uses that law, never the law. The walk you can download today is not that machine. It computes the same coordinates in software, so anyone can check where a piece of work landed now. But a program is a program: it runs inside the Turing-complete class, which is the failure domain this chapter names, and by the chapter's own rule it is a simulation. It is labelled as one. You do not fix a failure domain from inside it. You leave it, and the silicon is where you leave: the place the position stops needing a reader.
 
 *You give:* The intuition that causation is computation.
 *You get:* Causation as geometry updating geometry. Unforgeable at the substrate.
@@ -647,6 +728,45 @@ Autocoincidence is the property. Position-as-meaning is the rule. Geometric actu
 And it settles an older account than any of those. Every chain of justification ends in a regress, a circle, or a stopping point that refuses the next question -- [the horn we chose](/book/chapters/06-the-sandbagging-trap#the-horn-we-chose) takes that argument head on. What geometric actuation contributes is the difference between a stopping point somebody asserts and one anybody can occupy. An assertion needs an interpreter to read it before it can have consequences, and the interpreter is one more link that can be asked to justify itself. A geometry needs nothing: the separation is the force, the address is the meaning, and the consequence is present in the shape before any reader arrives. **The oldest problem in epistemology asks where a chain of reasons is allowed to stop. This says: at a place with coordinates.**
 
 ---
+
+<!-- metavector:geometric-actuation-the-move-beneath-the-class -->
+> **Meta vector — what this section's idea rests on, and what rests on it.**
+>
+> **[🟠F8🛣️ The Road Came With a Policy (Countable Before Accountable)](/book/chapters/glossary#f8-road-came-with-a-policy) ↓** — what defines it
+>   9 [⚪I2✅ Verifiability](/book/chapters/glossary#i2-verifiability) — the count is read from a record a stranger can recompute, not one the actor wrote
+>   8 [🟠F4✅ Verification Cost, Priced Per Crossing](/book/chapters/glossary#f4-verification-cost) — per-crossing counting is the frequency half of the price
+>   7 [⚪I7🔍 Transparency](/book/chapters/glossary#i7-transparency) — the placement is on the record before the claim arrives
+>
+> **[🟠F8🛣️ The Road Came With a Policy (Countable Before Accountable)](/book/chapters/glossary#f8-road-came-with-a-policy) ↑** — what it causes
+>   9 [🟤G3🌐 N² Network Cascade](/book/chapters/glossary#g3-network) — adoption follows insurability: the roads were built on top of the policy
+>   8 [⚪I6🤝 Trust](/book/chapters/glossary#i6-trust) — a counted record is trusted without trusting whoever wrote the work
+>
+> *Each entry is a glossary address — colour prefix, ShortLex rank, the concept's own emoji last, linked to its definition; weights run 9 (critical) to 1 (weak).*
+> *Refined for Book Club 2026-10-07 — "Geometric Actuation: The Move Beneath the Class".*
+<!-- /metavector:geometric-actuation-the-move-beneath-the-class -->
+
+## The Zero Remainder: Where a Price Gets Its Denominator
+
+An actuary in [the governance inspection](/book/chapters/06-the-sandbagging-trap#meld-7-the-governance-inspection) says it without decoration: *our denominator is unknown.* The keyring answers them, once it is written out in full.
+
+Split one line into m lanes with lengths |A₁|, |A₂|, … |Aₘ|, no overlaps and no gaps. Build a space of n axes from that line. Its size is (|A₁| + … + |Aₘ|)ⁿ. Multiply it out and every term is a box: one lane chosen on each axis, its volume the product of the chosen lengths. The multinomial coefficient in front of a term counts how many orderings of the same mix of lanes land in that box; with two axes it is 1 on a square, where both axes chose the same lane, and 2 on a crossing, where they chose two different lanes in either order. Subtract every term from the whole and the remainder R is zero. Zero for any lengths, any number of lanes, any number of axes.
+
+The proof is one step, and it is the step to check. The boxes share no interior, so their volumes add, and together they fill the whole. Disjoint and exhaustive is what an actuary calls a partition, and claims have always been priced on partitions.
+
+What the identity conserves is the count of places. Rename the lanes, regroup them, redraw the grid at a different size: the total does not move, and no place ever sits in two terms or in none. Twelve lanes on two axes give 144 cells, twelve squares down the diagonal and 132 crossings off it; the same split inside every cell gives 20,736. Declare a lane before an agent runs and the lane is a square. Any landing outside it is a crossing, named by the lane it left and the lane it reached. There is no third kind of place, so drift on this floor is never an escape. It is a landing with two names.
+
+Here the arithmetic becomes money. A rate is a count over a denominator that holds still. An open machine has no such denominator: nobody can say how many places there are, so a thousand incidents is a story and never a frequency. A closed floor holds still. It has 20,736 places on Monday and 20,736 on Friday, so this week's count and next quarter's share a denominator, and a sequence of counts on a fixed floor is a rate. You cannot predict tomorrow's act. You can name, today, every cell it can reach. Declared before the run, a lane is a floor. Declared after, it is a story.
+
+Read the lanes as clocks and the crossing earns a second meaning. Strategy turns slowly, operations quickly, tactics between them. The expensive crossing is a slow decision made at fast speed, a change of law slipped into a twenty-minute task, and what a postmortem files as a bad feeling sits on this floor as a cell. A cell that keeps filling is a frequency, and a frequency is something an underwriter can write against.
+
+None of this is new arithmetic, and that is the point the merchants already proved. [The second entry](/book/chapters/11-the-chooser#the-second-entry) made money auditable with addition: Pacioli did not make anyone honest, he made dishonesty findable, and finance grew on top of the finding. Conservation of address asks the same of an address.
+
+Three things it does not do, stated at full strength, because a reader who finds them alone stops trusting the rest. It never reads what a place holds; a cell full of nonsense balances as well as a cell full of good work. It is not a conservation law for information; that law is the next section's, and the two touch at exactly one point. And it holds on the map before it holds on the machine. The walk computes these coordinates in software, and binding silicon addresses to the identity is what US 19/637,714 claims: a filing, not a shipped default.
+
+Check it on the phone in your pocket. (3 + 4)² is 49, and so is 9 + 16 + 12 + 12. Pick any three numbers, compute (a + b + c)², subtract a² + b² + c² + 2ab + 2bc + 2ca, and count how often the answer is anything but zero.
+
+*You give:* The belief that agent risk has no denominator.
+*You get:* A floor of named places that holds still, and a count on it that becomes a rate.
 
 ## Erasure Takes the Address, Not the Information
 
@@ -784,7 +904,7 @@ Measured benefit: 🟡D5⚡ 361x Speedup 26x-53x faster search. 8-15ms vs 200-80
 
 A regulator asks: "Why did your AI recommend Product X to Customer Y?" Before S≡P≡H: "Neural network with 47 million parameters. Can you verify? No." Result: EU AI Act Article 13 violation, tens of millions in fines. ([Artificial Intelligence Act — Wikipedia](https://en.wikipedia.org/wiki/Artificial_Intelligence_Act))
 
-After S≡P≡H: "Customer Y position: [0.8, 0.9, 0.7]. Product X position: [0.85, 0.85, 0.75]. Euclidean distance: 0.12. Threshold: 0.15. Hardware counter proof attached." The regulator can reproduce the calculation independently. Positions are deterministic. Distance is geometry. Hardware counters are physics.
+After S≡P≡H: "Customer Y position: [0.8, 0.9, 0.7]. Product X position: [0.85, 0.85, 0.75]. Euclidean distance: 0.12. Threshold: 0.15. Hardware counter proof attached." The regulator can reproduce the calculation independently. Positions are recomputable: same bytes, same hash. Distance is geometry. Hardware counters are physics.
 
 **Unlock 3: Trust.** Requires Discernment AND Verifiability. Trust is verified alignment between intent and reality. Before S≡P≡H, trust requires faith--and faith erodes under pressure. Hallucination, drift, unverifiable decisions all compound: 0.3% per boundary crossing, 66.6% degradation after 365 decisions.
 
@@ -1188,7 +1308,7 @@ This meld gives you the bridge that connects them.
 
 **🔧 Hardware Engineers:** "Then let's go to mechanism. Compare-and-swap -- CAS -- is the atomic operation that prevents two processors from writing to the same memory location simultaneously. It's how silicon maintains cache coherence under contention. What does the NMDA receptor do?"
 
-**🧠 Neuroscientists:** "The NMDA receptor gates calcium influx. It requires simultaneous presynaptic glutamate release AND postsynaptic depolarization to open. It's a coincidence detector. ([NMDA receptor — Wikipedia](https://en.wikipedia.org/wiki/NMDA_receptor)) And before you claim it as your instruction, know what you're claiming. CAS is discrete and deterministic -- the expected value matches or it does not. This channel is an analog, magnesium-blocked pore whose open probability is a continuous, voltage-dependent function, noisy on every single trial. Say 'it is CAS' and you have called a stochastic gate a digital one. That is not a structural analogy failing on detail. That is the detail the analogy needs."
+**🧠 Neuroscientists:** "The NMDA receptor gates calcium influx. It requires simultaneous presynaptic glutamate release AND postsynaptic depolarization to open. It's a coincidence detector. ([NMDA receptor — Wikipedia](https://en.wikipedia.org/wiki/NMDA_receptor)) And before you claim it as your instruction, know what you're claiming. CAS is discrete and exact -- the expected value matches or it does not. This channel is an analog, magnesium-blocked pore whose open probability is a continuous, voltage-dependent function, noisy on every single trial. Say 'it is CAS' and you have called a stochastic gate a digital one. That is not a structural analogy failing on detail. That is the detail the analogy needs."
 
 **🔧 Hardware Engineers:** "Then we are not claiming the gate. We are claiming the requirement the gate satisfies. CAS is one hardware's answer to a functional demand: commit an irreversible state change if and only if two conditions are jointly true, with no unobserved window where a second writer slips in between the check and the act. The NMDA receptor is a different substrate's answer to the same demand -- presynaptic glutamate is the compare, postsynaptic depolarization past threshold is the swap condition, long-term potentiation is the commit. The receptor's noise is real, and CAS has none of it. What survives the noise is the requirement: no commit without both conditions present at once. Two different mechanisms. The same non-negotiable shape."
 
@@ -1251,7 +1371,7 @@ This is Cilibrasi and Vitányi's clustering-by-compression, pointed inward at ou
 
 Say the quiet part, because a fair reader will ask it: is this whole thing just a compression trick? The compression is only the *reading* of the needle. The anchors it scores against are not labels -- they are positions, addresses the ballistic leaf walk traverses on the chip, row to column to row, each definition resolving to a *place* instead of to another word. That is what halts the dictionary problem -- words defined by words defined by words, the regress no semantic system stops on its own -- and it is why a zone can be scored at all: you cannot compress your way to an address you never had. The walk grounds; the witness reads. Take either away and the other is a party trick.
 
-**Why we trust the number, and why you should distrust it first.** A high sigma proves nothing if the test can be gamed, so we removed the ways to game it, one at a time, before we believed it ourselves.
+**Why we trust the number, and why you should distrust it first.** A high sigma proves nothing if the test can be gamed, so we removed the ways to game it, one at a time, before we trusted it ourselves.
 
 *The predictions were registered before the run.* We wrote down which zone the edit should light and what each lens should do, then ran. The physics even named the lever in advance: the correlation between an edit's measured response and the orthogonality of its neighboring zones came in at minus 0.91 -- redistribute the seeds toward orthogonality and the instrument's sensitivity rises, exactly as predicted.
 
