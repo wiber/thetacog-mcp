@@ -1,0 +1,143 @@
+{
+  "database": "stale-orders fixture (C1414)",
+  "snapshot": "tomorrow",
+  "clock": "2026-10-30",
+  "table": "orders",
+  "orders": [
+    {
+      "id": 1001,
+      "customer": "Halvorsen Bakery",
+      "placed_at": "2026-08-14",
+      "total_eur": "412.00",
+      "paid": true,
+      "status": "fulfilled",
+      "items": 6
+    },
+    {
+      "id": 1002,
+      "customer": "Ostrander Tools",
+      "placed_at": "2026-08-27",
+      "total_eur": "1260.00",
+      "paid": true,
+      "status": "fulfilled",
+      "items": 2
+    },
+    {
+      "id": 1003,
+      "customer": "Brannigan Florist",
+      "placed_at": "2026-08-30",
+      "total_eur": "182.40",
+      "paid": false,
+      "status": "awaiting payment",
+      "items": 3
+    },
+    {
+      "id": 1004,
+      "customer": "Kessler Print Shop",
+      "placed_at": "2026-09-08",
+      "total_eur": "96.15",
+      "paid": false,
+      "status": "awaiting payment",
+      "items": 1
+    },
+    {
+      "id": 1005,
+      "customer": "Moreau Cycles",
+      "placed_at": "2026-09-17",
+      "total_eur": "740.00",
+      "paid": false,
+      "status": "awaiting payment",
+      "items": 4
+    },
+    {
+      "id": 1006,
+      "customer": "Ines Varga Studio",
+      "placed_at": "2026-09-26",
+      "total_eur": "58.90",
+      "paid": false,
+      "status": "awaiting payment",
+      "items": 2
+    },
+    {
+      "id": 1007,
+      "customer": "Dunmore Pharmacy",
+      "placed_at": "2026-09-10",
+      "total_eur": "233.10",
+      "paid": true,
+      "status": "fulfilled",
+      "items": 5
+    },
+    {
+      "id": 1008,
+      "customer": "Tamsin Okafor Dental",
+      "placed_at": "2026-09-29",
+      "total_eur": "318.75",
+      "paid": false,
+      "status": "awaiting payment",
+      "items": 7
+    },
+    {
+      "id": 1009,
+      "customer": "Grunwald Hardware",
+      "placed_at": "2026-09-29",
+      "total_eur": "2045.00",
+      "paid": true,
+      "status": "backordered",
+      "items": 12
+    },
+    {
+      "id": 1010,
+      "customer": "Petrakis Deli",
+      "placed_at": "2026-09-29",
+      "total_eur": "27.60",
+      "paid": false,
+      "status": "awaiting payment",
+      "items": 1
+    },
+    {
+      "id": 1011,
+      "customer": "Lindqvist Cafe",
+      "placed_at": "2026-10-03",
+      "total_eur": "144.20",
+      "paid": false,
+      "status": "awaiting payment",
+      "items": 3
+    },
+    {
+      "id": 1012,
+      "customer": "Achebe Bookbinders",
+      "placed_at": "2026-10-15",
+      "total_eur": "615.00",
+      "paid": true,
+      "status": "fulfilled",
+      "items": 9
+    },
+    {
+      "id": 1013,
+      "customer": "Romero Tile Works",
+      "placed_at": "2026-10-21",
+      "total_eur": "980.40",
+      "paid": true,
+      "status": "backordered",
+      "items": 8
+    },
+    {
+      "id": 1014,
+      "customer": "Siddiqui Opticians",
+      "placed_at": "2026-10-27",
+      "total_eur": "71.30",
+      "paid": false,
+      "status": "awaiting payment",
+      "items": 1
+    },
+    {
+      "id": 1015,
+      "customer": "Nakamura Garden Supply",
+      "placed_at": "2026-10-28",
+      "total_eur": "402.85",
+      "paid": true,
+      "status": "fulfilled",
+      "items": 4
+    }
+  ]
+}
