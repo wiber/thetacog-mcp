@@ -1,0 +1,190 @@
+/* C733 STEER HUD — page styles; the colours are the editor's, only the cell tints are ours */
+body.hudview { margin: 0; padding: 6px; font-family: var(--vscode-font-family); color: var(--vscode-foreground); display: flex; flex-direction: column; gap: 6px; height: 100vh; box-sizing: border-box; }
+#source { width: 100%; background: var(--vscode-dropdown-background); color: var(--vscode-dropdown-foreground); border: 1px solid var(--vscode-dropdown-border); padding: 3px; }
+.dump { flex: 1 1 40%; min-height: 80px; overflow-y: auto; font-family: var(--vscode-editor-font-family); font-size: 12px; border: 1px solid var(--vscode-panel-border); padding: 4px; }
+.dump .line { white-space: pre-wrap; word-break: break-word; }
+.note { font-size: 11px; opacity: 0.8; min-height: 14px; }
+.hudface { font-size: 13px; font-weight: 600; letter-spacing: .02em; }
+.hudgrid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+/* H2: the axis header sits OUTSIDE the grid, one column label per tier; the rows are the same three tiers, inferred */
+.axes { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; font-size: 10px; letter-spacing: .08em; text-transform: uppercase; opacity: .7; text-align: center; }
+.cell { display: grid; grid-template-columns: auto 1fr; grid-template-rows: auto auto auto; column-gap: 4px; align-items: center; min-height: 64px; padding: 4px 6px; border: 1px solid var(--vscode-panel-border); background: var(--vscode-editor-background); color: inherit; cursor: pointer; text-align: left; transition: opacity 350ms ease-in-out; }
+/* the S-T-O triad (dictation 2026-10-12, Cell Anatomy): Strategy 10pt subdued on top, the status emoji beside the Tactics word
+   14pt bold in the centre, Operations 9pt monospace at the bottom; the DOM order (s, t, o, dot) stays, the grid places the dot */
+.cell .s { grid-column: 2; grid-row: 1; font-size: 10pt; opacity: .65; }
+.cell .dot { grid-column: 1; grid-row: 2; font-size: 12px; }
+.cell .t { grid-column: 2; grid-row: 2; font-size: 14pt; font-weight: 700; }
+.cell .o { grid-column: 2; grid-row: 3; font-size: 9pt; font-family: var(--vscode-editor-font-family), monospace; opacity: .8; }
+.cell.green { border-color: #2e9d57; } .cell.amber { border-color: #c9a227; } .cell.red { border-color: #d14b4b; } .cell.unmeasured { border-style: dashed; }
+.cell.empty { opacity: 0.35; justify-content: center; align-items: center; }
+.defence { width: 100%; box-sizing: border-box; background: var(--vscode-input-background); color: var(--vscode-input-foreground); border: 1px solid var(--vscode-input-border); padding: 4px; }
+.hint { font-size: 10px; opacity: 0.6; }
+.health { font-family: var(--vscode-editor-font-family); font-size: 10px; margin: 0; white-space: pre-wrap; word-break: break-word; border-top: 1px solid var(--vscode-panel-border); padding-top: 4px; }
+.ask { align-self: flex-start; }
+.reply { font-size: 12px; white-space: pre-wrap; word-break: break-word; border-top: 1px solid var(--vscode-panel-border); padding-top: 4px; min-height: 0; }
+.reply:empty { display: none; }
+/* C740 the register pane */
+.register { flex: 1 1 40%; min-height: 80px; width: 100%; box-sizing: border-box; resize: none; font-family: var(--vscode-editor-font-family); font-size: 12px; background: var(--vscode-input-background); color: var(--vscode-input-foreground); border: 1px solid var(--vscode-panel-border); padding: 4px; }
+.regbar { display: flex; gap: 6px; align-items: center; flex-wrap: wrap; font-size: 11px; }
+.regbar .wm, .regstatus { font-size: 10px; opacity: 0.8; }
+[hidden] { display: none !important; }
+
+/* H3/H4: everything below the grid; the pills wear the sidebar's own sb chk / mini classes from its PAGE_CSS */
+.row { display: flex; gap: 6px; }
+.why { font-size: 11px; opacity: .8; padding: 1px 0; }
+.mini.open { margin-right: 6px; }
+/* C759 H13: a slot no worm has landed in yet keeps its words, painted grey */
+.cell.unlanded { filter: grayscale(1); }
+/* H15: the live age of the server's last health line */
+.age { font-size: 10px; opacity: .8; margin-left: 4px; }
+/* 2026-10-13 the legend frame: corner · column axis · row axis · grid; the tier names live here, never in a cell */
+.gridframe { display: grid; grid-template-columns: 16px 1fr; grid-template-rows: auto 1fr; gap: 4px; }
+.gridframe .corner { font-size: 10px; opacity: .5; text-align: center; align-self: end; }
+.gridframe .axes { grid-column: 2; grid-row: 1; }
+.rowaxes { grid-column: 1; grid-row: 2; display: grid; grid-template-rows: repeat(3, 1fr); gap: 4px; font-size: 10px; letter-spacing: .08em; text-transform: uppercase; opacity: .7; }
+.rowaxes span { writing-mode: vertical-rl; transform: rotate(180deg); text-align: center; white-space: nowrap; overflow: hidden; }
+.gridframe .hudgrid { grid-column: 2; grid-row: 2; }
+.legend { font-size: 10px; opacity: .6; }
+.cell { position: relative; }
+.cell .sig { position: absolute; left: 0; bottom: 0; height: 3px; background: var(--vscode-progressBar-background, #3794ff); opacity: .8; }
+/* the health pictures */
+.hviz { display: flex; flex-direction: column; gap: 3px; font-size: 10px; padding-top: 4px; }
+.hviz .vrow { display: grid; grid-template-columns: 34px 1fr auto; align-items: center; gap: 6px; }
+.hviz .vk { opacity: .7; text-transform: uppercase; letter-spacing: .06em; }
+.hviz .vv { font-family: var(--vscode-editor-font-family), monospace; opacity: .9; }
+.hviz .spark { width: 100%; height: 18px; } .hviz .spark polyline { fill: none; stroke: var(--vscode-charts-blue, #3794ff); stroke-width: 1.5; vector-effect: non-scaling-stroke; }
+.hviz .track { position: relative; height: 8px; background: var(--vscode-editorWidget-background, rgba(128,128,128,.15)); border-radius: 2px; overflow: hidden; }
+.hviz .track .ctl { position: absolute; left: 0; top: 0; bottom: 0; background: rgba(128,128,128,.45); }
+.hviz .track .bar { position: absolute; left: 0; top: 2px; bottom: 2px; } .hviz .track .bar.ok { background: #2e9d57; } .hviz .track .bar.no { background: #d14b4b; }
+.hviz .ticks i { display: inline-block; width: 3px; height: 8px; margin-right: 2px; background: var(--vscode-charts-purple, #b180d7); }
+.hvizline { display: none; }
+
+/* 2026-10-13 THE HUD FITS AND WEARS ONE THEME (operator: "layout is wrong in cursor" · "the big ask the model about this grid is the
+   wrong look for the button"). The sidebar's PAGE_CSS styles every bare <button> as a full-width teal bar and paints the page dark
+   whatever the editor theme; so the HUD scopes its own buttons and draws its cells from the same dark palette, never the editor's. */
+body.hudview { background: var(--bg, #0a0c10); color: var(--fg, #d8dee9); }
+.gridframe { grid-template-columns: 14px minmax(0, 1fr); }
+.hudgrid, .axes { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.axes span, .rowaxes span { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.hudview button.cell { width: auto; min-width: 0; overflow: hidden; background: #121821; color: var(--fg, #d8dee9); border: 1px solid #2a3442; border-radius: 6px; padding: 4px 6px; font: inherit; font-weight: 400; }
+.hudview button.cell .s, .hudview button.cell .t, .hudview button.cell .o { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.hudview button.cell .t { font-size: 13pt; }
+.hudview button.cell.green { border-color: var(--g, #1e9150); } .hudview button.cell.amber { border-color: var(--a, #ffb000); } .hudview button.cell.red { border-color: var(--r, #ff5959); }
+.hudview button.cell.empty { background: transparent; border: 1px dashed #2a3442; color: var(--dim, #7b8794); font-size: 10px; display: flex; align-items: flex-start; justify-content: flex-start; opacity: .6; }
+.hudview button.hudbtn { width: auto; font: inherit; font-size: 11px; font-weight: 600; padding: 3px 9px; border: 1px solid #2a3442; border-radius: 4px; background: #121821; color: #c9d4e3; cursor: pointer; }
+.hudview button.hudbtn:hover { border-color: var(--acc, #4ec9b0); }
+.hudview .row { align-items: center; flex-wrap: wrap; }
+.legend { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.note { white-space: normal; overflow-wrap: anywhere; }
+.gridframe .corner { opacity: 0; }
+/* the sidebar's cards scroll their face row sideways; in the HUD's narrow column the pills wrap instead, so nothing is cut off */
+.hudview .card3 .why, .hudview .card3 > div { overflow-wrap: anywhere; }
+.hudview button.hudbtn.danger:hover { border-color: var(--r, #ff5959); }
+.hudview .register { background: #0e131a; color: var(--fg, #d8dee9); border: 1px solid #2a3442; border-radius: 6px; font-family: ui-monospace, Menlo, monospace; }
+.hudview select#source { background: #121821; color: var(--fg, #d8dee9); border: 1px solid #2a3442; }
+/* 2026-10-13 THE HIERARCHY: grid → the draft /steer → what you're saying → the cards. Two boxes, the page's palette, the draft first */
+.hudview .hudbox { border: 1px solid #2a3442; border-radius: 8px; background: #0e1218; padding: 6px 8px; display: flex; flex-direction: column; gap: 5px; }
+.hudview .draftbox { border-color: #2f4a5f; }
+.hudview .dhead { font-size: 11px; } .hudview .dhead b { color: var(--acc, #4ec9b0); font-weight: 700; }
+.hudview .draft { min-height: 96px; width: 100%; box-sizing: border-box; resize: vertical; background: #0a0f15; color: var(--fg, #d8dee9); border: 1px solid #2a3442; border-radius: 6px; padding: 6px; font: 12px/1.45 ui-monospace, Menlo, monospace; }
+.hudview .dictbox .register { flex: 0 0 auto; min-height: 120px; resize: vertical; }
+.hudview button.hudbtn.primary { border-color: var(--acc, #4ec9b0); color: var(--acc, #4ec9b0); }
+.hudview .reply { border-top: 1px dashed #2a3442; }
+/* 2026-10-13 (operator: "just one word with the color and size on each line so three words per tile, different colors and sizes … see the
+   whole group of three … without eye movement"): three lines, three sizes, three colours; the centre word the largest, the dot beside it */
+.hudview button.cell .s { color: #9db4cc; font-size: 10pt; opacity: 1; }
+.hudview button.cell .t { color: #f2f5f8; font-size: 14pt; font-weight: 800; }
+.hudview button.cell .o { color: var(--acc, #4ec9b0); font-size: 9pt; opacity: .95; }
+.hudview button.cell { text-align: center; }
+.hudview .snowlog { margin: 0; min-height: 2.6em; max-height: 9em; overflow-y: auto; font: 10.5px/1.45 ui-monospace, Menlo, monospace; color: #b9c7d6; background: #0a0f15; border: 1px solid #1e2733; border-radius: 6px; padding: 4px 6px; white-space: pre-wrap; }
+/* the sidebar PAGE_CSS parks every <textarea> at left:-9999px (its copy buffers); the HUD's two boxes are the point of the page, so they stand in place */
+.hudview textarea.draft, .hudview textarea.register { position: static; left: auto; display: block; }
+/* the body was a 100vh flex column: a page taller than the view squeezed its children over one another (the note under the draft head, the cards into each other). It grows with its content and nothing shrinks */
+body.hudview { height: auto; min-height: 100vh; }
+body.hudview > * { flex-shrink: 0; }
+/* 2026-10-13 (operator: "the color scheme and design must match the main window" · "the 3x3 has to be at least 25% smaller … resize boxes and
+   text with size"): the main window's monospace type, its card look, and a grid ~25% smaller whose cells and words scale with the sidebar width */
+body.hudview { font: 12px/1.45 ui-monospace, Menlo, monospace; }
+.hudview button.cell { min-height: 0; aspect-ratio: 3 / 2; padding: 2px 4px; row-gap: 0; }
+.hudview button.cell .s { font-size: clamp(8px, 2.4vw, 11px); }
+.hudview button.cell .t { font-size: clamp(10px, 3.5vw, 15px); }
+.hudview button.cell .o { font-size: clamp(7.5px, 2.2vw, 10px); }
+.hudview button.cell .dot { font-size: clamp(8px, 2.6vw, 11px); }
+.hudview .hudgrid { gap: 3px; }
+.hudview .readout { margin: 0; font: 10.5px/1.5 ui-monospace, Menlo, monospace; color: #b9c7d6; background: #0e1218; border: 1px solid #1e242e; border-radius: 6px; padding: 4px 6px; white-space: pre-wrap; }
+.hudview .hudbox, .hudview .card3 { background: #0e1218; border-color: #1e242e; }
+/* the vertical row labels set the row height (C · OPERATIONS needs ~98px upright) and stretched every cell; with size containment the
+   labels take the height the cells give them and clip, so the grid scales with the width alone */
+.gridframe .rowaxes { contain: size; align-self: stretch; gap: 3px; font-size: 8.5px; letter-spacing: .04em; }
+/* the tickers: one row per snowball process, a label and one line whose newest landing sits at the right edge; a row that moved flashes */
+.hudview .tickers { display: flex; flex-direction: column; gap: 2px; font: 10.5px/1.5 ui-monospace, Menlo, monospace; }
+.hudview .tickers:empty::before { content: 'snowball tickers — waiting for the first walk'; color: var(--dim, #7b8794); }
+.hudview .trow { display: grid; grid-template-columns: 46px minmax(0, 1fr); gap: 6px; align-items: center; background: #0e1218; border: 1px solid #1e242e; border-radius: 4px; padding: 1px 6px; }
+.hudview .trow .tlabel { color: var(--acc, #4ec9b0); font-weight: 700; }
+.hudview .trow .tline { white-space: nowrap; overflow-x: hidden; color: #c9d4e3; }
+.hudview .trow.moved { animation: tick 900ms ease-out; }
+@keyframes tick { from { border-color: var(--acc, #4ec9b0); background: #10202a; } to { border-color: #1e242e; background: #0e1218; } }
+.hudview .snowlog, .hudview .reply, .hudview .register, .hudview .health, .hudview .readout { overflow-y: auto; }
+.hudview .readout { max-height: 12em; } .hudview .reply { max-height: 16em; }
+/* 2026-10-13 every section under the grid is one collapsible pill (operator: "collapsable pill buttons for all sections in the hud"), in the
+   main window's card look: the + / − button at the left, the title, a one-line summary that moves while the pill is closed */
+.hudview details.hudsec { border: 1px solid #1e242e; border-radius: 8px; background: #0e1218; padding: 4px 8px; }
+.hudview details.hudsec > summary { list-style: none; cursor: pointer; display: flex; align-items: center; gap: 6px; font-size: 11px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.hudview details.hudsec > summary::-webkit-details-marker { display: none; }
+.hudview details.hudsec > summary::before { content: '+'; flex: 0 0 auto; display: inline-flex; align-items: center; justify-content: center; width: 20px; height: 18px; border: 1px solid #2a3442; border-radius: 4px; background: #121821; color: #c9d4e3; font-weight: 700; }
+.hudview details.hudsec[open] > summary::before { content: '−'; }
+.hudview details.hudsec > summary b { color: var(--acc, #4ec9b0); }
+.hudview details.hudsec > summary .dim { overflow: hidden; text-overflow: ellipsis; }
+.hudview details.hudsec[open] > summary { margin-bottom: 5px; }
+.hudview details.hudsec > *:not(summary) { margin-top: 4px; }
+.hudview select.engine { background: #121821; color: var(--fg, #d8dee9); border: 1px solid #2a3442; border-radius: 4px; font: inherit; font-size: 11px; padding: 1px 4px; }
+.hudview .speech, .hudview .latest { margin: 0; min-height: 4em; max-height: 14em; overflow-y: auto; white-space: pre-wrap; overflow-wrap: anywhere; font: 11px/1.5 ui-monospace, Menlo, monospace; color: #d8dee9; background: #0a0f15; border: 1px solid #1e2733; border-radius: 6px; padding: 5px 6px; }
+.hudview .speech .caret { color: var(--acc, #4ec9b0); animation: blink 1s steps(1) infinite; margin-left: 1px; }
+@keyframes blink { 50% { opacity: 0.3; } }   /* the caret dims, never vanishes: a glance always finds the live edge */
+/* 2026-10-13 THE DESIGN LANGUAGE (operator: "the plus active buttons then metrics … scroll horizontally if long buttons / graphs"): every section is
+   the main window's card — + · the bold action pill · its metrics, one line; a long line scrolls sideways inside its own card (the grid above
+   still fits the sidebar); the + drawer opens beneath at the card's width */
+.hudview .card3 { width: auto; min-width: 0; max-width: 100%; overflow-x: auto; overflow-y: hidden; }
+.hudview .card3 > .face, .hudview .card3 > .c3l.face { flex-wrap: nowrap; width: max-content; min-width: 100%; }
+.hudview .card3 .face:has(details.plus[open]) { flex-wrap: wrap; width: auto; }
+.hudview .card3 .mrb { width: 100%; max-width: 100%; }
+.hudview .card3 .mrb > * { width: 100%; }
+.hudview .card3 .face > .measure { white-space: nowrap; color: #c9d4e3; }
+.hudview .card3 .face > button.action.lbl { flex: 0 0 auto; white-space: nowrap; padding: 4px 10px; font-weight: 600; font-size: 11px; border-radius: 4px; border: 1px solid #2a3a4f; background: #16324f; color: #fff; width: auto; }
+.hudview .card3 .face > .measure { flex: 1 1 0; min-width: 0; overflow: hidden; text-overflow: ellipsis; order: 0; }
+.hudview .card3 .face:has(details.plus[open]) > .measure { flex-basis: 0; }
+.hudview .audiohealth { font: 10.5px/1.5 ui-monospace, Menlo, monospace; color: #b9c7d6; }
+.hudview .audiohealth.dead { color: var(--r, #ff5959); font-weight: 700; }
+/* 2026-10-13 a word's size and colour carry its NCD confidence (--w, the server's weight: its signal against the grid's strongest word):
+   a confident word is larger and brighter, a weak one smaller and greyer — the strongest words on the grid are found at a glance */
+.hudview button.cell .s { font-size: calc(clamp(8px, 2.4vw, 11px) * (0.75 + 0.45 * var(--w, 0.5))); color: color-mix(in srgb, #9db4cc calc(35% + 65% * var(--w, 0.5)), #4f5b68); }
+.hudview button.cell .t { font-size: calc(clamp(10px, 3.5vw, 15px) * (0.7 + 0.5 * var(--w, 0.5))); color: color-mix(in srgb, #ffffff calc(35% + 65% * var(--w, 0.5)), #5d6976); }
+.hudview button.cell .o { font-size: calc(clamp(7.5px, 2.2vw, 10px) * (0.75 + 0.45 * var(--w, 0.5))); color: color-mix(in srgb, #4ec9b0 calc(35% + 65% * var(--w, 0.5)), #4f5b68); }
+.hudview .speech .caret { display: inline-block; font-weight: 700; }
+/* THE FEED — one line under the grid: every heard word as it lands, an emoji for every action; the newest at the right edge, each item popping in */
+.hudview .feed { display: flex; gap: 5px; align-items: baseline; white-space: nowrap; overflow-x: auto; overflow-y: hidden; scrollbar-width: thin; font: 12px/1.7 ui-monospace, Menlo, monospace; background: #0a0f15; border: 1px solid #1e2733; border-radius: 6px; padding: 2px 8px; min-height: 1.7em; mask-image: linear-gradient(to right, transparent 0, #000 28px); }
+.hudview .feed:empty::before { content: 'the feed — every word heard and every action, as it happens'; color: var(--dim, #7b8794); }
+.hudview .feed .fi { flex: 0 0 auto; animation: pop 420ms ease-out; }
+.hudview .feed .fi.w { color: #e8eef5; }
+.hudview .feed .fi.e { color: var(--acc, #4ec9b0); font-weight: 700; }
+@keyframes pop { from { opacity: 0; transform: translateY(3px); } to { opacity: 1; transform: none; } }
+
+/* 2026-10-13 🧲 the scratch under the next steer, and the heard-hint line */
+.hudview .heard { font-size: 11px; margin: 2px 0 4px; white-space: normal; }
+.hudview textarea.scratch { position: static; width: 100%; box-sizing: border-box; min-height: 5.5em; max-height: 14em; resize: vertical; font: 12px/1.45 ui-monospace, Menlo, monospace; background: #0a0f15; color: #e8eef5; border: 1px solid #1e2733; border-radius: 6px; padding: 4px 6px; }
+
+/* 2026-10-13 🔗 the ranking preview: what rides into the steer on copy */
+.hudview ol.assoc { list-style: none; margin: 2px 0 6px; padding: 0; font: 11.5px/1.45 ui-monospace, Menlo, monospace; max-height: 12em; overflow-y: auto; }
+.hudview ol.assoc li.as.kept { color: #e8eef5; }
+.hudview ol.assoc li.as.over { color: var(--dim, #7b8794); }
+.hudview ol.assoc li.as.carried { color: var(--dim, #7b8794); }
+.hudview ol.assoc li.as.ambient { color: #6b5560; text-decoration: line-through; }
+
+/* C1014b the model words: a reading over the measured words — a dashed edge and a 🧠 corner mark, so it is never mistaken for the receipt */
+.facerow { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+.modelwords { font-size: 11px; opacity: 0.8; cursor: pointer; white-space: nowrap; }
+.cell.model { border-style: dashed; }
+.cell.model::after { content: '🧠'; position: absolute; top: 2px; right: 4px; font-size: 9px; opacity: 0.7; }
+
+/* C1015a a button whose model call is in flight */
+.hudbtn.busy { opacity: .55; cursor: progress; }

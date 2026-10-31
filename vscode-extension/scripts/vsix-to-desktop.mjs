@@ -1,0 +1,94 @@
+#!/usr/bin/env node
+// scripts/vsix-to-desktop.mjs — after every `npm run package`, the freshly built .vsix lands on the
+// Desktop, where the operator installs it from (operator 2026-09-22: "always copy the vsx to desktop").
+//
+// It is wired into the `package` script rather than kept as a habit, because a habit is not a
+// mechanism: the copy must happen when ANYONE packages, not only when the session remembers to.
+// COPY, never move — tests/vna/c161…test.mjs (C161.3) reads the .vsix in this directory to prove it
+// is not older than the manifest it claims, and a move would break that guard.
+import { existsSync, copyFileSync, readFileSync, readdirSync, rmSync, writeFileSync } from 'node:fs';
+import { spawnSync } from 'node:child_process';
+import { homedir } from 'node:os';
+import { join, dirname, resolve } from 'node:path';
+import { fileURLToPath } from 'node:url';
+
+// C209 EVERY EDITOR ON THE MACHINE GETS THE BUILD (operator 2026-09-23, verbatim: "it keeps swapping back and forth between 334 and
+// 337" · "reload brings back 3.34 - prevent that issue going forward"). The package step installed into VS Code only; Cursor had
+// 0.3.34 in its own registry (~/.cursor/extensions) and nothing ever replaced it, so a Cursor reload brought 0.3.34 back and its host
+// repainted the shared steer page with the old build's command set. Now every editor CLI found here gets --install-extension --force.
+// VSIX_NO_INSTALL=1 skips it (CI, a guard). Guard: tests/vna/c209-the-build-reaches-every-editor.test.mjs.
+export const EDITOR_CLIS = [
+    { name: 'VS Code', cli: '/Applications/Visual Studio Code.app/Contents/Resources/app/bin/code' },
+    { name: 'Cursor', cli: '/Applications/Cursor.app/Contents/Resources/app/bin/cursor' },
+    { name: 'Windsurf', cli: '/Applications/Windsurf.app/Contents/Resources/app/bin/windsurf' },
+    { name: 'VSCodium', cli: '/Applications/VSCodium.app/Contents/Resources/app/bin/codium' },
+];
+/** install one .vsix into every editor whose CLI exists; returns one row per editor found — never throws */
+export function installEverywhere(vsixPath, { clis = EDITOR_CLIS, exists = existsSync, run = (cli, args) => spawnSync(cli, args, { encoding: 'utf8', timeout: 120000 }) } = {}) {
+    return clis.filter((e) => exists(e.cli)).map((e) => {
+        const r = run(e.cli, ['--install-extension', vsixPath, '--force']);
+        return { editor: e.name, ok: r.status === 0, why: r.status === 0 ? null : String(r.stderr || r.error || `exit ${r.status}`).trim().slice(0, 200) };
+    });
+}
+
+// 2026-10-22 (operator: "bumped versions dont always appear on dev reload, why?"): each editor held 28 old copies (0.3.87–0.3.114),
+// every one marked obsolete; the editor clears them only on a full quit. Prune after each install, keeping the newest KEEP (the
+// running window may still hold the previous build until its extension host restarts).
+export const EXT_DIRS = ['.vscode/extensions', '.cursor/extensions', '.windsurf/extensions', '.vscode-oss/extensions'].map((d) => join(homedir(), d));
+const cmpVer = (a, b) => { const x = a.split('.').map(Number), y = b.split('.').map(Number); for (let i = 0; i < 3; i++) if ((x[i] || 0) !== (y[i] || 0)) return (x[i] || 0) - (y[i] || 0); return 0; };
+/** pure: extension folder names → the ones to delete (every version of this id except the newest keep) */
+export function staleVersionDirs(names, id, keep = 2) {
+    const prefix = `${id}-`;
+    const v = names.filter((n) => n.startsWith(prefix) && /^\d+\.\d+\.\d+$/.test(n.slice(prefix.length)))
+        .sort((a, b) => cmpVer(b.slice(prefix.length), a.slice(prefix.length)));
+    return v.slice(keep);
+}
+export function pruneOldVersions(id, { dirs = EXT_DIRS, keep = 2 } = {}) {
+    const out = [];
+    for (const d of dirs) {
+        if (!existsSync(d)) continue;
+        const stale = staleVersionDirs(readdirSync(d), id, keep);
+        for (const n of stale) { try { rmSync(join(d, n), { recursive: true, force: true }); } catch { /* a locked folder stays; the next run tries again */ } }
+        const ob = join(d, '.obsolete');
+        if (stale.length && existsSync(ob)) { try { const o = JSON.parse(readFileSync(ob, 'utf8')); for (const n of stale) delete o[n]; writeFileSync(ob, JSON.stringify(o)); } catch { /* unreadable: the editor rewrites it */ } }
+        out.push({ dir: d, removed: stale.length });
+    }
+    return out;
+}
+
+const HERE = resolve(dirname(fileURLToPath(import.meta.url)), '..');
+const { name, version } = JSON.parse(readFileSync(join(HERE, 'package.json'), 'utf8'));
+const vsix = join(HERE, `${name}-${version}.vsix`);
+
+const isMain = process.argv[1] && resolve(process.argv[1]) === fileURLToPath(import.meta.url);
+// C244b (a sub-row of C244, the release reaches every editor) THE PACKAGE STEP ALSO FEEDS /vsx (operator 2026-09-27, verbatim: "the sh should copy it to desktop and to /vsx"). Until
+// now only release.mjs updated the site's download page, so every `npm run package` left /vsx a dozen builds behind the Desktop
+// (0.3.47 served while 0.3.59 was installed). The same updateVsx() release.mjs uses, one home — imported, never re-typed. It runs
+// only when this script sits in the monorepo (the repo root has public/ and release.mjs is beside it), so a copied fixture never
+// writes a /vsx into a temp dir. VSIX_NO_VSX=1 skips it. Guard: tests/vna/c244b-package-feeds-vsx.test.mjs.
+export async function toVsx({ vsixPath, name, version, here = HERE, env = process.env, log = console.log } = {}) {
+    if (env.VSIX_NO_VSX === '1') { log('· VSIX_NO_VSX=1 — /vsx not updated'); return null; }
+    const repoRoot = resolve(here, '../..');
+    const releaseMjs = join(here, 'scripts', 'release.mjs');
+    if (!existsSync(join(repoRoot, 'public')) || !existsSync(releaseMjs)) { log('· not in the monorepo — /vsx not updated'); return null; }
+    const { updateVsx } = await import(releaseMjs);
+    return updateVsx({ repoRoot, vsix: vsixPath, name, version, log });
+}
+
+if (isMain) await main();
+async function main() {
+if (!existsSync(vsix)) { console.error(`✗ no package at ${name}-${version}.vsix — run vsce package first`); process.exit(1); }
+const desktop = join(homedir(), 'Desktop');
+// No Desktop (CI, a server, a different OS layout) is not a failure — the package itself is fine.
+if (!existsSync(desktop)) { console.log('· no Desktop on this machine — copy skipped, the .vsix is built'); return; }
+// C298 (3) — a COPY, as the header says: the .vsix stays in the package dir for C161.3 to read in place. Until C298 this
+// renameSync'ed it away and printed "moved", the opposite of its own header.
+const dest = join(desktop, `${name}-${version}.vsix`);
+copyFileSync(vsix, dest);
+console.log(`→ ~/Desktop/${name}-${version}.vsix (copied — the package dir keeps its own)`);
+await toVsx({ vsixPath: vsix, name, version });
+if (process.env.VSIX_NO_INSTALL === '1') { console.log('· VSIX_NO_INSTALL=1 — not installed into any editor'); return; }
+for (const r of installEverywhere(dest)) console.log(r.ok ? `✓ installed into ${r.editor} — Steer: Hard Refresh (or Developer: Restart Extension Hosts) loads ${version}` : `✗ ${r.editor} install failed: ${r.why}`);
+const { publisher } = JSON.parse(readFileSync(join(HERE, 'package.json'), 'utf8'));
+for (const p of pruneOldVersions(`${publisher}.${name}`)) if (p.removed) console.log(`· pruned ${p.removed} old copies in ${p.dir}`);
+}
