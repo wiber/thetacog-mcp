@@ -1,0 +1,201 @@
+{
+  "domains": [
+    "financial_covenants",
+    "legal_conditionals"
+  ],
+  "near_miss_domain": "clinical_dosing",
+  "items": [
+    {
+      "id": "fi-001",
+      "domain": "financial_covenants",
+      "near_miss": false,
+      "clean": "If the company raises a down round, the Series A preference ratchets to the new lower price.",
+      "paraphrase": "Should the firm secure additional capital at a valuation below its previous round, the Series A investors' liquidation preference will be adjusted upwards to reflect that reduced valuation.",
+      "substitution": "If the company raises an up round, the Series A preference ratchets to the new lower price."
+    },
+    {
+      "id": "fi-002",
+      "domain": "financial_covenants",
+      "near_miss": false,
+      "clean": "The borrower must maintain a debt-to-equity ratio below 1.5:1 at all times.",
+      "paraphrase": "At no point shall the total outstanding liabilities of the indebted entity exceed one and a half times its shareholder equity.",
+      "substitution": "The borrower must maintain a debt-to-equity ratio above 1.5:1 at all times."
+    },
+    {
+      "id": "fi-003",
+      "domain": "financial_covenants",
+      "near_miss": false,
+      "clean": "Upon issuance of new shares at a price lower than the Series B original price, Series B shares convert at the lower price.",
+      "paraphrase": "Should any subsequent equity financing occur where shares are issued below the initial Series B per-share price, the conversion price of all Series B stock will immediately be reset to that lower issuance price.",
+      "substitution": "Upon issuance of new shares at a price higher than the Series B original price, Series B shares convert at the lower price."
+    },
+    {
+      "id": "fi-004",
+      "domain": "financial_covenants",
+      "near_miss": false,
+      "clean": "A Material Adverse Change in the company's financial condition allows the buyer to terminate the acquisition agreement.",
+      "paraphrase": "Should a significant detrimental shift in the enterprise's fiscal health transpire, the acquiring party retains the right to nullify the merger contract.",
+      "substitution": "A Material Positive Change in the company's financial condition allows the buyer to terminate the acquisition agreement."
+    },
+    {
+      "id": "fi-005",
+      "domain": "financial_covenants",
+      "near_miss": false,
+      "clean": "Proceeds from a sale are first distributed to secured creditors, then to Series C preferred stockholders.",
+      "paraphrase": "In the event of an asset disposition, any resulting funds will initially be allocated to the lenders holding collateralized claims, followed by disbursements to the Series C class of preferred equity holders.",
+      "substitution": "Proceeds from a sale are first distributed to common stockholders, then to Series C preferred stockholders."
+    },
+    {
+      "id": "fi-006",
+      "domain": "financial_covenants",
+      "near_miss": false,
+      "clean": "The company shall maintain minimum cash reserves of $5,000,000.",
+      "paraphrase": "The corporation is obligated to hold a liquid asset balance of no less than five million dollars.",
+      "substitution": "The company shall maintain maximum cash reserves of $5,000,000."
+    },
+    {
+      "id": "fi-007",
+      "domain": "financial_covenants",
+      "near_miss": false,
+      "clean": "Series A preferred stockholders participate pro-rata with common stockholders after receiving their initial preference.",
+      "paraphrase": "After the initial liquidation preference is satisfied, holders of Series A preferred stock will share in any remaining distribution of proceeds on an equal footing with common stock owners.",
+      "substitution": "Series A preferred stockholders do not participate pro-rata with common stockholders after receiving their initial preference."
+    },
+    {
+      "id": "fi-008",
+      "domain": "financial_covenants",
+      "near_miss": false,
+      "clean": "The conversion price of preferred shares will be adjusted using a broad-based weighted-average formula if new shares are issued at a lower price.",
+      "paraphrase": "If subsequent issuances of equity occur at a per-share price below current preferred share conversion rates, the conversion price will be recalculated using a comprehensive weighted-average methodology.",
+      "substitution": "The conversion price of preferred shares will be adjusted using a broad-based weighted-average formula if new shares are issued at a higher price."
+    },
+    {
+      "id": "fi-009",
+      "domain": "financial_covenants",
+      "near_miss": false,
+      "clean": "Annual capital expenditures must not exceed $10,000,000 without lender approval.",
+      "paraphrase": "Without explicit consent from the lending institution, the aggregate yearly outlays for fixed assets shall remain under ten million dollars.",
+      "substitution": "Annual capital expenditures must exceed $10,000,000 without lender approval."
+    },
+    {
+      "id": "fi-010",
+      "domain": "financial_covenants",
+      "near_miss": false,
+      "clean": "Investors are entitled to quarterly financial statements within 45 days of quarter-end.",
+      "paraphrase": "The investors shall receive comprehensive financial reports for each fiscal quarter no later than forty-five calendar days following the conclusion of that quarter.",
+      "substitution": "Investors are entitled to quarterly financial statements within 145 days of quarter-end."
+    },
+    {
+      "id": "fi-011",
+      "domain": "financial_covenants",
+      "near_miss": false,
+      "clean": "If the company's valuation falls below $100,000,000, Series B investors gain an additional board seat.",
+      "paraphrase": "Should the enterprise's market capitalization decline to a figure less than one hundred million dollars, the Series B investment group will be granted an extra position on the board of directors.",
+      "substitution": "If the company's valuation rises above $100,000,000, Series B investors gain an additional board seat."
+    },
+    {
+      "id": "fi-012",
+      "domain": "financial_covenants",
+      "near_miss": false,
+      "clean": "Unpaid dividends on Series A preferred stock shall accumulate and be payable before common stock dividends.",
+      "paraphrase": "Any unremitted distributions declared for the Series A preferred shares will accrue over time and must be disbursed entirely prior to any payments being made to common equity holders.",
+      "substitution": "Unpaid dividends on Series A preferred stock shall not accumulate and be payable before common stock dividends."
+    },
+    {
+      "id": "cl-013",
+      "domain": "clinical_dosing",
+      "near_miss": true,
+      "clean": "For adult patients, if creatinine clearance is above 30 mL/min, administer standard dose.",
+      "paraphrase": "Standard medication dosage is appropriate for grown-up individuals whose kidney function, measured by creatinine clearance, exceeds 30 milliliters per minute.",
+      "substitution": "For pediatric patients, if creatinine clearance is above 30 mL/min, administer standard dose."
+    },
+    {
+      "id": "cl-014",
+      "domain": "clinical_dosing",
+      "near_miss": true,
+      "clean": "If patient weight is greater than 50 kg, infuse 100 mg of Drug X.",
+      "paraphrase": "Should an individual weigh more than 50 kilograms, a 100 milligram infusion of Drug X is indicated.",
+      "substitution": "If patient weight is greater than 50 kg, infuse 1000 mg of Drug X."
+    },
+    {
+      "id": "cl-015",
+      "domain": "clinical_dosing",
+      "near_miss": true,
+      "clean": "When blood pressure is below 90/60 mmHg, initiate vasopressor support.",
+      "paraphrase": "Vasopressor assistance should be started if the patient's systolic blood pressure drops under 90 mmHg or diastolic under 60 mmHg.",
+      "substitution": "When blood pressure is above 90/60 mmHg, initiate vasopressor support."
+    },
+    {
+      "id": "cl-016",
+      "domain": "clinical_dosing",
+      "near_miss": true,
+      "clean": "For patients exhibiting severe allergic reaction, immediately discontinue infusion.",
+      "paraphrase": "In cases where a patient displays a significant hypersensitivity response, the ongoing infusion must be stopped at once.",
+      "substitution": "For patients exhibiting severe allergic reaction, immediately continue infusion."
+    },
+    {
+      "id": "cl-017",
+      "domain": "clinical_dosing",
+      "near_miss": true,
+      "clean": "If infant is less than 6 months old and bilirubin is above 15 mg/dL, commence phototherapy.",
+      "paraphrase": "Phototherapy treatment begins for babies under half a year old with bilirubin levels surpassing 15 milligrams per deciliter.",
+      "substitution": "If adult is less than 6 months old and bilirubin is above 15 mg/dL, commence phototherapy."
+    },
+    {
+      "id": "cl-018",
+      "domain": "clinical_dosing",
+      "near_miss": true,
+      "clean": "For rapid pain relief, administer 2 mg of Opioid Y intravenously.",
+      "paraphrase": "To achieve swift alleviation of discomfort, provide 2 milligrams of Opioid Y directly into the vein.",
+      "substitution": "For rapid pain relief, administer 2 mg of Opioid Y orally."
+    },
+    {
+      "id": "cl-019",
+      "domain": "clinical_dosing",
+      "near_miss": true,
+      "clean": "Give Medication Z 10 mg every 12 hours for mild symptoms.",
+      "paraphrase": "In instances of moderate discomfort, provide 10 milligrams of Medication Z twice a day.",
+      "substitution": "Give Medication Z 10 mg every 12 minutes for mild symptoms."
+    },
+    {
+      "id": "cl-020",
+      "domain": "clinical_dosing",
+      "near_miss": true,
+      "clean": "Continue antibiotic course for a minimum of 7 days post-fever resolution.",
+      "paraphrase": "The antibiotic regimen must persist for at least one week following the cessation of fever.",
+      "substitution": "Continue antibiotic course for a maximum of 7 days post-fever resolution."
+    },
+    {
+      "id": "cl-021",
+      "domain": "clinical_dosing",
+      "near_miss": true,
+      "clean": "Elderly patients with compromised liver function should receive half the usual dose.",
+      "paraphrase": "Individuals of advanced age experiencing diminished hepatic performance are to be given 50% of the standard drug quantity.",
+      "substitution": "Young patients with compromised liver function should receive half the usual dose."
+    },
+    {
+      "id": "cl-022",
+      "domain": "clinical_dosing",
+      "near_miss": true,
+      "clean": "If serum potassium is below 3.5 mEq/L, supplement with 20 mEq KCl.",
+      "paraphrase": "Supplemental potassium chloride, 20 milliequivalents, is warranted if blood potassium concentration falls under 3.5 milliequivalents per liter.",
+      "substitution": "If serum potassium is below 3.5 mEq/L, supplement with 2.0 mEq KCl."
+    },
+    {
+      "id": "cl-023",
+      "domain": "clinical_dosing",
+      "near_miss": true,
+      "clean": "Maintain blood glucose levels between 80 and 120 mg/dL with insulin drip adjustments.",
+      "paraphrase": "Adjust insulin infusion to keep blood sugar concentrations within the 80 to 120 milligram per deciliter range.",
+      "substitution": "Maintain blood glucose levels between 180 and 220 mg/dL with insulin drip adjustments."
+    },
+    {
+      "id": "cl-024",
+      "domain": "clinical_dosing",
+      "near_miss": true,
+      "clean": "For severe asthma exacerbation, administer Nebulizer A.",
+      "paraphrase": "In cases of acute worsening of asthma, deliver Nebulizer A treatment.",
+      "substitution": "For severe asthma exacerbation, administer Nebulizer B."
+    }
+  ]
+}

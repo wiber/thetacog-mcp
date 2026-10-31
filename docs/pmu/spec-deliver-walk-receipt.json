@@ -1,0 +1,157 @@
+{
+  "receipt": {
+    "artifact": "spec-deliver-walk-receipt",
+    "schema": "walk-drift/v1",
+    "spec_id": "npx-underwriter-package",
+    "source": "docs/specs/drafts/builder-npx-underwriter-package.md",
+    "room": "builder",
+    "author_room": "operator",
+    "reef_sha256": "4f71916ca1707065c9e1662b7a51c7e486c77a58ddc381f8ddebd877bc756370",
+    "reef_pubkey_hex": "4ab36c672436feb6250cf129d52fbc9eb2a7b5e40c995436c46a4394072b05fb",
+    "walk": {
+      "engine": "pmu-onchip --ballistic (definerWalk144 — real recursive on-chip; row→column→transpose→recurse)",
+      "start_coord": "A2,A1",
+      "intent_seeds": 3,
+      "max_ply": 5,
+      "hops": 50,
+      "propagated_past_ply1": true,
+      "sigma_shape_match_pct": 27,
+      "kill_pct": 0,
+      "coverage": 0,
+      "covered": 0,
+      "requirements_total": 7,
+      "coverage_sensing": "spec-universe · background-relative (signal = work_ncd − neutral_bg_ncd ≥ margin)",
+      "requirements": [
+        {
+          "req": "R1",
+          "title": "C2/C6 in the output (the brick)",
+          "sim": 0.1589,
+          "background": 0.168,
+          "signal": -0.0091,
+          "verdict": "UNCOVERED"
+        },
+        {
+          "req": "R2",
+          "title": "Input spec, bulletproof",
+          "sim": 0.168,
+          "background": 0.168,
+          "signal": 0,
+          "verdict": "UNCOVERED"
+        },
+        {
+          "req": "R3",
+          "title": "One signed receipt, three readable layers",
+          "sim": 0.157,
+          "background": 0.168,
+          "signal": -0.0109,
+          "verdict": "UNCOVERED"
+        },
+        {
+          "req": "R4",
+          "title": "Recompute is the ballgame",
+          "sim": 0.2454,
+          "background": 0.2515,
+          "signal": -0.0061,
+          "verdict": "UNCOVERED"
+        },
+        {
+          "req": "R5",
+          "title": "Cold-run < 5 min",
+          "sim": 0.2376,
+          "background": 0.232,
+          "signal": 0.0055,
+          "verdict": "UNCOVERED"
+        },
+        {
+          "req": "R6",
+          "title": "Accept a spec as the reef",
+          "sim": 0.224,
+          "background": 0.2186,
+          "signal": 0.0055,
+          "verdict": "UNCOVERED"
+        },
+        {
+          "req": "R7",
+          "title": "Honest fences baked in",
+          "sim": 0.1393,
+          "background": 0.168,
+          "signal": -0.0287,
+          "verdict": "UNCOVERED"
+        }
+      ],
+      "tolerance_pct": 15,
+      "reef_floor": 0.3,
+      "inside_top": [
+        {
+          "coord": "A1,B2",
+          "heat": 1,
+          "first": "Binding rules in law regulate each deal exchange and negotiation rate through a governance article."
+        },
+        {
+          "coord": "A1,B3",
+          "heat": 1,
+          "first": "Articles of governance mandate the binding rule for signal bandwidth and message broadcast reach."
+        },
+        {
+          "coord": "A2,A1",
+          "heat": 1,
+          "first": "Objectives for the quarterly goal must comply with the binding mandate and governance rule of law."
+        },
+        {
+          "coord": "A2,A2",
+          "heat": 1,
+          "first": "The target is the cell coordinate the system MUST occupy by end-of-quarter."
+        },
+        {
+          "coord": "A2,A3",
+          "heat": 1,
+          "first": "Position targets for the quarterly goal define how capital and the dollar floor fund the aim."
+        },
+        {
+          "coord": "B3,C3",
+          "heat": 1,
+          "first": "Broadcast signal bandwidth and message reach drive the flow throughput and delivery rate across the pipeline."
+        }
+      ],
+      "off_shape_top": []
+    },
+    "verdict": "OFF_SPEC",
+    "insurability": {
+      "boundary": "WHERE (domain membership) = decidable, recomputable, hard-to-fool · NOT WHETHER (within-domain quality) = undecidable, the LLM's job",
+      "insured_peril": "domain-departure",
+      "decidable": true,
+      "basis_risk": "low — the trigger IS the peril (we measure domain membership, not a proxy)",
+      "foolable": "hard — gzip-NCD reads structure, not keywords; off-domain prose with keywords jammed in still does not compress like the domain",
+      "coverage": 0,
+      "status": "PERIL FIRED — the delivery LEFT the spec's competence domain (insured event · decidable · signed · recomputable)"
+    },
+    "verdict_reason": "the delivery covered only 0/7 (0%) of the spec's own requirements above the off-domain background — off-domain / UNINSURABLE work, the spec was not built",
+    "triptych": {
+      "artifact": "docs/pmu/spec-deliver-walk-npx-underwriter-package.html",
+      "sha256": "c3e23e531affcf378d14af8a514521dfd59dba857ff2b0ec6a00fdeccb8786c9",
+      "anatomy": "INTENT(cyan) / REALITY(amber) / DELTA(red), 144 ShortLex anchors, 4×4 blocks of 3×3"
+    },
+    "spec_universe_panel": {
+      "artifact": "docs/pmu/spec-deliver-panel-npx-underwriter-package.html",
+      "sha256": "f602a082b35e8c1b1e5a0a8d170d716bd494c8567392e3e730bd6fda23c9add1",
+      "anatomy": "spec-universe · per-requirement green(covered)/red(missing), background-relative coverage"
+    },
+    "fences": {
+      "walk_is_real": true,
+      "no_llm_in_trust_path": true,
+      "forbidden_shortcuts_not_used": "no placePixel placement · no --walk converged/diffusion · no JS BFS · no Monte-Carlo-as-the-walk",
+      "attestation_layer": "L1 — your own machine, your own cache hierarchy, sealed locally"
+    },
+    "pubkey_hex": "7820d621cc55b784f2f331378225b158786d44fe3c77371afd6b112d37b3753c",
+    "sig_hex": "a90df97eb7eddce2b5c50b50a5255850069e5737d04afba8f5a19d7e517813787ea668a8c17f4164eae9fbd608d92fa392053bd01a47b05b81d0b73d44626509",
+    "sha256": "0ecf80ccb6450bac69f57c387d2e3bae0f94e71d3b892725f2db73502f04faa8"
+  },
+  "attestation_root": "6009b01219a0d55ab5304816097657c2d985d899ad01bb971d7ae05f11e94314",
+  "reef_sha256": "4f71916ca1707065c9e1662b7a51c7e486c77a58ddc381f8ddebd877bc756370",
+  "inputs": {
+    "reef": "/Users/thetacoach/GitHub/thetadrivencoach/data/pmu/reef/spec-reef-npx-underwriter-package.json",
+    "deliverables": "/Users/thetacoach/GitHub/thetadrivencoach/.thetacog/prompt-drift/manifest-guard-sep-off.json",
+    "floor": 0.3,
+    "tolerance": 15
+  }
+}

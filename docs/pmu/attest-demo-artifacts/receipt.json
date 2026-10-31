@@ -1,0 +1,54 @@
+{
+  "artifact": "thetacog-attestation-receipt",
+  "receipt_kind": "two-party-attestation",
+  "job_id": "demo",
+  "reef_commitment": "1d5514be576dd51040ceecf3bb781f158ead22bc14babb825dba30e4edc2eb5a",
+  "payload_sha256": "68d472545e175d720cac0b172637e71302d9d9929380ed3542aee208a381e11b",
+  "submitter_pubkey": "931ada436fc063d542248834631f4d7c10ef3e7c6504486444917ac0fce68cdc",
+  "addressed_to": "16dcd2919490a13dea079b53bfdfe6667fbc1989fab6745cb212287b70a285c1",
+  "authorized_cells": [
+    "A",
+    "A1",
+    "A2"
+  ],
+  "verdict": "MATCH",
+  "inner_verdict": "IN_ROLE",
+  "authoritative_cell": "A",
+  "gzip_witness": {
+    "cell": "A",
+    "sigma": 2.5417554438133276,
+    "ncd_margin": 0.001262626262626243,
+    "agreement": "GZIP_ONLY"
+  },
+  "crossings": {
+    "c": 21,
+    "cell_bytes": 64,
+    "entries": 2,
+    "exits": 19,
+    "half_life_crossings": 231,
+    "k_e": "0.003",
+    "k_e_milli": 63,
+    "k_e_tally": "0.063",
+    "line_crossings": 75,
+    "ratio": {
+      "den": 75,
+      "num": 21
+    },
+    "steps": 75,
+    "unit": "boundary crossings of the declared lane by the definer walk; each followed step is one 64-byte line crossing; integers only, re-runnable from the commit"
+  },
+  "lens_pixel": "A2,A2",
+  "threshold": 2,
+  "host_attestation": {
+    "daemon_sha256": "504010a625f1e4f42d599976614ff59b3caaf69e7e18d460004a3f21522d6abb",
+    "daemon_present": true,
+    "node": "v20.20.0",
+    "platform": "darwin/arm64",
+    "gate_ms": 203.51
+  },
+  "inner_receipt_id": "1d996c9a-3156-4d19-ad58-00aec02bb72e",
+  "oracle": "thetacog pmu gzip-NCD → 12 ShortLex axis nodes (48 anchors) → lane argmax (compress.mjs)",
+  "pubkey_hex": "fc0fb4d5709e3a763c3b794bf8be039fecc8786f78fd1143ff0172553875f139",
+  "sig_hex": "1f326fa2be3b32c8abe5ea25c6e6f4a1c35f14497d85793b47d0d9a9c49f088ec24114addb7ce160c6381987358262c28605699e8ece4da80ae1a38ada20c80a",
+  "sha256": "b53fd188b323fadb4e981a7c5b0eeaf403de34836fb91b767b604bd03954bada"
+}
