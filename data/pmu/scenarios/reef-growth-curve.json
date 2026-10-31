@@ -1,0 +1,74 @@
+{
+  "ts_note": "REEF GROWTH CURVE · deterministic · LLM-free · held-out snap at each reef fraction · seeded domain order (144)",
+  "domain_order_sha": "d92aaa01b761",
+  "ideal_note": "the LLM-authored ideals are the COMPARISON TARGET, not asserted truth — distance-to-stated-ideal is countable either way",
+  "curve": [
+    {
+      "domains_restored": 0,
+      "reef_fraction": 0,
+      "route": 1,
+      "hat": 0,
+      "rules_precision": 0,
+      "rules_recall": 0
+    },
+    {
+      "domains_restored": 8,
+      "reef_fraction": 0.25,
+      "route": 1,
+      "hat": 0.389,
+      "rules_precision": 0.389,
+      "rules_recall": 0.174
+    },
+    {
+      "domains_restored": 16,
+      "reef_fraction": 0.5,
+      "route": 1,
+      "hat": 0.444,
+      "rules_precision": 0.444,
+      "rules_recall": 0.23
+    },
+    {
+      "domains_restored": 24,
+      "reef_fraction": 0.75,
+      "route": 1,
+      "hat": 0.722,
+      "rules_precision": 0.711,
+      "rules_recall": 0.385
+    },
+    {
+      "domains_restored": 32,
+      "reef_fraction": 1,
+      "route": 1,
+      "hat": 1,
+      "rules_precision": 0.969,
+      "rules_recall": 0.556
+    }
+  ],
+  "velocity": [
+    {
+      "from": 0,
+      "to": 8,
+      "d_hat_per_domain": 0.0486,
+      "d_rules_prec_per_domain": 0.0486
+    },
+    {
+      "from": 8,
+      "to": 16,
+      "d_hat_per_domain": 0.0069,
+      "d_rules_prec_per_domain": 0.0069
+    },
+    {
+      "from": 16,
+      "to": 24,
+      "d_hat_per_domain": 0.0347,
+      "d_rules_prec_per_domain": 0.0334
+    },
+    {
+      "from": 24,
+      "to": 32,
+      "d_hat_per_domain": 0.0348,
+      "d_rules_prec_per_domain": 0.0323
+    }
+  ],
+  "reads": "capability vs reef-mass. The slope is the build velocity; a flat segment = domains the corpus never exercises; the knee = where marginal domains stop paying. Routing is model-native (flat 1.0 at every fraction)."
+}

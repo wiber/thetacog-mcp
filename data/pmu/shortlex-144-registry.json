@@ -1,0 +1,1025 @@
+{
+  "_comment": "The three-length ShortLex axis: 3 (A,B,C) | 9 (A1..C3) | 132 children (A1A..C3N). NAMING LAW: no separator chars — the symbol class alternates by depth (letter, digit, letter) and the alternation IS the separator. Child allocation is DATA-DRIVEN — 132 does not divide by 9 (14.67); the operator may rebalance the `allocation` map and re-run scripts/pmu/shortlex-registry.mjs. `semantic` fields are EMPTY in phase 1; phase 2 fills them via the GDD loop with perturbation-probe checks before/after.",
+  "version": 1,
+  "allocation": {
+    "A1": 15,
+    "A2": 15,
+    "A3": 15,
+    "B1": 15,
+    "B2": 15,
+    "B3": 15,
+    "C1": 14,
+    "C2": 14,
+    "C3": 14
+  },
+  "entries": [
+    {
+      "index": 0,
+      "name": "A",
+      "parent": null,
+      "depth": 1,
+      "semantic": ""
+    },
+    {
+      "index": 1,
+      "name": "B",
+      "parent": null,
+      "depth": 1,
+      "semantic": ""
+    },
+    {
+      "index": 2,
+      "name": "C",
+      "parent": null,
+      "depth": 1,
+      "semantic": ""
+    },
+    {
+      "index": 3,
+      "name": "A1",
+      "parent": "A",
+      "depth": 2,
+      "semantic": ""
+    },
+    {
+      "index": 4,
+      "name": "A2",
+      "parent": "A",
+      "depth": 2,
+      "semantic": ""
+    },
+    {
+      "index": 5,
+      "name": "A3",
+      "parent": "A",
+      "depth": 2,
+      "semantic": ""
+    },
+    {
+      "index": 6,
+      "name": "B1",
+      "parent": "B",
+      "depth": 2,
+      "semantic": ""
+    },
+    {
+      "index": 7,
+      "name": "B2",
+      "parent": "B",
+      "depth": 2,
+      "semantic": ""
+    },
+    {
+      "index": 8,
+      "name": "B3",
+      "parent": "B",
+      "depth": 2,
+      "semantic": ""
+    },
+    {
+      "index": 9,
+      "name": "C1",
+      "parent": "C",
+      "depth": 2,
+      "semantic": ""
+    },
+    {
+      "index": 10,
+      "name": "C2",
+      "parent": "C",
+      "depth": 2,
+      "semantic": ""
+    },
+    {
+      "index": 11,
+      "name": "C3",
+      "parent": "C",
+      "depth": 2,
+      "semantic": ""
+    },
+    {
+      "index": 12,
+      "name": "A1A",
+      "parent": "A1",
+      "depth": 3,
+      "semantic": "refuse"
+    },
+    {
+      "index": 13,
+      "name": "A1B",
+      "parent": "A1",
+      "depth": 3,
+      "semantic": "pain"
+    },
+    {
+      "index": 14,
+      "name": "A1C",
+      "parent": "A1",
+      "depth": 3,
+      "semantic": "enterprise"
+    },
+    {
+      "index": 15,
+      "name": "A1D",
+      "parent": "A1",
+      "depth": 3,
+      "semantic": "thetadriven"
+    },
+    {
+      "index": 16,
+      "name": "A1E",
+      "parent": "A1",
+      "depth": 3,
+      "semantic": "position"
+    },
+    {
+      "index": 17,
+      "name": "A1F",
+      "parent": "A1",
+      "depth": 3,
+      "semantic": "defense"
+    },
+    {
+      "index": 18,
+      "name": "A1G",
+      "parent": "A1",
+      "depth": 3,
+      "semantic": "chapter"
+    },
+    {
+      "index": 19,
+      "name": "A1H",
+      "parent": "A1",
+      "depth": 3,
+      "semantic": "nearest"
+    },
+    {
+      "index": 20,
+      "name": "A1I",
+      "parent": "A1",
+      "depth": 3,
+      "semantic": "scrim"
+    },
+    {
+      "index": 21,
+      "name": "A1J",
+      "parent": "A1",
+      "depth": 3,
+      "semantic": "debt"
+    },
+    {
+      "index": 22,
+      "name": "A1K",
+      "parent": "A1",
+      "depth": 3,
+      "semantic": "existing"
+    },
+    {
+      "index": 23,
+      "name": "A1L",
+      "parent": "A1",
+      "depth": 3,
+      "semantic": "coach"
+    },
+    {
+      "index": 24,
+      "name": "A1M",
+      "parent": "A1",
+      "depth": 3,
+      "semantic": "mean"
+    },
+    {
+      "index": 25,
+      "name": "A1N",
+      "parent": "A1",
+      "depth": 3,
+      "semantic": "demonstration"
+    },
+    {
+      "index": 26,
+      "name": "A1O",
+      "parent": "A1",
+      "depth": 3,
+      "semantic": "walk"
+    },
+    {
+      "index": 27,
+      "name": "A2A",
+      "parent": "A2",
+      "depth": 3,
+      "semantic": "seen"
+    },
+    {
+      "index": 28,
+      "name": "A2B",
+      "parent": "A2",
+      "depth": 3,
+      "semantic": "placeholder"
+    },
+    {
+      "index": 29,
+      "name": "A2C",
+      "parent": "A2",
+      "depth": 3,
+      "semantic": "mechanics"
+    },
+    {
+      "index": 30,
+      "name": "A2D",
+      "parent": "A2",
+      "depth": 3,
+      "semantic": "nervous"
+    },
+    {
+      "index": 31,
+      "name": "A2E",
+      "parent": "A2",
+      "depth": 3,
+      "semantic": "implement"
+    },
+    {
+      "index": 32,
+      "name": "A2F",
+      "parent": "A2",
+      "depth": 3,
+      "semantic": "grounded"
+    },
+    {
+      "index": 33,
+      "name": "A2G",
+      "parent": "A2",
+      "depth": 3,
+      "semantic": "debt"
+    },
+    {
+      "index": 34,
+      "name": "A2H",
+      "parent": "A2",
+      "depth": 3,
+      "semantic": "fear"
+    },
+    {
+      "index": 35,
+      "name": "A2I",
+      "parent": "A2",
+      "depth": 3,
+      "semantic": "humans"
+    },
+    {
+      "index": 36,
+      "name": "A2J",
+      "parent": "A2",
+      "depth": 3,
+      "semantic": "verification"
+    },
+    {
+      "index": 37,
+      "name": "A2K",
+      "parent": "A2",
+      "depth": 3,
+      "semantic": "because"
+    },
+    {
+      "index": 38,
+      "name": "A2L",
+      "parent": "A2",
+      "depth": 3,
+      "semantic": "mass"
+    },
+    {
+      "index": 39,
+      "name": "A2M",
+      "parent": "A2",
+      "depth": 3,
+      "semantic": "vocabulary"
+    },
+    {
+      "index": 40,
+      "name": "A2N",
+      "parent": "A2",
+      "depth": 3,
+      "semantic": "practitioner"
+    },
+    {
+      "index": 41,
+      "name": "A2O",
+      "parent": "A2",
+      "depth": 3,
+      "semantic": "pain"
+    },
+    {
+      "index": 42,
+      "name": "A3A",
+      "parent": "A3",
+      "depth": 3,
+      "semantic": "search"
+    },
+    {
+      "index": 43,
+      "name": "A3B",
+      "parent": "A3",
+      "depth": 3,
+      "semantic": "benevolence"
+    },
+    {
+      "index": 44,
+      "name": "A3C",
+      "parent": "A3",
+      "depth": 3,
+      "semantic": "agreement"
+    },
+    {
+      "index": 45,
+      "name": "A3D",
+      "parent": "A3",
+      "depth": 3,
+      "semantic": "words"
+    },
+    {
+      "index": 46,
+      "name": "A3E",
+      "parent": "A3",
+      "depth": 3,
+      "semantic": "benevolence"
+    },
+    {
+      "index": 47,
+      "name": "A3F",
+      "parent": "A3",
+      "depth": 3,
+      "semantic": "enter"
+    },
+    {
+      "index": 48,
+      "name": "A3G",
+      "parent": "A3",
+      "depth": 3,
+      "semantic": "siblings"
+    },
+    {
+      "index": 49,
+      "name": "A3H",
+      "parent": "A3",
+      "depth": 3,
+      "semantic": "dotenv"
+    },
+    {
+      "index": 50,
+      "name": "A3I",
+      "parent": "A3",
+      "depth": 3,
+      "semantic": "crossed"
+    },
+    {
+      "index": 51,
+      "name": "A3J",
+      "parent": "A3",
+      "depth": 3,
+      "semantic": "bucket"
+    },
+    {
+      "index": 52,
+      "name": "A3K",
+      "parent": "A3",
+      "depth": 3,
+      "semantic": "hyphen"
+    },
+    {
+      "index": 53,
+      "name": "A3L",
+      "parent": "A3",
+      "depth": 3,
+      "semantic": "snippet"
+    },
+    {
+      "index": 54,
+      "name": "A3M",
+      "parent": "A3",
+      "depth": 3,
+      "semantic": "reality"
+    },
+    {
+      "index": 55,
+      "name": "A3N",
+      "parent": "A3",
+      "depth": 3,
+      "semantic": "movements"
+    },
+    {
+      "index": 56,
+      "name": "A3O",
+      "parent": "A3",
+      "depth": 3,
+      "semantic": "number"
+    },
+    {
+      "index": 57,
+      "name": "B1A",
+      "parent": "B1",
+      "depth": 3,
+      "semantic": "meta"
+    },
+    {
+      "index": 58,
+      "name": "B1B",
+      "parent": "B1",
+      "depth": 3,
+      "semantic": "intervention"
+    },
+    {
+      "index": 59,
+      "name": "B1C",
+      "parent": "B1",
+      "depth": 3,
+      "semantic": "cost"
+    },
+    {
+      "index": 60,
+      "name": "B1D",
+      "parent": "B1",
+      "depth": 3,
+      "semantic": "recurring"
+    },
+    {
+      "index": 61,
+      "name": "B1E",
+      "parent": "B1",
+      "depth": 3,
+      "semantic": "example"
+    },
+    {
+      "index": 62,
+      "name": "B1F",
+      "parent": "B1",
+      "depth": 3,
+      "semantic": "meta"
+    },
+    {
+      "index": 63,
+      "name": "B1G",
+      "parent": "B1",
+      "depth": 3,
+      "semantic": "minimize"
+    },
+    {
+      "index": 64,
+      "name": "B1H",
+      "parent": "B1",
+      "depth": 3,
+      "semantic": "full"
+    },
+    {
+      "index": 65,
+      "name": "B1I",
+      "parent": "B1",
+      "depth": 3,
+      "semantic": "immediately"
+    },
+    {
+      "index": 66,
+      "name": "B1J",
+      "parent": "B1",
+      "depth": 3,
+      "semantic": "strategic"
+    },
+    {
+      "index": 67,
+      "name": "B1K",
+      "parent": "B1",
+      "depth": 3,
+      "semantic": "forge"
+    },
+    {
+      "index": 68,
+      "name": "B1L",
+      "parent": "B1",
+      "depth": 3,
+      "semantic": "coordinate"
+    },
+    {
+      "index": 69,
+      "name": "B1M",
+      "parent": "B1",
+      "depth": 3,
+      "semantic": "process"
+    },
+    {
+      "index": 70,
+      "name": "B1N",
+      "parent": "B1",
+      "depth": 3,
+      "semantic": "consistently"
+    },
+    {
+      "index": 71,
+      "name": "B1O",
+      "parent": "B1",
+      "depth": 3,
+      "semantic": "overdue"
+    },
+    {
+      "index": 72,
+      "name": "B2A",
+      "parent": "B2",
+      "depth": 3,
+      "semantic": "integrate"
+    },
+    {
+      "index": 73,
+      "name": "B2B",
+      "parent": "B2",
+      "depth": 3,
+      "semantic": "patent"
+    },
+    {
+      "index": 74,
+      "name": "B2C",
+      "parent": "B2",
+      "depth": 3,
+      "semantic": "tech"
+    },
+    {
+      "index": 75,
+      "name": "B2D",
+      "parent": "B2",
+      "depth": 3,
+      "semantic": "prioritize"
+    },
+    {
+      "index": 76,
+      "name": "B2E",
+      "parent": "B2",
+      "depth": 3,
+      "semantic": "traditional"
+    },
+    {
+      "index": 77,
+      "name": "B2F",
+      "parent": "B2",
+      "depth": 3,
+      "semantic": "analyze"
+    },
+    {
+      "index": 78,
+      "name": "B2G",
+      "parent": "B2",
+      "depth": 3,
+      "semantic": "enhanced"
+    },
+    {
+      "index": 79,
+      "name": "B2H",
+      "parent": "B2",
+      "depth": 3,
+      "semantic": "process"
+    },
+    {
+      "index": 80,
+      "name": "B2I",
+      "parent": "B2",
+      "depth": 3,
+      "semantic": "network"
+    },
+    {
+      "index": 81,
+      "name": "B2J",
+      "parent": "B2",
+      "depth": 3,
+      "semantic": "highest"
+    },
+    {
+      "index": 82,
+      "name": "B2K",
+      "parent": "B2",
+      "depth": 3,
+      "semantic": "text"
+    },
+    {
+      "index": 83,
+      "name": "B2L",
+      "parent": "B2",
+      "depth": 3,
+      "semantic": "digest"
+    },
+    {
+      "index": 84,
+      "name": "B2M",
+      "parent": "B2",
+      "depth": 3,
+      "semantic": "does"
+    },
+    {
+      "index": 85,
+      "name": "B2N",
+      "parent": "B2",
+      "depth": 3,
+      "semantic": "recruitment"
+    },
+    {
+      "index": 86,
+      "name": "B2O",
+      "parent": "B2",
+      "depth": 3,
+      "semantic": "changelog"
+    },
+    {
+      "index": 87,
+      "name": "B3A",
+      "parent": "B3",
+      "depth": 3,
+      "semantic": "software"
+    },
+    {
+      "index": 88,
+      "name": "B3B",
+      "parent": "B3",
+      "depth": 3,
+      "semantic": "mandatory"
+    },
+    {
+      "index": 89,
+      "name": "B3C",
+      "parent": "B3",
+      "depth": 3,
+      "semantic": "failing"
+    },
+    {
+      "index": 90,
+      "name": "B3D",
+      "parent": "B3",
+      "depth": 3,
+      "semantic": "token"
+    },
+    {
+      "index": 91,
+      "name": "B3E",
+      "parent": "B3",
+      "depth": 3,
+      "semantic": "payload"
+    },
+    {
+      "index": 92,
+      "name": "B3F",
+      "parent": "B3",
+      "depth": 3,
+      "semantic": "byte"
+    },
+    {
+      "index": 93,
+      "name": "B3G",
+      "parent": "B3",
+      "depth": 3,
+      "semantic": "capabilities"
+    },
+    {
+      "index": 94,
+      "name": "B3H",
+      "parent": "B3",
+      "depth": 3,
+      "semantic": "namara"
+    },
+    {
+      "index": 95,
+      "name": "B3I",
+      "parent": "B3",
+      "depth": 3,
+      "semantic": "principle"
+    },
+    {
+      "index": 96,
+      "name": "B3J",
+      "parent": "B3",
+      "depth": 3,
+      "semantic": "instrument"
+    },
+    {
+      "index": 97,
+      "name": "B3K",
+      "parent": "B3",
+      "depth": 3,
+      "semantic": "search"
+    },
+    {
+      "index": 98,
+      "name": "B3L",
+      "parent": "B3",
+      "depth": 3,
+      "semantic": "patent"
+    },
+    {
+      "index": 99,
+      "name": "B3M",
+      "parent": "B3",
+      "depth": 3,
+      "semantic": "consequence"
+    },
+    {
+      "index": 100,
+      "name": "B3N",
+      "parent": "B3",
+      "depth": 3,
+      "semantic": "structure"
+    },
+    {
+      "index": 101,
+      "name": "B3O",
+      "parent": "B3",
+      "depth": 3,
+      "semantic": "consequence"
+    },
+    {
+      "index": 102,
+      "name": "C1A",
+      "parent": "C1",
+      "depth": 3,
+      "semantic": "efficiency"
+    },
+    {
+      "index": 103,
+      "name": "C1B",
+      "parent": "C1",
+      "depth": 3,
+      "semantic": "beta"
+    },
+    {
+      "index": 104,
+      "name": "C1C",
+      "parent": "C1",
+      "depth": 3,
+      "semantic": "cannot"
+    },
+    {
+      "index": 105,
+      "name": "C1D",
+      "parent": "C1",
+      "depth": 3,
+      "semantic": "patent"
+    },
+    {
+      "index": 106,
+      "name": "C1E",
+      "parent": "C1",
+      "depth": 3,
+      "semantic": "clients"
+    },
+    {
+      "index": 107,
+      "name": "C1F",
+      "parent": "C1",
+      "depth": 3,
+      "semantic": "modern"
+    },
+    {
+      "index": 108,
+      "name": "C1G",
+      "parent": "C1",
+      "depth": 3,
+      "semantic": "locality"
+    },
+    {
+      "index": 109,
+      "name": "C1H",
+      "parent": "C1",
+      "depth": 3,
+      "semantic": "amplifies"
+    },
+    {
+      "index": 110,
+      "name": "C1I",
+      "parent": "C1",
+      "depth": 3,
+      "semantic": "verify"
+    },
+    {
+      "index": 111,
+      "name": "C1J",
+      "parent": "C1",
+      "depth": 3,
+      "semantic": "constraint"
+    },
+    {
+      "index": 112,
+      "name": "C1K",
+      "parent": "C1",
+      "depth": 3,
+      "semantic": "hierarchy"
+    },
+    {
+      "index": 113,
+      "name": "C1L",
+      "parent": "C1",
+      "depth": 3,
+      "semantic": "additional"
+    },
+    {
+      "index": 114,
+      "name": "C1M",
+      "parent": "C1",
+      "depth": 3,
+      "semantic": "validation"
+    },
+    {
+      "index": 115,
+      "name": "C1N",
+      "parent": "C1",
+      "depth": 3,
+      "semantic": "empirical"
+    },
+    {
+      "index": 116,
+      "name": "C2A",
+      "parent": "C2",
+      "depth": 3,
+      "semantic": "companies"
+    },
+    {
+      "index": 117,
+      "name": "C2B",
+      "parent": "C2",
+      "depth": 3,
+      "semantic": "itself"
+    },
+    {
+      "index": 118,
+      "name": "C2C",
+      "parent": "C2",
+      "depth": 3,
+      "semantic": "dimensional"
+    },
+    {
+      "index": 119,
+      "name": "C2D",
+      "parent": "C2",
+      "depth": 3,
+      "semantic": "organization"
+    },
+    {
+      "index": 120,
+      "name": "C2E",
+      "parent": "C2",
+      "depth": 3,
+      "semantic": "product"
+    },
+    {
+      "index": 121,
+      "name": "C2F",
+      "parent": "C2",
+      "depth": 3,
+      "semantic": "below"
+    },
+    {
+      "index": 122,
+      "name": "C2G",
+      "parent": "C2",
+      "depth": 3,
+      "semantic": "path"
+    },
+    {
+      "index": 123,
+      "name": "C2H",
+      "parent": "C2",
+      "depth": 3,
+      "semantic": "because"
+    },
+    {
+      "index": 124,
+      "name": "C2I",
+      "parent": "C2",
+      "depth": 3,
+      "semantic": "measuring"
+    },
+    {
+      "index": 125,
+      "name": "C2J",
+      "parent": "C2",
+      "depth": 3,
+      "semantic": "happened"
+    },
+    {
+      "index": 126,
+      "name": "C2K",
+      "parent": "C2",
+      "depth": 3,
+      "semantic": "strategy"
+    },
+    {
+      "index": 127,
+      "name": "C2L",
+      "parent": "C2",
+      "depth": 3,
+      "semantic": "three"
+    },
+    {
+      "index": 128,
+      "name": "C2M",
+      "parent": "C2",
+      "depth": 3,
+      "semantic": "performance"
+    },
+    {
+      "index": 129,
+      "name": "C2N",
+      "parent": "C2",
+      "depth": 3,
+      "semantic": "system"
+    },
+    {
+      "index": 130,
+      "name": "C3A",
+      "parent": "C3",
+      "depth": 3,
+      "semantic": "consciousness"
+    },
+    {
+      "index": 131,
+      "name": "C3B",
+      "parent": "C3",
+      "depth": 3,
+      "semantic": "measures"
+    },
+    {
+      "index": 132,
+      "name": "C3C",
+      "parent": "C3",
+      "depth": 3,
+      "semantic": "slightly"
+    },
+    {
+      "index": 133,
+      "name": "C3D",
+      "parent": "C3",
+      "depth": 3,
+      "semantic": "explanation"
+    },
+    {
+      "index": 134,
+      "name": "C3E",
+      "parent": "C3",
+      "depth": 3,
+      "semantic": "instruments"
+    },
+    {
+      "index": 135,
+      "name": "C3F",
+      "parent": "C3",
+      "depth": 3,
+      "semantic": "markdown"
+    },
+    {
+      "index": 136,
+      "name": "C3G",
+      "parent": "C3",
+      "depth": 3,
+      "semantic": "tactics"
+    },
+    {
+      "index": 137,
+      "name": "C3H",
+      "parent": "C3",
+      "depth": 3,
+      "semantic": "explanation"
+    },
+    {
+      "index": 138,
+      "name": "C3I",
+      "parent": "C3",
+      "depth": 3,
+      "semantic": "debt"
+    },
+    {
+      "index": 139,
+      "name": "C3J",
+      "parent": "C3",
+      "depth": 3,
+      "semantic": "either"
+    },
+    {
+      "index": 140,
+      "name": "C3K",
+      "parent": "C3",
+      "depth": 3,
+      "semantic": "need"
+    },
+    {
+      "index": 141,
+      "name": "C3L",
+      "parent": "C3",
+      "depth": 3,
+      "semantic": "accident"
+    },
+    {
+      "index": 142,
+      "name": "C3M",
+      "parent": "C3",
+      "depth": 3,
+      "semantic": "accident"
+    },
+    {
+      "index": 143,
+      "name": "C3N",
+      "parent": "C3",
+      "depth": 3,
+      "semantic": "instruments"
+    }
+  ]
+}

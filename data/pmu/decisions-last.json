@@ -1,0 +1,128 @@
+{
+ "ts": "2026-07-25T15:06:37.992Z",
+ "accepted": [],
+ "refused": [
+  {
+   "mechanism": "topicality",
+   "domain": "child:C,B1/A,B3",
+   "coord": "C,B1/A,B3",
+   "ours": 0.9262,
+   "away": 0.9238,
+   "sample": "With each step, the composite score differential should incr"
+  },
+  {
+   "mechanism": "topicality",
+   "domain": "child:C,B1/A,B3",
+   "coord": "C,B1/A,B3",
+   "ours": 0.9244,
+   "away": 0.9238,
+   "sample": "You cannot create trust from software because the chain of p"
+  },
+  {
+   "mechanism": "topicality",
+   "domain": "child:C,B1/A,B3",
+   "coord": "C,B1/A,B3",
+   "ours": 0.949,
+   "away": 0.947,
+   "sample": "Multiple market verticals reduce concentration risk Measured"
+  },
+  {
+   "mechanism": "topicality",
+   "domain": "market-posture",
+   "coord": "A2,B3",
+   "ours": 0.9238,
+   "away": 0.9139,
+   "sample": "mechanic (embedding it in the submission = requiring it of t"
+  },
+  {
+   "mechanism": "topicality",
+   "domain": "market-posture",
+   "coord": "A2,B3",
+   "ours": 0.9317,
+   "away": 0.9181,
+   "sample": "The quick close isn't a pitch—it's a moment of recognition w"
+  },
+  {
+   "mechanism": "topicality",
+   "domain": "market-posture",
+   "coord": "A2,B3",
+   "ours": 0.9316,
+   "away": 0.9306,
+   "sample": "\"Kids young, walked through fire\" commitment signal absent D"
+  },
+  {
+   "mechanism": "topicality",
+   "domain": "market-posture",
+   "coord": "A2,B3",
+   "ours": 0.926,
+   "away": 0.9208,
+   "sample": "You're networking in San Francisco, meeting brilliant people"
+  },
+  {
+   "mechanism": "topicality",
+   "domain": "market-posture",
+   "coord": "A2,B3",
+   "ours": 0.9412,
+   "away": 0.925,
+   "sample": "They demonstrated exactly who NOT to pitch and why social pr"
+  },
+  {
+   "mechanism": "topicality",
+   "domain": "market-posture",
+   "coord": "A2,B3",
+   "ours": 0.9462,
+   "away": 0.9306,
+   "sample": "# The Pitch (For Pilots) \"What if your codebase had a GPS sy"
+  },
+  {
+   "mechanism": "topicality",
+   "domain": "market-posture",
+   "coord": "A2,B3",
+   "ours": 0.9346,
+   "away": 0.9319,
+   "sample": "Shifts from experience as credibility to experience as patte"
+  },
+  {
+   "mechanism": "topicality",
+   "domain": "market-posture",
+   "coord": "A2,B3",
+   "ours": 0.9527,
+   "away": 0.9236,
+   "sample": "Networker. | SGI Stockholm. Steady contact, can open doors, "
+  },
+  {
+   "mechanism": "topicality",
+   "domain": "market-posture",
+   "coord": "A2,B3",
+   "ours": 0.9398,
+   "away": 0.9222,
+   "sample": "\"We quantify and fix the hidden drift between what your AI p"
+  },
+  {
+   "mechanism": "topicality",
+   "domain": "blog-content",
+   "coord": "B,A1",
+   "ours": 0.9318,
+   "away": 0.9245,
+   "sample": "admit a book ONLY as a finding that passes the deletion test"
+  },
+  {
+   "mechanism": "topicality",
+   "domain": "blog-content",
+   "coord": "B,A1",
+   "ours": 0.9382,
+   "away": 0.9283,
+   "sample": "* when the residual misses are the persona *declining the ca"
+  },
+  {
+   "mechanism": "fit-ceiling",
+   "domain": "blog-content",
+   "fit": 0.9216,
+   "sample": "Pattern Recognition (MCP Foundation) Readers recognize they "
+  }
+ ],
+ "void": {
+  "captured": 0,
+  "dropped": 0
+ }
+}
