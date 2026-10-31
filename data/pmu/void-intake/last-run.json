@@ -1,0 +1,53 @@
+{
+ "ts": "2026-07-22T19:57:22.596Z",
+ "captures": [
+  {
+   "coord": "A2,A2",
+   "captured": 0,
+   "dropped": 6,
+   "sample": null
+  },
+  {
+   "coord": "B1,B1",
+   "captured": 0,
+   "dropped": 6,
+   "sample": null
+  },
+  {
+   "coord": "C,C",
+   "captured": 0,
+   "dropped": 6,
+   "sample": null
+  },
+  {
+   "coord": "B2,B2",
+   "captured": 0,
+   "dropped": 6,
+   "sample": null
+  },
+  {
+   "coord": "B2,B2",
+   "captured": 0,
+   "dropped": 6,
+   "sample": null
+  },
+  {
+   "coord": "A2,A2",
+   "captured": 0,
+   "dropped": 6,
+   "sample": null
+  },
+  {
+   "coord": "B1,B1",
+   "captured": 0,
+   "dropped": 6,
+   "sample": null
+  },
+  {
+   "coord": "C,C",
+   "captured": 0,
+   "dropped": 6,
+   "sample": null
+  }
+ ]
+}

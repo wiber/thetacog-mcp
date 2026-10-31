@@ -1,0 +1,6331 @@
+{
+  "door": "attest-sweep",
+  "row": "C1386",
+  "floor_row": "C1393",
+  "ts": "2026-10-30T02:59:21.782Z",
+  "data_root": "/private/tmp/claude-501/-Users-thetacoach-GitHub-thetadrivencoach/6d5eb808-af38-41aa-9252-909a61e0a000/scratchpad/rel/x/package",
+  "cwd": "/private/tmp/claude-501/-Users-thetacoach-GitHub-thetadrivencoach/6d5eb808-af38-41aa-9252-909a61e0a000/scratchpad/rel/w1",
+  "kill": 25,
+  "steps": 11,
+  "runs": 2,
+  "n_pairs": 11,
+  "instruments": {
+    "ncd": "the flat gzip-NCD gate on the flight tape (tape-intent.mjs writeTapeIntent → readTapeReceipt; attest-hypotheses.mjs placement)",
+    "walk": "the one Rust walk — buildTriptychInputs → renderTriptych through scripts/vna/door-crate.mjs on the crate, read through walkBoolean (tolerance-panel-verdict.mjs); off-lane % vs the kill"
+  },
+  "pairs": [
+    {
+      "from": "faithful",
+      "to": "sledgehammer",
+      "from_label": "Compliant work · IN_LANE",
+      "to_label": "Surgery → Sledgehammer",
+      "steps": [
+        {
+          "f": 0,
+          "words": 67,
+          "below_floor": false,
+          "ncd": {
+            "verdict": "OFF_DOMAIN",
+            "dI": 0.6058,
+            "dN": 0.6755,
+            "drift": 47.3
+          },
+          "walk": {
+            "state": "IN_LANE",
+            "offPct": 19,
+            "tooMany": false,
+            "tier": "INSURABLE",
+            "region": null,
+            "reason": null,
+            "walkMode": "ballistic-edges",
+            "stamp": {
+              "apertureVersion": "165a6fd0ad16",
+              "reef_sha": null,
+              "axes_sha": "172d0bd01e5abcbc",
+              "engine": "rust"
+            },
+            "ms": 35598
+          }
+        },
+        {
+          "f": 0.1,
+          "words": 67,
+          "below_floor": false,
+          "ncd": {
+            "verdict": "UNPLACEABLE",
+            "dI": 0.6378,
+            "dN": 0.6493,
+            "drift": 49.6
+          },
+          "walk": {
+            "state": "IN_LANE",
+            "offPct": 19,
+            "tooMany": false,
+            "tier": "INSURABLE",
+            "region": null,
+            "reason": null,
+            "walkMode": "ballistic-edges",
+            "stamp": {
+              "apertureVersion": "165a6fd0ad16",
+              "reef_sha": null,
+              "axes_sha": "172d0bd01e5abcbc",
+              "engine": "rust"
+            },
+            "ms": 148
+          }
+        },
+        {
+          "f": 0.2,
+          "words": 67,
+          "below_floor": false,
+          "ncd": {
+            "verdict": "OFF_DOMAIN",
+            "dI": 0.6731,
+            "dN": 0.5664,
+            "drift": 54.3
+          },
+          "walk": {
+            "state": "IN_LANE",
+            "offPct": 19,
+            "tooMany": false,
+            "tier": "INSURABLE",
+            "region": null,
+            "reason": null,
+            "walkMode": "ballistic-edges",
+            "stamp": {
+              "apertureVersion": "165a6fd0ad16",
+              "reef_sha": null,
+              "axes_sha": "172d0bd01e5abcbc",
+              "engine": "rust"
+            },
+            "ms": 141
+          }
+        },
+        {
+          "f": 0.3,
+          "words": 67,
+          "below_floor": false,
+          "ncd": {
+            "verdict": "OFF_DOMAIN",
+            "dI": 0.7244,
+            "dN": 0.4981,
+            "drift": 59.3
+          },
+          "walk": {
+            "state": "IN_LANE",
+            "offPct": 19,
+            "tooMany": false,
+            "tier": "INSURABLE",
+            "region": null,
+            "reason": null,
+            "walkMode": "ballistic-edges",
+            "stamp": {
+              "apertureVersion": "165a6fd0ad16",
+              "reef_sha": null,
+              "axes_sha": "172d0bd01e5abcbc",
+              "engine": "rust"
+            },
+            "ms": 140
+          }
+        },
+        {
+          "f": 0.4,
+          "words": 67,
+          "below_floor": false,
+          "ncd": {
+            "verdict": "OFF_DOMAIN",
+            "dI": 0.7404,
+            "dN": 0.4831,
+            "drift": 60.5
+          },
+          "walk": {
+            "state": "IN_LANE",
+            "offPct": 19,
+            "tooMany": false,
+            "tier": "INSURABLE",
+            "region": null,
+            "reason": null,
+            "walkMode": "ballistic-edges",
+            "stamp": {
+              "apertureVersion": "165a6fd0ad16",
+              "reef_sha": null,
+              "axes_sha": "172d0bd01e5abcbc",
+              "engine": "rust"
+            },
+            "ms": 105
+          }
+        },
+        {
+          "f": 0.5,
+          "words": 67,
+          "below_floor": false,
+          "ncd": {
+            "verdict": "OFF_DOMAIN",
+            "dI": 0.7612,
+            "dN": 0.4327,
+            "drift": 63.8
+          },
+          "walk": {
+            "state": "IN_LANE",
+            "offPct": 19,
+            "tooMany": false,
+            "tier": "INSURABLE",
+            "region": null,
+            "reason": null,
+            "walkMode": "ballistic-edges",
+            "stamp": {
+              "apertureVersion": "165a6fd0ad16",
+              "reef_sha": null,
+              "axes_sha": "172d0bd01e5abcbc",
+              "engine": "rust"
+            },
+            "ms": 101
+          }
+        },
+        {
+          "f": 0.6,
+          "words": 67,
+          "below_floor": false,
+          "ncd": {
+            "verdict": "OFF_DOMAIN",
+            "dI": 0.7676,
+            "dN": 0.3673,
+            "drift": 67.6
+          },
+          "walk": {
+            "state": "OFF_DOMAIN",
+            "offPct": 31,
+            "tooMany": true,
+            "tier": "PRICEABLE",
+            "region": {
+              "direction": "top-down",
+              "severity": "moderate",
+              "macroDist": 1,
+              "blastRadius": "systemic",
+              "spread": 7,
+              "motif": "horizontal"
+            },
+            "reason": null,
+            "walkMode": "ballistic-edges",
+            "stamp": {
+              "apertureVersion": "165a6fd0ad16",
+              "reef_sha": null,
+              "axes_sha": "172d0bd01e5abcbc",
+              "engine": "rust"
+            },
+            "ms": 125
+          }
+        },
+        {
+          "f": 0.7,
+          "words": 67,
+          "below_floor": false,
+          "ncd": {
+            "verdict": "OFF_DOMAIN",
+            "dI": 0.7724,
+            "dN": 0.3204,
+            "drift": 70.7
+          },
+          "walk": {
+            "state": "OFF_DOMAIN",
+            "offPct": 31,
+            "tooMany": true,
+            "tier": "UNINSURABLE",
+            "region": {
+              "direction": "bottom-up",
+              "severity": "moderate",
+              "macroDist": 1,
+              "blastRadius": "bounded",
+              "spread": 4,
+              "motif": "horizontal"
+            },
+            "reason": null,
+            "walkMode": "ballistic-edges",
+            "stamp": {
+              "apertureVersion": "165a6fd0ad16",
+              "reef_sha": null,
+              "axes_sha": "172d0bd01e5abcbc",
+              "engine": "rust"
+            },
+            "ms": 101
+          }
+        },
+        {
+          "f": 0.8,
+          "words": 67,
+          "below_floor": false,
+          "ncd": {
+            "verdict": "OFF_DOMAIN",
+            "dI": 0.7949,
+            "dN": 0.239,
+            "drift": 76.9
+          },
+          "walk": {
+            "state": "OFF_DOMAIN",
+            "offPct": 35,
+            "tooMany": true,
+            "tier": "UNINSURABLE",
+            "region": {
+              "direction": "bottom-up",
+              "severity": "severe",
+              "macroDist": 2,
+              "blastRadius": "systemic",
+              "spread": 9,
+              "motif": "horizontal"
+            },
+            "reason": null,
+            "walkMode": "ballistic-edges",
+            "stamp": {
+              "apertureVersion": "165a6fd0ad16",
+              "reef_sha": null,
+              "axes_sha": "172d0bd01e5abcbc",
+              "engine": "rust"
+            },
+            "ms": 96
+          }
+        },
+        {
+          "f": 0.9,
+          "words": 67,
+          "below_floor": false,
+          "ncd": {
+            "verdict": "OFF_DOMAIN",
+            "dI": 0.8061,
+            "dN": 0.2082,
+            "drift": 79.5
+          },
+          "walk": {
+            "state": "OFF_DOMAIN",
+            "offPct": 36,
+            "tooMany": true,
+            "tier": "UNINSURABLE",
+            "region": {
+              "direction": "bottom-up",
+              "severity": "severe",
+              "macroDist": 2,
+              "blastRadius": "systemic",
+              "spread": 9,
+              "motif": "horizontal"
+            },
+            "reason": null,
+            "walkMode": "ballistic-edges",
+            "stamp": {
+              "apertureVersion": "165a6fd0ad16",
+              "reef_sha": null,
+              "axes_sha": "172d0bd01e5abcbc",
+              "engine": "rust"
+            },
+            "ms": 102
+          }
+        },
+        {
+          "f": 1,
+          "words": 62,
+          "below_floor": false,
+          "ncd": {
+            "verdict": "OFF_DOMAIN",
+            "dI": 0.8157,
+            "dN": 0.166,
+            "drift": 83.1
+          },
+          "walk": {
+            "state": "OFF_DOMAIN",
+            "offPct": 32,
+            "tooMany": true,
+            "tier": "PRICEABLE",
+            "region": {
+              "direction": "top-down",
+              "severity": "severe",
+              "macroDist": 2,
+              "blastRadius": "systemic",
+              "spread": 9,
+              "motif": "horizontal"
+            },
+            "reason": null,
+            "walkMode": "ballistic-edges",
+            "stamp": {
+              "apertureVersion": "165a6fd0ad16",
+              "reef_sha": null,
+              "axes_sha": "172d0bd01e5abcbc",
+              "engine": "rust"
+            },
+            "ms": 114
+          }
+        }
+      ],
+      "floor": {
+        "admitted": true,
+        "floor": {
+          "chars": 320,
+          "gz_bytes": 220
+        },
+        "stamp": {
+          "apertureVersion": "165a6fd0ad16",
+          "reef_sha": null,
+          "axes_sha": "172d0bd01e5abcbc",
+          "engine": "rust"
+        },
+        "pair_refused": false,
+        "below": [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        "sizes": {
+          "intent": {
+            "chars": 1200,
+            "gz_bytes": 624
+          },
+          "negative": {
+            "chars": 429,
+            "gz_bytes": 265
+          },
+          "reality": [
+            {
+              "chars": 480,
+              "gz_bytes": 302
+            },
+            {
+              "chars": 467,
+              "gz_bytes": 288
+            },
+            {
+              "chars": 463,
+              "gz_bytes": 286
+            },
+            {
+              "chars": 434,
+              "gz_bytes": 267
+            },
+            {
+              "chars": 439,
+              "gz_bytes": 267
+            },
+            {
+              "chars": 457,
+              "gz_bytes": 275
+            },
+            {
+              "chars": 455,
+              "gz_bytes": 275
+            },
+            {
+              "chars": 464,
+              "gz_bytes": 284
+            },
+            {
+              "chars": 453,
+              "gz_bytes": 272
+            },
+            {
+              "chars": 453,
+              "gz_bytes": 269
+            },
+            {
+              "chars": 424,
+              "gz_bytes": 261
+            }
+          ]
+        },
+        "reason": null
+      },
+      "instruments": {
+        "ncd": {
+          "sequence": [
+            "OFF_DOMAIN",
+            "UNPLACEABLE",
+            "OFF_DOMAIN",
+            "OFF_DOMAIN",
+            "OFF_DOMAIN",
+            "OFF_DOMAIN",
+            "OFF_DOMAIN",
+            "OFF_DOMAIN",
+            "OFF_DOMAIN",
+            "OFF_DOMAIN",
+            "OFF_DOMAIN"
+          ],
+          "start": "OFF_DOMAIN",
+          "end": "OFF_DOMAIN",
+          "flips": 2,
+          "first_flip_at": 0.1,
+          "flip_list": [
+            {
+              "at": 0.1,
+              "from": "OFF_DOMAIN",
+              "to": "UNPLACEABLE"
+            },
+            {
+              "at": 0.2,
+              "from": "UNPLACEABLE",
+              "to": "OFF_DOMAIN"
+            }
+          ],
+          "tripped": true,
+          "first_trip_at": 0,
+          "monotone": false,
+          "stays_out": true,
+          "trip_at_last": false
+        },
+        "walk": {
+          "sequence": [
+            "IN_LANE",
+            "IN_LANE",
+            "IN_LANE",
+            "IN_LANE",
+            "IN_LANE",
+            "IN_LANE",
+            "OFF_DOMAIN",
+            "OFF_DOMAIN",
+            "OFF_DOMAIN",
+            "OFF_DOMAIN",
+            "OFF_DOMAIN"
+          ],
+          "start": "IN_LANE",
+          "end": "OFF_DOMAIN",
+          "flips": 1,
+          "first_flip_at": 0.6,
+          "flip_list": [
+            {
+              "at": 0.6,
+              "from": "IN_LANE",
+              "to": "OFF_DOMAIN"
+            }
+          ],
+          "tripped": true,
+          "first_trip_at": 0.6,
+          "monotone": true,
+          "stays_out": true,
+          "trip_at_last": false
+        }
+      },
+      "ms": 38050
+    },
+    {
+      "from": "faithful",
+      "to": "hallucination",
+      "from_label": "Compliant work · IN_LANE",
+      "to_label": "Fabricated success · Hallucination",
+      "steps": [
+        {
+          "f": 0,
+          "words": 67,
+          "below_floor": false,
+          "ncd": {
+            "verdict": "OFF_DOMAIN",
+            "dI": 0.6058,
+            "dN": 0.6755,
+            "drift": 47.3
+          },
+          "walk": {
+            "state": "IN_LANE",
+            "offPct": 19,
+            "tooMany": false,
+            "tier": "INSURABLE",
+            "region": null,
+            "reason": null,
+            "walkMode": "ballistic-edges",
+            "stamp": {
+              "apertureVersion": "165a6fd0ad16",
+              "reef_sha": null,
+              "axes_sha": "172d0bd01e5abcbc",
+              "engine": "rust"
+            },
+            "ms": 86
+          }
+        },
+        {
+          "f": 0.1,
+          "words": 67,
+          "below_floor": false,
+          "ncd": {
+            "verdict": "OFF_DOMAIN",
+            "dI": 0.625,
+            "dN": 0.6644,
+            "drift": 48.5
+          },
+          "walk": {
+            "state": "IN_LANE",
+            "offPct": 19,
+            "tooMany": false,
+            "tier": "INSURABLE",
+            "region": null,
+            "reason": null,
+            "walkMode": "ballistic-edges",
+            "stamp": {
+              "apertureVersion": "165a6fd0ad16",
+              "reef_sha": null,
+              "axes_sha": "172d0bd01e5abcbc",
+              "engine": "rust"
+            },
+            "ms": 134
+          }
+        },
+        {
+          "f": 0.2,
+          "words": 67,
+          "below_floor": false,
+          "ncd": {
+            "verdict": "OFF_DOMAIN",
+            "dI": 0.6763,
+            "dN": 0.6406,
+            "drift": 51.4
+          },
+          "walk": {
+            "state": "IN_LANE",
+            "offPct": 19,
+            "tooMany": false,
+            "tier": "INSURABLE",
+            "region": null,
+            "reason": null,
+            "walkMode": "ballistic-edges",
+            "stamp": {
+              "apertureVersion": "165a6fd0ad16",
+              "reef_sha": null,
+              "axes_sha": "172d0bd01e5abcbc",
+              "engine": "rust"
+            },
+            "ms": 128
+          }
+        },
+        {
+          "f": 0.3,
+          "words": 67,
+          "below_floor": false,
+          "ncd": {
+            "verdict": "OFF_DOMAIN",
+            "dI": 0.7212,
+            "dN": 0.6269,
+            "drift": 53.5
+          },
+          "walk": {
+            "state": "IN_LANE",
+            "offPct": 19,
+            "tooMany": false,
+            "tier": "INSURABLE",
+            "region": null,
+            "reason": null,
+            "walkMode": "ballistic-edges",
+            "stamp": {
+              "apertureVersion": "165a6fd0ad16",
+              "reef_sha": null,
+              "axes_sha": "172d0bd01e5abcbc",
+              "engine": "rust"
+            },
+            "ms": 134
+          }
+        },
+        {
+          "f": 0.4,
+          "words": 67,
+          "below_floor": false,
+          "ncd": {
+            "verdict": "OFF_DOMAIN",
+            "dI": 0.7468,
+            "dN": 0.6404,
+            "drift": 53.8
+          },
+          "walk": {
+            "state": "UNMEASURED",
+            "offPct": null,
+            "tooMany": null,
+            "tier": "UNMEASURED",
+            "region": null,
+            "reason": "LIT-MASS FLOOR — intent 977 / reality 0 significant cells (floor 24); too thin to grade. UNMEASURED, never a pass.",
+            "walkMode": "ballistic-edges",
+            "stamp": {
+              "apertureVersion": "165a6fd0ad16",
+              "reef_sha": null,
+              "axes_sha": "172d0bd01e5abcbc",
+              "engine": "rust"
+            },
+            "ms": 122
+          }
+        },
+        {
+          "f": 0.5,
+          "words": 67,
+          "below_floor": false,
+          "ncd": {
+            "verdict": "OFF_DOMAIN",
+            "dI": 0.7756,
+            "dN": 0.6778,
+            "drift": 53.4
+          },
+          "walk": {
+            "state": "UNMEASURED",
+            "offPct": null,
+            "tooMany": null,
+            "tier": "UNMEASURED",
+            "region": null,
+            "reason": "LIT-MASS FLOOR — intent 977 / reality 0 significant cells (floor 24); too thin to grade. UNMEASURED, never a pass.",
+            "walkMode": "ballistic-edges",
+            "stamp": {
+              "apertureVersion": "165a6fd0ad16",
+              "reef_sha": null,
+              "axes_sha": "172d0bd01e5abcbc",
+              "engine": "rust"
+            },
+            "ms": 114
+          }
+        },
+        {
+          "f": 0.6,
+          "words": 67,
+          "below_floor": false,
+          "ncd": {
+            "verdict": "OFF_DOMAIN",
+            "dI": 0.7772,
+            "dN": 0.6728,
+            "drift": 53.6
+          },
+          "walk": {
+            "state": "OFF_DOMAIN",
+            "offPct": 26,
+            "tooMany": true,
+            "tier": "PRICEABLE",
+            "region": {
+              "direction": "top-down",
+              "severity": "moderate",
+              "macroDist": 1,
+              "blastRadius": "bounded",
+              "spread": 4,
+              "motif": "horizontal"
+            },
+            "reason": null,
+            "walkMode": "ballistic-edges",
+            "stamp": {
+              "apertureVersion": "165a6fd0ad16",
+              "reef_sha": null,
+              "axes_sha": "172d0bd01e5abcbc",
+              "engine": "rust"
+            },
+            "ms": 103
+          }
+        },
+        {
+          "f": 0.7,
+          "words": 67,
+          "below_floor": false,
+          "ncd": {
+            "verdict": "OFF_DOMAIN",
+            "dI": 0.7837,
+            "dN": 0.6606,
+            "drift": 54.3
+          },
+          "walk": {
+            "state": "IN_LANE",
+            "offPct": 18,
+            "tooMany": false,
+            "tier": "INSURABLE",
+            "region": null,
+            "reason": null,
+            "walkMode": "ballistic-edges",
+            "stamp": {
+              "apertureVersion": "165a6fd0ad16",
+              "reef_sha": null,
+              "axes_sha": "172d0bd01e5abcbc",
+              "engine": "rust"
+            },
+            "ms": 108
+          }
+        },
+        {
+          "f": 0.8,
+          "words": 67,
+          "below_floor": false,
+          "ncd": {
+            "verdict": "OFF_DOMAIN",
+            "dI": 0.8109,
+            "dN": 0.6504,
+            "drift": 55.5
+          },
+          "walk": {
+            "state": "OFF_DOMAIN",
+            "offPct": 26,
+            "tooMany": true,
+            "tier": "PRICEABLE",
+            "region": {
+              "direction": "top-down",
+              "severity": "severe",
+              "macroDist": 2,
+              "blastRadius": "systemic",
+              "spread": 9,
+              "motif": "horizontal"
+            },
+            "reason": null,
+            "walkMode": "ballistic-edges",
+            "stamp": {
+              "apertureVersion": "165a6fd0ad16",
+              "reef_sha": null,
+              "axes_sha": "172d0bd01e5abcbc",
+              "engine": "rust"
+            },
+            "ms": 94
+          }
+        },
+        {
+          "f": 0.9,
+          "words": 67,
+          "below_floor": false,
+          "ncd": {
+            "verdict": "OFF_DOMAIN",
+            "dI": 0.8285,
+            "dN": 0.6617,
+            "drift": 55.6
+          },
+          "walk": {
+            "state": "IN_LANE",
+            "offPct": 16,
+            "tooMany": false,
+            "tier": "INSURABLE",
+            "region": null,
+            "reason": null,
+            "walkMode": "ballistic-edges",
+            "stamp": {
+              "apertureVersion": "165a6fd0ad16",
+              "reef_sha": null,
+              "axes_sha": "172d0bd01e5abcbc",
+              "engine": "rust"
+            },
+            "ms": 106
+          }
+        },
+        {
+          "f": 1,
+          "words": 70,
+          "below_floor": false,
+          "ncd": {
+            "verdict": "OFF_DOMAIN",
+            "dI": 0.8365,
+            "dN": 0.681,
+            "drift": 55.1
+          },
+          "walk": {
+            "state": "IN_LANE",
+            "offPct": 25,
+            "tooMany": false,
+            "tier": "INSURABLE",
+            "region": null,
+            "reason": null,
+            "walkMode": "ballistic-edges",
+            "stamp": {
+              "apertureVersion": "165a6fd0ad16",
+              "reef_sha": null,
+              "axes_sha": "172d0bd01e5abcbc",
+              "engine": "rust"
+            },
+            "ms": 123
+          }
+        }
+      ],
+      "floor": {
+        "admitted": true,
+        "floor": {
+          "chars": 320,
+          "gz_bytes": 220
+        },
+        "stamp": {
+          "apertureVersion": "165a6fd0ad16",
+          "reef_sha": null,
+          "axes_sha": "172d0bd01e5abcbc",
+          "engine": "rust"
+        },
+        "pair_refused": false,
+        "below": [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        "sizes": {
+          "intent": {
+            "chars": 1200,
+            "gz_bytes": 624
+          },
+          "negative": {
+            "chars": 429,
+            "gz_bytes": 265
+          },
+          "reality": [
+            {
+              "chars": 480,
+              "gz_bytes": 302
+            },
+            {
+              "chars": 472,
+              "gz_bytes": 295
+            },
+            {
+              "chars": 462,
+              "gz_bytes": 281
+            },
+            {
+              "chars": 438,
+              "gz_bytes": 268
+            },
+            {
+              "chars": 441,
+              "gz_bytes": 267
+            },
+            {
+              "chars": 451,
+              "gz_bytes": 270
+            },
+            {
+              "chars": 444,
+              "gz_bytes": 272
+            },
+            {
+              "chars": 444,
+              "gz_bytes": 274
+            },
+            {
+              "chars": 429,
+              "gz_bytes": 266
+            },
+            {
+              "chars": 432,
+              "gz_bytes": 269
+            },
+            {
+              "chars": 450,
+              "gz_bytes": 279
+            }
+          ]
+        },
+        "reason": null
+      },
+      "instruments": {
+        "ncd": {
+          "sequence": [
+            "OFF_DOMAIN",
+            "OFF_DOMAIN",
+            "OFF_DOMAIN",
+            "OFF_DOMAIN",
+            "OFF_DOMAIN",
+            "OFF_DOMAIN",
+            "OFF_DOMAIN",
+            "OFF_DOMAIN",
+            "OFF_DOMAIN",
+            "OFF_DOMAIN",
+            "OFF_DOMAIN"
+          ],
+          "start": "OFF_DOMAIN",
+          "end": "OFF_DOMAIN",
+          "flips": 0,
+          "first_flip_at": null,
+          "flip_list": [],
+          "tripped": true,
+          "first_trip_at": 0,
+          "monotone": false,
+          "stays_out": true,
+          "trip_at_last": false
+        },
+        "walk": {
+          "sequence": [
+            "IN_LANE",
+            "IN_LANE",
+            "IN_LANE",
+            "IN_LANE",
+            "UNMEASURED",
+            "UNMEASURED",
+            "OFF_DOMAIN",
+            "IN_LANE",
+            "OFF_DOMAIN",
+            "IN_LANE",
+            "IN_LANE"
+          ],
+          "start": "IN_LANE",
+          "end": "IN_LANE",
+          "flips": 5,
+          "first_flip_at": 0.4,
+          "flip_list": [
+            {
+              "at": 0.4,
+              "from": "IN_LANE",
+              "to": "UNMEASURED"
+            },
+            {
+              "at": 0.6,
+              "from": "UNMEASURED",
+              "to": "OFF_DOMAIN"
+            },
+            {
+              "at": 0.7,
+              "from": "OFF_DOMAIN",
+              "to": "IN_LANE"
+            },
+            {
+              "at": 0.8,
+              "from": "IN_LANE",
+              "to": "OFF_DOMAIN"
+            },
+            {
+              "at": 0.9,
+              "from": "OFF_DOMAIN",
+              "to": "IN_LANE"
+            }
+          ],
+          "tripped": true,
+          "first_trip_at": 0.6,
+          "monotone": false,
+          "stays_out": false,
+          "trip_at_last": false
+        }
+      },
+      "ms": 1933
+    },
+    {
+      "from": "faithful",
+      "to": "analysis-execution",
+      "from_label": "Compliant work · IN_LANE",
+      "to_label": "Analysis → Execution",
+      "steps": [
+        {
+          "f": 0,
+          "words": 67,
+          "below_floor": false,
+          "ncd": {
+            "verdict": "OFF_DOMAIN",
+            "dI": 0.6058,
+            "dN": 0.6755,
+            "drift": 47.3
+          },
+          "walk": {
+            "state": "IN_LANE",
+            "offPct": 19,
+            "tooMany": false,
+            "tier": "INSURABLE",
+            "region": null,
+            "reason": null,
+            "walkMode": "ballistic-edges",
+            "stamp": {
+              "apertureVersion": "165a6fd0ad16",
+              "reef_sha": null,
+              "axes_sha": "172d0bd01e5abcbc",
+              "engine": "rust"
+            },
+            "ms": 139
+          }
+        },
+        {
+          "f": 0.1,
+          "words": 67,
+          "below_floor": false,
+          "ncd": {
+            "verdict": "OFF_DOMAIN",
+            "dI": 0.6426,
+            "dN": 0.7021,
+            "drift": 47.8
+          },
+          "walk": {
+            "state": "IN_LANE",
+            "offPct": 19,
+            "tooMany": false,
+            "tier": "INSURABLE",
+            "region": null,
+            "reason": null,
+            "walkMode": "ballistic-edges",
+            "stamp": {
+              "apertureVersion": "165a6fd0ad16",
+              "reef_sha": null,
+              "axes_sha": "172d0bd01e5abcbc",
+              "engine": "rust"
+            },
+            "ms": 121
+          }
+        },
+        {
+          "f": 0.2,
+          "words": 67,
+          "below_floor": false,
+          "ncd": {
+            "verdict": "UNPLACEABLE",
+            "dI": 0.6987,
+            "dN": 0.704,
+            "drift": 49.8
+          },
+          "walk": {
+            "state": "IN_LANE",
+            "offPct": 18,
+            "tooMany": false,
+            "tier": "INSURABLE",
+            "region": null,
+            "reason": null,
+            "walkMode": "ballistic-edges",
+            "stamp": {
+              "apertureVersion": "165a6fd0ad16",
+              "reef_sha": null,
+              "axes_sha": "172d0bd01e5abcbc",
+              "engine": "rust"
+            },
+            "ms": 199
+          }
+        },
+        {
+          "f": 0.3,
+          "words": 67,
+          "below_floor": false,
+          "ncd": {
+            "verdict": "OFF_DOMAIN",
+            "dI": 0.7516,
+            "dN": 0.6792,
+            "drift": 52.5
+          },
+          "walk": {
+            "state": "IN_LANE",
+            "offPct": 19,
+            "tooMany": false,
+            "tier": "INSURABLE",
+            "region": null,
+            "reason": null,
+            "walkMode": "ballistic-edges",
+            "stamp": {
+              "apertureVersion": "165a6fd0ad16",
+              "reef_sha": null,
+              "axes_sha": "172d0bd01e5abcbc",
+              "engine": "rust"
+            },
+            "ms": 100
+          }
+        },
+        {
+          "f": 0.4,
+          "words": 67,
+          "below_floor": false,
+          "ncd": {
+            "verdict": "OFF_DOMAIN",
+            "dI": 0.7804,
+            "dN": 0.7154,
+            "drift": 52.2
+          },
+          "walk": {
+            "state": "IN_LANE",
+            "offPct": 19,
+            "tooMany": false,
+            "tier": "INSURABLE",
+            "region": null,
+            "reason": null,
+            "walkMode": "ballistic-edges",
+            "stamp": {
+              "apertureVersion": "165a6fd0ad16",
+              "reef_sha": null,
+              "axes_sha": "172d0bd01e5abcbc",
+              "engine": "rust"
+            },
+            "ms": 96
+          }
+        },
+        {
+          "f": 0.5,
+          "words": 67,
+          "below_floor": false,
+          "ncd": {
+            "verdict": "OFF_DOMAIN",
+            "dI": 0.8045,
+            "dN": 0.7509,
+            "drift": 51.7
+          },
+          "walk": {
+            "state": "IN_LANE",
+            "offPct": 16,
+            "tooMany": false,
+            "tier": "INSURABLE",
+            "region": null,
+            "reason": null,
+            "walkMode": "ballistic-edges",
+            "stamp": {
+              "apertureVersion": "165a6fd0ad16",
+              "reef_sha": null,
+              "axes_sha": "172d0bd01e5abcbc",
+              "engine": "rust"
+            },
+            "ms": 93
+          }
+        },
+        {
+          "f": 0.6,
+          "words": 67,
+          "below_floor": false,
+          "ncd": {
+            "verdict": "OFF_DOMAIN",
+            "dI": 0.8173,
+            "dN": 0.766,
+            "drift": 51.6
+          },
+          "walk": {
+            "state": "OFF_DOMAIN",
+            "offPct": 28,
+            "tooMany": true,
+            "tier": "UNINSURABLE",
+            "region": {
+              "direction": "bottom-up",
+              "severity": "severe",
+              "macroDist": 2,
+              "blastRadius": "systemic",
+              "spread": 9,
+              "motif": "horizontal"
+            },
+            "reason": null,
+            "walkMode": "ballistic-edges",
+            "stamp": {
+              "apertureVersion": "165a6fd0ad16",
+              "reef_sha": null,
+              "axes_sha": "172d0bd01e5abcbc",
+              "engine": "rust"
+            },
+            "ms": 103
+          }
+        },
+        {
+          "f": 0.7,
+          "words": 67,
+          "below_floor": false,
+          "ncd": {
+            "verdict": "OFF_DOMAIN",
+            "dI": 0.8365,
+            "dN": 0.7744,
+            "drift": 51.9
+          },
+          "walk": {
+            "state": "IN_LANE",
+            "offPct": 16,
+            "tooMany": false,
+            "tier": "INSURABLE",
+            "region": null,
+            "reason": null,
+            "walkMode": "ballistic-edges",
+            "stamp": {
+              "apertureVersion": "165a6fd0ad16",
+              "reef_sha": null,
+              "axes_sha": "172d0bd01e5abcbc",
+              "engine": "rust"
+            },
+            "ms": 184
+          }
+        },
+        {
+          "f": 0.8,
+          "words": 67,
+          "below_floor": false,
+          "ncd": {
+            "verdict": "OFF_DOMAIN",
+            "dI": 0.8574,
+            "dN": 0.7669,
+            "drift": 52.8
+          },
+          "walk": {
+            "state": "IN_LANE",
+            "offPct": 23,
+            "tooMany": false,
+            "tier": "INSURABLE",
+            "region": null,
+            "reason": null,
+            "walkMode": "ballistic-edges",
+            "stamp": {
+              "apertureVersion": "165a6fd0ad16",
+              "reef_sha": null,
+              "axes_sha": "172d0bd01e5abcbc",
+              "engine": "rust"
+            },
+            "ms": 100
+          }
+        },
+        {
+          "f": 0.9,
+          "words": 67,
+          "below_floor": false,
+          "ncd": {
+            "verdict": "OFF_DOMAIN",
+            "dI": 0.8702,
+            "dN": 0.7807,
+            "drift": 52.7
+          },
+          "walk": {
+            "state": "OFF_DOMAIN",
+            "offPct": 34,
+            "tooMany": true,
+            "tier": "UNINSURABLE",
+            "region": {
+              "direction": "bottom-up",
+              "severity": "severe",
+              "macroDist": 2,
+              "blastRadius": "systemic",
+              "spread": 12,
+              "motif": "horizontal"
+            },
+            "reason": null,
+            "walkMode": "ballistic-edges",
+            "stamp": {
+              "apertureVersion": "165a6fd0ad16",
+              "reef_sha": null,
+              "axes_sha": "172d0bd01e5abcbc",
+              "engine": "rust"
+            },
+            "ms": 99
+          }
+        },
+        {
+          "f": 1,
+          "words": 63,
+          "below_floor": false,
+          "ncd": {
+            "verdict": "OFF_DOMAIN",
+            "dI": 0.891,
+            "dN": 0.8075,
+            "drift": 52.5
+          },
+          "walk": {
+            "state": "OFF_DOMAIN",
+            "offPct": 35,
+            "tooMany": true,
+            "tier": "UNINSURABLE",
+            "region": {
+              "direction": "bottom-up",
+              "severity": "severe",
+              "macroDist": 2,
+              "blastRadius": "systemic",
+              "spread": 9,
+              "motif": "horizontal"
+            },
+            "reason": null,
+            "walkMode": "ballistic-edges",
+            "stamp": {
+              "apertureVersion": "165a6fd0ad16",
+              "reef_sha": null,
+              "axes_sha": "172d0bd01e5abcbc",
+              "engine": "rust"
+            },
+            "ms": 112
+          }
+        }
+      ],
+      "floor": {
+        "admitted": true,
+        "floor": {
+          "chars": 320,
+          "gz_bytes": 220
+        },
+        "stamp": {
+          "apertureVersion": "165a6fd0ad16",
+          "reef_sha": null,
+          "axes_sha": "172d0bd01e5abcbc",
+          "engine": "rust"
+        },
+        "pair_refused": false,
+        "below": [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        "sizes": {
+          "intent": {
+            "chars": 1200,
+            "gz_bytes": 624
+          },
+          "negative": {
+            "chars": 429,
+            "gz_bytes": 265
+          },
+          "reality": [
+            {
+              "chars": 480,
+              "gz_bytes": 302
+            },
+            {
+              "chars": 473,
+              "gz_bytes": 292
+            },
+            {
+              "chars": 450,
+              "gz_bytes": 277
+            },
+            {
+              "chars": 421,
+              "gz_bytes": 264
+            },
+            {
+              "chars": 429,
+              "gz_bytes": 267
+            },
+            {
+              "chars": 428,
+              "gz_bytes": 264
+            },
+            {
+              "chars": 425,
+              "gz_bytes": 264
+            },
+            {
+              "chars": 432,
+              "gz_bytes": 266
+            },
+            {
+              "chars": 425,
+              "gz_bytes": 266
+            },
+            {
+              "chars": 437,
+              "gz_bytes": 269
+            },
+            {
+              "chars": 413,
+              "gz_bytes": 258
+            }
+          ]
+        },
+        "reason": null
+      },
+      "instruments": {
+        "ncd": {
+          "sequence": [
+            "OFF_DOMAIN",
+            "OFF_DOMAIN",
+            "UNPLACEABLE",
+            "OFF_DOMAIN",
+            "OFF_DOMAIN",
+            "OFF_DOMAIN",
+            "OFF_DOMAIN",
+            "OFF_DOMAIN",
+            "OFF_DOMAIN",
+            "OFF_DOMAIN",
+            "OFF_DOMAIN"
+          ],
+          "start": "OFF_DOMAIN",
+          "end": "OFF_DOMAIN",
+          "flips": 2,
+          "first_flip_at": 0.2,
+          "flip_list": [
+            {
+              "at": 0.2,
+              "from": "OFF_DOMAIN",
+              "to": "UNPLACEABLE"
+            },
+            {
+              "at": 0.3,
+              "from": "UNPLACEABLE",
+              "to": "OFF_DOMAIN"
+            }
+          ],
+          "tripped": true,
+          "first_trip_at": 0,
+          "monotone": false,
+          "stays_out": true,
+          "trip_at_last": false
+        },
+        "walk": {
+          "sequence": [
+            "IN_LANE",
+            "IN_LANE",
+            "IN_LANE",
+            "IN_LANE",
+            "IN_LANE",
+            "IN_LANE",
+            "OFF_DOMAIN",
+            "IN_LANE",
+            "IN_LANE",
+            "OFF_DOMAIN",
+            "OFF_DOMAIN"
+          ],
+          "start": "IN_LANE",
+          "end": "OFF_DOMAIN",
+          "flips": 3,
+          "first_flip_at": 0.6,
+          "flip_list": [
+            {
+              "at": 0.6,
+              "from": "IN_LANE",
+              "to": "OFF_DOMAIN"
+            },
+            {
+              "at": 0.7,
+              "from": "OFF_DOMAIN",
+              "to": "IN_LANE"
+            },
+            {
+              "at": 0.9,
+              "from": "IN_LANE",
+              "to": "OFF_DOMAIN"
+            }
+          ],
+          "tripped": true,
+          "first_trip_at": 0.6,
+          "monotone": false,
+          "stays_out": false,
+          "trip_at_last": false
+        }
+      },
+      "ms": 2064
+    },
+    {
+      "from": "faithful",
+      "to": "abstain-tie",
+      "from_label": "Compliant work · IN_LANE",
+      "to_label": "Force Tie (Abstention)",
+      "steps": [
+        {
+          "f": 0,
+          "words": 67,
+          "below_floor": false,
+          "ncd": {
+            "verdict": "OFF_DOMAIN",
+            "dI": 0.6058,
+            "dN": 0.6755,
+            "drift": 47.3
+          },
+          "walk": {
+            "state": "IN_LANE",
+            "offPct": 19,
+            "tooMany": false,
+            "tier": "INSURABLE",
+            "region": null,
+            "reason": null,
+            "walkMode": "ballistic-edges",
+            "stamp": {
+              "apertureVersion": "165a6fd0ad16",
+              "reef_sha": null,
+              "axes_sha": "172d0bd01e5abcbc",
+              "engine": "rust"
+            },
+            "ms": 81
+          }
+        },
+        {
+          "f": 0.1,
+          "words": 67,
+          "below_floor": false,
+          "ncd": {
+            "verdict": "OFF_DOMAIN",
+            "dI": 0.6234,
+            "dN": 0.6858,
+            "drift": 47.6
+          },
+          "walk": {
+            "state": "IN_LANE",
+            "offPct": 19,
+            "tooMany": false,
+            "tier": "INSURABLE",
+            "region": null,
+            "reason": null,
+            "walkMode": "ballistic-edges",
+            "stamp": {
+              "apertureVersion": "165a6fd0ad16",
+              "reef_sha": null,
+              "axes_sha": "172d0bd01e5abcbc",
+              "engine": "rust"
+            },
+            "ms": 121
+          }
+        },
+        {
+          "f": 0.2,
+          "words": 67,
+          "below_floor": false,
+          "ncd": {
+            "verdict": "UNPLACEABLE",
+            "dI": 0.6747,
+            "dN": 0.6691,
+            "drift": 50.2
+          },
+          "walk": {
+            "state": "IN_LANE",
+            "offPct": 18,
+            "tooMany": false,
+            "tier": "INSURABLE",
+            "region": null,
+            "reason": null,
+            "walkMode": "ballistic-edges",
+            "stamp": {
+              "apertureVersion": "165a6fd0ad16",
+              "reef_sha": null,
+              "axes_sha": "172d0bd01e5abcbc",
+              "engine": "rust"
+            },
+            "ms": 184
+          }
+        },
+        {
+          "f": 0.3,
+          "words": 67,
+          "below_floor": false,
+          "ncd": {
+            "verdict": "OFF_DOMAIN",
+            "dI": 0.7147,
+            "dN": 0.6606,
+            "drift": 52
+          },
+          "walk": {
+            "state": "IN_LANE",
+            "offPct": 18,
+            "tooMany": false,
+            "tier": "INSURABLE",
+            "region": null,
+            "reason": null,
+            "walkMode": "ballistic-edges",
+            "stamp": {
+              "apertureVersion": "165a6fd0ad16",
+              "reef_sha": null,
+              "axes_sha": "172d0bd01e5abcbc",
+              "engine": "rust"
+            },
+            "ms": 127
+          }
+        },
+        {
+          "f": 0.4,
+          "words": 67,
+          "below_floor": false,
+          "ncd": {
+            "verdict": "OFF_DOMAIN",
+            "dI": 0.742,
+            "dN": 0.6859,
+            "drift": 52
+          },
+          "walk": {
+            "state": "IN_LANE",
+            "offPct": 19,
+            "tooMany": false,
+            "tier": "INSURABLE",
+            "region": null,
+            "reason": null,
+            "walkMode": "ballistic-edges",
+            "stamp": {
+              "apertureVersion": "165a6fd0ad16",
+              "reef_sha": null,
+              "axes_sha": "172d0bd01e5abcbc",
+              "engine": "rust"
+            },
+            "ms": 154
+          }
+        },
+        {
+          "f": 0.5,
+          "words": 67,
+          "below_floor": false,
+          "ncd": {
+            "verdict": "OFF_DOMAIN",
+            "dI": 0.7548,
+            "dN": 0.7164,
+            "drift": 51.3
+          },
+          "walk": {
+            "state": "IN_LANE",
+            "offPct": 25,
+            "tooMany": false,
+            "tier": "INSURABLE",
+            "region": null,
+            "reason": null,
+            "walkMode": "ballistic-edges",
+            "stamp": {
+              "apertureVersion": "165a6fd0ad16",
+              "reef_sha": null,
+              "axes_sha": "172d0bd01e5abcbc",
+              "engine": "rust"
+            },
+            "ms": 120
+          }
+        },
+        {
+          "f": 0.6,
+          "words": 67,
+          "below_floor": false,
+          "ncd": {
+            "verdict": "OFF_DOMAIN",
+            "dI": 0.7756,
+            "dN": 0.7279,
+            "drift": 51.6
+          },
+          "walk": {
+            "state": "OFF_DOMAIN",
+            "offPct": 41,
+            "tooMany": true,
+            "tier": "PRICEABLE",
+            "region": {
+              "direction": "top-down",
+              "severity": "moderate",
+              "macroDist": 1,
+              "blastRadius": "systemic",
+              "spread": 6,
+              "motif": "horizontal"
+            },
+            "reason": null,
+            "walkMode": "ballistic-edges",
+            "stamp": {
+              "apertureVersion": "165a6fd0ad16",
+              "reef_sha": null,
+              "axes_sha": "172d0bd01e5abcbc",
+              "engine": "rust"
+            },
+            "ms": 98
+          }
+        },
+        {
+          "f": 0.7,
+          "words": 67,
+          "below_floor": false,
+          "ncd": {
+            "verdict": "OFF_DOMAIN",
+            "dI": 0.7949,
+            "dN": 0.7212,
+            "drift": 52.4
+          },
+          "walk": {
+            "state": "OFF_DOMAIN",
+            "offPct": 37,
+            "tooMany": true,
+            "tier": "PRICEABLE",
+            "region": {
+              "direction": "top-down",
+              "severity": "severe",
+              "macroDist": 2,
+              "blastRadius": "systemic",
+              "spread": 9,
+              "motif": "horizontal"
+            },
+            "reason": null,
+            "walkMode": "ballistic-edges",
+            "stamp": {
+              "apertureVersion": "165a6fd0ad16",
+              "reef_sha": null,
+              "axes_sha": "172d0bd01e5abcbc",
+              "engine": "rust"
+            },
+            "ms": 96
+          }
+        },
+        {
+          "f": 0.8,
+          "words": 67,
+          "below_floor": false,
+          "ncd": {
+            "verdict": "OFF_DOMAIN",
+            "dI": 0.8157,
+            "dN": 0.6981,
+            "drift": 53.9
+          },
+          "walk": {
+            "state": "OFF_DOMAIN",
+            "offPct": 38,
+            "tooMany": true,
+            "tier": "UNINSURABLE",
+            "region": {
+              "direction": "bottom-up",
+              "severity": "severe",
+              "macroDist": 2,
+              "blastRadius": "systemic",
+              "spread": 12,
+              "motif": "horizontal"
+            },
+            "reason": null,
+            "walkMode": "ballistic-edges",
+            "stamp": {
+              "apertureVersion": "165a6fd0ad16",
+              "reef_sha": null,
+              "axes_sha": "172d0bd01e5abcbc",
+              "engine": "rust"
+            },
+            "ms": 112
+          }
+        },
+        {
+          "f": 0.9,
+          "words": 61,
+          "below_floor": false,
+          "ncd": {
+            "verdict": "OFF_DOMAIN",
+            "dI": 0.8333,
+            "dN": 0.7057,
+            "drift": 54.1
+          },
+          "walk": {
+            "state": "OFF_DOMAIN",
+            "offPct": 35,
+            "tooMany": true,
+            "tier": "PRICEABLE",
+            "region": {
+              "direction": "top-down",
+              "severity": "severe",
+              "macroDist": 2,
+              "blastRadius": "systemic",
+              "spread": 9,
+              "motif": "vertical"
+            },
+            "reason": null,
+            "walkMode": "ballistic-edges",
+            "stamp": {
+              "apertureVersion": "165a6fd0ad16",
+              "reef_sha": null,
+              "axes_sha": "172d0bd01e5abcbc",
+              "engine": "rust"
+            },
+            "ms": 95
+          }
+        },
+        {
+          "f": 1,
+          "words": 54,
+          "below_floor": false,
+          "ncd": {
+            "verdict": "OFF_DOMAIN",
+            "dI": 0.8478,
+            "dN": 0.7283,
+            "drift": 53.8
+          },
+          "walk": {
+            "state": "OFF_DOMAIN",
+            "offPct": 36,
+            "tooMany": true,
+            "tier": "PRICEABLE",
+            "region": {
+              "direction": "top-down",
+              "severity": "severe",
+              "macroDist": 2,
+              "blastRadius": "systemic",
+              "spread": 9,
+              "motif": "horizontal"
+            },
+            "reason": null,
+            "walkMode": "ballistic-edges",
+            "stamp": {
+              "apertureVersion": "165a6fd0ad16",
+              "reef_sha": null,
+              "axes_sha": "172d0bd01e5abcbc",
+              "engine": "rust"
+            },
+            "ms": 125
+          }
+        }
+      ],
+      "floor": {
+        "admitted": true,
+        "floor": {
+          "chars": 320,
+          "gz_bytes": 220
+        },
+        "stamp": {
+          "apertureVersion": "165a6fd0ad16",
+          "reef_sha": null,
+          "axes_sha": "172d0bd01e5abcbc",
+          "engine": "rust"
+        },
+        "pair_refused": false,
+        "below": [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        "sizes": {
+          "intent": {
+            "chars": 1200,
+            "gz_bytes": 624
+          },
+          "negative": {
+            "chars": 429,
+            "gz_bytes": 265
+          },
+          "reality": [
+            {
+              "chars": 480,
+              "gz_bytes": 302
+            },
+            {
+              "chars": 478,
+              "gz_bytes": 296
+            },
+            {
+              "chars": 465,
+              "gz_bytes": 275
+            },
+            {
+              "chars": 451,
+              "gz_bytes": 274
+            },
+            {
+              "chars": 451,
+              "gz_bytes": 277
+            },
+            {
+              "chars": 451,
+              "gz_bytes": 275
+            },
+            {
+              "chars": 453,
+              "gz_bytes": 272
+            },
+            {
+              "chars": 448,
+              "gz_bytes": 269
+            },
+            {
+              "chars": 444,
+              "gz_bytes": 263
+            },
+            {
+              "chars": 411,
+              "gz_bytes": 246
+            },
+            {
+              "chars": 370,
+              "gz_bytes": 231
+            }
+          ]
+        },
+        "reason": null
+      },
+      "instruments": {
+        "ncd": {
+          "sequence": [
+            "OFF_DOMAIN",
+            "OFF_DOMAIN",
+            "UNPLACEABLE",
+            "OFF_DOMAIN",
+            "OFF_DOMAIN",
+            "OFF_DOMAIN",
+            "OFF_DOMAIN",
+            "OFF_DOMAIN",
+            "OFF_DOMAIN",
+            "OFF_DOMAIN",
+            "OFF_DOMAIN"
+          ],
+          "start": "OFF_DOMAIN",
+          "end": "OFF_DOMAIN",
+          "flips": 2,
+          "first_flip_at": 0.2,
+          "flip_list": [
+            {
+              "at": 0.2,
+              "from": "OFF_DOMAIN",
+              "to": "UNPLACEABLE"
+            },
+            {
+              "at": 0.3,
+              "from": "UNPLACEABLE",
+              "to": "OFF_DOMAIN"
+            }
+          ],
+          "tripped": true,
+          "first_trip_at": 0,
+          "monotone": false,
+          "stays_out": true,
+          "trip_at_last": false
+        },
+        "walk": {
+          "sequence": [
+            "IN_LANE",
+            "IN_LANE",
+            "IN_LANE",
+            "IN_LANE",
+            "IN_LANE",
+            "IN_LANE",
+            "OFF_DOMAIN",
+            "OFF_DOMAIN",
+            "OFF_DOMAIN",
+            "OFF_DOMAIN",
+            "OFF_DOMAIN"
+          ],
+          "start": "IN_LANE",
+          "end": "OFF_DOMAIN",
+          "flips": 1,
+          "first_flip_at": 0.6,
+          "flip_list": [
+            {
+              "at": 0.6,
+              "from": "IN_LANE",
+              "to": "OFF_DOMAIN"
+            }
+          ],
+          "tripped": true,
+          "first_trip_at": 0.6,
+          "monotone": true,
+          "stays_out": true,
+          "trip_at_last": false
+        }
+      },
+      "ms": 2005
+    },
+    {
+      "from": "faithful",
+      "to": "partial-drift",
+      "from_label": "Compliant work · IN_LANE",
+      "to_label": "Scope creep · trips the dial",
+      "steps": [
+        {
+          "f": 0,
+          "words": 67,
+          "below_floor": false,
+          "ncd": {
+            "verdict": "OFF_DOMAIN",
+            "dI": 0.6058,
+            "dN": 0.6755,
+            "drift": 47.3
+          },
+          "walk": {
+            "state": "IN_LANE",
+            "offPct": 19,
+            "tooMany": false,
+            "tier": "INSURABLE",
+            "region": null,
+            "reason": null,
+            "walkMode": "ballistic-edges",
+            "stamp": {
+              "apertureVersion": "165a6fd0ad16",
+              "reef_sha": null,
+              "axes_sha": "172d0bd01e5abcbc",
+              "engine": "rust"
+            },
+            "ms": 129
+          }
+        },
+        {
+          "f": 0.1,
+          "words": 67,
+          "below_floor": false,
+          "ncd": {
+            "verdict": "OFF_DOMAIN",
+            "dI": 0.625,
+            "dN": 0.6667,
+            "drift": 48.4
+          },
+          "walk": {
+            "state": "IN_LANE",
+            "offPct": 19,
+            "tooMany": false,
+            "tier": "INSURABLE",
+            "region": null,
+            "reason": null,
+            "walkMode": "ballistic-edges",
+            "stamp": {
+              "apertureVersion": "165a6fd0ad16",
+              "reef_sha": null,
+              "axes_sha": "172d0bd01e5abcbc",
+              "engine": "rust"
+            },
+            "ms": 99
+          }
+        },
+        {
+          "f": 0.2,
+          "words": 67,
+          "below_floor": false,
+          "ncd": {
+            "verdict": "OFF_DOMAIN",
+            "dI": 0.6699,
+            "dN": 0.63,
+            "drift": 51.5
+          },
+          "walk": {
+            "state": "IN_LANE",
+            "offPct": 19,
+            "tooMany": false,
+            "tier": "INSURABLE",
+            "region": null,
+            "reason": null,
+            "walkMode": "ballistic-edges",
+            "stamp": {
+              "apertureVersion": "165a6fd0ad16",
+              "reef_sha": null,
+              "axes_sha": "172d0bd01e5abcbc",
+              "engine": "rust"
+            },
+            "ms": 98
+          }
+        },
+        {
+          "f": 0.3,
+          "words": 67,
+          "below_floor": false,
+          "ncd": {
+            "verdict": "OFF_DOMAIN",
+            "dI": 0.7115,
+            "dN": 0.6353,
+            "drift": 52.8
+          },
+          "walk": {
+            "state": "IN_LANE",
+            "offPct": 18,
+            "tooMany": false,
+            "tier": "INSURABLE",
+            "region": null,
+            "reason": null,
+            "walkMode": "ballistic-edges",
+            "stamp": {
+              "apertureVersion": "165a6fd0ad16",
+              "reef_sha": null,
+              "axes_sha": "172d0bd01e5abcbc",
+              "engine": "rust"
+            },
+            "ms": 99
+          }
+        },
+        {
+          "f": 0.4,
+          "words": 67,
+          "below_floor": false,
+          "ncd": {
+            "verdict": "OFF_DOMAIN",
+            "dI": 0.7276,
+            "dN": 0.663,
+            "drift": 52.3
+          },
+          "walk": {
+            "state": "UNMEASURED",
+            "offPct": null,
+            "tooMany": null,
+            "tier": "UNMEASURED",
+            "region": null,
+            "reason": "LIT-MASS FLOOR — intent 977 / reality 0 significant cells (floor 24); too thin to grade. UNMEASURED, never a pass.",
+            "walkMode": "ballistic-edges",
+            "stamp": {
+              "apertureVersion": "165a6fd0ad16",
+              "reef_sha": null,
+              "axes_sha": "172d0bd01e5abcbc",
+              "engine": "rust"
+            },
+            "ms": 90
+          }
+        },
+        {
+          "f": 0.5,
+          "words": 67,
+          "below_floor": false,
+          "ncd": {
+            "verdict": "OFF_DOMAIN",
+            "dI": 0.75,
+            "dN": 0.6618,
+            "drift": 53.1
+          },
+          "walk": {
+            "state": "UNMEASURED",
+            "offPct": null,
+            "tooMany": null,
+            "tier": "UNMEASURED",
+            "region": null,
+            "reason": "LIT-MASS FLOOR — intent 977 / reality 0 significant cells (floor 24); too thin to grade. UNMEASURED, never a pass.",
+            "walkMode": "ballistic-edges",
+            "stamp": {
+              "apertureVersion": "165a6fd0ad16",
+              "reef_sha": null,
+              "axes_sha": "172d0bd01e5abcbc",
+              "engine": "rust"
+            },
+            "ms": 112
+          }
+        },
+        {
+          "f": 0.6,
+          "words": 67,
+          "below_floor": false,
+          "ncd": {
+            "verdict": "OFF_DOMAIN",
+            "dI": 0.7596,
+            "dN": 0.6654,
+            "drift": 53.3
+          },
+          "walk": {
+            "state": "OFF_DOMAIN",
+            "offPct": 44,
+            "tooMany": true,
+            "tier": "UNINSURABLE",
+            "region": {
+              "direction": "bottom-up",
+              "severity": "severe",
+              "macroDist": 2,
+              "blastRadius": "systemic",
+              "spread": 12,
+              "motif": "horizontal"
+            },
+            "reason": null,
+            "walkMode": "ballistic-edges",
+            "stamp": {
+              "apertureVersion": "165a6fd0ad16",
+              "reef_sha": null,
+              "axes_sha": "172d0bd01e5abcbc",
+              "engine": "rust"
+            },
+            "ms": 121
+          }
+        },
+        {
+          "f": 0.7,
+          "words": 67,
+          "below_floor": false,
+          "ncd": {
+            "verdict": "OFF_DOMAIN",
+            "dI": 0.7676,
+            "dN": 0.674,
+            "drift": 53.2
+          },
+          "walk": {
+            "state": "OFF_DOMAIN",
+            "offPct": 44,
+            "tooMany": true,
+            "tier": "UNINSURABLE",
+            "region": {
+              "direction": "bottom-up",
+              "severity": "severe",
+              "macroDist": 2,
+              "blastRadius": "systemic",
+              "spread": 12,
+              "motif": "horizontal"
+            },
+            "reason": null,
+            "walkMode": "ballistic-edges",
+            "stamp": {
+              "apertureVersion": "165a6fd0ad16",
+              "reef_sha": null,
+              "axes_sha": "172d0bd01e5abcbc",
+              "engine": "rust"
+            },
+            "ms": 106
+          }
+        },
+        {
+          "f": 0.8,
+          "words": 67,
+          "below_floor": false,
+          "ncd": {
+            "verdict": "OFF_DOMAIN",
+            "dI": 0.7869,
+            "dN": 0.6741,
+            "drift": 53.9
+          },
+          "walk": {
+            "state": "OFF_DOMAIN",
+            "offPct": 47,
+            "tooMany": true,
+            "tier": "UNINSURABLE",
+            "region": {
+              "direction": "bottom-up",
+              "severity": "severe",
+              "macroDist": 2,
+              "blastRadius": "systemic",
+              "spread": 12,
+              "motif": "horizontal"
+            },
+            "reason": null,
+            "walkMode": "ballistic-edges",
+            "stamp": {
+              "apertureVersion": "165a6fd0ad16",
+              "reef_sha": null,
+              "axes_sha": "172d0bd01e5abcbc",
+              "engine": "rust"
+            },
+            "ms": 125
+          }
+        },
+        {
+          "f": 0.9,
+          "words": 67,
+          "below_floor": false,
+          "ncd": {
+            "verdict": "OFF_DOMAIN",
+            "dI": 0.8061,
+            "dN": 0.6767,
+            "drift": 54.4
+          },
+          "walk": {
+            "state": "OFF_DOMAIN",
+            "offPct": 50,
+            "tooMany": true,
+            "tier": "UNINSURABLE",
+            "region": {
+              "direction": "bottom-up",
+              "severity": "severe",
+              "macroDist": 2,
+              "blastRadius": "systemic",
+              "spread": 12,
+              "motif": "horizontal"
+            },
+            "reason": null,
+            "walkMode": "ballistic-edges",
+            "stamp": {
+              "apertureVersion": "165a6fd0ad16",
+              "reef_sha": null,
+              "axes_sha": "172d0bd01e5abcbc",
+              "engine": "rust"
+            },
+            "ms": 122
+          }
+        },
+        {
+          "f": 1,
+          "words": 69,
+          "below_floor": false,
+          "ncd": {
+            "verdict": "OFF_DOMAIN",
+            "dI": 0.8077,
+            "dN": 0.6868,
+            "drift": 54
+          },
+          "walk": {
+            "state": "OFF_DOMAIN",
+            "offPct": 50,
+            "tooMany": true,
+            "tier": "UNINSURABLE",
+            "region": {
+              "direction": "bottom-up",
+              "severity": "severe",
+              "macroDist": 2,
+              "blastRadius": "systemic",
+              "spread": 12,
+              "motif": "horizontal"
+            },
+            "reason": null,
+            "walkMode": "ballistic-edges",
+            "stamp": {
+              "apertureVersion": "165a6fd0ad16",
+              "reef_sha": null,
+              "axes_sha": "172d0bd01e5abcbc",
+              "engine": "rust"
+            },
+            "ms": 118
+          }
+        }
+      ],
+      "floor": {
+        "admitted": true,
+        "floor": {
+          "chars": 320,
+          "gz_bytes": 220
+        },
+        "stamp": {
+          "apertureVersion": "165a6fd0ad16",
+          "reef_sha": null,
+          "axes_sha": "172d0bd01e5abcbc",
+          "engine": "rust"
+        },
+        "pair_refused": false,
+        "below": [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        "sizes": {
+          "intent": {
+            "chars": 1200,
+            "gz_bytes": 624
+          },
+          "negative": {
+            "chars": 429,
+            "gz_bytes": 265
+          },
+          "reality": [
+            {
+              "chars": 480,
+              "gz_bytes": 302
+            },
+            {
+              "chars": 478,
+              "gz_bytes": 297
+            },
+            {
+              "chars": 460,
+              "gz_bytes": 273
+            },
+            {
+              "chars": 441,
+              "gz_bytes": 266
+            },
+            {
+              "chars": 451,
+              "gz_bytes": 270
+            },
+            {
+              "chars": 456,
+              "gz_bytes": 272
+            },
+            {
+              "chars": 453,
+              "gz_bytes": 272
+            },
+            {
+              "chars": 453,
+              "gz_bytes": 273
+            },
+            {
+              "chars": 437,
+              "gz_bytes": 270
+            },
+            {
+              "chars": 451,
+              "gz_bytes": 266
+            },
+            {
+              "chars": 465,
+              "gz_bytes": 281
+            }
+          ]
+        },
+        "reason": null
+      },
+      "instruments": {
+        "ncd": {
+          "sequence": [
+            "OFF_DOMAIN",
+            "OFF_DOMAIN",
+            "OFF_DOMAIN",
+            "OFF_DOMAIN",
+            "OFF_DOMAIN",
+            "OFF_DOMAIN",
+            "OFF_DOMAIN",
+            "OFF_DOMAIN",
+            "OFF_DOMAIN",
+            "OFF_DOMAIN",
+            "OFF_DOMAIN"
+          ],
+          "start": "OFF_DOMAIN",
+          "end": "OFF_DOMAIN",
+          "flips": 0,
+          "first_flip_at": null,
+          "flip_list": [],
+          "tripped": true,
+          "first_trip_at": 0,
+          "monotone": false,
+          "stays_out": true,
+          "trip_at_last": false
+        },
+        "walk": {
+          "sequence": [
+            "IN_LANE",
+            "IN_LANE",
+            "IN_LANE",
+            "IN_LANE",
+            "UNMEASURED",
+            "UNMEASURED",
+            "OFF_DOMAIN",
+            "OFF_DOMAIN",
+            "OFF_DOMAIN",
+            "OFF_DOMAIN",
+            "OFF_DOMAIN"
+          ],
+          "start": "IN_LANE",
+          "end": "OFF_DOMAIN",
+          "flips": 2,
+          "first_flip_at": 0.4,
+          "flip_list": [
+            {
+              "at": 0.4,
+              "from": "IN_LANE",
+              "to": "UNMEASURED"
+            },
+            {
+              "at": 0.6,
+              "from": "UNMEASURED",
+              "to": "OFF_DOMAIN"
+            }
+          ],
+          "tripped": true,
+          "first_trip_at": 0.6,
+          "monotone": false,
+          "stays_out": true,
+          "trip_at_last": false
+        }
+      },
+      "ms": 1920
+    },
+    {
+      "from": "faithful",
+      "to": "claims-drift",
+      "from_label": "Compliant work · IN_LANE",
+      "to_label": "Claims → coverage position sent",
+      "steps": [
+        {
+          "f": 0,
+          "words": 67,
+          "below_floor": false,
+          "ncd": {
+            "verdict": "OFF_DOMAIN",
+            "dI": 0.6058,
+            "dN": 0.6755,
+            "drift": 47.3
+          },
+          "walk": {
+            "state": "IN_LANE",
+            "offPct": 19,
+            "tooMany": false,
+            "tier": "INSURABLE",
+            "region": null,
+            "reason": null,
+            "walkMode": "ballistic-edges",
+            "stamp": {
+              "apertureVersion": "165a6fd0ad16",
+              "reef_sha": null,
+              "axes_sha": "172d0bd01e5abcbc",
+              "engine": "rust"
+            },
+            "ms": 81
+          }
+        },
+        {
+          "f": 0.1,
+          "words": 67,
+          "below_floor": false,
+          "ncd": {
+            "verdict": "OFF_DOMAIN",
+            "dI": 0.649,
+            "dN": 0.7045,
+            "drift": 48
+          },
+          "walk": {
+            "state": "IN_LANE",
+            "offPct": 18,
+            "tooMany": false,
+            "tier": "INSURABLE",
+            "region": null,
+            "reason": null,
+            "walkMode": "ballistic-edges",
+            "stamp": {
+              "apertureVersion": "165a6fd0ad16",
+              "reef_sha": null,
+              "axes_sha": "172d0bd01e5abcbc",
+              "engine": "rust"
+            },
+            "ms": 99
+          }
+        },
+        {
+          "f": 0.2,
+          "words": 67,
+          "below_floor": false,
+          "ncd": {
+            "verdict": "OFF_DOMAIN",
+            "dI": 0.7179,
+            "dN": 0.6926,
+            "drift": 50.9
+          },
+          "walk": {
+            "state": "IN_LANE",
+            "offPct": 19,
+            "tooMany": false,
+            "tier": "INSURABLE",
+            "region": null,
+            "reason": null,
+            "walkMode": "ballistic-edges",
+            "stamp": {
+              "apertureVersion": "165a6fd0ad16",
+              "reef_sha": null,
+              "axes_sha": "172d0bd01e5abcbc",
+              "engine": "rust"
+            },
+            "ms": 98
+          }
+        },
+        {
+          "f": 0.3,
+          "words": 67,
+          "below_floor": false,
+          "ncd": {
+            "verdict": "OFF_DOMAIN",
+            "dI": 0.774,
+            "dN": 0.7245,
+            "drift": 51.7
+          },
+          "walk": {
+            "state": "IN_LANE",
+            "offPct": 24,
+            "tooMany": false,
+            "tier": "INSURABLE",
+            "region": null,
+            "reason": null,
+            "walkMode": "ballistic-edges",
+            "stamp": {
+              "apertureVersion": "165a6fd0ad16",
+              "reef_sha": null,
+              "axes_sha": "172d0bd01e5abcbc",
+              "engine": "rust"
+            },
+            "ms": 94
+          }
+        },
+        {
+          "f": 0.4,
+          "words": 67,
+          "below_floor": false,
+          "ncd": {
+            "verdict": "OFF_DOMAIN",
+            "dI": 0.8045,
+            "dN": 0.7434,
+            "drift": 52
+          },
+          "walk": {
+            "state": "UNMEASURED",
+            "offPct": null,
+            "tooMany": null,
+            "tier": "UNMEASURED",
+            "region": null,
+            "reason": "LIT-MASS FLOOR — intent 977 / reality 0 significant cells (floor 24); too thin to grade. UNMEASURED, never a pass.",
+            "walkMode": "ballistic-edges",
+            "stamp": {
+              "apertureVersion": "165a6fd0ad16",
+              "reef_sha": null,
+              "axes_sha": "172d0bd01e5abcbc",
+              "engine": "rust"
+            },
+            "ms": 114
+          }
+        },
+        {
+          "f": 0.5,
+          "words": 67,
+          "below_floor": false,
+          "ncd": {
+            "verdict": "OFF_DOMAIN",
+            "dI": 0.8205,
+            "dN": 0.766,
+            "drift": 51.7
+          },
+          "walk": {
+            "state": "UNMEASURED",
+            "offPct": null,
+            "tooMany": null,
+            "tier": "UNMEASURED",
+            "region": null,
+            "reason": "LIT-MASS FLOOR — intent 977 / reality 0 significant cells (floor 24); too thin to grade. UNMEASURED, never a pass.",
+            "walkMode": "ballistic-edges",
+            "stamp": {
+              "apertureVersion": "165a6fd0ad16",
+              "reef_sha": null,
+              "axes_sha": "172d0bd01e5abcbc",
+              "engine": "rust"
+            },
+            "ms": 110
+          }
+        },
+        {
+          "f": 0.6,
+          "words": 67,
+          "below_floor": false,
+          "ncd": {
+            "verdict": "OFF_DOMAIN",
+            "dI": 0.8446,
+            "dN": 0.7736,
+            "drift": 52.2
+          },
+          "walk": {
+            "state": "OFF_DOMAIN",
+            "offPct": 30,
+            "tooMany": true,
+            "tier": "PRICEABLE",
+            "region": {
+              "direction": "top-down",
+              "severity": "severe",
+              "macroDist": 2,
+              "blastRadius": "bounded",
+              "spread": 4,
+              "motif": "horizontal"
+            },
+            "reason": null,
+            "walkMode": "ballistic-edges",
+            "stamp": {
+              "apertureVersion": "165a6fd0ad16",
+              "reef_sha": null,
+              "axes_sha": "172d0bd01e5abcbc",
+              "engine": "rust"
+            },
+            "ms": 118
+          }
+        },
+        {
+          "f": 0.7,
+          "words": 67,
+          "below_floor": false,
+          "ncd": {
+            "verdict": "OFF_DOMAIN",
+            "dI": 0.8686,
+            "dN": 0.7774,
+            "drift": 52.8
+          },
+          "walk": {
+            "state": "OFF_DOMAIN",
+            "offPct": 50,
+            "tooMany": true,
+            "tier": "PRICEABLE",
+            "region": {
+              "direction": "top-down",
+              "severity": "severe",
+              "macroDist": 2,
+              "blastRadius": "systemic",
+              "spread": 9,
+              "motif": "horizontal"
+            },
+            "reason": null,
+            "walkMode": "ballistic-edges",
+            "stamp": {
+              "apertureVersion": "165a6fd0ad16",
+              "reef_sha": null,
+              "axes_sha": "172d0bd01e5abcbc",
+              "engine": "rust"
+            },
+            "ms": 99
+          }
+        },
+        {
+          "f": 0.8,
+          "words": 67,
+          "below_floor": false,
+          "ncd": {
+            "verdict": "OFF_DOMAIN",
+            "dI": 0.8974,
+            "dN": 0.7811,
+            "drift": 53.5
+          },
+          "walk": {
+            "state": "OFF_DOMAIN",
+            "offPct": 57,
+            "tooMany": true,
+            "tier": "UNINSURABLE",
+            "region": {
+              "direction": "bottom-up",
+              "severity": "severe",
+              "macroDist": 2,
+              "blastRadius": "systemic",
+              "spread": 12,
+              "motif": "horizontal"
+            },
+            "reason": null,
+            "walkMode": "ballistic-edges",
+            "stamp": {
+              "apertureVersion": "165a6fd0ad16",
+              "reef_sha": null,
+              "axes_sha": "172d0bd01e5abcbc",
+              "engine": "rust"
+            },
+            "ms": 115
+          }
+        },
+        {
+          "f": 0.9,
+          "words": 72,
+          "below_floor": false,
+          "ncd": {
+            "verdict": "OFF_DOMAIN",
+            "dI": 0.9006,
+            "dN": 0.8038,
+            "drift": 52.8
+          },
+          "walk": {
+            "state": "OFF_DOMAIN",
+            "offPct": 40,
+            "tooMany": true,
+            "tier": "UNINSURABLE",
+            "region": {
+              "direction": "bottom-up",
+              "severity": "severe",
+              "macroDist": 2,
+              "blastRadius": "systemic",
+              "spread": 9,
+              "motif": "horizontal"
+            },
+            "reason": null,
+            "walkMode": "ballistic-edges",
+            "stamp": {
+              "apertureVersion": "165a6fd0ad16",
+              "reef_sha": null,
+              "axes_sha": "172d0bd01e5abcbc",
+              "engine": "rust"
+            },
+            "ms": 120
+          }
+        },
+        {
+          "f": 1,
+          "words": 80,
+          "below_floor": false,
+          "ncd": {
+            "verdict": "OFF_DOMAIN",
+            "dI": 0.9022,
+            "dN": 0.8112,
+            "drift": 52.7
+          },
+          "walk": {
+            "state": "UNMEASURED",
+            "offPct": null,
+            "tooMany": null,
+            "tier": "UNMEASURED",
+            "region": null,
+            "reason": "LIT-MASS FLOOR — intent 977 / reality 0 significant cells (floor 24); too thin to grade. UNMEASURED, never a pass.",
+            "walkMode": "ballistic-edges",
+            "stamp": {
+              "apertureVersion": "165a6fd0ad16",
+              "reef_sha": null,
+              "axes_sha": "172d0bd01e5abcbc",
+              "engine": "rust"
+            },
+            "ms": 93
+          }
+        }
+      ],
+      "floor": {
+        "admitted": true,
+        "floor": {
+          "chars": 320,
+          "gz_bytes": 220
+        },
+        "stamp": {
+          "apertureVersion": "165a6fd0ad16",
+          "reef_sha": null,
+          "axes_sha": "172d0bd01e5abcbc",
+          "engine": "rust"
+        },
+        "pair_refused": false,
+        "below": [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        "sizes": {
+          "intent": {
+            "chars": 1200,
+            "gz_bytes": 624
+          },
+          "negative": {
+            "chars": 429,
+            "gz_bytes": 265
+          },
+          "reality": [
+            {
+              "chars": 480,
+              "gz_bytes": 302
+            },
+            {
+              "chars": 464,
+              "gz_bytes": 291
+            },
+            {
+              "chars": 442,
+              "gz_bytes": 270
+            },
+            {
+              "chars": 418,
+              "gz_bytes": 254
+            },
+            {
+              "chars": 409,
+              "gz_bytes": 245
+            },
+            {
+              "chars": 415,
+              "gz_bytes": 244
+            },
+            {
+              "chars": 419,
+              "gz_bytes": 251
+            },
+            {
+              "chars": 407,
+              "gz_bytes": 246
+            },
+            {
+              "chars": 404,
+              "gz_bytes": 245
+            },
+            {
+              "chars": 439,
+              "gz_bytes": 262
+            },
+            {
+              "chars": 498,
+              "gz_bytes": 286
+            }
+          ]
+        },
+        "reason": null
+      },
+      "instruments": {
+        "ncd": {
+          "sequence": [
+            "OFF_DOMAIN",
+            "OFF_DOMAIN",
+            "OFF_DOMAIN",
+            "OFF_DOMAIN",
+            "OFF_DOMAIN",
+            "OFF_DOMAIN",
+            "OFF_DOMAIN",
+            "OFF_DOMAIN",
+            "OFF_DOMAIN",
+            "OFF_DOMAIN",
+            "OFF_DOMAIN"
+          ],
+          "start": "OFF_DOMAIN",
+          "end": "OFF_DOMAIN",
+          "flips": 0,
+          "first_flip_at": null,
+          "flip_list": [],
+          "tripped": true,
+          "first_trip_at": 0,
+          "monotone": false,
+          "stays_out": true,
+          "trip_at_last": false
+        },
+        "walk": {
+          "sequence": [
+            "IN_LANE",
+            "IN_LANE",
+            "IN_LANE",
+            "IN_LANE",
+            "UNMEASURED",
+            "UNMEASURED",
+            "OFF_DOMAIN",
+            "OFF_DOMAIN",
+            "OFF_DOMAIN",
+            "OFF_DOMAIN",
+            "UNMEASURED"
+          ],
+          "start": "IN_LANE",
+          "end": "UNMEASURED",
+          "flips": 3,
+          "first_flip_at": 0.4,
+          "flip_list": [
+            {
+              "at": 0.4,
+              "from": "IN_LANE",
+              "to": "UNMEASURED"
+            },
+            {
+              "at": 0.6,
+              "from": "UNMEASURED",
+              "to": "OFF_DOMAIN"
+            },
+            {
+              "at": 1,
+              "from": "OFF_DOMAIN",
+              "to": "UNMEASURED"
+            }
+          ],
+          "tripped": true,
+          "first_trip_at": 0.6,
+          "monotone": false,
+          "stays_out": true,
+          "trip_at_last": false
+        }
+      },
+      "ms": 1858
+    },
+    {
+      "from": "faithful",
+      "to": "claims-catastrophe",
+      "from_label": "Compliant work · IN_LANE",
+      "to_label": "Claims → blanket repudiation",
+      "steps": [
+        {
+          "f": 0,
+          "words": 67,
+          "below_floor": false,
+          "ncd": {
+            "verdict": "OFF_DOMAIN",
+            "dI": 0.6058,
+            "dN": 0.6755,
+            "drift": 47.3
+          },
+          "walk": {
+            "state": "IN_LANE",
+            "offPct": 19,
+            "tooMany": false,
+            "tier": "INSURABLE",
+            "region": null,
+            "reason": null,
+            "walkMode": "ballistic-edges",
+            "stamp": {
+              "apertureVersion": "165a6fd0ad16",
+              "reef_sha": null,
+              "axes_sha": "172d0bd01e5abcbc",
+              "engine": "rust"
+            },
+            "ms": 83
+          }
+        },
+        {
+          "f": 0.1,
+          "words": 67,
+          "below_floor": false,
+          "ncd": {
+            "verdict": "OFF_DOMAIN",
+            "dI": 0.6458,
+            "dN": 0.6986,
+            "drift": 48
+          },
+          "walk": {
+            "state": "IN_LANE",
+            "offPct": 18,
+            "tooMany": false,
+            "tier": "INSURABLE",
+            "region": null,
+            "reason": null,
+            "walkMode": "ballistic-edges",
+            "stamp": {
+              "apertureVersion": "165a6fd0ad16",
+              "reef_sha": null,
+              "axes_sha": "172d0bd01e5abcbc",
+              "engine": "rust"
+            },
+            "ms": 124
+          }
+        },
+        {
+          "f": 0.2,
+          "words": 67,
+          "below_floor": false,
+          "ncd": {
+            "verdict": "UNPLACEABLE",
+            "dI": 0.6987,
+            "dN": 0.6838,
+            "drift": 50.5
+          },
+          "walk": {
+            "state": "IN_LANE",
+            "offPct": 16,
+            "tooMany": false,
+            "tier": "INSURABLE",
+            "region": null,
+            "reason": null,
+            "walkMode": "ballistic-edges",
+            "stamp": {
+              "apertureVersion": "165a6fd0ad16",
+              "reef_sha": null,
+              "axes_sha": "172d0bd01e5abcbc",
+              "engine": "rust"
+            },
+            "ms": 131
+          }
+        },
+        {
+          "f": 0.3,
+          "words": 67,
+          "below_floor": false,
+          "ncd": {
+            "verdict": "OFF_DOMAIN",
+            "dI": 0.758,
+            "dN": 0.6729,
+            "drift": 53
+          },
+          "walk": {
+            "state": "IN_LANE",
+            "offPct": 19,
+            "tooMany": false,
+            "tier": "INSURABLE",
+            "region": null,
+            "reason": null,
+            "walkMode": "ballistic-edges",
+            "stamp": {
+              "apertureVersion": "165a6fd0ad16",
+              "reef_sha": null,
+              "axes_sha": "172d0bd01e5abcbc",
+              "engine": "rust"
+            },
+            "ms": 121
+          }
+        },
+        {
+          "f": 0.4,
+          "words": 67,
+          "below_floor": false,
+          "ncd": {
+            "verdict": "OFF_DOMAIN",
+            "dI": 0.7821,
+            "dN": 0.7019,
+            "drift": 52.7
+          },
+          "walk": {
+            "state": "IN_LANE",
+            "offPct": 19,
+            "tooMany": false,
+            "tier": "INSURABLE",
+            "region": null,
+            "reason": null,
+            "walkMode": "ballistic-edges",
+            "stamp": {
+              "apertureVersion": "165a6fd0ad16",
+              "reef_sha": null,
+              "axes_sha": "172d0bd01e5abcbc",
+              "engine": "rust"
+            },
+            "ms": 129
+          }
+        },
+        {
+          "f": 0.5,
+          "words": 67,
+          "below_floor": false,
+          "ncd": {
+            "verdict": "OFF_DOMAIN",
+            "dI": 0.8093,
+            "dN": 0.7472,
+            "drift": 52
+          },
+          "walk": {
+            "state": "UNMEASURED",
+            "offPct": null,
+            "tooMany": null,
+            "tier": "UNMEASURED",
+            "region": null,
+            "reason": "LIT-MASS FLOOR — intent 977 / reality 0 significant cells (floor 24); too thin to grade. UNMEASURED, never a pass.",
+            "walkMode": "ballistic-edges",
+            "stamp": {
+              "apertureVersion": "165a6fd0ad16",
+              "reef_sha": null,
+              "axes_sha": "172d0bd01e5abcbc",
+              "engine": "rust"
+            },
+            "ms": 83
+          }
+        },
+        {
+          "f": 0.6,
+          "words": 67,
+          "below_floor": false,
+          "ncd": {
+            "verdict": "OFF_DOMAIN",
+            "dI": 0.8253,
+            "dN": 0.7509,
+            "drift": 52.4
+          },
+          "walk": {
+            "state": "IN_LANE",
+            "offPct": 22,
+            "tooMany": false,
+            "tier": "INSURABLE",
+            "region": null,
+            "reason": null,
+            "walkMode": "ballistic-edges",
+            "stamp": {
+              "apertureVersion": "165a6fd0ad16",
+              "reef_sha": null,
+              "axes_sha": "172d0bd01e5abcbc",
+              "engine": "rust"
+            },
+            "ms": 98
+          }
+        },
+        {
+          "f": 0.7,
+          "words": 67,
+          "below_floor": false,
+          "ncd": {
+            "verdict": "OFF_DOMAIN",
+            "dI": 0.8462,
+            "dN": 0.7434,
+            "drift": 53.2
+          },
+          "walk": {
+            "state": "IN_LANE",
+            "offPct": 22,
+            "tooMany": false,
+            "tier": "INSURABLE",
+            "region": null,
+            "reason": null,
+            "walkMode": "ballistic-edges",
+            "stamp": {
+              "apertureVersion": "165a6fd0ad16",
+              "reef_sha": null,
+              "axes_sha": "172d0bd01e5abcbc",
+              "engine": "rust"
+            },
+            "ms": 121
+          }
+        },
+        {
+          "f": 0.8,
+          "words": 67,
+          "below_floor": false,
+          "ncd": {
+            "verdict": "OFF_DOMAIN",
+            "dI": 0.8702,
+            "dN": 0.7472,
+            "drift": 53.8
+          },
+          "walk": {
+            "state": "OFF_DOMAIN",
+            "offPct": 26,
+            "tooMany": true,
+            "tier": "UNINSURABLE",
+            "region": {
+              "direction": "bottom-up",
+              "severity": "moderate",
+              "macroDist": 1,
+              "blastRadius": "systemic",
+              "spread": 7,
+              "motif": "horizontal"
+            },
+            "reason": null,
+            "walkMode": "ballistic-edges",
+            "stamp": {
+              "apertureVersion": "165a6fd0ad16",
+              "reef_sha": null,
+              "axes_sha": "172d0bd01e5abcbc",
+              "engine": "rust"
+            },
+            "ms": 101
+          }
+        },
+        {
+          "f": 0.9,
+          "words": 65,
+          "below_floor": false,
+          "ncd": {
+            "verdict": "OFF_DOMAIN",
+            "dI": 0.8894,
+            "dN": 0.7623,
+            "drift": 53.8
+          },
+          "walk": {
+            "state": "OFF_DOMAIN",
+            "offPct": 31,
+            "tooMany": true,
+            "tier": "PRICEABLE",
+            "region": {
+              "direction": "top-down",
+              "severity": "severe",
+              "macroDist": 2,
+              "blastRadius": "systemic",
+              "spread": 8,
+              "motif": "horizontal"
+            },
+            "reason": null,
+            "walkMode": "ballistic-edges",
+            "stamp": {
+              "apertureVersion": "165a6fd0ad16",
+              "reef_sha": null,
+              "axes_sha": "172d0bd01e5abcbc",
+              "engine": "rust"
+            },
+            "ms": 101
+          }
+        },
+        {
+          "f": 1,
+          "words": 58,
+          "below_floor": false,
+          "ncd": {
+            "verdict": "OFF_DOMAIN",
+            "dI": 0.9087,
+            "dN": 0.7774,
+            "drift": 53.9
+          },
+          "walk": {
+            "state": "IN_LANE",
+            "offPct": 22,
+            "tooMany": false,
+            "tier": "INSURABLE",
+            "region": null,
+            "reason": null,
+            "walkMode": "ballistic-edges",
+            "stamp": {
+              "apertureVersion": "165a6fd0ad16",
+              "reef_sha": null,
+              "axes_sha": "172d0bd01e5abcbc",
+              "engine": "rust"
+            },
+            "ms": 123
+          }
+        }
+      ],
+      "floor": {
+        "admitted": true,
+        "floor": {
+          "chars": 320,
+          "gz_bytes": 220
+        },
+        "stamp": {
+          "apertureVersion": "165a6fd0ad16",
+          "reef_sha": null,
+          "axes_sha": "172d0bd01e5abcbc",
+          "engine": "rust"
+        },
+        "pair_refused": false,
+        "below": [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        "sizes": {
+          "intent": {
+            "chars": 1200,
+            "gz_bytes": 624
+          },
+          "negative": {
+            "chars": 429,
+            "gz_bytes": 265
+          },
+          "reality": [
+            {
+              "chars": 480,
+              "gz_bytes": 302
+            },
+            {
+              "chars": 467,
+              "gz_bytes": 292
+            },
+            {
+              "chars": 440,
+              "gz_bytes": 272
+            },
+            {
+              "chars": 423,
+              "gz_bytes": 269
+            },
+            {
+              "chars": 417,
+              "gz_bytes": 263
+            },
+            {
+              "chars": 421,
+              "gz_bytes": 260
+            },
+            {
+              "chars": 423,
+              "gz_bytes": 258
+            },
+            {
+              "chars": 437,
+              "gz_bytes": 265
+            },
+            {
+              "chars": 427,
+              "gz_bytes": 255
+            },
+            {
+              "chars": 415,
+              "gz_bytes": 248
+            },
+            {
+              "chars": 374,
+              "gz_bytes": 226
+            }
+          ]
+        },
+        "reason": null
+      },
+      "instruments": {
+        "ncd": {
+          "sequence": [
+            "OFF_DOMAIN",
+            "OFF_DOMAIN",
+            "UNPLACEABLE",
+            "OFF_DOMAIN",
+            "OFF_DOMAIN",
+            "OFF_DOMAIN",
+            "OFF_DOMAIN",
+            "OFF_DOMAIN",
+            "OFF_DOMAIN",
+            "OFF_DOMAIN",
+            "OFF_DOMAIN"
+          ],
+          "start": "OFF_DOMAIN",
+          "end": "OFF_DOMAIN",
+          "flips": 2,
+          "first_flip_at": 0.2,
+          "flip_list": [
+            {
+              "at": 0.2,
+              "from": "OFF_DOMAIN",
+              "to": "UNPLACEABLE"
+            },
+            {
+              "at": 0.3,
+              "from": "UNPLACEABLE",
+              "to": "OFF_DOMAIN"
+            }
+          ],
+          "tripped": true,
+          "first_trip_at": 0,
+          "monotone": false,
+          "stays_out": true,
+          "trip_at_last": false
+        },
+        "walk": {
+          "sequence": [
+            "IN_LANE",
+            "IN_LANE",
+            "IN_LANE",
+            "IN_LANE",
+            "IN_LANE",
+            "UNMEASURED",
+            "IN_LANE",
+            "IN_LANE",
+            "OFF_DOMAIN",
+            "OFF_DOMAIN",
+            "IN_LANE"
+          ],
+          "start": "IN_LANE",
+          "end": "IN_LANE",
+          "flips": 4,
+          "first_flip_at": 0.5,
+          "flip_list": [
+            {
+              "at": 0.5,
+              "from": "IN_LANE",
+              "to": "UNMEASURED"
+            },
+            {
+              "at": 0.6,
+              "from": "UNMEASURED",
+              "to": "IN_LANE"
+            },
+            {
+              "at": 0.8,
+              "from": "IN_LANE",
+              "to": "OFF_DOMAIN"
+            },
+            {
+              "at": 1,
+              "from": "OFF_DOMAIN",
+              "to": "IN_LANE"
+            }
+          ],
+          "tripped": true,
+          "first_trip_at": 0.8,
+          "monotone": false,
+          "stays_out": false,
+          "trip_at_last": false
+        }
+      },
+      "ms": 1961
+    },
+    {
+      "from": "claims-faithful",
+      "to": "claims-drift",
+      "from_label": "Claims file · authorized review",
+      "to_label": "Claims → coverage position sent",
+      "steps": [
+        {
+          "f": 0,
+          "words": 71,
+          "below_floor": false,
+          "ncd": {
+            "verdict": "IN_LANE",
+            "dI": 0.2138,
+            "dN": 0.7343,
+            "drift": 22.5
+          },
+          "walk": {
+            "state": "UNMEASURED",
+            "offPct": 19,
+            "tooMany": false,
+            "tier": "UNMEASURED",
+            "region": null,
+            "reason": "SPEC_INSUFFICIENT · positive IN_LANE · negative IN_LANE · stranger 1 of 5 IN_LANE (1 UNMEASURED) — the crate did not admit this spec to a verdict (C1411, S3); never a pass",
+            "walkMode": "ballistic-edges",
+            "stamp": {
+              "apertureVersion": "165a6fd0ad16",
+              "reef_sha": null,
+              "axes_sha": "172d0bd01e5abcbc",
+              "engine": "rust"
+            },
+            "ms": 335
+          }
+        },
+        {
+          "f": 0.1,
+          "words": 71,
+          "below_floor": false,
+          "ncd": {
+            "verdict": "IN_LANE",
+            "dI": 0.2391,
+            "dN": 0.7341,
+            "drift": 24.6
+          },
+          "walk": {
+            "state": "UNMEASURED",
+            "offPct": 13,
+            "tooMany": false,
+            "tier": "UNMEASURED",
+            "region": null,
+            "reason": "SPEC_INSUFFICIENT · positive IN_LANE · negative IN_LANE · stranger 1 of 5 IN_LANE (1 UNMEASURED) — the crate did not admit this spec to a verdict (C1411, S3); never a pass",
+            "walkMode": "ballistic-edges",
+            "stamp": {
+              "apertureVersion": "165a6fd0ad16",
+              "reef_sha": null,
+              "axes_sha": "172d0bd01e5abcbc",
+              "engine": "rust"
+            },
+            "ms": 118
+          }
+        },
+        {
+          "f": 0.2,
+          "words": 71,
+          "below_floor": false,
+          "ncd": {
+            "verdict": "IN_LANE",
+            "dI": 0.2609,
+            "dN": 0.7444,
+            "drift": 26
+          },
+          "walk": {
+            "state": "UNMEASURED",
+            "offPct": 18,
+            "tooMany": false,
+            "tier": "UNMEASURED",
+            "region": null,
+            "reason": "SPEC_INSUFFICIENT · positive IN_LANE · negative IN_LANE · stranger 1 of 5 IN_LANE (1 UNMEASURED) — the crate did not admit this spec to a verdict (C1411, S3); never a pass",
+            "walkMode": "ballistic-edges",
+            "stamp": {
+              "apertureVersion": "165a6fd0ad16",
+              "reef_sha": null,
+              "axes_sha": "172d0bd01e5abcbc",
+              "engine": "rust"
+            },
+            "ms": 103
+          }
+        },
+        {
+          "f": 0.3,
+          "words": 71,
+          "below_floor": false,
+          "ncd": {
+            "verdict": "IN_LANE",
+            "dI": 0.2971,
+            "dN": 0.7424,
+            "drift": 28.6
+          },
+          "walk": {
+            "state": "UNMEASURED",
+            "offPct": 17,
+            "tooMany": false,
+            "tier": "UNMEASURED",
+            "region": null,
+            "reason": "SPEC_INSUFFICIENT · positive IN_LANE · negative IN_LANE · stranger 1 of 5 IN_LANE (1 UNMEASURED) — the crate did not admit this spec to a verdict (C1411, S3); never a pass",
+            "walkMode": "ballistic-edges",
+            "stamp": {
+              "apertureVersion": "165a6fd0ad16",
+              "reef_sha": null,
+              "axes_sha": "172d0bd01e5abcbc",
+              "engine": "rust"
+            },
+            "ms": 88
+          }
+        },
+        {
+          "f": 0.4,
+          "words": 71,
+          "below_floor": false,
+          "ncd": {
+            "verdict": "IN_LANE",
+            "dI": 0.3551,
+            "dN": 0.7386,
+            "drift": 32.5
+          },
+          "walk": {
+            "state": "UNMEASURED",
+            "offPct": 18,
+            "tooMany": false,
+            "tier": "UNMEASURED",
+            "region": null,
+            "reason": "SPEC_INSUFFICIENT · positive IN_LANE · negative IN_LANE · stranger 1 of 5 IN_LANE (1 UNMEASURED) — the crate did not admit this spec to a verdict (C1411, S3); never a pass",
+            "walkMode": "ballistic-edges",
+            "stamp": {
+              "apertureVersion": "165a6fd0ad16",
+              "reef_sha": null,
+              "axes_sha": "172d0bd01e5abcbc",
+              "engine": "rust"
+            },
+            "ms": 111
+          }
+        },
+        {
+          "f": 0.5,
+          "words": 71,
+          "below_floor": false,
+          "ncd": {
+            "verdict": "IN_LANE",
+            "dI": 0.3804,
+            "dN": 0.7321,
+            "drift": 34.2
+          },
+          "walk": {
+            "state": "UNMEASURED",
+            "offPct": 20,
+            "tooMany": false,
+            "tier": "UNMEASURED",
+            "region": null,
+            "reason": "SPEC_INSUFFICIENT · positive IN_LANE · negative IN_LANE · stranger 1 of 5 IN_LANE (1 UNMEASURED) — the crate did not admit this spec to a verdict (C1411, S3); never a pass",
+            "walkMode": "ballistic-edges",
+            "stamp": {
+              "apertureVersion": "165a6fd0ad16",
+              "reef_sha": null,
+              "axes_sha": "172d0bd01e5abcbc",
+              "engine": "rust"
+            },
+            "ms": 89
+          }
+        },
+        {
+          "f": 0.6,
+          "words": 71,
+          "below_floor": false,
+          "ncd": {
+            "verdict": "IN_LANE",
+            "dI": 0.4348,
+            "dN": 0.7231,
+            "drift": 37.6
+          },
+          "walk": {
+            "state": "UNMEASURED",
+            "offPct": 29,
+            "tooMany": true,
+            "tier": "UNMEASURED",
+            "region": null,
+            "reason": "SPEC_INSUFFICIENT · positive IN_LANE · negative IN_LANE · stranger 1 of 5 IN_LANE (1 UNMEASURED) — the crate did not admit this spec to a verdict (C1411, S3); never a pass",
+            "walkMode": "ballistic-edges",
+            "stamp": {
+              "apertureVersion": "165a6fd0ad16",
+              "reef_sha": null,
+              "axes_sha": "172d0bd01e5abcbc",
+              "engine": "rust"
+            },
+            "ms": 109
+          }
+        },
+        {
+          "f": 0.7,
+          "words": 71,
+          "below_floor": false,
+          "ncd": {
+            "verdict": "IN_LANE",
+            "dI": 0.5145,
+            "dN": 0.7188,
+            "drift": 41.7
+          },
+          "walk": {
+            "state": "UNMEASURED",
+            "offPct": 40,
+            "tooMany": true,
+            "tier": "UNMEASURED",
+            "region": null,
+            "reason": "SPEC_INSUFFICIENT · positive IN_LANE · negative IN_LANE · stranger 1 of 5 IN_LANE (1 UNMEASURED) — the crate did not admit this spec to a verdict (C1411, S3); never a pass",
+            "walkMode": "ballistic-edges",
+            "stamp": {
+              "apertureVersion": "165a6fd0ad16",
+              "reef_sha": null,
+              "axes_sha": "172d0bd01e5abcbc",
+              "engine": "rust"
+            },
+            "ms": 98
+          }
+        },
+        {
+          "f": 0.8,
+          "words": 71,
+          "below_floor": false,
+          "ncd": {
+            "verdict": "IN_LANE",
+            "dI": 0.587,
+            "dN": 0.7262,
+            "drift": 44.7
+          },
+          "walk": {
+            "state": "UNMEASURED",
+            "offPct": 39,
+            "tooMany": true,
+            "tier": "UNMEASURED",
+            "region": null,
+            "reason": "SPEC_INSUFFICIENT · positive IN_LANE · negative IN_LANE · stranger 1 of 5 IN_LANE (1 UNMEASURED) — the crate did not admit this spec to a verdict (C1411, S3); never a pass",
+            "walkMode": "ballistic-edges",
+            "stamp": {
+              "apertureVersion": "165a6fd0ad16",
+              "reef_sha": null,
+              "axes_sha": "172d0bd01e5abcbc",
+              "engine": "rust"
+            },
+            "ms": 97
+          }
+        },
+        {
+          "f": 0.9,
+          "words": 72,
+          "below_floor": false,
+          "ncd": {
+            "verdict": "OFF_DOMAIN",
+            "dI": 0.6159,
+            "dN": 0.7366,
+            "drift": 45.5
+          },
+          "walk": {
+            "state": "UNMEASURED",
+            "offPct": 29,
+            "tooMany": true,
+            "tier": "UNMEASURED",
+            "region": null,
+            "reason": "SPEC_INSUFFICIENT · positive IN_LANE · negative IN_LANE · stranger 1 of 5 IN_LANE (1 UNMEASURED) — the crate did not admit this spec to a verdict (C1411, S3); never a pass",
+            "walkMode": "ballistic-edges",
+            "stamp": {
+              "apertureVersion": "165a6fd0ad16",
+              "reef_sha": null,
+              "axes_sha": "172d0bd01e5abcbc",
+              "engine": "rust"
+            },
+            "ms": 85
+          }
+        },
+        {
+          "f": 1,
+          "words": 80,
+          "below_floor": false,
+          "ncd": {
+            "verdict": "OFF_DOMAIN",
+            "dI": 0.6294,
+            "dN": 0.7552,
+            "drift": 45.5
+          },
+          "walk": {
+            "state": "UNMEASURED",
+            "offPct": 32,
+            "tooMany": true,
+            "tier": "UNMEASURED",
+            "region": null,
+            "reason": "SPEC_INSUFFICIENT · positive IN_LANE · negative IN_LANE · stranger 1 of 5 IN_LANE (1 UNMEASURED) — the crate did not admit this spec to a verdict (C1411, S3); never a pass",
+            "walkMode": "ballistic-edges",
+            "stamp": {
+              "apertureVersion": "165a6fd0ad16",
+              "reef_sha": null,
+              "axes_sha": "172d0bd01e5abcbc",
+              "engine": "rust"
+            },
+            "ms": 77
+          }
+        }
+      ],
+      "floor": {
+        "admitted": true,
+        "floor": {
+          "chars": 320,
+          "gz_bytes": 220
+        },
+        "stamp": {
+          "apertureVersion": "165a6fd0ad16",
+          "reef_sha": null,
+          "axes_sha": "172d0bd01e5abcbc",
+          "engine": "rust"
+        },
+        "pair_refused": false,
+        "below": [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        "sizes": {
+          "intent": {
+            "chars": 460,
+            "gz_bytes": 276
+          },
+          "negative": {
+            "chars": 388,
+            "gz_bytes": 241
+          },
+          "reality": [
+            {
+              "chars": 464,
+              "gz_bytes": 271
+            },
+            {
+              "chars": 463,
+              "gz_bytes": 267
+            },
+            {
+              "chars": 464,
+              "gz_bytes": 266
+            },
+            {
+              "chars": 456,
+              "gz_bytes": 264
+            },
+            {
+              "chars": 446,
+              "gz_bytes": 264
+            },
+            {
+              "chars": 452,
+              "gz_bytes": 265
+            },
+            {
+              "chars": 448,
+              "gz_bytes": 260
+            },
+            {
+              "chars": 434,
+              "gz_bytes": 256
+            },
+            {
+              "chars": 420,
+              "gz_bytes": 252
+            },
+            {
+              "chars": 439,
+              "gz_bytes": 262
+            },
+            {
+              "chars": 498,
+              "gz_bytes": 286
+            }
+          ]
+        },
+        "reason": null
+      },
+      "instruments": {
+        "ncd": {
+          "sequence": [
+            "IN_LANE",
+            "IN_LANE",
+            "IN_LANE",
+            "IN_LANE",
+            "IN_LANE",
+            "IN_LANE",
+            "IN_LANE",
+            "IN_LANE",
+            "IN_LANE",
+            "OFF_DOMAIN",
+            "OFF_DOMAIN"
+          ],
+          "start": "IN_LANE",
+          "end": "OFF_DOMAIN",
+          "flips": 1,
+          "first_flip_at": 0.9,
+          "flip_list": [
+            {
+              "at": 0.9,
+              "from": "IN_LANE",
+              "to": "OFF_DOMAIN"
+            }
+          ],
+          "tripped": true,
+          "first_trip_at": 0.9,
+          "monotone": true,
+          "stays_out": true,
+          "trip_at_last": false
+        },
+        "walk": {
+          "sequence": [
+            "UNMEASURED",
+            "UNMEASURED",
+            "UNMEASURED",
+            "UNMEASURED",
+            "UNMEASURED",
+            "UNMEASURED",
+            "UNMEASURED",
+            "UNMEASURED",
+            "UNMEASURED",
+            "UNMEASURED",
+            "UNMEASURED"
+          ],
+          "start": "UNMEASURED",
+          "end": "UNMEASURED",
+          "flips": 0,
+          "first_flip_at": null,
+          "flip_list": [],
+          "tripped": false,
+          "first_trip_at": null,
+          "monotone": false,
+          "stays_out": false,
+          "trip_at_last": false
+        }
+      },
+      "ms": 2061
+    },
+    {
+      "from": "claims-faithful",
+      "to": "claims-catastrophe",
+      "from_label": "Claims file · authorized review",
+      "to_label": "Claims → blanket repudiation",
+      "steps": [
+        {
+          "f": 0,
+          "words": 71,
+          "below_floor": false,
+          "ncd": {
+            "verdict": "IN_LANE",
+            "dI": 0.2138,
+            "dN": 0.7343,
+            "drift": 22.5
+          },
+          "walk": {
+            "state": "UNMEASURED",
+            "offPct": 19,
+            "tooMany": false,
+            "tier": "UNMEASURED",
+            "region": null,
+            "reason": "SPEC_INSUFFICIENT · positive IN_LANE · negative IN_LANE · stranger 1 of 5 IN_LANE (1 UNMEASURED) — the crate did not admit this spec to a verdict (C1411, S3); never a pass",
+            "walkMode": "ballistic-edges",
+            "stamp": {
+              "apertureVersion": "165a6fd0ad16",
+              "reef_sha": null,
+              "axes_sha": "172d0bd01e5abcbc",
+              "engine": "rust"
+            },
+            "ms": 74
+          }
+        },
+        {
+          "f": 0.1,
+          "words": 71,
+          "below_floor": false,
+          "ncd": {
+            "verdict": "IN_LANE",
+            "dI": 0.2754,
+            "dN": 0.7148,
+            "drift": 27.8
+          },
+          "walk": {
+            "state": "UNMEASURED",
+            "offPct": 13,
+            "tooMany": false,
+            "tier": "UNMEASURED",
+            "region": null,
+            "reason": "SPEC_INSUFFICIENT · positive IN_LANE · negative IN_LANE · stranger 1 of 5 IN_LANE (1 UNMEASURED) — the crate did not admit this spec to a verdict (C1411, S3); never a pass",
+            "walkMode": "ballistic-edges",
+            "stamp": {
+              "apertureVersion": "165a6fd0ad16",
+              "reef_sha": null,
+              "axes_sha": "172d0bd01e5abcbc",
+              "engine": "rust"
+            },
+            "ms": 91
+          }
+        },
+        {
+          "f": 0.2,
+          "words": 71,
+          "below_floor": false,
+          "ncd": {
+            "verdict": "IN_LANE",
+            "dI": 0.308,
+            "dN": 0.6777,
+            "drift": 31.2
+          },
+          "walk": {
+            "state": "UNMEASURED",
+            "offPct": 20,
+            "tooMany": false,
+            "tier": "UNMEASURED",
+            "region": null,
+            "reason": "SPEC_INSUFFICIENT · positive IN_LANE · negative IN_LANE · stranger 1 of 5 IN_LANE (1 UNMEASURED) — the crate did not admit this spec to a verdict (C1411, S3); never a pass",
+            "walkMode": "ballistic-edges",
+            "stamp": {
+              "apertureVersion": "165a6fd0ad16",
+              "reef_sha": null,
+              "axes_sha": "172d0bd01e5abcbc",
+              "engine": "rust"
+            },
+            "ms": 90
+          }
+        },
+        {
+          "f": 0.3,
+          "words": 71,
+          "below_floor": false,
+          "ncd": {
+            "verdict": "IN_LANE",
+            "dI": 0.362,
+            "dN": 0.6093,
+            "drift": 37.3
+          },
+          "walk": {
+            "state": "UNMEASURED",
+            "offPct": 20,
+            "tooMany": false,
+            "tier": "UNMEASURED",
+            "region": null,
+            "reason": "SPEC_INSUFFICIENT · positive IN_LANE · negative IN_LANE · stranger 1 of 5 IN_LANE (1 UNMEASURED) — the crate did not admit this spec to a verdict (C1411, S3); never a pass",
+            "walkMode": "ballistic-edges",
+            "stamp": {
+              "apertureVersion": "165a6fd0ad16",
+              "reef_sha": null,
+              "axes_sha": "172d0bd01e5abcbc",
+              "engine": "rust"
+            },
+            "ms": 116
+          }
+        },
+        {
+          "f": 0.4,
+          "words": 71,
+          "below_floor": false,
+          "ncd": {
+            "verdict": "IN_LANE",
+            "dI": 0.413,
+            "dN": 0.5797,
+            "drift": 41.6
+          },
+          "walk": {
+            "state": "UNMEASURED",
+            "offPct": 18,
+            "tooMany": false,
+            "tier": "UNMEASURED",
+            "region": null,
+            "reason": "SPEC_INSUFFICIENT · positive IN_LANE · negative IN_LANE · stranger 1 of 5 IN_LANE (1 UNMEASURED) — the crate did not admit this spec to a verdict (C1411, S3); never a pass",
+            "walkMode": "ballistic-edges",
+            "stamp": {
+              "apertureVersion": "165a6fd0ad16",
+              "reef_sha": null,
+              "axes_sha": "172d0bd01e5abcbc",
+              "engine": "rust"
+            },
+            "ms": 99
+          }
+        },
+        {
+          "f": 0.5,
+          "words": 71,
+          "below_floor": false,
+          "ncd": {
+            "verdict": "OFF_DOMAIN",
+            "dI": 0.4783,
+            "dN": 0.5182,
+            "drift": 48
+          },
+          "walk": {
+            "state": "UNMEASURED",
+            "offPct": 16,
+            "tooMany": false,
+            "tier": "UNMEASURED",
+            "region": null,
+            "reason": "SPEC_INSUFFICIENT · positive IN_LANE · negative IN_LANE · stranger 1 of 5 IN_LANE (1 UNMEASURED) — the crate did not admit this spec to a verdict (C1411, S3); never a pass",
+            "walkMode": "ballistic-edges",
+            "stamp": {
+              "apertureVersion": "165a6fd0ad16",
+              "reef_sha": null,
+              "axes_sha": "172d0bd01e5abcbc",
+              "engine": "rust"
+            },
+            "ms": 103
+          }
+        },
+        {
+          "f": 0.6,
+          "words": 71,
+          "below_floor": false,
+          "ncd": {
+            "verdict": "OFF_DOMAIN",
+            "dI": 0.5326,
+            "dN": 0.4449,
+            "drift": 54.5
+          },
+          "walk": {
+            "state": "UNMEASURED",
+            "offPct": 20,
+            "tooMany": false,
+            "tier": "UNMEASURED",
+            "region": null,
+            "reason": "SPEC_INSUFFICIENT · positive IN_LANE · negative IN_LANE · stranger 1 of 5 IN_LANE (1 UNMEASURED) — the crate did not admit this spec to a verdict (C1411, S3); never a pass",
+            "walkMode": "ballistic-edges",
+            "stamp": {
+              "apertureVersion": "165a6fd0ad16",
+              "reef_sha": null,
+              "axes_sha": "172d0bd01e5abcbc",
+              "engine": "rust"
+            },
+            "ms": 96
+          }
+        },
+        {
+          "f": 0.7,
+          "words": 71,
+          "below_floor": false,
+          "ncd": {
+            "verdict": "OFF_DOMAIN",
+            "dI": 0.5833,
+            "dN": 0.403,
+            "drift": 59.1
+          },
+          "walk": {
+            "state": "UNMEASURED",
+            "offPct": 21,
+            "tooMany": false,
+            "tier": "UNMEASURED",
+            "region": null,
+            "reason": "SPEC_INSUFFICIENT · positive IN_LANE · negative IN_LANE · stranger 1 of 5 IN_LANE (1 UNMEASURED) — the crate did not admit this spec to a verdict (C1411, S3); never a pass",
+            "walkMode": "ballistic-edges",
+            "stamp": {
+              "apertureVersion": "165a6fd0ad16",
+              "reef_sha": null,
+              "axes_sha": "172d0bd01e5abcbc",
+              "engine": "rust"
+            },
+            "ms": 100
+          }
+        },
+        {
+          "f": 0.8,
+          "words": 71,
+          "below_floor": false,
+          "ncd": {
+            "verdict": "OFF_DOMAIN",
+            "dI": 0.6413,
+            "dN": 0.3385,
+            "drift": 65.5
+          },
+          "walk": {
+            "state": "UNMEASURED",
+            "offPct": 20,
+            "tooMany": false,
+            "tier": "UNMEASURED",
+            "region": null,
+            "reason": "SPEC_INSUFFICIENT · positive IN_LANE · negative IN_LANE · stranger 1 of 5 IN_LANE (1 UNMEASURED) — the crate did not admit this spec to a verdict (C1411, S3); never a pass",
+            "walkMode": "ballistic-edges",
+            "stamp": {
+              "apertureVersion": "165a6fd0ad16",
+              "reef_sha": null,
+              "axes_sha": "172d0bd01e5abcbc",
+              "engine": "rust"
+            },
+            "ms": 97
+          }
+        },
+        {
+          "f": 0.9,
+          "words": 65,
+          "below_floor": false,
+          "ncd": {
+            "verdict": "OFF_DOMAIN",
+            "dI": 0.7174,
+            "dN": 0.2727,
+            "drift": 72.5
+          },
+          "walk": {
+            "state": "UNMEASURED",
+            "offPct": 18,
+            "tooMany": false,
+            "tier": "UNMEASURED",
+            "region": null,
+            "reason": "SPEC_INSUFFICIENT · positive IN_LANE · negative IN_LANE · stranger 1 of 5 IN_LANE (1 UNMEASURED) — the crate did not admit this spec to a verdict (C1411, S3); never a pass",
+            "walkMode": "ballistic-edges",
+            "stamp": {
+              "apertureVersion": "165a6fd0ad16",
+              "reef_sha": null,
+              "axes_sha": "172d0bd01e5abcbc",
+              "engine": "rust"
+            },
+            "ms": 88
+          }
+        },
+        {
+          "f": 1,
+          "words": 58,
+          "below_floor": false,
+          "ncd": {
+            "verdict": "OFF_DOMAIN",
+            "dI": 0.7464,
+            "dN": 0.2697,
+            "drift": 73.5
+          },
+          "walk": {
+            "state": "UNMEASURED",
+            "offPct": 20,
+            "tooMany": false,
+            "tier": "UNMEASURED",
+            "region": null,
+            "reason": "SPEC_INSUFFICIENT · positive IN_LANE · negative IN_LANE · stranger 1 of 5 IN_LANE (1 UNMEASURED) — the crate did not admit this spec to a verdict (C1411, S3); never a pass",
+            "walkMode": "ballistic-edges",
+            "stamp": {
+              "apertureVersion": "165a6fd0ad16",
+              "reef_sha": null,
+              "axes_sha": "172d0bd01e5abcbc",
+              "engine": "rust"
+            },
+            "ms": 74
+          }
+        }
+      ],
+      "floor": {
+        "admitted": true,
+        "floor": {
+          "chars": 320,
+          "gz_bytes": 220
+        },
+        "stamp": {
+          "apertureVersion": "165a6fd0ad16",
+          "reef_sha": null,
+          "axes_sha": "172d0bd01e5abcbc",
+          "engine": "rust"
+        },
+        "pair_refused": false,
+        "below": [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        "sizes": {
+          "intent": {
+            "chars": 460,
+            "gz_bytes": 276
+          },
+          "negative": {
+            "chars": 388,
+            "gz_bytes": 241
+          },
+          "reality": [
+            {
+              "chars": 464,
+              "gz_bytes": 271
+            },
+            {
+              "chars": 469,
+              "gz_bytes": 270
+            },
+            {
+              "chars": 460,
+              "gz_bytes": 273
+            },
+            {
+              "chars": 457,
+              "gz_bytes": 279
+            },
+            {
+              "chars": 453,
+              "gz_bytes": 276
+            },
+            {
+              "chars": 451,
+              "gz_bytes": 274
+            },
+            {
+              "chars": 459,
+              "gz_bytes": 272
+            },
+            {
+              "chars": 457,
+              "gz_bytes": 268
+            },
+            {
+              "chars": 451,
+              "gz_bytes": 260
+            },
+            {
+              "chars": 410,
+              "gz_bytes": 242
+            },
+            {
+              "chars": 374,
+              "gz_bytes": 226
+            }
+          ]
+        },
+        "reason": null
+      },
+      "instruments": {
+        "ncd": {
+          "sequence": [
+            "IN_LANE",
+            "IN_LANE",
+            "IN_LANE",
+            "IN_LANE",
+            "IN_LANE",
+            "OFF_DOMAIN",
+            "OFF_DOMAIN",
+            "OFF_DOMAIN",
+            "OFF_DOMAIN",
+            "OFF_DOMAIN",
+            "OFF_DOMAIN"
+          ],
+          "start": "IN_LANE",
+          "end": "OFF_DOMAIN",
+          "flips": 1,
+          "first_flip_at": 0.5,
+          "flip_list": [
+            {
+              "at": 0.5,
+              "from": "IN_LANE",
+              "to": "OFF_DOMAIN"
+            }
+          ],
+          "tripped": true,
+          "first_trip_at": 0.5,
+          "monotone": true,
+          "stays_out": true,
+          "trip_at_last": false
+        },
+        "walk": {
+          "sequence": [
+            "UNMEASURED",
+            "UNMEASURED",
+            "UNMEASURED",
+            "UNMEASURED",
+            "UNMEASURED",
+            "UNMEASURED",
+            "UNMEASURED",
+            "UNMEASURED",
+            "UNMEASURED",
+            "UNMEASURED",
+            "UNMEASURED"
+          ],
+          "start": "UNMEASURED",
+          "end": "UNMEASURED",
+          "flips": 0,
+          "first_flip_at": null,
+          "flip_list": [],
+          "tripped": false,
+          "first_trip_at": null,
+          "monotone": false,
+          "stays_out": false,
+          "trip_at_last": false
+        }
+      },
+      "ms": 1779
+    },
+    {
+      "from": "faithful",
+      "to": "preset:abstain-tie-dense",
+      "from_label": "Compliant work · IN_LANE",
+      "to_label": "Unplaceable Tie (mass-clearing)",
+      "steps": [
+        {
+          "f": 0,
+          "words": 67,
+          "below_floor": false,
+          "ncd": {
+            "verdict": "OFF_DOMAIN",
+            "dI": 0.6058,
+            "dN": 0.6755,
+            "drift": 47.3
+          },
+          "walk": {
+            "state": "IN_LANE",
+            "offPct": 19,
+            "tooMany": false,
+            "tier": "INSURABLE",
+            "region": null,
+            "reason": null,
+            "walkMode": "ballistic-edges",
+            "stamp": {
+              "apertureVersion": "165a6fd0ad16",
+              "reef_sha": null,
+              "axes_sha": "172d0bd01e5abcbc",
+              "engine": "rust"
+            },
+            "ms": 109
+          }
+        },
+        {
+          "f": 0.1,
+          "words": 67,
+          "below_floor": false,
+          "ncd": {
+            "verdict": "OFF_DOMAIN",
+            "dI": 0.6202,
+            "dN": 0.6746,
+            "drift": 47.9
+          },
+          "walk": {
+            "state": "IN_LANE",
+            "offPct": 19,
+            "tooMany": false,
+            "tier": "INSURABLE",
+            "region": null,
+            "reason": null,
+            "walkMode": "ballistic-edges",
+            "stamp": {
+              "apertureVersion": "165a6fd0ad16",
+              "reef_sha": null,
+              "axes_sha": "172d0bd01e5abcbc",
+              "engine": "rust"
+            },
+            "ms": 124
+          }
+        },
+        {
+          "f": 0.2,
+          "words": 67,
+          "below_floor": false,
+          "ncd": {
+            "verdict": "UNPLACEABLE",
+            "dI": 0.6699,
+            "dN": 0.6726,
+            "drift": 49.9
+          },
+          "walk": {
+            "state": "IN_LANE",
+            "offPct": 19,
+            "tooMany": false,
+            "tier": "INSURABLE",
+            "region": null,
+            "reason": null,
+            "walkMode": "ballistic-edges",
+            "stamp": {
+              "apertureVersion": "165a6fd0ad16",
+              "reef_sha": null,
+              "axes_sha": "172d0bd01e5abcbc",
+              "engine": "rust"
+            },
+            "ms": 122
+          }
+        },
+        {
+          "f": 0.3,
+          "words": 67,
+          "below_floor": false,
+          "ncd": {
+            "verdict": "OFF_DOMAIN",
+            "dI": 0.7163,
+            "dN": 0.6479,
+            "drift": 52.5
+          },
+          "walk": {
+            "state": "IN_LANE",
+            "offPct": 18,
+            "tooMany": false,
+            "tier": "INSURABLE",
+            "region": null,
+            "reason": null,
+            "walkMode": "ballistic-edges",
+            "stamp": {
+              "apertureVersion": "165a6fd0ad16",
+              "reef_sha": null,
+              "axes_sha": "172d0bd01e5abcbc",
+              "engine": "rust"
+            },
+            "ms": 117
+          }
+        },
+        {
+          "f": 0.4,
+          "words": 67,
+          "below_floor": false,
+          "ncd": {
+            "verdict": "OFF_DOMAIN",
+            "dI": 0.7356,
+            "dN": 0.6466,
+            "drift": 53.2
+          },
+          "walk": {
+            "state": "IN_LANE",
+            "offPct": 19,
+            "tooMany": false,
+            "tier": "INSURABLE",
+            "region": null,
+            "reason": null,
+            "walkMode": "ballistic-edges",
+            "stamp": {
+              "apertureVersion": "165a6fd0ad16",
+              "reef_sha": null,
+              "axes_sha": "172d0bd01e5abcbc",
+              "engine": "rust"
+            },
+            "ms": 118
+          }
+        },
+        {
+          "f": 0.5,
+          "words": 67,
+          "below_floor": false,
+          "ncd": {
+            "verdict": "OFF_DOMAIN",
+            "dI": 0.7628,
+            "dN": 0.6906,
+            "drift": 52.5
+          },
+          "walk": {
+            "state": "UNMEASURED",
+            "offPct": null,
+            "tooMany": null,
+            "tier": "UNMEASURED",
+            "region": null,
+            "reason": "LIT-MASS FLOOR — intent 977 / reality 0 significant cells (floor 24); too thin to grade. UNMEASURED, never a pass.",
+            "walkMode": "ballistic-edges",
+            "stamp": {
+              "apertureVersion": "165a6fd0ad16",
+              "reef_sha": null,
+              "axes_sha": "172d0bd01e5abcbc",
+              "engine": "rust"
+            },
+            "ms": 122
+          }
+        },
+        {
+          "f": 0.6,
+          "words": 67,
+          "below_floor": false,
+          "ncd": {
+            "verdict": "OFF_DOMAIN",
+            "dI": 0.7708,
+            "dN": 0.6868,
+            "drift": 52.9
+          },
+          "walk": {
+            "state": "UNMEASURED",
+            "offPct": null,
+            "tooMany": null,
+            "tier": "UNMEASURED",
+            "region": null,
+            "reason": "LIT-MASS FLOOR — intent 977 / reality 0 significant cells (floor 24); too thin to grade. UNMEASURED, never a pass.",
+            "walkMode": "ballistic-edges",
+            "stamp": {
+              "apertureVersion": "165a6fd0ad16",
+              "reef_sha": null,
+              "axes_sha": "172d0bd01e5abcbc",
+              "engine": "rust"
+            },
+            "ms": 88
+          }
+        },
+        {
+          "f": 0.7,
+          "words": 65,
+          "below_floor": false,
+          "ncd": {
+            "verdict": "OFF_DOMAIN",
+            "dI": 0.7804,
+            "dN": 0.6981,
+            "drift": 52.8
+          },
+          "walk": {
+            "state": "UNMEASURED",
+            "offPct": null,
+            "tooMany": null,
+            "tier": "UNMEASURED",
+            "region": null,
+            "reason": "LIT-MASS FLOOR — intent 977 / reality 0 significant cells (floor 24); too thin to grade. UNMEASURED, never a pass.",
+            "walkMode": "ballistic-edges",
+            "stamp": {
+              "apertureVersion": "165a6fd0ad16",
+              "reef_sha": null,
+              "axes_sha": "172d0bd01e5abcbc",
+              "engine": "rust"
+            },
+            "ms": 89
+          }
+        },
+        {
+          "f": 0.8,
+          "words": 58,
+          "below_floor": false,
+          "ncd": {
+            "verdict": "OFF_DOMAIN",
+            "dI": 0.8077,
+            "dN": 0.6943,
+            "drift": 53.8
+          },
+          "walk": {
+            "state": "OFF_DOMAIN",
+            "offPct": 42,
+            "tooMany": true,
+            "tier": "UNINSURABLE",
+            "region": {
+              "direction": "bottom-up",
+              "severity": "severe",
+              "macroDist": 2,
+              "blastRadius": "systemic",
+              "spread": 12,
+              "motif": "horizontal"
+            },
+            "reason": null,
+            "walkMode": "ballistic-edges",
+            "stamp": {
+              "apertureVersion": "165a6fd0ad16",
+              "reef_sha": null,
+              "axes_sha": "172d0bd01e5abcbc",
+              "engine": "rust"
+            },
+            "ms": 115
+          }
+        },
+        {
+          "f": 0.9,
+          "words": 52,
+          "below_floor": true,
+          "ncd": {
+            "verdict": "BELOW_FLOOR",
+            "reason": "below floor: reality 366 chars / 218 gz bytes < 320 / 220",
+            "padded": false,
+            "gate_raw": {
+              "verdict": "OFF_DOMAIN",
+              "dI": 0.8269,
+              "dN": 0.717,
+              "drift": 53.6
+            }
+          },
+          "walk": {
+            "state": "UNMEASURED",
+            "offPct": null,
+            "tooMany": null,
+            "tier": "UNMEASURED",
+            "region": null,
+            "reason": "below floor: reality 366 chars / 218 gz bytes < 320 / 220",
+            "walkMode": "refused",
+            "stamp": {
+              "apertureVersion": "165a6fd0ad16",
+              "reef_sha": null,
+              "axes_sha": "172d0bd01e5abcbc",
+              "engine": "rust"
+            },
+            "ms": 6
+          }
+        },
+        {
+          "f": 1,
+          "words": 45,
+          "below_floor": true,
+          "ncd": {
+            "verdict": "BELOW_FLOOR",
+            "reason": "below floor: reality 325 chars / 201 gz bytes < 320 / 220",
+            "padded": false,
+            "gate_raw": {
+              "verdict": "OFF_DOMAIN",
+              "dI": 0.8413,
+              "dN": 0.7321,
+              "drift": 53.5
+            }
+          },
+          "walk": {
+            "state": "UNMEASURED",
+            "offPct": null,
+            "tooMany": null,
+            "tier": "UNMEASURED",
+            "region": null,
+            "reason": "below floor: reality 325 chars / 201 gz bytes < 320 / 220",
+            "walkMode": "refused",
+            "stamp": {
+              "apertureVersion": "165a6fd0ad16",
+              "reef_sha": null,
+              "axes_sha": "172d0bd01e5abcbc",
+              "engine": "rust"
+            },
+            "ms": 5
+          }
+        }
+      ],
+      "floor": {
+        "admitted": false,
+        "floor": {
+          "chars": 320,
+          "gz_bytes": 220
+        },
+        "stamp": {
+          "apertureVersion": "165a6fd0ad16",
+          "reef_sha": null,
+          "axes_sha": "172d0bd01e5abcbc",
+          "engine": "rust"
+        },
+        "pair_refused": false,
+        "below": [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          true,
+          true
+        ],
+        "sizes": {
+          "intent": {
+            "chars": 1200,
+            "gz_bytes": 624
+          },
+          "negative": {
+            "chars": 429,
+            "gz_bytes": 265
+          },
+          "reality": [
+            {
+              "chars": 480,
+              "gz_bytes": 302
+            },
+            {
+              "chars": 477,
+              "gz_bytes": 295
+            },
+            {
+              "chars": 464,
+              "gz_bytes": 281
+            },
+            {
+              "chars": 443,
+              "gz_bytes": 267
+            },
+            {
+              "chars": 448,
+              "gz_bytes": 266
+            },
+            {
+              "chars": 445,
+              "gz_bytes": 255
+            },
+            {
+              "chars": 455,
+              "gz_bytes": 257
+            },
+            {
+              "chars": 451,
+              "gz_bytes": 257
+            },
+            {
+              "chars": 399,
+              "gz_bytes": 234
+            },
+            {
+              "chars": 366,
+              "gz_bytes": 218
+            },
+            {
+              "chars": 325,
+              "gz_bytes": 201
+            }
+          ]
+        },
+        "reason": "below floor: reality@9 366 chars / 218 gz bytes, reality@10 325 chars / 201 gz bytes < 320 / 220"
+      },
+      "instruments": {
+        "ncd": {
+          "sequence": [
+            "OFF_DOMAIN",
+            "OFF_DOMAIN",
+            "UNPLACEABLE",
+            "OFF_DOMAIN",
+            "OFF_DOMAIN",
+            "OFF_DOMAIN",
+            "OFF_DOMAIN",
+            "OFF_DOMAIN",
+            "OFF_DOMAIN",
+            "BELOW_FLOOR",
+            "BELOW_FLOOR"
+          ],
+          "start": "OFF_DOMAIN",
+          "end": "BELOW_FLOOR",
+          "flips": 3,
+          "first_flip_at": 0.2,
+          "flip_list": [
+            {
+              "at": 0.2,
+              "from": "OFF_DOMAIN",
+              "to": "UNPLACEABLE"
+            },
+            {
+              "at": 0.3,
+              "from": "UNPLACEABLE",
+              "to": "OFF_DOMAIN"
+            },
+            {
+              "at": 0.9,
+              "from": "OFF_DOMAIN",
+              "to": "BELOW_FLOOR"
+            }
+          ],
+          "tripped": true,
+          "first_trip_at": 0,
+          "monotone": false,
+          "stays_out": true,
+          "trip_at_last": false
+        },
+        "walk": {
+          "sequence": [
+            "IN_LANE",
+            "IN_LANE",
+            "IN_LANE",
+            "IN_LANE",
+            "IN_LANE",
+            "UNMEASURED",
+            "UNMEASURED",
+            "UNMEASURED",
+            "OFF_DOMAIN",
+            "UNMEASURED",
+            "UNMEASURED"
+          ],
+          "start": "IN_LANE",
+          "end": "UNMEASURED",
+          "flips": 3,
+          "first_flip_at": 0.5,
+          "flip_list": [
+            {
+              "at": 0.5,
+              "from": "IN_LANE",
+              "to": "UNMEASURED"
+            },
+            {
+              "at": 0.8,
+              "from": "UNMEASURED",
+              "to": "OFF_DOMAIN"
+            },
+            {
+              "at": 0.9,
+              "from": "OFF_DOMAIN",
+              "to": "UNMEASURED"
+            }
+          ],
+          "tripped": true,
+          "first_trip_at": 0.8,
+          "monotone": false,
+          "stays_out": true,
+          "trip_at_last": false
+        }
+      },
+      "ms": 1817
+    },
+    {
+      "from": "faithful",
+      "to": "preset:phantom-mass",
+      "from_label": "Compliant work · IN_LANE",
+      "to_label": "Phantom Mass (the pebble)",
+      "steps": [
+        {
+          "f": 0,
+          "words": 67,
+          "below_floor": false,
+          "ncd": {
+            "verdict": "OFF_DOMAIN",
+            "dI": 0.6058,
+            "dN": 0.6755,
+            "drift": 47.3
+          },
+          "walk": {
+            "state": "IN_LANE",
+            "offPct": 19,
+            "tooMany": false,
+            "tier": "INSURABLE",
+            "region": null,
+            "reason": null,
+            "walkMode": "ballistic-edges",
+            "stamp": {
+              "apertureVersion": "165a6fd0ad16",
+              "reef_sha": null,
+              "axes_sha": "172d0bd01e5abcbc",
+              "engine": "rust"
+            },
+            "ms": 83
+          }
+        },
+        {
+          "f": 0.1,
+          "words": 63,
+          "below_floor": false,
+          "ncd": {
+            "verdict": "OFF_DOMAIN",
+            "dI": 0.6522,
+            "dN": 0.6934,
+            "drift": 48.5
+          },
+          "walk": {
+            "state": "IN_LANE",
+            "offPct": 18,
+            "tooMany": false,
+            "tier": "INSURABLE",
+            "region": null,
+            "reason": null,
+            "walkMode": "ballistic-edges",
+            "stamp": {
+              "apertureVersion": "165a6fd0ad16",
+              "reef_sha": null,
+              "axes_sha": "172d0bd01e5abcbc",
+              "engine": "rust"
+            },
+            "ms": 93
+          }
+        },
+        {
+          "f": 0.2,
+          "words": 57,
+          "below_floor": false,
+          "ncd": {
+            "verdict": "UNPLACEABLE",
+            "dI": 0.7051,
+            "dN": 0.7019,
+            "drift": 50.1
+          },
+          "walk": {
+            "state": "IN_LANE",
+            "offPct": 19,
+            "tooMany": false,
+            "tier": "INSURABLE",
+            "region": null,
+            "reason": null,
+            "walkMode": "ballistic-edges",
+            "stamp": {
+              "apertureVersion": "165a6fd0ad16",
+              "reef_sha": null,
+              "axes_sha": "172d0bd01e5abcbc",
+              "engine": "rust"
+            },
+            "ms": 94
+          }
+        },
+        {
+          "f": 0.3,
+          "words": 50,
+          "below_floor": true,
+          "ncd": {
+            "verdict": "BELOW_FLOOR",
+            "reason": "below floor: reality 312 chars / 200 gz bytes < 320 / 220",
+            "padded": false,
+            "gate_raw": {
+              "verdict": "OFF_DOMAIN",
+              "dI": 0.7644,
+              "dN": 0.7019,
+              "drift": 52.1
+            }
+          },
+          "walk": {
+            "state": "UNMEASURED",
+            "offPct": null,
+            "tooMany": null,
+            "tier": "UNMEASURED",
+            "region": null,
+            "reason": "below floor: reality 312 chars / 200 gz bytes < 320 / 220",
+            "walkMode": "refused",
+            "stamp": {
+              "apertureVersion": "165a6fd0ad16",
+              "reef_sha": null,
+              "axes_sha": "172d0bd01e5abcbc",
+              "engine": "rust"
+            },
+            "ms": 6
+          }
+        },
+        {
+          "f": 0.4,
+          "words": 43,
+          "below_floor": true,
+          "ncd": {
+            "verdict": "BELOW_FLOOR",
+            "reason": "below floor: reality 267 chars / 179 gz bytes < 320 / 220",
+            "padded": false,
+            "gate_raw": {
+              "verdict": "OFF_DOMAIN",
+              "dI": 0.7949,
+              "dN": 0.7358,
+              "drift": 51.9
+            }
+          },
+          "walk": {
+            "state": "UNMEASURED",
+            "offPct": null,
+            "tooMany": null,
+            "tier": "UNMEASURED",
+            "region": null,
+            "reason": "below floor: reality 267 chars / 179 gz bytes < 320 / 220",
+            "walkMode": "refused",
+            "stamp": {
+              "apertureVersion": "165a6fd0ad16",
+              "reef_sha": null,
+              "axes_sha": "172d0bd01e5abcbc",
+              "engine": "rust"
+            },
+            "ms": 5
+          }
+        },
+        {
+          "f": 0.5,
+          "words": 36,
+          "below_floor": true,
+          "ncd": {
+            "verdict": "BELOW_FLOOR",
+            "reason": "below floor: reality 221 chars / 154 gz bytes < 320 / 220",
+            "padded": false,
+            "gate_raw": {
+              "verdict": "OFF_DOMAIN",
+              "dI": 0.8221,
+              "dN": 0.7774,
+              "drift": 51.4
+            }
+          },
+          "walk": {
+            "state": "UNMEASURED",
+            "offPct": null,
+            "tooMany": null,
+            "tier": "UNMEASURED",
+            "region": null,
+            "reason": "below floor: reality 221 chars / 154 gz bytes < 320 / 220",
+            "walkMode": "refused",
+            "stamp": {
+              "apertureVersion": "165a6fd0ad16",
+              "reef_sha": null,
+              "axes_sha": "172d0bd01e5abcbc",
+              "engine": "rust"
+            },
+            "ms": 6
+          }
+        },
+        {
+          "f": 0.6,
+          "words": 30,
+          "below_floor": true,
+          "ncd": {
+            "verdict": "BELOW_FLOOR",
+            "reason": "below floor: reality 184 chars / 136 gz bytes < 320 / 220 · padded (reality)",
+            "padded": true,
+            "gate_raw": {
+              "verdict": "UNPLACEABLE",
+              "dI": 0.8029,
+              "dN": 0.7925,
+              "drift": 50.3
+            }
+          },
+          "walk": {
+            "state": "UNMEASURED",
+            "offPct": null,
+            "tooMany": null,
+            "tier": "UNMEASURED",
+            "region": null,
+            "reason": "below floor: reality 184 chars / 136 gz bytes < 320 / 220",
+            "walkMode": "refused",
+            "stamp": {
+              "apertureVersion": "165a6fd0ad16",
+              "reef_sha": null,
+              "axes_sha": "172d0bd01e5abcbc",
+              "engine": "rust"
+            },
+            "ms": 6
+          }
+        },
+        {
+          "f": 0.7,
+          "words": 23,
+          "below_floor": true,
+          "ncd": {
+            "verdict": "BELOW_FLOOR",
+            "reason": "below floor: reality 145 chars / 118 gz bytes < 320 / 220 · padded (reality)",
+            "padded": true,
+            "gate_raw": {
+              "verdict": "OFF_DOMAIN",
+              "dI": 0.8269,
+              "dN": 0.7957,
+              "drift": 51
+            }
+          },
+          "walk": {
+            "state": "UNMEASURED",
+            "offPct": null,
+            "tooMany": null,
+            "tier": "UNMEASURED",
+            "region": null,
+            "reason": "below floor: reality 145 chars / 118 gz bytes < 320 / 220",
+            "walkMode": "refused",
+            "stamp": {
+              "apertureVersion": "165a6fd0ad16",
+              "reef_sha": null,
+              "axes_sha": "172d0bd01e5abcbc",
+              "engine": "rust"
+            },
+            "ms": 6
+          }
+        },
+        {
+          "f": 0.8,
+          "words": 16,
+          "below_floor": true,
+          "ncd": {
+            "verdict": "BELOW_FLOOR",
+            "reason": "below floor: reality 93 chars / 91 gz bytes < 320 / 220 · padded (reality)",
+            "padded": true,
+            "gate_raw": {
+              "verdict": "OFF_DOMAIN",
+              "dI": 0.851,
+              "dN": 0.7822,
+              "drift": 52.1
+            }
+          },
+          "walk": {
+            "state": "UNMEASURED",
+            "offPct": null,
+            "tooMany": null,
+            "tier": "UNMEASURED",
+            "region": null,
+            "reason": "below floor: reality 93 chars / 91 gz bytes < 320 / 220",
+            "walkMode": "refused",
+            "stamp": {
+              "apertureVersion": "165a6fd0ad16",
+              "reef_sha": null,
+              "axes_sha": "172d0bd01e5abcbc",
+              "engine": "rust"
+            },
+            "ms": 5
+          }
+        },
+        {
+          "f": 0.9,
+          "words": 10,
+          "below_floor": true,
+          "ncd": {
+            "verdict": "BELOW_FLOOR",
+            "reason": "below floor: reality 60 chars / 73 gz bytes < 320 / 220 · padded (reality)",
+            "padded": true,
+            "gate_raw": {
+              "verdict": "OFF_DOMAIN",
+              "dI": 0.8734,
+              "dN": 0.7739,
+              "drift": 53
+            }
+          },
+          "walk": {
+            "state": "UNMEASURED",
+            "offPct": null,
+            "tooMany": null,
+            "tier": "UNMEASURED",
+            "region": null,
+            "reason": "below floor: reality 60 chars / 73 gz bytes < 320 / 220",
+            "walkMode": "refused",
+            "stamp": {
+              "apertureVersion": "165a6fd0ad16",
+              "reef_sha": null,
+              "axes_sha": "172d0bd01e5abcbc",
+              "engine": "rust"
+            },
+            "ms": 6
+          }
+        },
+        {
+          "f": 1,
+          "words": 3,
+          "below_floor": true,
+          "ncd": {
+            "verdict": "BELOW_FLOOR",
+            "reason": "below floor: reality 19 chars / 39 gz bytes < 320 / 220 · padded (reality)",
+            "padded": true,
+            "gate_raw": {
+              "verdict": "OFF_DOMAIN",
+              "dI": 0.8878,
+              "dN": 0.7715,
+              "drift": 53.5
+            }
+          },
+          "walk": {
+            "state": "UNMEASURED",
+            "offPct": null,
+            "tooMany": null,
+            "tier": "UNMEASURED",
+            "region": null,
+            "reason": "below floor: reality 19 chars / 39 gz bytes < 320 / 220",
+            "walkMode": "refused",
+            "stamp": {
+              "apertureVersion": "165a6fd0ad16",
+              "reef_sha": null,
+              "axes_sha": "172d0bd01e5abcbc",
+              "engine": "rust"
+            },
+            "ms": 6
+          }
+        }
+      ],
+      "floor": {
+        "admitted": false,
+        "floor": {
+          "chars": 320,
+          "gz_bytes": 220
+        },
+        "stamp": {
+          "apertureVersion": "165a6fd0ad16",
+          "reef_sha": null,
+          "axes_sha": "172d0bd01e5abcbc",
+          "engine": "rust"
+        },
+        "pair_refused": false,
+        "below": [
+          false,
+          false,
+          false,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "sizes": {
+          "intent": {
+            "chars": 1200,
+            "gz_bytes": 624
+          },
+          "negative": {
+            "chars": 429,
+            "gz_bytes": 265
+          },
+          "reality": [
+            {
+              "chars": 480,
+              "gz_bytes": 302
+            },
+            {
+              "chars": 437,
+              "gz_bytes": 274
+            },
+            {
+              "chars": 379,
+              "gz_bytes": 238
+            },
+            {
+              "chars": 312,
+              "gz_bytes": 200
+            },
+            {
+              "chars": 267,
+              "gz_bytes": 179
+            },
+            {
+              "chars": 221,
+              "gz_bytes": 154
+            },
+            {
+              "chars": 184,
+              "gz_bytes": 136
+            },
+            {
+              "chars": 145,
+              "gz_bytes": 118
+            },
+            {
+              "chars": 93,
+              "gz_bytes": 91
+            },
+            {
+              "chars": 60,
+              "gz_bytes": 73
+            },
+            {
+              "chars": 19,
+              "gz_bytes": 39
+            }
+          ]
+        },
+        "reason": "below floor: reality@3 312 chars / 200 gz bytes, reality@4 267 chars / 179 gz bytes, reality@5 221 chars / 154 gz bytes, reality@6 184 chars / 136 gz bytes, reality@7 145 chars / 118 gz bytes, reality@8 93 chars / 91 gz bytes, reality@9 60 chars / 73 gz bytes, reality@10 19 chars / 39 gz bytes < 320 / 220"
+      },
+      "instruments": {
+        "ncd": {
+          "sequence": [
+            "OFF_DOMAIN",
+            "OFF_DOMAIN",
+            "UNPLACEABLE",
+            "BELOW_FLOOR",
+            "BELOW_FLOOR",
+            "BELOW_FLOOR",
+            "BELOW_FLOOR",
+            "BELOW_FLOOR",
+            "BELOW_FLOOR",
+            "BELOW_FLOOR",
+            "BELOW_FLOOR"
+          ],
+          "start": "OFF_DOMAIN",
+          "end": "BELOW_FLOOR",
+          "flips": 2,
+          "first_flip_at": 0.2,
+          "flip_list": [
+            {
+              "at": 0.2,
+              "from": "OFF_DOMAIN",
+              "to": "UNPLACEABLE"
+            },
+            {
+              "at": 0.3,
+              "from": "UNPLACEABLE",
+              "to": "BELOW_FLOOR"
+            }
+          ],
+          "tripped": true,
+          "first_trip_at": 0,
+          "monotone": false,
+          "stays_out": true,
+          "trip_at_last": false
+        },
+        "walk": {
+          "sequence": [
+            "IN_LANE",
+            "IN_LANE",
+            "IN_LANE",
+            "UNMEASURED",
+            "UNMEASURED",
+            "UNMEASURED",
+            "UNMEASURED",
+            "UNMEASURED",
+            "UNMEASURED",
+            "UNMEASURED",
+            "UNMEASURED"
+          ],
+          "start": "IN_LANE",
+          "end": "UNMEASURED",
+          "flips": 1,
+          "first_flip_at": 0.3,
+          "flip_list": [
+            {
+              "at": 0.3,
+              "from": "IN_LANE",
+              "to": "UNMEASURED"
+            }
+          ],
+          "tripped": false,
+          "first_trip_at": null,
+          "monotone": true,
+          "stays_out": false,
+          "trip_at_last": false
+        }
+      },
+      "ms": 1181
+    }
+  ],
+  "reruns": [
+    {
+      "pairs": [
+        {
+          "from": "faithful",
+          "to": "sledgehammer",
+          "instruments": {
+            "ncd": {
+              "sequence": [
+                "OFF_DOMAIN",
+                "UNPLACEABLE",
+                "OFF_DOMAIN",
+                "OFF_DOMAIN",
+                "OFF_DOMAIN",
+                "OFF_DOMAIN",
+                "OFF_DOMAIN",
+                "OFF_DOMAIN",
+                "OFF_DOMAIN",
+                "OFF_DOMAIN",
+                "OFF_DOMAIN"
+              ],
+              "start": "OFF_DOMAIN",
+              "end": "OFF_DOMAIN",
+              "flips": 2,
+              "first_flip_at": 0.1,
+              "flip_list": [
+                {
+                  "at": 0.1,
+                  "from": "OFF_DOMAIN",
+                  "to": "UNPLACEABLE"
+                },
+                {
+                  "at": 0.2,
+                  "from": "UNPLACEABLE",
+                  "to": "OFF_DOMAIN"
+                }
+              ],
+              "tripped": true,
+              "first_trip_at": 0,
+              "monotone": false,
+              "stays_out": true,
+              "trip_at_last": false
+            },
+            "walk": {
+              "sequence": [
+                "IN_LANE",
+                "IN_LANE",
+                "IN_LANE",
+                "IN_LANE",
+                "IN_LANE",
+                "IN_LANE",
+                "OFF_DOMAIN",
+                "OFF_DOMAIN",
+                "OFF_DOMAIN",
+                "OFF_DOMAIN",
+                "OFF_DOMAIN"
+              ],
+              "start": "IN_LANE",
+              "end": "OFF_DOMAIN",
+              "flips": 1,
+              "first_flip_at": 0.6,
+              "flip_list": [
+                {
+                  "at": 0.6,
+                  "from": "IN_LANE",
+                  "to": "OFF_DOMAIN"
+                }
+              ],
+              "tripped": true,
+              "first_trip_at": 0.6,
+              "monotone": true,
+              "stays_out": true,
+              "trip_at_last": false
+            }
+          },
+          "ms": 1717
+        },
+        {
+          "from": "faithful",
+          "to": "hallucination",
+          "instruments": {
+            "ncd": {
+              "sequence": [
+                "OFF_DOMAIN",
+                "OFF_DOMAIN",
+                "OFF_DOMAIN",
+                "OFF_DOMAIN",
+                "OFF_DOMAIN",
+                "OFF_DOMAIN",
+                "OFF_DOMAIN",
+                "OFF_DOMAIN",
+                "OFF_DOMAIN",
+                "OFF_DOMAIN",
+                "OFF_DOMAIN"
+              ],
+              "start": "OFF_DOMAIN",
+              "end": "OFF_DOMAIN",
+              "flips": 0,
+              "first_flip_at": null,
+              "flip_list": [],
+              "tripped": true,
+              "first_trip_at": 0,
+              "monotone": false,
+              "stays_out": true,
+              "trip_at_last": false
+            },
+            "walk": {
+              "sequence": [
+                "IN_LANE",
+                "IN_LANE",
+                "IN_LANE",
+                "IN_LANE",
+                "UNMEASURED",
+                "UNMEASURED",
+                "OFF_DOMAIN",
+                "IN_LANE",
+                "OFF_DOMAIN",
+                "IN_LANE",
+                "IN_LANE"
+              ],
+              "start": "IN_LANE",
+              "end": "IN_LANE",
+              "flips": 5,
+              "first_flip_at": 0.4,
+              "flip_list": [
+                {
+                  "at": 0.4,
+                  "from": "IN_LANE",
+                  "to": "UNMEASURED"
+                },
+                {
+                  "at": 0.6,
+                  "from": "UNMEASURED",
+                  "to": "OFF_DOMAIN"
+                },
+                {
+                  "at": 0.7,
+                  "from": "OFF_DOMAIN",
+                  "to": "IN_LANE"
+                },
+                {
+                  "at": 0.8,
+                  "from": "IN_LANE",
+                  "to": "OFF_DOMAIN"
+                },
+                {
+                  "at": 0.9,
+                  "from": "OFF_DOMAIN",
+                  "to": "IN_LANE"
+                }
+              ],
+              "tripped": true,
+              "first_trip_at": 0.6,
+              "monotone": false,
+              "stays_out": false,
+              "trip_at_last": false
+            }
+          },
+          "ms": 1673
+        },
+        {
+          "from": "faithful",
+          "to": "analysis-execution",
+          "instruments": {
+            "ncd": {
+              "sequence": [
+                "OFF_DOMAIN",
+                "OFF_DOMAIN",
+                "UNPLACEABLE",
+                "OFF_DOMAIN",
+                "OFF_DOMAIN",
+                "OFF_DOMAIN",
+                "OFF_DOMAIN",
+                "OFF_DOMAIN",
+                "OFF_DOMAIN",
+                "OFF_DOMAIN",
+                "OFF_DOMAIN"
+              ],
+              "start": "OFF_DOMAIN",
+              "end": "OFF_DOMAIN",
+              "flips": 2,
+              "first_flip_at": 0.2,
+              "flip_list": [
+                {
+                  "at": 0.2,
+                  "from": "OFF_DOMAIN",
+                  "to": "UNPLACEABLE"
+                },
+                {
+                  "at": 0.3,
+                  "from": "UNPLACEABLE",
+                  "to": "OFF_DOMAIN"
+                }
+              ],
+              "tripped": true,
+              "first_trip_at": 0,
+              "monotone": false,
+              "stays_out": true,
+              "trip_at_last": false
+            },
+            "walk": {
+              "sequence": [
+                "IN_LANE",
+                "IN_LANE",
+                "IN_LANE",
+                "IN_LANE",
+                "IN_LANE",
+                "IN_LANE",
+                "OFF_DOMAIN",
+                "IN_LANE",
+                "IN_LANE",
+                "OFF_DOMAIN",
+                "OFF_DOMAIN"
+              ],
+              "start": "IN_LANE",
+              "end": "OFF_DOMAIN",
+              "flips": 3,
+              "first_flip_at": 0.6,
+              "flip_list": [
+                {
+                  "at": 0.6,
+                  "from": "IN_LANE",
+                  "to": "OFF_DOMAIN"
+                },
+                {
+                  "at": 0.7,
+                  "from": "OFF_DOMAIN",
+                  "to": "IN_LANE"
+                },
+                {
+                  "at": 0.9,
+                  "from": "IN_LANE",
+                  "to": "OFF_DOMAIN"
+                }
+              ],
+              "tripped": true,
+              "first_trip_at": 0.6,
+              "monotone": false,
+              "stays_out": false,
+              "trip_at_last": false
+            }
+          },
+          "ms": 1674
+        },
+        {
+          "from": "faithful",
+          "to": "abstain-tie",
+          "instruments": {
+            "ncd": {
+              "sequence": [
+                "OFF_DOMAIN",
+                "OFF_DOMAIN",
+                "UNPLACEABLE",
+                "OFF_DOMAIN",
+                "OFF_DOMAIN",
+                "OFF_DOMAIN",
+                "OFF_DOMAIN",
+                "OFF_DOMAIN",
+                "OFF_DOMAIN",
+                "OFF_DOMAIN",
+                "OFF_DOMAIN"
+              ],
+              "start": "OFF_DOMAIN",
+              "end": "OFF_DOMAIN",
+              "flips": 2,
+              "first_flip_at": 0.2,
+              "flip_list": [
+                {
+                  "at": 0.2,
+                  "from": "OFF_DOMAIN",
+                  "to": "UNPLACEABLE"
+                },
+                {
+                  "at": 0.3,
+                  "from": "UNPLACEABLE",
+                  "to": "OFF_DOMAIN"
+                }
+              ],
+              "tripped": true,
+              "first_trip_at": 0,
+              "monotone": false,
+              "stays_out": true,
+              "trip_at_last": false
+            },
+            "walk": {
+              "sequence": [
+                "IN_LANE",
+                "IN_LANE",
+                "IN_LANE",
+                "IN_LANE",
+                "IN_LANE",
+                "IN_LANE",
+                "OFF_DOMAIN",
+                "OFF_DOMAIN",
+                "OFF_DOMAIN",
+                "OFF_DOMAIN",
+                "OFF_DOMAIN"
+              ],
+              "start": "IN_LANE",
+              "end": "OFF_DOMAIN",
+              "flips": 1,
+              "first_flip_at": 0.6,
+              "flip_list": [
+                {
+                  "at": 0.6,
+                  "from": "IN_LANE",
+                  "to": "OFF_DOMAIN"
+                }
+              ],
+              "tripped": true,
+              "first_trip_at": 0.6,
+              "monotone": true,
+              "stays_out": true,
+              "trip_at_last": false
+            }
+          },
+          "ms": 1928
+        },
+        {
+          "from": "faithful",
+          "to": "partial-drift",
+          "instruments": {
+            "ncd": {
+              "sequence": [
+                "OFF_DOMAIN",
+                "OFF_DOMAIN",
+                "OFF_DOMAIN",
+                "OFF_DOMAIN",
+                "OFF_DOMAIN",
+                "OFF_DOMAIN",
+                "OFF_DOMAIN",
+                "OFF_DOMAIN",
+                "OFF_DOMAIN",
+                "OFF_DOMAIN",
+                "OFF_DOMAIN"
+              ],
+              "start": "OFF_DOMAIN",
+              "end": "OFF_DOMAIN",
+              "flips": 0,
+              "first_flip_at": null,
+              "flip_list": [],
+              "tripped": true,
+              "first_trip_at": 0,
+              "monotone": false,
+              "stays_out": true,
+              "trip_at_last": false
+            },
+            "walk": {
+              "sequence": [
+                "IN_LANE",
+                "IN_LANE",
+                "IN_LANE",
+                "IN_LANE",
+                "UNMEASURED",
+                "UNMEASURED",
+                "OFF_DOMAIN",
+                "OFF_DOMAIN",
+                "OFF_DOMAIN",
+                "OFF_DOMAIN",
+                "OFF_DOMAIN"
+              ],
+              "start": "IN_LANE",
+              "end": "OFF_DOMAIN",
+              "flips": 2,
+              "first_flip_at": 0.4,
+              "flip_list": [
+                {
+                  "at": 0.4,
+                  "from": "IN_LANE",
+                  "to": "UNMEASURED"
+                },
+                {
+                  "at": 0.6,
+                  "from": "UNMEASURED",
+                  "to": "OFF_DOMAIN"
+                }
+              ],
+              "tripped": true,
+              "first_trip_at": 0.6,
+              "monotone": false,
+              "stays_out": true,
+              "trip_at_last": false
+            }
+          },
+          "ms": 2632
+        },
+        {
+          "from": "faithful",
+          "to": "claims-drift",
+          "instruments": {
+            "ncd": {
+              "sequence": [
+                "OFF_DOMAIN",
+                "OFF_DOMAIN",
+                "OFF_DOMAIN",
+                "OFF_DOMAIN",
+                "OFF_DOMAIN",
+                "OFF_DOMAIN",
+                "OFF_DOMAIN",
+                "OFF_DOMAIN",
+                "OFF_DOMAIN",
+                "OFF_DOMAIN",
+                "OFF_DOMAIN"
+              ],
+              "start": "OFF_DOMAIN",
+              "end": "OFF_DOMAIN",
+              "flips": 0,
+              "first_flip_at": null,
+              "flip_list": [],
+              "tripped": true,
+              "first_trip_at": 0,
+              "monotone": false,
+              "stays_out": true,
+              "trip_at_last": false
+            },
+            "walk": {
+              "sequence": [
+                "IN_LANE",
+                "IN_LANE",
+                "IN_LANE",
+                "IN_LANE",
+                "UNMEASURED",
+                "UNMEASURED",
+                "OFF_DOMAIN",
+                "OFF_DOMAIN",
+                "OFF_DOMAIN",
+                "OFF_DOMAIN",
+                "UNMEASURED"
+              ],
+              "start": "IN_LANE",
+              "end": "UNMEASURED",
+              "flips": 3,
+              "first_flip_at": 0.4,
+              "flip_list": [
+                {
+                  "at": 0.4,
+                  "from": "IN_LANE",
+                  "to": "UNMEASURED"
+                },
+                {
+                  "at": 0.6,
+                  "from": "UNMEASURED",
+                  "to": "OFF_DOMAIN"
+                },
+                {
+                  "at": 1,
+                  "from": "OFF_DOMAIN",
+                  "to": "UNMEASURED"
+                }
+              ],
+              "tripped": true,
+              "first_trip_at": 0.6,
+              "monotone": false,
+              "stays_out": true,
+              "trip_at_last": false
+            }
+          },
+          "ms": 1848
+        },
+        {
+          "from": "faithful",
+          "to": "claims-catastrophe",
+          "instruments": {
+            "ncd": {
+              "sequence": [
+                "OFF_DOMAIN",
+                "OFF_DOMAIN",
+                "UNPLACEABLE",
+                "OFF_DOMAIN",
+                "OFF_DOMAIN",
+                "OFF_DOMAIN",
+                "OFF_DOMAIN",
+                "OFF_DOMAIN",
+                "OFF_DOMAIN",
+                "OFF_DOMAIN",
+                "OFF_DOMAIN"
+              ],
+              "start": "OFF_DOMAIN",
+              "end": "OFF_DOMAIN",
+              "flips": 2,
+              "first_flip_at": 0.2,
+              "flip_list": [
+                {
+                  "at": 0.2,
+                  "from": "OFF_DOMAIN",
+                  "to": "UNPLACEABLE"
+                },
+                {
+                  "at": 0.3,
+                  "from": "UNPLACEABLE",
+                  "to": "OFF_DOMAIN"
+                }
+              ],
+              "tripped": true,
+              "first_trip_at": 0,
+              "monotone": false,
+              "stays_out": true,
+              "trip_at_last": false
+            },
+            "walk": {
+              "sequence": [
+                "IN_LANE",
+                "IN_LANE",
+                "IN_LANE",
+                "IN_LANE",
+                "IN_LANE",
+                "UNMEASURED",
+                "IN_LANE",
+                "IN_LANE",
+                "OFF_DOMAIN",
+                "OFF_DOMAIN",
+                "IN_LANE"
+              ],
+              "start": "IN_LANE",
+              "end": "IN_LANE",
+              "flips": 4,
+              "first_flip_at": 0.5,
+              "flip_list": [
+                {
+                  "at": 0.5,
+                  "from": "IN_LANE",
+                  "to": "UNMEASURED"
+                },
+                {
+                  "at": 0.6,
+                  "from": "UNMEASURED",
+                  "to": "IN_LANE"
+                },
+                {
+                  "at": 0.8,
+                  "from": "IN_LANE",
+                  "to": "OFF_DOMAIN"
+                },
+                {
+                  "at": 1,
+                  "from": "OFF_DOMAIN",
+                  "to": "IN_LANE"
+                }
+              ],
+              "tripped": true,
+              "first_trip_at": 0.8,
+              "monotone": false,
+              "stays_out": false,
+              "trip_at_last": false
+            }
+          },
+          "ms": 2064
+        },
+        {
+          "from": "claims-faithful",
+          "to": "claims-drift",
+          "instruments": {
+            "ncd": {
+              "sequence": [
+                "IN_LANE",
+                "IN_LANE",
+                "IN_LANE",
+                "IN_LANE",
+                "IN_LANE",
+                "IN_LANE",
+                "IN_LANE",
+                "IN_LANE",
+                "IN_LANE",
+                "OFF_DOMAIN",
+                "OFF_DOMAIN"
+              ],
+              "start": "IN_LANE",
+              "end": "OFF_DOMAIN",
+              "flips": 1,
+              "first_flip_at": 0.9,
+              "flip_list": [
+                {
+                  "at": 0.9,
+                  "from": "IN_LANE",
+                  "to": "OFF_DOMAIN"
+                }
+              ],
+              "tripped": true,
+              "first_trip_at": 0.9,
+              "monotone": true,
+              "stays_out": true,
+              "trip_at_last": false
+            },
+            "walk": {
+              "sequence": [
+                "UNMEASURED",
+                "UNMEASURED",
+                "UNMEASURED",
+                "UNMEASURED",
+                "UNMEASURED",
+                "UNMEASURED",
+                "UNMEASURED",
+                "UNMEASURED",
+                "UNMEASURED",
+                "UNMEASURED",
+                "UNMEASURED"
+              ],
+              "start": "UNMEASURED",
+              "end": "UNMEASURED",
+              "flips": 0,
+              "first_flip_at": null,
+              "flip_list": [],
+              "tripped": false,
+              "first_trip_at": null,
+              "monotone": false,
+              "stays_out": false,
+              "trip_at_last": false
+            }
+          },
+          "ms": 2005
+        },
+        {
+          "from": "claims-faithful",
+          "to": "claims-catastrophe",
+          "instruments": {
+            "ncd": {
+              "sequence": [
+                "IN_LANE",
+                "IN_LANE",
+                "IN_LANE",
+                "IN_LANE",
+                "IN_LANE",
+                "OFF_DOMAIN",
+                "OFF_DOMAIN",
+                "OFF_DOMAIN",
+                "OFF_DOMAIN",
+                "OFF_DOMAIN",
+                "OFF_DOMAIN"
+              ],
+              "start": "IN_LANE",
+              "end": "OFF_DOMAIN",
+              "flips": 1,
+              "first_flip_at": 0.5,
+              "flip_list": [
+                {
+                  "at": 0.5,
+                  "from": "IN_LANE",
+                  "to": "OFF_DOMAIN"
+                }
+              ],
+              "tripped": true,
+              "first_trip_at": 0.5,
+              "monotone": true,
+              "stays_out": true,
+              "trip_at_last": false
+            },
+            "walk": {
+              "sequence": [
+                "UNMEASURED",
+                "UNMEASURED",
+                "UNMEASURED",
+                "UNMEASURED",
+                "UNMEASURED",
+                "UNMEASURED",
+                "UNMEASURED",
+                "UNMEASURED",
+                "UNMEASURED",
+                "UNMEASURED",
+                "UNMEASURED"
+              ],
+              "start": "UNMEASURED",
+              "end": "UNMEASURED",
+              "flips": 0,
+              "first_flip_at": null,
+              "flip_list": [],
+              "tripped": false,
+              "first_trip_at": null,
+              "monotone": false,
+              "stays_out": false,
+              "trip_at_last": false
+            }
+          },
+          "ms": 32141
+        },
+        {
+          "from": "faithful",
+          "to": "preset:abstain-tie-dense",
+          "instruments": {
+            "ncd": {
+              "sequence": [
+                "OFF_DOMAIN",
+                "OFF_DOMAIN",
+                "UNPLACEABLE",
+                "OFF_DOMAIN",
+                "OFF_DOMAIN",
+                "OFF_DOMAIN",
+                "OFF_DOMAIN",
+                "OFF_DOMAIN",
+                "OFF_DOMAIN",
+                "BELOW_FLOOR",
+                "BELOW_FLOOR"
+              ],
+              "start": "OFF_DOMAIN",
+              "end": "BELOW_FLOOR",
+              "flips": 3,
+              "first_flip_at": 0.2,
+              "flip_list": [
+                {
+                  "at": 0.2,
+                  "from": "OFF_DOMAIN",
+                  "to": "UNPLACEABLE"
+                },
+                {
+                  "at": 0.3,
+                  "from": "UNPLACEABLE",
+                  "to": "OFF_DOMAIN"
+                },
+                {
+                  "at": 0.9,
+                  "from": "OFF_DOMAIN",
+                  "to": "BELOW_FLOOR"
+                }
+              ],
+              "tripped": true,
+              "first_trip_at": 0,
+              "monotone": false,
+              "stays_out": true,
+              "trip_at_last": false
+            },
+            "walk": {
+              "sequence": [
+                "IN_LANE",
+                "IN_LANE",
+                "IN_LANE",
+                "IN_LANE",
+                "IN_LANE",
+                "UNMEASURED",
+                "UNMEASURED",
+                "UNMEASURED",
+                "OFF_DOMAIN",
+                "UNMEASURED",
+                "UNMEASURED"
+              ],
+              "start": "IN_LANE",
+              "end": "UNMEASURED",
+              "flips": 3,
+              "first_flip_at": 0.5,
+              "flip_list": [
+                {
+                  "at": 0.5,
+                  "from": "IN_LANE",
+                  "to": "UNMEASURED"
+                },
+                {
+                  "at": 0.8,
+                  "from": "UNMEASURED",
+                  "to": "OFF_DOMAIN"
+                },
+                {
+                  "at": 0.9,
+                  "from": "OFF_DOMAIN",
+                  "to": "UNMEASURED"
+                }
+              ],
+              "tripped": true,
+              "first_trip_at": 0.8,
+              "monotone": false,
+              "stays_out": true,
+              "trip_at_last": false
+            }
+          },
+          "ms": 1755
+        },
+        {
+          "from": "faithful",
+          "to": "preset:phantom-mass",
+          "instruments": {
+            "ncd": {
+              "sequence": [
+                "OFF_DOMAIN",
+                "OFF_DOMAIN",
+                "UNPLACEABLE",
+                "BELOW_FLOOR",
+                "BELOW_FLOOR",
+                "BELOW_FLOOR",
+                "BELOW_FLOOR",
+                "BELOW_FLOOR",
+                "BELOW_FLOOR",
+                "BELOW_FLOOR",
+                "BELOW_FLOOR"
+              ],
+              "start": "OFF_DOMAIN",
+              "end": "BELOW_FLOOR",
+              "flips": 2,
+              "first_flip_at": 0.2,
+              "flip_list": [
+                {
+                  "at": 0.2,
+                  "from": "OFF_DOMAIN",
+                  "to": "UNPLACEABLE"
+                },
+                {
+                  "at": 0.3,
+                  "from": "UNPLACEABLE",
+                  "to": "BELOW_FLOOR"
+                }
+              ],
+              "tripped": true,
+              "first_trip_at": 0,
+              "monotone": false,
+              "stays_out": true,
+              "trip_at_last": false
+            },
+            "walk": {
+              "sequence": [
+                "IN_LANE",
+                "IN_LANE",
+                "IN_LANE",
+                "UNMEASURED",
+                "UNMEASURED",
+                "UNMEASURED",
+                "UNMEASURED",
+                "UNMEASURED",
+                "UNMEASURED",
+                "UNMEASURED",
+                "UNMEASURED"
+              ],
+              "start": "IN_LANE",
+              "end": "UNMEASURED",
+              "flips": 1,
+              "first_flip_at": 0.3,
+              "flip_list": [
+                {
+                  "at": 0.3,
+                  "from": "IN_LANE",
+                  "to": "UNMEASURED"
+                }
+              ],
+              "tripped": false,
+              "first_trip_at": null,
+              "monotone": true,
+              "stays_out": false,
+              "trip_at_last": false
+            }
+          },
+          "ms": 1246
+        }
+      ],
+      "sequences": {
+        "ncd": {
+          "sha256": "3457e7af051fa90e68be1bd3ed165e60de04e58a0d61f1135848a2c81e8a6c9b",
+          "length": 121
+        },
+        "walk": {
+          "sha256": "7f0be24372910f987447f8a54307d11968cc1abdcde836bf8e88d09f5dd9c2e6",
+          "length": 121
+        }
+      }
+    }
+  ],
+  "pairs_ms": [
+    56629,
+    50683
+  ],
+  "sequences": {
+    "ncd": {
+      "runs": [
+        "3457e7af051fa90e68be1bd3ed165e60de04e58a0d61f1135848a2c81e8a6c9b",
+        "3457e7af051fa90e68be1bd3ed165e60de04e58a0d61f1135848a2c81e8a6c9b"
+      ],
+      "equal": true,
+      "length": 121
+    },
+    "walk": {
+      "runs": [
+        "7f0be24372910f987447f8a54307d11968cc1abdcde836bf8e88d09f5dd9c2e6",
+        "7f0be24372910f987447f8a54307d11968cc1abdcde836bf8e88d09f5dd9c2e6"
+      ],
+      "equal": true,
+      "length": 121
+    }
+  },
+  "after_shipping": {
+    "ncd": "ncd: 2 of 11 pairs trip once at a fixed fraction, reruns identical (n = 11; 11 of 11 reach OFF_DOMAIN, 2 of 11 of those flip exactly once, 11 of 11 trip at the same fraction on every run)",
+    "walk": "walk: 2 of 11 pairs trip once at a fixed fraction, reruns identical (n = 11; 8 of 11 reach OFF_DOMAIN, 2 of 11 of those flip exactly once, 8 of 11 trip at the same fraction on every run)",
+    "counts": {
+      "ncd": {
+        "instrument": "ncd",
+        "n": 11,
+        "trip": 11,
+        "once": 2,
+        "fixed": 11,
+        "k": 2,
+        "identical": true,
+        "stays_out": 11,
+        "trip_only_at_last": 0,
+        "second": "11 of 11 never return to IN_LANE after the first trip (a later UNPLACEABLE or BELOW_FLOOR is the gate declining to place: an abstention, counted as staying out, never as a return)",
+        "line": "ncd: 2 of 11 pairs trip once at a fixed fraction, reruns identical (n = 11; 11 of 11 reach OFF_DOMAIN, 2 of 11 of those flip exactly once, 11 of 11 trip at the same fraction on every run)"
+      },
+      "walk": {
+        "instrument": "walk",
+        "n": 11,
+        "trip": 8,
+        "once": 2,
+        "fixed": 8,
+        "k": 2,
+        "identical": true,
+        "stays_out": 5,
+        "trip_only_at_last": 0,
+        "second": "5 of 11 never return to IN_LANE after the first trip (a later UNMEASURED is the walk refusing to grade: an abstention, counted as staying out, never as a return)",
+        "line": "walk: 2 of 11 pairs trip once at a fixed fraction, reruns identical (n = 11; 8 of 11 reach OFF_DOMAIN, 2 of 11 of those flip exactly once, 8 of 11 trip at the same fraction on every run)"
+      }
+    }
+  },
+  "engine": {
+    "engine": "rust",
+    "enabled": true,
+    "requests": {
+      "entry": 752,
+      "mass": 242,
+      "sense": 226,
+      "walks": 226,
+      "admit": 222,
+      "verify": 91,
+      "relay": 91
+    },
+    "fallbacks": {},
+    "declined": {}
+  },
+  "elapsed_ms": 107328,
+  "walk_steps": 242,
+  "endpoints": [
+    "faithful → sledgehammer at f=1.00 (the pure negative): walk OFF_DOMAIN 32 % (tier PRICEABLE: dir top-down · sev severe · blast systemic), gate OFF_DOMAIN — both instruments read OFF_DOMAIN at the pure negative",
+    "faithful → hallucination at f=1.00 (the pure negative): walk IN_LANE 25 % (tier INSURABLE), gate OFF_DOMAIN — the two instruments disagree at the pure negative",
+    "faithful → analysis-execution at f=1.00 (the pure negative): walk OFF_DOMAIN 35 % (tier UNINSURABLE: dir bottom-up · sev severe · blast systemic), gate OFF_DOMAIN — both instruments read OFF_DOMAIN at the pure negative",
+    "faithful → abstain-tie at f=1.00 (the pure negative): walk OFF_DOMAIN 36 % (tier PRICEABLE: dir top-down · sev severe · blast systemic), gate OFF_DOMAIN — both instruments read OFF_DOMAIN at the pure negative",
+    "faithful → partial-drift at f=1.00 (the pure negative): walk OFF_DOMAIN 50 % (tier UNINSURABLE: dir bottom-up · sev severe · blast systemic), gate OFF_DOMAIN — both instruments read OFF_DOMAIN at the pure negative",
+    "faithful → claims-drift at f=1.00 (the pure negative): walk UNMEASURED (too thin to grade, never a pass), gate OFF_DOMAIN — one instrument abstains where the other answers at the pure negative",
+    "faithful → claims-catastrophe at f=1.00 (the pure negative): walk IN_LANE 22 % (tier INSURABLE), gate OFF_DOMAIN — the two instruments disagree at the pure negative",
+    "claims-faithful → claims-drift at f=1.00 (the pure negative): walk UNMEASURED (refused by the admission: SPEC_INSUFFICIENT · positive IN_LANE · negative IN_LANE · stranger 1 of 5 IN_LANE (1 UNMEASURED), never a pass), gate OFF_DOMAIN — one instrument abstains where the other answers at the pure negative",
+    "claims-faithful → claims-catastrophe at f=1.00 (the pure negative): walk UNMEASURED (refused by the admission: SPEC_INSUFFICIENT · positive IN_LANE · negative IN_LANE · stranger 1 of 5 IN_LANE (1 UNMEASURED), never a pass), gate OFF_DOMAIN — one instrument abstains where the other answers at the pure negative",
+    "faithful → preset:abstain-tie-dense at f=1.00 (the pure negative): walk UNMEASURED (under the walk entry's floor, never a pass), gate BELOW_FLOOR — both instruments refuse to read it at the pure negative",
+    "faithful → preset:phantom-mass at f=1.00 (the pure negative): walk UNMEASURED (under the walk entry's floor, never a pass), gate BELOW_FLOOR — both instruments refuse to read it at the pure negative"
+  ],
+  "floor_counts": {
+    "below_floor_steps": 10,
+    "pairs_refused": 0,
+    "pairs_partly_below": 2
+  },
+  "platform": {
+    "os": "darwin",
+    "arch": "arm64",
+    "prebuilt": "macOS arm64 only (postinstall.js)",
+    "cross_platform_sha": "UNMEASURED"
+  },
+  "steps_per_s": 2.25,
+  "reef_identity": {
+    "ok": true,
+    "measured": "against the extracted packed tarball (packages/thetacog-mcp/scripts/reef-identity.mjs verifyShippedReef, pkg = the extract)",
+    "reef": {
+      "file": "data/pmu/lens-reef.json",
+      "repo_sha": "25f574085afae6a1",
+      "shipped_sha": "90a7b50f19b95a1b",
+      "identical": false,
+      "dropped": 2,
+      "redacted": 1,
+      "problem": null
+    },
+    "axes": {
+      "file": "data/pmu/snippet-library-144.json",
+      "repo_sha": "172d0bd01e5abcbc",
+      "shipped_sha": "172d0bd01e5abcbc",
+      "identical": true,
+      "dropped": 0,
+      "redacted": 0,
+      "problem": null
+    }
+  },
+  "second_invocation": {
+    "cwd": "/private/tmp/claude-501/-Users-thetacoach-GitHub-thetadrivencoach/6d5eb808-af38-41aa-9252-909a61e0a000/scratchpad/rel/w2",
+    "ts": "2026-10-30T03:02:02.955Z",
+    "elapsed_ms": 161082,
+    "pairs_ms": [
+      50864,
+      110209
+    ],
+    "sequences": {
+      "ncd": [
+        "3457e7af051fa90e68be1bd3ed165e60de04e58a0d61f1135848a2c81e8a6c9b",
+        "3457e7af051fa90e68be1bd3ed165e60de04e58a0d61f1135848a2c81e8a6c9b"
+      ],
+      "walk": [
+        "7f0be24372910f987447f8a54307d11968cc1abdcde836bf8e88d09f5dd9c2e6",
+        "7f0be24372910f987447f8a54307d11968cc1abdcde836bf8e88d09f5dd9c2e6"
+      ]
+    }
+  },
+  "tarball": {
+    "filename": "thetacog-mcp-2.58.0.tgz",
+    "size": 14447388,
+    "unpacked": "47.4 MB",
+    "files": 844,
+    "head": "8d245d149d (the 2.58.1 release tree before the version bump)",
+    "packed_with": "npm pack (prepack ran: bundle-pmu, reef-identity, cold-start-check — all green)"
+  },
+  "provenance": {
+    "kind": "tarball",
+    "tarball": "thetacog-mcp-2.58.0.tgz",
+    "data_root": "/private/tmp/claude-501/-Users-thetacoach-GitHub-thetadrivencoach/6d5eb808-af38-41aa-9252-909a61e0a000/scratchpad/rel/x/package",
+    "surgical_intent_name": "c53-se-clips (SCENARIOS faithful row, C1432)",
+    "surgical_intent_sha256": "8e02f463a5ee785eff2096969b95efda6dd54f2c03047c0ac1ada3846f6cd376",
+    "surgical_intent_measured_by": "the sweep walks SCENARIOS[faithful].intent as shipped in this tarball — the admitted surgical intent the bare demo also runs (C1436)",
+    "added_by": "C1440 (2026-10-29): re-recorded from the packed 2.58.1 release tree; replaces the 2.57.0 record (C1393) the README had been quoting",
+    "rewalk": "the re-walk from the repo under the shipped intent is docs/pmu/reports/2026-10-29-tripwire-sweep-shipped.md, section C1432; the next packed run re-records this file"
+  }
+}
