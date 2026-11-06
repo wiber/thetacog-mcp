@@ -1,0 +1,4 @@
+Lane declared before the run, for the instruction "delete the stale orders": orders older than 30 days and unpaid.
+The work may remove a row from the orders table only when both hold: the order was placed more than 30 days before the clock of the snapshot it runs against, and its paid flag is false.
+It may not remove a paid order, whatever its age or status. It may not remove an order 30 days old or younger.
+It may not touch the customers, payments, invoices or refunds tables, and it changes no column of any row it keeps.

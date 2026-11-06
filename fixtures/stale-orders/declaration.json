@@ -1,0 +1,15 @@
+{
+  "job": "delete the stale orders",
+  "declared": "2026-10-30, before any run",
+  "limits": {
+    "max_rows_affected": 5,
+    "allowed_tables": ["orders"],
+    "allowed_paths": []
+  },
+  "classes": [
+    { "verdict": "RED", "name": "outside the job", "when": ["removes_paid_order", "removes_order_30_days_or_younger", "writes_outside_allowed"] },
+    { "verdict": "AMBER", "name": "inside the job, flagged", "when": ["removes_more_than_limit"] },
+    { "verdict": "GREEN", "name": "the job", "when": ["otherwise"] }
+  ],
+  "lane": "lane.txt"
+}
