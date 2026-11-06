@@ -1,0 +1,8 @@
+/Users/thetacoach/GitHub/thetadrivencoach/packages/thetacog-mcp/intentguard/target/c766-standalone/release/deps/cpufeatures-7afe5f965c0cfe30.d: /Users/thetacoach/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/cpufeatures-0.2.17/src/lib.rs /Users/thetacoach/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/cpufeatures-0.2.17/src/aarch64.rs
+
+/Users/thetacoach/GitHub/thetadrivencoach/packages/thetacog-mcp/intentguard/target/c766-standalone/release/deps/libcpufeatures-7afe5f965c0cfe30.rlib: /Users/thetacoach/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/cpufeatures-0.2.17/src/lib.rs /Users/thetacoach/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/cpufeatures-0.2.17/src/aarch64.rs
+
+/Users/thetacoach/GitHub/thetadrivencoach/packages/thetacog-mcp/intentguard/target/c766-standalone/release/deps/libcpufeatures-7afe5f965c0cfe30.rmeta: /Users/thetacoach/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/cpufeatures-0.2.17/src/lib.rs /Users/thetacoach/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/cpufeatures-0.2.17/src/aarch64.rs
+
+/Users/thetacoach/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/cpufeatures-0.2.17/src/lib.rs:
+/Users/thetacoach/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/cpufeatures-0.2.17/src/aarch64.rs:
