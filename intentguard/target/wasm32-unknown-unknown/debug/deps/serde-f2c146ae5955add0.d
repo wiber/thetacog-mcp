@@ -1,0 +1,12 @@
+/Users/thetacoach/GitHub/thetadrivencoach/packages/thetacog-mcp/intentguard/target/wasm32-unknown-unknown/debug/deps/serde-f2c146ae5955add0.d: /Users/thetacoach/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/lib.rs /Users/thetacoach/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/integer128.rs /Users/thetacoach/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/private/mod.rs /Users/thetacoach/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/private/de.rs /Users/thetacoach/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/private/ser.rs /Users/thetacoach/GitHub/thetadrivencoach/packages/thetacog-mcp/intentguard/target/wasm32-unknown-unknown/debug/build/serde-7e3fc95dd1dcd44a/out/private.rs
+
+/Users/thetacoach/GitHub/thetadrivencoach/packages/thetacog-mcp/intentguard/target/wasm32-unknown-unknown/debug/deps/libserde-f2c146ae5955add0.rmeta: /Users/thetacoach/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/lib.rs /Users/thetacoach/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/integer128.rs /Users/thetacoach/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/private/mod.rs /Users/thetacoach/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/private/de.rs /Users/thetacoach/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/private/ser.rs /Users/thetacoach/GitHub/thetadrivencoach/packages/thetacog-mcp/intentguard/target/wasm32-unknown-unknown/debug/build/serde-7e3fc95dd1dcd44a/out/private.rs
+
+/Users/thetacoach/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/lib.rs:
+/Users/thetacoach/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/integer128.rs:
+/Users/thetacoach/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/private/mod.rs:
+/Users/thetacoach/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/private/de.rs:
+/Users/thetacoach/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/private/ser.rs:
+/Users/thetacoach/GitHub/thetadrivencoach/packages/thetacog-mcp/intentguard/target/wasm32-unknown-unknown/debug/build/serde-7e3fc95dd1dcd44a/out/private.rs:
+
+# env-dep:OUT_DIR=/Users/thetacoach/GitHub/thetadrivencoach/packages/thetacog-mcp/intentguard/target/wasm32-unknown-unknown/debug/build/serde-7e3fc95dd1dcd44a/out
