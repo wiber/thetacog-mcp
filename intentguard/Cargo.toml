@@ -1,0 +1,43 @@
+[package]
+name = "intentguard"
+version = "2.0.0"
+edition = "2021"
+description = "Boundary legibility for any agentic AI, like AI coding tools or edge LLM deployments: place the declared intent and the delivered work on one 144x144 lattice with gzip-NCD, and sign the receipt"
+license-file = "LICENSE"
+repository = "https://github.com/wiber/IntentGuard"
+publish = false
+
+[dependencies]
+rayon = "1"
+flate2 = "1"
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+base64 = "0.22"
+ed25519-dalek = "2"
+sha2 = "0.10"
+hkdf = "0.12"
+
+# cc compiles vendor/zlib — the vendored Node/Chromium zlib fork --lens and --encode-png need for
+# byte-parity with node:zlib (see build.rs for the measured why).
+[build-dependencies]
+cc = "1"
+
+[profile.release]
+opt-level = 3
+lto = true
+codegen-units = 1
+
+# C79 (milestone #79, the portable walker). `wasm` is the walker's PORTABLE subset — no wall clock, no cpu count, no
+# cache-latency probes (boundary_probe, pointer_chase are gated out, never deleted). build.rs turns it into the
+# `portable_walker` cfg, which is also implied on wasm32-unknown-unknown, so:
+#   cargo check --features wasm                      the portable subset on the native toolchain (no target needed)
+#   cargo check --target wasm32-unknown-unknown      the real thing (rustup target add wasm32-unknown-unknown)
+#   cargo rustc --lib --target wasm32-unknown-unknown -- --crate-type cdylib     the .wasm a host runs with no toolchain
+# The CLI binaries (pmu-onchip, intentguard) call the probes and do not build with the feature on; it is the library's.
+# Guard: tests/ops/wasm-walker-builds.test.mjs
+[features]
+wasm = []
+
+[dev-dependencies]
+# C752: hud_grid.rs moved here with its proptest event-stream properties (C750)
+proptest = "1"
