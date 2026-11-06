@@ -1,0 +1,11 @@
+{
+  "item": 9,
+  "title": "Three verification scopes — be the stranger",
+  "files": [
+    "README.md"
+  ],
+  "grounds": "every claim is one of: [verified: offline, this machine] / [requires: network] / [maintainer-reported]. Checks that require network, run them anonymously: npm registry for the shipped version; the public repo is wiber/thetacog-mcp (the monorepo is private, and a maintainer saying public-to-me is not public)",
+  "shallow_error_without": "the Part 5e class, in either direction: crediting maintainer-reported figures as verified, or scoring a private remote as deception",
+  "files_missing": 0,
+  "read_at": null
+}

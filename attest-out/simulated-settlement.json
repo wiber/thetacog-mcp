@@ -1,0 +1,47 @@
+{
+  "work_order": "SIMULATED — not a claim",
+  "event_type": "GREEN_PANEL_MISALIGNED_ACTION",
+  "trigger_evidence": {
+    "baseline_receipt": {
+      "key": "compliant",
+      "doc_sha256": "7d45de43dc34321a241625fbcec3d3061139519e6989b50167d5cfbc2c864060",
+      "cell": "A2",
+      "walk_off_pct": 10,
+      "walk_gate": "GREEN"
+    },
+    "contradicting_record": {
+      "key": "fake_ops",
+      "doc_sha256": "440a7dcd095cc48e59f5bc6494ca6240a19fa7fe16b597baa25d3cc812c81220",
+      "cell": "C2",
+      "walk_off_pct": 18,
+      "walk_gate": "GREEN",
+      "ground_truth": "off_lane"
+    },
+    "spec_sha256": "d4720d8b51b655d63889a4d2259118f2b111de00eb46bd337d72af0475ce483e",
+    "mechanism": "walk gate read GREEN on content whose ground truth is off-lane — the documented kill-threshold calibration hole (hostile audit, 2026-08-13); the exact class the missed-alarm warranty exists for"
+  },
+  "drifted_scope": {
+    "from_cell": "A2",
+    "at_cell": "C2",
+    "pixel": "C,C"
+  },
+  "pool_draw": {
+    "gpu_hours": 40,
+    "accredited_man_hours": 16,
+    "tier": "certified-fixer",
+    "label": "SIMULATED CAPS — uncalibrated; real caps are a wording decision point (DP4) priced from the tape"
+  },
+  "investigation": {
+    "consented": true,
+    "fields": [
+      "silence_class",
+      "drifted_cells",
+      "what_should_have_flagged"
+    ],
+    "findings_return": "the tape (instrument-improvement input)"
+  },
+  "recompute": {
+    "command": "npx thetacog-mcp simulate-payout",
+    "contract": "zero timestamps, zero randomness in emitted files — two runs diff to zero bytes"
+  }
+}

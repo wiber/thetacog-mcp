@@ -1,0 +1,23 @@
+{
+  "_this_is": "ADVISORY PREMIUM — the first closed loop: a policy-shaped number from the public tape. NOT a filed rate; curve v0 is published to be criticized and superseded.",
+  "curve": {
+    "version": "v0-advisory",
+    "baseCreditsPerAgentMonth": 100,
+    "wBreach": 2,
+    "wVega": 0.1,
+    "wKurt": 0.05,
+    "minRows": 30,
+    "killPct": 25
+  },
+  "seriesSha": "c581fcac434a97be",
+  "n": 20,
+  "state": "REFUSED",
+  "reason": "series aperture floor: 20 rows < 30 — a thin series is never priced",
+  "sensorCalibration": {
+    "match": 4,
+    "documentedHole": 3,
+    "mismatch": 1,
+    "regression": 0,
+    "source": "attest-out/trigger-battery.json"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "item": 4,
+  "title": "GZIP_ONLY is a flag, not a failed witness",
+  "files": [
+    "scripts/pmu/issue-receipt.mjs",
+    "pmu-rust/src/sense.rs"
+  ],
+  "grounds": "the --lens gzip short-circuit selects single-lens arbitration BEFORE simhash is consulted; sense.rs labels SimHash PRIMARY. BOTH-agreement requires margins >= 3 AND calibration off V0",
+  "shallow_error_without": "inferring a witness disagreement from a configuration flag — the auditor's own worst error, withdrawn in pass 5",
+  "files_missing": 0,
+  "read_at": null
+}

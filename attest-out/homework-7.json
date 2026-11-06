@@ -1,0 +1,11 @@
+{
+  "item": 7,
+  "title": "The demo corpus is a fixture, not a validation set",
+  "files": [
+    "data/pmu/attest-reference-corpus.json"
+  ],
+  "grounds": "print the length table BEFORE ranking any finding on these probes: six documents, two of them one word long. Red is a mass phenomenon; thin probes cannot build mass by construction",
+  "shallow_error_without": "'red never fires' reported as an instrument property — the auditor's own length table demolished its headline finding, four passes late",
+  "files_missing": 0,
+  "read_at": null
+}
