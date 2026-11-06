@@ -1,0 +1,55 @@
+#!/bin/bash
+# Example post-commit hook for ThetaCog — async LLM cognitive ingestion.
+# 
+# This script runs AFTER the git commit has succeeded. It is entirely decoupled
+# from the hardware/PMU validation layer (which happens independently).
+# Its job is to feed the committed changes to your LLM CLI of choice (Gemini or Claude)
+# for async analysis, ghost-reading, or punch-list generation.
+
+# Find the files changed in the latest commit
+LATEST_SHA=$(git rev-parse HEAD 2>/dev/null || true)
+[ -z "$LATEST_SHA" ] && exit 0
+
+CHANGED_FILES=$(git diff-tree --name-only --no-commit-id -r "$LATEST_SHA" 2>/dev/null || true)
+CONTENT=$(echo "$CHANGED_FILES" | grep -E '\.(mdx|md|ts|js|tsx)$' || true)
+
+[ -z "$CONTENT" ] && exit 0
+
+# Set up logging directory
+LOG_DIR=".thetacog/cache"
+mkdir -p "$LOG_DIR"
+LOG_FILE="$LOG_DIR/post-commit-${LATEST_SHA:0:8}.log"
+
+echo "🤖 ThetaCog async ingest dispatched. sha=${LATEST_SHA:0:8}. Logs in $LOG_FILE"
+
+# Determine the LLM CLI to use based on POSTCOMMIT_MODE, default to 'gemini'
+MODE="${POSTCOMMIT_MODE:-gemini}"
+
+# Fire-and-forget subshell so we don't block the user's terminal
+(
+    exec > "$LOG_FILE" 2>&1
+    echo "Running in $MODE mode for $LATEST_SHA"
+
+    if [ "$MODE" = "gemini" ]; then
+        # Example using Gemini CLI
+        if command -v gemini >/dev/null 2>&1; then
+            echo "Prompting Gemini..."
+            gemini prompt "Review these changed files and extract 3 cognitive next steps or leverage actions: $(echo $CONTENT)"
+        else
+            echo "⚠ Gemini CLI not found on PATH."
+        fi
+
+    elif [ "$MODE" = "claude" ]; then
+        # Example using Claude Code CLI
+        if command -v claude >/dev/null 2>&1; then
+            echo "Prompting Claude..."
+            claude -p "Analyze the following modified files and summarize any architectural drift: $(echo $CONTENT)"
+        else
+            echo "⚠ Claude CLI not found on PATH."
+        fi
+    fi
+
+) &
+disown 2>/dev/null || true
+
+exit 0

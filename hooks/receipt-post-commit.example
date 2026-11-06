@@ -1,0 +1,20 @@
+# >>> ThetaCog receipt (C2361) — placed by the first /steer in this repo; undo: node ~/.thetacog/hooks/thetacog-undo.mjs --repo .
+# After every commit, detached (git ignores a post-commit's exit code and this returns at once): the drift receipt for the commit,
+# read from the immutable commit against your README-as-spec, LLM-free by default (INTERVENE_LLM=none), appended to
+# .thetacog/interventions/drift-history.ndjson. Off for one commit: THETACOG_RECEIPT_OFF=1 git commit …
+if [ "${THETACOG_RECEIPT_OFF:-0}" != "1" ]; then
+  TC_SHA=$(git rev-parse HEAD 2>/dev/null || true)
+  if [ -n "$TC_SHA" ]; then
+    mkdir -p .thetacog/cache
+    # The installed package, by absolute path (written at install time), never a fetch through npx, which pulled the registry version and
+    # raced the npx cache with the next command (ENOTEMPTY, npm exit 190 — caught by the C2367 publish gate, 2026-11-05).
+    TC_NODE="__THETACOG_NODE__"; TC_SERVER="__THETACOG_SERVER__"
+    if [ -f "$TC_SERVER" ] && [ -x "$TC_NODE" ]; then
+      ( INTERVENE_LLM="${INTERVENE_LLM:-none}" nohup "$TC_NODE" "$TC_SERVER" intervene --sha "$TC_SHA" \
+          > ".thetacog/cache/receipt-${TC_SHA:0:8}.log" 2>&1 & ) ; disown 2>/dev/null || true
+    else
+      echo "receipt skipped: the installed thetacog-mcp at $TC_SERVER is gone — run any npx thetacog-mcp command to reinstall the hook" > ".thetacog/cache/receipt-${TC_SHA:0:8}.log"
+    fi
+  fi
+fi
+# <<< ThetaCog receipt (C2361)
