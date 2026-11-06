@@ -1,0 +1,12 @@
+{
+  "version": "2.1.0",
+  "source": "2ef67645322ff45a049bdf404eb5d5f4f5582f9695ab60ab11cd377eb12786fa",
+  "addons": {
+    "darwin-arm64": "52cc3e7d18c58ef322c43ffe6f0868deab7617d3b6c79ffba8f42df09e1ac7d8",
+    "darwin-x64": "2af5e9fc669bc94b7f1ce6241125af9c8b1756459c061b0a9cb858abae8e5411",
+    "linux-arm64": "f8e4c13b4bd7c8712f7d4cf16387b18eb87b78757efcad332e92b5fc5ad119e6",
+    "linux-x64": "aa3a3b3a77e2c4816d4921322c5cf518a9a08ba91717e5d32d25e8090661e062"
+  },
+  "bundledAt": "2026-10-29T17:25:40.385Z",
+  "by": "scripts/bundle-intentguard.mjs — npm pack ../IntentGuard, extracted into node_modules/intentguard; prepack runs --check"
+}
