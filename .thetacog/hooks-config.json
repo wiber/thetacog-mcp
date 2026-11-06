@@ -1,0 +1,77 @@
+{
+  "generated_at": "2026-05-04T15:22:28.024Z",
+  "source": ".thetacog/rules.db (SQLite — single source of truth)",
+  "warning": "AUTO-GENERATED. Do not hand-edit. Run `thetacog regen-hooks` after editing rules in the dashboard.",
+  "hooks": [
+    {
+      "hook_name": "post-commit-anchor-check",
+      "enabled": 1,
+      "description": "Heavy LLM engagement-anchor scorer, async. Blog drafts only."
+    },
+    {
+      "hook_name": "post-commit-llm-audit",
+      "enabled": 1,
+      "description": "Heavy LLM voice audit, async. Spawns voice-audit-llm.sh."
+    },
+    {
+      "hook_name": "pre-commit-lexical",
+      "enabled": 1,
+      "description": "Lexical voice-filter against SQLite voice_rules. Fast."
+    },
+    {
+      "hook_name": "pre-push-lexical",
+      "enabled": 1,
+      "description": "Pre-push lexical only — book HTML rebuild + deep-link gate."
+    }
+  ],
+  "rules": {
+    "business-comms": [
+      {
+        "name": "business-comms-puffery",
+        "pattern": "\\b(revolutionary|game-changing|paradigm shift|cutting-edge)\\b",
+        "level": "INFO",
+        "description": "Puffery without substance. Acceptable as load-bearing move with substance underneath; flag for review."
+      },
+      {
+        "name": "business-comms-name-at-start",
+        "pattern": "^@[A-Za-z]",
+        "level": "WARNING",
+        "description": "LinkedIn replies prepopulate @name. Drafts must start with the first substantive sentence, not \"Name —\"."
+      }
+    ],
+    "structural": [
+      {
+        "name": "structural-six-needs-required",
+        "pattern": "<pseudo>blog-section-headers-must-match-canonical-six-needs</pseudo>",
+        "level": "INFO",
+        "description": "Blog posts use Connection → Contribution → Growth → Uncertainty → Certainty → Significance as named A-F sections. Argument lives in Uncertainty."
+      },
+      {
+        "name": "structural-canonical-tile-form",
+        "pattern": "\\bA:Law|\\bB:Speed|\\bC:Grid|\\bA:Goal|\\bA:Fund|\\bB:Deal|\\bB:Signal|\\bC:Loop|\\bC:Flow",
+        "level": "WARNING",
+        "description": "Tile identity must render as {emoji} {rank}.{FullName}, never raw shorthand like A:Law."
+      }
+    ],
+    "voice": [
+      {
+        "name": "paradox-no-tell-feelings",
+        "pattern": "\\b(did you feel|do you feel|you may feel|if you felt|if you recognized)\\b",
+        "level": "ERROR",
+        "description": "Paradox tells stories that MOVE you; the reader names the feeling silently. Never instruct internal state."
+      },
+      {
+        "name": "no-meta-announcements",
+        "pattern": "\\b(in this section|in this post|next section|next paragraph|the post you have just read)\\b",
+        "level": "WARNING",
+        "description": "No meta-commentary about the prose itself. Show, do not announce."
+      },
+      {
+        "name": "voice-technique-name-leak",
+        "pattern": "\\b(paradox voice|holden voice|judo flip|reporting posture)\\b",
+        "level": "WARNING",
+        "description": "Technique names stay in docs/memory, not published prose."
+      }
+    ]
+  }
+}
