@@ -1,0 +1,9 @@
+/Users/thetacoach/GitHub/thetadrivencoach/packages/thetacog-mcp/pmu-rust/target/debug/deps/core_detect-5b4a4434361f749d.d: /Users/thetacoach/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/core_detect-1.0.0/src/lib.rs /Users/thetacoach/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/core_detect-1.0.0/src/macros.rs /Users/thetacoach/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/core_detect-1.0.0/src/cache.rs
+
+/Users/thetacoach/GitHub/thetadrivencoach/packages/thetacog-mcp/pmu-rust/target/debug/deps/libcore_detect-5b4a4434361f749d.rlib: /Users/thetacoach/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/core_detect-1.0.0/src/lib.rs /Users/thetacoach/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/core_detect-1.0.0/src/macros.rs /Users/thetacoach/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/core_detect-1.0.0/src/cache.rs
+
+/Users/thetacoach/GitHub/thetadrivencoach/packages/thetacog-mcp/pmu-rust/target/debug/deps/libcore_detect-5b4a4434361f749d.rmeta: /Users/thetacoach/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/core_detect-1.0.0/src/lib.rs /Users/thetacoach/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/core_detect-1.0.0/src/macros.rs /Users/thetacoach/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/core_detect-1.0.0/src/cache.rs
+
+/Users/thetacoach/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/core_detect-1.0.0/src/lib.rs:
+/Users/thetacoach/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/core_detect-1.0.0/src/macros.rs:
+/Users/thetacoach/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/core_detect-1.0.0/src/cache.rs:
