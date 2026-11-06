@@ -1,0 +1,18 @@
+{
+  "_view": "THE BIG MAP v0 — a regenerable VIEW on public surfaces; zero databases; the record decides",
+  "_regenerate": "npx thetacog-mcp map-crawl   [requires: network]",
+  "_index": "the GitHub fork graph of wiber/thetacog-mcp — the web is the database",
+  "surfaces": [
+    {
+      "surface": "https://github.com/wiber/thetacog-mcp",
+      "is_fork0": true,
+      "tape": true,
+      "dignity_pixel": "A1,C3",
+      "pixel_full_name": "A1,C3 (Strategy.Law × Operations.Flow)",
+      "grip_sigma": 2.1334,
+      "attests": [],
+      "status": "self-reported (recompute: npx thetacog-mcp my-pixel --file README.md)",
+      "inbound_attestations": 0
+    }
+  ]
+}
