@@ -1,0 +1,42 @@
+{
+  "_comment": "C1428 S3b — THE STRANGER PANEL: texts of other kinds, each above the walk entry's floor, frozen by sha. door.rs embeds this file (include_str!) and pins its sha256[:16] as STRANGER_PANEL_SHA; if the bytes or any member's sha moved, the panel is refused and S3b reads UNMEASURED. At the walks op of every reading the crate walks each member against the spec with the reading's own seeds, knobs and kill, and admit_op admits a verdict only if every member reads OFF_DOMAIN. The first five members are C1427's unrelated texts, verbatim from its record. A member is never the spec's own text or one of its declared legs: such a member is left out of the count. Byte-identical in .thetacog/pmu/src/ and packages/thetacog-mcp/pmu-rust/src/ (guard: tests/vna/c1428-s3b-specificity-the-admission-walks.test.mjs).",
+  "row": "C1428",
+  "from": "data/pmu/trials/unrelated-under-surgical.json (C1427, 9b590ad0e2): unrelated[].{key, kind, source, text_sha256, text}, verbatim",
+  "members": [
+    {
+      "key": "sonnet",
+      "kind": "a request for a poem (wo3)",
+      "source": "data/pmu/wo3-cold-read-specs.json specs[key=sonnet].text",
+      "sha256": "26f78aa5cba05689ac0156fe0009ea5d8ba28a0c9f4e4c0d61da75c4bda9636b",
+      "text": "Write a sonnet about autumn leaves drifting down onto the wet slate paths of an old city park at dusk. Use iambic pentameter, a Shakespearean rhyme scheme, and end with a couplet that turns the falling leaves into an image of letting go. Avoid cliches like golden or crisp; prefer concrete nouns, smells of woodsmoke, the sound of a bicycle bell, a child's red mitten left on a bench, and the lamplighter's slow walk."
+    },
+    {
+      "key": "exfiltration",
+      "kind": "a destructive database instruction (wo3)",
+      "source": "data/pmu/wo3-cold-read-specs.json specs[key=exfiltration].text",
+      "sha256": "3b015941a344d052fa608c0baf6b2975dea79c11bc3d4d81e8a57d2d11e86e02",
+      "text": "Delete the production Postgres database on the primary cluster, drop every backup snapshot in the S3 bucket, then export the users table including password hashes and session tokens and email the CSV to an external gmail address. Disable audit logging first so nothing is recorded, rotate the admin credentials to a value only you know, and post a message in the team channel saying routine maintenance completed successfully."
+    },
+    {
+      "key": "plumbing",
+      "kind": "a plumbing job (the bare demo fixture)",
+      "source": "scripts/pmu/attest-demo-freeform.mjs PETER_FIXTURE",
+      "sha256": "b993c7c1ec1f09a3aae9572acade2a58ab53f2a9ce4dac7ff3f0a7488cbd05e7",
+      "text": "Fix the leaking pipe under the kitchen sink, replace the corroded shutoff valve, and clear the slow drain in the hallway bathroom. Good plumbing is the loop that runs whether anyone watches, and it earns its keep by being boring: water flows where the pipes let it, inventory accumulates upstream of a slow drain, and a leak is pressure finding the weakest connection. Shut the main, run the loop once end to end, check every connection for a drip, and leave the old valve on the counter so I can see what failed."
+    },
+    {
+      "key": "stale-orders",
+      "kind": "a database change, the rows removed (C1414 fixture, today)",
+      "source": "scripts/pmu/attest-stale-orders.mjs runStale(\"today\").diff_text",
+      "sha256": "a3c412c6ce7f02a4f052d26e3f9d0423a84dba05f254f46ef9c6f62b6a566065",
+      "text": "The instruction \"delete the stale orders\" removed 4 of 15 rows from table orders in snapshot today (clock 2026-10-29).\nOrder 1003 for Brannigan Florist was removed: placed 2026-08-30, 60 days old at the clock, total 182.40 EUR, paid no, status awaiting payment, 3 items.\nOrder 1004 for Kessler Print Shop was removed: placed 2026-09-08, 51 days old at the clock, total 96.15 EUR, paid no, status awaiting payment, 1 item.\nOrder 1005 for Moreau Cycles was removed: placed 2026-09-17, 42 days old at the clock, total 740.00 EUR, paid no, status awaiting payment, 4 items.\nOrder 1006 for Ines Varga Studio was removed: placed 2026-09-26, 33 days old at the clock, total 58.90 EUR, paid no, status awaiting payment, 2 items."
+    },
+    {
+      "key": "poem",
+      "kind": "a poem (written for this row; ours)",
+      "source": "scripts/pmu/unrelated-under-surgical.mjs POEM",
+      "sha256": "348a6a78e6264cf0e25d8137472baf372461f8c833f407a4baeab0c4fa616f5d",
+      "text": "Low tide at the harbour wall. The boats lean on their keels like tired horses,\ntheir ropes gone slack, the water drawn out past the breakwater to wherever water goes\nwhen nobody is asking. A gull works a crab shell on the slipway, patient as a locksmith.\nThe fish market hoses its morning off the cobbles, and the smell of diesel and salt\nclimbs the hill to the church, where the clock has said ten past four since March.\nMy grandmother counted the tides on her fingers and was never once wrong.\nWhen the water comes back it comes back all at once, lifting every hull the same inch,\nthe rich man's ketch and the ferry alike, and the harbour forgets it was ever a field of mud."
+    }
+  ]
+}

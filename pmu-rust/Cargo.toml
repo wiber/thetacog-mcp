@@ -1,0 +1,49 @@
+[package]
+name = "pmu-onchip"
+version = "0.1.0"
+edition = "2021"
+description = "On-chip PMU v0 — the ballistic XOR walk on the metal"
+publish = false
+
+[[bin]]
+name = "pmu-onchip"
+path = "src/main.rs"
+
+# Rayon was added for PRO-G — the throughput runner needs work-stealing
+# parallelism across walkers. The ballistic gate itself remains a pure
+# hardware instruction; Rayon only schedules walkers across cores so we
+# can saturate the 10 M5 cores when measuring walks/sec at scale.
+[dependencies]
+# C490a: the ten modules pmu-onchip shares with IntentGuard (aperture, attest, ballistic, boundary_probe, lattice, png,
+# pointer_chase, regions, sense, signature) and the vendored Node/Chromium zlib that --lens and --encode-png link come
+# from the `intentguard` crate at packages/thetacog-mcp/intentguard, their only source: scripts/intentguard/carve.mjs
+# copies it into IntentGuard byte for byte. Both copies of this crate reach it as the sibling ../intentguard (from
+# .thetacog/pmu through a link), and it ships inside the thetacog-mcp package and its public mirror, so a stranger's
+# cargo build needs no path outside the package.
+# C79 (milestone #79, the portable walker): the walker LIBRARY above builds for wasm32-unknown-unknown — the shared
+# modules carry no fs/process/thread calls, build.rs gates the clock and the cache-latency probes behind the
+# `portable_walker` cfg (`intentguard/wasm` feature, implied on wasm32), and vendor/zlib compiles freestanding against
+# vendor/wasm-libc-shim. It needs a clang WITH the WebAssembly backend for the C side (Homebrew llvm or zig cc; Apple's
+# clang has none). This CLI binary stays native: it is fs, process and perf counters all the way down, and the probes it
+# calls are exactly what the portable subset removes. Check the library, not the bin:
+#   cd ../intentguard && cargo check --features wasm                         (the portable subset, native toolchain)
+#   cd ../intentguard && cargo check --target wasm32-unknown-unknown         (the real target)
+# Guard: tests/ops/wasm-walker-builds.test.mjs
+intentguard = { path = "../intentguard" }
+rayon = "1"
+flate2 = "1"
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+base64 = "0.22"
+ed25519-dalek = "2"
+sha2 = "0.10"
+hkdf = "0.12"
+
+[dev-dependencies]
+# C750: property tests over random event streams for hud_grid (src/hud_grid.rs mod prop)
+proptest = "1"
+
+[profile.release]
+opt-level = 3
+lto = true
+codegen-units = 1
