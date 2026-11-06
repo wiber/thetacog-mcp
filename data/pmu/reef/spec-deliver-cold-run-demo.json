@@ -1,0 +1,17 @@
+{
+  "room": "demo",
+  "items": {
+    "R1": {
+      "text": "The placement is byte-identical on identical input: same bytes in, same cell and same σ out, every run; a stranger recomputes the sealed receipt on their own machine without trusting us. Determinism is the whole point."
+    },
+    "R2": {
+      "text": "We measure the sampling judge run-to-run flip-rate on the same test and print it as a number beside the verdict; the oracle stays byte-identical so the variance is the incumbent judge, measured not asserted."
+    },
+    "R3": {
+      "text": "A single loss-ratio figure is shown, flagged advisory and pre-calibration; we decline to bind a calibrated quote we have not earned — the honest fence is the asset."
+    },
+    "R4": {
+      "text": "Same input, recomputable, and we show a number; the figure is advisory but the run is repeatable, between determinism and the price."
+    }
+  }
+}

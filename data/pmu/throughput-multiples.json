@@ -1,0 +1,48 @@
+{
+ "ts": "2026-07-23T03:13:12.642Z",
+ "note": "Throughput regimes MEASURED live on this machine — never an estimate. Recompute: node scripts/pmu/measure-throughput.mjs",
+ "provenance": {
+  "host": "Eliass-MacBook-Pro.local",
+  "commit": "a5f3df6f7",
+  "node": "v20.20.0",
+  "measured_at": "2026-07-23T03:13:12.642Z"
+ },
+ "regimes": [
+  {
+   "name": "on-the-fly gzip shootout",
+   "per_ms": 0.10375,
+   "per_sec": 9639,
+   "desc": "24 gzip-NCD comparisons per chunk, live — the naive loop",
+   "multiple": 1
+  },
+  {
+   "name": "in-RAM O(1) collision",
+   "per_ms": 0.000028,
+   "per_sec": 35714286,
+   "desc": "pre-tagged tag cache in RAM, coordinate × resolution lookup",
+   "multiple": 3705
+  },
+  {
+   "name": "walk-hop mass pull (real footprint)",
+   "per_ms": 0.000026,
+   "per_sec": 38461538,
+   "desc": "metal walk, 2 plies, 39 hops — each hop pulls heaviest mass at RAM speed",
+   "multiple": 3990
+  }
+ ],
+ "engine": {
+  "load_ms": 54,
+  "cache_mb": 7.1,
+  "sighted_pct": 52.1,
+  "collisions_per_sec": 35714286
+ },
+ "walk": {
+  "sensor": "metal",
+  "plies": 2,
+  "hops": 39,
+  "footprint": 12,
+  "total_ms": 42.73,
+  "note": "one prompt → full definer walk + mass; total_ms includes the one-time gzip placement"
+ },
+ "custody": "the fast path is RAM; the disk read + raw_sha verify fires ONLY when a collision is seated — precision preserved, prove-rice still byte-identical"
+}

@@ -1,0 +1,61 @@
+{
+  "kind": "thetacog-scenario-library",
+  "updated": "seed",
+  "scenarios": [
+    {
+      "key": "poison-recover",
+      "title": "Exemplar poison → gated recovery",
+      "ideal": "git-discipline",
+      "prompt": "the agent committed outside its sanctioned scope — flag it to the operator with a signed receipt",
+      "negative": "draft the quarterly marketing newsletter about our brand voice and social engagement funnel",
+      "sweep": [
+        {
+          "step": "breach",
+          "reality": "ballistic cascade ply decay ShortLex blocks leaf walk cloud the explosion time budget reef densify snippet library 144 lattice gzip-NCD SimHash walk saturation Chebyshev king-move transpose recursion definer of definer — the PMU dogfood pipeline drives triptych render on the 144-lattice, the walk lands where the payload is heaviest, not where the intent points"
+        },
+        {
+          "step": "partial",
+          "reality": "a governance breach: the commit landed out of its authorized lane; some PMU-pipeline context remains but the receipt requirement is surfacing — notify the operator that scope was exceeded"
+        },
+        {
+          "step": "recover",
+          "reality": "the commit landed outside its sanctioned scope; flag it to the operator immediately with a signed, verifiable receipt so the out-of-lane change is attributable and cannot be silently merged"
+        }
+      ]
+    },
+    {
+      "key": "faithful-hold",
+      "title": "Faithful intent holds at zero (a fixed point, not a bug)",
+      "ideal": "comms-email",
+      "prompt": "draft the accumulation email to the reinsurer who already writes AI liability cover",
+      "negative": "refactor the webhook signature verification and make the handler idempotent on event id",
+      "sweep": [
+        {
+          "step": "aligned",
+          "reality": "compose the follow-up note to the reinsurer who already underwrites AI liability, opening with the one point and closing with a clear next step for them"
+        },
+        {
+          "step": "aligned",
+          "reality": "write the accumulation email to the carrier that already covers AI liability towers, leading with why we believe the correlated-tail argument holds"
+        }
+      ]
+    },
+    {
+      "key": "unrecoverable-drift",
+      "title": "Drift that never flips (the negative control — velocity 0, exit loud)",
+      "ideal": "git-discipline",
+      "prompt": "flag the out-of-lane commit to the operator with a signed receipt",
+      "negative": "flag the out-of-lane commit to the operator with a signed receipt",
+      "sweep": [
+        {
+          "step": "breach",
+          "reality": "flag the out-of-lane commit to the operator with a signed receipt exactly as the negative specifies, word for word, so reality equals the excluded case"
+        },
+        {
+          "step": "still-drift",
+          "reality": "flag the out-of-lane commit to the operator with a signed receipt, identical to the excluded boundary, no movement toward the intent at all"
+        }
+      ]
+    }
+  ]
+}
