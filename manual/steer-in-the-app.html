@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Steer In The App</title>
+<style>
+:root{--bg:#fbfaf7;--ink:#1d1d1b;--mute:#6b6a64;--line:#e2dfd6;--accent:#b8501f;--code:#f1eee6}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#151513;--ink:#ecebe6;--mute:#a09f98;--line:#33322d;--accent:#e9844f;--code:#22211e}}
+:root[data-theme="dark"]{--bg:#151513;--ink:#ecebe6;--mute:#a09f98;--line:#33322d;--accent:#e9844f;--code:#22211e}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.6 system-ui,-apple-system,sans-serif}
+main{max-width:680px;margin:0 auto;padding:32px 16px 64px}
+h1{font-size:28px;line-height:1.2;margin:0 0 8px}
+h2{font-size:19px;margin:36px 0 8px}
+p,li{margin:8px 0}
+.k{color:var(--mute)}
+.step{border-left:3px solid var(--accent);padding:4px 0 4px 16px;margin:20px 0}
+pre{background:var(--code);border:1px solid var(--line);border-radius:8px;padding:12px 14px;overflow-x:auto;font:15px/1.5 ui-monospace,Menlo,monospace;white-space:pre-wrap;word-break:break-word}
+code{font:15px ui-monospace,Menlo,monospace;background:var(--code);padding:1px 4px;border-radius:4px}
+pre code{background:none;padding:0}
+.walk li{margin:12px 0}
+.card{border:1px solid var(--line);border-radius:10px;padding:14px 16px;margin:16px 0}
+.card h3{margin:0 0 6px;font-size:18px;color:var(--accent)}
+.card .doors{font-size:14px;color:var(--mute)}
+details{margin-top:8px}summary{cursor:pointer;color:var(--mute);font-size:14px}
+details pre{font-size:13px;max-height:420px;overflow:auto}
+</style>
+</head>
+<body><main>
+<h1>/steer in the Claude Code app</h1>
+<p class="k">No terminal, no VS Code. You type into the app the way you already do.</p>
+
+<p>You hand an agent a job and it comes back with fourteen changed files. /steer writes your ask down as a numbered row first, then places each change against it, on your own machine, so you can see which change left the lane before you read the diff.</p>
+
+<h2>One command to set it up</h2>
+<div class="step">
+<p>Open the Claude Code app, pick your project folder, and paste this into the chat:</p>
+<pre><code>Run this for me: npx thetacog-mcp</code></pre>
+<p>Claude runs it and puts the skills (/steer, /steer-every, /rewrite, /licence and the rest) into <code>~/.claude/skills</code>, the folder the app reads in every project. This page opened because that ran.</p>
+</div>
+
+<h2>Then use it</h2>
+<div class="step">
+<p>Start a new session in the app (the skills load at the start of a session), and type:</p>
+<pre><code>/steer add a refunds endpoint that never refunds more than the charge</code></pre>
+<p>Your first ask creates <code>docs/specs/vna/SPEC-VNA-COCKPIT.md</code> in your project, with your words as row C1. /steer splits an ask that carries several jobs into one row each, and shows you the rows before any of them run.</p>
+</div>
+
+<h2 id="dump-the-conversation">Already deep in a conversation? Dump it into /steer</h2>
+<div class="step">
+<p>You do not have to start clean. In the session where you and Claude have been talking for an hour, type:</p>
+<pre><code>/steer everything we decided in this conversation</code></pre>
+<p>Or paste a conversation from somewhere else after <code>/steer</code>. The whole conversation is one ask that carries many jobs, so /steer splits it into one numbered row per job, each in your own words, and writes the rows to <code>docs/specs/vna/SPEC-VNA-COCKPIT.md</code>. You read the rows. Then a worker takes them one at a time, one commit per row, and each commit is placed against the row that ordered it. The chat stops being the only record of what you asked.</p>
+</div>
+
+<h2>How /steer works, from your ask to the receipt</h2>
+<ol class="walk">
+<li><b>You type the ask in your own words.</b> <code>/steer add a refunds endpoint that never refunds more than the charge</code></li>
+<li><b>The ask is compiled into one file.</b> <code>npx thetacog-mcp steer-compile "&lt;your ask&gt;"</code> writes <code>.thetacog/steers/&lt;date&gt;-&lt;slug&gt;.txt</code>: one row per job in the ask, a proposed guard (the test that fails until the job is done), whose act each row is (yours or the worker's), the nearest rows already in your spec, and one goal line.</li>
+<li><b>The rows are declared in your spec.</b> They land in <code>docs/specs/vna/SPEC-VNA-COCKPIT.md</code> before any work starts, so the record of what you asked exists before the record of what was done.</li>
+<li><b>A worker takes each row.</b> The worker is a background <code>claude</code> session that boots from the row, never from the chat. Your session stays free while it runs.</li>
+<li><b>Each commit is placed against the row that ordered it.</b> The walk reads the commit from git and places it: in lane, flagged, or a breach, with a receipt anyone can rerun from the same commit and get the same answer. No model sits in that step.</li>
+<li><b>You read one line, not fourteen files.</b> The Δ line names where the work landed and how far it sits from what you declared. The halt stays yours to wire: /steer records and places, and you decide.</li>
+</ol>
+<p class="k">What it can tell you: WHERE the work landed against what you declared, re-runnable from the commit. What it cannot: WHETHER the code is bug-free. That is undecidable (Rice, 1953), and /steer never claims it.</p>
+
+<h2>Every skill this install gave you</h2>
+<p class="k">Each card below is read off that skill's own SKILL.md on your machine at install, so this page matches what you have. Type the slash command in a new Claude Code session; the doors are the commands the skill runs for you.</p>
+<!-- SKILLS:BEGIN -->
+<p>The skill cards are written in when the package installs. On GitHub, each skill's full text is in <a href="https://github.com/wiber/thetacog-mcp/tree/main/skills">skills/</a>.</p>
+<!-- SKILLS:END -->
+
+<h2>What you need</h2>
+<ul>
+<li><b>Node 20 or newer</b> on the machine. If the command answers <code>npx: command not found</code>, install Node from <a href="https://nodejs.org">nodejs.org</a> and paste the line again.</li>
+<li><b>The Claude Code app on your Mac</b>, working on a local folder. A cloud session reads its own skills folder, never the one on your machine.</li>
+<li><b>Nothing else</b> for the plan and the receipt: no account with us, no key, no database.</li>
+</ul>
+
+<h2>When a row runs in the background</h2>
+<p>A row that dispatches hands its work to a background worker, which is the <code>claude</code> command. When the run answers <code>ENGINE_BINARY_MISSING: claude</code>, ask Claude in the app:</p>
+<pre><code>Run this for me: npm i -g @anthropic-ai/claude-code</code></pre>
+<p>Then ask again. Nothing dispatched before the worker existed, so nothing half-ran.</p>
+
+<h2>If something looks wrong</h2>
+<ul>
+<li><code>npx thetacog-mcp skills --debug</code> prints every skill's state and opens a report page with the versions it found.</li>
+<li>A <code>SKILL.md</code> someone else wrote at the same path is left alone and named, never overwritten.</li>
+<li>To skip the skills next time, set <code>THETACOG_NO_SKILLS=1</code>. To keep this page from opening, set <code>THETACOG_NO_OPEN=1</code>.</li>
+</ul>
+
+<p class="k">The install and the measurement are free and open-source (MIT); only the financialization/attestation layer is licensed. Source and the full README: <a href="https://github.com/wiber/thetacog-mcp">github.com/wiber/thetacog-mcp</a>.</p>
+</main></body>
+</html>
