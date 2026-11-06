@@ -1,0 +1,17 @@
+{
+  "mount": "A1/C3",
+  "surface": "https://github.com/wiber/thetacog-mcp",
+  "tesseract": {
+    "registry": "data/pmu/shortlex-144-registry.json",
+    "pairs": "data/pmu/snippet-library-20736.json",
+    "reef": "data/pmu/lens-reef.json"
+  },
+  "tape_head": "HEAD",
+  "sig": "UNSIGNED (mesh-sign lands with federation)",
+  "status": "self-reported",
+  "note": "fork #0 mounted at its dignity pixel (A1,C3 — Strategy.Law × Operations.Flow, grip 2.1334, recompute: npx thetacog-mcp my-pixel)",
+  "contributes": {
+    "placements": "tape/ (panels + series)",
+    "definitions": "axes/ dumps for nodes this fork carries mass on (extraction pending — the reef IS the seed corpus)"
+  }
+}
