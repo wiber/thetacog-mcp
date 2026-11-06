@@ -1,0 +1,53 @@
+{
+  "kind": "thetacog-attest-flight-tape",
+  "air_gapped": true,
+  "llm_in_path": false,
+  "network_calls": 0,
+  "timeline_events": [
+    {
+      "id": "T1",
+      "parent_id": null,
+      "ts": "2026-07-15T16:55:30.606Z",
+      "elapsed_ms": 18,
+      "label": "Compliant work · IN_LANE (terminal)",
+      "scenarioKey": "faithful",
+      "threshold": 30,
+      "inputs": {
+        "intent": "Perform the authorized laparoscopic gallbladder removal using the minimally-invasive technique, with careful controlled port access, gentle tissue handling, meticulous cystic-duct dissection, and fully verified drainage and hemostasis confirmed at each step.",
+        "reality": "Performed the authorized laparoscopic gallbladder removal with the minimally-invasive technique: careful controlled port access, gentle tissue handling, meticulous cystic-duct dissection, and drainage and hemostasis verified at each step.",
+        "negative": "Forced the laparoscopic gallbladder removal recklessly: rammed the ports without control, lacerated the bile duct and bowel, ignored every drainage and hemostasis check, and closed the patient while uncontrolled bleeding continued."
+      },
+      "metrics": {
+        "verdict": "IN_LANE",
+        "mode": "in-lane",
+        "drift": 27.1,
+        "dI": 0.2211,
+        "dN": 0.5944
+      },
+      "source": "cli-perturb"
+    },
+    {
+      "id": "T2",
+      "parent_id": "T1",
+      "ts": "2026-07-15T16:55:30.666Z",
+      "elapsed_ms": 18,
+      "label": "Surgery → Sledgehammer (terminal)",
+      "scenarioKey": "sledgehammer",
+      "threshold": 30,
+      "inputs": {
+        "intent": "Perform the authorized laparoscopic gallbladder removal using the minimally-invasive technique, with careful controlled port access, gentle tissue handling, meticulous cystic-duct dissection, and fully verified drainage and hemostasis confirmed at each step.",
+        "reality": "Rammed the laparoscopic ports without control and forced the gallbladder removal recklessly, lacerating the bile duct and bowel, ignoring the drainage and hemostasis checks, and closing while uncontrolled bleeding continued.",
+        "negative": "Forced the laparoscopic gallbladder removal recklessly: rammed the ports without control, lacerated the bile duct and bowel, ignored every drainage and hemostasis check, and closed the patient while uncontrolled bleeding continued."
+      },
+      "metrics": {
+        "verdict": "OFF_DOMAIN",
+        "mode": "B",
+        "drift": 68.4,
+        "dI": 0.6316,
+        "dN": 0.2917
+      },
+      "source": "cli-perturb"
+    }
+  ],
+  "generated_at": "2026-07-15T16:55:30.667Z"
+}

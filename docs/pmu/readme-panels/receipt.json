@@ -1,0 +1,12 @@
+{
+  "generatedAt": "2026-10-29T02:44:50.708Z",
+  "sourceCommit": "064d5ea503",
+  "walkImplSha": "39d88233cdfff5fe2049d082db9ce4911b32f81d",
+  "walkImplFiles": [
+    "packages/thetacog-mcp/intentguard/src/ballistic.rs",
+    "packages/thetacog-mcp/intentguard/src/walk_lens.rs",
+    "scripts/pmu/definer-walk-144.mjs",
+    "src/lib/pmu/walk-knobs.mjs",
+    "src/lib/pmu/pmu-binary.mjs"
+  ]
+}

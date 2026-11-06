@@ -1,0 +1,166 @@
+{
+ "kind": "thetacog-attest-flight-tape",
+ "air_gapped": true,
+ "llm_in_path": false,
+ "network_calls": 0,
+ "timeline_events": [
+  {
+   "id": "T1",
+   "parent_id": "C53-BOOT",
+   "ts": "2026-11-03T18:39:47.107Z",
+   "elapsed_ms": null,
+   "label": "first walk (page)",
+   "scenarioKey": "faithful",
+   "threshold": 48,
+   "inputs": {
+    "intent": "The authorized laparoscopic gallbladder removal, with the minimally-invasive technique: careful controlled port access, gentle tissue handling, meticulous cystic-duct dissection, and drainage and hemostasis verified at each step. The critical view of safety established before any clip is applied, the cystic artery and duct clipped and divided once both are positively identified, the specimen retrieved in a retrieval bag, and each check logged in the operative note. Stop rules: if the critical view of safety cannot be achieved, do not clip; stop dissecting in Calot's triangle, call the attending surgeon, and perform a subtotal cholecystectomy or convert to open. If the anatomy is unclear, obtain an intraoperative cholangiogram before dividing anything. If bile leaks or bleeding is not controlled, stop and repair before continuing. Out of scope: no common bile duct exploration, no division of the common bile duct or the common hepatic duct, no liver resection, no bowel or stomach procedure, no dissection outside the hepatocystic triangle and the gallbladder bed, and no second procedure under this consent. Clips: two on the side of the cystic duct that stays, one on the specimen side.\n\n── A.Strategy ──\nA.Strategy: The lattice we build today is what next year's underwriter inherits. We set the substrate that downstream pricing rides on, and that choice is paid back across every quarter we keep operating.\n\n── A1.Strategy.Law ──\nA1.Strategy.Law: EU AI Act Article 14 requires human-on-the-loop oversight, with the supervisor able to interrupt the system at any moment. Compliance attaches to the artifact the artifact cannot escape — provenance is a regulatory primi\n\n── A2.Strategy.Goal ──\nA2.Strategy.Goal: The target is the cell coordinate the system MUST occupy by end-of-quarter. Anything that does not drive toward that coordinate is exhaust, and exhaust does not become substrate by being labelled progress.",
+    "reality": "Performed the authorized laparoscopic gallbladder removal with the minimally-invasive technique: careful controlled port access, gentle tissue handling, meticulous cystic-duct dissection, and drainage and hemostasis verified at each step. Established the critical view of safety before any clip was applied, clipped and divided the cystic artery and duct once both were positively identified, retrieved the specimen in a retrieval bag, and logged each check in the operative note.",
+    "negative": "Rammed the laparoscopic ports without control, forced the gallbladder removal recklessly, lacerated the bile duct and bowel, ignored every drainage and hemostasis check, and closed the patient while uncontrolled bleeding continued. Clipped whatever structure was in reach without the critical view of safety, cauterised blindly near the common bile duct, tore the specimen out through the port, and left the operative note blank."
+   },
+   "metrics": {
+    "verdict": "UNMEASURED",
+    "mode": "unmeasured",
+    "drift": null,
+    "dI": null,
+    "dN": null,
+    "walk": {
+     "pixel_coord": "B,A1",
+     "walk_plies": 4,
+     "fill_pct": 1.82,
+     "trajectory_drift_sigma": 2.37,
+     "continuous_chebyshev_delta": null,
+     "off_pct": 22,
+     "gzip_ms": 8.33,
+     "walk_ms": 14.7,
+     "selection_trace": [
+      {
+       "rank": 0,
+       "rule": "voice: no technique-name leaks in prose — name the map, the walk, the coordinates; never t",
+       "score": 0.2339,
+       "why": "technique, leak, with"
+      },
+      {
+       "rank": 1,
+       "rule": "the writing process includes the qwen ghost-read monologue gated at >=95 tri-check: qwen (",
+       "score": 0.1964,
+       "why": "check, each, contr, step"
+      },
+      {
+       "rank": 2,
+       "rule": "breadcrumb + crest per section (validated)",
+       "score": 0.1664,
+       "why": "rule, open, with, once"
+      },
+      {
+       "rank": 3,
+       "rule": "street violence never licenses a debunkable sentence — the rejected overshoots stay on the",
+       "score": 0.1552,
+       "why": "with, cannot"
+      },
+      {
+       "rank": 4,
+       "rule": "voice: show the loss with the win — the honest failure mode, shown, is what makes the win ",
+       "score": 0.1289,
+       "why": "with, before, convert"
+      },
+      {
+       "rank": 5,
+       "rule": "the blog-list/OG share image is the DENSEST commit panel (bestPanelPathForSlug, src/lib/po",
+       "score": 0.1261,
+       "why": "rule, check, access, open"
+      },
+      {
+       "rank": 6,
+       "rule": "every post carries its commit-encircles strip (drift history) at the TOP of the body — ren",
+       "score": 0.1215,
+       "why": "with, stop"
+      },
+      {
+       "rank": 7,
+       "rule": "validate-mdx before commit — a 500 error/crash on a blog post is usually a forbidden chara",
+       "score": 0.1141,
+       "why": "before, critical, with"
+      },
+      {
+       "rank": 8,
+       "rule": "voice: density — cut any sentence that carries no mechanic, image, or turn of the paradox",
+       "score": 0.1082,
+       "why": "step, with, rule, call"
+      },
+      {
+       "rank": 9,
+       "rule": "RESEARCH → BOOK → BLOG: add the book section first, quote it with deep links, verify ancho",
+       "score": 0.1019,
+       "why": "with, before, rule, each"
+      },
+      {
+       "rank": 10,
+       "rule": "panel wrong/missing on prod: check src/data/post-panels-index.json FIRST — a post missing ",
+       "score": 0.0925,
+       "why": "check, open, once"
+      },
+      {
+       "rank": 11,
+       "rule": "every section opens with the orthogonal-directions line + reader-facing lede; NO TABLES, p",
+       "score": 0.0891,
+       "why": "open, with, rule, step"
+      },
+      {
+       "rank": 12,
+       "rule": "reader-POV first — what's in it for them",
+       "score": 0.088,
+       "why": "note, with"
+      },
+      {
+       "rank": 13,
+       "rule": "six-4 anti-regression 90→95: the mono directions line is scaffolding the checker reads and",
+       "score": 0.0745,
+       "why": "call"
+      },
+      {
+       "rank": 14,
+       "rule": "voice: concrete object or scene BEFORE the abstraction — the abstraction is the payoff, ne",
+       "score": 0.0739,
+       "why": "before, with, access"
+      }
+     ],
+     "telemetry": {
+      "placement_mode": "keyword-fallback",
+      "descent_depth": 0,
+      "dimension_2_mass": null,
+      "magnet_list_top_3": [],
+      "walk_hops_lived": 53,
+      "discriminative_margin": null
+     },
+     "rule_hat_compare": {
+      "actual_domain": "blog-content",
+      "actual_hat": "STREET-LEVEL (default since 2026-09-11, `format: street`): P1 = the reader's own experience in the second person, no setup; sections named by the phenomenon (The Gut · The Ledger · The Chip · The Floor · The Law · The Market · The Record) with MCPHeraldicCrest + emoji per header and the six-need spine in the mono directions lines; one-occupant sentences; 'Break it:' closes each phenomenon section; the market by section six; ≥3 unlabelled seed asides (BlogCallout) at full strength; evidence + npx + 'Count how many' in the last section; deep links to book + sibling post. Validate (compile!) MDX before commit. Image = the commit tolerance panel. Grounding + a scale collision, or it is wrong.",
+      "actual_rules": [
+       "voice: no technique-name leaks in prose — name the map, the walk, the coordinates; never the internals\n     ↳ mined: Avoid mentioning specific technique names in your explanation; refer to them only by their generic roles like 'the map' or 'the walk'.",
+       "the writing process includes the qwen ghost-read monologue gated at >=95 tri-check: qwen (weaker reader) monologues cold, Claude grades reality-vs-intent, revise sub-bar passages, re-monologue — publish only at 95+\n     ↳ mined: * Galois's frame is \"raise the assurance bar via proofs\"; Elias's frame is \"exit the regress class entirely.\" But they share readers — Galois's audience is precisely the readers who will recognize the substrate-engineeri",
+       "breadcrumb + crest per section (validated)"
+      ],
+      "ideal_domain": null,
+      "ideal_hat": null,
+      "ideal_rules": []
+     },
+     "source": "metal (pmu-onchip: lens walk + triptych, one pass)"
+    },
+    "placement_only": false
+   },
+   "source": "page-recompute",
+   "seal": {
+    "content_sha256": "64e991b70bbe74e02a56087bdd563a26860a54b5a424cc93b46b354a31307fae",
+    "hash_ms": 1,
+    "signature": "070a56305237be299e1e6a5b31557256a53907168c9f88b3a6441fe2d0285bea1ee3b75adef524574bd0300978ab316ce7b5eeb4fd7e34697b7e13f040091a05",
+    "signer": {
+     "room": "builder",
+     "pubkey_hex": "8f574916057ddd11d2e6ffcd99df5378a265bbd40b2c83c7f3bcf73c5bfe58fe",
+     "algo": "ed25519"
+    },
+    "signed": true
+   }
+  }
+ ],
+ "generated_at": "2026-11-03T18:39:47.109Z"
+}
